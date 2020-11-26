@@ -1,0 +1,1 @@
+{"date":"2020-11-26T16:47:13.045Z","commit":"2ed623104d651dd7d793a57d20fc900de238cf0c","html":[{"source":"\\homepage\\index.pug","build":"\\index.html","dependencies":["\\homepage\\data.et.yaml"]},{"source":"\\homepage\\index.pug","build":"\\en\\index.html","dependencies":["\\homepage\\data.en.yaml"]}]}
