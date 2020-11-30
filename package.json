@@ -1,9 +1,9 @@
 {
   "name": "kgs",
-  "productName": "Entu SSG",
-  "version": "5.2.7",
-  "author": "Argo Roots <argo@roots.ee>",
-  "description": "Simple Pug (Jade), Markdown, Yaml static site generator",
+  "productName": "Kanuti Gildi Saali koduleht",
+  "version": "0.0.1",
+  "author": "Ilusa Koodi Instituut",
+  "description": "Pug (Jade), Markdown, Yaml, static site generator",
   "keywords": [
     "ssg",
     "cms",
@@ -14,25 +14,23 @@
     "markdown",
     "yaml"
   ],
-  "homepage": "https://entu.site",
+  "homepage": "https://saal.ee",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/entu/ssg.git"
+    "url": "git+https://github.com/i-b-c/KGS.git"
   },
   "bugs": {
-    "url": "https://github.com/entu/ssg/issues"
+    "url": "https://github.com/i-b-c/KGS/issues"
   },
   "main": "src/index.js",
   "scripts": {
     "build": "node node_modules/entu-ssg/src/build.js ./config.yaml",
-    "serve": "node node_modules/entu-ssg/src/serve.js ./config.yaml",
-    "docs": "node node_modules/entu-ssg/src/build.js ./docs/source/config.yaml full"
-  },
-  "bin": {
-    "entu-ssg": "src/build.js"
+    "serve": "node node_modules/entu-ssg/src/serve.js ./config.yaml"
   },
   "dependencies": {
-    "entu-ssg": "5.2.7"
+    "entu-ssg": "5.2.7",
+    "entulib": "^2.0.6",
+    "setenv": "^1.0.3"
   }
 }
