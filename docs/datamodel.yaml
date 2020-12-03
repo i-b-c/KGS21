@@ -112,9 +112,9 @@ Person: &Person
     last_name: (text)
     # first-name_last_name: (text, v6iks ise tekkida)
     picture: *StrapiMedia
-    e_mail: (text)
+    email: (text)
     phone_number: (text)
-    profession: (text)
+    occupation: (text)
     order: (number)
     # date_of_birth:
     # biography:
