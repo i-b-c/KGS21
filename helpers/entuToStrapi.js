@@ -74,11 +74,32 @@ async function bannerToStrapi() {
     postToStrapi(banner, 'banners')
 }
 
+async function categoriesToStrapi() {
+    const dataJSON = path.join(entuDataPath, 'category.json')
+
+    let categoryJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+
+
+    let category = categoryJSON.map(category_entity => {
+        return {
+            "remote_id": category_entity.id.toString(),
+            "name_et": category_entity.properties['et-name'].values[0].db_value,
+            "name_en": category_entity.properties['en-name'].values[0].db_value,
+            "featured_on_front_page": false
+        }
+    })
+    // console.log(category);
+
+    postToStrapi(category, 'categories')
+}
+
 
 async function main() {
     // await bannerTypeToStrapi()
     // await bannerTypeFromStrapi()
     // await bannerToStrapi()
+    // await categoriesToStrapi()
+
 }
 
 main()

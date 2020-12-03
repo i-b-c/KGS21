@@ -148,10 +148,13 @@ Banner: &Banner
     start: (datetime)
     end: (datetime)
 
-Tag: &Tag # loeng, tants, teater, prformance, video, n4itus
+Category: &Category # category loeng, tants, teater, prformance, video, n4itus
     slug: (UID, name_et)
     name_et: (text)
-    name_et: (text)
+    name_en: (text)
+    featured_on_front_page: (boolean)
+    remote_id: (UID)
+
 
 #Production
 Production: &Production
@@ -165,7 +168,7 @@ Production: &Production
     headline_et: (text)
     headline_en: (text)
     categories:
-        - *Tag
+        - *Category
     co_production: (boolean)
     co_production_importance: (number)
     artists:
@@ -263,7 +266,7 @@ Article: &Article
     publish_date: (datetime)
     first_page_promotion: (boolean)
     categories:
-        - *Tag
+        - *Category
     authors:
         - *Person
     original_images:
