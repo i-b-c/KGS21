@@ -5,7 +5,7 @@ nav.navbar.navbar-default.navbar-fixed-top
                 .icon-bar
                 .icon-bar
                 .icon-bar
-            a.navbar-brand.logo(href='/' + self.lang + '/')
+            a.navbar-brand.logo(href=`/${lang_path}`)
                 //- SIIA VAJA LOGO ALT TEKST STRAPIST
                 img(src='/assets/images/saal_logo.svg', alt='LOGO ALT TEKST SIIA!')
                 //p.season.visible-lg= t('.season') + ' ' + SAAL.season
@@ -13,23 +13,23 @@ nav.navbar.navbar-default.navbar-fixed-top
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
                 li(class= self.route == 'about' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/about') SAAL
+                    a(href=`/${lang_path}about`) SAAL
                 li(class= self.route == 'program' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/program') KAVA
+                    a(href=`/${lang_path}program`) KAVA
                 li(class= self.route == 'co_productions' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/co_productions') KAASPRODUKTSIOONID
+                    a(href=`/${lang_path}co_productions`) KAASPRODUKTSIOONID
                 li(class= self.route == 'tours' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/tours') TUURID
+                    a(href=`/${lang_path}tours`) TUURID
                 li(class= self.route == 'residency' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/residency') RESIDENTUURID
+                    a(href=`/${lang_path}residency`) RESIDENTUURID
                 li(class= self.route == 'projects' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/projects') PROJEKTID
+                    a(href=`/${lang_path}projects`) PROJEKTID
                 li(class= self.route == 'magazine' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/magazine') MAGASIN
+                    a(href=`/${lang_path}magazine`) MAGASIN
                 li(class= self.route == 'festivals' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/festivals') FESTIVALID
+                    a(href=`/${lang_path}festivals`) FESTIVALID
                 li(class= self.route == 'contact' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/contact') INFO
+                    a(href=`/${lang_path}contact`) INFO
 
             ul.nav.navbar-nav.navbar-right.social
                 //- each locale in self.locales
