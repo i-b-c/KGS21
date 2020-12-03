@@ -134,6 +134,7 @@ BannerType: &BannerType
     slug: (UID, name)
     width: (number)
     height: (number)
+    remote_id: (UID)
 
 Banner: &Banner
     _path: /banners
@@ -141,8 +142,11 @@ Banner: &Banner
     slug: (UID, name)
     image: *StrapiMedia # image
     url: (text)
-    order: (number)
+    order: (text)
     banner_type: *BannerType
+    remote_id: (UID)
+    start: (datetime)
+    end: (datetime)
 
 Tag: &Tag # loeng, tants, teater, prformance, video, n4itus
     slug: (UID, name_et)
