@@ -295,6 +295,6 @@ Coverage: &Coverage
     media:
         - *StrapiMedia
     content: (text rich)
-    publish_date: (datetime)
+    date_published: (datetime)
 
 
