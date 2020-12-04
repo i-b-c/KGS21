@@ -146,10 +146,6 @@ async function performanceToStrapi() {
             }
         } ).map( element => { return { id: element.id}})[0]
 
-        let artist_remote_id = ( performance_entity.properties.artist.values > 0 ? performance_entity.properties.artist.values[0].db_value : null )
-
-        // let strapi_artist_ids =
-
         return {
             "remote_id": performance_entity.id.toString(),
             "name_et": ( performance_entity.properties['et-name'].values.length > 0 ? performance_entity.properties['et-name'].values[0].db_value : null ),
@@ -159,24 +155,28 @@ async function performanceToStrapi() {
             "categories": strapi_category_id,
             "coproduction": performance_entity.properties.coprod.values.length > 0 ? performance_entity.properties.coprod.values[0].db_value : null,
             "coproduction_importance": ( performance_entity.properties.coprodOrdinal.values.length > 0 ? performance_entity.properties.coprodOrdinal.values[0].db_value : null ),
-            // "artists": strapi_artist_ids,
-            // "producers":
+            "artist": ( performance_entity.properties.artist.values.length > 0 ? performance_entity.properties.artist.values[0].db_value : null ),
+            "producer": ( performance_entity.properties.producer.values.length > 0 ? performance_entity.properties.producer.values[0].db_value : null ),
             "front_page_promotion": ( performance_entity.properties.featured.values.length > 0 ? performance_entity.properties.featured.values[0].db_value : null ),
             "purchase_description_et": ( performance_entity.properties['et-purchase-description'].values.length > 0 ? performance_entity.properties['et-purchase-description'].values[0].db_value : null ),
             "purchase_description_en": ( performance_entity.properties['en-purchase-description'].values.length > 0 ? performance_entity.properties['en-purchase-description'].values[0].db_value : null ),
-            // "premiere":
+            "premiere": ( performance_entity.properties['premiere-time'].values.length > 0 ? performance_entity.properties['premiere-time'].values[0].value : null ),
             "other_works": ( performance_entity.properties.otherWork.values.length > 0 ? performance_entity.properties.otherWork.values[0].db_value : null ),
             "description_et": ( performance_entity.properties['et-description'].values.length > 0 ? performance_entity.properties['et-description'].values[0].db_value : null ),
             "description_en": ( performance_entity.properties['en-description'].values.length > 0 ? performance_entity.properties['en-description'].values[0].db_value : null ),
             "technical_info_et": ( performance_entity.properties['et-technical-information'].values.length > 0 ? performance_entity.properties['et-technical-information'].values[0].db_value : null ),
             "technical_info_en": ( performance_entity.properties['en-technical-information'].values.length > 0 ? performance_entity.properties['en-technical-information'].values[0].db_value : null )
-            // "published": true
 
         }
     })
-    console.log(performances)
+    // console.log(performances)
 
-    // postToStrapi(performances, 'performances')
+    postToStrapi(performances, 'performances')
+}
+
+async function performanceFromStrapi() {
+    let data = await (getFromStrapi('performances'))
+    fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'performances.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function coveragesToStrapi() {
@@ -186,7 +186,7 @@ async function coveragesToStrapi() {
 
     let relations = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_entu', 'coverage-rel-performance.yaml')))
     let coveragesFromStrapi = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'coverages.yaml')))
-    console.log(coveragesFromStrapi)
+    // console.log(coveragesFromStrapi)
 
     // if (remote_id !== null){
     //     return banner_entity.properties.type.values[0].db_value.toString() === strapi_banner.remote_id
@@ -211,7 +211,7 @@ async function coveragesToStrapi() {
     })
     // console.log(coverages);
 
-    // postToStrapi(coverages, 'coverages')
+    postToStrapi(coverages, 'coverages')
 }
 
 async function coveragesFromStrapi() {
@@ -219,6 +219,152 @@ async function coveragesFromStrapi() {
     fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'coverages.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
+async function hallFromStrapi() {
+    let data = await (getFromStrapi('halls'))
+    fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'halls.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
+}
+
+async function locationToStrapi() {
+    const dataJSON = path.join(entuDataPath, 'location.json')
+
+    let locationJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+    let halls_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'halls.yaml')))
+
+
+    let locations = locationJSON.map(location_entity => {
+
+        let entu_name = (location_entity.properties['et-name'].values.length > 0 ? location_entity.properties['et-name'].values[0].db_value : null)
+
+        let strapi_hall_id = halls_from_strapi.filter( strapi_hall => {
+            if (entu_name !== null){
+                return location_entity.properties['et-name'].values[0].db_value.toString().includes(strapi_hall.name_et)
+            }
+        } ).map( element => { return { id: element.id}})[0]
+
+        return {
+            "remote_id": location_entity.id.toString(),
+            "name_et": entu_name,
+            "name_en": (location_entity.properties['en-name'].values.length > 0 ? location_entity.properties['en-name'].values[0].db_value : null),
+            "hall": strapi_hall_id
+            // "theater":
+            // "town":
+            // "country":
+        }
+    })
+    // console.log(location);
+
+    postToStrapi(locations, 'locations')
+}
+
+async function articlesToStrapi() {
+    const dataJSON = path.join(entuDataPath, 'echo.json')
+
+    let echoJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+    let categories_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'categories.yaml')))
+    let people_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'people.yaml')))
+
+
+    let articles = echoJSON.map(article_entity => {
+
+        let strapi_category_ids = article_entity.properties.category.values.map(e_category => {
+            let entu_id = e_category.db_value
+            let strapi_categories = categories_from_strapi.filter( s_category => {
+                return s_category.remote_id === entu_id.toString()
+            } )
+            let strapi_category_id = (strapi_categories[0] || {}).id || null
+            return { id: strapi_category_id }
+        })
+
+        let strapi_people_ids = article_entity.properties.author.values.map( e_author => {
+            let strapi_people = people_from_strapi.filter( strapi_person =>  {
+                return e_author.db_value.toString() === strapi_person.remote_id
+            })
+
+            let strapi_person_id = ( strapi_people[0] || {}).id || null
+            return { id: strapi_person_id}
+        })
+
+
+        return {
+            "remote_id": article_entity.id.toString(),
+            "title_et": (article_entity.properties['et-title'].values.length > 0 ? article_entity.properties['et-title'].values[0].db_value : null),
+            "title_en": (article_entity.properties['en-title'].values.length > 0 ? article_entity.properties['en-title'].values[0].db_value : null),
+            "subtitle_et": (article_entity.properties['et-subtitle'].values.length > 0 ? article_entity.properties['et-subtitle'].values[0].db_value : null),
+            "subtitle_en": (article_entity.properties['en-subtitle'].values.length > 0 ? article_entity.properties['en-subtitle'].values[0].db_value : null),
+            "publish_date": (article_entity.properties.date.values.length > 0 ? article_entity.properties.date.values[0].db_value : null),
+            "front_page_promotion": (article_entity.properties.featured.values.length > 0 ? article_entity.properties.featured.values[0].db_value : null),
+            "categories": strapi_category_ids,
+            "authors": strapi_people_ids,
+            "hide_gallery": (article_entity.properties['hide-gallery'].values.length > 0 ? article_entity.properties['hide-gallery'].values[0].db_value : null),
+            "photo_article": (article_entity.properties['pics-only'].values.length > 0 ? article_entity.properties['pics-only'].values[0].db_value : null),
+            "audio": (article_entity.properties.audio.values.length > 0 ? article_entity.properties.audio.values[0].db_value : null),
+            "video": (article_entity.properties.video.values.length > 0 ? article_entity.properties.video.values[0].db_value : null),
+            "content_et":(article_entity.properties['et-contents'].values.length > 0 ? article_entity.properties['et-contents'].values[0].db_value : null),
+            "content_en": (article_entity.properties['en-contents'].values.length > 0 ? article_entity.properties['en-contents'].values[0].db_value : null),
+
+            "created_at": article_entity.properties['entu-created-at'].values[0].db_value,
+            "updated_at": article_entity.properties['entu-changed-at'].values[0].db_value,
+            "published_at": article_entity.properties['entu-changed-at'].values[0].db_value
+
+        }
+    })
+    // console.log(util.inspect(articles, null, 4))
+
+    postToStrapi(articles, 'articles')
+}
+
+async function eventsToStrapi() {
+
+    const dataJSON = path.join(entuDataPath, 'event.json')
+    let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+    let performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'performances.yaml')))
+
+
+    let events = eventJSON.map(event_entity => {
+        let entu_performance = (event_entity.properties.performance.values.length > 0 ? event_entity.properties.performance.values[0].db_value : null)
+
+        let strapi_performance_id = performances_from_strapi.filter( strapi_performance => {
+            if (entu_performance !== null){
+                return event_entity.properties.performance.values[0].db_value.toString() === (strapi_performance.remote_id)
+            }
+        } ).map( element => { return { id: element.id}})[0]
+
+        return {
+            "remote_id": event_entity.id.toString(),
+            // "type":
+            "name_et": ( event_entity.properties['et-name'].values.length > 0 ? event_entity.properties['et-name'].values[0].db_value : null ),
+            "name_en": ( event_entity.properties['en-name'].values.length > 0 ? event_entity.properties['en-name'].values[0].db_value : null ),
+            "subtitle_et": (event_entity.properties['et-subtitle'].values.length > 0 ? event_entity.properties['et-subtitle'].values[0].db_value : null),
+            "subtitle_en": (event_entity.properties['en-subtitle'].values.length > 0 ? event_entity.properties['en-subtitle'].values[0].db_value : null),
+            "resident": ( event_entity.properties.resident.values.length > 0 ? event_entity.properties.resident.values[0].db_value : null ),
+            "performance": strapi_performance_id,
+            "hide_from_page": ( event_entity.properties.nopublish.values.length > 0 ? event_entity.properties.nopublish.values[0].db_value : null ),
+            "canceled": ( event_entity.properties.canceled.values.length > 0 ? event_entity.properties.canceled.values[0].db_value : null ),
+            // "conversation":
+            // "ticket_info": //tuleb teha
+            "start_time": ( event_entity.properties['start-time'].values.length > 0 ? event_entity.properties['start-time'].values[0].db_value : null ),
+            "end_time": ( event_entity.properties['end-time'].values.length > 0 ? event_entity.properties['end-time'].values[0].db_value : null ),
+            "duration": ( event_entity.properties.duration.values.length > 0 ? event_entity.properties.duration.values[0].db_value : null ),
+            // "location":
+            "description_et": (event_entity.properties['et-description'].values.length > 0 ? event_entity.properties['et-description'].values[0].db_value : null),
+            "description_en": (event_entity.properties['en-description'].values.length > 0 ? event_entity.properties['en-description'].values[0].db_value : null),
+            "technical_info_et": ( event_entity.properties['et-technical-information'].values.length > 0 ? event_entity.properties['et-technical-information'].values[0].db_value : null ),
+            "technical_info_en": ( event_entity.properties['en-technical-information'].values.length > 0 ? event_entity.properties['en-technical-information'].values[0].db_value : null ),
+            "online": ( event_entity.properties.online.values.length > 0 ? event_entity.properties.online.values[0].db_value : null ),
+            "video": ( event_entity.properties.video.values.length > 0 ? event_entity.properties.video.values[0].db_value : null ),
+            "audio": ( event_entity.properties.audio.values.length > 0 ? event_entity.properties.audio.values[0].db_value : null ),
+            "order": ( event_entity.properties.ordinal.values.length > 0 ? event_entity.properties.ordinal.values[0].db_value : null )
+
+            // "created_at": event_entity.properties['entu-created-at'].values[0].db_value,
+            // "updated_at": event_entity.properties['entu-changed-at'].values[0].db_value,
+            // "published_at": event_entity.properties['entu-changed-at'].values[0].db_value
+
+        }
+    })
+    console.log(util.inspect(events, null, 4))
+
+    // postToStrapi(events, 'events')
+}
 
 
 async function main() {
@@ -229,9 +375,14 @@ async function main() {
     // await categoriesFromStrapi()
     // await personToStrapi()
     // await peopleFromStrapi()
-
-    await performanceToStrapi()
+    // await performanceToStrapi()
+    // await performanceFromStrapi()
     // await coveragesToStrapi()
+    // await coveragesFromStrapi()
+    // await hallFromStrapi()
+    // await locationToStrapi()
+    // await articlesToStrapi()
+    await eventsToStrapi()
 
 }
 

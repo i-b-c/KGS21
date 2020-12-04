@@ -85,7 +85,7 @@ Organisation:
     description_et: (text)
     description_en: (text)
     # logo: *StrapiMedia
-    organisation_url: (text)
+    url: (text) #saad entu evendi alt location url
 
 Hall: &Hall
     _path: /halls
@@ -94,6 +94,8 @@ Hall: &Hall
     name_en: (text)
     hall_number: (number)
     number_of_seats: (number)
+    description_et: (text)
+    description_en: (text)
 
 Location: &Location
     _path: /locations
@@ -116,6 +118,7 @@ Person: &Person
     phone_number: (text)
     occupation: (text)
     order: (number)
+    remote_id: (UID)
     # date_of_birth:
     # biography:
 
@@ -170,10 +173,8 @@ Performance: &Performance # performance #
         - *Category
     coproduction: (boolean)
     coproduction_importance: (number)
-    artists:
-        - *Person
-    producers:
-        - *Person
+    artist: (text rich)
+    producer: (text rich)
     front_page_promotion: (boolean)
     original_images:
         - *StrapiMedia
@@ -185,8 +186,8 @@ Performance: &Performance # performance #
         - *StrapiMedia
     logos:
         - *StrapiMedia
-    purchase_info: (text)
-    purchase_description: (text)
+    purchase_description_et: (text)
+    purchase_description_en: (text)
     premiere: (datetime)
     other_works: (text rich)
     description_et: (text rich)
@@ -195,7 +196,6 @@ Performance: &Performance # performance #
     technical_info_en: (text rich)
     raider:
         - *StrapiMedia
-    published: (boolean) #kas kuvab v6i on arhiivis vms
     parent_performance: Performance
     child_performances: Performance
 
@@ -221,9 +221,8 @@ Event: &Event
     slug_en: (UID, name_en)
     subtitle_et: (text)
     subtitle_en: (text)
-    resident:
-        - *Person
-    Performance: *Performance
+    resident: (text)
+    performance: *Performance
     hide_from_page: (boolean)
     canceled: (boolean)
     conversation: (boolean) # peaks olema suurem ? inimene ka kohe kaasa kogu infoga? mida siin m6eldud, vestlus enne etendust?
@@ -240,6 +239,7 @@ Event: &Event
     video: (text)
     audio: (text)
     order: (number)
+    remote_id: (UID)
 
 #News and Article
 Newscast: &Newscast
@@ -266,7 +266,7 @@ Article: &Article #Echo
     subtitle_et: (text)
     subtitle_en: (text)
     publish_date: (datetime)
-    first_page_promotion: (boolean)
+    front_page_promotion: (boolean)
     categories:
         - *Category
     authors:
