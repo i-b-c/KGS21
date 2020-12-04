@@ -31,7 +31,7 @@ async function bannerTypeToStrapi() {
 
 
 async function bannerTypeFromStrapi() {
-    let data = await (getFromStrapi(banner-types))
+    let data = await (getFromStrapi(banner - types))
     fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'bannerTypes.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
@@ -44,13 +44,13 @@ async function bannerToStrapi() {
 
     let banner = bannerJSON.map(banner_entity => {
         let remote_id = (banner_entity.properties.type.values.length > 0 ? banner_entity.properties.type.values[0].db_value.toString() : null)
-        let strapi_banner_type_id = strapi_banner_types.filter( strapi_banner => {
-            if (remote_id !== null){
+        let strapi_banner_type_id = strapi_banner_types.filter(strapi_banner => {
+            if (remote_id !== null) {
                 return banner_entity.properties.type.values[0].db_value.toString() === strapi_banner.remote_id
             } else {
                 return null
             }
-        } )[0]
+        })[0]
 
         return {
             "remote_id": banner_entity.id.toString(),
@@ -138,41 +138,47 @@ async function personToStrapi() {
 //     // postToStrapi(performances, 'performances')
 // }
 
-// async function coveragesToStrapi() {
-//     const dataJSON = path.join(entuDataPath, 'coverage.json')
+async function coveragesToStrapi() {
+    const dataJSON = path.join(entuDataPath, 'coverage.json')
 
-//     let coverageJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+    let coverageJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-//     let performance_ids = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'bannerTypes.yaml')))
-
-
-
-//     let coverages = coverageJSON.map(coverage_entity => {
-//         let remote_id = coverage_entity.id
-//         let strapi_banner_type_id = strapi_banner_types.filter( strapi_banner => {
-//             if (remote_id !== null){
-//                 return banner_entity.properties.type.values[0].db_value.toString() === strapi_banner.remote_id
-//             } else {
-//                 return null
-//             }
-//         } )[0]
+    let performance_ids = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_entu', 'coverage-rel-performance.yaml')))
+    // console.log(performance_ids)
 
 
+    // if (remote_id !== null){
+    //     return banner_entity.properties.type.values[0].db_value.toString() === strapi_banner.remote_id
 
-//         return {
-//             "remote_id": remote_id.toString(),
-//             "title": (coverage_entity.properties.title.values.length > 0 ? coverage_entity.properties.title.values[0].db_value : null),
-//             // "performance": "",
-//             "source": (coverage_entity.properties.source.values.length > 0 ? coverage_entity.properties.source.values[0].db_value : null),
-//             "url": (coverage_entity.properties.url.values.length > 0 ? coverage_entity.properties.url.values[0].db_value : null),
-//             "content": (coverage_entity.properties.text.values.length > 0 ? coverage_entity.properties.text.values[0].db_value : null),
-//             "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null)  
-//         }
-//     })
-//     console.log(coverages);
+    let coverages = coverageJSON.map(coverage_entity => {
+        let coverage_id = coverage_entity.id.toString()
+        let performance_id = performance_ids.filter(relation => {
+            // console.log('relation ', relation)
+            if (coverage_id !== null) {
+                console.log(relation.performance_id)
+                return coverage_id === relation.coverage_id
+            } else {
+                return null
+            }
+        })[0]
 
-//     // postToStrapi(coverages, 'coverages')
-// }
+
+        return {
+            "remote_id": coverage_id,
+            "title": (coverage_entity.properties.title.values.length > 0 ? coverage_entity.properties.title.values[0].db_value : null),
+            "performance": performance_id,
+            "source": (coverage_entity.properties.source.values.length > 0 ? coverage_entity.properties.source.values[0].db_value : null),
+            "url": (coverage_entity.properties.url.values.length > 0 ? coverage_entity.properties.url.values[0].db_value : null),
+            "content": (coverage_entity.properties.text.values.length > 0 ? coverage_entity.properties.text.values[0].db_value : null),
+            "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null)
+        }
+    })
+    console.log(coverages);
+    // console.log(util.inspect(coverages, null, 4))
+
+
+    // postToStrapi(coverages, 'coverages')
+}
 
 
 async function main() {
@@ -180,9 +186,9 @@ async function main() {
     // await bannerTypeFromStrapi()
     // await bannerToStrapi()
     // await categoriesToStrapi()
-    // await coveragesToStrapi()
+    await coveragesToStrapi()
     // await performanceToStrapi()
-    await personToStrapi()
+    // await personToStrapi()
 
 }
 
