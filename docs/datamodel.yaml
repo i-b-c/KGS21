@@ -286,12 +286,12 @@ Coverage: &Coverage
     title: (text)
     slug: (UID, title)
     language: (enumeration)
-    production: *Production
+    performance: *Performance
     source: (text)
     url: (text)
     media:
         - *StrapiMedia
     content: (text rich)
-    publish_date: (datetime)
+    date_published: (datetime)
 
 

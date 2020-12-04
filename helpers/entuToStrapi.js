@@ -143,25 +143,20 @@ async function coveragesToStrapi() {
 
     let coverageJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-    let performance_ids = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_entu', 'coverage-rel-performance.yaml')))
-    // console.log(performance_ids)
-
+    let relations = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_entu', 'coverage-rel-performance.yaml')))
+    let coveragesFromStrapi = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'coverages.yaml')))
+    console.log(coveragesFromStrapi)
 
     // if (remote_id !== null){
     //     return banner_entity.properties.type.values[0].db_value.toString() === strapi_banner.remote_id
 
     let coverages = coverageJSON.map(coverage_entity => {
-        let coverage_id = coverage_entity.id.toString()
-        let performance_id = performance_ids.filter(relation => {
-            // console.log('relation ', relation)
-            if (coverage_id !== null) {
-                console.log(relation.performance_id)
-                return coverage_id === relation.coverage_id
-            } else {
-                return null
-            }
-        })[0]
 
+        let coverage_id = coverage_entity.id.toString()
+
+        let performance_id = (
+            relations.filter(relation => coverage_id === relation.coverage_id)[0] || {}
+        ).performance_id || null
 
         return {
             "remote_id": coverage_id,
@@ -173,11 +168,14 @@ async function coveragesToStrapi() {
             "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null)
         }
     })
-    console.log(coverages);
-    // console.log(util.inspect(coverages, null, 4))
-
+    // console.log(coverages);
 
     // postToStrapi(coverages, 'coverages')
+}
+
+async function coveragesFromStrapi() {
+    let data = await (getFromStrapi('coverages'))
+    fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'coverages.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 
@@ -189,6 +187,7 @@ async function main() {
     await coveragesToStrapi()
     // await performanceToStrapi()
     // await personToStrapi()
+    // await coveragesFromStrapi()
 
 }
 
