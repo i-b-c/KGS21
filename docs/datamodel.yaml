@@ -155,7 +155,7 @@ Category: &Category # category loeng, tants, teater, prformance, video, n4itus
     featured_on_front_page: (boolean)
     remote_id: (UID)
 
-#Production
+#Performance
 Performance: &Performance # performance #
     _path: /productions
     name_et: (text)
@@ -168,16 +168,16 @@ Performance: &Performance # performance #
     # headline_en: (text)
     categories:
         - *Category
-    co_production: (boolean)
-    co_production_importance: (number)
+    coproduction: (boolean)
+    coproduction_importance: (number)
     artists:
         - *Person
     producers:
         - *Person
-    first_page_promotion: (boolean)
+    front_page_promotion: (boolean)
     original_images:
         - *StrapiMedia
-    first_page_images:
+    front_page_images:
         - *StrapiMedia
     gallery_large_images:
         - *StrapiMedia
@@ -195,9 +195,9 @@ Performance: &Performance # performance #
     technical_info_en: (text rich)
     raider:
         - *StrapiMedia
-    publish: (boolean) #kas kuvab v6i on arhiivis vms
-    parent_performance: *Performance
-    child_performances: *Performance
+    published: (boolean) #kas kuvab v6i on arhiivis vms
+    parent_performance: Performance
+    child_performances: Performance
 
 #Event
 TicketInfo: &TicketInfo
@@ -289,7 +289,7 @@ Coverage: &Coverage
     title: (text)
     slug: (UID, title)
     language: (enumeration)
-    production: *Production
+    performance: *Performance
     source: (text)
     url: (text)
     media:

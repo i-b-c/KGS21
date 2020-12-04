@@ -93,6 +93,12 @@ async function categoriesToStrapi() {
     postToStrapi(category, 'categories')
 }
 
+async function categoriesFromStrapi() {
+    let data = await (getFromStrapi('categories'))
+    fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'categories.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
+}
+
+
 async function personToStrapi() {
     const dataJSON = path.join(entuDataPath, 'person.json')
 
@@ -117,26 +123,61 @@ async function personToStrapi() {
     postToStrapi(people, 'people')
 }
 
-// async function performanceToStrapi() {
-//     const dataJSON = path.join(entuDataPath, 'performance.json')
+async function peopleFromStrapi() {
+    let data = await (getFromStrapi('people'))
+    fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'people.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
+}
 
-//     let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+async function performanceToStrapi() {
+    const dataJSON = path.join(entuDataPath, 'performance.json')
 
-//     let performances = performanceJSON.map(performance_entity => {
-//         return {
-//             "remote_id": performance_entity.id.toString(),
-//             "name_et": performance_entity.properties['et-name'].values[0].db_value,
-//             "name_en": performance_entity.properties['en-name'].values[0].db_value,
-//             "subtitle_et": performance_entity.properties['et-subtitle'].values[0].db_value,
-//             "subtitle_en": performance_entity.properties['en-subtitle'].values[0].db_value,
+    let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-//             "featured_on_front_page": false
-//         }
-//     })
-//     console.log(performances)
+    let strapi_categories = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'categories.yaml')))
+    let strapi_people = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'people.yaml')))
 
-//     // postToStrapi(performances, 'performances')
-// }
+
+    let performances = performanceJSON.map(performance_entity => {
+
+        let performance_remote_id = (performance_entity.properties.category.values.length > 0 ? performance_entity.properties.category.values[0].db_value.toString() : null)
+        let strapi_category_id = strapi_categories.filter( strapi_category => {
+            if (performance_remote_id !== null){
+                return performance_entity.properties.category.values[0].db_value.toString().includes(strapi_category.remote_id)
+            }
+        } ).map( element => { return { id: element.id}})[0]
+
+        let artist_remote_id = ( performance_entity.properties.artist.values > 0 ? performance_entity.properties.artist.values[0].db_value : null )
+
+        // let strapi_artist_ids =
+
+        return {
+            "remote_id": performance_entity.id.toString(),
+            "name_et": ( performance_entity.properties['et-name'].values.length > 0 ? performance_entity.properties['et-name'].values[0].db_value : null ),
+            "name_en": ( performance_entity.properties['en-name'].values.length > 0 ? performance_entity.properties['en-name'].values[0].db_value : null ),
+            "subtitle_et": ( performance_entity.properties['et-subtitle'].values.length > 0 ? performance_entity.properties['et-subtitle'].values[0].db_value : null ),
+            "subtitle_en": ( performance_entity.properties['en-subtitle'].values.length > 0 ? performance_entity.properties['en-subtitle'].values[0].db_value : null ),
+            "categories": strapi_category_id,
+            "coproduction": performance_entity.properties.coprod.values.length > 0 ? performance_entity.properties.coprod.values[0].db_value : null,
+            "coproduction_importance": ( performance_entity.properties.coprodOrdinal.values.length > 0 ? performance_entity.properties.coprodOrdinal.values[0].db_value : null ),
+            // "artists": strapi_artist_ids,
+            // "producers":
+            "front_page_promotion": ( performance_entity.properties.featured.values.length > 0 ? performance_entity.properties.featured.values[0].db_value : null ),
+            "purchase_description_et": ( performance_entity.properties['et-purchase-description'].values.length > 0 ? performance_entity.properties['et-purchase-description'].values[0].db_value : null ),
+            "purchase_description_en": ( performance_entity.properties['en-purchase-description'].values.length > 0 ? performance_entity.properties['en-purchase-description'].values[0].db_value : null ),
+            // "premiere":
+            "other_works": ( performance_entity.properties.otherWork.values.length > 0 ? performance_entity.properties.otherWork.values[0].db_value : null ),
+            "description_et": ( performance_entity.properties['et-description'].values.length > 0 ? performance_entity.properties['et-description'].values[0].db_value : null ),
+            "description_en": ( performance_entity.properties['en-description'].values.length > 0 ? performance_entity.properties['en-description'].values[0].db_value : null ),
+            "technical_info_et": ( performance_entity.properties['et-technical-information'].values.length > 0 ? performance_entity.properties['et-technical-information'].values[0].db_value : null ),
+            "technical_info_en": ( performance_entity.properties['en-technical-information'].values.length > 0 ? performance_entity.properties['en-technical-information'].values[0].db_value : null )
+            // "published": true
+
+        }
+    })
+    console.log(performances)
+
+    // postToStrapi(performances, 'performances')
+}
 
 // async function coveragesToStrapi() {
 //     const dataJSON = path.join(entuDataPath, 'coverage.json')
@@ -166,7 +207,7 @@ async function personToStrapi() {
 //             "source": (coverage_entity.properties.source.values.length > 0 ? coverage_entity.properties.source.values[0].db_value : null),
 //             "url": (coverage_entity.properties.url.values.length > 0 ? coverage_entity.properties.url.values[0].db_value : null),
 //             "content": (coverage_entity.properties.text.values.length > 0 ? coverage_entity.properties.text.values[0].db_value : null),
-//             "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null)  
+//             "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null)
 //         }
 //     })
 //     console.log(coverages);
@@ -175,14 +216,18 @@ async function personToStrapi() {
 // }
 
 
+
 async function main() {
     // await bannerTypeToStrapi()
     // await bannerTypeFromStrapi()
     // await bannerToStrapi()
     // await categoriesToStrapi()
+    // await categoriesFromStrapi()
+    // await personToStrapi()
+    // await peopleFromStrapi()
+
+    await performanceToStrapi()
     // await coveragesToStrapi()
-    // await performanceToStrapi()
-    await personToStrapi()
 
 }
 

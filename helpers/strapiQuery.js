@@ -102,7 +102,7 @@ async function postToStrapi(data, model) {
     return results
 }
 
-async function getFromStrapi() {
+async function getFromStrapi(model) {
 
     const _path = `http://${StrapiHost}/${model}`
 
