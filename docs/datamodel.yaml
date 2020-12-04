@@ -156,33 +156,34 @@ Category: &Category # category loeng, tants, teater, prformance, video, n4itus
     remote_id: (UID)
 
 #Production
-Production: &Production
+Performance: &Performance # performance #
     _path: /productions
-    nimi_et: (text)
-    nimi_en: (text)
+    name_et: (text)
+    name_en: (text)
     slug_et: (UID, name_et)
     slug_en: (UID, name_en)
     subtitle_et: (text)
     subtitle_en: (text)
-    headline_et: (text)
-    headline_en: (text)
+    # headline_et: (text)
+    # headline_en: (text)
     categories:
         - *Category
     co_production: (boolean)
     co_production_importance: (number)
     artists:
         - *Person
-    producer:
+    producers:
         - *Person
     first_page_promotion: (boolean)
     original_images:
         - *StrapiMedia
-    first_page_image: *StrapiMedia
+    first_page_images:
+        - *StrapiMedia
     gallery_large_images:
         - *StrapiMedia
     gallery_images:
         - *StrapiMedia
-    logo:
+    logos:
         - *StrapiMedia
     purchase_info: (text)
     purchase_description: (text)
@@ -195,6 +196,8 @@ Production: &Production
     raider:
         - *StrapiMedia
     publish: (boolean) #kas kuvab v6i on arhiivis vms
+    parent_performance: *Performance
+    child_performances: *Performance
 
 #Event
 TicketInfo: &TicketInfo
@@ -212,15 +215,15 @@ TicketInfo: &TicketInfo
 Event: &Event
     _path: /events
     type: (Enumeration) # programm, residentuur, festival, tuur
-    nimi_et: (text)
-    nimi_en: (text)
+    name_et: (text)
+    name_en: (text)
     slug_et: (UID, name_et)
     slug_en: (UID, name_en)
     subtitle_et: (text)
     subtitle_en: (text)
     resident:
         - *Person
-    production: *Production
+    Performance: *Performance
     hide_from_page: (boolean)
     canceled: (boolean)
     conversation: (boolean) # peaks olema suurem ? inimene ka kohe kaasa kogu infoga? mida siin m6eldud, vestlus enne etendust?
@@ -254,7 +257,7 @@ Newscast: &Newscast
     authors:
         - *Person
 
-Article: &Article
+Article: &Article #Echo
     _path: /articles
     title_et: (text)
     title_en: (text)
