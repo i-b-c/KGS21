@@ -173,8 +173,12 @@ Performance: &Performance # performance #
         - *Category
     coproduction: (boolean)
     coproduction_importance: (number)
-    artist: (text rich)
-    producer: (text rich)
+    X_artist: (text rich)
+    artists:
+        - *Person
+    X_producer: (text rich)
+    producers:
+        - *Person
     front_page_promotion: (boolean)
     original_images:
         - *StrapiMedia
@@ -189,15 +193,14 @@ Performance: &Performance # performance #
     purchase_description_et: (text)
     purchase_description_en: (text)
     premiere: (datetime)
-    other_works: (text rich)
+    X_other_works: (text rich)
     description_et: (text rich)
     description_en: (text rich)
     technical_info_et: (text rich)
     technical_info_en: (text rich)
     raider:
         - *StrapiMedia
-    parent_performance: Performance
-    child_performances: Performance
+    remote_id: (UID)
 
 #Event
 TicketInfo: &TicketInfo
@@ -227,10 +230,18 @@ Event: &Event
     canceled: (boolean)
     conversation: (boolean) # peaks olema suurem ? inimene ka kohe kaasa kogu infoga? mida siin m6eldud, vestlus enne etendust?
     ticket_info: *TicketInfo
+    X_ticket_info:
+        pl_link_et: (text)
+        pl_link_en: (text)
+        ticket_api: (text)
+        min_price: (decimal)
+        sales_status: (text)
+        pl_id: (text)
+        price: (text)
+        onsite_price: (text)
     start_time: (datetime)
     end_time: (datetime)
     duration: (datetime)
-    location: *Location
     description_et: (text rich)
     description_en: (text rich)
     technical_info_et: (text rich)
@@ -239,6 +250,8 @@ Event: &Event
     video: (text)
     audio: (text)
     order: (number)
+    location_et: (text)
+    location_en: (text)
     remote_id: (UID)
 
 #News and Article

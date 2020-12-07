@@ -104,7 +104,7 @@ async function postToStrapi(data, model) {
 
 async function getFromStrapi(model) {
 
-    const _path = `http://${StrapiHost}/${model}`
+    const _path = `http://${StrapiHost}/${model}?_limit=-1`
 
     const options = {
         headers: { 'Content-Type': 'application/json' },
