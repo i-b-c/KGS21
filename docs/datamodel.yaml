@@ -112,9 +112,9 @@ Person: &Person
     last_name: (text)
     # first-name_last_name: (text, v6iks ise tekkida)
     picture: *StrapiMedia
-    e_mail: (text)
+    email: (text)
     phone_number: (text)
-    profession: (text)
+    occupation: (text)
     order: (number)
     # date_of_birth:
     # biography:
@@ -148,10 +148,12 @@ Banner: &Banner
     start: (datetime)
     end: (datetime)
 
-Tag: &Tag # loeng, tants, teater, prformance, video, n4itus
+Category: &Category # category loeng, tants, teater, prformance, video, n4itus
     slug: (UID, name_et)
     name_et: (text)
-    name_et: (text)
+    name_en: (text)
+    featured_on_front_page: (boolean)
+    remote_id: (UID)
 
 #Production
 Production: &Production
@@ -165,7 +167,7 @@ Production: &Production
     headline_et: (text)
     headline_en: (text)
     categories:
-        - *Tag
+        - *Category
     co_production: (boolean)
     co_production_importance: (number)
     artists:
@@ -263,7 +265,7 @@ Article: &Article
     publish_date: (datetime)
     first_page_promotion: (boolean)
     categories:
-        - *Tag
+        - *Category
     authors:
         - *Person
     original_images:
@@ -278,3 +280,18 @@ Article: &Article
     video: (text)
     content_et: (text rich)
     content_en: (text rich)
+
+Coverage: &Coverage
+    remote_id: (UID)
+    title: (text)
+    slug: (UID, title)
+    language: (enumeration)
+    performance: *Performance
+    source: (text)
+    url: (text)
+    media:
+        - *StrapiMedia
+    content: (text rich)
+    date_published: (datetime)
+
+
