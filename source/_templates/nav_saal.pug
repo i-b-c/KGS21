@@ -12,23 +12,23 @@ nav.navbar.navbar-default.navbar-fixed-top
 
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
-                li(class= self.route == 'about' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}about` ? 'active' : undefined )
                     a(href=`/${lang_path}about`) SAAL
-                li(class= self.route == 'program' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}program` ? 'active' : undefined )
                     a(href=`/${lang_path}program`) KAVA
-                li(class= self.route == 'co_productions' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}co_productions` ? 'active' : undefined )
                     a(href=`/${lang_path}co_productions`) KAASPRODUKTSIOONID
-                li(class= self.route == 'tours' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}tours` ? 'active' : undefined )
                     a(href=`/${lang_path}tours`) TUURID
-                li(class= self.route == 'residency' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}residency` ? 'active' : undefined )
                     a(href=`/${lang_path}residency`) RESIDENTUURID
-                li(class= self.route == 'projects' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}projects` ? 'active' : undefined )
                     a(href=`/${lang_path}projects`) PROJEKTID
-                li(class= self.route == 'magazine' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}magazine` ? 'active' : undefined )
                     a(href=`/${lang_path}magazine`) MAGASIN
-                li(class= self.route == 'festivals' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}festivals` ? 'active' : undefined )
                     a(href=`/${lang_path}festivals`) FESTIVALID
-                li(class= self.route == 'contact' ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}contact` ? 'active' : undefined )
                     a(href=`/${lang_path}contact`) INFO
 
             ul.nav.navbar-nav.navbar-right.social

@@ -18,7 +18,7 @@ html
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-        if (self.path && self.path === '/festival')
+        if (self.path && self.path.includes('/festival'))
             include nav_festival
         else
             include nav_saal
