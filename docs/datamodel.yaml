@@ -102,7 +102,7 @@ Location: &Location
     name: (text)
     slug: (UID, name)
     hall: *Hall
-    theater: *Organisation
+    # theater: *Organisation
     town: *Town
     country: *Country
     # address: (text)
@@ -152,6 +152,7 @@ Banner: &Banner
     end: (datetime)
 
 Category: &Category # category loeng, tants, teater, prformance, video, n4itus
+    _path: /categories
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
@@ -160,7 +161,7 @@ Category: &Category # category loeng, tants, teater, prformance, video, n4itus
 
 #Performance
 Performance: &Performance # performance #
-    _path: /productions
+    _path: /performances
     name_et: (text)
     name_en: (text)
     slug_et: (UID, name_et)
@@ -299,6 +300,7 @@ Article: &Article #Echo
     content_en: (text rich)
 
 Coverage: &Coverage
+    _path: /coverages
     remote_id: (UID)
     title: (text)
     slug: (UID, title)
