@@ -10,15 +10,17 @@ nav.navbar.navbar-default.navbar-fixed-top
 
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
-                li(class= self.path === `/${lang_path}festival/FESTIVAL_ID_HERE/about` ? 'active' : undefined )
-                    a(href=`/${lang_path}festival/FESTIVAL_ID_HERE/about`) FESTIVALIST
+                li(class= self.path === `/${lang_path}festival/${self.id}/about` ? 'active' : undefined )
+                    a(href=`/${lang_path}festival/${self.id}/about`) FESTIVALIST
                 if typeof festival !== 'undefined' && festival.coverage && Object.keys(festival.coverage).length
-                    li(class= self.path === `/${lang_path}festival/FESTIVAL_ID_HERE/press` ? 'active' : undefined )
-                        a(href=`/${lang_path}festival/FESTIVAL_ID_HERE/press`) PRESS
-                li(class= self.path === `/${lang_path}festival/FESTIVAL_ID_HERE/program` ? 'active' : undefined )
-                    a(href=`/${lang_path}festival/FESTIVAL_ID_HERE/program`) PROGRAMM
-                li(class= self.path === `/${lang_path}festival/FESTIVAL_ID_HERE/tickets` ? 'active' : undefined )
-                    a(href=`/${lang_path}festival/FESTIVAL_ID_HERE/tickets`) PILETID
+                    li(class= self.path === `/${lang_path}festival/${self.id}/press` ? 'active' : undefined )
+                        a(href=`/${lang_path}festival/${self.id}/press`) PRESS
+                li(class= (self.path === `/${lang_path}festival/${self.id}/program` || self.path === `/${lang_path}festival/${self.id}`) ? 'active' : undefined )
+                    script.
+                        console.log(`/#{lang_path}festival/#{self.id}/program`, ' - ', `#{self.path}`)
+                    a(href=`/${lang_path}festival/${self.id}/program`) PROGRAMM
+                li(class= self.path === `/${lang_path}festival/${self.id}/tickets` ? 'active' : undefined )
+                    a(href=`/${lang_path}festival/${self.id}/tickets`) PILETID
 
 
             ul.nav.navbar-nav.navbar-right.social
