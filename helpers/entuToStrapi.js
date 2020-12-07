@@ -40,7 +40,6 @@ async function bannerTypeToStrapi() {
     postToStrapi(banner_type, 'banner-types')
 }
 
-
 async function bannerTypeFromStrapi() {
     let data = await (getFromStrapi(banner - types))
     fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'bannerTypes.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
@@ -107,7 +106,6 @@ async function categoriesFromStrapi() {
     let data = await (getFromStrapi('categories'))
     fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'categories.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
-
 
 async function personToStrapi() {
     const dataJSON = path.join(entuDataPath, 'person.json')
@@ -273,7 +271,6 @@ async function locationsFromStrapi() {
     fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'locations.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
-
 async function articlesToStrapi() {
     const dataJSON = path.join(entuDataPath, 'echo.json')
 
@@ -417,6 +414,26 @@ async function eventsToStrapi() {
     postToStrapi(events, 'events')
 }
 
+async newsToStrapi() {
+
+    const dataJSON = path.join(entuDataPath, 'news.json')
+
+    let newsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+
+    let news = newsJSON.map(news_entity => {
+        return {
+            "remote_id": news_entity.id.toString(),
+            "width": news_entity.properties.width.values[0].db_value,
+            "height": news_entity.properties.height.values[0].db_value,
+            "created_at": news_entity.properties['entu-created-at'].values[0].db_value,
+            "updated_at": news_entity.properties['entu-changed-at'].values[0].db_value,
+            "published_at": news_entity.properties['entu-changed-at'].values[0].db_value,
+            "name": news_entity.displayname
+        }
+    })
+
+    postToStrapi(news, 'newscasts')
+}
 
 async function main() {
     // await bannerTypeToStrapi()
@@ -434,7 +451,8 @@ async function main() {
     // await locationToStrapi()
     // await locationsFromStrapi()
     // await articlesToStrapi()
-    await eventsToStrapi()
+    // await eventsToStrapi()
+    await newsToStrapi()
 
 }
 

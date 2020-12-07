@@ -269,6 +269,7 @@ Newscast: &Newscast
     related_media: (text)
     authors:
         - *Person
+    remote_id: (text)
 
 Article: &Article #Echo
     _path: /articles
