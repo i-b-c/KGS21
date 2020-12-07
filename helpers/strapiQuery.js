@@ -5,7 +5,8 @@ const http = require('http')
 const { strapiAuth } = require('./strapiAuth.js')
 const { spin } = require("./spinner")
 
-const STRAPI_URL = process.env['StrapiHost']
+// process.env['StrapiHost']
+const STRAPI_URL = '206.81.21.173'
 const DATAMODEL_PATH = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 const DATAMODEL = yaml.safeLoad(fs.readFileSync(DATAMODEL_PATH, 'utf8'))
 
@@ -18,7 +19,7 @@ async function strapiQuery(options, dataObject = false) {
         // console.log('Bearer', TOKEN)
     }
     options.headers['Authorization'] = `Bearer ${TOKEN}`
-    options['host'] = '206.81.21.173'
+    options['host'] = STRAPI_URL
     // options.timeout = 30000
 
     // console.log(options, JSON.stringify((dataObject) || ''))
