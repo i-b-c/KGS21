@@ -14,11 +14,11 @@ block content
                                     fefuncg(type="table" tablevalues="0 0.7764705882352941")
                                     fefuncb(type="table" tablevalues="0 0")
                                     fefunca(type="table" tablevalues="1 1")
-                        figure#slide-0(style='background-image: url("/images/placeholder.jpg"); filter: url("https://www.saal.ee/et/magazine/4057#filter-1607343038184"); height: 778px;' data-gradientmap-filter="filter-1607343038184")
+                        figure#slide-0(style='background-image: url("/assets/images/placeholder.jpg"); filter: url("https://www.saal.ee/et/magazine/4057#filter-1607343038184"); height: 778px;' data-gradientmap-filter="filter-1607343038184")
                         header.col-md-8
-                            p 21.01.2016
-                            h1.artist Etenduskunstide magasin
-                            p.subtitle Maike Lond Malmborg
+                            p= self.publish_date_string
+                            h1.artist= self[`title_${self.locale}`]
+                            p.subtitle= self.authors_cs
                         ul.event-categories
                 script.
                     var slide0 = document.getElementById('slide-0');
@@ -29,10 +29,7 @@ block content
                     .video-sound
                     .article.main-text.h3.col-sm-12.col-md-8.col-lg-8
                         p
-                            | Life is a bitch and then you die ütleb sõber kunstnik olukordades, mis etenduskunstide puhul tihti ette tuleb - proovipäev on konarlik, lava vales mõõdus, minibaar on tühi, pea on tühi või tagantjärgi tõde vastuolus kõige eelnevaga, mis arvasid teadvat. Aga see pole ju kõik!
-                            | Etenduskunstide magasin on koht, kus one linerid on tagaplaanis; koht, mis avab ukse kunstnike ja külaliste mõtteprotsessidesse; kus saavad sõna nii tegijad, kui vaatajad. Sest etendus, nimelt, on ainult killuke selles komplekses ja põnevas võrgustikus, mida me etenduskunstiks kutsume.
-                            | Me ootame kaastööd kõigilt, kes antud žanriga seotud kas vaataja, partneri või loojana. Ootame kaastööd inimestelt, kes pole harjunud kirjutama, kuid soovivad; professionaalsetelt kriitikutelt, kellele traditsiooniline leheruum jääb kitsaks; kunstnikelt avamaks uksi etendustes laiutavate märgisüsteemide mõistmiseks.
-                            | Kui soovid kaastööd teha, siis kirjuta magasin [at] saal.ee. Sinu materjal avaldatakse enamvähem toimetamata, sest see ruum ei ole harilik leheruum -  pigem võib mõelda sellest kui katsebaasist, kus ideede, mõtete, tähelepanekute ja vastukajaga saab luua etenduskunstide alati muutumises olevat avatut diskursust.
+                            | !{self.md(self[`content_${self.locale}`])}
                         .video-sound
                         .comments
                             .fb-comments.fb_iframe_widget.fb_iframe_widget_fluid_desktop(data-href="https://www.saal.ee/et/magazine/4057" data-width="100%" data-numposts="10" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1664471603808404&container_width=799&height=100&href=https%3A%2F%2Fwww.saal.ee%2Fet%2Fmagazine%2F4057&locale=et_EE&numposts=10&sdk=joey&version=v2.5&width=" style="width: 100%;")

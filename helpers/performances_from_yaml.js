@@ -11,8 +11,6 @@ const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance']
 const LANGUAGES = ['et', 'en']
 
-// fs.mkdirSync(performancesDir, { recursive: true })
-
 let performance_index_template = `/_templates/performance_index_template.pug`
 
 for (const lang of LANGUAGES) {
@@ -21,7 +19,12 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
         if (performance[`name_${lang}`] && performance.remote_id) {
-            performance.path = `${lang}/performance/${performance.remote_id}`
+
+            if (lang !== 'et') {
+                performance.path = `performance/${performance.remote_id}`
+            } else {
+                performance.path = `${lang}/performance/${performance.remote_id}`
+            }
 
             const performanceYAML = yaml.safeDump(performance, { 'indent': '4' });
             const performanceDir = path.join(performancesDir, performance.remote_id)
