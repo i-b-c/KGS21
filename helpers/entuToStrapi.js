@@ -3,7 +3,7 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const util = require('util')
 
-const { strapiQuery, postToStrapi, getFromStrapi } = require("./strapiQueryMod.js")
+const { strapiQuery, postToStrapi, putToStrapi, getFromStrapi } = require("./strapiQueryMod.js")
 
 
 const entuDataPath = path.join(__dirname, '..', 'data-transfer', 'from_entu')
@@ -135,6 +135,7 @@ async function peopleFromStrapi() {
     let data = await (getFromStrapi('people'))
     fs.writeFileSync(path.join(__dirname, '..', 'data-transfer', 'from_strapi', 'people.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
+let starpi_performance_id = ''
 
 async function performanceToStrapi() {
     const dataJSON = path.join(entuDataPath, 'performance.json')
@@ -144,21 +145,23 @@ async function performanceToStrapi() {
 
     let performances = performanceJSON.map(performance_entity => {
 
-        let performance_remote_id = (performance_entity.properties.category.values.length > 0 ? performance_entity.properties.category.values[0].db_value.toString() : null)
-        let strapi_category_id = strapi_categories.filter( strapi_category => {
-            if (performance_remote_id !== null){
-                return performance_entity.properties.category.values[0].db_value.toString().includes(strapi_category.remote_id)
-            }
-        } ).map( element => { return { id: element.id}})[0]
+        const performance_category_remote_ids = performance_entity.properties.category.values.map( entu_value => entu_value.db_value)
+        let performance_categories = strapi_categories.filter( strapi_category => {
+            return performance_category_remote_ids.includes(strapi_category.remote_id)
+        } ).map( strapi_category => { return { id: strapi_category.id}})
 
         let entu_premiere_time = ''
         if (performance_entity.properties['premiere-time'].values.length === 0 ){
             entu_premiere_time = null
-        }else if ( performance_entity.properties['premiere-time'].values[0].value === '' ) {
+        } else if ( performance_entity.properties['premiere-time'].values[0].value === '' ) {
             entu_premiere_time = null
         } else {
             entu_premiere_time = performance_entity.properties['premiere-time'].values[0].value
         }
+
+        starpi_performance_id = performances_from_strapi.filter( s_performance => {
+            return s_performance.remote_id === performance_entity.id.toString()
+        }).map( e => { return e.id })[0]
 
         return {
             "remote_id": performance_entity.id.toString(),
@@ -166,26 +169,36 @@ async function performanceToStrapi() {
             "name_en": ( performance_entity.properties['en-name'].values.length > 0 ? performance_entity.properties['en-name'].values[0].db_value : null ),
             "subtitle_et": ( performance_entity.properties['et-subtitle'].values.length > 0 ? performance_entity.properties['et-subtitle'].values[0].db_value : null ),
             "subtitle_en": ( performance_entity.properties['en-subtitle'].values.length > 0 ? performance_entity.properties['en-subtitle'].values[0].db_value : null ),
-            "categories": strapi_category_id,
+            "categories": performance_categories,
             "coproduction": performance_entity.properties.coprod.values.length > 0 ? performance_entity.properties.coprod.values[0].db_value : null,
             "coproduction_importance": ( performance_entity.properties.coprodOrdinal.values.length > 0 ? performance_entity.properties.coprodOrdinal.values[0].db_value : null ),
-            "artist": ( performance_entity.properties.artist.values.length > 0 ? performance_entity.properties.artist.values[0].db_value : null ),
-            "producer": ( performance_entity.properties.producer.values.length > 0 ? performance_entity.properties.producer.values[0].db_value : null ),
             "front_page_promotion": ( performance_entity.properties.featured.values.length > 0 ? performance_entity.properties.featured.values[0].db_value : null ),
             "purchase_description_et": ( performance_entity.properties['et-purchase-description'].values.length > 0 ? performance_entity.properties['et-purchase-description'].values[0].db_value : null ),
             "purchase_description_en": ( performance_entity.properties['en-purchase-description'].values.length > 0 ? performance_entity.properties['en-purchase-description'].values[0].db_value : null ),
-            "premiere": entu_premiere_time,
-            "other_works": ( performance_entity.properties.otherWork.values.length > 0 ? performance_entity.properties.otherWork.values[0].value : null ),
+            "X_premiere_time": entu_premiere_time,
             "description_et": ( performance_entity.properties['et-description'].values.length > 0 ? performance_entity.properties['et-description'].values[0].db_value : null ),
             "description_en": ( performance_entity.properties['en-description'].values.length > 0 ? performance_entity.properties['en-description'].values[0].db_value : null ),
             "technical_info_et": ( performance_entity.properties['et-technical-information'].values.length > 0 ? performance_entity.properties['et-technical-information'].values[0].db_value : null ),
-            "technical_info_en": ( performance_entity.properties['en-technical-information'].values.length > 0 ? performance_entity.properties['en-technical-information'].values[0].db_value : null )
+            "technical_info_en": ( performance_entity.properties['en-technical-information'].values.length > 0 ? performance_entity.properties['en-technical-information'].values[0].db_value : null ),
+            "X_artist": ( performance_entity.properties.artist.values.length > 0 ? performance_entity.properties.artist.values[0].db_value : '' ),
+            "X_producer": ( performance_entity.properties.producer.values.length > 0 ? performance_entity.properties.producer.values[0].db_value : '' ),
+            "X_other_works": ( performance_entity.properties.otherWork.values.length > 0 ? performance_entity.properties.otherWork.values[0].value : '' ),
+            "X_headline_et": ( performance_entity.properties['et-supertitle'].values.length > 0 ? performance_entity.properties['et-supertitle'].values[0].db_value : null ),
+            "X_headline_en": ( performance_entity.properties['en-supertitle'].values.length > 0 ? performance_entity.properties['en-supertitle'].values[0].db_value : null ),
+            "id": starpi_performance_id
 
         }
-    })
-    console.log(performances)
 
-    postToStrapi(performances, 'performances')
+    })
+    console.log(JSON.stringify(performances.filter(p => p.id === 364), null, 4))
+
+    // PUT
+    putToStrapi(performances, 'performances')
+
+
+    // POST
+    // postToStrapi(performances, 'performances')
+
 }
 
 async function performanceFromStrapi() {
@@ -245,23 +258,21 @@ async function locationToStrapi() {
 
         let entu_name = (location_entity.properties['et-name'].values.length > 0 ? location_entity.properties['et-name'].values[0].db_value : null)
 
-        let strapi_hall_id = halls_from_strapi.filter( strapi_hall => {
-            if (entu_name !== null){
-                return location_entity.properties['et-name'].values[0].db_value.toString().includes(strapi_hall.name_et)
-            }
-        } ).map( element => { return { id: element.id}})[0]
+        // let strapi_hall_id = halls_from_strapi.filter( strapi_hall => {
+        //     if (entu_name !== null){
+        //         return location_entity.properties['et-name'].values[0].db_value.toString().includes(strapi_hall.name_et)
+        //     }
+        // } ).map( element => { return { id: element.id}})[0]
 
         return {
             "remote_id": location_entity.id.toString(),
             "name_et": entu_name,
             "name_en": (location_entity.properties['en-name'].values.length > 0 ? location_entity.properties['en-name'].values[0].db_value : null),
-            "hall": strapi_hall_id
-            // "theater":
-            // "town":
-            // "country":
+            "description_et": (location_entity.properties['et-description'].values.length > 0 ? location_entity.properties['et-description'].values[0].db_value : null),
+            "description_en": (location_entity.properties['en-description'].values.length > 0 ? location_entity.properties['en-description'].values[0].db_value : null)
         }
     })
-    // console.log(location);
+    // console.log(locations)
 
     postToStrapi(locations, 'locations')
 }
@@ -414,7 +425,7 @@ async function eventsToStrapi() {
     postToStrapi(events, 'events')
 }
 
-async newsToStrapi() {
+async function newsToStrapi() {
 
     const dataJSON = path.join(entuDataPath, 'news.json')
 
@@ -423,14 +434,20 @@ async newsToStrapi() {
     let news = newsJSON.map(news_entity => {
         return {
             "remote_id": news_entity.id.toString(),
-            "width": news_entity.properties.width.values[0].db_value,
-            "height": news_entity.properties.height.values[0].db_value,
-            "created_at": news_entity.properties['entu-created-at'].values[0].db_value,
-            "updated_at": news_entity.properties['entu-changed-at'].values[0].db_value,
-            "published_at": news_entity.properties['entu-changed-at'].values[0].db_value,
-            "name": news_entity.displayname
+            "title_et": ( news_entity.properties['et-title'].values.length > 0 ? news_entity.properties['et-title'].values[0].db_value : null ),
+            "title_en": ( news_entity.properties['en-title'].values.length > 0 ? news_entity.properties['en-title'].values[0].db_value : null ),
+            "publish_time":( news_entity.properties.time.values.length > 0 ? news_entity.properties.time.values[0].db_value : null ),
+            "content_et": ( news_entity.properties['et-body'].values.length > 0 ? news_entity.properties['et-body'].values[0].db_value : null ),
+            "content_en": ( news_entity.properties['en-body'].values.length > 0 ? news_entity.properties['en-body'].values[0].db_value : null ),
+            "related_media":( news_entity.properties['sw-media'].values.length > 0 ? news_entity.properties['sw-media'].values[0].db_value : null ),
+
+            "created_at": ( news_entity.properties['entu-created-at'].values.length > 0 ? news_entity.properties['entu-created-at'].values[0].db_value : null ),
+            "updated_at": ( news_entity.properties['entu-changed-at'].values.length > 0 ? news_entity.properties['entu-changed-at'].values[0].db_value : null ),
+            "published_at": ( news_entity.properties['entu-changed-at'].values.length > 0 ? news_entity.properties['entu-changed-at'].values[0].db_value : null )
+
         }
     })
+    // console.log(util.inspect(news, null, 4))
 
     postToStrapi(news, 'newscasts')
 }
@@ -443,7 +460,7 @@ async function main() {
     // await categoriesFromStrapi()
     // await personToStrapi()
     // await peopleFromStrapi()
-    // await performanceToStrapi()
+    await performanceToStrapi()
     // await performanceFromStrapi()
     // await coveragesToStrapi()
     // await coveragesFromStrapi()
@@ -452,7 +469,7 @@ async function main() {
     // await locationsFromStrapi()
     // await articlesToStrapi()
     // await eventsToStrapi()
-    await newsToStrapi()
+    // await newsToStrapi()
 
 }
 

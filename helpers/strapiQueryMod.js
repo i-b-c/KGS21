@@ -94,7 +94,25 @@ async function postToStrapi(data, model) {
             path: _path,
             method: 'POST'
         }
-    console.log(element);
+    console.log(element)
+
+    results.push(await strapiQuery(options, element))
+    }
+
+    return results
+}
+
+async function putToStrapi(data, model) {
+
+    let _path = `http://${StrapiHost}/${model}`
+    let results = []
+    for (const element of data) {
+        const options = {
+            headers: { 'Content-Type': 'application/json' },
+            path: _path + '/' + element.strapi_id,
+            method: 'PUT'
+        }
+    console.log(element, options.path)
 
     results.push(await strapiQuery(options, element))
     }
@@ -117,32 +135,8 @@ async function getFromStrapi(model) {
     return strapi_data
 }
 
-// async function putModel(model, data) {
-//     if (! model in DATAMODEL) {
-//         console.log('WARNING: no such model: "', model, '".' )
-//         return false
-//     }
-//     if (! '_path' in DATAMODEL[model]) {
-//         console.log('WARNING: no path to model: "', model, '".' )
-//         return false
-//     }
-
-//     const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
-//     let results = []
-//     for (const element of data) {
-//         const options = {
-//             headers: { 'Content-Type': 'application/json' },
-//             path: _path + '/' + element.id,
-//             method: 'PUT'
-//         }
-//         // console.log('=== putModel', options, element)
-//         results.push(await strapiQuery(options, element))
-//     }
-//     return results
-// }
-
 
 exports.strapiQuery = strapiQuery
 exports.postToStrapi = postToStrapi
+exports.putToStrapi = putToStrapi
 exports.getFromStrapi = getFromStrapi
-// exports.putModel = putModel
