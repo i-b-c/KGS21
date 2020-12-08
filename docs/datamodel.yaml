@@ -102,7 +102,7 @@ Location: &Location
     name: (text)
     slug: (UID, name)
     hall: *Hall
-    theater: *Organisation
+    # theater: *Organisation
     town: *Town
     country: *Country
     # address: (text)
@@ -160,7 +160,7 @@ Category: &Category # category loeng, tants, teater, prformance, video, n4itus
 
 #Performance
 Performance: &Performance # performance #
-    _path: /productions
+    _path: /performances
     name_et: (text)
     name_en: (text)
     slug_et: (UID, name_et)
