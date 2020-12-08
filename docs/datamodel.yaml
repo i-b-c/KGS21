@@ -257,10 +257,10 @@ Event: &Event
 #News and Article
 Newscast: &Newscast
     _path: /newscasts
-    name_et: (text)
-    name_en: (text)
-    slug_et: (UID, name_et)
-    slug_en: (UID, name_en)
+    title_et: (text)
+    title_en: (text)
+    slug_et: (UID, title_et)
+    slug_en: (UID, title_en)
     publish_time: (datetime)
     content_et: (text rich)
     content_en: (text rich)
