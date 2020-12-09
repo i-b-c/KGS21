@@ -551,7 +551,7 @@ async function main() {
     // await categoriesFromStrapi()
     // await personToStrapi()
     // await peopleFromStrapi()
-    // await performanceToStrapi()
+    await performanceToStrapi()
     // await performanceFromStrapi()
     // await coveragesToStrapi()
     // await coveragesFromStrapi()
