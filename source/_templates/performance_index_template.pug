@@ -1,4 +1,5 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
@@ -15,10 +16,24 @@ block content
                                 fefunca(type="table" tablevalues="1 1")
                     figure#slide-6858(style='background-image: url("https://saal.entu.ee/api2/file-21621"); filter: url("https://www.saal.ee/et/performance/6858#filter-1607341824491"); height: 768px;' data-gradientmap-filter="filter-1607341824491")
                     header.col-md-8
-                        p Baltoscandal 2020 esitleb:
+                        if self[`X_headline_${self.locale}`]
+                            p= self[`X_headline_${self.locale}`]
                         h1
-                            span.artist Stefan Kaegi / Rimini Protokoll
-                        h1 !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                            if self.X_artist
+                                        span.artist= self.X_artist
+                            if self.X_producer
+                                span.producer= self.X_producer
+                            if self[`X_town_${self.locale}`]
+                                span.town= self[`X_town_${self.locale}`]
+
+                        h1= self[`name_${self.locale}`]
+
+                        if self[`subtitle_${self.locale}`]
+                            p= self[`subtitle_${self.locale}`]
+
+
+                    if self[`name_${self.locale}`]
+                        h1= self[`name_${self.locale}`]
                     ul.event-categories
                         li.text-uppercase.h3.unactive
                             span
@@ -47,91 +62,30 @@ block content
                         GradientMaps.applyGradientMap(slide6858, gradientMap);
         .row.front-page-margin
             aside.col-md-12.col-lg-3
-                .meta-info
-                    p
-                        | Idee, tekst ja lavastus:
-                        strong Stefan Kaegi
-                        br
-                        | Tekst / keha / hääl:
-                        strong Thomas Melle
-                        br
-                        | Tehnika:
-                        strong Evi Bauer
-                        br
-                        | Animatroonika: Chiscreatures Filmeffects GmbH
-                        br
-                        | Silikoonpea tootmine ja viimistlemine / jumestus ja soeng:
-                        strong Tommy Opatz
-                        br
-                        | Dramaturg:
-                        strong Martin Valdés-Stauber
-                        br
-                        | Videokujundus:
-                        strong Mikko Gaestel
-                        br
-                        | Muusika:
-                        strong Nicolas Neecke
-                        br
-                        | Produktsioonijuht Rimini Protokoll / väljasõidul:
-                        strong Epona Hamdan
-                        br
-                        | Valguskujundus / väljasõidul:
-                        strong Robert Läßig, Martin Schwemin, Lisa Eßwein
-                        br
-                        | Heli- ja videokujundus / väljasõidul:
-                        strong Jaromir Zezula, Nikolas Neecke
-                        br
-                        br
-                        | Rimini Protokolli lavastuse „Õõvaorg” on originaalis produtseerinud Münchner Kammersipele, kaasproduktsioon Berliner Festspie / immersion, Donaufestival (Krems), Feodor Elutine (Moskva), FOG Triennale Milano Performing Arts (Milano), Temporada Alta – Festival de Tado de Catalunya (Girona), SPRING Utrecht
-                        br
-                        | Toetajad: Goethe Instituut, Kultuurkapital, Kultuuriministeerium ja Rakvere linn
-                        br
-                        | Lavastus on inglise keeles, eestikeelse tõlkega
-                        br
-                        br
-                        | Etendused Kanuti Gildi SAALis 2 / 3.12 kell 18.00 ja 20.30 ning Rakvere teatri väikeses saalis 5.12 16.00 ja 19.00
+                if self[`technical_info_${self.locale}`]
+                    .meta-info
+                        p
+                            +format(self[`technical_info_${self.locale}`])
+
             article.readMore.main-text.col-md-8.col-lg-6.h3
                 p
-                    | Me oleme harjunud mõtlema robotitest kui masinatest, mille eesmärgiks on täita ülesandeid tõhusalt ja täpselt. Saksa tööstuses näevad nad harva inimeste moodi välja – et vältida emotsionaalseid probleeme. Aasias vastupidiselt on humanoidroboteid arendatud juba mõnda aega, näiteks hooldajate ja seksuaalpartneritena. Väline sarnasus inimestega muudab masinate aktsepteerimise lihtsamaks. Kuid siiski – kui masin on inimesele liiga sarnane, hakkab tekkima usaldamatus – mis on inimene ja mis masin? Jaapani robotite uurijad kutsuvad seda kummalist nähtust nimega „õõvaorg” ehk „võõrastamise org”. Lavastus „Õõvaorg” vaatleb rahutustegevat vastasseisu inimese ja roboti vahel olukorras, kus piir aina hägustub.
-                    br
-                    | Stefan Kaegi, teatritrupi Rimini Protokoll juht, töötas lavastuse „Õõvaorg” tarbeks esimest korda trupi ajaloos koos näitekirjanikuga: kirjanik Thomas Melle lubas teha endast humanoidroboti. Android võtab lavastuses autori koha ning küsib – mida tähendab see originaalile, kui koopia võtab tema koha üle? Kas originaal õpib läbi elektroonilise teisiku ennast paremini tundma? Kas originaal ja koopia võistlevad omavahel või aitavad teineteist?
-                    br
-                    br
-                    strong Stefan Kaegi
-                    |  on toonud lavale dokumentaallavastusi, kuuldemänge ja kohaspetsiifilisi lavastusi erinevate kooslustega, mis tihti viitavad majanduslikele suhetele ja nende inimmõjule. Näiteks on ta tuuritanud lavastusega, kus osalesid kaks Bulgaaria rekkajuhti ja teinud lavastuse inimestega, kel pole enam kaua jäänud elada. 2014 aastal osales Rimini Protokoll Talveöö Unenäo festivalil lavastusega „Remote Tallinn”.
-                    | 2007aastal pälvis Rimini Protokoll Fausti teatriauhinna ning 2008. aastal Euroopa auhinna „New Realities in Theatre“, 2011. aastal saadi hõbelõvi Veneetsia teatribiennaalil.
+                    +format(self[`description_${self.locale}`])
+
             aside.col-md-4.col-lg-3
-                .past
-                    h2 Olnud
-                    .row
-                        .col-sm-6.col-md-5.col-lg-4
-                            p 03.12.2020
-                        .col-sm-6.col-md-7.col-lg-8
-                            p !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                            p Kanuti Gildi SAAL
-                        .col-sm-12.col-md-12.col-lg-12
-                            hr
-                        .col-sm-6.col-md-5.col-lg-4
-                            p 03.12.2020
-                        .col-sm-6.col-md-7.col-lg-8
-                            p !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                            p Kanuti Gildi SAAL
-                        .col-sm-12.col-md-12.col-lg-12
-                            hr
-                        .col-sm-6.col-md-5.col-lg-4
-                            p 02.12.2020
-                        .col-sm-6.col-md-7.col-lg-8
-                            p !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                            p Kanuti Gildi SAAL
-                        .col-sm-12.col-md-12.col-lg-12
-                            hr
-                        .col-sm-6.col-md-5.col-lg-4
-                            p 02.12.2020
-                        .col-sm-6.col-md-7.col-lg-8
-                            p !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                            p Kanuti Gildi SAAL
-                        .col-sm-12.col-md-12.col-lg-12
-                            hr
+                if self.events && self.events.length
+                    .past
+                        h2 Olnud
+                        .row
+                            each event in self.events
+                                .col-sm-6.col-md-5.col-lg-4
+                                    p= event.start_date_string
+                                .col-sm-6.col-md-7.col-lg-8
+                                    if self[`name_${self.locale}`]
+                                        p= self[`name_${self.locale}`]
+                                    p Kanuti Gildi SAAL
+                                .col-sm-12.col-md-12.col-lg-12
+                                    hr
+
         .row.front-page-margin
             .col-md-6
                 .gallery

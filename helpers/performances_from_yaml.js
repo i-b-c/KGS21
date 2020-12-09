@@ -18,12 +18,19 @@ for (const lang of LANGUAGES) {
     let allData = []
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
-        if (performance[`name_${lang}`] && performance.remote_id) {
+        if (performance.remote_id) {
 
             if (lang !== 'et') {
                 performance.path = `performance/${performance.remote_id}`
             } else {
                 performance.path = `${lang}/performance/${performance.remote_id}`
+            }
+
+            if (performance.events){
+                for (const event of performance.events){
+                    let eventDate = new Date(event.start_time)
+                    event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
+                }
             }
 
             const performanceYAML = yaml.safeDump(performance, { 'indent': '4' });
@@ -38,6 +45,9 @@ for (const lang of LANGUAGES) {
                 allData.push(performance)
             } else {
                 console.log(`ERROR: Performance index template missing`);
+            }
+            if (performance[`X_headline_${lang}`]){
+                console.log(`${performance.id}, ${performance.remote_id}`);
             }
         }
     }
