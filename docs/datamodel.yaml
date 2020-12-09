@@ -77,16 +77,16 @@ Town: &Town
     name_et: (text)
     name_en: (text)
 
-# Organisation:
+Organisation:
 #     _path: /organisations
-#     slug: (UID, name_et)
-#     name_et: (text)
-#     name_en: (text)
-#     description_et: (text)
-#     description_en: (text)
-#     # logo: *StrapiMedia
-#     url: (text) #saad entu evendi alt location url
-#     address: (text)
+    slug: (UID, name_et)
+    name_et: (text)
+    name_en: (text)
+    description_et: (text)
+    description_en: (text)
+    # logo: *StrapiMedia
+    url: (text) #saad entu evendi alt location url
+    address: (text)
 
 Hall: &Hall
     # _path: /halls
@@ -159,11 +159,62 @@ Banner: &Banner
     end: (datetime)
 
 Category: &Category # category loeng, tants, teater, prformance, video, n4itus
-    _path: /categories
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
     featured_on_front_page: (boolean)
+    remote_id: (UID)
+
+#Event
+TicketInfo: &TicketInfo
+    # _path: /ticket-infos
+    name: (text)
+    slug: (UID, name)
+    price: (number)
+    discount_price: (number)
+    price_on_spot: (number)
+    free_admission: (boolean)
+    PL_event_id: (number)
+    ticketing_url_et: (text)
+    ticketing_url_en: (text)
+
+Event: &Event # etendus
+    _path: /events
+    type: (Enumeration) # programm, residentuur, festival, tuur
+    name_et: (text)
+    name_en: (text)
+    slug_et: (UID, name_et)
+    slug_en: (UID, name_en)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    resident: (text)
+    # performance: *Performance
+    hide_from_page: (boolean)
+    canceled: (boolean)
+    conversation: (boolean) # peaks olema suurem ? inimene ka kohe kaasa kogu infoga? mida siin m6eldud, vestlus enne etendust?
+    ticket_info: *TicketInfo
+    X_ticket_info:
+        pl_link_et: (text)
+        pl_link_en: (text)
+        ticket_api: (text)
+        min_price: (decimal)
+        sales_status: (text)
+        pl_id: (text)
+        price: (text)
+        onsite_price: (text)
+    start_time: (datetime)
+    end_time: (datetime)
+    duration: (datetime)
+    description_et: (text rich)
+    description_en: (text rich)
+    technical_info_et: (text rich)
+    technical_info_en: (text rich)
+    online: (text)
+    video: (text)
+    audio: (text)
+    order: (number)
+    location_et: (text)
+    location_en: (text)
     remote_id: (UID)
 
 #Performance
@@ -208,59 +259,10 @@ Performance: &Performance # performance #lavastus
         - *Person
     producers:
         - *Person
+    events:
+        - *Event
     remote_id: (UID)
 
-#Event
-TicketInfo: &TicketInfo
-    _path: /ticket-infos
-    name: (text)
-    slug: (UID, name)
-    price: (number)
-    discount_price: (number)
-    price_on_spot: (number)
-    free_admission: (boolean)
-    PL_event_id: (number)
-    ticketing_url_et: (text)
-    ticketing_url_en: (text)
-
-Event: &Event #
-    _path: /events
-    type: (Enumeration) # programm, residentuur, festival, tuur
-    name_et: (text)
-    name_en: (text)
-    slug_et: (UID, name_et)
-    slug_en: (UID, name_en)
-    subtitle_et: (text)
-    subtitle_en: (text)
-    resident: (text)
-    performance: *Performance
-    hide_from_page: (boolean)
-    canceled: (boolean)
-    conversation: (boolean) # peaks olema suurem ? inimene ka kohe kaasa kogu infoga? mida siin m6eldud, vestlus enne etendust?
-    ticket_info: *TicketInfo
-    X_ticket_info:
-        pl_link_et: (text)
-        pl_link_en: (text)
-        ticket_api: (text)
-        min_price: (decimal)
-        sales_status: (text)
-        pl_id: (text)
-        price: (text)
-        onsite_price: (text)
-    start_time: (datetime)
-    end_time: (datetime)
-    duration: (datetime)
-    description_et: (text rich)
-    description_en: (text rich)
-    technical_info_et: (text rich)
-    technical_info_en: (text rich)
-    online: (text)
-    video: (text)
-    audio: (text)
-    order: (number)
-    location_et: (text)
-    location_en: (text)
-    remote_id: (UID)
 
 #News and Article
 Newscast: &Newscast
@@ -307,7 +309,6 @@ Article: &Article #Echo
     content_en: (text rich)
 
 Coverage: &Coverage
-    _path: /coverages
     remote_id: (UID)
     title: (text)
     slug: (UID, title)
