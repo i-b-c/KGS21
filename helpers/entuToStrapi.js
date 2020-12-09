@@ -17,7 +17,7 @@ const coverages_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDat
 const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'events.yaml')))
 const halls_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'halls.yaml')))
 const locations_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'locations.yaml')))
-const news_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'newscasts.yaml')))
+const news_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'news.yaml')))
 const people_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'people.yaml')))
 const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'performances.yaml')))
 
@@ -230,11 +230,11 @@ async function performanceToStrapi() {
 
     })
     // console.log(JSON.stringify(performances.filter(p => p.X_town_et), null, 4))
-    // console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id).join("\n"))
+    console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id + ' ' + t.id).join("\n"))
 
 
     // PUT
-    putToStrapi(performances, 'performances')
+    // putToStrapi(performances, 'performances')
 
     // POST
     // postToStrapi(performances, 'performances')
@@ -536,10 +536,10 @@ async function newsToStrapi() {
     // postToStrapi(news, 'newscasts')
 }
 
-async function fromStrapi(model) {
-    let data = await (getFromStrapi(model))
-    fs.writeFileSync(path.join( strapiDataPath, `${model}.yaml`), yaml.safeDump(data, { 'indent': '4' }), "utf8")
-    // console.log(path.join( strapiDataPath, `${model}.yaml`), yaml.safeDump(data, { 'indent': '4' }), "utf8");
+
+async function newsFromStrapi() {
+    let data = await (getFromStrapi('newscasts'))
+    fs.writeFileSync(path.join( strapiDataPath, 'news.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function main() {
@@ -563,7 +563,6 @@ async function main() {
     // await eventsToStrapi()
     // await eventsFromStrapi()
     // await newsToStrapi()
-    await fromStrapi('newscasts')
 
 }
 
