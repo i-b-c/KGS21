@@ -9,14 +9,17 @@ const { strapiQuery, postToStrapi, putToStrapi, getFromStrapi } = require("./str
 const entuDataPath = path.join(__dirname, '..', 'data-transfer', 'from_entu')
 const strapiDataPath = path.join(__dirname, '..', 'data-transfer', 'from_strapi')
 
-const people_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'people.yaml')))
-const categories_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'categories.yaml')))
+const articles_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'articles.yaml')))
+const banners_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'banners.yaml')))
 const strapi_banner_types = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'bannerTypes.yaml')))
-const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'performances.yaml')))
-const locations_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'locations.yaml')))
-const halls_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'halls.yaml')))
+const categories_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'categories.yaml')))
+const coverages_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'coverages.yaml')))
 const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'events.yaml')))
+const halls_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'halls.yaml')))
+const locations_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'locations.yaml')))
 const news_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'news.yaml')))
+const people_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'people.yaml')))
+const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join( strapiDataPath, 'performances.yaml')))
 
 
 async function bannerTypeToStrapi() {
@@ -40,7 +43,7 @@ async function bannerTypeToStrapi() {
 }
 
 async function bannerTypeFromStrapi() {
-    let data = await (getFromStrapi(banner - types))
+    let data = await (getFromStrapi('banner-types'))
     fs.writeFileSync(path.join( strapiDataPath, 'bannerTypes.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
@@ -60,6 +63,10 @@ async function bannerToStrapi() {
             }
         })[0]
 
+        starpi_banner_id = banners_from_strapi.filter( s_banner => {
+            return s_banner.remote_id === banner_entity.id.toString()
+        }).map( e => { return e.id })[0]
+
         return {
             "remote_id": banner_entity.id.toString(),
             // "image": { // hetkel ei impordi
@@ -73,13 +80,23 @@ async function bannerToStrapi() {
             "published_at": banner_entity.properties['entu-changed-at'].values[0].db_value,
             "name": banner_entity.displayname,
             "start": (banner_entity.properties.start.values.length > 0 ? banner_entity.properties.start.values[0].db_value : null),
-            "end": (banner_entity.properties.end.values.length > 0 ? banner_entity.properties.end.values[0].db_value : null)
+            "end": (banner_entity.properties.end.values.length > 0 ? banner_entity.properties.end.values[0].db_value : null),
+            "id": starpi_banner_id
         }
     })
 
     // console.log(util.inspect(banner, null, 4))
 
-    postToStrapi(banner, 'banners')
+    // PUT
+    putToStrapi(banner, 'banners')
+
+    // POST
+    // postToStrapi(banner, 'banners')
+}
+
+async function bannersFromStrapi() {
+    let data = await (getFromStrapi('banner-types'))
+    fs.writeFileSync(path.join( strapiDataPath, 'banners.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function categoriesToStrapi() {
@@ -88,17 +105,28 @@ async function categoriesToStrapi() {
     let categoryJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
 
+
     let category = categoryJSON.map(category_entity => {
+
+        starpi_category_id = categories_from_strapi.filter( s_category => {
+            return s_category.remote_id === category_entity.id.toString()
+        }).map( e => { return e.id })[0]
+
         return {
             "remote_id": category_entity.id.toString(),
             "name_et": category_entity.properties['et-name'].values[0].db_value,
             "name_en": category_entity.properties['en-name'].values[0].db_value,
-            "featured_on_front_page": false
+            "featured_on_front_page": false,
+            "id": starpi_category_id
         }
     })
     // console.log(category);
 
-    postToStrapi(category, 'categories')
+    // PUT
+    putToStrapi(category, 'categories')
+
+    // POST
+    // postToStrapi(category, 'categories')
 }
 
 async function categoriesFromStrapi() {
@@ -113,6 +141,11 @@ async function personToStrapi() {
 
     let count = 0
     let people = personJSON.map(person_entity => {
+
+        starpi_person_id = people_from_strapi.filter( s_person => {
+            return s_person.remote_id === person_entity.id.toString()
+        }).map( e => { return e.id })[0]
+
         count += 1
         return {
             "remote_id": person_entity.id.toString(),
@@ -121,13 +154,18 @@ async function personToStrapi() {
             "email": (person_entity.properties.email.values.length > 0 ? person_entity.properties.email.values[0].db_value : null),
             'phone_number': (person_entity.properties.phone.values.length > 0 ? person_entity.properties.phone.values[0].db_value : null),
             'occupation': (person_entity.properties.occupation.values.length > 0 ? person_entity.properties.occupation.values[0].db_value : null),
-            "order": (person_entity.properties.ordinal.values.length > 0 ? person_entity.properties.ordinal.values[0].db_value : null)
+            "order": (person_entity.properties.ordinal.values.length > 0 ? person_entity.properties.ordinal.values[0].db_value : null),
+            "id": starpi_person_id
 
         }
     })
     // console.log(people, count);
 
-    postToStrapi(people, 'people')
+    // PUT
+    putToStrapi(people, 'people')
+
+    // POST
+    // postToStrapi(people, 'people')
 }
 
 async function peopleFromStrapi() {
@@ -194,7 +232,6 @@ async function performanceToStrapi() {
     // PUT
     putToStrapi(performances, 'performances')
 
-
     // POST
     // postToStrapi(performances, 'performances')
 
@@ -222,6 +259,10 @@ async function coveragesToStrapi() {
             relations.filter(relation => coverage_id === relation.coverage_id)[0] || {}
         ).performance_id || null
 
+        starpi_coverage_id = coverages_from_strapi.filter( s_coverage => {
+            return s_coverage.remote_id === coverage_entity.id.toString()
+        }).map( e => { return e.id })[0]
+
         return {
             "remote_id": coverage_id,
             "title": (coverage_entity.properties.title.values.length > 0 ? coverage_entity.properties.title.values[0].db_value : null),
@@ -229,12 +270,16 @@ async function coveragesToStrapi() {
             "source": (coverage_entity.properties.source.values.length > 0 ? coverage_entity.properties.source.values[0].db_value : null),
             "url": (coverage_entity.properties.url.values.length > 0 ? coverage_entity.properties.url.values[0].db_value : null),
             "content": (coverage_entity.properties.text.values.length > 0 ? coverage_entity.properties.text.values[0].db_value : null),
-            "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null)
+            "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null),
+            "id": starpi_coverage_id
         }
     })
     // console.log(coverages);
 
-    postToStrapi(coverages, 'coverages')
+    // PUT
+    putToStrapi(coverages, 'coverages')
+
+    // postToStrapi(coverages, 'coverages')
 }
 
 async function coveragesFromStrapi() {
@@ -263,17 +308,26 @@ async function locationToStrapi() {
         //     }
         // } ).map( element => { return { id: element.id}})[0]
 
+        starpi_location_id = locations_from_strapi.filter( s_location => {
+            return s_location.remote_id === location_entity.id.toString()
+        }).map( e => { return e.id })[0]
+
         return {
             "remote_id": location_entity.id.toString(),
             "name_et": entu_name,
             "name_en": (location_entity.properties['en-name'].values.length > 0 ? location_entity.properties['en-name'].values[0].db_value : null),
             "description_et": (location_entity.properties['et-description'].values.length > 0 ? location_entity.properties['et-description'].values[0].db_value : null),
-            "description_en": (location_entity.properties['en-description'].values.length > 0 ? location_entity.properties['en-description'].values[0].db_value : null)
+            "description_en": (location_entity.properties['en-description'].values.length > 0 ? location_entity.properties['en-description'].values[0].db_value : null),
+            "id": starpi_location_id
         }
     })
     // console.log(locations)
 
-    postToStrapi(locations, 'locations')
+    // PUT
+    putToStrapi(locations, 'locations')
+
+    // POST
+    // postToStrapi(locations, 'locations')
 }
 
 async function locationsFromStrapi() {
@@ -306,6 +360,10 @@ async function articlesToStrapi() {
             return { id: strapi_person_id}
         })
 
+        starpi_article_id = articles_from_strapi.filter( s_article => {
+            return s_article.remote_id === article_entity.id.toString()
+        }).map( e => { return e.id })[0]
+
 
         return {
             "remote_id": article_entity.id.toString(),
@@ -326,13 +384,23 @@ async function articlesToStrapi() {
 
             "created_at": article_entity.properties['entu-created-at'].values[0].db_value,
             "updated_at": article_entity.properties['entu-changed-at'].values[0].db_value,
-            "published_at": article_entity.properties['entu-changed-at'].values[0].db_value
+            "published_at": article_entity.properties['entu-changed-at'].values[0].db_value,
+            "id": starpi_article_id
 
         }
     })
     // console.log(util.inspect(articles, null, 4))
 
-    postToStrapi(articles, 'articles')
+    // PUT
+    putToStrapi(articles, 'articles')
+
+    // POST
+    // postToStrapi(articles, 'articles')
+}
+
+async function articlesFromStrapi() {
+    let data = await (getFromStrapi('articles'))
+    fs.writeFileSync(path.join( strapiDataPath, 'articles.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function eventsToStrapi() {
@@ -473,6 +541,7 @@ async function main() {
     // await bannerTypeToStrapi()
     // await bannerTypeFromStrapi()
     // await bannerToStrapi()
+    // await bannersFromStrapi()
     // await categoriesToStrapi()
     // await categoriesFromStrapi()
     // await personToStrapi()
@@ -485,6 +554,7 @@ async function main() {
     // await locationToStrapi()
     // await locationsFromStrapi()
     // await articlesToStrapi()
+    // await articlesFromStrapi()
     // await eventsToStrapi()
     // await eventsFromStrapi()
     // await newsToStrapi()

@@ -77,16 +77,16 @@ Town: &Town
     name_et: (text)
     name_en: (text)
 
-# Organisation:
+Organisation:
 #     _path: /organisations
-#     slug: (UID, name_et)
-#     name_et: (text)
-#     name_en: (text)
-#     description_et: (text)
-#     description_en: (text)
-#     # logo: *StrapiMedia
-#     url: (text) #saad entu evendi alt location url
-#     address: (text)
+    slug: (UID, name_et)
+    name_et: (text)
+    name_en: (text)
+    description_et: (text)
+    description_en: (text)
+    # logo: *StrapiMedia
+    url: (text) #saad entu evendi alt location url
+    address: (text)
 
 Hall: &Hall
     # _path: /halls
@@ -207,11 +207,13 @@ Performance: &Performance # performance #lavastus
         - *Person
     producers:
         - *Person
+    # events:
+    #     - *Event
     remote_id: (UID)
 
 #Event
 TicketInfo: &TicketInfo
-    _path: /ticket-infos
+    # _path: /ticket-infos
     name: (text)
     slug: (UID, name)
     price: (number)
@@ -222,7 +224,7 @@ TicketInfo: &TicketInfo
     ticketing_url_et: (text)
     ticketing_url_en: (text)
 
-Event: &Event #
+Event: &Event # etendus
     _path: /events
     type: (Enumeration) # programm, residentuur, festival, tuur
     name_et: (text)
