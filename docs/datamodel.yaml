@@ -166,7 +166,7 @@ Category: &Category # category loeng, tants, teater, prformance, video, n4itus
     remote_id: (UID)
 
 #Performance
-Performance: &Performance # performance #
+Performance: &Performance # performance #lavastus
     _path: /performances
     name_et: (text)
     name_en: (text)
@@ -222,7 +222,7 @@ TicketInfo: &TicketInfo
     ticketing_url_et: (text)
     ticketing_url_en: (text)
 
-Event: &Event
+Event: &Event #
     _path: /events
     type: (Enumeration) # programm, residentuur, festival, tuur
     name_et: (text)

@@ -109,7 +109,7 @@ async function putToStrapi(data, model) {
     for (const element of data) {
         const options = {
             headers: { 'Content-Type': 'application/json' },
-            path: _path + '/' + element.strapi_id,
+            path: _path + '/' + element.id,
             method: 'PUT'
         }
     console.log(element, options.path)
