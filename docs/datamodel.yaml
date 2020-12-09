@@ -203,6 +203,8 @@ Performance: &Performance # performance #lavastus
     X_artist: (text rich)
     X_producer: (text rich)
     X_other_works: (text rich) # seotud inimese tegemistega, tulevad inimese kyljest
+    X_town_et: (text)
+    X_town_en: (text)
     artists:
         - *Person
     producers:

@@ -183,7 +183,7 @@ async function performanceToStrapi() {
     let performances = performanceJSON.map(performance_entity => {
 
         const performance_category_remote_ids = performance_entity.properties.category.values.map( entu_value => entu_value.db_value)
-        let performance_categories = strapi_categories.filter( strapi_category => {
+        let performance_categories = categories_from_strapi.filter( strapi_category => {
             return performance_category_remote_ids.includes(strapi_category.remote_id)
         } ).map( strapi_category => { return { id: strapi_category.id}})
 
@@ -222,12 +222,16 @@ async function performanceToStrapi() {
             "X_other_works": ( performance_entity.properties.otherWork.values.length > 0 ? performance_entity.properties.otherWork.values[0].value : '' ),
             "X_headline_et": ( performance_entity.properties['et-supertitle'].values.length > 0 ? performance_entity.properties['et-supertitle'].values[0].db_value : null ),
             "X_headline_en": ( performance_entity.properties['en-supertitle'].values.length > 0 ? performance_entity.properties['en-supertitle'].values[0].db_value : null ),
+            "X_town_et": ( performance_entity.properties['et-town'].values.length > 0 ? performance_entity.properties['et-town'].values[0].db_value : null ),
+            "X_town_en": ( performance_entity.properties['en-town'].values.length > 0 ? performance_entity.properties['en-town'].values[0].db_value : null ),
             "id": starpi_performance_id
 
         }
 
     })
-    // console.log(JSON.stringify(performances.filter(p => p.id === 364), null, 4))
+    // console.log(JSON.stringify(performances.filter(p => p.X_town_et), null, 4))
+    // console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id).join("\n"))
+
 
     // PUT
     putToStrapi(performances, 'performances')
