@@ -273,6 +273,53 @@ Newscast: &Newscast
     name_en: (text)
     slug_et: (UID, name_et)
     slug_en: (UID, name_en)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    categories:
+        - *Category
+    coproduction: (boolean)
+    coproduction_importance: (number)
+    front_page_promotion: (boolean)
+    original_images:
+        - *StrapiMedia
+    front_page_images:
+        - *StrapiMedia
+    gallery_large_images:
+        - *StrapiMedia
+    gallery_images:
+        - *StrapiMedia
+    logos:
+        - *StrapiMedia
+    purchase_description_et: (text)
+    purchase_description_en: (text)
+    premiere: (datetime)
+    description_et: (text rich)
+    description_en: (text rich)
+    technical_info_et: (text rich)
+    technical_info_en: (text rich)
+    raider:
+        - *StrapiMedia
+    X_headline_et: (text)
+    X_headline_en: (text)
+    X_artist: (text rich)
+    X_producer: (text rich)
+    X_other_works: (text rich) # seotud inimese tegemistega, tulevad inimese kyljest
+    artists:
+        - *Person
+    producers:
+        - *Person
+    events:
+        - *Event
+    remote_id: (UID)
+
+
+#News and Article
+Newscast: &Newscast
+    _path: /newscasts
+    title_et: (text)
+    title_en: (text)
+    slug_et: (UID, title_et)
+    slug_en: (UID, title_en)
     publish_time: (datetime)
     content_et: (text rich)
     content_en: (text rich)
@@ -309,6 +356,7 @@ Article: &Article #Echo
     video: (text)
     content_et: (text rich)
     content_en: (text rich)
+    remote_id: (UID)
 
 Coverage: &Coverage
     remote_id: (UID)
