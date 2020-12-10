@@ -26,12 +26,18 @@ for (const lang of LANGUAGES) {
                 performance.path = `${lang}/performance/${performance.remote_id}`
             }
 
+
             if (performance.events){
+
+                let sortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
+                performance.events = sortedEvents
+
                 for (const event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
                 }
             }
+
 
             const performanceYAML = yaml.safeDump(performance, { 'indent': '4' });
             const performanceDir = path.join(performancesDir, performance.remote_id)
@@ -47,7 +53,7 @@ for (const lang of LANGUAGES) {
                 console.log(`ERROR: Performance index template missing`);
             }
             if (performance[`X_headline_${lang}`]){
-                console.log(`${performance.id}, ${performance.remote_id}`);
+                // console.log(`${performance.id}, ${performance.remote_id}`);
             }
         }
     }
