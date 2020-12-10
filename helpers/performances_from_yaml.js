@@ -30,6 +30,9 @@ for (const lang of LANGUAGES) {
                 for (const event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
+                    // if (event.resident) {
+                    //     console.log(performance.id, ' - ',performance.remote_id);
+                    // }
                 }
             }
 
@@ -46,8 +49,8 @@ for (const lang of LANGUAGES) {
             } else {
                 console.log(`ERROR: Performance index template missing`);
             }
-            if (performance[`X_headline_${lang}`]){
-                console.log(`${performance.id}, ${performance.remote_id}`);
+            if (performance[`X_town_${lang}`]){
+                console.log(`${performance.id}, ${performance.remote_id}, ${performance[`X_town_${lang}`]}`);
             }
         }
     }
