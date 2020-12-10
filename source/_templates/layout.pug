@@ -4,52 +4,7 @@ html
     block vars
 
     head
-        meta(charset='utf-8')
-        meta(http-equiv='X-UA-Compatible', content='IE=edge')
-        meta(name='viewport', content='width=device-width, initial-scale=1, width=device-width')
-        if self.description
-            meta(name='description', content=self.description)
-        if self.keywords
-            meta(name='keywords', content=self.keywords.join(', '))
-
-        title= (self.title && self.title !== 'Kanuti Gildi SAAL') ? self.title + ' - Kanuti Gildi SAAL' : 'Kanuti Gildi SAAL'
-
-        base(href='/' + self.lang + '/')
-
-        link(rel='stylesheet', type='text/css', href='/stylesheets/style.min.css')
-
-        link(rel='apple-touch-icon', sizes='57x57', href='/images/favicons/apple-touch-icon-57x57.png')
-        link(rel='apple-touch-icon', sizes='60x60', href='/images/favicons/apple-touch-icon-60x60.png')
-        link(rel='apple-touch-icon', sizes='72x72', href='/images/favicons/apple-touch-icon-72x72.png')
-        link(rel='apple-touch-icon', sizes='76x76', href='/images/favicons/apple-touch-icon-76x76.png')
-        link(rel='apple-touch-icon', sizes='114x114', href='/images/favicons/apple-touch-icon-114x114.png')
-        link(rel='apple-touch-icon', sizes='120x120', href='/images/favicons/apple-touch-icon-120x120.png')
-        link(rel='apple-touch-icon', sizes='144x144', href='/images/favicons/apple-touch-icon-144x144.png')
-        link(rel='apple-touch-icon', sizes='152x152', href='/images/favicons/apple-touch-icon-152x152.png')
-        link(rel='apple-touch-icon', sizes='180x180', href='/images/favicons/apple-touch-icon-180x180.png')
-        link(rel='icon' type='image/png', href='/images/favicons/favicon-32x32.png' sizes='32x32')
-        link(rel='icon' type='image/png', href='/imagesd/favicons/android-chrome-192x192.png' sizes='192x192')
-        link(rel='icon' type='image/png', href='/images/favicons/favicon-96x96.png' sizes='96x96')
-        link(rel='icon' type='image/png', href='/images/favicons/favicon-16x16.png' sizes='16x16')
-        link(rel='manifest', href='/images/favicons/manifest.json')
-        link(rel='shortcut icon', href='/images/favicons/favicon.ico')
-        meta(name='msapplication-TileColor', content='#ffc40d')
-        meta(name='msapplication-TileImage', content='/images/favicons/mstile-144x144.png')
-        meta(name='msapplication-config', content='/images/favicons/browserconfig.xml')
-        meta(name='theme-color', content='#ffffff')
-
-        meta(property='fb:app_id' content='1664471603808404')
-
-        script.
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-1903038-19', 'auto');
-            ga('send', 'pageview');
-
-        script(src='/javascripts/scripts.min.js')
+        include /_templates/head.pug
 
     body
         #fb-root
@@ -63,46 +18,18 @@ html
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-        if (self.route && self.route === 'festival')
+        if (self.path && self.path.includes('/festival'))
             include nav_festival
         else
             include nav_saal
 
         block content
 
-.container-fluid
-    footer.row
-        .col-xs-12.col-md-4
-            p Kanuti Gildi SAAL
-            p Pikk 20, 10133
-            p Tallinn, Estonia
-        .col-xs-12.col-md-4.text-center
-            .col-xs-12.col-sm-12.col-md-4.col-lg-12(id='newsletter-sign-up')
-                p= t('newsletter.signup')
-            .col-xs-12.col-sm-12.col-md-4.col-lg-12(id='mailchimp-sign-up')
-                form.validate(action=t('newsletter.mailchimp.action') method='post' id='mc-embedded-subscribe-form' name='mc-embedded-subscribe-form' class='validate' target='_blank' novalidate)
-                    .mc-field-group
-                        input.required.email(type='text' value='' name='EMAIL' placeholder=t('newsletter.placeholder') id='mce-EMAIL')
-                    .clear(id='mce-responses')
-                        .response(id='mce-error-response' style='display:none')
-                        .response(id='mce-success-response' style='display:none')
-                    div(style='position: absolute; left: -5000px;')
-                        input(type='text' name=t('newsletter.mailchimp.inputName') tabindex='-1' value='')
-                    .clear
-                        input.button(type='submit' value='OK!' name='subscribe' id='mc-embedded-subscribe')
-        .col-xs-12.col-md-4.social.text-right
-            ul
-                li
-                    a.icon-facebook3(href='https://www.facebook.com/KanutiGildiSAAL', target='blank')
-                li
-                    a.icon-twitter3(href='https://twitter.com/kanutigildisaal', target='blank')
-                li
-                    a.icon-instagram(href='https://instagram.com/kanutigildisaal', target='blank')
-                li
-                    a.icon-vimeo3(href='http://vimeo.com/kanutigildisaal', target='blank')
+        include footer
 
 
-if (route == 'festival')
+
+if (self.path == '/festival')
     include style_saal
 else
     include style_saal
