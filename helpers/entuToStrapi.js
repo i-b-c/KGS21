@@ -15,7 +15,6 @@ const strapi_banner_types = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPa
 const categories_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'categories.yaml')))
 const coverages_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'coverages.yaml')))
 const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'events.yaml')))
-const halls_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'halls.yaml')))
 const locations_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'locations.yaml')))
 const news_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'news.yaml')))
 const people_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'people.yaml')))
@@ -40,11 +39,6 @@ async function bannerTypeToStrapi() {
     })
 
     postToStrapi(banner_type, 'banner-types')
-}
-
-async function bannerTypeFromStrapi() {
-    let data = await (getFromStrapi('banner-types'))
-    fs.writeFileSync(path.join(strapiDataPath, 'bannerTypes.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function bannerToStrapi() {
@@ -94,11 +88,6 @@ async function bannerToStrapi() {
     // postToStrapi(banner, 'banners')
 }
 
-async function bannersFromStrapi() {
-    let data = await (getFromStrapi('banner-types'))
-    fs.writeFileSync(path.join(strapiDataPath, 'banners.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
-}
-
 async function categoriesToStrapi() {
     const dataJSON = path.join(entuDataPath, 'category.json')
 
@@ -127,11 +116,6 @@ async function categoriesToStrapi() {
 
     // POST
     // postToStrapi(category, 'categories')
-}
-
-async function categoriesFromStrapi() {
-    let data = await (getFromStrapi('categories'))
-    fs.writeFileSync(path.join(strapiDataPath, 'categories.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function personToStrapi() {
@@ -168,24 +152,25 @@ async function personToStrapi() {
     // postToStrapi(people, 'people')
 }
 
-async function peopleFromStrapi() {
-    let data = await (getFromStrapi('people'))
-    fs.writeFileSync(path.join(strapiDataPath, 'people.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
-}
 let starpi_performance_id = ''
 
 async function performanceToStrapi() {
     const dataJSON = path.join(entuDataPath, 'performance.json')
 
     let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
-
-
+    
     let performances = performanceJSON.map(performance_entity => {
-
+        
         const performance_category_remote_ids = performance_entity.properties.category.values.map(entu_value => entu_value.db_value)
         let performance_categories = categories_from_strapi.filter(strapi_category => {
             return performance_category_remote_ids.includes(strapi_category.remote_id)
         }).map(strapi_category => { return { id: strapi_category.id } })
+        
+        let photoGallery = performance_entity.properties['photo-gallery'].values.map(photo => {return photo.db_value} ).toString()
+        let photo = performance_entity.properties.photo.values.map(photo => {return photo.db_value} ).toString()
+        let photoOriginal = performance_entity.properties['photo-original'].values.map(photo => {return photo.db_value} ).toString()
+        let photoMedium = performance_entity.properties['photo-medium'].values.map(photo => {return photo.db_value} ).toString()
+        let photoBig = performance_entity.properties['photo-big'].values.map(photo => {return photo.db_value} ).toString()
 
         let entu_premiere_time = ''
         if (performance_entity.properties['premiere-time'].values.length === 0) {
@@ -200,6 +185,7 @@ async function performanceToStrapi() {
             return s_performance.remote_id === performance_entity.id.toString()
         }).map(e => { return e.id })[0]
 
+    
         return {
             "remote_id": performance_entity.id.toString(),
             "name_et": (performance_entity.properties['et-name'].values.length > 0 ? performance_entity.properties['et-name'].values[0].db_value : null),
@@ -224,26 +210,27 @@ async function performanceToStrapi() {
             "X_headline_en": (performance_entity.properties['en-supertitle'].values.length > 0 ? performance_entity.properties['en-supertitle'].values[0].db_value : null),
             "X_town_et": (performance_entity.properties['et-town'].values.length > 0 ? performance_entity.properties['et-town'].values[0].db_value : null),
             "X_town_en": (performance_entity.properties['en-town'].values.length > 0 ? performance_entity.properties['en-town'].values[0].db_value : null),
+            "X_pictures": {
+                "photoGallery": photoGallery,
+                "photo": photo,
+                "photoOriginal": photoOriginal,
+                "photoMedium": photoMedium,
+                "photoBig": photoBig
+            },
             "id": starpi_performance_id
 
         }
 
     })
     // console.log(JSON.stringify(performances.filter(p => p.X_town_et), null, 4))
-    console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id + ' ' + t.id).join("\n"))
-
+    // console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id + ' ' + t.id).join("\n"))
 
     // PUT
-    // putToStrapi(performances, 'performances')
+    putToStrapi(performances, 'performances')
 
     // POST
     // postToStrapi(performances, 'performances')
 
-}
-
-async function performanceFromStrapi() {
-    let data = await (getFromStrapi('performances'))
-    fs.writeFileSync(path.join(strapiDataPath, 'performances.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function coveragesToStrapi() {
@@ -286,16 +273,6 @@ async function coveragesToStrapi() {
     // postToStrapi(coverages, 'coverages')
 }
 
-async function coveragesFromStrapi() {
-    let data = await (getFromStrapi('coverages'))
-    fs.writeFileSync(path.join(strapiDataPath, 'coverages.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
-}
-
-async function hallFromStrapi() {
-    let data = await (getFromStrapi('halls'))
-    fs.writeFileSync(path.join(strapiDataPath, 'halls.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
-}
-
 async function locationToStrapi() {
     const dataJSON = path.join(entuDataPath, 'location.json')
 
@@ -332,11 +309,6 @@ async function locationToStrapi() {
 
     // POST
     // postToStrapi(locations, 'locations')
-}
-
-async function locationsFromStrapi() {
-    let data = await (getFromStrapi('locations'))
-    fs.writeFileSync(path.join(strapiDataPath, 'locations.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function articlesToStrapi() {
@@ -400,11 +372,6 @@ async function articlesToStrapi() {
 
     // POST
     // postToStrapi(articles, 'articles')
-}
-
-async function articlesFromStrapi() {
-    let data = await (getFromStrapi('articles'))
-    fs.writeFileSync(path.join(strapiDataPath, 'articles.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
 async function eventsToStrapi() {
@@ -495,11 +462,6 @@ async function eventsToStrapi() {
     // postToStrapi(events, 'events')
 }
 
-async function eventsFromStrapi() {
-    let data = await (getFromStrapi('events'))
-    fs.writeFileSync(path.join(strapiDataPath, 'events.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
-}
-
 async function newsToStrapi() {
 
     const dataJSON = path.join(entuDataPath, 'news.json')
@@ -536,21 +498,15 @@ async function newsToStrapi() {
     // postToStrapi(news, 'newscasts')
 }
 
-
-async function newsFromStrapi() {
-    let data = await (getFromStrapi('newscasts'))
-    fs.writeFileSync(path.join(strapiDataPath, 'news.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
-}
-
 async function labelsToStrapi() {
-  
+
     let labelsYAML = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_entu', 'locales.yaml')))
 
     let labels = []
 
     for (label in labelsYAML) {
         let underlabels = []
-  
+
         for (underlabel in labelsYAML[label]) {
             underlabels.push(
                 {
@@ -573,28 +529,45 @@ async function labelsToStrapi() {
     postToStrapi(labels, 'label-groups')
 }
 
+async function fromStrapi(cType, yamlName) {
+    let data = await (getFromStrapi(cType))
+
+    if (cType.includes('-')) {
+        cType = cType.replace(cType[cType.indexOf('-') + 1], cType[cType.indexOf('-') + 1].toUpperCase())
+        cType = cType.replace('-', '')
+    }
+    let filename = yamlName || cType
+
+    fs.writeFileSync(path.join(strapiDataPath, filename + '.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
+}
+
+
 async function main() {
+
     // await bannerTypeToStrapi()
-    // await bannerTypeFromStrapi()
     // await bannerToStrapi()
-    // await bannersFromStrapi()
     // await categoriesToStrapi()
-    // await categoriesFromStrapi()
     // await personToStrapi()
-    // await peopleFromStrapi()
-    // await performanceToStrapi()
-    // await performanceFromStrapi()
+    await performanceToStrapi()
     // await coveragesToStrapi()
-    // await coveragesFromStrapi()
-    // await hallFromStrapi()
     // await locationToStrapi()
-    // await locationsFromStrapi()
-    // await articlesToStrapi()
-    // await articlesFromStrapi()
     // await eventsToStrapi()
-    // await eventsFromStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
+    // await articlesToStrapi()
+
+    // await fromStrapi('banner-types')
+    // await fromStrapi('banners')
+    // await fromStrapi('categories')
+    // await fromStrapi('people')
+    // await fromStrapi('performances')
+    // await fromStrapi('coverages')
+    // await hallFromStrapi('halls')
+    // await fromStrapi('locations')
+    // await fromStrapi('articles')
+    // await fromStrapi('events')
+    // await fromStrapi('label-groups')
+    // await fromStrapi('newscasts', 'news')
 }
 
 main()
