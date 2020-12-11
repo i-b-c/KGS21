@@ -77,7 +77,7 @@ block content
                 //-                 .col-sm-4.col-md-4.col-lg-4
                 //-                     p= event.start_time
 
-                if self.events && self.events.length
+                if self.minToMaxEvents && self.minToMaxEvents.length
 
                     .past
                         each event in self.minToMaxEvents
@@ -107,6 +107,7 @@ block content
                             performanceEventToggler('future_events')
 
                     .past
+                        <br>
                         <br>
                         h2 Olnud
                         each event in self.maxToMinEvents
