@@ -159,6 +159,7 @@ Banner: &Banner
     end: (datetime)
 
 Category: &Category # category loeng, tants, teater, prformance, video, n4itus
+    _path: /categories
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
