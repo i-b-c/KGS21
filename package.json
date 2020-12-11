@@ -32,6 +32,7 @@
     "entu-ssg": "5.2.7",
     "entulib": "^2.0.6",
     "js-yaml": "^3.14.0",
+    "moment-timezone": "^0.5.32",
     "setenv": "^1.0.3"
   }
 }
