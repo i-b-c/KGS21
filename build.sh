@@ -24,6 +24,9 @@ node ./helpers/newscast_from_yaml.js
 echo '==== build ==== performances_from_yaml'
 node ./helpers/performances_from_yaml.js
 
+echo '==== build ==== contact_persons_from_yaml'
+node ./helpers/contact_persons_from_yaml.js
+
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./config.yaml full
 

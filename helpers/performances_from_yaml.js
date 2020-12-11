@@ -19,7 +19,10 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        // if ( performance.remote_id !== '6865'){
+        // if ( performance.remote_id === '6865' ||
+        // performance.remote_id === '6858'){
+
+        // } else {
         //     continue
         // }
 
