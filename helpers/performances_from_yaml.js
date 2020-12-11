@@ -18,6 +18,11 @@ for (const lang of LANGUAGES) {
     let allData = []
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
+
+        if ( performance.remote_id !== '6865'){
+            continue
+        }
+
         if (performance.remote_id) {
 
             if (lang !== 'et') {
@@ -29,17 +34,29 @@ for (const lang of LANGUAGES) {
 
             if (performance.events){
 
-                let sortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
-                performance.events = sortedEvents
-
                 for (const event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
+
+                    event.id = `_ ${ event.id}`
                 }
+
+
+                let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
+                performance.minToMaxEvents = minToMaxSortedEvents
+
+                console.log('minto max', performance.minToMaxEvents);
+
+                let maxToMinSortedEvents = performance.events.sort((a, b) => new Date(b.start_time) - new Date(a.start_time))
+                performance.maxToMinEvents = maxToMinSortedEvents
+                console.log('max to min', performance.maxToMinEvents);
+
+                delete performance.events
+
             }
 
 
-            const performanceYAML = yaml.safeDump(performance, { 'indent': '4' });
+            const performanceYAML = yaml.safeDump(performance, {'noRefs': true, 'sortKeys': false, 'indent': '4' });
             const performanceDir = path.join(performancesDir, performance.remote_id)
             const performanceYAMLPath = path.join(performanceDir, `data.${lang}.yaml`)
 
@@ -59,6 +76,6 @@ for (const lang of LANGUAGES) {
     }
 
     console.log(`${allData.length} performances from YAML (${lang}) ready for building`);
-    const performancesYAML = yaml.safeDump(allData, { 'indent': '4' });
+    const performancesYAML = yaml.safeDump(allData, {'noRefs': true, 'indent': '4' });
     fs.writeFileSync(performancesYAMLPath, performancesYAML, 'utf8');
 }

@@ -151,13 +151,14 @@ remote_id: '6858'
 X_artist: Stefan Kaegi / Rimini Protokoll
 X_headline_et: 'Baltoscandal 2020 esitleb:'
 X_headline_en: 'Baltoscandal 2020 presents:'
-events:
+path: performance/6858
+minToMaxEvents:
     -
-        id: 19
-        start_time: '2020-12-02T18:00:00.000Z'
-        remote_id: '6859'
+        id: 16
+        start_time: '2020-12-03T20:30:00.000Z'
+        remote_id: '6863'
         X_ticket_info:
-            id: 5385
+            id: 5382
             pl_link_et: >-
                 https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
             pl_link_en: >-
@@ -166,22 +167,7 @@ events:
                 http://www.piletilevi.ee/mobile/est/#view=concert&concert={self.pl-id}
             price: 15/19 EUR
             onsite_price: 15/19 EUR
-        start_date_string: 02.12.2020
-    -
-        id: 18
-        start_time: '2020-12-02T20:30:00.000Z'
-        remote_id: '6861'
-        X_ticket_info:
-            id: 5384
-            pl_link_et: >-
-                https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
-            pl_link_en: >-
-                https://fienta.com/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
-            ticket_api: >-
-                http://www.piletilevi.ee/mobile/est/#view=concert&concert={self.pl-id}
-            price: 15/19 EUR
-            onsite_price: 15/19 EUR
-        start_date_string: 02.12.2020
+        start_date_string: 03.12.2020
     -
         id: 17
         start_time: '2020-12-03T18:00:00.000Z'
@@ -198,6 +184,37 @@ events:
             onsite_price: 15/19 EUR
         start_date_string: 03.12.2020
     -
+        id: 18
+        start_time: '2020-12-02T20:30:00.000Z'
+        remote_id: '6861'
+        X_ticket_info:
+            id: 5384
+            pl_link_et: >-
+                https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            pl_link_en: >-
+                https://fienta.com/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            ticket_api: >-
+                http://www.piletilevi.ee/mobile/est/#view=concert&concert={self.pl-id}
+            price: 15/19 EUR
+            onsite_price: 15/19 EUR
+        start_date_string: 02.12.2020
+    -
+        id: 19
+        start_time: '2020-12-02T18:00:00.000Z'
+        remote_id: '6859'
+        X_ticket_info:
+            id: 5385
+            pl_link_et: >-
+                https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            pl_link_en: >-
+                https://fienta.com/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            ticket_api: >-
+                http://www.piletilevi.ee/mobile/est/#view=concert&concert={self.pl-id}
+            price: 15/19 EUR
+            onsite_price: 15/19 EUR
+        start_date_string: 02.12.2020
+maxToMinEvents:
+    -
         id: 16
         start_time: '2020-12-03T20:30:00.000Z'
         remote_id: '6863'
@@ -212,4 +229,48 @@ events:
             price: 15/19 EUR
             onsite_price: 15/19 EUR
         start_date_string: 03.12.2020
-path: performance/6858
+    -
+        id: 17
+        start_time: '2020-12-03T18:00:00.000Z'
+        remote_id: '6862'
+        X_ticket_info:
+            id: 5383
+            pl_link_et: >-
+                https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            pl_link_en: >-
+                https://fienta.com/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            ticket_api: >-
+                http://www.piletilevi.ee/mobile/est/#view=concert&concert={self.pl-id}
+            price: 15/19 EUR
+            onsite_price: 15/19 EUR
+        start_date_string: 03.12.2020
+    -
+        id: 18
+        start_time: '2020-12-02T20:30:00.000Z'
+        remote_id: '6861'
+        X_ticket_info:
+            id: 5384
+            pl_link_et: >-
+                https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            pl_link_en: >-
+                https://fienta.com/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            ticket_api: >-
+                http://www.piletilevi.ee/mobile/est/#view=concert&concert={self.pl-id}
+            price: 15/19 EUR
+            onsite_price: 15/19 EUR
+        start_date_string: 02.12.2020
+    -
+        id: 19
+        start_time: '2020-12-02T18:00:00.000Z'
+        remote_id: '6859'
+        X_ticket_info:
+            id: 5385
+            pl_link_et: >-
+                https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            pl_link_en: >-
+                https://fienta.com/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley
+            ticket_api: >-
+                http://www.piletilevi.ee/mobile/est/#view=concert&concert={self.pl-id}
+            price: 15/19 EUR
+            onsite_price: 15/19 EUR
+        start_date_string: 02.12.2020

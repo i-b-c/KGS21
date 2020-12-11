@@ -14,7 +14,7 @@ block content
                                 fefuncg(type="table" tablevalues="0 0.7764705882352941")
                                 fefuncb(type="table" tablevalues="0 0")
                                 fefunca(type="table" tablevalues="1 1")
-                    figure#slide-6858(style='background-image: url("https://saal.entu.ee/api2/file-21621"); filter: url("https://www.saal.ee/et/performance/6858#filter-1607341824491"); height: 768px;' data-gradientmap-filter="filter-1607341824491")
+                    figure#slide-6858(style='background-image: url("https://saal.entu.ee/api2/file-21621"); filter: url("/et/performance/6858#filter-1607341824491"); height: 768px;' data-gradientmap-filter="filter-1607341824491")
                     header.col-md-8
                         if self[`X_headline_${self.locale}`]
                             p= self[`X_headline_${self.locale}`]
@@ -78,9 +78,10 @@ block content
                 //-                     p= event.start_time
 
                 if self.events && self.events.length
+
                     .past
-                        each event in self.events
-                            .row(eventType='coming', startTime=event.start_time)
+                        each event in self.minToMaxEvents
+                            .row(event_type='future_events', start_time=event.start_time)
                                 .col-sm-6.col-md-5.col-lg-4
                                     p= event.start_date_string
                                 .col-sm-6.col-md-7.col-lg-8
@@ -103,12 +104,13 @@ block content
                                     hr
 
                         script.
-                            performanceEventToggler('coming')
+                            performanceEventToggler('future_events')
 
                     .past
+                        <br>
                         h2 Olnud
-                        each event in self.events
-                            .row(eventType='past', startTime=event.start_time)
+                        each event in self.maxToMinEvents
+                            .row(event_type='past_events', start_time=event.start_time)
                                 .col-sm-6.col-md-5.col-lg-4
                                     p= event.start_date_string
                                 .col-sm-6.col-md-7.col-lg-8
@@ -117,6 +119,9 @@ block content
                                     p Kanuti Gildi SAAL
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
+
+                        script.
+                            performanceEventToggler('past_events')
 
         .row.front-page-margin
             .col-md-6
@@ -158,23 +163,3 @@ block content
                 .supporter
                     ul.list-inline
 
-    script.
-        function performanceEventToggler(type1) {
-            let eventElement = document.querySelectorAll(`[eventType="coming"]`)
-
-            let currentTime = new Date()
-
-            console.log(typeof eventElement[5]);
-            let c = 0
-
-            for( let event in eventElement){
-
-                console.log(c, typeof eventElement[event]);
-
-                if (typeof eventElement[event] === 'object' && currentTime >= new Date(eventElement[event].getAttribute('startTime'))){
-
-                    eventElement[event].style.display='none'
-                }
-                c++
-            }
-        }
