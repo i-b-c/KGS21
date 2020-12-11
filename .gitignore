@@ -25,3 +25,4 @@ jspm_packages/
 
 build/*
 .DS_Store
+.vscode/settings.json
