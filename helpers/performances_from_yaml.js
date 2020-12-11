@@ -18,6 +18,11 @@ for (const lang of LANGUAGES) {
     let allData = []
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
+
+        // if ( performance.remote_id !== '6865'){
+        //     continue
+        // }
+
         if (performance.remote_id) {
 
             if (lang !== 'et') {
@@ -26,7 +31,9 @@ for (const lang of LANGUAGES) {
                 performance.path = `${lang}/performance/${performance.remote_id}`
             }
 
+
             if (performance.events){
+
                 for (const event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
@@ -34,9 +41,18 @@ for (const lang of LANGUAGES) {
                     //     console.log(performance.id, ' - ',performance.remote_id);
                     // }
                 }
-            }
 
-            const performanceYAML = yaml.safeDump(performance, { 'indent': '4' });
+
+                let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
+                performance.minToMaxEvents = minToMaxSortedEvents
+                let eventsCopy = JSON.parse(JSON.stringify(performance.events))
+
+                let maxToMinSortedEvents = eventsCopy.sort((a, b) => new Date(b.start_time) - new Date(a.start_time))
+                performance.maxToMinEvents = maxToMinSortedEvents
+
+                delete performance.events
+            }
+            const performanceYAML = yaml.safeDump(performance, {'noRefs': true, 'indent': '4' });
             const performanceDir = path.join(performancesDir, performance.remote_id)
             const performanceYAMLPath = path.join(performanceDir, `data.${lang}.yaml`)
 
@@ -49,13 +65,13 @@ for (const lang of LANGUAGES) {
             } else {
                 console.log(`ERROR: Performance index template missing`);
             }
-            if (performance[`X_town_${lang}`]){
-                console.log(`${performance.id}, ${performance.remote_id}, ${performance[`X_town_${lang}`]}`);
+            if (performance[`X_headline_${lang}`]){
+                // console.log(`${performance.id}, ${performance.remote_id}`);
             }
         }
     }
 
     console.log(`${allData.length} performances from YAML (${lang}) ready for building`);
-    const performancesYAML = yaml.safeDump(allData, { 'indent': '4' });
+    const performancesYAML = yaml.safeDump(allData, {'noRefs': true, 'indent': '4' });
     fs.writeFileSync(performancesYAMLPath, performancesYAML, 'utf8');
 }
