@@ -3,7 +3,7 @@ const yaml = require('js-yaml')
 const path = require('path')
 const http = require('http')
 const { strapiAuth } = require('./strapiAuth.js')
-const { spin } = require("./spinner")
+// const { spin } = require("./spinner")
 
 // process.env['StrapiHost']
 const STRAPI_URL = '206.81.21.173'
@@ -13,16 +13,17 @@ const DATAMODEL = yaml.safeLoad(fs.readFileSync(DATAMODEL_PATH, 'utf8'))
 var TOKEN = ''
 
 async function strapiQuery(options, dataObject = false) {
-    spin.start()
+    // spin.start()
     if (TOKEN === '') {
         TOKEN = await strapiAuth() // TODO: setting global variable is no a good idea
-        // console.log('Bearer', TOKEN)
+        console.log('Bearer', TOKEN)
     }
     options.headers['Authorization'] = `Bearer ${TOKEN}`
     options['host'] = STRAPI_URL
+    // options['host'] = process.env['StrapiHost']
     // options.timeout = 30000
 
-    // console.log(options, JSON.stringify((dataObject) || ''))
+    console.log(options, JSON.stringify((dataObject) || ''))
     return new Promise((resolve, reject) => {
         const request = http.request(options, (response) => {
             response.setEncoding('utf8')
@@ -32,10 +33,10 @@ async function strapiQuery(options, dataObject = false) {
                 // process.stdout.write(spin())
             })
             response.on('end', async function () {
-                spin.stop()
-                if (!options.full_model_fetch) {
-                    process.stdout.write({GET:'?', PUT:'+', POST:'o', DELETE:'X'}[options.method])
-                }
+                // spin.stop()
+                // if (!options.full_model_fetch) {
+                //     process.stdout.write({GET:'?', PUT:'+', POST:'o', DELETE:'X'}[options.method])
+                // }
                 if (response.statusCode === 200) {
                     resolve(JSON.parse(allData))
                 // } else if (response.statusCode === 500) {
@@ -48,13 +49,13 @@ async function strapiQuery(options, dataObject = false) {
                 }
             })
             response.on('error', function (thisError) {
-                spin.stop()
+                // spin.stop()
                 console.log('\nE:1', thisError)
                 reject(thisError)
             })
         })
         request.on('error', async function (thisError) {
-            spin.stop()
+            // spin.stop()
             if (thisError.code === 'ETIMEDOUT') {
                 process.stdout.write('r')
                 let resolved = await strapiQuery(options, dataObject)
@@ -145,6 +146,25 @@ async function putModel(model, data) {
         // console.log('=== putModel', options, element)
         results.push(await strapiQuery(options, element))
     }
+    return results
+}
+
+async function postToStrapi(data, model) {
+
+
+    let _path = `http://${StrapiHost}/${model}`
+    let results = []
+    for (const element of data) {
+        const options = {
+            headers: { 'Content-Type': 'application/json' },
+            path: _path,
+            method: 'POST'
+        }
+    console.log(element);
+
+    results.push(await strapiQuery(options, element))
+    }
+
     return results
 }
 
