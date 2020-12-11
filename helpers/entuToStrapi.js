@@ -569,7 +569,7 @@ async function labelsToStrapi() {
     }
 
     // console.log(util.inspect(labels, { showHidden: false, depth: null }))
-    
+
     postToStrapi(labels, 'label-groups')
 }
 
@@ -594,8 +594,7 @@ async function main() {
     // await eventsToStrapi()
     // await eventsFromStrapi()
     // await newsToStrapi()
-    await labelsToStrapi()
-
+    // await labelsToStrapi()
 }
 
 main()
