@@ -37,26 +37,19 @@ for (const lang of LANGUAGES) {
                 for (const event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
-
-                    event.id = `_ ${ event.id}`
                 }
 
 
                 let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
                 performance.minToMaxEvents = minToMaxSortedEvents
+                let eventsCopy = JSON.parse(JSON.stringify(performance.events))
 
-                console.log('minto max', performance.minToMaxEvents);
-
-                let maxToMinSortedEvents = performance.events.sort((a, b) => new Date(b.start_time) - new Date(a.start_time))
+                let maxToMinSortedEvents = eventsCopy.sort((a, b) => new Date(b.start_time) - new Date(a.start_time))
                 performance.maxToMinEvents = maxToMinSortedEvents
-                console.log('max to min', performance.maxToMinEvents);
 
                 delete performance.events
-
             }
-
-
-            const performanceYAML = yaml.safeDump(performance, {'noRefs': true, 'sortKeys': false, 'indent': '4' });
+            const performanceYAML = yaml.safeDump(performance, {'noRefs': true, 'indent': '4' });
             const performanceDir = path.join(performancesDir, performance.remote_id)
             const performanceYAMLPath = path.join(performanceDir, `data.${lang}.yaml`)
 
