@@ -26,3 +26,4 @@ jspm_packages/
 build/*
 .DS_Store
 .vscode/settings.json
+data-transfer/from_entu/event.raw.json
