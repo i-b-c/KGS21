@@ -317,6 +317,12 @@ Article: &Article #Echo
     video: (text)
     content_et: (text rich)
     content_en: (text rich)
+    X_pictures:
+        photoGallery: (text)
+        photo: (text)
+        photoOriginal: (text)
+        photoMedium: (text)
+        photoBig: (text)
     remote_id: (UID)
 
 Coverage: &Coverage

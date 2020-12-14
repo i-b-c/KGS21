@@ -28,3 +28,4 @@ build/*
 
 # dynamic data
 source/_fetchdir/*
+.vscode/settings.json
