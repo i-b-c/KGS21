@@ -3,33 +3,77 @@ extends /_templates/layout.pug
 block content
     .container-fluid
         .row
-            section#front-carousel.event-banner.carousel.slide(data-ride="carousel")
+            section.event-banner.carousel.slide(id='front-carousel' data-ride='carousel')
                 .carousel-inner(role="listbox")
-                    .item.active
-                        svg(version="1.1" width="0" height="0")
-                            filter#filter-1607343038184
-                                fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
-                                fecomponenttransfer(color-interpolation-filters="sRGB")
-                                    fefuncr(type="table" tablevalues="0 1")
-                                    fefuncg(type="table" tablevalues="0 0.7764705882352941")
-                                    fefuncb(type="table" tablevalues="0 0")
-                                    fefunca(type="table" tablevalues="1 1")
-                        figure#slide-0(style='background-image: url("/assets/images/placeholder.jpg"); filter: url("https://www.saal.ee/et/magazine/4057#filter-1607343038184"); height: 778px;' data-gradientmap-filter="filter-1607343038184")
-                        header.col-md-8
-                            p= self.publish_date_string
-                            h1.artist= self[`title_${self.locale}`]
-                            p.subtitle= self.authors_cs
-                        ul.event-categories
-                script.
-                    var slide0 = document.getElementById('slide-0');
-                    GradientMaps.applyGradientMap(slide0, '#000000, #FFC600');
+                    //- .item.active
+                    //-     svg(version="1.1" width="0" height="0")
+                    //-         filter#filter-1607343038184
+                    //-             fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
+                    //-             fecomponenttransfer(color-interpolation-filters="sRGB")
+                    //-                 fefuncr(type="table" tablevalues="0 1")
+                    //-                 fefuncg(type="table" tablevalues="0 0.7764705882352941")
+                    //-                 fefuncb(type="table" tablevalues="0 0")
+                    //-                 fefunca(type="table" tablevalues="1 1")
+
+                    - var bigPhotos = []
+                    if self.X_pictures && self.X_pictures.photoBig && self.X_pictures.photoBig.length
+                        - bigPhotos = self.X_pictures.photoBig.split(',')
+
+                    - var photoActive = 0
+                    each photo, ix in bigPhotos || ['/assets/images/placeholder.jpg']
+                        .item(class=(photoActive++ === 0 ? 'active' : ''))
+                            figure(id = `slide-${ix}`, style=`background-image: url('${f_api}${photo}');`)
+                            header.col-md-8
+                                p= self.publish_date_string
+                                h1.artist= self[`title_${self.locale}`]
+                                    if self[`subtitle_${self.locale}`]
+                                        - var subTitle = self[`subtitle_${self.locale}`]
+                                        span= ` / ${subTitle}`
+                                if self.authors_cs
+                                    p.subtitle= self.authors_cs
+
+                if bigPhotos.length > 1
+                    a.left.carousel-control(href='#front-carousel' role='button' data-slide='prev')
+                        span.icon-prev.arrow-left(aria-hidden='true')
+                        span.sr-only Previous
+                    a.right.carousel-control(href='#front-carousel' role='button' data-slide='next')
+                        span.icon-next.arrow-right(aria-hidden='true')
+                        span.sr-only Next
+                            ul.event-categories
+
+                //- Gradient Map for images
+                each photo, ix in bigPhotos
+                    script.
+                        var slide#{ix} = document.getElementById('slide-#{ix}');
+                        GradientMaps.applyGradientMap(slide#{ix}, '#000000, #FFC600');
+
         .row.front-page-margin
             .col-md-12
                 .row
                     .video-sound
                     .article.main-text.h3.col-sm-12.col-md-8.col-lg-8
-                        p
-                            | !{self.md(self[`content_${self.locale}`])}
+                        | !{self.md(self[`content_${self.locale}`])}
+
+                        //- GALLERY
+                        if !self.hide_gallery
+                            if bigPhotos
+                                .gallery
+                                    //- If is single image
+                                    if bigPhotos.length === 1
+                                        .row
+                                            .col-xs-12
+                                                if bigPhotos
+                                                    img(src=bigPhotos[0], class='img-responsive')
+
+                                    //- If more than one, make gallery
+                                    if bigPhotos.length > 1
+                                        h2 GALERIII PEALKIRI
+                                        .row
+                                            each photo in bigPhotos
+                                                .single-image.col-xs-6.col-sm-3.col-md-4
+                                                    a.fancybox(rel='gallery', href=`${f_api}${photo}` )
+                                                        img(src=`${f_api}${photo}`, class='img-responsive')
+
                         .video-sound
                         .comments
                             .fb-comments.fb_iframe_widget.fb_iframe_widget_fluid_desktop(data-href="https://www.saal.ee/et/magazine/4057" data-width="100%" data-numposts="10" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1664471603808404&container_width=799&height=100&href=https%3A%2F%2Fwww.saal.ee%2Fet%2Fmagazine%2F4057&locale=et_EE&numposts=10&sdk=joey&version=v2.5&width=" style="width: 100%;")

@@ -26,6 +26,14 @@ for (const lang of LANGUAGES) {
     let allData = []
 
     for (const article of STRAPIDATA_ARTICLES) {
+
+        // var selectedFetch = ['4046', '4047', '6626', '6487']
+        // if (selectedFetch.includes(article.remote_id)) {
+
+        // } else {
+        //     continue
+        // }
+
         if (article[`title_${lang}`] && article.remote_id) {
             if (lang !== 'et') {
                 article.path = `magazine/${article.remote_id}`
@@ -41,6 +49,10 @@ for (const lang of LANGUAGES) {
 
             let articleDate = new Date(article.publish_date)
             article.publish_date_string = `${('0' + articleDate.getDate()).slice(-2)}.${('0' + (articleDate.getMonth()+1)).slice(-2)}.${articleDate.getFullYear()}`
+
+            if (article.X_pictures) {
+                article.X_pictures = sort_pictures(article.X_pictures)
+            }
 
             const articleYAML = yaml.safeDump(article, { 'indent': '4' });
             const articleDir = path.join(articlesDir, article.remote_id)
@@ -61,4 +73,16 @@ for (const lang of LANGUAGES) {
     console.log(`${allData.length} articles from YAML (${lang}) ready for building`);
     const articlesYAML = yaml.safeDump(allData, { 'indent': '4' });
     fs.writeFileSync(articlesYAMLPath, articlesYAML, 'utf8');
+}
+
+function sort_pictures(pics) {
+
+    for (const key in pics) {
+        if (key !== 'id' && pics[key].length) {
+            let picsKeys = pics[key].includes(',') ? pics[key].split(',') : [pics[key]]
+            pics[key] = picsKeys.sort((a, b) => a-b).join(',')
+        }
+    }
+    return JSON.parse(JSON.stringify(pics))
+
 }

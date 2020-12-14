@@ -1,5 +1,5 @@
-const http = require('http')
-const StrapiHost = '206.81.21.173'
+const http = require('https')
+const StrapiHost = 'a.saal.ee'
 
 async function strapiAuth() {
 
