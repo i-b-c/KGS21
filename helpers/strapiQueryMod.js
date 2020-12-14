@@ -4,16 +4,11 @@ const path = require('path')
 const http = require('http')
 const { strapiAuth } = require('./strapiAuth.js')
 // const { spin } = require("./spinner")
-
 const StrapiHost = "206.81.21.173"
-
-
 // const STRAPI_URL = process.env['StrapiHost']
 // const DATAMODEL_PATH = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 // const DATAMODEL = yaml.safeLoad(fs.readFileSync(DATAMODEL_PATH, 'utf8'))
-
 var TOKEN = ''
-
 async function strapiQuery(options, dataObject = false) {
     // spin.start()
     if (TOKEN === '') {
@@ -24,7 +19,6 @@ async function strapiQuery(options, dataObject = false) {
     options['host'] = StrapiHost
     // options['host'] = process.env['StrapiHost']
     // options.timeout = 30000
-
     console.log(options, JSON.stringify((dataObject) || ''))
     return new Promise((resolve, reject) => {
         const request = http.request(options, (response) => {
@@ -74,18 +68,13 @@ async function strapiQuery(options, dataObject = false) {
         if (dataObject) {
             request.write(JSON.stringify(dataObject))
         }
-
         request.end()
     })
 }
-
 const isObject = item => {
     return (item && typeof item === 'object' && !Array.isArray(item))
 }
-
 async function postToStrapi(data, model) {
-
-
     let _path = `http://${StrapiHost}/${model}`
     let results = []
     for (const element of data) {
@@ -95,15 +84,11 @@ async function postToStrapi(data, model) {
             method: 'POST'
         }
     console.log(element)
-
     results.push(await strapiQuery(options, element))
     }
-
     return results
 }
-
 async function putToStrapi(data, model) {
-
     let _path = `http://${StrapiHost}/${model}`
     let results = []
     for (const element of data) {
@@ -113,29 +98,20 @@ async function putToStrapi(data, model) {
             method: 'PUT'
         }
     console.log(element, options.path)
-
     results.push(await strapiQuery(options, element))
     }
-
     return results
 }
-
 async function getFromStrapi(model) {
-
     const _path = `http://${StrapiHost}/${model}?_limit=-1`
-
     const options = {
         headers: { 'Content-Type': 'application/json' },
         path: _path,
         method: 'GET',
     }
-
     const strapi_data = await strapiQuery(options)
-
     return strapi_data
 }
-
-
 exports.strapiQuery = strapiQuery
 exports.postToStrapi = postToStrapi
 exports.putToStrapi = putToStrapi

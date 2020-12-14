@@ -255,6 +255,8 @@ Performance: &Performance # performance #lavastus
     X_artist: (text rich)
     X_producer: (text rich)
     X_other_works: (text rich) # seotud inimese tegemistega, tulevad inimese kyljest
+    X_town_et: (text)
+    X_town_en: (text)
     artists:
         - *Person
     producers:
@@ -264,13 +266,14 @@ Performance: &Performance # performance #lavastus
     remote_id: (UID)
 
 
+
 #News and Article
 Newscast: &Newscast
     _path: /newscasts
-    name_et: (text)
-    name_en: (text)
-    slug_et: (UID, name_et)
-    slug_en: (UID, name_en)
+    title_et: (text)
+    title_en: (text)
+    slug_et: (UID, title_et)
+    slug_en: (UID, title_en)
     publish_time: (datetime)
     content_et: (text rich)
     content_en: (text rich)
@@ -307,6 +310,7 @@ Article: &Article #Echo
     video: (text)
     content_et: (text rich)
     content_en: (text rich)
+    remote_id: (UID)
 
 Coverage: &Coverage
     remote_id: (UID)

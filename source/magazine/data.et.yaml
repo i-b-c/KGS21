@@ -1,0 +1,4 @@
+aliases:
+    - 'et/magazine'
+data:
+    articles: '/_fetchdir/articles.et.yaml'
