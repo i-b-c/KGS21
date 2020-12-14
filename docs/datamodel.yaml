@@ -354,7 +354,6 @@ LabelGroup:
 
 #SingleType
 AboutArticle: &AboutArticle
-    _path: /about-atricle
     name_et: (text)
     name_en: (text)
     content_et: (text rich)
