@@ -1,8 +1,8 @@
 var validToken = false
 
 
-if(localStorage.getItem('ID_TOKEN')){
-    var token = localStorage.getItem('ID_TOKEN')
+if(localStorage.getItem('ACCESS_TOKEN')){
+    var token = localStorage.getItem('ACCESS_TOKEN')
     try{
         var base64Url = token.split('.')[1];
         var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -10,7 +10,7 @@ if(localStorage.getItem('ID_TOKEN')){
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
         var parsedToken = JSON.parse(jsonPayload)
-        // console.log("token: ", parsedToken)
+        console.log("token: ", parsedToken)
         var expDate = JSON.parse(jsonPayload).exp * 1000
         var now = new Date().getTime()
 
