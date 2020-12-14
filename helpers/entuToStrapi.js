@@ -185,10 +185,7 @@ async function performanceToStrapi() {
             return s_performance.remote_id === performance_entity.id.toString()
         }).map(e => { return e.id })[0]
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 19130244f1328315ee620424ca8e8ba83dabfa83
         return {
             "remote_id": performance_entity.id.toString(),
             "name_et": (performance_entity.properties['et-name'].values.length > 0 ? performance_entity.properties['et-name'].values[0].db_value : null),
@@ -235,11 +232,11 @@ async function performanceToStrapi() {
 
     // console.log(performances);
     // PUT
-    // putToStrapi(performances, 'performances')
+    putToStrapi(performances, 'performances')
 
     // POST
-    console.log(performancesToPost);
-    postToStrapi(performancesToPost, 'performances')
+    // console.log(performancesToPost);
+    // postToStrapi(performancesToPost, 'performances')
 
 }
 
@@ -384,11 +381,11 @@ async function articlesToStrapi() {
 
         }
     })
-    
+
     for (article of articles){
         console.log(article.id)
         console.log(article.X_pictures);
-    } 
+    }
 
     // console.log(util.inspect(articles, null, 4))
 
@@ -573,13 +570,13 @@ async function main() {
     // await bannerToStrapi()
     // await categoriesToStrapi()
     // await personToStrapi()
-    // await performanceToStrapi()
+    await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
     // await eventsToStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
-    await articlesToStrapi()
+    // await articlesToStrapi()
 
     // await fromStrapi('banner-types')
     // await fromStrapi('banners')
