@@ -19,7 +19,7 @@ async function strapiQuery(options, dataObject = false) {
     options['host'] = StrapiHost
     // options['host'] = process.env['StrapiHost']
     // options.timeout = 30000
-    console.log(options, JSON.stringify((dataObject) || ''))
+    // console.log(options, JSON.stringify((dataObject) || ''))
     return new Promise((resolve, reject) => {
         const request = http.request(options, (response) => {
             response.setEncoding('utf8')
