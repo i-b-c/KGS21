@@ -361,6 +361,7 @@ AboutArticle: &AboutArticle
     content_en: (text rich)
 
 Configuration: &Configuration
+    _path: /configuration
     name: (text)
     about_article: *AboutArticle
     colour: (text)
