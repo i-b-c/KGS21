@@ -1,0 +1,30 @@
+.container-fluid
+    footer.row
+        .col-xs-12.col-md-4
+            p Kanuti Gildi SAAL
+            p Pikk 20, 10133
+            p Tallinn, Estonia
+        .col-xs-12.col-md-4.text-center
+            .col-xs-12.col-sm-12.col-md-4.col-lg-12(id='newsletter-sign-up')
+                p LIITU UUDISKIRJAGA
+            .col-xs-12.col-sm-12.col-md-4.col-lg-12(id='mailchimp-sign-up')
+                form.validate(action='NEWSLETTER MAILCHIMP ACTION' method='post' id='mc-embedded-subscribe-form' name='mc-embedded-subscribe-form' class='validate' target='_blank' novalidate)
+                    .mc-field-group
+                        input.required.email(type='text' value='' name='EMAIL' placeholder='EMAIL@PLACE.HOLDER' id='mce-EMAIL')
+                    .clear(id='mce-responses')
+                        .response(id='mce-error-response' style='display:none')
+                        .response(id='mce-success-response' style='display:none')
+                    div(style='position: absolute; left: -5000px;')
+                        input(type='text' name='NEWSLETTER MAILCHIMP INPUT NAME' tabindex='-1' value='')
+                    .clear
+                        input.button(type='submit' value='OK!' name='subscribe' id='mc-embedded-subscribe')
+        .col-xs-12.col-md-4.social.text-right
+            ul
+                li
+                    a.icon-facebook3(href='https://www.facebook.com/KanutiGildiSAAL', target='blank')
+                li
+                    a.icon-twitter3(href='https://twitter.com/kanutigildisaal', target='blank')
+                li
+                    a.icon-instagram(href='https://instagram.com/kanutigildisaal', target='blank')
+                li
+                    a.icon-vimeo3(href='http://vimeo.com/kanutigildisaal', target='blank')

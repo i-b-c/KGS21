@@ -1,1 +1,220 @@
-h1 home
+extends /_templates/layout.pug
+
+block content
+
+    .container-fluid
+        .row
+            section#front-carousel.event-banner.carousel.slide(data-ride="carousel")
+                .carousel-inner(role="listbox")
+                    .item.active
+                        a(href="/et/performance/6099")
+                            figure#slide-6099(style="background-image: url(https://saal.entu.ee/api2/file-7627);")
+                            header.col-md-8
+                                h1
+                                    span.artist Mart Kangro
+                                h1 ENNEMINEVIK
+                        ul.event-categories
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:623") Loeng
+                            li.text-uppercase.h3
+                                span
+                                    a(href="search?q=category:3809") Tants
+                            li.text-uppercase.h3
+                                span
+                                    a(href="search?q=category:3810") Performance
+                            li.text-uppercase.h3
+                                span
+                                    a(href="search?q=category:3811") Teater
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3812") Muusika
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3814") Video
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:5027") Näitus
+                    .item
+                        a(href="/et/performance/6865")
+                            figure#slide-6865(style="background-image: url(https://saal.entu.ee/api2/file-21622);")
+                            header.col-md-8
+                                h1
+                                    span.artist Karolin Poska
+                                h1 Sinu nirvaanale
+                        ul.event-categories
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:623") Loeng
+                            li.text-uppercase.h3
+                                span
+                                    a(href="search?q=category:3809") Tants
+                            li.text-uppercase.h3
+                                span
+                                    a(href="search?q=category:3810") Performance
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3811") Teater
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3812") Muusika
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3814") Video
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:5027") Näitus
+                    .item
+                        a(href="/et/performance/6894")
+                            figure#slide-6894(style="background-image: url(https://saal.entu.ee/api2/file-21654);")
+                            header.col-md-8
+                                h1
+                                h1 Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective
+                        ul.event-categories
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:623") Loeng
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3809") Tants
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3810") Performance
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3811") Teater
+                            li.text-uppercase.h3
+                                span
+                                    a(href="search?q=category:3812") Muusika
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:3814") Video
+                            li.text-uppercase.h3.unactive
+                                span
+                                    a(href="search?q=category:5027") Näitus
+                a.left.carousel-control(href="#front-carousel" role="button" data-slide="prev")
+                    span.icon-prev.arrow-left(aria-hidden="true")
+                    span.sr-only Previous
+                a.right.carousel-control(href="#front-carousel" role="button" data-slide="next")
+                    span.icon-next.arrow-right(aria-hidden="true")
+                    span.sr-only Next
+                script.
+                    var slide6099 = document.getElementById('slide-6099');
+                    GradientMaps.applyGradientMap(slide6099, '#000000, #FFC600');
+                script.
+                    var slide6865 = document.getElementById('slide-6865');
+                    GradientMaps.applyGradientMap(slide6865, '#000000, #FFC600');
+                script.
+                    var slide6894 = document.getElementById('slide-6894');
+                    GradientMaps.applyGradientMap(slide6894, '#000000, #FFC600');
+        .row.front-page-margin
+            section.col-xs-12.col-md-12.col-lg-9
+                .programme.row
+                    .col-xs-12.col-md-12.col-lg-12
+                        h2 Kava
+                    .col-xs-12.col-sm-2.col-lg-2
+                        p neljapäev
+                        p 03.12.2020
+                        p 18:00
+                        p.today Täna!
+                    .col-xs-12.col-md-6.col-lg-6
+                        h3
+                            a(href="/et/performance/6858")
+                                span.subtitle Baltoscandal 2020 esitleb:
+                                span.artist Stefan Kaegi / Rimini Protokoll
+                                span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                    .col-xs-6.col-md-2.col-lg-2
+                        p.location Kanuti Gildi SAAL
+                        p 15/19 EUR
+                        p Kohapealt: 15/19 EUR€
+                    .col-xs-6.col-md-2.col-lg-2.text-right
+                        a.btn.btn-primary(href="https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley" target="_blank") Osta pilet
+                    .col-xs-12.col-md-12.col-lg-12
+                        hr
+                    .col-xs-12.col-sm-2.col-lg-2
+                        p neljapäev
+                        p 03.12.2020
+                        p 20:30
+                        p.today Täna!
+                    .col-xs-12.col-md-6.col-lg-6
+                        h3
+                            a(href="/et/performance/6858")
+                                span.subtitle Baltoscandal 2020 esitleb:
+                                span.artist Stefan Kaegi / Rimini Protokoll
+                                span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                    .col-xs-6.col-md-2.col-lg-2
+                        p.location Kanuti Gildi SAAL
+                        p 15/19 EUR
+                        p Kohapealt: 15/19 EUR€
+                    .col-xs-6.col-md-2.col-lg-2.text-right
+                        a.btn.btn-primary(href="https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley" target="_blank") Osta pilet
+                    .col-xs-12.col-md-12.col-lg-12
+                        hr
+                    .col-xs-12.col-sm-2.col-lg-2
+                        p reede
+                        p 04.12.2020
+                        p 19:30
+                    .col-xs-12.col-md-6.col-lg-6
+                        h3
+                            a(href="/et/performance/6894")
+                                span.name Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective
+                    .col-xs-6.col-md-2.col-lg-2
+                        p.location Kanuti Gildi SAAL
+                        p 5/8 EUR
+                        p Kohapealt: 5/8 EUR€
+                    .col-xs-6.col-md-2.col-lg-2.text-right
+                        a.btn.btn-primary(href="https://fienta.com/et/kontsertsari-improtest-copeco-15632" target="_blank") Osta pilet
+                    .col-xs-12.col-md-12.col-lg-12
+                        hr
+                    .col-xs-12.col-sm-2.col-lg-2
+                        p laupäev
+                        p 05.12.2020
+                        p 19:30
+                        p.today Esietendus!
+                    .col-xs-12.col-md-6.col-lg-6
+                        h3
+                            a(href="/et/performance/6865")
+                                span.artist Karolin Poska
+                                span.name Sinu nirvaanale
+                    .col-xs-6.col-md-2.col-lg-2
+                        p.location Kanuti Gildi SAAL
+                        p 8/12 EUR
+                        p Kohapealt: 10/15 EUR€
+                    .col-xs-6.col-md-2.col-lg-2.text-right
+                        a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
+                    .col-xs-12.col-md-12.col-lg-12
+                        hr
+                    .col-xs-12.col-md-12
+                        a.load-more.btn.btn-primary(href="/et/program/") Vaata kõiki
+                .tour.row
+                    .col-xs-12.col-md-12.col-lg-12
+                        h2 Tuurid
+            aside.col-xs-12.col-md-12.col-lg-3.sidebar
+                .row
+                    // .banner.col-xs-12.col-sm-6.col-md-4.col-lg-12
+                    // a.text-center.h3.volunteer(href='https://saal.ee/et/festival/5663/program')= t('button.LATEST')
+                    // .banner.col-xs-12.col-sm-6.col-md-4.col-lg-12
+                    // a.text-center.h3.volunteer(href='https://saal.entu.ee/api2/file-6611')= t('button.NUPprint')
+                    .hidden-xs.col-sm-6.col-md-4.col-lg-12.datepicker-container
+                        h2 Kalender
+                        #datepicker
+                        ul.list-inline.legend
+                            li.event SAALis
+                            li.tour Tuuril
+                    .banner.col-xs-12.col-sm-6.col-md-4.col-lg-12
+                        a.text-center.h3.volunteer(href="contact#covid") Koroona meelespea
+                    .banner.col-xs-12.col-sm-6.col-md-4.col-lg-12
+                        a.text-center.h3.volunteer(href="mailto:vabatahtlik@saal.ee") Tule vabatahtlikuks!
+                    #newsletter-sign-up.col-xs-12.col-sm-12.col-md-4.col-lg-12
+                        p Liitu uudiskirjaga
+                    #mailchimp-sign-up.col-xs-12.col-sm-12.col-md-4.col-lg-12
+                        form#mc-embedded-subscribe-form.validate.validate(action="//saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=11b766323b" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="")
+                            .mc-field-group
+                                input#mce-EMAIL.required.email(type="text" value="" name="EMAIL" placeholder="Sinu mailiaadress")
+                            #mce-responses.clear
+                                #mce-error-response.response(style="display:none")
+                                #mce-success-response.response(style="display:none")
+                            div(style="position: absolute; left: -5000px;")
+                                input(type="text" name="b_1e1d48fe600fda5c3f6a39b75_fdc080b2d5" tabindex="-1" value="")
+                            .clear
+                                input#mc-embedded-subscribe.button(type="submit" value="OK!" name="subscribe")

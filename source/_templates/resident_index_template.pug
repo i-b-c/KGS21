@@ -1,0 +1,63 @@
+extends /_templates/layout.pug
+
+block content
+    .container-fluid
+        .row
+            #front-carousel.event-banner.carousel.slide(data-ride="carousel")
+                .carousel-inner(role="listbox")
+                    svg(version="1.1" width="0" height="0")
+                        filter#filter-1607342642659
+                            fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
+                            fecomponenttransfer(color-interpolation-filters="sRGB")
+                                fefuncr(type="table" tablevalues="0 1")
+                                fefuncg(type="table" tablevalues="0 0.7764705882352941")
+                                fefuncb(type="table" tablevalues="0 0")
+                                fefunca(type="table" tablevalues="1 1")
+                    figure#slide-6909(style='background-image: url("https://saal.entu.ee/api2/file-21665"); filter: url("https://www.saal.ee/et/resident/6909#filter-1607342642659"); height: 778px;' data-gradientmap-filter="filter-1607342642659")
+                    header.col-md-8
+                        p 16.12.2020—14.01.2021
+                        h1
+                            span.artist Laur Kaunissaare
+                            span.name Residentuur Püha Vaimu SAALis
+                    ul.event-categories
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:623") Loeng
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3809") Tants
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3810") Performance
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3811") Teater
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3812") Muusika
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3814") Video
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:5027") Näitus
+                    script.
+                        var slide6909 = document.getElementById('slide-6909');
+                        var gradientMap = '#000000, #FFC600';
+                        GradientMaps.applyGradientMap(slide6909, gradientMap);
+        .row.front-page-margin
+            article.main-text.col-md-12.col-lg-12.h3
+                p
+                    | Laur Kaunissaare on vabakutseline dramaturg. Ta on olnud dramaturgiks Teater NO99-s, Kanuti Gildi SAAL-is ja Tallinna Linnateatris. Kaunissaare viimaste aastate dramaturgitööde hulka kuuluvad Kristina Normani "Lighter Than Woman" ning Jarmo Reha "WhiteWash" ja "Oomen", aga ka koostöö Flo Kasearu ("Ohustatud liigid") ja Sigrid Viiriga ("Võltspuhkaja"). Viimati sündis sügisel 2020 Helsingis dramaturgia Anna Lipponeni lavastusele "Dreams for Sale" Soome Rahvusmuuseumis koostöös trupiga Studio Total. Pühavaimu Saali residentuuris tööpealkirjaga "Mäletan / Ei mäleta" uurib Kaunissaare unustamise rolli tuleviku sünnis ning lähimälu udusust infoülekülluse ajastul.
+                    br
+                    br
+                    br
+                    | Residentuuri toetab Kultuurkapital.
+        .row.front-page-margin
+            .col-md-6
+                .gallery
+                    h2 Galerii
+                    .row
+                        .single-image.col-xs-6.col-sm-3.col-md-4
+                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21666")
+                                img.img-responsive(src="https://saal.entu.ee/api2/file-21666")

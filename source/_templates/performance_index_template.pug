@@ -1,0 +1,145 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+    .container-fluid
+        .row
+            #front-carousel.event-banner.carousel.slide
+                .carousel-inner(role="listbox")
+                    svg(version="1.1" width="0" height="0")
+                        filter#filter-1607341824491
+                            fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
+                            fecomponenttransfer(color-interpolation-filters="sRGB")
+                                fefuncr(type="table" tablevalues="0 1")
+                                fefuncg(type="table" tablevalues="0 0.7764705882352941")
+                                fefuncb(type="table" tablevalues="0 0")
+                                fefunca(type="table" tablevalues="1 1")
+                    - var photosBig = self.X_pictures && self.X_pictures.photoBig ? self.X_pictures.photoBig.split(',') : []
+                    - var photoBig = photosBig.length ? photosBig[0] : ''
+                    figure(id= `#slide-${self.remote_id}` style=`background-image: url("${f_api}${photoBig}"); filter: url("/et/performance/6858#filter-1607341824491"); height: 768px;` data-gradientmap-filter="filter-1607341824491")
+                    header.col-md-8
+                        if self[`X_headline_${self.locale}`]
+                            p= self[`X_headline_${self.locale}`]
+                        h1
+                            if self.X_artist
+                                span.artist= self.X_artist
+                            if self.X_producer
+                                span.producer= self.X_producer
+                            if self[`X_town_${self.locale}`]
+                                span.town= self[`X_town_${self.locale}`]
+
+                        h1= self[`name_${self.locale}`]
+
+                        if self[`subtitle_${self.locale}`]
+                            p= self[`subtitle_${self.locale}`]
+
+                    ul.event-categories
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:623") Loeng
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3809") Tants
+                        li.text-uppercase.h3
+                            span
+                                a(href="search?q=category:3810") Performance
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3811") Teater
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3812") Muusika
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:3814") Video
+                        li.text-uppercase.h3.unactive
+                            span
+                                a(href="search?q=category:5027") Näitus
+                    script.
+                        var slide6858 = document.getElementById('slide-6858');
+                        var gradientMap = '#000000, #FFC600';
+                        GradientMaps.applyGradientMap(slide6858, gradientMap);
+        .row.front-page-margin
+            aside.col-md-12.col-lg-3
+                if self[`technical_info_${self.locale}`]
+                    .meta-info
+                        p
+                            +format(self[`technical_info_${self.locale}`])
+
+            article.readMore.main-text.col-md-8.col-lg-6.h3
+                p
+                    +format(self[`description_${self.locale}`])
+
+            aside.col-md-4.col-lg-3
+                //- - var currentDate = new Date()
+                //- if self.events && self.events.length
+                //-     .tickets.row
+                //-         each event in self.events
+                //-             if currentDate <= event.start_time
+                //-                 .col-sm-4.col-md-4.col-lg-4
+                //-                     p= event.start_time
+
+                if self.minToMaxEvents && self.minToMaxEvents.length
+
+                    .past
+                        each event in self.minToMaxEvents
+                            .row(event_type='future_events', start_time=event.start_time)
+                                .col-sm-6.col-md-5.col-lg-4
+                                    p= event.start_date_string
+                                .col-sm-6.col-md-7.col-lg-8
+                                    if self[`name_${self.locale}`]
+                                        p= self[`name_${self.locale}`]
+                                    p Kanuti Gildi SAAL
+                                    span(style='float:right;')
+                                        if event.X_ticket_info.sales_status
+                                            if event.canceled === 'true'
+                                                a.btn.btn-primary(class="disabled")= 'canceled'
+                                            else
+                                                if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
+                                                    a.btn.btn-primary(class="free disabled" href='' target='_blank')= event.X_ticket_info.sales_status
+                                                else
+                                                    a.btn.btn-primary(class="" href='' target='_blank')= 'status'
+
+
+
+                                .col-sm-12.col-md-12.col-lg-12
+                                    hr
+
+                        script.
+                            performanceEventToggler('future_events')
+
+                    .past
+                        <br>
+                        <br>
+                        h2 Olnud
+                        each event in self.maxToMinEvents
+                            .row(event_type='past_events', start_time=event.start_time)
+                                .col-sm-6.col-md-5.col-lg-4
+                                    p= event.start_date_string
+                                .col-sm-6.col-md-7.col-lg-8
+                                    if self[`name_${self.locale}`]
+                                        p= self[`name_${self.locale}`]
+                                    p Kanuti Gildi SAAL
+                                .col-sm-12.col-md-12.col-lg-12
+                                    hr
+
+                        script.
+                            performanceEventToggler('past_events')
+
+        .row.front-page-margin
+            .col-md-6
+
+                if self.X_pictures && self.X_pictures.photoGallery && self.X_pictures.photoMedium && self.X_pictures.photoGallery.length && self.X_pictures.photoMedium.length
+                    .gallery
+                        h2 Galerii
+                            .row
+                            each galPhoto, key in self.X_pictures.photoGallery.split(',')
+                                .single-image.col-sm-6.col-sm-3.col-md-4
+                                    a.fancybox(rel="gallery" href=`${f_api}${galPhoto}`)
+                                        img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
+
+            .col-md-6
+            .col-md-12
+                .supporter
+                    ul.list-inline
+

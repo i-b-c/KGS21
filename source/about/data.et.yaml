@@ -1,0 +1,4 @@
+aliases:
+    - 'et/about'
+data:
+    newscasts: '/_fetchdir/newscasts.et.yaml'
