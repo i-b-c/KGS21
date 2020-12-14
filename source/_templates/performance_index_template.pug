@@ -31,11 +31,14 @@ block content
                         if self[`subtitle_${self.locale}`]
                             p= self[`subtitle_${self.locale}`]
 
+                    - var activeCategories = []
+                    if self.categories
+                        - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
                     if self.data.categories
                         ul.event-categories
                             each category in self.data.categories
                                 if category.featured_on_front_page
-                                    li.text-uppercase.h3.unactive
+                                    li.text-uppercase.h3( class =( activeCategories.includes(category.remote_id)? "" : "unactive" ) )
                                         span
                                             a(href="")= category[`name_${self.locale}`]
                                     //- li.text-uppercase.h3.unactive
