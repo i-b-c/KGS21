@@ -1,0 +1,13 @@
+extends /_templates/layout.pug
+
+block content
+
+    .container-fluid#login_buttons
+
+        a.btn.btn-primary.text-uppercase.h3(href='http://a.saal.ee/connect/google/' target= '_self') google
+        a.btn.btn-primary.text-uppercase.h3(href='http://a.saal.ee/connect/facebook/' target= '_self') facebook
+        a.btn.btn-primary.text-uppercase.h3(onClick ="LogOut()") logi välja
+
+    style.
+        #login_buttons {
+            margin-top: 300px}
