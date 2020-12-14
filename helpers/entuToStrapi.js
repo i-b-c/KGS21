@@ -227,12 +227,12 @@ async function performanceToStrapi() {
     // console.log(JSON.stringify(performances.filter(p => p.X_town_et), null, 4))
     // console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id + ' ' + t.id).join("\n"))
     for(performance of performancesToPost){
-        console.log(performance.remote_id)
+        // console.log(performance.remote_id)
     }
 
     // console.log(performances);
     // PUT
-    putToStrapi(performances, 'performances')
+    // putToStrapi(performances, 'performances')
 
     // POST
     // console.log(performancesToPost);
@@ -343,7 +343,7 @@ async function articlesToStrapi() {
             return { id: strapi_person_id }
         })
 
-        starpi_article_id = articles_from_strapi.filter(s_article => {
+        let starpi_article_id = articles_from_strapi.filter(s_article => {
             return s_article.remote_id === article_entity.id.toString()
         }).map(e => { return e.id })[0]
 
@@ -371,7 +371,7 @@ async function articlesToStrapi() {
             "created_at": article_entity.properties['entu-created-at'].values[0].db_value,
             "updated_at": article_entity.properties['entu-changed-at'].values[0].db_value,
             "published_at": article_entity.properties['entu-changed-at'].values[0].db_value,
-            "x_pictures": {
+            "X_pictures": {
                 "photo": photo,
                 "photoOriginal": photoOriginal,
                 "photoMedium": photoMedium,
@@ -383,24 +383,30 @@ async function articlesToStrapi() {
     })
 
     for (article of articles){
-        console.log(article.id)
-        console.log(article.X_pictures);
+        // console.log(article.id)
+        // console.log(article.X_pictures);
     }
+
+    articlesToPost = articles.filter(article => {return article.id === undefined})
+    for(article of articlesToPost){
+        // console.log(article.remote_id)
+    }
+
 
     // console.log(util.inspect(articles, null, 4))
 
     // PUT
-    putToStrapi(articles, 'articles')
+    // putToStrapi(articles, 'articles')
 
     // POST
-    // postToStrapi(articles, 'articles')
+    // postToStrapi(articlesToPost, 'articles')
 }
 
 async function eventsToStrapi() {
 
     const dataJSON = path.join(entuDataPath, 'event.json')
     let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
-
+    let relations = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_entu', 'entu_kaustad_syndmused.yaml')))
 
 
     let events = eventJSON.map(event_entity => {
@@ -430,6 +436,14 @@ async function eventsToStrapi() {
             return s_event.remote_id === event_entity.id.toString()
         }).map(e => { return e.id })[0]
 
+        let eventType = ''
+
+        for (let type in relations){
+            if (relations[type].syndmused.includes(event_entity.id )){
+                eventType = type
+            }
+        }
+
 
         let x_ticket_info =
         {
@@ -453,6 +467,7 @@ async function eventsToStrapi() {
             "subtitle_en": (event_entity.properties['en-subtitle'].values.length > 0 ? event_entity.properties['en-subtitle'].values[0].db_value : null),
             "resident": (event_entity.properties.resident.values.length > 0 ? event_entity.properties.resident.values[0].db_value : null),
             "performance": strapi_performance,
+            "type": eventType,
             "hide_from_page": (event_entity.properties.nopublish.values.length > 0 ? event_entity.properties.nopublish.values[0].db_value : null),
             "canceled": (event_entity.properties.canceled.values.length > 0 ? event_entity.properties.canceled.values[0].db_value : null),
             "conversation": (event_entity.properties.talk.values.length > 0 ? event_entity.properties.talk.values[0].db_value : null),
@@ -570,7 +585,7 @@ async function main() {
     // await bannerToStrapi()
     // await categoriesToStrapi()
     // await personToStrapi()
-    await performanceToStrapi()
+    // await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
     // await eventsToStrapi()
@@ -587,7 +602,7 @@ async function main() {
     // await hallFromStrapi('halls')
     // await fromStrapi('locations')
     // await fromStrapi('articles')
-    // await fromStrapi('events')
+    await fromStrapi('events')
     // await fromStrapi('label-groups')
     // await fromStrapi('newscasts', 'news')
 }

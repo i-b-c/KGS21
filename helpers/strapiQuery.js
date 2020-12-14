@@ -1,12 +1,12 @@
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
-const http = require('http')
+const http = require('https')
 const { strapiAuth } = require('./strapiAuth.js')
 const { spin } = require("./spinner")
 
 // process.env['StrapiHost']
-const STRAPI_URL = '206.81.21.173'
+const STRAPI_URL = 'a.saal.ee'
 const DATAMODEL_PATH = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 const DATAMODEL = yaml.safeLoad(fs.readFileSync(DATAMODEL_PATH, 'utf8'))
 

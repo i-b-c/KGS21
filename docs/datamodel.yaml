@@ -232,6 +232,13 @@ Event: &Event # etendus
     remote_id: (UID)
 
 #Performance
+
+PerformanceMedia: &PerformanceMedia
+    original_images: *StrapiMedia
+    front_page_images: *StrapiMedia
+    gallery_large_images: *StrapiMedia
+    gallery_images: *StrapiMedia
+
 Performance: &Performance # performance #lavastus
     _path: /performances
     name_et: (text)
@@ -245,16 +252,7 @@ Performance: &Performance # performance #lavastus
     coproduction: (boolean)
     coproduction_importance: (number)
     front_page_promotion: (boolean)
-    original_images:
-        - *StrapiMedia
-    front_page_images:
-        - *StrapiMedia
-    gallery_large_images:
-        - *StrapiMedia
-    gallery_images:
-        - *StrapiMedia
-    logos:
-        - *StrapiMedia
+
     purchase_description_et: (text)
     purchase_description_en: (text)
     premiere: (datetime)
@@ -262,7 +260,11 @@ Performance: &Performance # performance #lavastus
     description_en: (text rich)
     technical_info_et: (text rich)
     technical_info_en: (text rich)
-    raider:
+    performance_media:
+        - *PerformanceMedia
+    logos:
+        - *StrapiMedia
+    raider: # fail
         - *StrapiMedia
     X_headline_et: (text)
     X_headline_en: (text)
@@ -297,6 +299,14 @@ Newscast: &Newscast
     #     - *Person
     remote_id: (text)
 
+ArticleMedia: &ArticleMedia
+    original_images:
+        - *StrapiMedia
+    first_page_images:
+        - *StrapiMedia
+    gallery_images:
+        - *StrapiMedia
+
 Article: &Article #Echo
     _path: /articles
     title_et: (text)
@@ -311,12 +321,8 @@ Article: &Article #Echo
         - *Category
     authors:
         - *Person
-    original_images:
-        - *StrapiMedia
-    first_page_images:
-        - *StrapiMedia
-    gallery_images:
-        - *StrapiMedia
+    article_media:
+        - *ArticleMedia
     hide_gallery: (boolean)
     photo_article: (boolean)
     audio: (text)
