@@ -1,31 +1,27 @@
 const fs = require('fs')
-// const yaml = require('js-yaml')
+const yaml = require('js-yaml')
 const path = require('path')
 const http = require('http')
 const { strapiAuth } = require('./strapiAuth.js')
-// const { spin } = require("./spinner")
+const { spin } = require("./spinner")
 
-const StrapiHost = "206.81.21.173"
-
-
-// const STRAPI_URL = process.env['StrapiHost']
-// const DATAMODEL_PATH = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
-// const DATAMODEL = yaml.safeLoad(fs.readFileSync(DATAMODEL_PATH, 'utf8'))
+const STRAPI_URL = process.env['StrapiHost']
+const DATAMODEL_PATH = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
+const DATAMODEL = yaml.safeLoad(fs.readFileSync(DATAMODEL_PATH, 'utf8'))
 
 var TOKEN = ''
 
 async function strapiQuery(options, dataObject = false) {
-    // spin.start()
+    spin.start()
     if (TOKEN === '') {
         TOKEN = await strapiAuth() // TODO: setting global variable is no a good idea
-        console.log('Bearer', TOKEN)
+        // console.log('Bearer', TOKEN)
     }
     options.headers['Authorization'] = `Bearer ${TOKEN}`
-    options['host'] = StrapiHost
-    // options['host'] = process.env['StrapiHost']
+    options['host'] = process.env['StrapiHost']
     // options.timeout = 30000
 
-    console.log(options, JSON.stringify((dataObject) || ''))
+    // console.log(options, JSON.stringify((dataObject) || ''))
     return new Promise((resolve, reject) => {
         const request = http.request(options, (response) => {
             response.setEncoding('utf8')
@@ -35,10 +31,10 @@ async function strapiQuery(options, dataObject = false) {
                 // process.stdout.write(spin())
             })
             response.on('end', async function () {
-                // spin.stop()
-                // if (!options.full_model_fetch) {
-                //     process.stdout.write({GET:'?', PUT:'+', POST:'o', DELETE:'X'}[options.method])
-                // }
+                spin.stop()
+                if (!options.full_model_fetch) {
+                    process.stdout.write({GET:'?', PUT:'+', POST:'o', DELETE:'X'}[options.method])
+                }
                 if (response.statusCode === 200) {
                     resolve(JSON.parse(allData))
                 // } else if (response.statusCode === 500) {
@@ -51,13 +47,13 @@ async function strapiQuery(options, dataObject = false) {
                 }
             })
             response.on('error', function (thisError) {
-                // spin.stop()
+                spin.stop()
                 console.log('\nE:1', thisError)
                 reject(thisError)
             })
         })
         request.on('error', async function (thisError) {
-            // spin.stop()
+            spin.stop()
             if (thisError.code === 'ETIMEDOUT') {
                 process.stdout.write('r')
                 let resolved = await strapiQuery(options, dataObject)
@@ -83,66 +79,74 @@ const isObject = item => {
     return (item && typeof item === 'object' && !Array.isArray(item))
 }
 
-async function postToStrapi(data, model) {
+async function getModel(model, filters={}) {
+    if (! model in DATAMODEL) {
+        console.log('WARNING: no such model: "', model, '".' )
+        return false
+    }
+    if (! '_path' in DATAMODEL[model]) {
+        console.log('WARNING: no path to model: "', model, '".' )
+        return false
+    }
+    if (!isObject(filters)) {
+        throw new TypeError('filters should be key-value object')
+    }
+    let full_model_fetch = false
+    const t0 = new Date().getTime()
 
+    if (JSON.stringify(filters) === JSON.stringify({})) {
+        full_model_fetch = true
+        process.stdout.write(`Fetching every ${model}`)
+    }
 
-    let _path = `http://${StrapiHost}/${model}`
+    filters['_limit'] = '-1'
+    let filter_str_a = []
+    for (const [key, value] of Object.entries(filters)) {
+        filter_str_a.push(key + '=' + encodeURIComponent(value).replace('%20','+'))
+    }
+
+    const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
+
+    const options = {
+        headers: { 'Content-Type': 'application/json' },
+        path: `${_path}?${filter_str_a.join('&')}`,
+        method: 'GET',
+        full_model_fetch: full_model_fetch
+    }
+    if (filters.length) {
+        console.log('=== getModel', filter, options)
+    }
+    const strapi_data = await strapiQuery(options)
+    if (full_model_fetch) {
+        process.stdout.write(`. [${new Date().getTime() - t0}ms]`)
+    }
+    return strapi_data
+}
+
+async function putModel(model, data) {
+    if (! model in DATAMODEL) {
+        console.log('WARNING: no such model: "', model, '".' )
+        return false
+    }
+    if (! '_path' in DATAMODEL[model]) {
+        console.log('WARNING: no path to model: "', model, '".' )
+        return false
+    }
+
+    const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
     let results = []
     for (const element of data) {
         const options = {
             headers: { 'Content-Type': 'application/json' },
-            path: _path,
-            method: 'POST'
+            path: _path + '/' + element.id,
+            method: 'PUT'
         }
-    console.log(element);
-
-    results.push(await strapiQuery(options, element))
+        // console.log('=== putModel', options, element)
+        results.push(await strapiQuery(options, element))
     }
-
     return results
 }
 
-async function getFromStrapi(model) {
-
-    const _path = `http://${StrapiHost}/${model}`
-
-    const options = {
-        headers: { 'Content-Type': 'application/json' },
-        path: _path,
-        method: 'GET',
-    }
-
-    const strapi_data = await strapiQuery(options)
-
-    return strapi_data
-}
-
-// async function putModel(model, data) {
-//     if (! model in DATAMODEL) {
-//         console.log('WARNING: no such model: "', model, '".' )
-//         return false
-//     }
-//     if (! '_path' in DATAMODEL[model]) {
-//         console.log('WARNING: no path to model: "', model, '".' )
-//         return false
-//     }
-
-//     const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
-//     let results = []
-//     for (const element of data) {
-//         const options = {
-//             headers: { 'Content-Type': 'application/json' },
-//             path: _path + '/' + element.id,
-//             method: 'PUT'
-//         }
-//         // console.log('=== putModel', options, element)
-//         results.push(await strapiQuery(options, element))
-//     }
-//     return results
-// }
-
-
 exports.strapiQuery = strapiQuery
-exports.postToStrapi = postToStrapi
-exports.getFromStrapi = getFromStrapi
-// exports.putModel = putModel
+exports.getModel = getModel
+exports.putModel = putModel
