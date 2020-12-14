@@ -157,14 +157,15 @@ async function performanceToStrapi() {
     const dataJSON = path.join(entuDataPath, 'performance.json')
 
     let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
-    
+
     let performances = performanceJSON.map(performance_entity => {
-        
-        const performance_category_remote_ids = performance_entity.properties.category.values.map(entu_value => entu_value.db_value)
+
+        const performance_category_remote_ids = performance_entity.properties.category.values.map(entu_value => entu_value.db_value.toString())
         let performance_categories = categories_from_strapi.filter(strapi_category => {
             return performance_category_remote_ids.includes(strapi_category.remote_id)
         }).map(strapi_category => { return { id: strapi_category.id } })
-        
+        // console.log({performance_category_remote_ids, performance_categories});
+
         let photoGallery = performance_entity.properties['photo-gallery'].values.map(photo => {return photo.db_value} ).toString()
         let photo = performance_entity.properties.photo.values.map(photo => {return photo.db_value} ).toString()
         let photoOriginal = performance_entity.properties['photo-original'].values.map(photo => {return photo.db_value} ).toString()
@@ -184,6 +185,10 @@ async function performanceToStrapi() {
             return s_performance.remote_id === performance_entity.id.toString()
         }).map(e => { return e.id })[0]
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19130244f1328315ee620424ca8e8ba83dabfa83
         return {
             "remote_id": performance_entity.id.toString(),
             "name_et": (performance_entity.properties['et-name'].values.length > 0 ? performance_entity.properties['et-name'].values[0].db_value : null),
