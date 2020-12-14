@@ -83,7 +83,7 @@ async function postToStrapi(data, model) {
             path: _path,
             method: 'POST'
         }
-    console.log(element)
+    // console.log(element)
     results.push(await strapiQuery(options, element))
     }
     return results
@@ -97,7 +97,7 @@ async function putToStrapi(data, model) {
             path: _path + '/' + element.id,
             method: 'PUT'
         }
-    console.log(element, options.path)
+    // console.log(element, options.path)
     results.push(await strapiQuery(options, element))
     }
     return results
