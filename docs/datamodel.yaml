@@ -64,6 +64,13 @@ StrapiMedia: &StrapiMedia
     # provider: (text)
     # provider_metadata: (text)
 
+X_pictures: &X_pictures
+    photoGallery: (text)
+    photo: (text)
+    photoOriginal: (text)
+    photoMedium: (text)
+    photoBig: (text)
+
 # Location
 Country: &Country
     # _path: /countries
@@ -165,6 +172,7 @@ Banner: &Banner
     end: (datetime)
 
 Category: &Category # category loeng, tants, teater, prformance, video, n4itus
+    _path: /categories
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
@@ -186,7 +194,7 @@ TicketInfo: &TicketInfo
 
 Event: &Event # etendus
     _path: /events
-    type: (Enumeration) # programm, residentuur, festival, tuur
+    type: (Enumeration) # programm, residentuur, festival, tuur, projekt
     name_et: (text)
     name_en: (text)
     slug_et: (UID, name_et)
@@ -270,7 +278,7 @@ Performance: &Performance # performance #lavastus
     events:
         - *Event
     remote_id: (UID)
-
+    X_pictures: *X_pictures
 
 #News and Article
 Newscast: &Newscast
@@ -316,6 +324,8 @@ Article: &Article #Echo
     content_et: (text rich)
     content_en: (text rich)
     remote_id: (UID)
+    x_pictures: *X_pictures
+
 
 Coverage: &Coverage
     remote_id: (UID)
@@ -336,7 +346,7 @@ Label: &Label
     value_en: (text)
 
 LabelGroup:
-    # _path: /label-groups
+    _path: /label-groups
     name: (text)
     label: #(Component (repeatable))
         - *Label
