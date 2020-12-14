@@ -20,7 +20,6 @@ const news_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath,
 const people_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'people.yaml')))
 const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'performances.yaml')))
 
-
 async function bannerTypeToStrapi() {
     const dataJSON = path.join(entuDataPath, 'banner-type.json')
 
@@ -185,7 +184,6 @@ async function performanceToStrapi() {
             return s_performance.remote_id === performance_entity.id.toString()
         }).map(e => { return e.id })[0]
 
-    
         return {
             "remote_id": performance_entity.id.toString(),
             "name_et": (performance_entity.properties['et-name'].values.length > 0 ? performance_entity.properties['et-name'].values[0].db_value : null),
@@ -222,14 +220,21 @@ async function performanceToStrapi() {
         }
 
     })
+
+    performancesToPost = performances.filter(performance => {return performance.id === undefined})
     // console.log(JSON.stringify(performances.filter(p => p.X_town_et), null, 4))
     // console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id + ' ' + t.id).join("\n"))
+    for(performance of performancesToPost){
+        console.log(performance.remote_id)
+    }
 
+    // console.log(performances);
     // PUT
-    putToStrapi(performances, 'performances')
+    // putToStrapi(performances, 'performances')
 
     // POST
-    // postToStrapi(performances, 'performances')
+    console.log(performancesToPost);
+    postToStrapi(performancesToPost, 'performances')
 
 }
 
@@ -340,6 +345,10 @@ async function articlesToStrapi() {
             return s_article.remote_id === article_entity.id.toString()
         }).map(e => { return e.id })[0]
 
+        let photo = article_entity.properties.photo.values.map(photo => {return photo.db_value} ).toString()
+        let photoOriginal = article_entity.properties['photo-original'].values.map(photo => {return photo.db_value} ).toString()
+        let photoMedium = article_entity.properties['photo-medium'].values.map(photo => {return photo.db_value} ).toString()
+        let photoBig = article_entity.properties['photo-big'].values.map(photo => {return photo.db_value} ).toString()
 
         return {
             "remote_id": article_entity.id.toString(),
@@ -357,14 +366,25 @@ async function articlesToStrapi() {
             "video": (article_entity.properties.video.values.length > 0 ? article_entity.properties.video.values[0].db_value : null),
             "content_et": (article_entity.properties['et-contents'].values.length > 0 ? article_entity.properties['et-contents'].values[0].db_value : null),
             "content_en": (article_entity.properties['en-contents'].values.length > 0 ? article_entity.properties['en-contents'].values[0].db_value : null),
-
             "created_at": article_entity.properties['entu-created-at'].values[0].db_value,
             "updated_at": article_entity.properties['entu-changed-at'].values[0].db_value,
             "published_at": article_entity.properties['entu-changed-at'].values[0].db_value,
+            "x_pictures": {
+                "photo": photo,
+                "photoOriginal": photoOriginal,
+                "photoMedium": photoMedium,
+                "photoBig": photoBig
+            },
             "id": starpi_article_id
 
         }
     })
+    
+    for (article of articles){
+        console.log(article.id)
+        console.log(article.X_pictures);
+    } 
+
     // console.log(util.inspect(articles, null, 4))
 
     // PUT
@@ -548,13 +568,13 @@ async function main() {
     // await bannerToStrapi()
     // await categoriesToStrapi()
     // await personToStrapi()
-    await performanceToStrapi()
+    // await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
     // await eventsToStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
-    // await articlesToStrapi()
+    await articlesToStrapi()
 
     // await fromStrapi('banner-types')
     // await fromStrapi('banners')

@@ -257,6 +257,12 @@ Performance: &Performance # performance #lavastus
     X_other_works: (text rich) # seotud inimese tegemistega, tulevad inimese kyljest
     X_town_et: (text)
     X_town_en: (text)
+    X_pictures:
+        photoGallery: (text)
+        photo: (text)
+        photoOriginal: (text)
+        photoMedium: (text)
+        photoBig: (text)
     artists:
         - *Person
     producers:
@@ -310,6 +316,12 @@ Article: &Article #Echo
     video: (text)
     content_et: (text rich)
     content_en: (text rich)
+    X_pictures:
+        photoGallery: (text)
+        photo: (text)
+        photoOriginal: (text)
+        photoMedium: (text)
+        photoBig: (text)
     remote_id: (UID)
 
 Coverage: &Coverage
