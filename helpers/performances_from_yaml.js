@@ -19,8 +19,7 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        // if ( performance.remote_id === '6865' ||
-        // performance.remote_id === '6858'){
+        // if (['6865', '6858'].includes(performance.remote_id)){
 
         // } else {
         //     continue
@@ -55,6 +54,11 @@ for (const lang of LANGUAGES) {
 
                 delete performance.events
             }
+
+            if (performance.X_pictures) {
+                performance.X_pictures = sort_pictures(performance.X_pictures)
+            }
+
             const performanceYAML = yaml.safeDump(performance, {'noRefs': true, 'indent': '4' });
             const performanceDir = path.join(performancesDir, performance.remote_id)
             const performanceYAMLPath = path.join(performanceDir, `data.${lang}.yaml`)
@@ -71,10 +75,23 @@ for (const lang of LANGUAGES) {
             if (performance[`X_headline_${lang}`]){
                 // console.log(`${performance.id}, ${performance.remote_id}`);
             }
+
         }
     }
 
     console.log(`${allData.length} performances from YAML (${lang}) ready for building`);
     const performancesYAML = yaml.safeDump(allData, {'noRefs': true, 'indent': '4' });
     fs.writeFileSync(performancesYAMLPath, performancesYAML, 'utf8');
+}
+
+function sort_pictures(pics) {
+
+    for (const key in pics) {
+        if (key !== 'id' && pics[key].length) {
+            let picsKeys = pics[key].includes(',') ? pics[key].split(',') : [pics[key]]
+            pics[key] = picsKeys.sort((a, b) => a-b).join(',')
+        }
+    }
+    return JSON.parse(JSON.stringify(pics))
+
 }

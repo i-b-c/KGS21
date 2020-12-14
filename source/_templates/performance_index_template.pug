@@ -14,7 +14,9 @@ block content
                                 fefuncg(type="table" tablevalues="0 0.7764705882352941")
                                 fefuncb(type="table" tablevalues="0 0")
                                 fefunca(type="table" tablevalues="1 1")
-                    figure#slide-6858(style='background-image: url("https://saal.entu.ee/api2/file-21621"); filter: url("/et/performance/6858#filter-1607341824491"); height: 768px;' data-gradientmap-filter="filter-1607341824491")
+                    - var photosBig = self.X_pictures && self.X_pictures.photoBig ? self.X_pictures.photoBig.split(',') : []
+                    - var photoBig = photosBig.length ? photosBig[0] : ''
+                    figure(id= `#slide-${self.remote_id}` style=`background-image: url("${f_api}${photoBig}"); filter: url("/et/performance/6858#filter-1607341824491"); height: 768px;` data-gradientmap-filter="filter-1607341824491")
                     header.col-md-8
                         if self[`X_headline_${self.locale}`]
                             p= self[`X_headline_${self.locale}`]
@@ -126,39 +128,16 @@ block content
 
         .row.front-page-margin
             .col-md-6
-                .gallery
-                    h2 Galerii
-                    .row
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21593")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21592")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21596")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21595")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21599")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21598")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21602")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21601")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21605")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21604")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21608")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21607")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21611")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21610")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21614")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21613")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21617")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21616")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21620")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21619")
+
+                if self.X_pictures && self.X_pictures.photoGallery && self.X_pictures.photoGallery.length
+                    .gallery
+                        h2 Galerii
+                            .row
+                            each galPhoto, key in self.X_pictures.photoGallery.split(',')
+                                .single-image.col-sm-6.col-sm-3.col-md-4
+                                    a.fancybox(rel="gallery" href=`${f_api}${galPhoto}`)
+                                        img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
+
             .col-md-6
             .col-md-12
                 .supporter
