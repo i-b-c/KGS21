@@ -300,12 +300,9 @@ Newscast: &Newscast
     remote_id: (text)
 
 ArticleMedia: &ArticleMedia
-    original_images:
-        - *StrapiMedia
-    first_page_images:
-        - *StrapiMedia
-    gallery_images:
-        - *StrapiMedia
+    original_images: *StrapiMedia
+    first_page_images: *StrapiMedia
+    gallery_images: *StrapiMedia
 
 Article: &Article #Echo
     _path: /articles
