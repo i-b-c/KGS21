@@ -28,4 +28,3 @@ build/*
 
 # dynamic data
 source/_fetchdir/*
-data-transfer/from_strapi/*
