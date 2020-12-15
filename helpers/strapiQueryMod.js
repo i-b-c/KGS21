@@ -1,10 +1,10 @@
 const fs = require('fs')
 // const yaml = require('js-yaml')
 const path = require('path')
-const http = require('http')
+const http = require('https')
 const { strapiAuth } = require('./strapiAuth.js')
 // const { spin } = require("./spinner")
-const StrapiHost = "206.81.21.173"
+const StrapiHost = "a.saal.ee"
 // const STRAPI_URL = process.env['StrapiHost']
 // const DATAMODEL_PATH = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 // const DATAMODEL = yaml.safeLoad(fs.readFileSync(DATAMODEL_PATH, 'utf8'))
@@ -19,7 +19,7 @@ async function strapiQuery(options, dataObject = false) {
     options['host'] = StrapiHost
     // options['host'] = process.env['StrapiHost']
     // options.timeout = 30000
-    console.log(options, JSON.stringify((dataObject) || ''))
+    // console.log(options, JSON.stringify((dataObject) || ''))
     return new Promise((resolve, reject) => {
         const request = http.request(options, (response) => {
             response.setEncoding('utf8')
@@ -83,7 +83,7 @@ async function postToStrapi(data, model) {
             path: _path,
             method: 'POST'
         }
-    console.log(element)
+    // console.log(element)
     results.push(await strapiQuery(options, element))
     }
     return results
@@ -97,7 +97,7 @@ async function putToStrapi(data, model) {
             path: _path + '/' + element.id,
             method: 'PUT'
         }
-    console.log(element, options.path)
+    // console.log(element, options.path)
     results.push(await strapiQuery(options, element))
     }
     return results
