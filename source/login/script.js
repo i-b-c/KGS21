@@ -50,6 +50,9 @@ async function GetCallback(providerToCall) {
 
 }
 
+//Auth.advanced.allow_register => Register action is actualy not available.
+//Auth.form.error.email.taken => Email is already taken.
+
 if (localStorage.getItem("provider")) {
     GetCallback(localStorage.getItem("provider"))
 }
