@@ -9,16 +9,16 @@ const { strapiQuery, postToStrapi, putToStrapi, getFromStrapi } = require("./str
 const entuDataPath = path.join(__dirname, '..', 'data-transfer', 'from_entu')
 const strapiDataPath = path.join(__dirname, '..', 'data-transfer', 'from_strapi')
 
-// const articles_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'articles.yaml')))
-// const banners_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'banners.yaml')))
-// const strapi_banner_types = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'bannerTypes.yaml')))
-// const categories_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'categories.yaml')))
-// const coverages_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'coverages.yaml')))
-// const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'events.yaml')))
-// const locations_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'locations.yaml')))
-// const news_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'news.yaml')))
-// const people_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'people.yaml')))
-// const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'performances.yaml')))
+const articles_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'articles.yaml')))
+const banners_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'banners.yaml')))
+const strapi_banner_types = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'bannerTypes.yaml')))
+const categories_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'categories.yaml')))
+const coverages_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'coverages.yaml')))
+const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'events.yaml')))
+const locations_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'locations.yaml')))
+const news_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'news.yaml')))
+const people_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'people.yaml')))
+const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'performances.yaml')))
 
 async function bannerTypeToStrapi() {
     const dataJSON = path.join(entuDataPath, 'banner-type.json')
@@ -431,6 +431,10 @@ async function eventsToStrapi() {
             }).map(element => { return { id: element.id } })[0]
             // console.log({entu_performance_id, tmp, strapi_performance_id});
         }
+
+        let strapi_event_id = events_from_strapi.filter(s_event => {
+            return s_event.remote_id === event_entity.id.toString()
+        }).map(e => { return e.id })[0]
 
         let eventType = null
 
