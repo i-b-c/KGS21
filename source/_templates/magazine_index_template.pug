@@ -81,97 +81,105 @@ block content
                                     iframe(name="f1c0233958b77b8" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.5/plugins/comments.php?app_id=1664471603808404&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df11696557db15ac%26domain%3Dwww.saal.ee%26origin%3Dhttps%253A%252F%252Fwww.saal.ee%252Ff7aee678acdf34%26relation%3Dparent.parent&container_width=799&height=100&href=https%3A%2F%2Fwww.saal.ee%2Fet%2Fmagazine%2F4057&locale=et_EE&numposts=10&sdk=joey&version=v2.5&width=" style="border: none; visibility: visible; width: 100%; height: 356px;")
                             script.
                                 document.getElementsByClassName('fb-comments')[0].setAttribute('data-href', window.location.href)
+                    - var postCount = 0
                     .col-sm-12.col-md-4.col-lg-4
-                        h2 Seotud postitused
-                        a(href="./magazine/6147")
-                            p 10.10.2019
-                            h3
-                                span.artist "Ei ühtegi sõna"
-                            span.author Kaspar Aus
-                        hr
-                        a(href="./magazine/5350")
-                            p 28.03.2018
-                            h3
-                                span.artist Kellele on kasulik, et sa kardad?
-                            span.author Hanna Selgis
-                        hr
-                        a(href="./magazine/5333")
-                            p 15.03.2018
-                            h3
-                                span.artist MADE IN ESTONIA MARATON – sõna ja vormi harmoonia
-                            span.author Marta Vunš
-                        hr
-                        a(href="./magazine/5215")
-                            p 05.01.2018
-                            h3
-                                span.artist Avalik kiri Magasini toimetajalt
-                            span.author Kaja Kann
-                        hr
-                        a(href="./magazine/5214")
-                            p 28.12.2017
-                            h3
-                                span.artist Today I woke up and the day was gone
-                            span.author Alissa Šnaider
-                        hr
-                        a(href="./magazine/5179")
-                            p 12.12.2017
-                            h3
-                                span.artist Veel kord Mariast
-                            span.author Ilmar Branno
-                        hr
-                        a(href="./magazine/5141")
-                            p 26.10.2017
-                            h3
-                                span.artist kontakt
-                            span.author Henri Hütt
-                        hr
-                        a(href="./magazine/5075")
-                            p 15.09.2017
-                            h3
-                                span.artist KRIITIKA LAVASTUSELE, MIDA POLE OLNUD NO00
-                            span.author Henri Hütt
-                        hr
-                        a(href="./magazine/5074")
-                            p 13.09.2017
-                            h3
-                                span.artist KRIITIKA LAVASTUSELE, MIDA POLE OLNUD NO00
-                            span.author Maarja Kalmre
-                        hr
-                        a(href="./magazine/5073")
-                            p 11.09.2017
-                            h3
-                                span.artist “NOH, MITTE MIDAGI EI JUHTUNUD. AGA ARMASTAN SIND” Teater NO99 viimane teos nr 0
-                            span.author Epp Kubu
-                        hr
-                        a(href="./magazine/5058")
-                            p 04.09.2017
-                            h3
-                                span.artist MA EI TAHA OLLA PORGANDIKUNINGAS
-                            span.author Kaja Kann
-                        hr
-                        a(href="./magazine/5009")
-                            p 17.08.2017
-                            h3
-                                span.artist 2 Reality
-                            span.author Olga Tsvetkova
-                        hr
-                        a(href="./magazine/5007")
-                            p 15.08.2017
-                            h3
-                                span.artist Kunstniku ootused produtsendile ning produtsendi ootused kunstnikule
-                        hr
-                        a(href="./magazine/4997")
-                            p 01.08.2017
-                            h3
-                                span.artist SEANSS SULATUSAHJUS
-                            span.author Epp Kubu
-                        hr
-                        a(href="./magazine/4981")
-                            p 25.07.2017
-                            h3
-                                span.artist KARL SAKSA “SEISUND JA DISAIN” KUI RITUAALNE JA MÄLULINE RÄNNAK
-                            span.author Maarja Kalmre
-                        hr
-                        .row
-                            .col-xs-12.col-md-12
-                                a.load-more.btn.btn-primary(href="/et/magazine/") Vaata kõiki
+                        if self.related && self.related.length
+                            h2 Seotud postitused
+                            each relArticle in self.related
+                                //- if postCount++ < 15
+                                a(href=`/${lang_path}${relArticle.path}`)
+                                    p= relArticle.publish_date_string
+                                    h3
+                                        span.artist= relArticle[`title_${self.locale}`]
+
+                                        if relArticle[`subtitle_${self.locale}`]
+                                            span.artist= `/ ${relArticle[`subtitle_${self.locale}`]}`
+                                    if relArticle.authors_cs
+                                        span.author= relArticle.authors_cs
+                                hr
+                                    //- a(href="./magazine/5350")
+                                    //-     p 28.03.2018
+                                    //-     h3
+                                    //-         span.artist Kellele on kasulik, et sa kardad?
+                                    //-     span.author Hanna Selgis
+                                    //- hr
+                                    //- a(href="./magazine/5333")
+                                    //-     p 15.03.2018
+                                    //-     h3
+                                    //-         span.artist MADE IN ESTONIA MARATON – sõna ja vormi harmoonia
+                                    //-     span.author Marta Vunš
+                                    //- hr
+                                    //- a(href="./magazine/5215")
+                                    //-     p 05.01.2018
+                                    //-     h3
+                                    //-         span.artist Avalik kiri Magasini toimetajalt
+                                    //-     span.author Kaja Kann
+                                    //- hr
+                                    //- a(href="./magazine/5214")
+                                    //-     p 28.12.2017
+                                    //-     h3
+                                    //-         span.artist Today I woke up and the day was gone
+                                    //-     span.author Alissa Šnaider
+                                    //- hr
+                                    //- a(href="./magazine/5179")
+                                    //-     p 12.12.2017
+                                    //-     h3
+                                    //-         span.artist Veel kord Mariast
+                                    //-     span.author Ilmar Branno
+                                    //- hr
+                                    //- a(href="./magazine/5141")
+                                    //-     p 26.10.2017
+                                    //-     h3
+                                    //-         span.artist kontakt
+                                    //-     span.author Henri Hütt
+                                    //- hr
+                                    //- a(href="./magazine/5075")
+                                    //-     p 15.09.2017
+                                    //-     h3
+                                    //-         span.artist KRIITIKA LAVASTUSELE, MIDA POLE OLNUD NO00
+                                    //-     span.author Henri Hütt
+                                    //- hr
+                                    //- a(href="./magazine/5074")
+                                    //-     p 13.09.2017
+                                    //-     h3
+                                    //-         span.artist KRIITIKA LAVASTUSELE, MIDA POLE OLNUD NO00
+                                    //-     span.author Maarja Kalmre
+                                    //- hr
+                                    //- a(href="./magazine/5073")
+                                    //-     p 11.09.2017
+                                    //-     h3
+                                    //-         span.artist “NOH, MITTE MIDAGI EI JUHTUNUD. AGA ARMASTAN SIND” Teater NO99 viimane teos nr 0
+                                    //-     span.author Epp Kubu
+                                    //- hr
+                                    //- a(href="./magazine/5058")
+                                    //-     p 04.09.2017
+                                    //-     h3
+                                    //-         span.artist MA EI TAHA OLLA PORGANDIKUNINGAS
+                                    //-     span.author Kaja Kann
+                                    //- hr
+                                    //- a(href="./magazine/5009")
+                                    //-     p 17.08.2017
+                                    //-     h3
+                                    //-         span.artist 2 Reality
+                                    //-     span.author Olga Tsvetkova
+                                    //- hr
+                                    //- a(href="./magazine/5007")
+                                    //-     p 15.08.2017
+                                    //-     h3
+                                    //-         span.artist Kunstniku ootused produtsendile ning produtsendi ootused kunstnikule
+                                    //- hr
+                                    //- a(href="./magazine/4997")
+                                    //-     p 01.08.2017
+                                    //-     h3
+                                    //-         span.artist SEANSS SULATUSAHJUS
+                                    //-     span.author Epp Kubu
+                                    //- hr
+                                    //- a(href="./magazine/4981")
+                                    //-     p 25.07.2017
+                                    //-     h3
+                                    //-         span.artist KARL SAKSA “SEISUND JA DISAIN” KUI RITUAALNE JA MÄLULINE RÄNNAK
+                                    //-     span.author Maarja Kalmre
+                                    //- hr
+                            .row
+                                .col-xs-12.col-md-12
+                                    a.load-more.btn.btn-primary(href="/et/magazine/") Vaata kõiki
