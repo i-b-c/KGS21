@@ -273,12 +273,6 @@ Performance: &Performance # performance #lavastus
     X_other_works: (text rich) # seotud inimese tegemistega, tulevad inimese kyljest
     X_town_et: (text)
     X_town_en: (text)
-    X_pictures:
-        photoGallery: (text)
-        photo: (text)
-        photoOriginal: (text)
-        photoMedium: (text)
-        photoBig: (text)
     artists:
         - *Person
     # producers:

@@ -9,6 +9,8 @@ const performancesDir = path.join(fetchDir, 'performances')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance']
+const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
+
 const LANGUAGES = ['et', 'en']
 
 let performance_index_template = `/_templates/performance_index_template.pug`
@@ -19,11 +21,15 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        // if (['6865', '6858'].includes(performance.remote_id)){
+        // if (['6865', '6858', '6538'].includes(performance.remote_id)){
 
         // } else {
         //     continue
         // }
+
+        // let performance.category = STRAPIDATA_CATEGORIES.filter( category => {
+        //     performance.remote_id === category.
+        // })
 
         if (performance.remote_id) {
 
@@ -58,6 +64,7 @@ for (const lang of LANGUAGES) {
             if (performance.X_pictures) {
                 performance.X_pictures = sort_pictures(performance.X_pictures)
             }
+            performance.data = { categories: `/_fetchdir/categories.${lang}.yaml`}
 
             const performanceYAML = yaml.safeDump(performance, {'noRefs': true, 'indent': '4' });
             const performanceDir = path.join(performancesDir, performance.remote_id)
