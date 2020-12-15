@@ -14,10 +14,16 @@ const LANGUAGES = ['et', 'en']
 let article_index_template = `/_templates/magazine_index_template.pug`
 
 STRAPIDATA_ARTICLES.sort((a, b) => {
+    return new Date(b.publish_date) - new Date(a.publish_date)
+})
+
+
+// Front page promo to first
+STRAPIDATA_ARTICLES.sort((a, b) => {
     if (a.front_page_promotion) {
         return -1
     } else {
-        return new Date(b.publish_date) - new Date(a.publish_date)
+        return 1
     }
 })
 
