@@ -1,7 +1,7 @@
 var userProfile
+var provider = none
 
 
-//http://a.saal.ee/auth/google/callback
 function decodeToken(token){
     console.log("token", token)
         try{
@@ -22,14 +22,11 @@ function decodeToken(token){
 }
 
 
-
-if (location.search) {
-
-    //google
+function GetCallback(providerToCall){
     var requestOptions = {
         method: 'GET',
     }
-    fetch('https://a.saal.ee/auth/google/callback' + location.search, requestOptions).then(function (response) {
+    fetch('https://a.saal.ee/auth/' + providerToCall + '/callback' + location.search, requestOptions).then(function (response) {
         if (response.ok) {
             return response.json();
         }
@@ -39,45 +36,22 @@ if (location.search) {
         let token = data.jwt
         localStorage.setItem("ACCESS_TOKEN", token)
         // document.dispatchEvent(userProfileLoadedEvent)
-        // console.log("cognitos olev profiil:")
         console.log(userProfile);
     }).catch(function (error) {
         console.warn(error);
     });
 
-    // //facebook
-    // var requestOptions = {
-    //     method: 'GET',
-    // }
-    // fetch('https://a.saal.ee/auth/facebook/callback' + location.search, requestOptions).then(function (response) {
-    //     if (response.ok) {
-    //         return response.json();
-    //     }
-    //     return Promise.reject(response);
-    // }).then(function (data) {
-    //     userProfile = data
-    //     let token = data.jwt
-    //     localStorage.setItem("ACCESS_TOKEN", token)
-    //     // document.dispatchEvent(userProfileLoadedEvent)
-    //     // console.log("cognitos olev profiil:")
-    //     console.log(userProfile);
-    // }).catch(function (error) {
-    //     console.warn(error);
-    // });
-
 }
-
-
 
 
 function LogOut() {
     localStorage.removeItem("ACCESS_TOKEN")
 }
 
+
+
 //PUT /users/:id  --> Update an existing user
 //DELETE /users/:id --> Delete existing user
-
-
 
 function GetUserInfo() {
     if(validToken){

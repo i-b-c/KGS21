@@ -1,5 +1,12 @@
 var validToken = false
 
+function loginWithProvider(currentProvider){
+    provider = currentProvider
+    console.log(currentProvider)
+    // window.location.href = 'https://a.saal.ee/connect/google/'
+    window.location.replace('https://a.saal.ee/connect/' + provider + '/')
+}
+
 
 if(localStorage.getItem('ACCESS_TOKEN')){
     var token = localStorage.getItem('ACCESS_TOKEN')
