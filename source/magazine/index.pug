@@ -11,10 +11,17 @@ block content
                         if self.data.articles
                             each article in self.data.articles
                                 a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href= `/${article.path}`)
-                                    img.img-responsive(src="/assets/images/placeholder.jpg")
+                                    if article.X_pictures && article.X_pictures.photoMedium
+                                        img.img-responsive(src=`${f_api}${article.X_pictures.photoMedium.split(',')[0]}`)
+                                    else
+                                        img.img-responsive(src=`/assets/images/placeholder.jpg`)
+
                                     p= article.publish_date_string
                                     p
                                         span.artist= article[`title_${self.locale}`]
+
+                                        if article[`subtitle_${self.locale}`]
+                                            span.artist= ` / ${article[`subtitle_${self.locale}`]}`
                                     span.author= article.authors_cs
 
 
