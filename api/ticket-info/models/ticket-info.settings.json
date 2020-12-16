@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ticket_infos",
+  "info": {
+    "name": "TicketInfo",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "price": {
+      "type": "decimal"
+    },
+    "discount_price": {
+      "type": "decimal"
+    },
+    "price_on_spot": {
+      "type": "decimal"
+    },
+    "ticketing_url_et": {
+      "type": "string"
+    },
+    "ticketing_url_en": {
+      "type": "string"
+    },
+    "PL_event_id": {
+      "type": "integer"
+    },
+    "free_admission": {
+      "type": "boolean"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

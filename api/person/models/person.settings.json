@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "people",
+  "info": {
+    "name": "Person",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "departments": {
+      "collection": "department"
+    },
+    "remote_id": {
+      "type": "uid"
+    }
+  }
+}

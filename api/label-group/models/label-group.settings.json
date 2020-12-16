@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "label_groups",
+  "info": {
+    "name": "LabelGroup"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "label": {
+      "type": "component",
+      "repeatable": true,
+      "component": "label-group.label"
+    }
+  }
+}

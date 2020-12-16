@@ -1,0 +1,134 @@
+{
+  "kind": "collectionType",
+  "collectionName": "performances",
+  "info": {
+    "name": "Performance",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_et": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "slug_et": {
+      "type": "uid",
+      "targetField": "name_et"
+    },
+    "slug_en": {
+      "type": "uid",
+      "targetField": "name_en"
+    },
+    "subtitle_et": {
+      "type": "string"
+    },
+    "subtitle_en": {
+      "type": "string"
+    },
+    "categories": {
+      "collection": "category"
+    },
+    "coproduction": {
+      "type": "boolean"
+    },
+    "coproduction_importance": {
+      "type": "decimal"
+    },
+    "front_page_promotion": {
+      "type": "boolean"
+    },
+    "logos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "purchase_description_et": {
+      "type": "text"
+    },
+    "premiere": {
+      "type": "datetime"
+    },
+    "description_et": {
+      "type": "richtext"
+    },
+    "description_en": {
+      "type": "richtext"
+    },
+    "technical_info_et": {
+      "type": "richtext"
+    },
+    "technical_info_en": {
+      "type": "richtext"
+    },
+    "raider": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "purchase_description_en": {
+      "type": "richtext"
+    },
+    "remote_id": {
+      "type": "uid"
+    },
+    "artists": {
+      "collection": "person"
+    },
+    "producers": {
+      "collection": "person"
+    },
+    "X_artist": {
+      "type": "string"
+    },
+    "X_producer": {
+      "type": "string"
+    },
+    "X_other_works": {
+      "type": "string"
+    },
+    "X_headline_et": {
+      "type": "string"
+    },
+    "X_headline_en": {
+      "type": "string"
+    },
+    "events": {
+      "collection": "event",
+      "via": "performance"
+    },
+    "X_town_et": {
+      "type": "string"
+    },
+    "X_town_en": {
+      "type": "string"
+    },
+    "X_pictures": {
+      "type": "component",
+      "repeatable": false,
+      "component": "x-pictures.x-pictures"
+    },
+    "performance_media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.performance-media"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "name": "Category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_et": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "remote_id": {
+      "type": "uid"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name_et"
+    },
+    "featured_on_front_page": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_people_x_ppls",
+  "info": {
+    "name": "X_ppl",
+    "icon": "arrow-circle-down"
+  },
+  "options": {},
+  "attributes": {
+    "artist": {
+      "type": "string"
+    },
+    "producer": {
+      "type": "string"
+    }
+  }
+}

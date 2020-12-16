@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_pictures_x_pictures",
+  "info": {
+    "name": "X_pictures",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "photoGallery": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "string"
+    },
+    "photoOriginal": {
+      "type": "string"
+    },
+    "photoMedium": {
+      "type": "string"
+    },
+    "photoBig": {
+      "type": "string"
+    }
+  }
+}

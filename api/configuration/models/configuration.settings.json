@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "configurations",
+  "info": {
+    "name": "Configuration",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "colour": {
+      "type": "string"
+    },
+    "about_article": {
+      "type": "component",
+      "repeatable": false,
+      "component": "config.about-article"
+    }
+  }
+}

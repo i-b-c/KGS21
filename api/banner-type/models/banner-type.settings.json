@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banner_types",
+  "info": {
+    "name": "BannerType",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "remote_id": {
+      "type": "uid"
+    }
+  }
+}
