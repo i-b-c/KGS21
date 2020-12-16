@@ -52,8 +52,7 @@ async function picsToStrapi() {
 
     // req.end();
 
-
-
+function sendPic(entu_db_value){
     let options = {
         'method': 'POST',
         'url': 'https://a.saal.ee/upload',
@@ -62,9 +61,9 @@ async function picsToStrapi() {
         },
         formData: {
             'files': {
-                'value': fs.createReadStream('assets/images/testimage_hytt.jpg'),
+                'value': request.get('https://saal.entu.ee/api2/file-'+ entuPicId),
                 'options': {
-                    'filename': 'testimage_hytt.jpg',
+                    'filename': 'screenshot.png',
                     'contentType': null
                 }
             }
@@ -73,8 +72,19 @@ async function picsToStrapi() {
     request(options, function (error, response) {
         if (error) throw new Error(error);
         console.log(response.body);
+        let picId = JSON.parse(response.body)[0].id
+        console.log("id ", picId)
+
+        //teeb responsis oleva data põhjal uue päringu seose loomiseks
     });
 
+    }
 }
+
+
+
+
+
+
 
 picsToStrapi()
