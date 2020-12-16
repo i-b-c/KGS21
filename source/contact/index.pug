@@ -16,41 +16,13 @@ block content
                         p
                             a(href="mailto:saal@saal.ee") saal@saal.ee
                 .row.team.grid-row
-                    .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                        h2 Kaie Küünal
-                        p Projektijuht
-                        a(href="mailto:kyynal@saal.ee") kyynal@saal.ee
-                        p 5347 8523
-                    .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                        h2 Maarja Kalmre
-                        p Projektijuht
-                        a(href="mailto:maarja@saal.ee") maarja@saal.ee
-                        p +372 55 647 931
-                    .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                        h2 Priit Raud
-                        p Kunstiline juht
-                        a(href="mailto:priit@saal.ee") priit@saal.ee
-                        p +372 50 10 419
-                    .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                        h2 Henry Kasch
-                        p Tehnik
-                        a(href="mailto:henry@saal.ee") henry@saal.ee
-                        p +372 55 658 251
-                    .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                        h2 Annika Üprus
-                        p SAAL Biennaali kunstiline juht, projektijuht
-                        a(href="mailto:annika@saal.ee") annika@saal.ee
-                        p +372 51 75 775
-                    .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                        h2 Eneli Järs
-                        p Projektijuht
-                        a(href="mailto:eneli@saal.ee") eneli@saal.ee
-                        p +372 50 69 655
-                    .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                        h2 Kaie Olmre
-                        p Projektijuht
-                        a(href="mailto:kaie@saal.ee") kaie@saal.ee
-                        p +3725241778
+                    if self.data.persons
+                        each person in self.data.persons
+                            .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
+                                h2= `${person.first_name}${person.last_name ? ` ${person.last_name}` : ''}`
+                                p= person.occupation
+                                a(href=`mailto:${person.email}`)= person.email
+                                p= person.phone_number
             article.col-md-12.council
                 .row
                     article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location

@@ -1,173 +1,151 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
         .row
-            #front-carousel.event-banner.carousel.slide
+            .event-banner.carousel.slide(id='front-carousel')
                 .carousel-inner(role="listbox")
-                    svg(version="1.1" width="0" height="0")
-                        filter#filter-1607341824491
-                            fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
-                            fecomponenttransfer(color-interpolation-filters="sRGB")
-                                fefuncr(type="table" tablevalues="0 1")
-                                fefuncg(type="table" tablevalues="0 0.7764705882352941")
-                                fefuncb(type="table" tablevalues="0 0")
-                                fefunca(type="table" tablevalues="1 1")
-                    figure#slide-6858(style='background-image: url("https://saal.entu.ee/api2/file-21621"); filter: url("https://www.saal.ee/et/performance/6858#filter-1607341824491"); height: 768px;' data-gradientmap-filter="filter-1607341824491")
+                    //- svg(version="1.1" width="0" height="0")
+                    //-     filter#filter-1607341824491
+                    //-         fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
+                    //-         fecomponenttransfer(color-interpolation-filters="sRGB")
+                    //-             fefuncr(type="table" tablevalues="0 1")
+                    //-             fefuncg(type="table" tablevalues="0 0.7764705882352941")
+                    //-             fefuncb(type="table" tablevalues="0 0")
+                    //-             fefunca(type="table" tablevalues="1 1")
+                    - var photosBig = self.X_pictures && self.X_pictures.photoBig ? self.X_pictures.photoBig.split(',') : []
+                    - var photoBig = photosBig.length ? `${f_api}${photosBig[0]}` : `/assets/images/placeholder.jpg`
+                    figure(id= `slide-${self.remote_id}` style=`background-image: url("${photoBig}");`)
                     header.col-md-8
-                        p Baltoscandal 2020 esitleb:
+                        if self[`X_headline_${self.locale}`]
+                            p= self[`X_headline_${self.locale}`]
                         h1
-                            span.artist Stefan Kaegi / Rimini Protokoll
-                        h1 !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                    ul.event-categories
-                        li.text-uppercase.h3.unactive
-                            span
-                                a(href="search?q=category:623") Loeng
-                        li.text-uppercase.h3.unactive
-                            span
-                                a(href="search?q=category:3809") Tants
-                        li.text-uppercase.h3
-                            span
-                                a(href="search?q=category:3810") Performance
-                        li.text-uppercase.h3.unactive
-                            span
-                                a(href="search?q=category:3811") Teater
-                        li.text-uppercase.h3.unactive
-                            span
-                                a(href="search?q=category:3812") Muusika
-                        li.text-uppercase.h3.unactive
-                            span
-                                a(href="search?q=category:3814") Video
-                        li.text-uppercase.h3.unactive
-                            span
-                                a(href="search?q=category:5027") Näitus
-                    script.
-                        var slide6858 = document.getElementById('slide-6858');
-                        var gradientMap = '#000000, #FFC600';
-                        GradientMaps.applyGradientMap(slide6858, gradientMap);
+                            if self.X_artist
+                                span.artist= self.X_artist
+                            if self.X_producer
+                                span.producer= self.X_producer
+                            if self[`X_town_${self.locale}`]
+                                span.town= self[`X_town_${self.locale}`]
+
+                        h1= self[`name_${self.locale}`]
+
+                        if self[`subtitle_${self.locale}`]
+                            p= self[`subtitle_${self.locale}`]
+
+                    - var activeCategories = []
+                    if self.categories
+                        - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
+                    if self.data.categories
+                        ul.event-categories
+                            each category in self.data.categories
+                                if category.featured_on_front_page
+                                    li.text-uppercase.h3( class =( activeCategories.includes(category.remote_id)? "" : "unactive" ) )
+                                        span
+                                            a(href="")= category[`name_${self.locale}`]
+                                    //- li.text-uppercase.h3.unactive
+                                    //-     span
+                                    //-         a(href="search?q=category:3809") Tants
+                                    //- li.text-uppercase.h3
+                                    //-     span
+                                    //-         a(href="search?q=category:3810") Performance
+                                    //- li.text-uppercase.h3.unactive
+                                    //-     span
+                                    //-         a(href="search?q=category:3811") Teater
+                                    //- li.text-uppercase.h3.unactive
+                                    //-     span
+                                    //-         a(href="search?q=category:3812") Muusika
+                                    //- li.text-uppercase.h3.unactive
+                                    //-     span
+                                    //-         a(href="search?q=category:3814") Video
+                                    //- li.text-uppercase.h3.unactive
+                                    //-     span
+                                    //-         a(href="search?q=category:5027") Näitus
+                                script.
+                                    var slide#{self.remote_id} = document.getElementById('slide-#{self.remote_id}');
+                                    var gradientMap = '#000000, #FFC600';
+                                    GradientMaps.applyGradientMap(slide#{self.remote_id}, gradientMap);
         .row.front-page-margin
             aside.col-md-12.col-lg-3
-                .meta-info
-                    p
-                        | Idee, tekst ja lavastus:
-                        strong Stefan Kaegi
-                        br
-                        | Tekst / keha / hääl:
-                        strong Thomas Melle
-                        br
-                        | Tehnika:
-                        strong Evi Bauer
-                        br
-                        | Animatroonika: Chiscreatures Filmeffects GmbH
-                        br
-                        | Silikoonpea tootmine ja viimistlemine / jumestus ja soeng:
-                        strong Tommy Opatz
-                        br
-                        | Dramaturg:
-                        strong Martin Valdés-Stauber
-                        br
-                        | Videokujundus:
-                        strong Mikko Gaestel
-                        br
-                        | Muusika:
-                        strong Nicolas Neecke
-                        br
-                        | Produktsioonijuht Rimini Protokoll / väljasõidul:
-                        strong Epona Hamdan
-                        br
-                        | Valguskujundus / väljasõidul:
-                        strong Robert Läßig, Martin Schwemin, Lisa Eßwein
-                        br
-                        | Heli- ja videokujundus / väljasõidul:
-                        strong Jaromir Zezula, Nikolas Neecke
-                        br
-                        br
-                        | Rimini Protokolli lavastuse „Õõvaorg” on originaalis produtseerinud Münchner Kammersipele, kaasproduktsioon Berliner Festspie / immersion, Donaufestival (Krems), Feodor Elutine (Moskva), FOG Triennale Milano Performing Arts (Milano), Temporada Alta – Festival de Tado de Catalunya (Girona), SPRING Utrecht
-                        br
-                        | Toetajad: Goethe Instituut, Kultuurkapital, Kultuuriministeerium ja Rakvere linn
-                        br
-                        | Lavastus on inglise keeles, eestikeelse tõlkega
-                        br
-                        br
-                        | Etendused Kanuti Gildi SAALis 2 / 3.12 kell 18.00 ja 20.30 ning Rakvere teatri väikeses saalis 5.12 16.00 ja 19.00
+                if self[`technical_info_${self.locale}`]
+                    .meta-info
+                        p
+                            +format(self[`technical_info_${self.locale}`])
+
             article.readMore.main-text.col-md-8.col-lg-6.h3
                 p
-                    | Me oleme harjunud mõtlema robotitest kui masinatest, mille eesmärgiks on täita ülesandeid tõhusalt ja täpselt. Saksa tööstuses näevad nad harva inimeste moodi välja – et vältida emotsionaalseid probleeme. Aasias vastupidiselt on humanoidroboteid arendatud juba mõnda aega, näiteks hooldajate ja seksuaalpartneritena. Väline sarnasus inimestega muudab masinate aktsepteerimise lihtsamaks. Kuid siiski – kui masin on inimesele liiga sarnane, hakkab tekkima usaldamatus – mis on inimene ja mis masin? Jaapani robotite uurijad kutsuvad seda kummalist nähtust nimega „õõvaorg” ehk „võõrastamise org”. Lavastus „Õõvaorg” vaatleb rahutustegevat vastasseisu inimese ja roboti vahel olukorras, kus piir aina hägustub.
-                    br
-                    | Stefan Kaegi, teatritrupi Rimini Protokoll juht, töötas lavastuse „Õõvaorg” tarbeks esimest korda trupi ajaloos koos näitekirjanikuga: kirjanik Thomas Melle lubas teha endast humanoidroboti. Android võtab lavastuses autori koha ning küsib – mida tähendab see originaalile, kui koopia võtab tema koha üle? Kas originaal õpib läbi elektroonilise teisiku ennast paremini tundma? Kas originaal ja koopia võistlevad omavahel või aitavad teineteist?
-                    br
-                    br
-                    strong Stefan Kaegi
-                    |  on toonud lavale dokumentaallavastusi, kuuldemänge ja kohaspetsiifilisi lavastusi erinevate kooslustega, mis tihti viitavad majanduslikele suhetele ja nende inimmõjule. Näiteks on ta tuuritanud lavastusega, kus osalesid kaks Bulgaaria rekkajuhti ja teinud lavastuse inimestega, kel pole enam kaua jäänud elada. 2014 aastal osales Rimini Protokoll Talveöö Unenäo festivalil lavastusega „Remote Tallinn”.
-                    | 2007aastal pälvis Rimini Protokoll Fausti teatriauhinna ning 2008. aastal Euroopa auhinna „New Realities in Theatre“, 2011. aastal saadi hõbelõvi Veneetsia teatribiennaalil.
+                    +format(self[`description_${self.locale}`])
+
             aside.col-md-4.col-lg-3
-                .past
-                    h2 Olnud
-                    .row
-                        .col-sm-6.col-md-5.col-lg-4
-                            p 03.12.2020
-                        .col-sm-6.col-md-7.col-lg-8
-                            p !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                            p Kanuti Gildi SAAL
-                        .col-sm-12.col-md-12.col-lg-12
-                            hr
-                        .col-sm-6.col-md-5.col-lg-4
-                            p 03.12.2020
-                        .col-sm-6.col-md-7.col-lg-8
-                            p !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                            p Kanuti Gildi SAAL
-                        .col-sm-12.col-md-12.col-lg-12
-                            hr
-                        .col-sm-6.col-md-5.col-lg-4
-                            p 02.12.2020
-                        .col-sm-6.col-md-7.col-lg-8
-                            p !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                            p Kanuti Gildi SAAL
-                        .col-sm-12.col-md-12.col-lg-12
-                            hr
-                        .col-sm-6.col-md-5.col-lg-4
-                            p 02.12.2020
-                        .col-sm-6.col-md-7.col-lg-8
-                            p !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                            p Kanuti Gildi SAAL
-                        .col-sm-12.col-md-12.col-lg-12
-                            hr
+                //- - var currentDate = new Date()
+                //- if self.events && self.events.length
+                //-     .tickets.row
+                //-         each event in self.events
+                //-             if currentDate <= event.start_time
+                //-                 .col-sm-4.col-md-4.col-lg-4
+                //-                     p= event.start_time
+
+                if self.minToMaxEvents && self.minToMaxEvents.length
+
+                    .past
+                        each event in self.minToMaxEvents
+                            .row(event_type='future_events', start_time=event.start_time)
+                                .col-sm-6.col-md-5.col-lg-4
+                                    p= event.start_date_string
+                                .col-sm-6.col-md-7.col-lg-8
+                                    if self[`name_${self.locale}`]
+                                        p= self[`name_${self.locale}`]
+                                    p Kanuti Gildi SAAL
+                                    span(style='float:right;')
+                                        if event.X_ticket_info.sales_status
+                                            if event.canceled === 'true'
+                                                a.btn.btn-primary(class="disabled")= 'canceled'
+                                            else
+                                                if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
+                                                    a.btn.btn-primary(class="free disabled" href='' target='_blank')= event.X_ticket_info.sales_status
+                                                else
+                                                    a.btn.btn-primary(class="" href='' target='_blank')= 'status'
+
+
+
+                                .col-sm-12.col-md-12.col-lg-12
+                                    hr
+
+                        script.
+                            performanceEventToggler('future_events')
+
+                    .past
+                        <br>
+                        <br>
+                        h2 Olnud
+                        each event in self.maxToMinEvents
+                            .row(event_type='past_events', start_time=event.start_time)
+                                .col-sm-6.col-md-5.col-lg-4
+                                    p= event.start_date_string
+                                .col-sm-6.col-md-7.col-lg-8
+                                    if self[`name_${self.locale}`]
+                                        p= self[`name_${self.locale}`]
+                                    p Kanuti Gildi SAAL
+                                .col-sm-12.col-md-12.col-lg-12
+                                    hr
+
+                        script.
+                            performanceEventToggler('past_events')
+
         .row.front-page-margin
             .col-md-6
-                .gallery
-                    h2 Galerii
-                    .row
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21593")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21592")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21596")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21595")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21599")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21598")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21602")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21601")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21605")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21604")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21608")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21607")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21611")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21610")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21614")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21613")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21617")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21616")
-                        .single-image.col-sm-6.col-sm-3.col-md-4
-                            a.fancybox(rel="gallery" href="https://saal.entu.ee/api2/file-21620")
-                                img.img-responsive(src="https://saal.entu.ee/api2/file-21619")
+
+                if self.X_pictures && self.X_pictures.photoGallery && self.X_pictures.photoMedium && self.X_pictures.photoGallery.length && self.X_pictures.photoMedium.length
+                    .gallery
+                        h2 Galerii pealkiri
+                            .row
+                            each galPhoto, key in self.X_pictures.photoGallery.split(',')
+                                .single-image.col-sm-6.col-sm-3.col-md-4
+                                    a.fancybox(rel="gallery" href=`${f_api}${galPhoto}`)
+                                        img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
+
             .col-md-6
             .col-md-12
                 .supporter
                     ul.list-inline
+
