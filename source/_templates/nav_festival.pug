@@ -11,16 +11,16 @@ nav.navbar.navbar-default.navbar-fixed-top
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
                 li(class= self.path === `/${lang_path}festival/${self.id}/about` ? 'active' : undefined )
-                    a(href=`/${lang_path}festival/${self.id}/about`) FESTIVALIST
+                    a(href=`/${lang_path}festival/${self.id}/about`)= self.labels.nav.festival
                 if typeof festival !== 'undefined' && festival.coverage && Object.keys(festival.coverage).length
                     li(class= self.path === `/${lang_path}festival/${self.id}/press` ? 'active' : undefined )
-                        a(href=`/${lang_path}festival/${self.id}/press`) PRESS
+                        a(href=`/${lang_path}festival/${self.id}/press`)= self.labels.nav.press
                 li(class= (self.path === `/${lang_path}festival/${self.id}/program` || self.path === `/${lang_path}festival/${self.id}`) ? 'active' : undefined )
                     script.
                         console.log(`/#{lang_path}festival/#{self.id}/program`, ' - ', `#{self.path}`)
-                    a(href=`/${lang_path}festival/${self.id}/program`) PROGRAMM
+                    a(href=`/${lang_path}festival/${self.id}/program`)= self.labels.nav.program
                 li(class= self.path === `/${lang_path}festival/${self.id}/tickets` ? 'active' : undefined )
-                    a(href=`/${lang_path}festival/${self.id}/tickets`) PILETID
+                    a(href=`/${lang_path}festival/${self.id}/tickets`)= self.labels.nav.tickets
 
 
             ul.nav.navbar-nav.navbar-right.social

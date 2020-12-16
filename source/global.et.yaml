@@ -1,0 +1,161 @@
+siteTitle: Kanuti Gildi SAAL
+root: /
+language:
+    et: eesti
+    en: english
+labels:
+    main:
+        KGS: Kanuti Gildi SAAL
+        KGS_logo: Kanuti Gildi SAALi logo
+        NUP_logo: New Performance logo
+        SB_logo: SAAL Bieannaal logo
+        season: Hooaeg
+    Jon Doe:
+        nimeta: Nimeta
+    NUP:
+        get-newspaper-2016-1: Loe NUP lehte!
+    button:
+        LATEST: LAT.EST
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance ajaleht
+        artist-talk: Vestlus
+        buy_ticket: Osta pilet
+        buy_t_Free_admission: button.buy_ticket.Free_admission
+        buy_t_canceled: Jääb ära!
+        buy_t_free_admission: Tasuta
+        buy_t_free_admission/: button.buy_ticket.free_admission/
+        buy_t_future_sale: Tuleb müüki
+        buy_t_going_now: Osta pilet
+        buy_t_no_tickets: button.buy_ticket.no_tickets
+        buy_t_presale_at_boxoffices: Müügipunktist
+        buy_t_regular_presale: Osta pilet
+        buy_t_sold_ou: button.buy_ticket.sold_ou
+        buy_t_sold_out: Välja müüdud
+        canceled: Jääb ära!
+        category: Kategooria
+        festival: SAAL Biennaal 2017
+        load-more: Lae veel
+        on_tour: Tuuril
+        premiere: Esietendus!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Otsi
+        today: Täna!
+        view-all: Vaata kõiki
+        volunteer: Tule vabatahtlikuks!
+        covid_info: Koroona meelespea
+        year: Aasta
+    categories:
+        dance: Tants
+        film: Video
+        lecture: Loeng
+        music: Muusika
+        new-circus: Uus Tsirkus
+        performance: Performance
+        theatre: Teater
+    error:
+        Not Found: >-
+            Seda lehte pole veel valmis tehtud või siis on heaks arvatud ta
+            kustutada.
+        cache_missing_residency_past: Laadin andmeid. Minuti pärast peaks valmis olema
+        cache_missing_upcoming_events: Tulevasi sündmusi pole
+        cache_missing_upcoming_tours: Laadin andmeid. Minuti pärast peaks valmis olema
+        program_upcoming is not defined: Laadin andmeid. Minuti pärast peaks valmis olema
+    label:
+        days_short: p
+        duration: Kestus
+        hours_short: t
+        minutes_short: min
+    lang:
+        en: EN
+        et: EE
+    linkto:
+        intranet: Vaata Entus
+    month:
+        '1': Jaanuar
+        '2': Veebruar
+        '3': Märts
+        '4': Aprill
+        '5': Mai
+        '6': Juuni
+        '7': Juuli
+        '8': August
+        '9': September
+        '10': Oktoober
+        '11': November
+        '12': Detsember
+        '2016': month.2016
+        '2017': month.2017
+        '2018': month.2018
+        '2019': month.2019
+        '2020': month.2020
+        NaN: month.NaN
+    nav:
+        about: Meist
+        about-festival: Festivalist
+        contact: Info
+        coproductions: Kaasproduktsioonid
+        festivals: Festivalid
+        magazine: Magasin
+        media: Meedia
+        press: Press
+        program: Programm
+        projects: Projektid
+        residency: Residentuurid
+        schedule: Kava
+        sponsors: Toetajad
+        tickets: Piletid
+        tours: Tuurid
+    newsletter:
+        mailchimp_action: >-
+            //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=11b766323b
+        inputName: b_1e1d48fe600fda5c3f6a39b75_fdc080b2d5
+        placeholder: Sinu mailiaadress
+        signup: Liitu uudiskirjaga
+    placeholder:
+        search: Otsi…
+    q:
+        date: Kuupäev
+        matches: vastet
+        query: Otsisid
+        results_0: Ei leidnud
+        results_1: Üks oli
+        results: Leidsin
+    title:
+        archive: Arhiiv
+        audio: Audio
+        basement: Kelder
+        calendar: Kalender
+        contact: Kontakt
+        event: SAALis
+        floorplans: Saaliplaanid
+        free: Tasuta!
+        gallery: Galerii
+        kanut-co_productions: title.kanut-co_productions
+        kanut-residency: Kanuti Gildi SAALi residendid
+        news: Uudised
+        no-echo: Artikleid pole
+        no-events: Sündmusi ei toimu
+        no-residencies: Residente ei ole
+        no-tours: Tuuril ei ole hetkel ühtki lavastust
+        onsite-price: Kohapealt
+        past: Olnud
+        press: Pressikajastus
+        pyhavaimu-residency: Pühavaimu SAALi residendid
+        related: Teised tööd
+        related-articles: Seotud postitused
+        residency: Residentuur
+        saal: Saal
+        sound: Heli
+        sponsors: Toetajad ja võrgustikud
+        studio: Stuudio
+        tour: Tuuril
+        upcoming: Tulekul
+        video: Video
+    weekdays:
+        '0': pühapäev
+        '1': esmaspäev
+        '2': teisipäev
+        '3': kolmapäev
+        '4': neljapäev
+        '5': reede
+        '6': laupäev
