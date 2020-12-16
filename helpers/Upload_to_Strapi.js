@@ -94,23 +94,42 @@ const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiD
 const dataJSON = path.join(entuDataPath, 'performance.pics.json')
 let performancePicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
+function strapi_relation_creation(){
 
+    let performance = performancePicsJSON.map( performance_medias => {
 
-let performance = performancePicsJSON.map( performance_media => {
+        let strapi_id = performances_from_strapi.filter( s_performance => {
+            return s_performance.remote_id === performance_medias.entu_id.toString()
+        }).map( e => e.id)[0]
 
-    let starpi_id = performances_from_strapi.filter( s_performance => {
-        return s_performance.remote_id === performance_media.entu_id.toString()
-    }).map( e => e.id)[0]
+        let performance_media_from_entu = []
 
-    return {
-        "remote_id": strapi_id,
-        "performance_media" : {
-            // "original_image": { id: },
-            // "front_page_image": { id: },
-            // "gallery_large_image": { id: },
-            // "gallery_image": { id: }
-        }
+            for (media of performance_medias.medias) {
+                let keys = Object.keys(media)
+
+                let media_object = {}
+                for (key of keys) {
+                    // console.log(“media key: “, key)
+                    // console.log(“media id:“, media[key].db_value)
+
+                    media_object[key] = {
+                        id: media[key].db_value
+                    }
+
+                }
+                performance_media_from_entu.push( media_object )
+            }
+
+        return {
+            "s_id": strapi_id,
+            "remote_id": performance_medias.entu_id,
+            "performance_media" : performance_media_from_entu
     }
-})
+    })
 
-console.log(performance);
+
+
+    console.log(JSON.stringify(performance, 0, 4));
+}
+
+
