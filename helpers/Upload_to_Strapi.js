@@ -2,8 +2,7 @@
 var fs = require('fs');
 var request = require('request');
 const {strapiAuth} = require('./strapiAuth.js')
-const https = require('follow-redirects').https;
-var FormData = require('form-data');
+// const https = require('follow-redirects').https;
 
 var TOKEN = ''
 
@@ -81,10 +80,37 @@ function sendPic(entu_db_value){
     }
 }
 
+// picsToStrapi()
+
+const path = require('path')
+const yaml = require('js-yaml')
+
+const { strapiQuery, putToStrapi, getFromStrapi } = require("./strapiQueryMod.js")
+const entuDataPath = path.join(__dirname, '..', 'data-transfer', 'from_entu')
+
+const strapiDataPath = path.join(__dirname, '..', 'data-transfer', 'from_strapi')
+const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'performances.yaml')))
+
+const dataJSON = path.join(entuDataPath, 'performance.pics.json')
+let performancePicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
 
 
+let performance = performancePicsJSON.map( performance_media => {
 
+    let starpi_id = performances_from_strapi.filter( s_performance => {
+        return s_performance.remote_id === performance_media.entu_id.toString()
+    }).map( e => e.id)[0]
 
+    return {
+        "remote_id": strapi_id,
+        "performance_media" : {
+            // "original_image": { id: },
+            // "front_page_image": { id: },
+            // "gallery_large_image": { id: },
+            // "gallery_image": { id: }
+        }
+    }
+})
 
-picsToStrapi()
+console.log(performance);
