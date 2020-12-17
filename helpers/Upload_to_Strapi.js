@@ -3,7 +3,7 @@ var request = require('request');
 const {
     strapiAuth
 } = require('./strapiAuth.js')
-const https = require('follow-redirects').https;
+// const https = require('follow-redirects').https;
 
 const path = require('path')
 const yaml = require('js-yaml')
@@ -57,7 +57,7 @@ var TOKEN = ''
 //         });
 //     });
 
-//     // let postData = "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"files\"; filename=\"social classroom app.png\"\r\nContent-Type: \"{Insert_File_Content_Type}\"\r\n\r\n" + 
+//     // let postData = "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"files\"; filename=\"social classroom app.png\"\r\nContent-Type: \"{Insert_File_Content_Type}\"\r\n\r\n" +
 //     // fs.readFileSync('/Users/Mariann/Desktop/social classroom app.png') + "\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--";
 
 //     console.log(request.get('https://saal.entu.ee/api2/file-' + entu_id))
@@ -178,7 +178,7 @@ async function send_pic_and_create_relation() {
 
     console.log("performance object", JSON.stringify(perf_obj));
 
-    putToStrapi(JSON.stringify(perf_obj), 'performanses')
+    putToStrapi(perf_obj, 'performanses')
 }
 
 send_pic_and_create_relation()
