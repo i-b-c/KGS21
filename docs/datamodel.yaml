@@ -235,9 +235,9 @@ Event: &Event # etendus
 
 PerformanceMedia: &PerformanceMedia
     original_image: *StrapiMedia
-    front_page_image: *StrapiMedia
-    gallery_large_image: *StrapiMedia
-    gallery_image: *StrapiMedia
+    hero_image: *StrapiMedia
+    gallery_image_large: *StrapiMedia
+    gallery_image_medium: *StrapiMedia
 
 Performance: &Performance # performance #lavastus
     _path: /performances
@@ -301,8 +301,8 @@ Newscast: &Newscast
 
 ArticleMedia: &ArticleMedia
     original_image: *StrapiMedia
-    first_page_image: *StrapiMedia
-    gallery_image: *StrapiMedia
+    gallery_image_large: *StrapiMedia
+    gallery_image_medium: *StrapiMedia
 
 Article: &Article #Echo
     _path: /articles
