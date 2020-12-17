@@ -13,23 +13,23 @@ nav.navbar.navbar-default.navbar-fixed-top
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
                 li(class= self.path === `/${lang_path}about` ? 'active' : undefined )
-                    a(href=`/${lang_path}about`) SAAL
+                    a(href=`/${lang_path}about`)= self.labels.title.saal
                 li(class= self.path === `/${lang_path}program` ? 'active' : undefined )
-                    a(href=`/${lang_path}program`) KAVA
+                    a(href=`/${lang_path}program`)= self.labels.nav.schedule
                 li(class= self.path === `/${lang_path}co_productions` ? 'active' : undefined )
-                    a(href=`/${lang_path}co_productions`) KAASPRODUKTSIOONID
+                    a(href=`/${lang_path}co_productions`)= self.labels.nav.coproductions
                 li(class= self.path === `/${lang_path}tours` ? 'active' : undefined )
-                    a(href=`/${lang_path}tours`) TUURID
+                    a(href=`/${lang_path}tours`)= self.labels.nav.tours
                 li(class= self.path === `/${lang_path}residency` ? 'active' : undefined )
-                    a(href=`/${lang_path}residency`) RESIDENTUURID
+                    a(href=`/${lang_path}residency`)= self.labels.nav.residency
                 li(class= self.path === `/${lang_path}projects` ? 'active' : undefined )
-                    a(href=`/${lang_path}projects`) PROJEKTID
+                    a(href=`/${lang_path}projects`)= self.labels.nav.projects
                 li(class= self.path === `/${lang_path}magazine` ? 'active' : undefined )
-                    a(href=`/${lang_path}magazine`) MAGASIN
+                    a(href=`/${lang_path}magazine`)= self.labels.nav.magazine
                 li(class= self.path === `/${lang_path}festivals` ? 'active' : undefined )
-                    a(href=`/${lang_path}festivals`) FESTIVALID
+                    a(href=`/${lang_path}festivals`)= self.labels.nav.festivals
                 li(class= self.path === `/${lang_path}contact` ? 'active' : undefined )
-                    a(href=`/${lang_path}contact`) INFO
+                    a(href=`/${lang_path}contact`)= self.labels.nav.contact
 
             ul.nav.navbar-nav.navbar-right.social
                 //- each locale in self.locales
