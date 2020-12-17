@@ -1,1 +1,5 @@
 path: ''
+data:
+    performances: '/_fetchdir/performances.en.yaml'
+    categories: '/_fetchdir/categories.en.yaml'
+    events: '/_fetchdir/events.en.yaml'

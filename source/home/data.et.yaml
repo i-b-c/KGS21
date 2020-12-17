@@ -1,3 +1,7 @@
 path: ''
 aliases:
     - 'et'
+data:
+    performances: '/_fetchdir/performances.et.yaml'
+    categories: '/_fetchdir/categories.et.yaml'
+    events: '/_fetchdir/events.et.yaml'

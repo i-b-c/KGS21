@@ -1,117 +1,70 @@
 extends /_templates/layout.pug
 
 block content
-
+    - var featured = self.data.performances.filter(e => e.front_page_promotion)
     .container-fluid
         .row
-            section#front-carousel.event-banner.carousel.slide(data-ride="carousel")
-                .carousel-inner(role="listbox")
-                    .item.active
-                        a(href="/et/performance/6099")
-                            figure#slide-6099(style="background-image: url(https://saal.entu.ee/api2/file-7627);")
-                            header.col-md-8
-                                h1
-                                    span.artist Mart Kangro
-                                h1 ENNEMINEVIK
-                        ul.event-categories
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:623") Loeng
-                            li.text-uppercase.h3
-                                span
-                                    a(href="search?q=category:3809") Tants
-                            li.text-uppercase.h3
-                                span
-                                    a(href="search?q=category:3810") Performance
-                            li.text-uppercase.h3
-                                span
-                                    a(href="search?q=category:3811") Teater
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3812") Muusika
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3814") Video
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:5027") Näitus
-                    .item
-                        a(href="/et/performance/6865")
-                            figure#slide-6865(style="background-image: url(https://saal.entu.ee/api2/file-21622);")
-                            header.col-md-8
-                                h1
-                                    span.artist Karolin Poska
-                                h1 Sinu nirvaanale
-                        ul.event-categories
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:623") Loeng
-                            li.text-uppercase.h3
-                                span
-                                    a(href="search?q=category:3809") Tants
-                            li.text-uppercase.h3
-                                span
-                                    a(href="search?q=category:3810") Performance
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3811") Teater
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3812") Muusika
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3814") Video
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:5027") Näitus
-                    .item
-                        a(href="/et/performance/6894")
-                            figure#slide-6894(style="background-image: url(https://saal.entu.ee/api2/file-21654);")
-                            header.col-md-8
-                                h1
-                                h1 Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective
-                        ul.event-categories
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:623") Loeng
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3809") Tants
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3810") Performance
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3811") Teater
-                            li.text-uppercase.h3
-                                span
-                                    a(href="search?q=category:3812") Muusika
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:3814") Video
-                            li.text-uppercase.h3.unactive
-                                span
-                                    a(href="search?q=category:5027") Näitus
-                a.left.carousel-control(href="#front-carousel" role="button" data-slide="prev")
-                    span.icon-prev.arrow-left(aria-hidden="true")
-                    span.sr-only Previous
-                a.right.carousel-control(href="#front-carousel" role="button" data-slide="next")
-                    span.icon-next.arrow-right(aria-hidden="true")
-                    span.sr-only Next
-                script.
-                    var slide6099 = document.getElementById('slide-6099');
-                    GradientMaps.applyGradientMap(slide6099, '#000000, #FFC600');
-                script.
-                    var slide6865 = document.getElementById('slide-6865');
-                    GradientMaps.applyGradientMap(slide6865, '#000000, #FFC600');
-                script.
-                    var slide6894 = document.getElementById('slide-6894');
-                    GradientMaps.applyGradientMap(slide6894, '#000000, #FFC600');
+            if featured && featured.length
+                section.event-banner.carousel.slide(id='front-carousel' data-ride='carousel')
+                    .carousel-inner(role='listbox')
+                        - var featureActive = 0
+                        each performance in featured
+                            - var carousel_url = performance[`name_${self.locale}`].includes('Baltoscandal') ? 'https://baltoscandal.ee' : (`/${lang_path}${performance.path}`)
+
+                            .item(class=(featureActive++ === 0 ? 'active' : ''))
+                                a(href=carousel_url)
+                                    - var photoBig = performance.X_pictures && performance.X_pictures.photoBig ? performance.X_pictures.photoBig.split(',')[0] : '/assets/images/placeholder.jpg'
+                                    figure(id=`slide-${performance.remote_id}`, style=`background-image: url('${f_api}${photoBig}');`)
+                                    header.col-md-8
+                                        if performance[`X_headline_${self.locale}`]
+                                            p= performance[`X_headline_${self.locale}`]
+                                        h1
+                                            if performance.X_artist
+                                                span.artist= performance.X_artist
+
+                                            if performance.X_producer
+                                                span.producer= performance.X_producer
+
+                                            if performance[`X_town_${self.locale}`]
+                                                span.town= performance[`X_town_${self.locale}`]
+                                        h1= performance[`name_${self.locale}`]
+
+                                        if performance[`subtitle_${self.locale}`]
+                                            p= performance[`subtitle_${self.locale}`]
+
+                                - var activeCategories = []
+                                    if performance.categories
+                                        - activeCategories = performance.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
+                                    ul.event-categories
+                                        if self.data.categories
+                                            each category in self.data.categories
+                                                if category.featured_on_front_page
+                                                    li.text-uppercase.h3( class =( activeCategories.includes(category.remote_id) ? "" : "unactive" ) )
+                                                        span
+                                                            a(href="")= category[`name_${self.locale}`]
+
+                    a.left.carousel-control(href='#front-carousel' role='button' data-slide='prev')
+                        span.icon-prev.arrow-left(aria-hidden='true')
+                        span.sr-only Previous
+                    a.right.carousel-control(href='#front-carousel' role='button' data-slide='next')
+                        span.icon-next.arrow-right(aria-hidden='true')
+                        span.sr-only Next
+
+                    each performance in featured
+                        script.
+                            var gradientMap = '#000000, #FFC600';
+                            var slide#{performance.remote_id} = document.getElementById('slide-#{performance.remote_id}');
+                            GradientMaps.applyGradientMap(slide#{performance.remote_id}, gradientMap);
+
         .row.front-page-margin
             section.col-xs-12.col-md-12.col-lg-9
                 .programme.row
                     .col-xs-12.col-md-12.col-lg-12
                         h2 Kava
+
+                    - var events = self.data.performances.filter(f => f.minToMaxEvents).map(e => e.minToMaxEvents).flat()
+                    //- each performance in
+
                     .col-xs-12.col-sm-2.col-lg-2
                         p neljapäev
                         p 03.12.2020
