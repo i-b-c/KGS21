@@ -7,10 +7,8 @@ const {strapiAuth} = require('./strapiAuth.js')
 var TOKEN = ''
 
 
-async function picsToStrapi() {
-    if (TOKEN === '') {
-        TOKEN = await strapiAuth()
-    }
+// async function picsToStrapi() {
+
     // `Bearer ${TOKEN}`
 
     // let options = {
@@ -51,7 +49,12 @@ async function picsToStrapi() {
 
     // req.end();
 
-function sendPic(entu_db_value){
+async function sendPic(entuPicId){
+
+    if (TOKEN === '') {
+        TOKEN = await strapiAuth()
+    }
+
     let options = {
         'method': 'POST',
         'url': 'https://a.saal.ee/upload',
@@ -70,15 +73,18 @@ function sendPic(entu_db_value){
     };
     request(options, function (error, response) {
         if (error) throw new Error(error);
-        console.log(response.body);
-        let picId = JSON.parse(response.body)[0].id
-        console.log("id ", picId)
+        // console.log(response.body);
+        let strapiPicId = null
+        strapiPicId = JSON.parse(response.body)[0].id
+        console.log("id ", strapiPicId)
+
+        return strapiPicId
 
         //teeb responsis oleva data põhjal uue päringu seose loomiseks
     });
 
-    }
 }
+// }
 
 // picsToStrapi()
 
@@ -94,42 +100,48 @@ const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiD
 const dataJSON = path.join(entuDataPath, 'performance.pics.json')
 let performancePicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-function strapi_relation_creation(){
+async function send_pic_and_create_relation(){
 
-    let performance = performancePicsJSON.map( performance_medias => {
+    let performance = await Promise.all( performancePicsJSON.map( async performance_media => {
 
         let strapi_id = performances_from_strapi.filter( s_performance => {
-            return s_performance.remote_id === performance_medias.entu_id.toString()
+            return s_performance.remote_id === performance_media.entu_id.toString()
         }).map( e => e.id)[0]
 
         let performance_media_from_entu = []
 
-            for (media of performance_medias.medias) {
-                let keys = Object.keys(media)
+        for (media of performance_media.medias) {
+            let keys = Object.keys(media)
 
-                let media_object = {}
-                for (key of keys) {
-                    // console.log(“media key: “, key)
-                    // console.log(“media id:“, media[key].db_value)
+            let media_object = {}
+            for (key of keys) {
+                // console.log(“media key: “, key)
+                // console.log(“media id:“, media[key].db_value)
 
-                    media_object[key] = {
-                        id: media[key].db_value
-                    }
+                let strapi_id = await sendPic(media[key].db_value)
 
+                console.log(strapi_id);
+                //if( media[key].db_value) // kui on j6udnud siiani, siis v6ta see db_value ja postita pilt, tagasta id
+                media_object[key] = {
+                    id: strapi_id // siia tagasta pildi strapi id mitte db_value
                 }
-                performance_media_from_entu.push( media_object )
+
             }
+            performance_media_from_entu.push( media_object )
+        }
+
+        console.log(performance_media_from_entu);
 
         return {
-            "s_id": strapi_id,
-            "remote_id": performance_medias.entu_id,
+            "id": strapi_id,
+            "remote_id": performance_media.entu_id,
             "performance_media" : performance_media_from_entu
     }
-    })
-
-
+    }))
 
     console.log(JSON.stringify(performance, 0, 4));
+
+    putToStrapi(performance, 'performanses')
 }
 
-
+send_pic_and_create_relation()
