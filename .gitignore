@@ -114,3 +114,4 @@ exports
 build
 .strapi-updater.json
 config
+public/uploads
