@@ -145,9 +145,7 @@ async function sendPic(entuPicId) {
 
 async function send_pic_and_create_relation() {
 
-    console.log("siin")
-
-    let performance = await (performancePicsJSON.map(async performance_media => {
+    let performance = (performancePicsJSON.map(async performance_media => {
 
         let strapi_id = performances_from_strapi.filter(s_performance => {
             return s_performance.remote_id === performance_media.entu_id.toString()
@@ -156,22 +154,14 @@ async function send_pic_and_create_relation() {
         let performance_media_from_entu = []
 
         for (media of performance_media.medias) {
+
             let keys = Object.keys(media)
 
             let media_object = {}
             for (key of keys) {
-                // console.log(“media key: “, key)
-                // console.log(“media id:“, media[key].db_value)
-
-
-                // saadab ühe pildi ja tagastab sellele strapis antud id
-                let strapi_id = await sendPic(media[key].db_value)
-
-                console.log("pic strapi id", strapi_id);
                 //if( media[key].db_value) // kui on j6udnud siiani, siis v6ta see db_value ja postita pilt, tagasta id
                 // siia tagasta pildi strapi id mitte db_value
                 media_object[key] = { id: await sendPic(media[key].db_value) }
-
             }
             performance_media_from_entu.push(media_object)
         }
@@ -180,14 +170,15 @@ async function send_pic_and_create_relation() {
 
         return {
             "id": strapi_id,
-            "remote_id": performance_media.entu_id,
             "performance_media": performance_media_from_entu
         }
     }))
 
-    console.log("performance object", JSON.stringify(performance, 0, 4));
+    let  perf_obj = await Promise.all(performance)
 
-    // putToStrapi(performance, 'performanses')
+    console.log("performance object", JSON.stringify(perf_obj));
+
+    putToStrapi(JSON.stringify(perf_obj), 'performanses')
 }
 
 send_pic_and_create_relation()
