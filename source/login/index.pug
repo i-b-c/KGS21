@@ -1,0 +1,44 @@
+extends /_templates/layout.pug
+
+block content
+
+    .container-fluid#login_buttons
+
+        a.btn.btn-primary.text-uppercase.h3(onClick = "loginWithProvider('google')") google
+        a.btn.btn-primary.text-uppercase.h3(onClick = "loginWithProvider('facebook')") facebook
+        a.btn.btn-primary.text-uppercase.h3(onClick ="LogOut()") logi välja
+        a.btn.btn-primary.text-uppercase.h3(onClick ="GetMe()") get me
+
+
+        div.form#userProfile
+            //- img#imgPreview(alt="user profile picture", src ="/mingiPlaceholder.jpg")
+            div.form-group
+                label.login_label(for='email') email
+                div#email(name='email')
+                //- // div#emailHelp(class='valid')= self.label.userprofile.eMailHelp
+            div.form-group
+                label.login_label(for='firstName') eesnimi
+                input.login_input#firstName.form-control(type='text', placeholder="eesnimi" name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
+                //- // div#firstNameHelp(class='valid')= self.label.userprofile.firstNameHelp
+            div.form-group
+                label.login_label(for='lastName') perenimi
+                input.login_input#lastName.form-control(type='text', placeholder="perenimi" name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
+                // div#lastNameHelp(class='valid')= self.label.userprofile.lastNameHelp
+            div.form-group
+                label.login_label(for='dob') sünnikuupäev
+                input.login_input#dob.form-control(type='date' name='dob', placeholder ="yyyy-mm-dd" max="2007-01-01", min="1905-01-01", oninput="validateDate(this.id), validateBDay(this.id)")
+                // div#dobHelp(class='valid')= self.label.userprofile.ageHelp
+                // div#dateHelp(class='valid')= self.label.userprofile.dateHelp
+            div.form-group
+                label.login_label(for='phoneNr') telefoni number
+                input.login_input#phoneNr.form-control(type='tel' placeholder="telefoni number" name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
+                // div#phoneNrHelp(class='valid')= self.label.userprofile.phoneNumHelp
+            button.btn.btn_primary(onclick='validateForm()') salvesta oma andmed
+            p#profileSent(style= {display: 'none'}) profiil saadetud
+
+
+
+
+    style.
+        #login_buttons {
+            margin-top: 300px}
