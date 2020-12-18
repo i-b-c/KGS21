@@ -5,33 +5,41 @@ nav.navbar.navbar-default.navbar-fixed-top
                 .icon-bar
                 .icon-bar
                 .icon-bar
-            a.navbar-brand.logo(href='/' + self.lang + '/')
-                img(src='/images/saal_logo.svg', alt=t('.KGS_logo'))
+            a.navbar-brand.logo(href=`/${lang_path}`)
+                //- SIIA VAJA LOGO ALT TEKST STRAPIST
+                img(src='/assets/images/saal_logo.svg', alt='LOGO ALT TEKST SIIA!')
                 //p.season.visible-lg= t('.season') + ' ' + SAAL.season
 
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
-                li(class= self.route == 'about' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/about') SAAL
-                li(class= self.route == 'program' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/program')= t('nav.schedule')
-                li(class= self.route == 'co_productions' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/co_productions')= t('nav.coproductions')
-                li(class= self.route == 'tours' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/tours')= t('nav.tours')
-                li(class= self.route == 'residency' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/residency')= t('nav.residency')
-                li(class= self.route == 'projects' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/projects')= t('nav.projects')
-                li(class= self.route == 'magazine' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/magazine')= t('nav.magazine')
-                li(class= self.route == 'festivals' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/festivals')= t('nav.festivals')
-                li(class= self.route == 'contact' ? 'active' : undefined )
-                    a(href='/' + self.lang + '/contact')= t('nav.contact')
+                li(class= self.path === `/${lang_path}about` ? 'active' : undefined )
+                    a(href=`/${lang_path}about`)= self.labels.title.saal
+                li(class= self.path === `/${lang_path}program` ? 'active' : undefined )
+                    a(href=`/${lang_path}program`)= self.labels.nav.schedule
+                li(class= self.path === `/${lang_path}co_productions` ? 'active' : undefined )
+                    a(href=`/${lang_path}co_productions`)= self.labels.nav.coproductions
+                li(class= self.path === `/${lang_path}tours` ? 'active' : undefined )
+                    a(href=`/${lang_path}tours`)= self.labels.nav.tours
+                li(class= self.path === `/${lang_path}residency` ? 'active' : undefined )
+                    a(href=`/${lang_path}residency`)= self.labels.nav.residency
+                li(class= self.path === `/${lang_path}projects` ? 'active' : undefined )
+                    a(href=`/${lang_path}projects`)= self.labels.nav.projects
+                li(class= self.path === `/${lang_path}magazine` ? 'active' : undefined )
+                    a(href=`/${lang_path}magazine`)= self.labels.nav.magazine
+                li(class= self.path === `/${lang_path}festivals` ? 'active' : undefined )
+                    a(href=`/${lang_path}festivals`)= self.labels.nav.festivals
+                li(class= self.path === `/${lang_path}contact` ? 'active' : undefined )
+                    a(href=`/${lang_path}contact`)= self.labels.nav.contact
 
             ul.nav.navbar-nav.navbar-right.social
-                each locale in self.locales
-                    if self.lang !== self.locale
-                        li.lang
-                            a(href='/'+self.locale+'/'+self.path)= t('lang.' + self.locale)
+                //- each locale in self.locales
+                //-     if self.lang !== self.locale
+                //-         li.lang
+                //-             //- a(href='/'+self.locale+'/'+self.path)= t('lang.' + self.locale)
+                //-             a(href='/'+self.locale+'/'+self.path)= self.locale
+
+                each p, locale in self.otherLocalePaths
+                    li.lang
+                        //- a(href='/'+self.locale+'/'+self.path)= t('lang.' + self.locale)
+                        //- p= locale + ' - ' + p
+                        a(href=(p !== '/' ? p + '/' : '/'))= locale

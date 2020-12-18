@@ -1,0 +1,159 @@
+siteTitle: Kanuti Gildi SAAL
+root: /
+language:
+    et: eesti
+    en: english
+labels:
+    main:
+        KGS: Kanuti Gildi SAAL
+        KGS_logo: Kanuti Gildi SAAL logo
+        NUP_logo: New Performance logo
+        SB_logo: SAAL Bieannaal logo
+        season: Season
+    Jon Doe:
+        nimeta: Unnamed
+    NUP:
+        get-newspaper-2016-1: Get NUP NEWS!
+    button:
+        LATEST: LAT.EST
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance Newspaper
+        artist-talk: Artist talk
+        buy_ticket: Buy ticket
+        buy_t_Free_admission: null
+        buy_t_canceled: Canceled!
+        buy_t_free_admission: Free Admission
+        buy_t_free_admission/: button.buy_ticket.free_admission/
+        buy_t_future_sale: null
+        buy_t_going_now: Buy ticket
+        buy_t_no_tickets: null
+        buy_t_presale_at_boxoffices: From box office
+        buy_t_regular_presale: Buy ticket
+        buy_t_sold_ou: button.buy_ticket.sold_ou
+        buy_t_sold_out: Sold out
+        canceled: Canceled!
+        category: Category
+        festival: SAAL Biennaal 2017
+        load-more: Load more
+        on_tour: On Tour
+        premiere: Premiere!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Search
+        today: Today!
+        view-all: View all
+        volunteer: Become a volunteer!
+        covid_info: Covid info
+        year: Year
+    categories:
+        dance: Dance
+        film: Video
+        lecture: Lecture
+        music: Music
+        new-circus: New Circus
+        performance: Performance
+        theatre: Theatre
+    error:
+        Not Found: Page not found
+        cache_missing_residency_past: Loading data. Should be ready in a minute
+        cache_missing_upcoming_events: No upcoming events
+        cache_missing_upcoming_tours: Loading data. Should be ready in a minute
+        program_upcoming is not defined: Loading data. Should be ready in a minute
+    label:
+        days_short: d
+        duration: Duration
+        hours_short: h
+        minutes_short: min
+    lang:
+        en: EN
+        et: EE
+    linkto:
+        intranet: View in Entu
+    month:
+        '1': January
+        '2': February
+        '3': March
+        '4': April
+        '5': May
+        '6': June
+        '7': July
+        '8': August
+        '9': September
+        '10': October
+        '11': November
+        '12': December
+        '2016': month.2016
+        '2017': month.2017
+        '2018': month.2018
+        '2019': month.2019
+        '2020': month.2020
+        NaN: month.NaN
+    nav:
+        about: About Us
+        about-festival: About
+        contact: Info
+        coproductions: Co-Productions
+        festivals: Festivals
+        magazine: Magazine
+        media: Media
+        press: Press
+        program: Program
+        projects: Projects
+        residency: Residencies
+        schedule: Program
+        sponsors: Supporters
+        tickets: Tickets
+        tours: On Tour
+    newsletter:
+        mailchimp_action: >-
+            //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=deab6bd3c2
+        inputName: b_b4d371ad73e2be3853f5cd989_deab6bd3c2
+        placeholder: Enter e-mail
+        signup: Sign-up for newsletter
+    placeholder:
+        search: Search…
+    q:
+        date: Date
+        matches: matches
+        query: Searched for
+        results_0: No matching results
+        results_1: Found one
+        results: Results
+    title:
+        archive: Archive
+        audio: Heli
+        basement: Basement
+        calendar: Calendar
+        contact: Contact
+        event: at SAAL
+        floorplans: Floorplans
+        free: Free of charge!
+        gallery: Gallery
+        kanut-co_productions: title.kanut-co_productions
+        kanut-residency: Residents of Kanuti Gildi SAAL
+        news: News
+        no-echo: No Posts
+        no-events: No events
+        no-residencies: No Residencies
+        no-tours: No tours
+        onsite-price: At the door
+        past: Past
+        press: Press
+        pyhavaimu-residency: Residents of Pühavaimu SAAL
+        related: Other works
+        related-articles: Related posts
+        residency: Residency
+        saal: Saal
+        sound: Sound
+        sponsors: Supporters and networks
+        studio: Studio
+        tour: On tour
+        upcoming: Upcoming
+        video: Video
+    weekdays:
+        '0': Sunday
+        '1': Monday
+        '2': Tuesday
+        '3': Wednesday
+        '4': Thursday
+        '5': Friday
+        '6': Saturday

@@ -23,15 +23,17 @@
   "bugs": {
     "url": "https://github.com/i-b-c/KGS/issues"
   },
-  "main": "src/index.js",
+  "main": "node node_modules/entu-ssg/src/src/index.js",
   "scripts": {
-    "build": "node node_modules/entu-ssg/src/build.js ./config.yaml",
+    "build": "bash ./build.sh",
     "serve": "node node_modules/entu-ssg/src/serve.js ./config.yaml"
   },
   "dependencies": {
     "entu-ssg": "5.2.7",
     "entulib": "^2.0.6",
+    "express": "^4.17.1",
     "js-yaml": "^3.14.0",
+    "moment-timezone": "^0.5.32",
     "setenv": "^1.0.3"
   }
 }

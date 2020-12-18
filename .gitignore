@@ -25,3 +25,8 @@ jspm_packages/
 
 build/*
 .DS_Store
+.vscode/settings.json
+data-transfer/from_entu/*.raw.json
+
+# dynamic data
+source/_fetchdir/*

@@ -1,16 +1,12 @@
-extends ../_templates/layout
-
-block vars
+extends /_templates/layout.pug
 
 block content
-
     .container-fluid
         .row.page-margin
             section.col-xs-12.col-sm-12.col-md-12.col-lg-12
-                h2= t('title.contact')
+                h2 Kontakt
             section.col-md-6
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.6715343970304!2d24.745978300000008!3d59.43855259999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692936235ed6985%3A0x86e790e483c15838!2sKanuti+Gildi+Saal!5e0!3m2!1sen!2see!4v1442397004784" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
-
+                iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.6715343970304!2d24.745978300000008!3d59.43855259999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692936235ed6985%3A0x86e790e483c15838!2sKanuti+Gildi+Saal!5e0!3m2!1sen!2see!4v1442397004784" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen="")
             article.col-md-6.address
                 .row
                     article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
@@ -18,40 +14,49 @@ block content
                         p Tallinn, Estonia
                         p tel: +372 64 64 704
                         p
-                            a(href='mailto:saal@saal.ee') saal@saal.ee
-
+                            a(href="mailto:saal@saal.ee") saal@saal.ee
                 .row.team.grid-row
-                    each user in users
-                        .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                            h2= op.get(user, 'name')
-                            p= op.get(user, 'occupation')
-                            a(href="mailto:" + op.get(user, 'email') + "")= op.get(user, 'email')
-                            p= op.get(user, 'phone')
-
+                    if self.data.persons
+                        each person in self.data.persons
+                            .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
+                                h2= `${person.first_name}${person.last_name ? ` ${person.last_name}` : ''}`
+                                p= person.occupation
+                                a(href=`mailto:${person.email}`)= person.email
+                                p= person.phone_number
             article.col-md-12.council
                 .row
                     article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                        h2= t('contact.council.title')
-                        p Eero Epner, Marten Esko, Jaan Evart, Eneli Järs, Maarja Kalmre, Kaie Küünal, Kaie Olmre, Sille Pihlak, Priit Raud, Annika Üprus
-
+                        h2 Kanuti Gildi SAALi loomenõukogu
+                        p
+                            | Eero Epner, Marten Esko, Jaan Evart, Eneli Järs, Maarja Kalmre, Kaie Küünal, Kaie Olmre, Sille Pihlak, Priit Raud, Annika Üprus
             article.col-md-12.covid
                 .row
                     article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                        h2#covid= t('contact.covid.title')
+                        h2#covid KOROONA MEELESPEA
                         h3
                             u
-                                a(href= t('contact.covid.register.link'))= t('contact.covid.register.text')
-                        div= t('contact.covid.lead')
+                                a(href="https://docs.google.com/forms/d/e/1FAIpQLSeyUfAKnQXZkIA4BBTLhthzbxc6zXXUsUBLEOgMcvtLbR0gfQ/viewform?fbclid=IwAR3-cvNroYGhUFqtAW6jvWLFwjcZZ0aRcYYD3SR04o1LkeOiFZxS7Z5aaUI") Registreeri oma külastus
+                        div
+                            | Kanuti Gildi SAALi jaoks on meie vaatajate, kunstnike ja meeskonna liikmete tervis, ohutus ja heaolu tähtis ja prioriteetne. Selle nimel oleme panustanud ning panustame ka tulevikus, jälgides muutuvaid piiranguid, ettekirjutisi ja tervet mõistust.
+                            | Allpool mõned tegevused mida teiega koos tehes muudame külaskäigu teatrisse ohutumaks:
                             ul
-                                li= t('contact.covid.points.1')
-                                li= t('contact.covid.points.2')
-                                li= t('contact.covid.points.3')
-                                li= t('contact.covid.points.4')
-                                li= t('contact.covid.points.5')
-                                li= t('contact.covid.points.6')
-                                li= t('contact.covid.points.7')
-                                li= t('contact.covid.points.8')
+                                li
+                                    | Kui oled haigestunud või tunned end halvasti, palun jää koju. Me jätame endale õiguse nähtavate ja kuuldavate haigustunnustega inimesi saali mitte lasta.
+                                li
+                                    | Pileti vahetamiseks või tagasiostuks võta palun meiega ühendust telefoni teel või e-posti vahendusel esimesel võimalusel, aga mitte hiljem kui kaks tundi enne etenduse algust.
+                                li
+                                    | Hooaja algusest peale oleme täitnud 50% reeglit, mahutades saali vaid poole tavapärasest publikuhulgast. Nii on inimestel kindlam ja ohutum ning kõigil paremad võimalused hoida distantsi.
+                                li
+                                    | Enne iga avalikku üritust desinfitseerime kõik üldkasutatavad pinnad. Publikualale oleme paigutanud käte desinfitseerimisvahendid. Palun kasuta neid.
+                                li
+                                    | Kanuti Gildi SAAL kannab maski. Meilt saab osta ühekordseks kasutuseks mõeldud ning eraldi pakendatud meditsiinilise maski.
+                                li
+                                    | Palume saalisviibijatel registreerida oma külastus meie koduleheküljel. Vormi täitmine on vabatahtlik ja võimalik ka etendusejärgselt 1 nädala jooksul. Kui sa soovid end registreerida kohapeal, siis anna sellest teda ning me võimaldame seda. Kasutame andmeid, et koostöös Terviseametiga tuvastada kontaktsed ja teavitada neid nakkusohust juhul, kui selgub, et saalis on viibinud viirusekandja. Andmeid hoitakse parooliga kaitstud andmebaasis ning need hävitatakse 1 kuu möödudes.
+                                li
+                                    | Palume teatrisse tulla aegsasti, et vältida tihedaid järjekordi. Uksed avame pool tundi enne etenduse algust.
+                                li
+                                    | Soovitame enne teatrisse tulekut endale alla laadida HOIA mobiilirakenduse, mille abil saab kiiresti ning anonüümselt teada võimalikust lähikontaktist COVID-19 nakatunuga.
                         h4
-                            a(href= t('contact.covid.register.link'))= t('contact.covid.register.text')
+                            a(href="https://docs.google.com/forms/d/e/1FAIpQLSeyUfAKnQXZkIA4BBTLhthzbxc6zXXUsUBLEOgMcvtLbR0gfQ/viewform?fbclid=IwAR3-cvNroYGhUFqtAW6jvWLFwjcZZ0aRcYYD3SR04o1LkeOiFZxS7Z5aaUI") Registreeri oma külastus
                         h4
-                            a(href=t('contact.covid.hoia'), target='hoia')= t('contact.covid.gethoia')
+                            a(href="https://hoia.me" target="hoia") Laadi HOIA äpp siit

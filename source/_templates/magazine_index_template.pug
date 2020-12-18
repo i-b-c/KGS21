@@ -1,0 +1,177 @@
+extends /_templates/layout.pug
+
+block content
+    .container-fluid
+        .row
+            section.event-banner.carousel.slide(id='front-carousel' data-ride='carousel')
+                .carousel-inner(role="listbox")
+                    //- .item.active
+                    //-     svg(version="1.1" width="0" height="0")
+                    //-         filter#filter-1607343038184
+                    //-             fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
+                    //-             fecomponenttransfer(color-interpolation-filters="sRGB")
+                    //-                 fefuncr(type="table" tablevalues="0 1")
+                    //-                 fefuncg(type="table" tablevalues="0 0.7764705882352941")
+                    //-                 fefuncb(type="table" tablevalues="0 0")
+                    //-                 fefunca(type="table" tablevalues="1 1")
+
+                    - var bigPhotos = []
+                    if self.X_pictures && self.X_pictures.photoBig && self.X_pictures.photoBig.length
+                        - bigPhotos = self.X_pictures.photoBig.split(',')
+
+                    - var photoActive = 0
+                    each photo, ix in bigPhotos || ['/assets/images/placeholder.jpg']
+                        .item(class=(photoActive++ === 0 ? 'active' : ''))
+                            figure(id = `slide-${ix}`, style=`background-image: url('${f_api}${photo}');`)
+                            header.col-md-8
+                                p= self.publish_date_string
+                                h1.artist= self[`title_${self.locale}`]
+                                    if self[`subtitle_${self.locale}`]
+                                        - var subTitle = self[`subtitle_${self.locale}`]
+                                        span= ` / ${subTitle}`
+                                if self.authors_cs
+                                    p.subtitle= self.authors_cs
+
+                if bigPhotos.length > 1
+                    a.left.carousel-control(href='#front-carousel' role='button' data-slide='prev')
+                        span.icon-prev.arrow-left(aria-hidden='true')
+                        span.sr-only Previous
+                    a.right.carousel-control(href='#front-carousel' role='button' data-slide='next')
+                        span.icon-next.arrow-right(aria-hidden='true')
+                        span.sr-only Next
+                            ul.event-categories
+
+                //- Gradient Map for images
+                each photo, ix in bigPhotos
+                    script.
+                        var slide#{ix} = document.getElementById('slide-#{ix}');
+                        GradientMaps.applyGradientMap(slide#{ix}, '#000000, #FFC600');
+
+        .row.front-page-margin
+            .col-md-12
+                .row
+                    .video-sound
+                    .article.main-text.h3.col-sm-12.col-md-8.col-lg-8
+                        | !{self.md(self[`content_${self.locale}`])}
+
+                        //- GALLERY
+                        if !self.hide_gallery
+                            if bigPhotos
+                                .gallery
+                                    //- If is single image
+                                    if bigPhotos.length === 1
+                                        .row
+                                            .col-xs-12
+                                                if bigPhotos
+                                                    img(src=`${f_api}${bigPhotos[0]}`, class='img-responsive')
+
+                                    //- If more than one, make gallery
+                                    if bigPhotos.length > 1
+                                        h2 GALERIII PEALKIRI
+                                        .row
+                                            each photo in bigPhotos
+                                                .single-image.col-xs-6.col-sm-3.col-md-4
+                                                    a.fancybox(rel='gallery', href=`${f_api}${photo}` )
+                                                        img(src=`${f_api}${photo}`, class='img-responsive')
+
+                        .video-sound
+                        .comments
+                            .fb-comments.fb_iframe_widget.fb_iframe_widget_fluid_desktop(data-href="https://www.saal.ee/et/magazine/4057" data-width="100%" data-numposts="10" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1664471603808404&container_width=799&height=100&href=https%3A%2F%2Fwww.saal.ee%2Fet%2Fmagazine%2F4057&locale=et_EE&numposts=10&sdk=joey&version=v2.5&width=" style="width: 100%;")
+                                span(style="vertical-align: bottom; width: 100%; height: 356px;")
+                                    iframe(name="f1c0233958b77b8" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.5/plugins/comments.php?app_id=1664471603808404&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df11696557db15ac%26domain%3Dwww.saal.ee%26origin%3Dhttps%253A%252F%252Fwww.saal.ee%252Ff7aee678acdf34%26relation%3Dparent.parent&container_width=799&height=100&href=https%3A%2F%2Fwww.saal.ee%2Fet%2Fmagazine%2F4057&locale=et_EE&numposts=10&sdk=joey&version=v2.5&width=" style="border: none; visibility: visible; width: 100%; height: 356px;")
+                            script.
+                                document.getElementsByClassName('fb-comments')[0].setAttribute('data-href', window.location.href)
+                    .col-sm-12.col-md-4.col-lg-4
+                        h2 Seotud postitused
+                        a(href="./magazine/6147")
+                            p 10.10.2019
+                            h3
+                                span.artist "Ei ühtegi sõna"
+                            span.author Kaspar Aus
+                        hr
+                        a(href="./magazine/5350")
+                            p 28.03.2018
+                            h3
+                                span.artist Kellele on kasulik, et sa kardad?
+                            span.author Hanna Selgis
+                        hr
+                        a(href="./magazine/5333")
+                            p 15.03.2018
+                            h3
+                                span.artist MADE IN ESTONIA MARATON – sõna ja vormi harmoonia
+                            span.author Marta Vunš
+                        hr
+                        a(href="./magazine/5215")
+                            p 05.01.2018
+                            h3
+                                span.artist Avalik kiri Magasini toimetajalt
+                            span.author Kaja Kann
+                        hr
+                        a(href="./magazine/5214")
+                            p 28.12.2017
+                            h3
+                                span.artist Today I woke up and the day was gone
+                            span.author Alissa Šnaider
+                        hr
+                        a(href="./magazine/5179")
+                            p 12.12.2017
+                            h3
+                                span.artist Veel kord Mariast
+                            span.author Ilmar Branno
+                        hr
+                        a(href="./magazine/5141")
+                            p 26.10.2017
+                            h3
+                                span.artist kontakt
+                            span.author Henri Hütt
+                        hr
+                        a(href="./magazine/5075")
+                            p 15.09.2017
+                            h3
+                                span.artist KRIITIKA LAVASTUSELE, MIDA POLE OLNUD NO00
+                            span.author Henri Hütt
+                        hr
+                        a(href="./magazine/5074")
+                            p 13.09.2017
+                            h3
+                                span.artist KRIITIKA LAVASTUSELE, MIDA POLE OLNUD NO00
+                            span.author Maarja Kalmre
+                        hr
+                        a(href="./magazine/5073")
+                            p 11.09.2017
+                            h3
+                                span.artist “NOH, MITTE MIDAGI EI JUHTUNUD. AGA ARMASTAN SIND” Teater NO99 viimane teos nr 0
+                            span.author Epp Kubu
+                        hr
+                        a(href="./magazine/5058")
+                            p 04.09.2017
+                            h3
+                                span.artist MA EI TAHA OLLA PORGANDIKUNINGAS
+                            span.author Kaja Kann
+                        hr
+                        a(href="./magazine/5009")
+                            p 17.08.2017
+                            h3
+                                span.artist 2 Reality
+                            span.author Olga Tsvetkova
+                        hr
+                        a(href="./magazine/5007")
+                            p 15.08.2017
+                            h3
+                                span.artist Kunstniku ootused produtsendile ning produtsendi ootused kunstnikule
+                        hr
+                        a(href="./magazine/4997")
+                            p 01.08.2017
+                            h3
+                                span.artist SEANSS SULATUSAHJUS
+                            span.author Epp Kubu
+                        hr
+                        a(href="./magazine/4981")
+                            p 25.07.2017
+                            h3
+                                span.artist KARL SAKSA “SEISUND JA DISAIN” KUI RITUAALNE JA MÄLULINE RÄNNAK
+                            span.author Maarja Kalmre
+                        hr
+                        .row
+                            .col-xs-12.col-md-12
+                                a.load-more.btn.btn-primary(href="/et/magazine/") Vaata kõiki
