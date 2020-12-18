@@ -1,4 +1,5 @@
 var validToken = false
+var accountStatus = true
 var userProfile
 var userProfileLoadedEvent = new CustomEvent('userProfileLoaded')
 
@@ -14,7 +15,6 @@ if(validToken){
 document.addEventListener('userProfileLoaded', function (e) {
     console.log('User profile is loaded', userProfile)
 })
-
 
 function validateToken(){
     var token = localStorage.getItem('ACCESS_TOKEN')
@@ -33,14 +33,16 @@ function validateToken(){
         // console.log("praegu on: " + now)
         console.log("tokeni kehtivuse lõpp", new Date(expDate));
 
-        if(now < expDate){
+        console.log(now<expDate)
+        console.log(accountStatus);
+        if(now < expDate && accountStatus){
             validToken = true
         }else{
             validToken = false
         }
     }
     catch(err){
-        //console.log(err)
+        console.log(err)
         validToken = false
     }
 
