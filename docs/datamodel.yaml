@@ -230,7 +230,9 @@ Event: &Event # etendus
     location_et: (text)
     location_en: (text)
     remote_id: (UID)
-    parent_event: #relation to event
+    parent_event: (object) #relation to event
+    child_events: []
+        # repeatable relation to event
 
 
 #Performance
@@ -283,7 +285,7 @@ Performance: &Performance # performance #lavastus
         - *Event
     remote_id: (UID)
     X_pictures: *X_pictures
-    X_premiere_time:
+    X_premiere_time: (datetime)
 
 #News and Article
 Newscast: &Newscast
