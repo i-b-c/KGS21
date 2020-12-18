@@ -129,6 +129,9 @@
       "type": "component",
       "repeatable": true,
       "component": "media.performance-media"
+    },
+    "X_premiere_time": {
+      "type": "datetime"
     }
   }
 }

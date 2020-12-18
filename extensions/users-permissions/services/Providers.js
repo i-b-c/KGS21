@@ -144,8 +144,8 @@ const getProfile = async (provider, query, callback) => {
             callback(err);
           } else {
             callback(null, {
-              username: body.email, //muutsin
-              email: body.email,
+              username: body.email.toLowerCase(), //muutsin
+              email: body.email.toLowerCase(),
             });
           }
         });
@@ -164,8 +164,8 @@ const getProfile = async (provider, query, callback) => {
             callback(err);
           } else {
             callback(null, {
-              username: body.email, //muutsin
-              email: body.email,
+              username: body.email.toLowerCase(), //muutsin
+              email: body.email.toLowerCase(),
             });
           }
         });

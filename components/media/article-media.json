@@ -16,7 +16,7 @@
       "plugin": "upload",
       "required": false
     },
-    "hero_image": {
+    "gallery_image_large": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -25,7 +25,7 @@
       "plugin": "upload",
       "required": false
     },
-    "gallery_image": {
+    "gallery_image_medium": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
