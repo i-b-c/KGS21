@@ -23,7 +23,7 @@ let performancePicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 var TOKEN = ''
 
 
-async function sendPic(entuPicId) {
+async function sendPic(entuPicId, pic_name) {
     if (TOKEN === '') {
         TOKEN = await strapiAuth()
     }
@@ -38,7 +38,7 @@ async function sendPic(entuPicId) {
             'files': {
                 'value': request.get('https://saal.entu.ee/api2/file-' + entuPicId),
                 'options': {
-                    'filename': 'screenshot.png',
+                    'filename': pic_name,
                     'contentType': null
                 }
             }
@@ -61,9 +61,11 @@ async function sendPic(entuPicId) {
 
     async function GetId() {
         let res = await doRequest()
+        console.log('res = ', res);
         return JSON.parse(res)[0].id
     }
 
+        console.log(GetId());
     return await GetId();
 
 }
@@ -71,37 +73,46 @@ async function sendPic(entuPicId) {
 async function send_pic_and_create_relation() {
 
     let performances = (performancePicsJSON.map(async performance_media => {
+        if(performance_media.medias.length > 0){
 
-        let strapi_id = performances_from_strapi.filter(s_performance => {
-            return s_performance.remote_id === performance_media.entu_id.toString()
-        }).map(e => e.id)[0]
+            let strapi_id = performances_from_strapi.filter(s_performance => {
+                return s_performance.remote_id === performance_media.entu_id.toString()
+            }).map(e => e.id)[0]
 
-        let performance_media_from_entu = []
+            let performance_media_from_entu = []
 
-        for (media of performance_media.medias) {
+            for (media of performance_media.medias) {
 
-            let keys = Object.keys(media)
+                let keys = Object.keys(media)
 
-            let media_object = {}
-            for (key of keys) {
-                //if( media[key].db_value) // kui on j6udnud siiani, siis v6ta see db_value ja postita pilt, tagasta id
-                // siia tagasta pildi strapi id mitte db_value
-                media_object[key] = { id: await sendPic(media[key].db_value) }
+                let media_object = {}
+                for (key of keys) {
+
+                    media_object[key] = { id: await sendPic(media[key].db_value, media[key].value) }
+                }
+                performance_media_from_entu.push(media_object)
             }
-            performance_media_from_entu.push(media_object)
-        }
 
-        console.log("performance media from entu", performance_media_from_entu);
+            // console.log("performance media from entu", performance_media_from_entu)
 
-        return {
-            "id": strapi_id,
-            "performance_media": performance_media_from_entu
+            return {
+                "id": strapi_id,
+                "performance_media": performance_media_from_entu
+            }
+        } else {
+            console.log('tyhi')
+            return []
         }
     }))
 
-    let  perf_objs = await Promise.all(performances)
+    if( performances.length > 0){
 
-    putToStrapi(perf_objs, 'performances')
+        let  perf_objs = await Promise.all(performances)
+        console.log(perf_objs)
+
+        // putToStrapi(perf_objs, 'performances')
+
+    }
 
 }
 
