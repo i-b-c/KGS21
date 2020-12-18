@@ -28,18 +28,20 @@ for (const lang of LANGUAGES) {
                 performance_slug_en: performance.slug_en || null,
                 performance_subtitle_et: performance.subtitle_et || null,
                 performance_subtitle_en: performance.subtitle_en || null,
+                X_premiere_time: performance.X_premiere_time || null,
                 remote_id: oneEvent.remote_id || null,
                 type: oneEvent.type || null,
                 start_time: oneEvent.start_time || null,
                 remote_id: oneEvent.remote_id || null,
                 X_ticket_info: oneEvent.X_ticket_info || null,
                 start_date_string: oneEvent.start_date_string || null,
+                canceled: oneEvent.canceled || false
             }
             allData.push(oneEventData)
 
         }
     }
-    let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(b.start_time)-new Date(a.start_time))
+    let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(a.start_time)-new Date(b.start_time))
     console.log(`${allDataSortedFiltered.length} events from peformances YAML (${lang})`);
     const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
     const eventsYAML = yaml.safeDump(allDataSortedFiltered, {'noRefs': true, 'indent': '4' });

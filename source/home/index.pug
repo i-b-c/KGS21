@@ -1,4 +1,5 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     - var featured = self.data.performances.filter(e => e.front_page_promotion)
@@ -58,85 +59,109 @@ block content
 
         .row.front-page-margin
             section.col-xs-12.col-md-12.col-lg-9
+
+                - var listlength = 3
                 .programme.row
                     .col-xs-12.col-md-12.col-lg-12
                         h2 Kava
+                    - var currentDate = new Date()
+                    - var pastTwoDays = new Date()
+                    //- - var nextThreeDays = new Date()
 
-                    - var events = self.data.performances.filter(f => f.minToMaxEvents).map(e => e.minToMaxEvents).flat()
+                    - pastTwoDays.setDate(pastTwoDays.getDate() - 2)
+                    //- - nextThreeDays.setDate(nextThreeDays.getDate() + 3)
+                    //- - console.log(currentDate, ' - ', pastTwoDays, ' - ', nextThreeDays)
+
+                    - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays)
                     //- each performance in
+                    //- - console.log(events.map(a => a.start_time))
 
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p neljapäev
-                        p 03.12.2020
-                        p 18:00
-                        p.today Täna!
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6858")
-                                span.subtitle Baltoscandal 2020 esitleb:
-                                span.artist Stefan Kaegi / Rimini Protokoll
-                                span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR€
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p neljapäev
-                        p 03.12.2020
-                        p 20:30
-                        p.today Täna!
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6858")
-                                span.subtitle Baltoscandal 2020 esitleb:
-                                span.artist Stefan Kaegi / Rimini Protokoll
-                                span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR€
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 04.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6894")
-                                span.name Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 5/8 EUR
-                        p Kohapealt: 5/8 EUR€
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/kontsertsari-improtest-copeco-15632" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p laupäev
-                        p 05.12.2020
-                        p 19:30
-                        p.today Esietendus!
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6865")
-                                span.artist Karolin Poska
-                                span.name Sinu nirvaanale
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR€
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
+                    if events && events.length
+                        each event in events
+                            - var eventDate = new Date(event.start_time)
+                            div(type-name="event" start_time=`${event.start_time}`)
+                                .col-xs-12.col-sm-2.col-lg-2
+                                    p
+                                        +dayName(event.start_time)
+                                    p
+                                        +dateFull(event.start_time)
+                                    //- Whole day event if 23:59
+                                    if `${eventDate.getHours()}:${eventDate.getMinutes()}` !=='23:59'
+                                        p
+                                            +hoursMinutes(event.start_time)
+                                    if event.canceled
+                                        p.today JÄÄB ÄRA!
+
+                                    if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
+                                        p.today TÄNA!
+
+                                .col-xs-12.col-md-6.col-lg-6
+                                    h3
+                                        a(href=`/${lang_path}performance/${event.performance_remote_id}`)
+                                            span.subtitle Baltoscandal 2020 esitleb:
+                                            span.artist Stefan Kaegi / Rimini Protokoll
+                                            span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                                .col-xs-6.col-md-2.col-lg-2
+                                    p.location Kanuti Gildi SAAL
+                                    p 15/19 EUR
+                                    p Kohapealt: 15/19 EUR€
+                                .col-xs-6.col-md-2.col-lg-2.text-right
+                                    a.btn.btn-primary(href="https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley" target="_blank") Osta pilet
+                                .col-xs-12.col-md-12.col-lg-12
+                                    hr
+                            //- .col-xs-12.col-sm-2.col-lg-2
+                            //-     p neljapäev
+                            //-     p 03.12.2020
+                            //-     p 20:30
+                            //-     p.today Täna!
+                            //- .col-xs-12.col-md-6.col-lg-6
+                            //-     h3
+                            //-         a(href="/et/performance/6858")
+                            //-             span.subtitle Baltoscandal 2020 esitleb:
+                            //-             span.artist Stefan Kaegi / Rimini Protokoll
+                            //-             span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                            //- .col-xs-6.col-md-2.col-lg-2
+                            //-     p.location Kanuti Gildi SAAL
+                            //-     p 15/19 EUR
+                            //-     p Kohapealt: 15/19 EUR€
+                            //- .col-xs-6.col-md-2.col-lg-2.text-right
+                            //-     a.btn.btn-primary(href="https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley" target="_blank") Osta pilet
+                            //- .col-xs-12.col-md-12.col-lg-12
+                            //-     hr
+                            //- .col-xs-12.col-sm-2.col-lg-2
+                            //-     p reede
+                            //-     p 04.12.2020
+                            //-     p 19:30
+                            //- .col-xs-12.col-md-6.col-lg-6
+                            //-     h3
+                            //-         a(href="/et/performance/6894")
+                            //-             span.name Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective
+                            //- .col-xs-6.col-md-2.col-lg-2
+                            //-     p.location Kanuti Gildi SAAL
+                            //-     p 5/8 EUR
+                            //-     p Kohapealt: 5/8 EUR€
+                            //- .col-xs-6.col-md-2.col-lg-2.text-right
+                            //-     a.btn.btn-primary(href="https://fienta.com/et/kontsertsari-improtest-copeco-15632" target="_blank") Osta pilet
+                            //- .col-xs-12.col-md-12.col-lg-12
+                            //-     hr
+                            //- .col-xs-12.col-sm-2.col-lg-2
+                            //-     p laupäev
+                            //-     p 05.12.2020
+                            //-     p 19:30
+                            //-     p.today Esietendus!
+                            //- .col-xs-12.col-md-6.col-lg-6
+                            //-     h3
+                            //-         a(href="/et/performance/6865")
+                            //-             span.artist Karolin Poska
+                            //-             span.name Sinu nirvaanale
+                            //- .col-xs-6.col-md-2.col-lg-2
+                            //-     p.location Kanuti Gildi SAAL
+                            //-     p 8/12 EUR
+                            //-     p Kohapealt: 10/15 EUR€
+                            //- .col-xs-6.col-md-2.col-lg-2.text-right
+                            //-     a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
+                            //- .col-xs-12.col-md-12.col-lg-12
+                            //-     hr
                     .col-xs-12.col-md-12
                         a.load-more.btn.btn-primary(href="/et/program/") Vaata kõiki
                 .tour.row

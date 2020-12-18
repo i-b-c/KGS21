@@ -33,6 +33,9 @@ node ./helpers/categories_from_yaml.js
 echo '==== build ==== labels_from_yaml'
 node ./helpers/labels_from_yaml.js
 
+echo '==== build ==== events_from_yaml'
+node ./helpers/events_from_yaml.js
+
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./config.yaml full
 

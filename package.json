@@ -33,6 +33,7 @@
     "entulib": "^2.0.6",
     "express": "^4.17.1",
     "js-yaml": "^3.14.0",
+    "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "setenv": "^1.0.3"
   }
