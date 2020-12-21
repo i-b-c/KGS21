@@ -1,6 +1,6 @@
 let eventsElems = document.querySelectorAll('[type-name="event"]')
 let currentDate = new Date()
-let currentMonthDate = `${currentDate.getMonth()}.${currentDate.getDate()}`
+let currentMonthDate = `${currentDate.getFullYear()}.${currentDate.getMonth()}.${currentDate.getDate()}`
 let monthPrevious = new Date(currentDate.getFullYear(), currentDate.getMonth()-1)
 let monthStart = new Date(currentDate.getFullYear(), currentDate.getMonth())
 let monthEnd = new Date(currentDate.getFullYear(), currentDate.getMonth()+1)
@@ -48,7 +48,7 @@ function toggleEvents(remoteId = null, catBtnClass = null) {
         if (eventStart) {
             eventStartDate = new Date(eventStart)
 
-            let eventMonthAndDate = `${eventStartDate.getMonth()}.${eventStartDate.getDate()}`
+            let eventMonthAndDate = `${eventStartDate.getFullYear()}.${eventStartDate.getMonth()}.${eventStartDate.getDate()}`
 
             if (createArray) {
                 eventsTimesArray.push(eventStartDate.getTime())
