@@ -13,6 +13,7 @@ function allStorage() {
 document.onload = allStorage()
 
 function loginWithProvider(loginProvider) {
+    LogOut()
     localStorage.setItem("provider", loginProvider)
     window.location.replace('https://a.saal.ee/connect/' + loginProvider + '/')
 }
@@ -26,23 +27,23 @@ async function GetCallback(providerToCall) {
 
     const response = await fetch('https://a.saal.ee/auth/' + providerToCall + '/callback' + location.search, requestOptions)
     // fetch('https://a.saal.ee/auth/' + providerToCall + '/callback' + location.search, requestOptions).then(function(response) {
-        if (response.ok) {
-            const data = await response.json()
+    if (response.ok) {
+        const data = await response.json()
         userProfile = data
         let token = data.jwt
         localStorage.setItem("ACCESS_TOKEN", token)
         localStorage.removeItem("provider")
         // document.dispatchEvent(userProfileLoadedEvent)
         console.log(userProfile);
-        if (userProfile.user.blocked || !userProfile.user.confirmed){
+        if (userProfile.user.blocked || !userProfile.user.confirmed) {
             accountStatus = false
         }
     } else {
         var errorResponse = await response.json()
         var errors = []
         console.log("response: ", errorResponse)
-        for( err of errorResponse.message){
-            for (messageId of err.messages){
+        for (err of errorResponse.message) {
+            for (messageId of err.messages) {
                 errors.push(messageId.id)
             }
         }

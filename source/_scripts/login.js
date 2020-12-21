@@ -8,9 +8,6 @@ if(localStorage.getItem('ACCESS_TOKEN')){
     validateToken()
 }
 
-if(validToken){
-    GetUserInfo()
-}
 
 document.addEventListener('userProfileLoaded', function (e) {
     console.log('User profile is loaded', userProfile)
@@ -31,10 +28,9 @@ function validateToken(){
 
         // console.log("token aegub: " + expDate)
         // console.log("praegu on: " + now)
-        console.log("tokeni kehtivuse lõpp", new Date(expDate));
-
-        console.log(now<expDate)
-        console.log(accountStatus);
+        // console.log("tokeni kehtivuse lõpp", new Date(expDate));
+        // console.log(now<expDate)
+        // console.log(accountStatus);
         if(now < expDate && accountStatus){
             validToken = true
         }else{
@@ -45,18 +41,11 @@ function validateToken(){
         console.log(err)
         validToken = false
     }
-
 }
 
-function GetMe(){
-    if(validToken){
-        GetUserInfo()
-    }else{
-        console.log("pole sisse logitud")
-    }
-}
 
 function GetUserInfo() {
+    if(validToken){
         var requestOptions = {
             'method': 'GET',
             'headers': {
@@ -75,6 +64,9 @@ function GetUserInfo() {
         }).catch(function(error) {
             console.warn(error);
         });
+    }else{
+        console.log("validToken väärtus on", validToken)
+    }
 
 }
 
