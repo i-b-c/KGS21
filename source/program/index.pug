@@ -1,4 +1,5 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
@@ -38,523 +39,639 @@ block content
                     .col-sm-12.col-md-12.col-lg-12
                         ul.pager
                             li.previous
-                                a(href="program/2020/11/623,3809,3810,3811,3812,3814,5027")
-                                    span ← November 2020
+                                a(id='previous-month' onclick="toggleMonth('-');" style='display: none;')
+                                    span ←
                             li.next
-                                a(href="program/2021/1/623,3809,3810,3811,3812,3814,5027")
-                                    span Jaanuar 2021 →
+                                a(id='next-month' onclick="toggleMonth('+');" style='display: none;')
+                                    span →
             .col-md-12
+
                 .programme.row
                     .col-xs-12.col-md-12.col-lg-12
-                        h2 2020 Detsember
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p kolmapäev
-                        p 02.12.2020
-                        p 18:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6858")
-                                span.subtitle Baltoscandal 2020 esitleb:
-                                span.artist Stefan Kaegi / Rimini Protokoll
-                                span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p kolmapäev
-                        p 02.12.2020
-                        p 20:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6858")
-                                span.subtitle Baltoscandal 2020 esitleb:
-                                span.artist Stefan Kaegi / Rimini Protokoll
-                                span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p neljapäev
-                        p 03.12.2020
-                        p 18:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6858")
-                                span.subtitle Baltoscandal 2020 esitleb:
-                                span.artist Stefan Kaegi / Rimini Protokoll
-                                span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p neljapäev
-                        p 03.12.2020
-                        p 20:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6858")
-                                span.subtitle Baltoscandal 2020 esitleb:
-                                span.artist Stefan Kaegi / Rimini Protokoll
-                                span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 04.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6894")
-                                span.name Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 5/8 EUR
-                        p Kohapealt: 5/8 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p laupäev
-                        p 05.12.2020
-                        p 19:30
-                        p.today Esietendus!
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6865")
-                                span.artist Karolin Poska
-                                span.name Sinu nirvaanale
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p esmaspäev
-                        p 07.12.2020
-                        p 19:30
-                        p.today Täna!
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6865")
-                                span.artist Karolin Poska
-                                span.name Sinu nirvaanale
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p teisipäev
-                        p 08.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/5099")
-                                span.artist BIRGIT LANDBERG
-                                span.producer Must Kast
-                                span.name Peks mõisatallis / Tallinnas
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/17/25 EUR
-                        p Kohapealt: 15/17/25 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.piletilevi.ee/est/piletid/teater/teater-must-kast-sunnipaev/must-kast-peks-moisatallis-tallinnas-314277/" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p kolmapäev
-                        p 09.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/5099")
-                                span.artist BIRGIT LANDBERG
-                                span.producer Must Kast
-                                span.name Peks mõisatallis / Tallinnas
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/17/25 EUR
-                        p Kohapealt: 15/17/25 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.piletilevi.ee/est/piletid/teater/teater-must-kast-sunnipaev/must-kast-peks-moisatallis-tallinnas-314278/" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p neljapäev
-                        p 10.12.2020
-                        p 19:00
-                        p.today Esietendus!
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6871")
-                                span.artist Henri Hütt & Algorütmid
-                                span.name Cathexis
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Sakala 3 teatrimaja
-                        p TASUTA / FREE ENTRANCE
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p neljapäev
-                        p 10.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6865")
-                                span.artist Karolin Poska
-                                span.name Sinu nirvaanale
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 11.12.2020
-                        p 16:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6821")
-                                span.subtitle Digikultuuriaasta seminar 2020:
-                                span.name Puuris või pilves - kas teater saab olla võrgus?
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location ONLINE
-                        p TASUTA / FREE
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary.free.disabled(target="_blank") Tasuta
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 11.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6865")
-                                span.artist Karolin Poska
-                                span.name Sinu nirvaanale
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p laupäev
-                        p 12.12.2020
-                        p 17:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6871")
-                                span.artist Henri Hütt & Algorütmid
-                                span.name Cathexis
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Sakala 3 teatrimaja
-                        p TASUTA / FREE ENTRANCE
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p laupäev
-                        p 12.12.2020
-                        p 19:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6871")
-                                span.artist Henri Hütt & Algorütmid
-                                span.name Cathexis
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Sakala 3 teatrimaja
-                        p TASUTA / FREE ENTRANCE
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p pühapäev
-                        p 13.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6865")
-                                span.artist Karolin Poska
-                                span.name Sinu nirvaanale
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p esmaspäev
-                        p 14.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6091")
-                                span.artist Karl koppelmaa
-                                span.producer Teater KELM
-                                span.name sest meid on õpetatud madusid kartma
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Püha Vaimu SAAL
-                        p 12 - 30 EUR
-                        p Kohapealt: 12 - 30 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.piletimaailm.com/performances/94263-sest-meid-on-opetatud-madusid-kartma?lang=et_EE" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p teisipäev
-                        p 15.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6091")
-                                span.artist Karl koppelmaa
-                                span.producer Teater KELM
-                                span.name sest meid on õpetatud madusid kartma
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Püha Vaimu SAAL
-                        p 12 - 30 EUR
-                        p Kohapealt: 12 - 30 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.piletimaailm.com/performances/94263-sest-meid-on-opetatud-madusid-kartma?lang=et_EE" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p kolmapäev
-                        p 16.12.2020
-                        p 17:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6871")
-                                span.artist Henri Hütt & Algorütmid
-                                span.name Cathexis
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Sakala 3 teatrimaja
-                        p TASUTA / FREE ENTRANCE
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p kolmapäev
-                        p 16.12.2020
-                        p 19:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6871")
-                                span.artist Henri Hütt & Algorütmid
-                                span.name Cathexis
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Sakala 3 teatrimaja
-                        p TASUTA / FREE ENTRANCE
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p kolmapäev
-                        p 16.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6180")
-                                span.artist Renate Keerd
-                                span.producer Tartu Uus Teater/Kompanii Nii
-                                span.name LÄVI
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.uusteater.ee/lavastused/lavi" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p neljapäev
-                        p 17.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6180")
-                                span.artist Renate Keerd
-                                span.producer Tartu Uus Teater/Kompanii Nii
-                                span.name LÄVI
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.uusteater.ee/lavastused/lavi" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 18.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6180")
-                                span.artist Renate Keerd
-                                span.producer Tartu Uus Teater/Kompanii Nii
-                                span.name LÄVI
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.uusteater.ee/lavastused/lavi" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p laupäev
-                        p 19.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6180")
-                                span.artist Renate Keerd
-                                span.producer Tartu Uus Teater/Kompanii Nii
-                                span.name LÄVI
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15/19 EUR
-                        p Kohapealt: 15/19 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.uusteater.ee/lavastused/lavi" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p pühapäev
-                        p 20.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6865")
-                                span.artist Karolin Poska
-                                span.name Sinu nirvaanale
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p esmaspäev
-                        p 21.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6187")
-                                span.artist Birgit Landberg
-                                span.producer Must Kast
-                                span.name Evolutsiooni revolutsioon
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15 - 25 EUR
-                        p Kohapealt: 15 - 25 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.piletilevi.ee/est/piletid/teater/muusikal/must-kast-evolutsiooni-revolutsioon-65498/" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p teisipäev
-                        p 22.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6187")
-                                span.artist Birgit Landberg
-                                span.producer Must Kast
-                                span.name Evolutsiooni revolutsioon
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 15 - 25 EUR
-                        p Kohapealt: 15 - 25 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary(href="https://www.piletilevi.ee/est/piletid/teater/muusikal/must-kast-evolutsiooni-revolutsioon-65498/" target="_blank") Osta pilet
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p esmaspäev
-                        p 28.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6538")
-                                span.artist MART KANGRO, JUHAN ULFSAK, EERO EPNER
-                                span.name Kas te olete oma kohaga rahul
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/kas-te-olete" target="_blank") Välja müüdud
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p teisipäev
-                        p 29.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6538")
-                                span.artist MART KANGRO, JUHAN ULFSAK, EERO EPNER
-                                span.name Kas te olete oma kohaga rahul
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/kas-te-olete" target="_blank") Välja müüdud
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p kolmapäev
-                        p 30.12.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        h3
-                            a(href="/et/performance/6538")
-                                span.artist MART KANGRO, JUHAN ULFSAK, EERO EPNER
-                                span.name Kas te olete oma kohaga rahul
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-6.col-md-2.col-lg-2.text-right
-                        a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/kas-te-olete" target="_blank") Välja müüdud
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
+                        h2(id='year-month')
+                        h2(id='lang' lang-is=(self.locale === 'et' ? 'et-EE' : 'en-US') style='display: none;')
+                    - var currentDate = new Date()
+                    - var pastTwoDays = new Date()
+                    //- - var nextThreeDays = new Date()
+
+                    - pastTwoDays.setDate(pastTwoDays.getDate() - 2)
+                    //- - nextThreeDays.setDate(nextThreeDays.getDate() + 3)
+                    //- - console.log(currentDate, ' - ', pastTwoDays, ' - ', nextThreeDays)
+
+                    - var events = self.data.events
+                    //- .filter(e => new Date(e.start_time) > pastTwoDays)
+                    //- each performance in
+                    //- - console.log(events.map(a => a.start_time))
+
+                    if events && events.length
+                        each event in events
+                            - var eventDate = new Date(event.start_time)
+                            div(id=event.remote_id type-name="event" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' performance-categories=event.peformance_categories style='display: none;')
+                                .col-xs-12.col-sm-2.col-lg-2
+                                    p
+                                        +dayName(event.start_time)
+                                    p
+                                        +dateFull(event.start_time)
+                                    //- Whole day event if 23:59
+                                    if `${eventDate.getHours()}:${eventDate.getMinutes()}` !=='23:59'
+                                        p
+                                            +hoursMinutes(event.start_time)
+                                    if event.canceled
+                                        p.today JÄÄB ÄRA!
+
+                                    //- Premiere
+                                    if event.performance_X_premiere_time
+                                        if event.performance_X_premiere_time === event.start_time
+                                            p.today ESIETENDUS!
+
+                                    //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
+                                    p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
+
+                                .col-xs-12.col-md-6.col-lg-6
+                                    h3
+                                        if event.performance_remote_id
+                                            a(href=`/${lang_path}performance/${event.performance_remote_id}`)
+                                                if event[`performance_X_headline_${self.locale}`]
+                                                    span.subtitle= event[`performance_X_headline_${self.locale}`]
+
+                                                if event.performance_X_artist
+                                                    span.artist= event.performance_X_artist
+
+                                                if event.performance_X_producer
+                                                    span.producer= event.performance_X_producer
+
+                                                if event.performance_X_town
+                                                    span.town= event.performance_X_town
+
+                                                span.name= event[`performance_name_${self.locale}`]
+
+                                                if event[`performance_subtitle_${self.locale}`]
+                                                    span.subtitle= event[`performance_subtitle_${self.locale}`]
+                                        else
+                                            //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
+                                            a(href='/' + lang_path + '/event/' + event.remote_id)= event[`name_${self.locale}`]
+                                                if event[`X_headline_${self.locale}`]
+                                                    span.subtitle= event[`X_headline_${self.locale}`]
+
+                                                if event.X_artist
+                                                    span.artist= event.X_artist
+
+                                                if event.X_producer
+                                                    span.producer= event.X_producer
+
+                                                if event.X_town
+                                                    span.town= event.X_town
+
+                                                span.name= event[`name_${self.locale}`]
+
+                                                if event[`subtitle_${self.locale}`]
+                                                    span.subtitle= event[`subtitle_${self.locale}`]
+
+                                .col-xs-6.col-md-2.col-lg-2
+                                    if event[`location_${self.locale}`]
+                                        p.location= event[`location_${self.locale}`]
+
+                                    //- if op.get(p, ['saal-location', lang + '-name'])
+                                    //-     p.location= op.get(p, ['saal-location', lang + '-name'])
+
+                                    if event.X_ticket_info
+                                        if !event.X_ticket_info.price
+                                            p TASUTA
+                                        else
+                                            p= event.X_ticket_info.price
+
+                                        if event.X_ticket_info.min_price
+                                            //- if event.X_ticket_info.min_price == op.get(p, 'max-price')
+                                            //-     p= event.X_ticket_info.min_price + '€'
+                                            //- else
+                                            //-     p= event.X_ticket_info.min_price + '/' + op.get(p, 'max-price') + '€'
+
+                                        if event.X_ticket_info.onsite_price
+                                            p= 'HIND KOHAPEAL' + ': ' + event.X_ticket_info.onsite_price + '€'
+
+                                if event.X_ticket_info
+                                    if event.X_ticket_info.sales_status
+                                        .col-xs-6.col-md-2.col-lg-2.text-right
+                                            if event.canceled
+                                                a.btn.btn-primary(class="disabled") TÜHISTATUD
+                                            else
+                                                a.btn.btn-primary(class=((event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === 'free_admission') ? "free disabled" : "") href=event.X_ticket_info.ticket_api target='_blank') DYN BTN
+
+                                .col-xs-12.col-md-12.col-lg-12
+                                    hr
+
+
+                //- .programme.row
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         h2 2020 Detsember
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p kolmapäev
+                //-         p 02.12.2020
+                //-         p 18:00
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6858")
+                //-                 span.subtitle Baltoscandal 2020 esitleb:
+                //-                 span.artist Stefan Kaegi / Rimini Protokoll
+                //-                 span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/19 EUR
+                //-         p Kohapealt: 15/19 EUR
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p kolmapäev
+                //-         p 02.12.2020
+                //-         p 20:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6858")
+                //-                 span.subtitle Baltoscandal 2020 esitleb:
+                //-                 span.artist Stefan Kaegi / Rimini Protokoll
+                //-                 span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/19 EUR
+                //-         p Kohapealt: 15/19 EUR
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p neljapäev
+                //-         p 03.12.2020
+                //-         p 18:00
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6858")
+                //-                 span.subtitle Baltoscandal 2020 esitleb:
+                //-                 span.artist Stefan Kaegi / Rimini Protokoll
+                //-                 span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/19 EUR
+                //-         p Kohapealt: 15/19 EUR
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p neljapäev
+                //-         p 03.12.2020
+                //-         p 20:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6858")
+                //-                 span.subtitle Baltoscandal 2020 esitleb:
+                //-                 span.artist Stefan Kaegi / Rimini Protokoll
+                //-                 span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/19 EUR
+                //-         p Kohapealt: 15/19 EUR
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p reede
+                //-         p 04.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6894")
+                //-                 span.name Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 5/8 EUR
+                //-         p Kohapealt: 5/8 EUR
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p laupäev
+                //-         p 05.12.2020
+                //-         p 19:30
+                //-         p.today Esietendus!
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6865")
+                //-                 span.artist Karolin Poska
+                //-                 span.name Sinu nirvaanale
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15 EUR
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p esmaspäev
+                //-         p 07.12.2020
+                //-         p 19:30
+                //-         p.today Täna!
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6865")
+                //-                 span.artist Karolin Poska
+                //-                 span.name Sinu nirvaanale
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p teisipäev
+                //-         p 08.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/5099")
+                //-                 span.artist BIRGIT LANDBERG
+                //-                 span.producer Must Kast
+                //-                 span.name Peks mõisatallis / Tallinnas
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/17/25 EUR
+                //-         p Kohapealt: 15/17/25 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.piletilevi.ee/est/piletid/teater/teater-must-kast-sunnipaev/must-kast-peks-moisatallis-tallinnas-314277/" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p kolmapäev
+                //-         p 09.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/5099")
+                //-                 span.artist BIRGIT LANDBERG
+                //-                 span.producer Must Kast
+                //-                 span.name Peks mõisatallis / Tallinnas
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/17/25 EUR
+                //-         p Kohapealt: 15/17/25 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.piletilevi.ee/est/piletid/teater/teater-must-kast-sunnipaev/must-kast-peks-moisatallis-tallinnas-314278/" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p neljapäev
+                //-         p 10.12.2020
+                //-         p 19:00
+                //-         p.today Esietendus!
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6871")
+                //-                 span.artist Henri Hütt & Algorütmid
+                //-                 span.name Cathexis
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Sakala 3 teatrimaja
+                //-         p TASUTA / FREE ENTRANCE
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p neljapäev
+                //-         p 10.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6865")
+                //-                 span.artist Karolin Poska
+                //-                 span.name Sinu nirvaanale
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p reede
+                //-         p 11.12.2020
+                //-         p 16:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6821")
+                //-                 span.subtitle Digikultuuriaasta seminar 2020:
+                //-                 span.name Puuris või pilves - kas teater saab olla võrgus?
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location ONLINE
+                //-         p TASUTA / FREE
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary.free.disabled(target="_blank") Tasuta
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p reede
+                //-         p 11.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6865")
+                //-                 span.artist Karolin Poska
+                //-                 span.name Sinu nirvaanale
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p laupäev
+                //-         p 12.12.2020
+                //-         p 17:00
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6871")
+                //-                 span.artist Henri Hütt & Algorütmid
+                //-                 span.name Cathexis
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Sakala 3 teatrimaja
+                //-         p TASUTA / FREE ENTRANCE
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p laupäev
+                //-         p 12.12.2020
+                //-         p 19:00
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6871")
+                //-                 span.artist Henri Hütt & Algorütmid
+                //-                 span.name Cathexis
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Sakala 3 teatrimaja
+                //-         p TASUTA / FREE ENTRANCE
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p pühapäev
+                //-         p 13.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6865")
+                //-                 span.artist Karolin Poska
+                //-                 span.name Sinu nirvaanale
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p esmaspäev
+                //-         p 14.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6091")
+                //-                 span.artist Karl koppelmaa
+                //-                 span.producer Teater KELM
+                //-                 span.name sest meid on õpetatud madusid kartma
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Püha Vaimu SAAL
+                //-         p 12 - 30 EUR
+                //-         p Kohapealt: 12 - 30 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.piletimaailm.com/performances/94263-sest-meid-on-opetatud-madusid-kartma?lang=et_EE" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p teisipäev
+                //-         p 15.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6091")
+                //-                 span.artist Karl koppelmaa
+                //-                 span.producer Teater KELM
+                //-                 span.name sest meid on õpetatud madusid kartma
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Püha Vaimu SAAL
+                //-         p 12 - 30 EUR
+                //-         p Kohapealt: 12 - 30 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.piletimaailm.com/performances/94263-sest-meid-on-opetatud-madusid-kartma?lang=et_EE" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p kolmapäev
+                //-         p 16.12.2020
+                //-         p 17:00
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6871")
+                //-                 span.artist Henri Hütt & Algorütmid
+                //-                 span.name Cathexis
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Sakala 3 teatrimaja
+                //-         p TASUTA / FREE ENTRANCE
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p kolmapäev
+                //-         p 16.12.2020
+                //-         p 19:00
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6871")
+                //-                 span.artist Henri Hütt & Algorütmid
+                //-                 span.name Cathexis
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Sakala 3 teatrimaja
+                //-         p TASUTA / FREE ENTRANCE
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://fienta.com/et/s/henri-hutt-algorutmid-cathexis-esietendus" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p kolmapäev
+                //-         p 16.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6180")
+                //-                 span.artist Renate Keerd
+                //-                 span.producer Tartu Uus Teater/Kompanii Nii
+                //-                 span.name LÄVI
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/19 EUR
+                //-         p Kohapealt: 15/19 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.uusteater.ee/lavastused/lavi" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p neljapäev
+                //-         p 17.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6180")
+                //-                 span.artist Renate Keerd
+                //-                 span.producer Tartu Uus Teater/Kompanii Nii
+                //-                 span.name LÄVI
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/19 EUR
+                //-         p Kohapealt: 15/19 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.uusteater.ee/lavastused/lavi" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p reede
+                //-         p 18.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6180")
+                //-                 span.artist Renate Keerd
+                //-                 span.producer Tartu Uus Teater/Kompanii Nii
+                //-                 span.name LÄVI
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/19 EUR
+                //-         p Kohapealt: 15/19 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.uusteater.ee/lavastused/lavi" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p laupäev
+                //-         p 19.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6180")
+                //-                 span.artist Renate Keerd
+                //-                 span.producer Tartu Uus Teater/Kompanii Nii
+                //-                 span.name LÄVI
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15/19 EUR
+                //-         p Kohapealt: 15/19 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.uusteater.ee/lavastused/lavi" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p pühapäev
+                //-         p 20.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6865")
+                //-                 span.artist Karolin Poska
+                //-                 span.name Sinu nirvaanale
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/sinu-nirvaanale" target="_blank") Välja müüdud
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p esmaspäev
+                //-         p 21.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6187")
+                //-                 span.artist Birgit Landberg
+                //-                 span.producer Must Kast
+                //-                 span.name Evolutsiooni revolutsioon
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15 - 25 EUR
+                //-         p Kohapealt: 15 - 25 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.piletilevi.ee/est/piletid/teater/muusikal/must-kast-evolutsiooni-revolutsioon-65498/" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p teisipäev
+                //-         p 22.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6187")
+                //-                 span.artist Birgit Landberg
+                //-                 span.producer Must Kast
+                //-                 span.name Evolutsiooni revolutsioon
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 15 - 25 EUR
+                //-         p Kohapealt: 15 - 25 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary(href="https://www.piletilevi.ee/est/piletid/teater/muusikal/must-kast-evolutsiooni-revolutsioon-65498/" target="_blank") Osta pilet
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p esmaspäev
+                //-         p 28.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6538")
+                //-                 span.artist MART KANGRO, JUHAN ULFSAK, EERO EPNER
+                //-                 span.name Kas te olete oma kohaga rahul
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/kas-te-olete" target="_blank") Välja müüdud
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p teisipäev
+                //-         p 29.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6538")
+                //-                 span.artist MART KANGRO, JUHAN ULFSAK, EERO EPNER
+                //-                 span.name Kas te olete oma kohaga rahul
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/kas-te-olete" target="_blank") Välja müüdud
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
+                //-     .col-xs-12.col-sm-2.col-lg-2
+                //-         p kolmapäev
+                //-         p 30.12.2020
+                //-         p 19:30
+                //-     .col-xs-12.col-md-6.col-lg-6
+                //-         h3
+                //-             a(href="/et/performance/6538")
+                //-                 span.artist MART KANGRO, JUHAN ULFSAK, EERO EPNER
+                //-                 span.name Kas te olete oma kohaga rahul
+                //-     .col-xs-6.col-md-2.col-lg-2
+                //-         p.location Kanuti Gildi SAAL
+                //-         p 8/12 EUR
+                //-         p Kohapealt: 10/15 EUR
+                //-     .col-xs-6.col-md-2.col-lg-2.text-right
+                //-         a.btn.btn-primary.free.disabled(href="https://fienta.com/et/s/kas-te-olete" target="_blank") Välja müüdud
+                //-     .col-xs-12.col-md-12.col-lg-12
+                //-         hr
             nav.archive.bottom.col-md-12
                 .row
                     .col-sm-12.col-md-12.col-lg-12

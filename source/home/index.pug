@@ -79,7 +79,7 @@ block content
                     if events && events.length
                         each event in events
                             - var eventDate = new Date(event.start_time)
-                            div(type-name="event" start_time=`${event.start_time}`)
+                            div(id=event.remote_id type-name="event" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' style='display: none;')
                                 .col-xs-12.col-sm-2.col-lg-2
                                     p
                                         +dayName(event.start_time)
@@ -92,21 +92,84 @@ block content
                                     if event.canceled
                                         p.today JÄÄB ÄRA!
 
-                                    if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
-                                        p.today TÄNA!
+                                    //- Premiere
+                                    if event.performance_X_premiere_time
+                                        if event.performance_X_premiere_time === event.start_time
+                                            p.today ESIETENDUS!
+
+                                    //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
+                                    p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
 
                                 .col-xs-12.col-md-6.col-lg-6
                                     h3
-                                        a(href=`/${lang_path}performance/${event.performance_remote_id}`)
-                                            span.subtitle Baltoscandal 2020 esitleb:
-                                            span.artist Stefan Kaegi / Rimini Protokoll
-                                            span.name !!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)
+                                        if event.performance_remote_id
+                                            a(href=`/${lang_path}performance/${event.performance_remote_id}`)
+                                                if event[`performance_X_headline_${self.locale}`]
+                                                    span.subtitle= event[`performance_X_headline_${self.locale}`]
+
+                                                if event.performance_X_artist
+                                                    span.artist= event.performance_X_artist
+
+                                                if event.performance_X_producer
+                                                    span.producer= event.performance_X_producer
+
+                                                if event.performance_X_town
+                                                    span.town= event.performance_X_town
+
+                                                span.name= event[`performance_name_${self.locale}`]
+
+                                                if event[`performance_subtitle_${self.locale}`]
+                                                    span.subtitle= event[`performance_subtitle_${self.locale}`]
+                                        else
+                                            //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
+                                            a(href='/' + lang_path + '/event/' + event.remote_id)= event[`name_${self.locale}`]
+                                                if event[`X_headline_${self.locale}`]
+                                                    span.subtitle= event[`X_headline_${self.locale}`]
+
+                                                if event.X_artist
+                                                    span.artist= event.X_artist
+
+                                                if event.X_producer
+                                                    span.producer= event.X_producer
+
+                                                if event.X_town
+                                                    span.town= event.X_town
+
+                                                span.name= event[`name_${self.locale}`]
+
+                                                if event[`subtitle_${self.locale}`]
+                                                    span.subtitle= event[`subtitle_${self.locale}`]
+
                                 .col-xs-6.col-md-2.col-lg-2
-                                    p.location Kanuti Gildi SAAL
-                                    p 15/19 EUR
-                                    p Kohapealt: 15/19 EUR€
-                                .col-xs-6.col-md-2.col-lg-2.text-right
-                                    a.btn.btn-primary(href="https://fienta.com/et/s/stefan-kaegi-rimini-protokoll-oovaorg-uncanny-valley" target="_blank") Osta pilet
+                                    if event[`location_${self.locale}`]
+                                        p.location= event[`location_${self.locale}`]
+
+                                    //- if op.get(p, ['saal-location', lang + '-name'])
+                                    //-     p.location= op.get(p, ['saal-location', lang + '-name'])
+
+                                    if event.X_ticket_info
+                                        if !event.X_ticket_info.price
+                                            p TASUTA
+                                        else
+                                            p= event.X_ticket_info.price
+
+                                        if event.X_ticket_info.min_price
+                                            //- if event.X_ticket_info.min_price == op.get(p, 'max-price')
+                                            //-     p= event.X_ticket_info.min_price + '€'
+                                            //- else
+                                            //-     p= event.X_ticket_info.min_price + '/' + op.get(p, 'max-price') + '€'
+
+                                        if event.X_ticket_info.onsite_price
+                                            p= 'HIND KOHAPEAL' + ': ' + event.X_ticket_info.onsite_price + '€'
+
+                                if event.X_ticket_info
+                                    if event.X_ticket_info.sales_status
+                                        .col-xs-6.col-md-2.col-lg-2.text-right
+                                            if event.canceled
+                                                a.btn.btn-primary(class="disabled") TÜHISTATUD
+                                            else
+                                                a.btn.btn-primary(class=((event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === 'free_admission') ? "free disabled" : "") href=event.X_ticket_info.ticket_api target='_blank') DYN BTN
+
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
                             //- .col-xs-12.col-sm-2.col-lg-2
@@ -196,3 +259,6 @@ block content
                                 input(type="text" name="b_1e1d48fe600fda5c3f6a39b75_fdc080b2d5" tabindex="-1" value="")
                             .clear
                                 input#mc-embedded-subscribe.button(type="submit" value="OK!" name="subscribe")
+    //- -
+    //-     var eventsElems = 'TERE'
+    //-     console.log('ELEMENTS: ', eventsElems)
