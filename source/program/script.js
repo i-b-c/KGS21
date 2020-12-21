@@ -6,13 +6,14 @@ let monthStart = new Date(currentDate.getFullYear(), currentDate.getMonth())
 let monthEnd = new Date(currentDate.getFullYear(), currentDate.getMonth()+1)
 let yearMonthText = document.getElementById(`year-month`)
 let previousMonthBtn = document.getElementById(`previous-month`)
+let previousMonthBtn2 = document.getElementById(`previous-month2`)
 let nextMonthBtn = document.getElementById(`next-month`)
+let nextMonthBtn2 = document.getElementById(`next-month2`)
 let lang = document.getElementById(`lang`).getAttribute('lang-is')
 let eventsTimesArray = []
 let maxDate = null;
 let minDate = null;
-
-let lastMonth = eventsElems
+let hiddenCats = []
 
 function toggleMonth(upDown = '') {
     if (upDown === '+') {
@@ -28,7 +29,7 @@ function toggleMonth(upDown = '') {
     toggleEvents()
 }
 
-function toggleEvents() {
+function toggleEvents(remoteId = null, catBtnClass = null) {
     let createArray = false
 
     if (!eventsTimesArray.length) {
@@ -39,6 +40,7 @@ function toggleEvents() {
         let eventId = eventElem.getAttribute('id')
         let eventStart = eventElem.getAttribute('start-time')
         let eventPrem = eventElem.getAttribute('premiere-time')
+        let eventCats = eventElem.getAttribute('performance-categories')
         let eventStartDate = null
 
         // let eventPremDate = new Date(eventStart)
@@ -54,17 +56,31 @@ function toggleEvents() {
 
             let todayText = document.getElementById(`today-${eventId}`)
             if (eventMonthAndDate === currentMonthDate) {
-                // console.log('⛔️', eventId, eventStart, eventPrem);
                 todayText.style.display = ''
             }
 
         }
 
         if (eventStartDate && eventStartDate > monthStart && eventStartDate < monthEnd) {
-            eventElem.style.display = ''
+
+            if (remoteId && catBtnClass && eventCats) {
+                eventCats = JSON.parse(eventCats)
+                if (eventCats.every(r => hiddenCats.includes(r))) {
+                    eventElem.style.display = 'none'
+                } else {
+                    eventElem.style.display = ''
+                }
+            } else {
+                eventElem.style.display = ''
+            }
+
         } else {
             eventElem.style.display = 'none'
         }
+
+
+
+
     }
 
     setYearMonthTextAndBtns()
@@ -78,22 +94,38 @@ function setYearMonthTextAndBtns() {
     }
 
     if (eventsTimesArray.length && monthPrevious.getTime() >= minDate) {
-        previousMonthBtn.innerHTML = `&larr; ${monthPrevious.getFullYear()} ${monthPrevious.toLocaleString(lang, { month: 'long' })}`
-        previousMonthBtn.style.display = ''
+        previousMonthBtn.innerHTML = previousMonthBtn2.innerHTML = `&larr; ${monthPrevious.getFullYear()} ${monthPrevious.toLocaleString(lang, { month: 'long' })}`
+        previousMonthBtn.style.display = previousMonthBtn2.style.display = ''
     } else {
-        previousMonthBtn.style.display = 'none'
+        previousMonthBtn.style.display = previousMonthBtn2.style.display = 'none'
     }
 
 
     if (eventsTimesArray.length && monthEnd.getTime() <= maxDate) {
-        nextMonthBtn.innerHTML = `${monthEnd.getFullYear()} ${monthEnd.toLocaleString(lang, { month: 'long' })} &rarr;`
-        nextMonthBtn.style.display = ''
+        nextMonthBtn.innerHTML = nextMonthBtn2.innerHTML = `${monthEnd.getFullYear()} ${monthEnd.toLocaleString(lang, { month: 'long' })} &rarr;`
+        nextMonthBtn.style.display = nextMonthBtn2.style.display = ''
     } else {
-        nextMonthBtn.style.display = 'none'
+        nextMonthBtn.style.display = nextMonthBtn2.style.display = 'none'
     }
 
 
     yearMonthText.innerHTML = `${monthStart.toLocaleString('default', { month: 'long' })} ${monthStart.getFullYear()} `
+}
+
+function toggleCat(remoteId) {
+    let catBtn = document.getElementById(remoteId)
+    let catBtnClass = catBtn.className
+
+    if(catBtnClass === 'icon-checkmark') {
+        catBtnClass = catBtn.className = 'icon-checkmark2'
+        hiddenCats.push(`${remoteId}`)
+    } else {
+        catBtnClass = catBtn.className = 'icon-checkmark'
+        hiddenCats = hiddenCats.filter(c => c !== `${remoteId}`)
+    }
+
+    toggleEvents(remoteId, catBtnClass)
+
 }
 
 toggleMonth()

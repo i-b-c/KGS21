@@ -5,7 +5,6 @@ const path = require('path')
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-
 const LANGUAGES = ['et', 'en']
 
 
@@ -13,7 +12,10 @@ for (const lang of LANGUAGES) {
     const performancesYAMLPath = path.join(fetchDir, `performances.${lang}.yaml`)
     const performances = yaml.safeLoad(fs.readFileSync(performancesYAMLPath, 'utf8'))
         .filter(p => p.minToMaxEvents)
-
+    const categoriesYAMLPath = path.join(fetchDir, `categories.${lang}.yaml`)
+    const categories = yaml.safeLoad(fs.readFileSync(categoriesYAMLPath, 'utf8'))
+        .filter(c => c.featured_on_front_page)
+        .map(c => c.remote_id)
     let allData = []
 
 
@@ -30,7 +32,7 @@ for (const lang of LANGUAGES) {
                 performance_X_artist: performance.X_artist || null,
                 performance_X_producer: performance.X_producer || null,
                 [`performance_X_town_${lang}`]: performance[`X_town_${lang}`] || null,
-                peformance_categories: performance.categories || null,
+                peformance_categories: performance.categories ? performance.categories.map(c => c.remote_id).filter(c => categories.includes(c)) : null,
                 remote_id: oneEvent.remote_id || null,
                 type: oneEvent.type || null,
                 start_time: oneEvent.start_time || null,
