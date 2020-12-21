@@ -13,7 +13,7 @@ async function strapiQuery(options, dataObject = false) {
     // spin.start()
     if (TOKEN === '') {
         TOKEN = await strapiAuth() // TODO: setting global variable is no a good idea
-        console.log('Bearer', TOKEN)
+        // console.log('Bearer', TOKEN)
     }
     options.headers['Authorization'] = `Bearer ${TOKEN}`
     options['host'] = StrapiHost
