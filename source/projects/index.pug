@@ -8,11 +8,18 @@ block content
                 .col-xs-12.col-md-12
                     h2 Projektid
                     #accordion.projects-group.panel-group(role="tablist" multiselectable="true")
+                        - var first_project = true
                         each project in self.data.projects
                             .panel
                                 div(id=project.id, role='tab')
                                     h3
                                         a(data-toggle='collapse', data-parent='#accordion', href='#collapse-'+project.id, aria-expanded='true', aria-controls='collapse-'+project.id)= project.name
-                                div.panel-collapse.collapse(id='collapse-'+project.id, role='tabpanel', aria-labelledby='heading-'+project.id)
-                                    .main-text.h3
-                                        +markdown(project.description)
+                                if first_project
+                                    - first_project = false
+                                    div.panel-collapse.collapse.in(id='collapse-'+project.id, role='tabpanel', aria-labelledby='heading-'+project.id)
+                                        .main-text.h3
+                                            +markdown(project.description)
+                                else
+                                    div.panel-collapse.collapse(id='collapse-'+project.id, role='tabpanel', aria-labelledby='heading-'+project.id)
+                                        .main-text.h3
+                                            +markdown(project.description)
