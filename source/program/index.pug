@@ -7,34 +7,37 @@ block content
             nav.archive.top.col-md-12
                 .row
                     .col-xs-12.col-sm-10.col-md-10.col-lg-11.select-cat
-                        a(href="program/2020/12/3809,3810,3811,3812,3814,5027")
-                            .active
-                                | Loeng
-                                span.icon-checkmark
-                        a(href="program/2020/12/623,3810,3811,3812,3814,5027")
-                            .active
-                                | Tants
-                                span.icon-checkmark
-                        a(href="program/2020/12/623,3809,3811,3812,3814,5027")
-                            .active
-                                | Performance
-                                span.icon-checkmark
-                        a(href="program/2020/12/623,3809,3810,3812,3814,5027")
-                            .active
-                                | Teater
-                                span.icon-checkmark
-                        a(href="program/2020/12/623,3809,3810,3811,3814,5027")
-                            .active
-                                | Muusika
-                                span.icon-checkmark
-                        a(href="program/2020/12/623,3809,3810,3811,3812,5027")
-                            .active
-                                | Video
-                                span.icon-checkmark
-                        a(href="program/2020/12/623,3809,3810,3811,3812,3814")
-                            .active
-                                | Näitus
-                                span.icon-checkmark
+                        if self.data.categories
+                            - categories = self.data.categories.filter(c => c.featured_on_front_page)
+                                if categories.length
+                                    each category in categories
+                                        a(onclick=`toggleCat(${category.remote_id});`)
+                                            .active= category[`name_${self.locale}`]
+                                                span(id=category.remote_id).icon-checkmark
+                                        //- a(href="program/2020/12/623,3810,3811,3812,3814,5027")
+                                        //-     .active
+                                        //-         | Tants
+                                        //-         span.icon-checkmark
+                                        //- a(href="program/2020/12/623,3809,3811,3812,3814,5027")
+                                        //-     .active
+                                        //-         | Performance
+                                        //-         span.icon-checkmark
+                                        //- a(href="program/2020/12/623,3809,3810,3812,3814,5027")
+                                        //-     .active
+                                        //-         | Teater
+                                        //-         span.icon-checkmark
+                                        //- a(href="program/2020/12/623,3809,3810,3811,3814,5027")
+                                        //-     .active
+                                        //-         | Muusika
+                                        //-         span.icon-checkmark
+                                        //- a(href="program/2020/12/623,3809,3810,3811,3812,5027")
+                                        //-     .active
+                                        //-         | Video
+                                        //-         span.icon-checkmark
+                                        //- a(href="program/2020/12/623,3809,3810,3811,3812,3814")
+                                        //-     .active
+                                        //-         | Näitus
+                                        //-         span.icon-checkmark
                 .row
                     .col-sm-12.col-md-12.col-lg-12
                         ul.pager
@@ -677,5 +680,8 @@ block content
                     .col-sm-12.col-md-12.col-lg-12
                         ul.pager
                             li.previous
-                                a(href="program/2020/11/623,3809,3810,3811,3812,3814,5027")
-                                    span ← November 2020
+                                a(id='previous-month2' onclick="toggleMonth('-');" style='display: none;')
+                                    span ←
+                            li.next
+                                a(id='next-month2' onclick="toggleMonth('+');" style='display: none;')
+                                    span →
