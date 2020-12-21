@@ -212,6 +212,7 @@ Event: &Event # etendus
         pl_link_en: (text)
         ticket_api: (text)
         min_price: (decimal)
+        max_price: (decimal)
         sales_status: (text)
         pl_id: (text)
         price: (text)
@@ -227,8 +228,9 @@ Event: &Event # etendus
     video: (text)
     audio: (text)
     order: (number)
-    location_et: (text)
-    location_en: (text)
+    location: *Location
+    X_location_et: (text)
+    X_location_en: (text)
     remote_id: (UID)
     parent_event: (object) #relation to event
     child_events: []
@@ -361,17 +363,41 @@ LabelGroup:
         - *Label
 
 #SingleType
-AboutArticle: &AboutArticle
+# AboutArticle: &AboutArticle
+#     name_et: (text)
+#     name_en: (text)
+#     content_et: (text rich)
+#     content_en: (text rich)
+
+
+# Configuration: &Configuration
+#     _path: /configuration
+#     name: (text)
+#     about_article:
+#         - *AboutArticle
+#     fb_color: (text)
+#     bg_color: (text)
+
+AboutFirstPage:
     name_et: (text)
     name_en: (text)
+    subtitle_et: (text)
+    subtitle_en: (text)
     content_et: (text rich)
     content_en: (text rich)
 
+AboutArticleFirst:
+    name_et: (text)
+    name_en: (text)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    content_et: (text rich)
+    content_en: (text rich)
 
-Configuration: &Configuration
-    _path: /configuration
-    name: (text)
-    about_article:
-        - *AboutArticle
-    fb_color: (text)
-    bg_color: (text)
+AboutArticleSecond:
+    name_et: (text)
+    name_en: (text)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    content_et: (text rich)
+    content_en: (text rich)
