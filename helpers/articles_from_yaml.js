@@ -17,7 +17,6 @@ STRAPIDATA_ARTICLES.sort((a, b) => {
     return new Date(b.publish_date) - new Date(a.publish_date)
 })
 
-
 // Front page promo to first
 STRAPIDATA_ARTICLES.sort((a, b) => {
     if (a.front_page_promotion) {
@@ -30,6 +29,22 @@ STRAPIDATA_ARTICLES.sort((a, b) => {
 for (const lang of LANGUAGES) {
     const articlesYAMLPath = path.join(fetchDir, `articles.${lang}.yaml`)
     let allData = []
+
+    const RELATED = STRAPIDATA_ARTICLES.filter(e => e.publish_date).map(rel => {
+        let articleDate = new Date(rel.publish_date)
+        let articlePublish = `${('0' + articleDate.getDate()).slice(-2)}.${('0' + (articleDate.getMonth()+1)).slice(-2)}.${articleDate.getFullYear()}`
+        let related_articles = {
+            id: rel.id,
+            remote_id: rel.remote_id,
+            [`title_${lang}`]: rel[`title_${lang}`],
+            categories: rel.categories ? rel.categories.map(c => c.id) : [],
+            authors_cs: rel.authors ? rel.authors.map(a => `${a.first_name}${a.last_name ? ` ${a.last_name}` : ''}`).join(', ') : [],
+            publish_date: rel.publish_date,
+            publish_date_string: articlePublish,
+            path: lang !== 'et' ? `magazine/${rel.remote_id}` : `${lang}/magazine/${rel.remote_id}`,
+        }
+        return related_articles
+    })
 
     for (const article of STRAPIDATA_ARTICLES) {
 
@@ -53,6 +68,21 @@ for (const lang of LANGUAGES) {
                     .join(', ')
             }
 
+            if (article.categories) {
+                let relatedArticles = RELATED.filter(a => {
+                    if (a.categories && a.remote_id !== article.remote_id) {
+                        return a.categories.some(s => article.categories.
+                            map(ac => ac.id)
+                            .includes(s))
+                    } else {
+                        return false
+                    }
+                })
+                if (relatedArticles.length) {
+                    article.related = relatedArticles.sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date))
+                }
+            }
+
             let articleDate = new Date(article.publish_date)
             article.publish_date_string = `${('0' + articleDate.getDate()).slice(-2)}.${('0' + (articleDate.getMonth()+1)).slice(-2)}.${articleDate.getFullYear()}`
 
@@ -60,7 +90,7 @@ for (const lang of LANGUAGES) {
                 article.X_pictures = sort_pictures(article.X_pictures)
             }
 
-            const articleYAML = yaml.safeDump(article, { 'indent': '4' });
+            const articleYAML = yaml.safeDump(article, { 'noRefs': true, 'indent': '4' });
             const articleDir = path.join(articlesDir, article.remote_id)
             const articleYAMLPath = path.join(articleDir, `data.${lang}.yaml`)
 
@@ -77,7 +107,7 @@ for (const lang of LANGUAGES) {
     }
 
     console.log(`${allData.length} articles from YAML (${lang}) ready for building`);
-    const articlesYAML = yaml.safeDump(allData, { 'indent': '4' });
+    const articlesYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(articlesYAMLPath, articlesYAML, 'utf8');
 }
 
