@@ -14,6 +14,10 @@ const purestConfig = require('@purest/providers');
 const { getAbsoluteServerUrl } = require('strapi-utils');
 const jwt = require('jsonwebtoken');
 
+
+const apiUserController = require('../controllers/user/api');  //c
+
+
 /**
  * Connect thanks to a third-party provider.
  *
@@ -35,6 +39,7 @@ const connect = (provider, query) => {
 
     // Get the profile.
     getProfile(provider, query, async (err, profile) => {
+      console.log('gettheprof', provider);
       if (err) {
         return reject([null, err]);
       }
@@ -48,6 +53,8 @@ const connect = (provider, query) => {
         const users = await strapi.query('user', 'users-permissions').find({
           email: profile.email,
         });
+
+        console.log(users);
 
         const advanced = await strapi
           .store({
@@ -78,7 +85,7 @@ const connect = (provider, query) => {
         ) {
           return resolve([
             null,
-            [{ messages: [{ id: 'Auth.form.error.email.taken' }] }],
+            [{ messages: [{ id: 'Auth.form.error.email.taken7' }] }],
             'Email is already taken.',
           ]);
         }
@@ -94,6 +101,24 @@ const connect = (provider, query) => {
           role: defaultRole.id,
           confirmed: true,
         });
+
+        
+        if (params.email === 'siimsutt@hotmail.com'){
+          // console.log(users[0])
+          let providers = users[0].provider
+          if (!providers.includes(provider)){
+            providers += ',' + provider
+          }
+          params.params = {id: users[0].id}
+          params.request = {body: {provider: providers}}
+          console.log(params);
+          const updatedUser = await apiUserController.update(params)
+     
+          console.log({updatedUser});
+          return resolve([updatedUser, null])
+        }
+
+        console.log('here');
 
         const createdUser = await strapi.query('user', 'users-permissions').create(params);
 

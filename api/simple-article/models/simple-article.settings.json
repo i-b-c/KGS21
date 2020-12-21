@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "simple_articles",
+  "info": {
+    "name": "SimpleArticle"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_et": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "subtitle_et": {
+      "type": "string"
+    },
+    "subtitle_en": {
+      "type": "string"
+    },
+    "content_et": {
+      "type": "richtext"
+    },
+    "content_en": {
+      "type": "richtext"
+    }
+  }
+}

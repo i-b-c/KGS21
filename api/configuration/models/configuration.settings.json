@@ -14,16 +14,20 @@
     "name": {
       "type": "string"
     },
-    "fb_color": {
+    "fg_color": {
       "type": "string"
-    },
-    "about_article": {
-      "type": "component",
-      "repeatable": true,
-      "component": "config.about-article"
     },
     "bg_color": {
       "type": "string"
+    },
+    "about_article": {
+      "model": "simple-article"
+    },
+    "corona_article": {
+      "model": "simple-article"
+    },
+    "council_article": {
+      "model": "simple-article"
     }
   }
 }

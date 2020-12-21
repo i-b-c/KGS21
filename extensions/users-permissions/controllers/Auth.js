@@ -149,6 +149,7 @@ module.exports = {
         );
       }
 
+      console.log('authprovider', provider);
       // Connect the user with the third-party provider.
       let user, error;
       try {
@@ -159,6 +160,8 @@ module.exports = {
       } catch ([user, error]) {
         return ctx.badRequest(null, error === 'array' ? error[0] : error);
       }
+
+      console.log('user ', user);
 
       if (!user) {
         return ctx.badRequest(null, error === 'array' ? error[0] : error);
@@ -474,7 +477,7 @@ module.exports = {
       return ctx.badRequest(
         null,
         formatError({
-          id: 'Auth.form.error.email.taken',
+          id: 'Auth.form.error.email.taken0',
           message: 'Email is already taken.',
         })
       );
@@ -484,7 +487,7 @@ module.exports = {
       return ctx.badRequest(
         null,
         formatError({
-          id: 'Auth.form.error.email.taken',
+          id: 'Auth.form.error.email.taken1',
           message: 'Email is already taken.',
         })
       );
@@ -523,7 +526,7 @@ module.exports = {
             id: 'Auth.form.error.username.taken',
             message: 'Username already taken',
           }
-        : { id: 'Auth.form.error.email.taken', message: 'Email already taken' };
+        : { id: 'Auth.form.error.email.taken2', message: 'Email already taken' };
 
       ctx.badRequest(null, formatError(adminError));
     }

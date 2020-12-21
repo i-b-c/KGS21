@@ -59,7 +59,7 @@ module.exports = {
           null,
 
           formatError({
-            id: 'Auth.form.error.email.taken',
+            id: 'Auth.form.error.email.taken2',
             message: 'Email already taken.',
             field: ['email'],
           })
@@ -105,6 +105,7 @@ module.exports = {
       })
       .get();
 
+      console.log(ctx);
     const { id } = ctx.params;
     const { email, username, password } = ctx.request.body;
 
@@ -150,7 +151,7 @@ module.exports = {
         return ctx.badRequest(
           null,
           formatError({
-            id: 'Auth.form.error.email.taken',
+            id: 'Auth.form.error.email.taken4',
             message: 'Email already taken',
             field: ['email'],
           })
@@ -168,6 +169,11 @@ module.exports = {
     }
 
     const data = await strapi.plugins['users-permissions'].services.user.edit({ id }, updateData);
+
+    console.log('data ', data)
+    if (user.provider !== ctx.provider){
+      return data
+    }
 
     ctx.send(sanitizeUser(data));
   },
@@ -231,7 +237,7 @@ module.exports = {
         return ctx.badRequest(
           null,
           formatError({
-            id: 'Auth.form.error.email.taken',
+            id: 'Auth.form.error.email.taken5',
             message: 'Email already taken',
             field: ['email'],
           })

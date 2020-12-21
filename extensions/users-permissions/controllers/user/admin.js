@@ -101,7 +101,7 @@ module.exports = {
           null,
 
           formatError({
-            id: 'Auth.form.error.email.taken',
+            id: 'Auth.form.error.email.taken3',
             message: 'Email already taken.',
             field: ['email'],
           })
@@ -201,7 +201,7 @@ module.exports = {
         return ctx.badRequest(
           null,
           formatError({
-            id: 'Auth.form.error.email.taken',
+            id: 'Auth.form.error.email.taken3',
             message: 'Email already taken',
             field: ['email'],
           })

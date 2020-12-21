@@ -2,7 +2,8 @@
   "collectionName": "components_ticket_info_x_ticket_infos",
   "info": {
     "name": "x_ticket_info",
-    "icon": "align-center"
+    "icon": "align-center",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -29,6 +30,9 @@
     },
     "onsite_price": {
       "type": "string"
+    },
+    "max_price": {
+      "type": "decimal"
     }
   }
 }

@@ -92,20 +92,14 @@
     "resident": {
       "type": "string"
     },
-    "location_et": {
-      "type": "string"
-    },
-    "location_en": {
-      "type": "string"
-    },
     "X_ticket_info": {
       "type": "component",
       "repeatable": false,
       "component": "ticket-info.x-ticket-info"
     },
     "performance": {
-      "via": "events",
-      "model": "performance"
+      "model": "performance",
+      "via": "events"
     },
     "parent_event": {
       "model": "event",
@@ -114,6 +108,9 @@
     "child_events": {
       "collection": "event",
       "via": "parent_event"
+    },
+    "location": {
+      "model": "location"
     }
   }
 }

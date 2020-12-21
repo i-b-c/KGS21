@@ -67,6 +67,9 @@
     },
     "phoneNumber": {
       "type": "string"
+    },
+    "performances": {
+      "collection": "performance"
     }
   }
 }

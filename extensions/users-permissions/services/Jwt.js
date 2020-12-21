@@ -40,7 +40,7 @@ module.exports = {
   },
 
   issue(payload, jwtOptions = {}) {
-    console.log('issue')
+    console.log('will issue strapiToken')
     _.defaults(jwtOptions, strapi.plugins['users-permissions'].config.jwt);
     return jwt.sign(
       _.clone(payload.toJSON ? payload.toJSON() : payload),

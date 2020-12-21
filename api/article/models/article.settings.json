@@ -73,6 +73,12 @@
     },
     "categories": {
       "collection": "category"
+    },
+    "X_location_et": {
+      "type": "string"
+    },
+    "X_location_en": {
+      "type": "string"
     }
   }
 }
