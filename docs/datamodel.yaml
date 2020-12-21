@@ -362,7 +362,7 @@ LabelGroup:
     label: #(Component (repeatable))
         - *Label
 
-SimpleArticle:
+SimpleArticle: &SimpleArticle
     name_et: (text)
     name_en: (text)
     subtitle_et: (text)
