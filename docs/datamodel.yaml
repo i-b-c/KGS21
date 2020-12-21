@@ -362,7 +362,7 @@ LabelGroup:
     label: #(Component (repeatable))
         - *Label
 
-SimpleArticle:
+SimpleArticle: &SimpleArticle
     name_et: (text)
     name_en: (text)
     subtitle_et: (text)
@@ -378,5 +378,5 @@ Configuration: &Configuration
     about_article: *SimpleArticle
     corona_article: *SimpleArticle
     council_article: *SimpleArticle
-    fb_color: (text)
+    fg_color: (text)
     bg_color: (text)
