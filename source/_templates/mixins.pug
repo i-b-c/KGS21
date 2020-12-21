@@ -1,6 +1,9 @@
 mixin format(text)
     | !{ self.md(text) }
 
+mixin markdown(text)
+    | !{ self.md(text) }
+
 //- kolmapäev
 mixin dayName(dateStringUTC)
     - var dom_id = Math.random()
