@@ -1,2 +1,3 @@
 data:
     persons: '/_fetchdir/persons.yaml'
+    '/_fetchdir/configuration.en.yaml'
