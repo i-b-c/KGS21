@@ -1,7 +1,7 @@
 const fs = require('fs')
 // const yaml = require('js-yaml')
 const path = require('path')
-const http = require('https')
+const https = require('https')
 const { strapiAuth } = require('./strapiAuth.js')
 // const { spin } = require("./spinner")
 const StrapiHost = 'a.saal.ee'
@@ -13,7 +13,7 @@ async function strapiQuery(options, dataObject = false) {
     // spin.start()
     if (TOKEN === '') {
         TOKEN = await strapiAuth() // TODO: setting global variable is no a good idea
-        console.log('Bearer', TOKEN)
+        // console.log('Bearer', TOKEN)
     }
     options.headers['Authorization'] = `Bearer ${TOKEN}`
     options['host'] = StrapiHost
@@ -21,7 +21,7 @@ async function strapiQuery(options, dataObject = false) {
     // options.timeout = 30000
     // console.log(options, JSON.stringify((dataObject) || ''))
     return new Promise((resolve, reject) => {
-        const request = http.request(options, (response) => {
+        const request = https.request(options, (response) => {
             response.setEncoding('utf8')
             let allData = ''
             response.on('data', function (chunk) {
@@ -75,7 +75,7 @@ const isObject = item => {
     return (item && typeof item === 'object' && !Array.isArray(item))
 }
 async function postToStrapi(data, model) {
-    let _path = `http://${StrapiHost}/${model}`
+    let _path = `https://${StrapiHost}/${model}`
     let results = []
     for (const element of data) {
         const options = {
@@ -89,7 +89,7 @@ async function postToStrapi(data, model) {
     return results
 }
 async function putToStrapi(data, model) {
-    let _path = `http://${StrapiHost}/${model}`
+    let _path = `https://${StrapiHost}/${model}`
     let results = []
     for (const element of data) {
         const options = {
@@ -97,13 +97,13 @@ async function putToStrapi(data, model) {
             path: _path + '/' + element.id,
             method: 'PUT'
         }
-    // console.log(element, options.path)
+    console.log("in put to strapi", element, options.path)
     results.push(await strapiQuery(options, element))
     }
     return results
 }
 async function getFromStrapi(model) {
-    const _path = `http://${StrapiHost}/${model}?_limit=-1`
+    const _path = `https://${StrapiHost}/${model}?_limit=-1`
     const options = {
         headers: { 'Content-Type': 'application/json' },
         path: _path,

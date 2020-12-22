@@ -270,7 +270,7 @@ Performance: &Performance # performance #lavastus
         - *PerformanceMedia
     logos:
         - *StrapiMedia
-    raider: # fail
+    raiders: # fail
         - *StrapiMedia
     X_headline_et: (text)
     X_headline_en: (text)
