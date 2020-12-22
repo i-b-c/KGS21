@@ -432,9 +432,17 @@ async function eventsToStrapi() {
             // console.log({entu_performance_id, tmp, strapi_performance_id});
         }
 
+        let entu_location = ((event_entity.properties['saal-location'].values.length > 0 ? event_entity.properties['saal-location'].values[0].db_value : '') === null ? "" : (event_entity.properties['saal-location'].values.length > 0 ? event_entity.properties['saal-location'].values[0].db_value : ''))
+
+        // console.log(entu_location);
+        let strapi_location_id = locations_from_strapi.filter( s_location => {
+            return s_location.remote_id === entu_location.toString()
+
+        }).map( e => { return e.id })[0] || null
+
         let strapi_event_id = events_from_strapi.filter(s_event => {
             return s_event.remote_id === event_entity.id.toString()
-        }).map(e => { return e.id })[0]
+        }).map(e => { return e.id })[0] || null
 
         let eventType = null
 
@@ -444,9 +452,6 @@ async function eventsToStrapi() {
             }
         }
 
-        let strapi_event_id = events_from_strapi.filter(s_event => {
-            return s_event.remote_id === event_entity.id.toString()
-        }).map(e => { return e.id })[0]
 
 
         let x_ticket_info =
@@ -455,6 +460,7 @@ async function eventsToStrapi() {
             "pl_link_en": (event_entity.properties['en-pl-link'].values.length > 0 ? event_entity.properties['en-pl-link'].values[0].db_value : null),
             "ticket_api": (event_entity.properties['ticket-api'].values.length > 0 ? event_entity.properties['ticket-api'].values[0].db_value : null),
             "min_price": (event_entity.properties['min-price'].values.length > 0 ? event_entity.properties['min-price'].values[0].db_value : null),
+            "max_price": (event_entity.properties['max-price'].values.length > 0 ? event_entity.properties['max-price'].values[0].db_value : null),
             "sales_status": (event_entity.properties['sales-status'].values.length > 0 ? event_entity.properties['sales-status'].values[0].db_value : null),
             "pl_id": (event_entity.properties['pl-id'].values.length > 0 ? (event_entity.properties['pl-id'].values[0].db_value).toString() : null),
             "price": (event_entity.properties['price'].values.length > 0 ? event_entity.properties['price'].values[0].db_value : null),
@@ -479,8 +485,9 @@ async function eventsToStrapi() {
             "start_time": (event_entity.properties['start-time'].values.length > 0 ? event_entity.properties['start-time'].values[0].db_value : null),
             "end_time": (event_entity.properties['end-time'].values.length > 0 ? event_entity.properties['end-time'].values[0].db_value : null),
             "duration": (event_entity.properties['duration'].values.length > 0 ? event_entity.properties['duration'].values[0].db_value : null),
-            "location_et": (event_entity.properties['et-location'].values.length > 0 ? event_entity.properties['et-location'].values[0].db_value : null),
-            "location_et": (event_entity.properties['en-location'].values.length > 0 ? event_entity.properties['en-location'].values[0].db_value : null),
+            "location": strapi_location_id,
+            "X_location_et": (event_entity.properties['et-location'].values.length > 0 ? event_entity.properties['et-location'].values[0].db_value : null),
+            "X_location_en": (event_entity.properties['en-location'].values.length > 0 ? event_entity.properties['en-location'].values[0].db_value : null),
             "description_et": (event_entity.properties['et-description'].values.length > 0 ? event_entity.properties['et-description'].values[0].db_value : null),
             "description_en": (event_entity.properties['en-description'].values.length > 0 ? event_entity.properties['en-description'].values[0].db_value : null),
             "technical_info_et": (event_entity.properties['et-technical-information'].values.length > 0 ? event_entity.properties['et-technical-information'].values[0].db_value : null),
@@ -500,7 +507,7 @@ async function eventsToStrapi() {
     // console.log(JSON.stringify(events, null, 4))
 
     // // PUT
-    // putToStrapi(events, 'events')
+    putToStrapi(events, 'events')
 
     // // POST
     // postToStrapi(eventsToPost, 'events')
@@ -595,7 +602,7 @@ async function main() {
     // await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
-    // await eventsToStrapi()
+    await eventsToStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
     // await articlesToStrapi()
