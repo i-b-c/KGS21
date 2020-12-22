@@ -19,12 +19,18 @@ let hiddenCats = []
 
 if (urlParams.getAll.length) {
     if(urlParams.get('m')) {
-        urlDateString = urlParams.get('m').split('.')
+        let urlDateString = urlParams.get('m').split('.')
         currentDate = new Date(urlDateString[0], urlDateString[1]-1)
         monthPrevious = new Date(currentDate.getFullYear(), currentDate.getMonth()-1)
         monthStart = new Date(currentDate.getFullYear(), currentDate.getMonth())
         monthEnd = new Date(currentDate.getFullYear(), currentDate.getMonth()+1)
         toggleMonth()
+    }
+    if(urlParams.get('c')) {
+        let UrlCatsString = urlParams.get('c').split(',')
+        for (cat of UrlCatsString) {
+            toggleCat(cat)
+        }
     }
 }
 
@@ -58,7 +64,7 @@ function toggleMonth(upDown = '') {
     toggleEvents()
 }
 
-function toggleEvents(remoteId = null, catBtnClass = null) {
+function toggleEvents() {
     let createArray = false
 
     if (!eventsTimesArray.length) {
@@ -92,7 +98,7 @@ function toggleEvents(remoteId = null, catBtnClass = null) {
 
         if (eventStartDate && eventStartDate > monthStart && eventStartDate < monthEnd) {
 
-            if (remoteId && catBtnClass && eventCats) {
+            if (eventCats) {
                 eventCats = JSON.parse(eventCats)
                 if (eventCats.every(r => hiddenCats.includes(r))) {
                     eventElem.style.display = 'none'
@@ -156,7 +162,7 @@ function toggleCat(remoteId) {
         hiddenCats = hiddenCats.filter(c => c !== `${remoteId}`)
     }
 
-    toggleEvents(remoteId, catBtnClass)
+    toggleEvents()
 
 }
 
