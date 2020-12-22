@@ -127,7 +127,8 @@ function setYearMonthTextAndBtns() {
     }
 
     if (eventsTimesArray.length && monthStart.getTime() >= minDate) {
-        previousMonthBtn.innerHTML = previousMonthBtn2.innerHTML = `&larr; ${monthPrevious.toLocaleString(lang, { month: 'long' })} ${monthPrevious.getFullYear()}`
+        let previousMonthString = monthPrevious.toLocaleString(lang, { month: 'long' })
+        previousMonthBtn.innerHTML = previousMonthBtn2.innerHTML = `&larr; ${previousMonthString.charAt(0).toUpperCase() + previousMonthString.slice(1)} ${monthPrevious.getFullYear()}`
         previousMonthBtn.style.display = previousMonthBtn2.style.display = ''
     } else {
         previousMonthBtn.style.display = previousMonthBtn2.style.display = 'none'
@@ -135,14 +136,15 @@ function setYearMonthTextAndBtns() {
 
 
     if (eventsTimesArray.length && monthEnd.getTime() <= maxDate) {
-        nextMonthBtn.innerHTML = nextMonthBtn2.innerHTML = `${monthEnd.toLocaleString(lang, { month: 'long' })} ${monthEnd.getFullYear()} &rarr;`
+        let nextMonthString = monthEnd.toLocaleString(lang, { month: 'long' })
+        nextMonthBtn.innerHTML = nextMonthBtn2.innerHTML = `${nextMonthString.charAt(0).toUpperCase() + nextMonthString.slice(1)} ${monthEnd.getFullYear()} &rarr;`
         nextMonthBtn.style.display = nextMonthBtn2.style.display = ''
     } else {
         nextMonthBtn.style.display = nextMonthBtn2.style.display = 'none'
     }
 
 
-    yearMonthText.innerHTML = `${monthStart.toLocaleString('default', { month: 'long' })} ${monthStart.getFullYear()} `
+    yearMonthText.innerHTML = `${monthStart.getFullYear()} ${monthStart.toLocaleString(lang, { month: 'long' })}`
 
 
     setUrlParams()
