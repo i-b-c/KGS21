@@ -86,6 +86,8 @@ async function sendPic(media) {
 
 }
 
+// PERFORMANCE_MEDIA
+
 // const getStrapiIds = () => {
 //     performancePicsJSON.map(performance_media => {
 //         performance_media.id = (performances_from_strapi.filter(s_performance => {
@@ -94,15 +96,6 @@ async function sendPic(media) {
 //         return performance_media
 //     })
 // }
-
-const getStrapiIds = () => {
-    echoPicsJSON.map(article_media => {
-        article_media.id = (articles_from_strapi.filter(s_article => {
-                return s_article.remote_id === article_media.entu_id.toString()
-            })[0] || {}).id || null
-        return article_media
-    })
-}
 
 // async function send_pic_and_create_relation() {
 //     getStrapiIds()
@@ -131,39 +124,49 @@ const getStrapiIds = () => {
 //     putToStrapi(performancePicsJSON, 'performances')
 // }
 
-async function send_pic_and_create_relation() {
-    getStrapiIds()
-    for (const article_medias of echoPicsJSON) {
-        const strapi_id = article_medias.id
-        article_medias.article_media = article_medias.medias
-        delete article_medias.medias
-        for (const media of article_medias.article_media) {
-            for ( let i = 0; i < Object.keys(media).length; i++){
-                await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
-                // console.log(media[Object.keys(media)[i]].id)
-                if (media[Object.keys(media)[i]].id == undefined){
-                    // console.log(media[Object.keys(media)[i]])
-                    delete media[Object.keys(media)[i]]
-                    i--
-                }
 
-            }
-        }
+// ARTICLE_MEDIA
+// const getStrapiIds = () => {
+//     echoPicsJSON.map(article_media => {
+//         article_media.id = (articles_from_strapi.filter(s_article => {
+//                 return s_article.remote_id === article_media.entu_id.toString()
+//             })[0] || {}).id || null
+//         return article_media
+//     })
+// }
 
-        // console.log(JSON.stringify(article_medias, 0, 4));
-    }
+// async function send_pic_and_create_relation() {
+//     getStrapiIds()
+//     for (const article_medias of echoPicsJSON) {
+//         const strapi_id = article_medias.id
+//         article_medias.article_media = article_medias.medias
+//         delete article_medias.medias
+//         for (const media of article_medias.article_media) {
+//             for ( let i = 0; i < Object.keys(media).length; i++){
+//                 await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
+//                 // console.log(media[Object.keys(media)[i]].id)
+//                 if (media[Object.keys(media)[i]].id == undefined){
+//                     // console.log(media[Object.keys(media)[i]])
+//                     delete media[Object.keys(media)[i]]
+//                     i--
+//                 }
+
+//             }
+//         }
+
+//         // console.log(JSON.stringify(article_medias, 0, 4));
+//     }
 
 
-    console.log(JSON.stringify(echoPicsJSON, 0, 4))
-    putToStrapi(echoPicsJSON, 'articles')
-}
+//     console.log(JSON.stringify(echoPicsJSON, 0, 4))
+//     putToStrapi(echoPicsJSON, 'articles')
+// }
 
 
+// send_pic_and_create_relation()
 
-send_pic_and_create_relation()
 
-
-// KIRJUTA STAPI PERFORMANCE_MEDIA TYHJAKS
+// KIRJUTA STRAPI PERFORMANCE_MEDIA TYHJAKS
 
 // let performance = performancePicsJSON.map( perf => {
 
@@ -173,11 +176,82 @@ send_pic_and_create_relation()
 
 //     return {
 //         "id": strapi_id,
-//         "performance_media": []
+//         "performance_media": [],
+//         "logos": []
 //     }
-
 
 // })
 
 // console.log(performance)
 // putToStrapi(performance, 'performances')
+
+
+// let article = echoPicsJSON.map( perf => {
+
+//     let strapi_id = articles_from_strapi.filter(s_article => {
+//         return s_article.remote_id === perf.entu_id.toString()
+//     }).map( e => e.id )
+
+//     return {
+//         "id": strapi_id,
+//         "article_media": []
+//     }
+
+// })
+
+// console.log(article)
+// putToStrapi(article, 'articles')
+
+
+// LOGOS TO STRAPI
+async function performance_logos_and_riders_from_entu(){
+    let dataJSON = path.join(entuDataPath, 'performance.json')
+    let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+
+    // console.log(performanceJSON);
+
+    // let strapi_id = performanceJSON.map( e_performance => {
+    //     if( e_performance.properties.logo.values.length > 0 || e_performance.properties.raider.values.length > 0 ){
+    //         let strapi_id =
+    //     }
+    // })
+
+    let get_strapi_performances = performanceJSON.map( e_performance => {
+        let performance = performances_from_strapi.filter( s_performance => {
+            // console.log('S', s_performance.remote_id, 'E', e_performance.id);
+            return s_performance.remote_id === e_performance.id.toString()
+        }).map( e => e.id)
+        e_performance.strapi_id = performance
+    })
+
+    for (const performance of performanceJSON) {
+        // console.log(performance.properties.logo.values)
+        performance.logos = []
+        for (const prop of performance.properties.logo.values) {
+            // console.log(prop);
+            await sendPic(prop)
+        }
+
+        for (const value of performance.properties.logo.values) {
+            performance.logos.push(value.id)
+        }
+        performance.id = performance.strapi_id
+
+        delete performance.displaypicture
+        delete performance.displayname
+        delete performance.properties
+        delete performance.strapi_id
+
+    }
+
+    let perfJSON = []
+    console.log(JSON.stringify(perfJSON, 0, 2))
+    for (const perf of performanceJSON) {
+        if (perf.logos.length > 0) {
+            perfJSON.push(perf)
+        }
+    }
+    putToStrapi(perfJSON, 'performances')
+}
+
+performance_logos_and_riders_from_entu()
