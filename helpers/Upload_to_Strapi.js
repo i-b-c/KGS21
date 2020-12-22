@@ -258,20 +258,23 @@ async function event_pic_and_relation_to_strapi() {
     let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
     let strapi_id = eventJSON.map( e_event => {
-        events_from_strapi.filter( s_event => {
+        let event = events_from_strapi.filter( s_event => {
             return e_event.id.toString() === s_event.remote_id
         }).map( e => e.id)
+        e_event.strapi_id = event
     })
 
-    console.log('ID ', strapi_id);
+    for (const event of eventJSON) {
 
-    // for (const event of eventJSON) {
+        event.media = []
 
-    //     event.media = []
+        // console.log(JSON.stringify(event, 0, 2))
+        for( const element of event.properties['photo-gallery']){
+            console.log(element )
 
-    //     console.log(JSON.stringify(event, 0, 2));
+        }
 
-    // }
+    }
 
 }
 

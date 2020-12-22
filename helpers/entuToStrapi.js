@@ -217,7 +217,7 @@ async function performanceToStrapi() {
                 "photoMedium": photoMedium,
                 "photoBig": photoBig
             },
-            "raiders":
+            // "raiders":
             "id": starpi_performance_id
 
         }
