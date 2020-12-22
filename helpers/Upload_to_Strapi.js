@@ -17,6 +17,7 @@ const strapiDataPath = path.join(__dirname, '..', 'data-transfer', 'from_strapi'
 
 const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'performances.yaml')))
 const articles_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'articles.yaml')))
+const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'events.yaml')))
 
 // const dataJSON = path.join(entuDataPath, 'performance.pics.json')
 // let performancePicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
@@ -204,54 +205,74 @@ async function sendPic(media) {
 
 
 // LOGOS TO STRAPI
-async function performance_logos_and_riders_from_entu(){
-    let dataJSON = path.join(entuDataPath, 'performance.json')
-    let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+// async function performance_logos_and_riders_from_entu(){
+//     let dataJSON = path.join(entuDataPath, 'performance.json')
+//     let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-    // console.log(performanceJSON);
+//     let get_strapi_performances = performanceJSON.map( e_performance => {
+//         let performance = performances_from_strapi.filter( s_performance => {
+//             // console.log('S', s_performance.remote_id, 'E', e_performance.id);
+//             return s_performance.remote_id === e_performance.id.toString()
+//         }).map( e => e.id)
+//         e_performance.strapi_id = performance
+//     })
 
-    // let strapi_id = performanceJSON.map( e_performance => {
-    //     if( e_performance.properties.logo.values.length > 0 || e_performance.properties.raider.values.length > 0 ){
-    //         let strapi_id =
-    //     }
-    // })
+//     for (const performance of performanceJSON) {
+//         // console.log(performance.properties.logo.values)
+//         performance.logos = []
+//         for (const prop of performance.properties.logo.values) {
+//             // console.log(prop);
+//             await sendPic(prop)
+//         }
 
-    let get_strapi_performances = performanceJSON.map( e_performance => {
-        let performance = performances_from_strapi.filter( s_performance => {
-            // console.log('S', s_performance.remote_id, 'E', e_performance.id);
-            return s_performance.remote_id === e_performance.id.toString()
+//         for (const value of performance.properties.logo.values) {
+//             performance.logos.push(value.id)
+//         }
+//         performance.id = performance.strapi_id
+
+//         delete performance.displaypicture
+//         delete performance.displayname
+//         delete performance.properties
+//         delete performance.strapi_id
+
+//     }
+
+//     let perfJSON = []
+//     console.log(JSON.stringify(perfJSON, 0, 2))
+//     for (const perf of performanceJSON) {
+//         if (perf.logos.length > 0) {
+//             perfJSON.push(perf)
+//         }
+//     }
+//     putToStrapi(perfJSON, 'performances')
+// }
+
+// performance_logos_and_riders_from_entu()
+
+
+// EVENT PIC TO STRAPI
+
+async function event_pic_and_relation_to_strapi() {
+
+    const dataJSON = path.join(entuDataPath, 'event.json')
+    let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+
+    let strapi_id = eventJSON.map( e_event => {
+        events_from_strapi.filter( s_event => {
+            return e_event.id.toString() === s_event.remote_id
         }).map( e => e.id)
-        e_performance.strapi_id = performance
     })
 
-    for (const performance of performanceJSON) {
-        // console.log(performance.properties.logo.values)
-        performance.logos = []
-        for (const prop of performance.properties.logo.values) {
-            // console.log(prop);
-            await sendPic(prop)
-        }
+    console.log('ID ', strapi_id);
 
-        for (const value of performance.properties.logo.values) {
-            performance.logos.push(value.id)
-        }
-        performance.id = performance.strapi_id
+    // for (const event of eventJSON) {
 
-        delete performance.displaypicture
-        delete performance.displayname
-        delete performance.properties
-        delete performance.strapi_id
+    //     event.media = []
 
-    }
+    //     console.log(JSON.stringify(event, 0, 2));
 
-    let perfJSON = []
-    console.log(JSON.stringify(perfJSON, 0, 2))
-    for (const perf of performanceJSON) {
-        if (perf.logos.length > 0) {
-            perfJSON.push(perf)
-        }
-    }
-    putToStrapi(perfJSON, 'performances')
+    // }
+
 }
 
-performance_logos_and_riders_from_entu()
+event_pic_and_relation_to_strapi()
