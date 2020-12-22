@@ -35,6 +35,7 @@
     "follow-redirects": "^1.13.1",
     "form-data": "^3.0.0",
     "js-yaml": "^3.14.0",
+    "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "setenv": "^1.0.3"
   },

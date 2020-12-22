@@ -1,2 +1,131 @@
 mixin format(text)
     | !{ self.md(text) }
+
+mixin markdown(text)
+    | !{ self.md(text) }
+
+//- kolmapäev
+mixin dayName(dateStringUTC)
+    - var dom_id = Math.random()
+    p(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+
+            moment.updateLocale('en', {
+                longDateFormat : {
+                    LT: "hh:mm A",
+                    L: "MM/DD/YYYY",
+                    l: "M/D/YYYY",
+                    LL: "MMMM Do YYYY",
+                    ll: "MMM D YYYY",
+                    LLL: "MMMM Do YYYY LT",
+                    lll: "MMM D YYYY LT",
+                    LLLL: "dddd, MMMM Do YYYY LT",
+                    llll: "ddd, MMM D YYYY LT"
+                }
+            });
+
+            moment.updateLocale('et', {
+                longDateFormat: {
+                    LT: 'HH:mm',
+                    LTS: 'H:mm:ss',
+                    L: 'DD.MM.YYYY',
+                    LL: 'D. MMMM YYYY',
+                    LLL: 'D. MMMM YYYY H:mm',
+                    LLLL: 'dddd, D. MMMM YYYY H:mm'
+                }
+            });
+
+            moment.locale('#{self.locale}');
+            //- moment.locale('et');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var time_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('dddd');
+            eDisplayMoment1.innerHTML = time_EET;
+
+        })();
+
+//- 16.12.2020
+mixin dateFull(dateStringUTC)
+    - var dom_id = Math.random()
+    p(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+
+            moment.updateLocale('en', {
+                longDateFormat : {
+                    LT: "hh:mm A",
+                    L: "MM/DD/YYYY",
+                    l: "M/D/YYYY",
+                    LL: "MMMM Do YYYY",
+                    ll: "MMM D YYYY",
+                    LLL: "MMMM Do YYYY LT",
+                    lll: "MMM D YYYY LT",
+                    LLLL: "dddd, MMMM Do YYYY LT",
+                    llll: "ddd, MMM D YYYY LT"
+                }
+            });
+
+            moment.updateLocale('et', {
+                longDateFormat: {
+                    LT: 'HH:mm',
+                    LTS: 'H:mm:ss',
+                    L: 'DD.MM.YYYY',
+                    LL: 'D. MMMM YYYY',
+                    LLL: 'D. MMMM YYYY H:mm',
+                    LLLL: 'dddd, D. MMMM YYYY H:mm'
+                }
+            });
+
+            moment.locale('#{self.locale}');
+            //- moment.locale('et');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var time_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('L');
+            eDisplayMoment1.innerHTML = time_EET;
+
+        })();
+
+//- 18:35
+mixin hoursMinutes(dateStringUTC)
+    - var dom_id = Math.random()
+    p(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+
+            moment.updateLocale('en', {
+                longDateFormat : {
+                    LT: "hh:mm A",
+                    L: "MM/DD/YYYY",
+                    l: "M/D/YYYY",
+                    LL: "MMMM Do YYYY",
+                    ll: "MMM D YYYY",
+                    LLL: "MMMM Do YYYY LT",
+                    lll: "MMM D YYYY LT",
+                    LLLL: "dddd, MMMM Do YYYY LT",
+                    llll: "ddd, MMM D YYYY LT"
+                }
+            });
+
+            moment.updateLocale('et', {
+                longDateFormat: {
+                    LT: 'HH:mm',
+                    LTS: 'H:mm:ss',
+                    L: 'DD.MM.YYYY',
+                    LL: 'D. MMMM YYYY',
+                    LLL: 'D. MMMM YYYY H:mm',
+                    LLLL: 'dddd, D. MMMM YYYY H:mm'
+                }
+            });
+
+            moment.locale('#{self.locale}');
+            //- moment.locale('et');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var time_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('LT');
+            eDisplayMoment1.innerHTML = time_EET;
+
+        })();
