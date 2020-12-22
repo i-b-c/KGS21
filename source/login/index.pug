@@ -3,42 +3,50 @@ extends /_templates/layout.pug
 block content
 
     .container-fluid#login_buttons
-
         a.btn.btn-primary.text-uppercase.h3(onClick = "loginWithProvider('google')") google
         a.btn.btn-primary.text-uppercase.h3(onClick = "loginWithProvider('facebook')") facebook
-        a.btn.btn-primary.text-uppercase.h3(onClick ="LogOut()") logi välja
-        a.btn.btn-primary.text-uppercase.h3(onClick ="GetUserInfo()") get me
+        a.btn.btn-primary.text-uppercase.h3(onClick = "LogOut()")= self.labels.login.log_out
+        a.btn.btn-primary.text-uppercase.h3(onClick = "GetUserInfo()")= self.labels.login.get_me
 
-
-        div.form#userProfile
-            //- img#imgPreview(alt="user profile picture", src ="/mingiPlaceholder.jpg")
+        div.form#user_profile
+            // - img#imgPreview(alt="user profile picture", src ="/mingiPlaceholder.jpg")
             div.form-group
-                label.login_label(for='email') email
+                label.login_label(for='email')= self.labels.login.email
                 div#email(name='email')
-                //- // div#emailHelp(class='valid')= self.label.userprofile.eMailHelp
+                div#emailHelp(class='valid') mingi probleem
             div.form-group
-                label.login_label(for='firstName') eesnimi
+                label.login_label(for='firstName')= self.labels.login.first_name
                 input.login_input#firstName.form-control(type='text', placeholder="eesnimi" name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
-                //- // div#firstNameHelp(class='valid')= self.label.userprofile.firstNameHelp
+                div#firstNameHelp(class='valid') mingi probleem
             div.form-group
-                label.login_label(for='lastName') perenimi
+                label.login_label(for='lastName')= self.labels.login.family_name
                 input.login_input#lastName.form-control(type='text', placeholder="perenimi" name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
-                // div#lastNameHelp(class='valid')= self.label.userprofile.lastNameHelp
+                div#lastNameHelp(class='valid') mingi probleem
+            // div.form-group
+            //     label.login_label(for='dob')= self.labels.login.dob
+            //     input.login_input#dob.form-control(type='date' name='dob', placeholder ="yyyy-mm-dd" max="2007-01-01", min="1905-01-01", oninput="validateDate(this.id), validateBDay(this.id)")
+            //     div#dobHelp(class='valid') mingi probleem
+            //     div#dateHelp(class='valid') mingi probleem
             div.form-group
-                label.login_label(for='dob') sünnikuupäev
-                input.login_input#dob.form-control(type='date' name='dob', placeholder ="yyyy-mm-dd" max="2007-01-01", min="1905-01-01", oninput="validateDate(this.id), validateBDay(this.id)")
-                // div#dobHelp(class='valid')= self.label.userprofile.ageHelp
-                // div#dateHelp(class='valid')= self.label.userprofile.dateHelp
-            div.form-group
-                label.login_label(for='phoneNr') telefoni number
+                label.login_label(for='phoneNr')= self.labels.login.phone
                 input.login_input#phoneNr.form-control(type='tel' placeholder="telefoni number" name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
-                // div#phoneNrHelp(class='valid')= self.label.userprofile.phoneNumHelp
-            button.btn.btn_primary(onclick='validateForm()') salvesta oma andmed
-            p#profileSent(style= {display: 'none'}) profiil saadetud
+                div#phoneNrHelp(class='valid') mingi probleem
+            button.btn.btn_primary(onclick='validateForm()')= self.labels.login.save
+            p#profileSent(style = {display: 'none'})= self.labels.login.profile_sent
 
 
 
 
     style.
+        .invalid {
+            background-color: #f5e4e9;
+            display: block;
+            color: black
+            }
+        .valid {
+            background-color: #e6f7e6;
+            display: none;
+            }
         #login_buttons {
-            margin-top: 300px}
+            margin-top: 300px;
+            }

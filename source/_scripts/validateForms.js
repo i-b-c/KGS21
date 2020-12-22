@@ -83,21 +83,6 @@ function validateLastName(element_id) {
 }
 
 
-function validateGender(element_id) {
-    var gender = document.getElementById(element_id)
-    if (gender.value === "") {
-        genderHelp.classList.remove("valid")
-        genderHelp.classList.add("invalid")
-        return false
-    }
-
-    if (gender.value !== "") {
-        genderHelp.classList.remove("invalid")
-        genderHelp.classList.add("valid")
-        return true
-    }
-}
-
 function validateBDay(element_id) {
     var dob = document.getElementById(element_id)
     if (dob.value === "") {
@@ -171,50 +156,3 @@ function validatePhoneNr(element_id) {
 
 }
 
-function validateCountry(element_id) {
-    var country = document.getElementById(element_id)
-    if (country.value === "") {
-        country.classList.remove("c_valid")
-        country.classList.add("c_invalid")
-        country.value = "Elukoha riik"
-        return false
-    }
-
-    if (country.value) {
-        country.classList.remove("c_invalid")
-        country.classList.add("c_valid")
-        return true
-    }
-}
-
-function validateCity(element_id) {
-    var city = document.getElementById(element_id)
-    if (city.value === "") {
-        city.classList.remove("c_valid")
-        city.classList.add("c_invalid")
-        return false
-    }
-    // console.log(city.value);
-    if (city.value) {
-        city.classList.remove("c_invalid")
-        city.classList.add("c_valid")
-        return true
-    }
-}
-
-function getAge(dob) {
-    var today = new Date()
-    var birthDate = new Date(dob)
-
-    var age = today.getFullYear() - birthDate.getFullYear()
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age = age - 1;
-    }
-    return age;
-}
-
-function styleGenderList(){
-    gender.classList.remove("invalid")
-    gender.options[3].classList.add("invalid")
-}
