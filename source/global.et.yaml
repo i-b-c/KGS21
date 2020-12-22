@@ -89,22 +89,6 @@ labels:
         '2019': month.2019
         '2020': month.2020
         NaN: month.NaN
-    nav:
-        about: Meist
-        about-festival: Festivalist
-        contact: Info
-        coproductions: Kaasproduktsioonid
-        festivals: Festivalid
-        magazine: Magasin
-        media: Meedia
-        press: Press
-        program: Programm
-        projects: Projektid
-        residency: Residentuurid
-        schedule: Kava
-        sponsors: Toetajad
-        tickets: Piletid
-        tours: Tuurid
     newsletter:
         mailchimp_action: >-
             //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=11b766323b
@@ -159,3 +143,30 @@ labels:
         '4': neljapäev
         '5': reede
         '6': laupäev
+    nav:
+        about: Meist
+        about-festival: Festivalist
+        contact: Info
+        coproductions: Kaasproduktsioonid
+        festivals: Festivalid
+        magazine: Magasin
+        media: Meedia
+        press: Press
+        program: Programm
+        projects: Projektid
+        residency: Residentuurid
+        schedule: Kava
+        sponsors: Toetajad
+        tickets: Piletid
+        tours: Tuurid
+        user_menu: Mina
+    login:
+        log_out: logi välja
+        get_me: päri mind
+        email: e-posti aadress
+        first_name: eesnimi
+        family_name: perenimi
+        dob: sünnikuupäev
+        phone: telefoni number
+        save: salvesta oma andmed
+        profile_sent: profiil saadetud
