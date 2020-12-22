@@ -7,6 +7,9 @@ const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const LANGUAGES = ['et', 'en']
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const festivalsDirPath = path.join(sourceDir, '_fetchdir', `festivals`)
+const residenciesDirPath = path.join(sourceDir, '_fetchdir', `residencies`)
+
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
 const STRAPIDATA_PERFORMANCE = STRAPIDATA['Performance']
@@ -54,6 +57,34 @@ for (const lang of LANGUAGES) {
             canceled: oneEvent.canceled || false,
             start_date_string: `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
         }
+
+        if (oneEventData.type === 'festival') {
+            oneEventData.path = `festival/${oneEventData.remote_id}`
+            if (lang === 'et') {
+                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}`]
+            }
+            const festivalYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
+            const oneFestivalDirPath = path.join(festivalsDirPath, oneEventData.remote_id)
+            fs.mkdirSync(oneFestivalDirPath, { recursive: true });
+            fs.writeFileSync(`${oneFestivalDirPath}/data.${lang}.yaml`, festivalYAML, 'utf8');
+
+            fs.writeFileSync(`${oneFestivalDirPath}/index.pug`, `include /_templates/festival_index_template.pug`)
+        }
+
+        if (oneEventData.type === 'residency') {
+            oneEventData.path = `resident/${oneEventData.remote_id}`
+            if (lang === 'et') {
+                oneEventData.aliases = [`et/resident/${oneEventData.remote_id}`]
+            }
+            const residencyYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
+            const oneResidencyDirPath = path.join(residenciesDirPath, oneEventData.remote_id)
+            fs.mkdirSync(oneResidencyDirPath, { recursive: true });
+            fs.writeFileSync(`${oneResidencyDirPath}/data.${lang}.yaml`, residencyYAML, 'utf8');
+
+            fs.writeFileSync(`${oneResidencyDirPath}/index.pug`, `include /_templates/resident_index_template.pug`)
+
+        }
+
         allData.push(oneEventData)
 
     }
