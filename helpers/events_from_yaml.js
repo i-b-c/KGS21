@@ -44,6 +44,7 @@ for (const lang of LANGUAGES) {
             start_time: oneEvent.start_time || null,
             end_time: oneEvent.end_time || null,
             [`name_${lang}`]: oneEvent[`name_${lang}`] || null,
+            [`subtitle_${lang}`]: oneEvent[`subtitle_${lang}`] || null,
             [`description_${lang}`]: oneEvent[`description_${lang}`] || null,
             [`technical_info_${lang}`]: oneEvent[`technical_info_${lang}`] || null,
             [`location_${lang}`]: oneEvent[`location_${lang}`] || null,
@@ -51,6 +52,7 @@ for (const lang of LANGUAGES) {
             duration: oneEvent.duration || null,
             conversation: oneEvent.conversation || null,
             video: oneEvent.video || null,
+            audio: oneEvent.audio || null,
             remote_id: oneEvent.remote_id || null,
             X_ticket_info: oneEvent.X_ticket_info || null,
             start_date_string: oneEvent.start_date_string || null,
@@ -61,14 +63,28 @@ for (const lang of LANGUAGES) {
         if (oneEventData.type === 'festival') {
             oneEventData.path = `festival/${oneEventData.remote_id}`
             if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}`]
+                oneEventData.aliases = [
+                    `et/festival/${oneEventData.remote_id}`,
+                    `et/festival/${oneEventData.remote_id}/program`,
+                    `festival/${oneEventData.remote_id}/program`
+                    ]
             }
             const festivalYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
             const oneFestivalDirPath = path.join(festivalsDirPath, oneEventData.remote_id)
             fs.mkdirSync(oneFestivalDirPath, { recursive: true });
             fs.writeFileSync(`${oneFestivalDirPath}/data.${lang}.yaml`, festivalYAML, 'utf8');
-
             fs.writeFileSync(`${oneFestivalDirPath}/index.pug`, `include /_templates/festival_index_template.pug`)
+
+            if (lang === 'et') {
+                oneEventData.aliases = [
+                    `et/festival/${oneEventData.remote_id}/about`,
+                    `festival/${oneEventData.remote_id}/about`
+                    ]
+            }
+
+            fs.mkdirSync(`${oneFestivalDirPath}/about/`, { recursive: true });
+            fs.writeFileSync(`${oneFestivalDirPath}/about/data.${lang}.yaml`, festivalYAML, 'utf8');
+            fs.writeFileSync(`${oneFestivalDirPath}/about/index.pug`, `include /_templates/festival_about_index_template.pug`)
         }
 
         if (oneEventData.type === 'residency') {
