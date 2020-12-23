@@ -5,7 +5,7 @@ block content
     .container-fluid
         .row.page-margin
             section.col-md-6
-                h2 Saal
+                h2= self.labels.title.saal
                 #about-carousel.carousel.slide(data-ride="carousel")
                     .carousel-inner(role="listbox")
                         img.img-responsive.item(src="https://saal.entu.ee/api2/file-210")
@@ -86,18 +86,8 @@ block content
         .supporter.col-md-12
             h2= self.labels.title.sponsors
             ul.list-inline
-                li
-                    a(href="http://www.eeteal.ee" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-246" alt="Eesti Etendusasutuste Liit")
-                li
-                    a(href="http://www.piletilevi.ee" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-245" alt="Piletilevi")
-                li
-                    a(href="http://www.kul.ee/et" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-248" alt="Kultuuriministeerium")
-                li
-                    a(href="http://www.tallinn.ee" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-243" alt="Tallinn")
-                li
-                    a(href="http://kulka.ee" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-244" alt="Kultuurkapital")
+                each banner in self.data.banners.filter(b => b.banner_type && b.banner_type.id === 19)
+                    if banner.image
+                        li
+                            a(href=banner.url target="_blank")
+                                img.img-responsive(src=m_api + banner.image.url alt=banner.name)
