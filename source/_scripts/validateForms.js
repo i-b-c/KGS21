@@ -141,7 +141,7 @@ function validatePhoneNr(element_id) {
     }
 
     // because of https://bit.ly/37WS3X5
-    var phoneRe = /^[0-9]{7,15}$/
+    var phoneRe = /^\+?([0-9]\x20?){7,15}$/
 
     if (!phoneRe.test(String(phoneNr.value))) {
         phoneNrHelp.classList.remove("valid")

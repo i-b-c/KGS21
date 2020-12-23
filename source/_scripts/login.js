@@ -14,13 +14,30 @@ document.addEventListener('DOMContentLoaded', function(e) {
     }
 })
 
+document.addEventListener('userProfileLoaded', function(e) {
+    console.log("user profile loaded event triggered")
+    userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
+    console.log('User profile is loaded', userProfile)
+    makeUserMenuMessage()
+
+})
+
+
+document.addEventListener('storage', function(e) {
+    if(e.key === 'initials') {
+       console.log("kasutaja initsiaalid muutusid")
+    }
+    if(e.key === 'USER_PROFILE') {
+       console.log("kasutaja profiil muutus")
+    }
+})
 
 if(localStorage.getItem('ACCESS_TOKEN')){
     validateToken()
 }
 
 function makeInitials() {
-    userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
+    console.log("making initials");
     // makes intitals from userProfile based on name or email
     var initials=" "
     if (userProfile.firstName && userProfile.lastName) {
@@ -35,20 +52,12 @@ function makeInitials() {
     }
 }
 
-
-document.addEventListener('userProfileLoaded', function(e) {
-    console.log('User profile is loaded', userProfile)
-
-})
-
-
 function makeUserMenuMessage() {
     //makes massage for menu bar from pharse from Yaml  and initials genetated from profile
     document.getElementById('user_initials').innerText = makeInitials()
     localStorage.setItem("initials", makeInitials())
-    location.reload()
+    // location.reload()
 }
-
 
 function validateToken(){
     var token = localStorage.getItem('ACCESS_TOKEN')
@@ -81,6 +90,7 @@ function validateToken(){
 
 
 function GetUserInfo() {
+    console.log("getting user info")
     if(validToken){
         var requestOptions = {
             'method': 'GET',
@@ -92,12 +102,13 @@ function GetUserInfo() {
         fetch('https://a.saal.ee/users/me', requestOptions).then(function(response) {
             if (response.ok) {
                 return response.json();
+
             }
             return Promise.reject(response);
         }).then(function(data) {
+            console.log("salvestan profiili local storage-isse")
             localStorage.setItem("USER_PROFILE", JSON.stringify(data))
-            userProfile = data
-            document.dispatchEvent(userProfileLoadedEvent)
+            makeUserMenuMessage()
         }).catch(function(error) {
             console.warn(error);
         });
