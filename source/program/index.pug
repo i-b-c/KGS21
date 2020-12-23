@@ -61,7 +61,7 @@ block content
                     //- - nextThreeDays.setDate(nextThreeDays.getDate() + 3)
                     //- - console.log(currentDate, ' - ', pastTwoDays, ' - ', nextThreeDays)
 
-                    - var events = self.data.events
+                    - var events = self.data.events.filter(e => e.type && e.type === 'program')
                     //- .filter(e => new Date(e.start_time) > pastTwoDays)
                     //- each performance in
                     //- - console.log(events.map(a => a.start_time))

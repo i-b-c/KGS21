@@ -87,22 +87,6 @@ labels:
         '2019': month.2019
         '2020': month.2020
         NaN: month.NaN
-    nav:
-        about: About Us
-        about-festival: About
-        contact: Info
-        coproductions: Co-Productions
-        festivals: Festivals
-        magazine: Magazine
-        media: Media
-        press: Press
-        program: Program
-        projects: Projects
-        residency: Residencies
-        schedule: Program
-        sponsors: Supporters
-        tickets: Tickets
-        tours: On Tour
     newsletter:
         mailchimp_action: >-
             //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=deab6bd3c2
@@ -157,3 +141,30 @@ labels:
         '4': Thursday
         '5': Friday
         '6': Saturday
+    nav:
+        about: About Us
+        about-festival: About
+        contact: Info
+        coproductions: Co-Productions
+        festivals: Festivals
+        magazine: Magazine
+        media: Media
+        press: Press
+        program: Program
+        projects: Projects
+        residency: Residencies
+        schedule: Program
+        sponsors: Supporters
+        tickets: Tickets
+        tours: On Tour
+        user_menu: Me
+    login:
+        log_out: log out
+        get_me: get me
+        email: email address
+        first_name: first name
+        family_name: family name
+        dob: date of birth
+        phone: phone number
+        save: save
+        profile_sent: profile sent
