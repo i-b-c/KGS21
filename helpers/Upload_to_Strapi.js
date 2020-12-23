@@ -252,30 +252,51 @@ async function sendPic(media) {
 
 // EVENT PIC TO STRAPI
 
-async function event_pic_and_relation_to_strapi() {
+// async function event_pic_and_relation_to_strapi() {
 
-    const dataJSON = path.join(entuDataPath, 'event.json')
-    let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+//     const dataJSON = path.join(entuDataPath, 'event.json')
+//     let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-    let strapi_id = eventJSON.map( e_event => {
-        let event = events_from_strapi.filter( s_event => {
-            return e_event.id.toString() === s_event.remote_id
-        }).map( e => e.id)
-        e_event.strapi_id = event
-    })
+//     let strapi_id = eventJSON.map( e_event => {
+//         let event = events_from_strapi.filter( s_event => {
+//             return e_event.id.toString() === s_event.remote_id
+//         }).map( e => e.id)
+//         e_event.strapi_id = event
+//     })
 
-    for (const event of eventJSON) {
+//     for (const event of eventJSON) {
 
-        event.media = []
+//         event.media = {}
+//         if(event.properties['photo-gallery'].values.length > 0 || event.properties['photo-original'].values.length > 0 || event.properties['photo'].values.length > 0 || event.properties['photo-big'].values.length > 0){
+//             event.media.gallery_image_medium = event.properties['photo-gallery'].values
+//             event.media.original_image = event.properties['photo-original'].values
+//             event.media.hero_image = event.properties['photo'].values
+//             event.media.gallery_image_large = event.properties['photo-big'].values
 
-        // console.log(JSON.stringify(event, 0, 2))
-        for( const element of event.properties['photo-gallery']){
-            console.log(element )
+//         }
 
-        }
+//         if( Object.keys(event.media).length < 1){
+//             delete event.media
+//         }
 
-    }
+//         // for( const element of event.properties['photo-gallery']){
+//         //     console.log(element )
+//         // }
 
-}
+//         if( event.properties.performance.values.length > 0){
+//             // event.performance = event.properties.performance.values
+//             delete event
+//         }
+//         delete event.properties
 
-event_pic_and_relation_to_strapi()
+//         if( event.media ){
+//             console.log(JSON.stringify(event, 0, 2))
+
+//         }
+
+//     }
+
+
+// }
+
+// event_pic_and_relation_to_strapi()
