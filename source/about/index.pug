@@ -1,10 +1,11 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
         .row.page-margin
             section.col-md-6
-                h2 Saal
+                h2= self.labels.title.saal
                 #about-carousel.carousel.slide(data-ride="carousel")
                     .carousel-inner(role="listbox")
                         img.img-responsive.item(src="https://saal.entu.ee/api2/file-210")
@@ -20,46 +21,19 @@ block content
                         img.img-responsive.item(src="https://saal.entu.ee/api2/file-3517")
                         img.img-responsive.item(src="https://saal.entu.ee/api2/file-3518")
                     a.left.carousel-control(href="#about-carousel" role="button" data-slide="prev")
-                        span.icon-prev.arrow-left(aria-hidden="true")
+                        span.icon-prev.arrow-left(aria-hidden="true")                                                   
                     a.right.carousel-control(href="#about-carousel" role="button" data-slide="next")
                         span.icon-next.arrow-right(aria-hidden="true")
                 article.main-text.h3
                     p
-                    h3#kanuti-gildi-saali-20-juubelihooaeg Kanuti Gildi SAALi 20. juubelihooaeg
-                    p
-                        | 2020/2021
-                        br
-                        | Kanuti Gildi SAAL avab oma juubelihooaja augustikuu lõpus pakkudes uusi ja vanu lavastusi nii kodus kui võõrsil.
-                        br
-                        | Kuigi proovid ja residentuurid on meil toimunud läbi suve, toimub ametlik hooaja avamine 24. augustil. Sellel päeval esietendub suures saalis Mart Kangro, Juhan Ulfsaki ja Eero Epneri uuslavastus „Kas te olete oma kohaga rahul“. Nende esimene koostöölavastus „Workshop“ tekitas kirgi ja vastuolu ning midagi muud pole oodata ka seekord. Pärast etendusi Tallinnas astutakse üles Draama festivalil Tartus ning Tallinna publik näeb neid veel oktoobris, detsembris, jaanuaris...
-                        br
-                        | Sama nädala reedel, 28. augustil esietendub festivalil Tartu Interditsiplinaar Üüve-Lydia Toompere ja Siim Tõniste osalusteatri ja sotsiaalse koreograafia lavastus „supersocial“. Kui Tartus esitletakse nende tööd Elektriteatris (28.08) ja Rongijaamas (29.08) ning Viljandis Tantsunädala raames Avatud Noortetoas (1.09), siis Tallinna publikul on võimalus osaleda lavastuses Pelgulinna Rahvamajas (4.09), Maarjamäe lossis (10.09) ning Sakala 3 teatrimajas (13.09). Osalemine on tasuta kuid eelregistreerimisega.
-                        br
-                        | Katsetused on osa Kanuti Gildi SAALi „vereringest“ ja seega pole üllatus, et järgmised esietendused on tavapärasest erinevamad.
-                    p
-                        | 1.-5. septembrini saab nii kohapeal kui ka interneti keskkonnas kaasa elada 99 tunnisele etendusele „KUHU MINEK“, mis toimub Jüri Naela poolt juhitava EMTA Kaasaegsete etenduskunstide magistriõppe programmi ja Kanuti Gildi SAALi koostööna. Etendus toimub EMTA black boxis 1. septembril alates kella 19:00st kuni kella 22:00ni 5. septembril.
-                    p
-                        | Kanuti Gildi SAALil on heameel olla briti tipptrupi Forced Entertainment uue online projekti kaasprodutsendiks. Kolm aastat tagasi esitasid trupi näitlejad Tallinnas 6 päeva jooksul ühe kaupa kõik 36 Shakespeare’i näidendit. Praeguses eriolukorras toimub see aga voogedastusena näitlejate köökidest 9 nädala jooksul 17. septembrist kuni 15. novembrini. Eesti publikul on võimalik etendusi jälgida tasuta Kanuti Gildi SAALi kodulehe kaudu. Projekti avapauguna saab 17. septembril esimesena vaadata “Macbeth’i“ Richard Lowdoni esituses suurelt ekraanilt Kanuti Gildi SAALis. Hooaja jooksul on oodata veel rahvusvahelisi online projekte.
-                    p
-                        | Kevadel ära jäänud Karl Saksa uuslavastus “Planet Alexithymia” esietendus juulis Baltoscandal festivalil Rakveres ning septembri lõpus jõutakse lõpuks ka Tallinna esietenduseni. Teise Baltoscandlil esietendunud lavastusena saab varsti Kanuti Gildi SAALis näha loomingulise platvormi eˉlektron visuaalselt intrigeerivat lavastust “Romeo & Julia #5”. Detsembri alguses toob Karolin Poska Keldrisaalis välja oma teise soololavastuse, mis seekord ongi algimpulsi saanud keldrite eraklikust võlust.
-                    p
-                        | Samuti saab sügisel näha kevadel edasilükatud lavastusi “Workshop”, Kristina Normani “Kergem kui naine” ja Mart Kangro “Enneminevik”.
-                        br
-                        | Ja nagu ikka tulevad meile külla oma vanade ja uute lemmikutega Tartu Uus Teater, Teater Kelm ja Teater Must Kast.
-                    p
-                        | NU Performance festivali toimumise võimalikkuse üle novembris peame hoolega aru, kuid hetkel midagi kindlat väita ei saa.
-                    p
-                        | Nagu ikka tuuritavad Kanuti Gildi SAALi kaasproduktsioonid nii meil kui mujal. Kohe augustis on Kristina Normani lavastust „Kergem kui naine“ võimalik näha nii Baseli teatrifestivalil kui Draama festivalil Tartus. Edasi ootavad Klaipeda, Praha, Varssavi jt. Francesca Grilli „Sparks“-i esitletakse Mladi Levi festivalil Ljubljanas.
-                    p
-                        | Hooaja teises pooles jõuavad oma uuslavastustega esietendusteni Jette Loona Hermanis ja Johhan Rosenberg ning Ruslan Stepanov ja Artjom Astrov. Koostöös Dirty Deal Teatro’ga peaks Riias esietenduma koostöölavastus, milles osaleb eesti etenduskunstnik Henri Hütt.
-                    p
-                        | Etenduskunstide keskus Kanuti Gildi SAAL tähistab oma 20. sünnipäeva 2021. aasta jaanuarikuu lõpus.
-                    p
-                        | Jälgime pidevalt Terviseameti, Kultuuriministeeriumi ning Vabariigi valitsuse nõuandeid ja ettekirjutusi. Meie peamiseks prioriteediks on ja jääb kunstnike, korraldajate ja külastajate tervis, ohutus ja heaolu.
-                    p Näeme etendustel!
-                    p
+                    h3#kanuti-gildi-saali-20-juubelihooaeg= self.data.configurations.about_article[`name_${self.locale}`]
+                    p 
+                        +markdown(self.data.configurations.about_article[`content_${self.locale}`])
+                    
+                        
+                    
                 .floorplans
-                    h2 Saaliplaanid
+                    h2= self.labels.title.floorplans
                     ul.list-unstyled.h3
                         li
                             a(href="https://saal.entu.ee/api2/file-266" target="_blank")
@@ -74,14 +48,14 @@ block content
                                 u Keldrisaal
                             span  | 8x6x3,5m - 30 kohta
                 .old-www
-                    h2 Arhiiv
+                    h2= self.labels.title.archive
                     ul.list-unstyled.h3
                         li
                             a(href="http://2016.saal.ee/events/2016/01/" target="_blank") www.saal.ee 2008–2015
                         li
                             a(href="http://2016.saal.ee/archive/et/programm2/arhiiv.html" target="_blank") www.saal.ee 2004–2008
             section.news.col-md-6
-                h2 Uudised
+                h2= self.labels.title.news
                 #accordion.panel-group(role="tablist" multiselectable="true")
                     if self.data.newscasts.length
                         - var count = 0
@@ -110,20 +84,10 @@ block content
                                             p
     .row.page-margin
         .supporter.col-md-12
-            h2 Toetajad ja võrgustikud
+            h2= self.labels.title.sponsors
             ul.list-inline
-                li
-                    a(href="http://www.eeteal.ee" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-246" alt="Eesti Etendusasutuste Liit")
-                li
-                    a(href="http://www.piletilevi.ee" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-245" alt="Piletilevi")
-                li
-                    a(href="http://www.kul.ee/et" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-248" alt="Kultuuriministeerium")
-                li
-                    a(href="http://www.tallinn.ee" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-243" alt="Tallinn")
-                li
-                    a(href="http://kulka.ee" target="_blank")
-                        img.img-responsive(src="https://saal.entu.ee/api2/file-244" alt="Kultuurkapital")
+                each banner in self.data.banners.filter(b => b.banner_type && b.banner_type.id === 19)
+                    if banner.image
+                        li
+                            a(href=banner.url target="_blank")
+                                img.img-responsive(src=m_api + banner.image.url alt=banner.name)

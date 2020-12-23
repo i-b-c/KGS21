@@ -165,7 +165,7 @@ Banner: &Banner
     slug: (UID, name)
     image: *StrapiMedia # image
     url: (text)
-    order: (text)
+    order: (number)
     banner_type: *BannerType
     remote_id: (UID)
     start: (datetime)
