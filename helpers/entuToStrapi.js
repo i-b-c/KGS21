@@ -409,6 +409,18 @@ async function eventsToStrapi() {
     let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
     let relations = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_entu', 'entu_kaustad_syndmused.yaml')))
 
+    const relationJSON = path.join(entuDataPath, 'entu_festivalid.yaml')
+
+    let child_events = relationJSON.map( festival => {
+
+        console.log(festival)
+
+        let festival_remote_id = Object.key(festival)
+
+
+    })
+
+    console.log(child_events);
 
     let events = eventJSON.map(event_entity => {
 
@@ -497,6 +509,7 @@ async function eventsToStrapi() {
             "video": (event_entity.properties.video.values.length > 0 ? event_entity.properties.video.values[0].db_value : null),
             "audio": (event_entity.properties.audio.values.length > 0 ? event_entity.properties.audio.values[0].db_value : null),
             "order": (event_entity.properties.ordinal.values.length > 0 ? event_entity.properties.ordinal.values[0].db_value : null),
+            "child_events": child_events,
             "id": strapi_event_id
 
         }
