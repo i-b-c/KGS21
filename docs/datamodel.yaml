@@ -192,6 +192,12 @@ TicketInfo: &TicketInfo
     ticketing_url_et: (text)
     ticketing_url_en: (text)
 
+EventMedia: &EventMedia
+    original_image: *StrapiMedia
+    hero_image: *StrapiMedia
+    gallery_image_large: *StrapiMedia
+    gallery_image_medium: *StrapiMedia
+
 Event: &Event # etendus
     _path: /events
     type: (Enumeration) # programm, residentuur, festival, tuur, projekt
@@ -231,6 +237,8 @@ Event: &Event # etendus
     location: *Location
     X_location_et: (text)
     X_location_en: (text)
+    event_media:
+        - *EventMedia
     remote_id: (UID)
     parent_event: (object) #relation to event
     child_events: []
@@ -369,6 +377,8 @@ SimpleArticle: &SimpleArticle
     subtitle_en: (text)
     content_et: (text rich)
     content_en: (text rich)
+    images:
+        - *StrapiMedia
 
 
 #SingleType
