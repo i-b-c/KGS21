@@ -61,13 +61,10 @@ for (const lang of LANGUAGES) {
         }
 
         if (oneEventData.type === 'festival') {
-            oneEventData.path = `festival/${oneEventData.remote_id}`
+            oneEventData.path = `festival/${oneEventData.remote_id}/program/`
+
             if (lang === 'et') {
-                oneEventData.aliases = [
-                    `et/festival/${oneEventData.remote_id}`,
-                    `et/festival/${oneEventData.remote_id}/program`,
-                    `festival/${oneEventData.remote_id}/program`
-                    ]
+                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/program/`]
             }
             const festivalYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
             const oneFestivalDirPath = path.join(festivalsDirPath, oneEventData.remote_id)
@@ -75,16 +72,20 @@ for (const lang of LANGUAGES) {
             fs.writeFileSync(`${oneFestivalDirPath}/data.${lang}.yaml`, festivalYAML, 'utf8');
             fs.writeFileSync(`${oneFestivalDirPath}/index.pug`, `include /_templates/festival_index_template.pug`)
 
+            oneEventData.path = `festival/${oneEventData.remote_id}/about/`
+
             if (lang === 'et') {
-                oneEventData.aliases = [
-                    `et/festival/${oneEventData.remote_id}/about`,
-                    `festival/${oneEventData.remote_id}/about`
-                    ]
+                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/about/`]
             }
 
             fs.mkdirSync(`${oneFestivalDirPath}/about/`, { recursive: true });
             fs.writeFileSync(`${oneFestivalDirPath}/about/data.${lang}.yaml`, festivalYAML, 'utf8');
             fs.writeFileSync(`${oneFestivalDirPath}/about/index.pug`, `include /_templates/festival_about_index_template.pug`)
+
+            oneEventData.path = `festival/${oneEventData.remote_id}/program/`
+            if (lang === 'et') {
+                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/program/`]
+            }
         }
 
         if (oneEventData.type === 'residency') {
