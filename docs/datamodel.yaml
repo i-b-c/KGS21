@@ -241,7 +241,8 @@ Event: &Event # etendus
         - *EventMedia
     remote_id: (UID)
     parent_event: (object) #relation to event
-    child_events: []
+    child_events:
+        - (id)
         # repeatable relation to event
 
 
