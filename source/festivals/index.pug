@@ -1,4 +1,5 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
@@ -6,33 +7,12 @@ block content
             .col-md-12
                 h2 Festivalid
             .grid-row
-                a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href="/et/festival/6762")
-                    img.img-responsive(src="https://saal.entu.ee/api2/file-21105")
-                    p 13.11.2020—22.11.2020
-                    p
-                        span.name NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL
-                a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href="/et/festival/5937")
-                    img.img-responsive(src="https://saal.entu.ee/api2/file-7504")
-                    p 14.08.2019—31.08.2019
-                    p
-                        span.name SAAL Biennaal  08/2019
-                a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href="/et/festival/5663")
-                    img.img-responsive(src="https://saal.entu.ee/api2/file-6646")
-                    p 20.11.2018—25.11.2018
-                    p
-                        span.name LAT.EST - Läti uued (etendus)kunstnikud
-                a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href="/et/festival/5305")
-                    img.img-responsive(src="https://saal.entu.ee/api2/file-6528")
-                    p 20.10.2018—28.10.2018
-                    p
-                        span.name NU Performance Festival 2018: Objekt ja kollektiiv
-                a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href="/et/festival/4054")
-                    img.img-responsive(src="https://saal.entu.ee/api2/file-3464")
-                    p 15.08.2017—27.08.2017
-                    p
-                        span.name SAAL Biennaal  08/2017
-                a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href="/et/festival/1933")
-                    img.img-responsive(src="https://saal.entu.ee/api2/file-3456")
-                    p 29.10.2016—05.11.2016
-                    p
-                        span.name NU Performance Festival
+                - var events = self.data.events.filter(e => e.type === 'festival').sort((a, b) => new Date(b.start_time)-new Date(a.start_time))
+                if events && events.length
+                    each event in events
+                        a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href=event.path)
+                            img.img-responsive(src="https://saal.entu.ee/api2/file-21105")
+                            p
+                                +dateFromTo(event.start_time, event.end_time)
+                            p
+                                span.name= event[`name_${self.locale}`]
