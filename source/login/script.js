@@ -96,6 +96,40 @@ const LoginWithEmail = async() => {
         console.log("status not 200 response is: ", response)
     }
 
+    if (response.ok) {
+        const data = await response.json()
+        localStorage.setItem("ACCESS_TOKEN", data.jwt)
+        localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
+        document.dispatchEvent(userProfileLoadedEvent)
+        if (userProfile.blocked || !userProfile.confirmed) {
+            accountStatus = false
+        }
+        validateToken()
+    } else {
+        var errorResponse = await response.json()
+        var errors = []
+        console.log("response: ", errorResponse)
+        try {
+            for (err of errorResponse.message) {
+                for (message of err.messages) {
+                    errors.push(message.message)
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+
+        try{
+        errors.push(errorResponse.message.detail)
+        }catch(err){
+            console.log(err)
+
+        }
+
+        console.log("errors: ", errors)
+        displayError(errors)
+    }
+
 }
 
 const RegisterWithEmail = async () => {
@@ -120,25 +154,54 @@ const RegisterWithEmail = async () => {
 
     console.log(requestOptions)
 
-    let response = await (await fetch('https://a.saal.ee/auth/local/register', requestOptions))
 
-    if (response.status === 200) {
-        console.log("status 200 response is: ", response)
+    //siit ei saa erroreid kätte nagu postmanis
+
+    let response = await (fetch('https://a.saal.ee/auth/local/register', requestOptions))
+
+    if (response.statuscode !== 200) {
+        const data = await response.json()
     } else {
-        console.log("status not 200 response is: ", response)
+        let errorResponse = await response.json()
+        let errors = []
+        console.log("response ", errorResponse)
+
+        try {
+            for (err of errorResponse.message) {
+                for (messageId of err.messages) {
+                    errors.push(messageId.id)
+                }
+            }
+        } catch (err) {
+            console.log(err)
+
+        }
+        try {
+            errors.push(errorResponse.message.detail)
+        } catch (err) {
+            console.log(err)
+
+        }
+        console.log("errors: ", errors)
+        displayError(errors)
     }
 
 }
 
 
-
-
 function displayError(errArray){
     for (err of errArray){
-        console.log(err)
+        console.log("display", err)
         switch(err){
         case "Key (username)=(tapferm@gmail.com) already exists.":
             document.getElementById("userExists").style.display = "block"
+        break
+        case "Identifier or password invalid.":
+            document.getElementById("invalidPsw").style.display = "block"
+            console.log("error oli: ", err)
+        break
+        case undefined:
+            console.log("defineerimata: ", err)
         break
         default:
             document.getElementById("loginError").innerText = errArray

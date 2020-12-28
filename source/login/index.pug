@@ -58,6 +58,7 @@ block content
 
         #error-box
             p#userExists= self.labels.login.errUserAllreadyExists
+            p#invalidPsw vale salasõna või email
             p#loginError sisselogimis error
 
     style.
@@ -103,7 +104,8 @@ block content
         }
         #logged-in-box,
         #loginError,
-        #userExists
+        #userExists,
+        #invalidPsw
             {
             display: none;
         }
