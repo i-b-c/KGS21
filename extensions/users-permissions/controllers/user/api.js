@@ -105,7 +105,6 @@ module.exports = {
       })
       .get();
 
-      console.log(ctx);
     const { id } = ctx.params;
     const { email, username, password } = ctx.request.body;
 
@@ -160,6 +159,7 @@ module.exports = {
       ctx.request.body.email = ctx.request.body.email.toLowerCase();
     }
 
+  
     let updateData = {
       ...ctx.request.body,
     };
@@ -187,14 +187,9 @@ module.exports = {
       })
       .get();
 
-    const { id } = ctx.params;
+    const { id } = ctx.state.user;
     const { email, username, password } = ctx.request.body;
-    const {id: requestUserId} = ctx.state.user
-
-    if (requestUserId.toString() !== ctx.params.id) {
-      return ctx.badRequest('Not me');
-    }
-
+ 
     const user = await strapi.plugins['users-permissions'].services.user.fetch({
       id,
     });
@@ -209,6 +204,10 @@ module.exports = {
 
     if (_.has(ctx.request.body, 'password') && !password && user.provider === 'local') {
       return ctx.badRequest('password.notNull');
+    }
+
+    if (_.has(ctx.request.body, 'role')) {
+      return ctx.badRequest('role.notNull');
     }
 
     if (_.has(ctx.request.body, 'username')) {
@@ -246,9 +245,13 @@ module.exports = {
       ctx.request.body.email = ctx.request.body.email.toLowerCase();
     }
 
+    console.log(ctx.request.body);
+
     let updateData = {
       ...ctx.request.body,
     };
+
+    console.log(updateData);
 
     if (_.has(ctx.request.body, 'password') && password === user.password) {
       delete updateData.password;

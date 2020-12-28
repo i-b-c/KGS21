@@ -116,9 +116,7 @@ module.exports = {
    * @return {Object|Array}
    */
   async me(ctx) {
-    console.log(ctx)
-    console.log(ctx.state);
-    const user = ctx.state.user;
+    const {user} = ctx.state;
 
     if (!user) {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
@@ -126,14 +124,4 @@ module.exports = {
 
     ctx.body = sanitizeUser(user);
   },
-
-  // async updateme(ctx) {
-  //   const user = ctx.state.user;
-
-  //   if (!user) {
-  //     return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
-  //   }
-
-  //   ctx.body = sanitizeUser(user);
-  // },
 };
