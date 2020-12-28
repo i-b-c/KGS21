@@ -73,19 +73,19 @@ X_pictures: &X_pictures
 
 # Location
 Country: &Country
-    # _path: /countries
+    _path: /countries
     slug: (UID; name_et)
     name_et: (text)
     name_en: (text)
 
 Town: &Town
-    # _path: /towns
+    _path: /towns
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
 
-Organisation:
-#     _path: /organisations
+Organisation: &Organisation
+    _path: /organisations
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
@@ -96,7 +96,7 @@ Organisation:
     address: (text)
 
 Hall: &Hall
-    # _path: /halls
+    _path: /halls
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
@@ -111,15 +111,15 @@ Location: &Location
     name_en: (text)
     slug_et: (UID, name)
     slug_en: (UID, name)
-    description_et: (text)
-    description_en: (text)
-    floorplan: *StrapiMedia
+    permitted_capacity: (number)
     remote_id: (UID)
-
-    # hall: *Hall
-    # town: *Town
-    # country: *Country
-    # theater: *Organisation
+    hall: *Hall
+    town: *Town
+    country: *Country
+    theater: *Organisation
+    # description_et: (text)
+    # description_en: (text)
+    # floorplan: *StrapiMedia
 
 Artist:
     person:
