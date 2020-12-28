@@ -404,56 +404,6 @@ async function articlesToStrapi() {
 }
 
 
-function eventRemote2Strapi(remote_id) {
-    for (const event of events_from_strapi) {
-        if (event.remote_id === remote_id.toString()){
-            return event.id
-        }
-    }
-}
-
-function eventChildRelationToStrapi(){
-    const relationJSON = yaml.safeLoad(fs.readFileSync(path.join(entuDataPath, 'entu_festivalid.yaml')))
-
-    const strapi_relations = {}
-    for(let parent_remote_id in relationJSON){
-        console.log(parent_remote_id);
-        const child_ids = relationJSON[parent_remote_id].map(child_remote_id => eventRemote2Strapi(child_remote_id))
-        strapi_relations[eventRemote2Strapi(parent_remote_id)] = child_ids
-    }
-
-    console.log({relationJSON, strapi_relations})
-}
-
-eventChildRelationToStrapi()
-
-
-    // for( let c_festivals of Object.values(relationJSON)){
-    //     // console.log(c_festivals)
-    //     let s_festival_ids = []
-
-    //     for (let c_festival of c_festivals) {
-    //         // console.log(c_festival)
-    //         let strapi_id
-    //         for (const event of events_from_strapi) {
-    //             if (event.remote_id === c_festival.toString()){
-    //                 s_festival_ids.push(event.id)
-    //             }
-    //         }
-    //     }
-    //     c_festivals.id = s_festival_ids
-
-    // }
-    // console.log(relationJSON);
-
-    // for (const festival in relationJSON) {
-    //     console.log("f", festival, event_entity.id.toString());
-    //     if( festival === event_entity.id.toString() ){
-    //         console.log(Object.values(festival));
-    //     }
-
-    // }
-
 
 
 async function eventsToStrapi() {
@@ -568,6 +518,35 @@ async function eventsToStrapi() {
     // postToStrapi(eventsToPost, 'events')
 }
 
+function eventRemote2Strapi(remote_id) {
+    for (const event of events_from_strapi) {
+        if (event.remote_id === remote_id.toString()){
+            return event.id
+        }
+    }
+}
+
+async function eventChildRelationToStrapi(){
+    const relationJSON = yaml.safeLoad(fs.readFileSync(path.join(entuDataPath, 'entu_festivalid.yaml')))
+
+    const strapi_relations = []
+    for(let parent_remote_id in relationJSON){
+        const strapi_relation = {}
+        // console.log('siin', parent_remote_id)
+        const child_ids = relationJSON[parent_remote_id].map(child_remote_id => eventRemote2Strapi(child_remote_id))
+        // strapi_relations[eventRemote2Strapi(parent_remote_id)] = child_ids
+        strapi_relation.id = eventRemote2Strapi(parent_remote_id)
+        strapi_relation.child_events = child_ids
+        strapi_relations.push(strapi_relation)
+
+    }
+
+    putToStrapi(strapi_relations, 'events')
+    console.log({relationJSON, strapi_relations})
+}
+
+
+
 async function newsToStrapi() {
 
     const dataJSON = path.join(entuDataPath, 'news.json')
@@ -658,6 +637,7 @@ async function main() {
     // await coveragesToStrapi()
     // await locationToStrapi()
     // await eventsToStrapi()
+    // await eventChildRelationToStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
     // await articlesToStrapi()
