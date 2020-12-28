@@ -32,6 +32,8 @@
     "entu-ssg": "5.2.7",
     "entulib": "^2.0.6",
     "express": "^4.17.1",
+    "follow-redirects": "^1.13.1",
+    "form-data": "^3.0.0",
     "js-yaml": "^3.14.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",

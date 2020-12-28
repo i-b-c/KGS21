@@ -1,2 +1,4 @@
 aliases:
     - 'et/projects'
+data:
+    projects: '/_fetchdir/projects.en.yaml'

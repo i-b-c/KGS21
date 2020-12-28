@@ -165,7 +165,7 @@ Banner: &Banner
     slug: (UID, name)
     image: *StrapiMedia # image
     url: (text)
-    order: (text)
+    order: (number)
     banner_type: *BannerType
     remote_id: (UID)
     start: (datetime)
@@ -191,6 +191,12 @@ TicketInfo: &TicketInfo
     PL_event_id: (number)
     ticketing_url_et: (text)
     ticketing_url_en: (text)
+
+EventMedia: &EventMedia
+    original_image: *StrapiMedia
+    hero_image: *StrapiMedia
+    gallery_image_large: *StrapiMedia
+    gallery_image_medium: *StrapiMedia
 
 Event: &Event # etendus
     _path: /events
@@ -231,9 +237,12 @@ Event: &Event # etendus
     location: *Location
     X_location_et: (text)
     X_location_en: (text)
+    event_media:
+        - *EventMedia
     remote_id: (UID)
     parent_event: (object) #relation to event
-    child_events: []
+    child_events:
+        - (id)
         # repeatable relation to event
 
 
@@ -270,7 +279,7 @@ Performance: &Performance # performance #lavastus
         - *PerformanceMedia
     logos:
         - *StrapiMedia
-    raider: # fail
+    raiders: # fail
         - *StrapiMedia
     X_headline_et: (text)
     X_headline_en: (text)
@@ -369,6 +378,8 @@ SimpleArticle: &SimpleArticle
     subtitle_en: (text)
     content_et: (text rich)
     content_en: (text rich)
+    images:
+        - *StrapiMedia
 
 
 #SingleType
