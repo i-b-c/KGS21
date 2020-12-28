@@ -86,6 +86,7 @@ for (const lang of LANGUAGES) {
             if (lang === 'et') {
                 oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/program/`]
             }
+
         }
 
         if (oneEventData.type === 'residency') {
