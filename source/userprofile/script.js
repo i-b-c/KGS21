@@ -54,7 +54,7 @@ async function sendUserProfile() {
             body: userToSend,
         };
 
-    let response = await (await fetch('https://a.saal.ee/users/updateme/', requestOptions))
+    let response = await (await fetch('https://a.saal.ee/users/me/', requestOptions))
 
     if (response.status === 200){
         console.log(response)

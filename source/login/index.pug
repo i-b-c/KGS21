@@ -17,7 +17,7 @@ block content
             label.login_label(for='phoneNr')= self.labels.login.phone
             span.value-view#phoneNr(type='tel' placeholder="telefoni number" name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
 
-        #login_buttons
+        #user_buttons
             a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.changeProfile
             a.btn.btn-primary.text-uppercase(onClick = "LogOut()")= self.labels.login.log_out
             a.btn.btn-primary.text-uppercase(onClick = "GetUserInfo()")= self.labels.login.get_me
@@ -28,11 +28,37 @@ block content
 
     //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
     #not-logged-in-box
-        .container-fluid#login_buttons
-            a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
-            a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
-        p#userExists= self.labels.login.errUserAllreadyExists
-        p#loginError sisselogimis error
+        #login-grid
+            div#provider-login
+                h2 Sisene
+                a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
+                a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
+                .form-group()
+                    label(for='logEmail') email
+                    input#logEmail.form-control(type='email' placeholder="email" name='logEmail')
+                .form-group
+                    label(for='logPsw') salasõna
+                    input#logPsw.form-control(type='password' placeholder="salasõna" name='logPsw')
+                a.btn.btn-primary.text-uppercase(onClick = "LoginWithEmail()") sisene parooliga
+
+            div#register
+                h2 registreeri
+                a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
+                a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
+                .form-group
+                    label(for='regEmail') email
+                    input.reg_input#regEmail.form-control(type='email' placeholder="email" name='regEmail' autocomplete="off")
+                .form-group
+                    label(for='regPsw') salasõna
+                    input.reg_input#regPsw.form-control(type='password', placeholder="salasõna" name='regPsw' autocomplete="new-password")
+                .form-group
+                    label(for='regPswRepeat') salasõna
+                    input.reg_input#regPswRepeat.form-control(type='password', placeholder="salasõna teist korda" name='regPswRepeat' autocomplete="new-password")
+                a.btn.btn-primary.text-uppercase(onClick = "RegisterWithEmail()") registreeri
+
+        #error-box
+            p#userExists= self.labels.login.errUserAllreadyExists
+            p#loginError sisselogimis error
 
     style.
         .invalid {
@@ -44,14 +70,32 @@ block content
             background-color: #e6f7e6;
             display: none;
             }
-        #login_buttons {
+        #user_buttons {
             padding: 2rem 0 2rem 0;
             }
-        #login_buttons a {
+        #user_buttons a {
             margin: 0 2rem 0 0;
             }
         .value-view{
             padding: 0 0 0 20px;
+        }
+        #login-grid{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+                grid-template-rows: auto;
+                justify-content: center;
+                justify-items: center;
+                align-items: start;
+                align-content: start;
+        }
+        #provider-login,
+        #register{
+                display: grid;
+                grid-template-rows: auto;
+                grid-gap: 1rem;
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
         }
         #logged-in-box,
         #not-logged-in-box{

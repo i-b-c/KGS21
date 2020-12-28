@@ -67,6 +67,65 @@ async function GetCallback(providerToCall) {
     }
 }
 
+const LoginWithEmail = async() => {
+    console.log("login sisse emaili ja salasõnaga")
+    let email = document.getElementById("logEmail").value
+    let psw = document.getElementById("logPsw").value
+
+    let body = JSON.stringify({
+        "identifier": email,
+        "password": psw
+    })
+    console.log("saadan body: ", body)
+
+    let requestOptions = {
+        'method': 'POST',
+        'body': body
+    }
+
+    console.log(requestOptions)
+
+    let response = await (await fetch('https://a.saal.ee/auth/local', requestOptions))
+
+    if (response.status === 200) {
+        console.log("status 200 response is: ", response)
+    } else {
+        console.log("status not 200 response is: ", response)
+    }
+
+}
+
+const RegisterWithEmail = async () => {
+    console.log("login sisse emaili ja salasõnaga")
+    let email = document.getElementById("regEmail").value
+    let psw = document.getElementById("regPsw").value
+
+    let body = JSON.stringify({
+        "username": email,
+        "email": email,
+        "password": psw
+    })
+    console.log("saadan body: ", body)
+
+    let requestOptions = {
+        'method': 'POST',
+        'body': body
+    }
+
+    console.log(requestOptions)
+
+    let response = await (await fetch('https://a.saal.ee/auth/local/register', requestOptions))
+
+    if (response.status === 200) {
+        console.log("status 200 response is: ", response)
+    } else {
+        console.log("status not 200 response is: ", response)
+    }
+
+}
+
+
+
 
 function displayError(errArray){
     for (err of errArray){
