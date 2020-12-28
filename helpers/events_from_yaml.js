@@ -138,7 +138,7 @@ for (const lang of LANGUAGES) {
     }
     // console.log(allData)
     let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(a.start_time)-new Date(b.start_time))
-    console.log(`${allDataSortedFiltered.length} events from YAML (${lang})`);
+    console.log(`${allDataSortedFiltered.length} events (incl. festivals, residencies, tours) from YAML (${lang})`);
     const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
     const eventsYAML = yaml.safeDump(allDataSortedFiltered, {'noRefs': true, 'indent': '4' });
     fs.writeFileSync(eventsYAMLPath, eventsYAML, 'utf8');
