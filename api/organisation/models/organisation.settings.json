@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organisations",
+  "info": {
+    "name": "organisation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_et": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name_et"
+    },
+    "description_et": {
+      "type": "richtext"
+    },
+    "description_en": {
+      "type": "richtext"
+    },
+    "url": {
+      "type": "string"
+    },
+    "address": {
+      "type": "richtext"
+    }
+  }
+}

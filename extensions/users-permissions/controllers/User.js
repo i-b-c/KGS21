@@ -116,6 +116,7 @@ module.exports = {
    * @return {Object|Array}
    */
   async me(ctx) {
+    console.log('ctx in me ', ctx);
     const {user} = ctx.state;
 
     if (!user) {

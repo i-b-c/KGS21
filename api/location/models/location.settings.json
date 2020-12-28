@@ -34,16 +34,20 @@
     "description_en": {
       "type": "richtext"
     },
-    "floorplan": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
+    "hall": {
+      "model": "hall"
+    },
+    "town": {
+      "model": "town"
+    },
+    "country": {
+      "model": "country"
+    },
+    "theater": {
+      "model": "organisation"
+    },
+    "permitted_capacity": {
+      "type": "decimal"
     }
   }
 }

@@ -111,6 +111,11 @@
     },
     "location": {
       "model": "location"
+    },
+    "event_media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.event-media"
     }
   }
 }

@@ -11,8 +11,11 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
   getToken(ctx) {
+    console.log(ctx);
+    console.log(ctx.request.body);
     console.log('token');
     const params = _.assign({}, ctx.request.body, ctx.request.query);
+    console.log(params);
 
     let token = '';
 
