@@ -169,6 +169,6 @@ mixin dateFromTo(dateStringUTCFrom, dateStringUTCTo)
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
             var from_time_EET = moment.parseZone('#{dateStringUTCFrom}').tz('Europe/Tallinn').format('L');
             var to_time_EET = moment.parseZone('#{dateStringUTCTo}').tz('Europe/Tallinn').format('L');
-            eDisplayMoment1.innerHTML = `${from_time_EET}-${to_time_EET}`;
+            eDisplayMoment1.innerHTML = `${from_time_EET}—${to_time_EET}`;
 
         })();
