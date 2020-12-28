@@ -84,7 +84,7 @@ Town: &Town
     name_et: (text)
     name_en: (text)
 
-Organisation:
+Organisation: &Organisation
     _path: /organisations
     slug: (UID, name_et)
     name_et: (text)
