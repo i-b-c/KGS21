@@ -79,8 +79,11 @@ const LoginWithEmail = async() => {
     console.log("saadan body: ", body)
 
     let requestOptions = {
-        'method': 'POST',
-        'body': body
+            'method': 'POST',
+            'body': body,
+            'headers': {
+                'Content-Type': 'application/json'
+            }
     }
 
     console.log(requestOptions)
@@ -109,7 +112,10 @@ const RegisterWithEmail = async () => {
 
     let requestOptions = {
         'method': 'POST',
-        'body': body
+        'body': body,
+        'headers': {
+            'Content-Type': 'application/json'
+        }
     }
 
     console.log(requestOptions)
