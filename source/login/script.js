@@ -1,9 +1,29 @@
 
+if(validToken){
+    showUserInfo()
+    document.getElementById("logged-in-box").style.display = "block"
+    document.getElementById("not-logged-in-box").style.display = "none"
+}else {
+    console.log("pole sisse loginud")
+}
+
+
+document.addEventListener('userProfileLoaded', function(e) {
+    console.log("listening to userProfile loaded event in login ")
+    try{
+        showUserInfo()
+    }
+    catch(err){
+        console.log("error userProfileLoaded evendis: ",err)
+    }
+})
+
 function loginWithProvider(loginProvider) {
     LogOut()
     localStorage.setItem("provider", loginProvider)
     window.location.replace('https://a.saal.ee/connect/' + loginProvider + '/')
 }
+
 
 async function GetCallback(providerToCall) {
     var requestOptions = {
@@ -47,14 +67,39 @@ async function GetCallback(providerToCall) {
     }
 }
 
+
 function displayError(errArray){
-    document.getElementById("loginError").innerText = errArray
-    document.getElementById("loginError").style.display = "block"
+    for (err of errArray){
+        console.log(err)
+        switch(err){
+        case "Key (username)=(tapferm@gmail.com) already exists.":
+            document.getElementById("userExists").style.display = "block"
+        break
+        default:
+            document.getElementById("loginError").innerText = errArray
+            document.getElementById("loginError").style.display = "block"
+        }
+    }
 }
 
 //Auth.advanced.allow_register => Register action is actualy not available.
 //Auth.form.error.email.taken => Email is already taken.
 if (localStorage.getItem("provider")) {
     GetCallback(localStorage.getItem("provider"))
+}
+
+function showUserInfo() {
+    try {
+        console.log("showing user info")
+        userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
+        email.innerHTML = userProfile.email
+        if (userProfile.firstName) firstName.innerHTML = userProfile.firstName
+        if (userProfile.lastName) lastName.innerHTML = userProfile.lastName
+        if (userProfile.phoneNumber) phoneNr.innerHTML = userProfile.phoneNumber
+    } catch (err) {
+        console.log(err)
+    }
+    document.getElementById("logged-in-box").style.display = "block"
+    document.getElementById("not-logged-in-box").style.display = "none"
 }
 

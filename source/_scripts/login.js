@@ -19,18 +19,15 @@ document.addEventListener('userProfileLoaded', function(e) {
     userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
     console.log('User profile is loaded', userProfile)
     makeUserMenuMessage()
+    try{
+        showUserInfo()
 
-})
-
-
-document.addEventListener('storage', function(e) {
-    if(e.key === 'initials') {
-       console.log("kasutaja initsiaalid muutusid")
     }
-    if(e.key === 'USER_PROFILE') {
-       console.log("kasutaja profiil muutus")
+    catch(err){
+        console.log("error userProfileLoaded evendis: ",err)
     }
 })
+
 
 if(localStorage.getItem('ACCESS_TOKEN')){
     validateToken()
@@ -117,6 +114,7 @@ function GetUserInfo() {
     }
 
 }
+
 
 function LogOut() {
     localStorage.removeItem("ACCESS_TOKEN")

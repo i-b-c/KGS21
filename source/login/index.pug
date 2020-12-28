@@ -1,43 +1,38 @@
 extends /_templates/layout.pug
 
 block content
+    //- siin sees on kõik mida kuvatakse sisseloginud kasutajale
+    #logged-in-box.container-fluid
+        h2= self.labels.login.userprofileTitle
+        div.form-group
+            label.login_label(for='email')= self.labels.login.email
+            span.value-view#email(name='email')
+        div.form-group
+            label.login_label(for='firstName')= self.labels.login.first_name
+            span.value-view#firstName(type='text', placeholder="eesnimi" name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
+        div.form-group
+            label.login_label(for='lastName')= self.labels.login.family_name
+            span.value-view#lastName(type='text', placeholder="perenimi" name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
+        div.form-group
+            label.login_label(for='phoneNr')= self.labels.login.phone
+            span.value-view#phoneNr(type='tel' placeholder="telefoni number" name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
 
-    .container-fluid#login_buttons
-        a.btn.btn-primary.text-uppercase.h3(onClick = "loginWithProvider('google')") google
-        a.btn.btn-primary.text-uppercase.h3(onClick = "loginWithProvider('facebook')") facebook
-        a.btn.btn-primary.text-uppercase.h3(onClick = "LogOut()")= self.labels.login.log_out
-        a.btn.btn-primary.text-uppercase.h3(href="/profiil") muuda profiili
-        a.btn.btn-primary.text-uppercase.h3(onClick = "GetUserInfo()")= self.labels.login.get_me
-        p#loginError(style = {display: 'none'})= self.labels.login.errUserAllreadyExists
+        #login_buttons
+            a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.changeProfile
+            a.btn.btn-primary.text-uppercase(onClick = "LogOut()")= self.labels.login.log_out
+            a.btn.btn-primary.text-uppercase(onClick = "GetUserInfo()")= self.labels.login.get_me
+        h2= self.labels.login.favorites
+        p= self.labels.login.noFavorites
+        h2= self.labels.login.tickets
+        p= self.labels.login.noTickets
 
-        // div.form#user_profile
-        //     // - img#imgPreview(alt="user profile picture", src ="/mingiPlaceholder.jpg")
-        //     div.form-group
-        //         label.login_label(for='email')= self.labels.login.email
-        //         div#email(name='email')
-        //         div#emailHelp(class='valid') mingi probleem
-        //     div.form-group
-        //         label.login_label(for='firstName')= self.labels.login.first_name
-        //         input.login_input#firstName.form-control(type='text', placeholder="eesnimi" name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
-        //         div#firstNameHelp(class='valid') mingi probleem
-        //     div.form-group
-        //         label.login_label(for='lastName')= self.labels.login.family_name
-        //         input.login_input#lastName.form-control(type='text', placeholder="perenimi" name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
-        //         div#lastNameHelp(class='valid') mingi probleem
-        //     // div.form-group
-        //     //     label.login_label(for='dob')= self.labels.login.dob
-        //     //     input.login_input#dob.form-control(type='date' name='dob', placeholder ="yyyy-mm-dd" max="2007-01-01", min="1905-01-01", oninput="validateDate(this.id), validateBDay(this.id)")
-        //     //     div#dobHelp(class='valid') mingi probleem
-        //     //     div#dateHelp(class='valid') mingi probleem
-        //     div.form-group
-        //         label.login_label(for='phoneNr')= self.labels.login.phone
-        //         input.login_input#phoneNr.form-control(type='tel' placeholder="telefoni number" name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
-        //         div#phoneNrHelp(class='valid') mingi probleem
-        //     button.btn.btn_primary(onclick='validateForm()')= self.labels.login.save
-        //     p#profileSent(style = {display: 'none'})= self.labels.login.profile_sent
-
-
-
+    //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
+    #not-logged-in-box
+        .container-fluid#login_buttons
+            a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
+            a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
+        p#userExists= self.labels.login.errUserAllreadyExists
+        p#loginError sisselogimis error
 
     style.
         .invalid {
@@ -50,5 +45,21 @@ block content
             display: none;
             }
         #login_buttons {
-            margin-top: 300px;
+            padding: 2rem 0 2rem 0;
             }
+        #login_buttons a {
+            margin: 0 2rem 0 0;
+            }
+        .value-view{
+            padding: 0 0 0 20px;
+        }
+        #logged-in-box,
+        #not-logged-in-box{
+            padding: 10rem 0 10rem 10rem;
+        }
+        #logged-in-box,
+        #loginError,
+        #userExists
+            {
+            display: none;
+        }
