@@ -19,17 +19,11 @@ const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiD
 const articles_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'articles.yaml')))
 const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'events.yaml')))
 
-// const dataJSON = path.join(entuDataPath, 'performance.pics.json')
-// let performancePicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
-
-// const dataJSON = path.join(entuDataPath, 'echo.pics.json')
-// let echoPicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
-
-const dataJSON = path.join(entuDataPath, 'event.pics.json')
-let eventPicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+const performancePicsJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'performance.pics.json'), 'utf-8'))
+const echoPicsJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'echo.pics.json'), 'utf-8'))
+const eventPicsJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'event.pics.json'), 'utf-8'))
 
 var TOKEN = ''
-
 
 async function sendPic(media) {
     // console.log("sendPic Media ", media)
@@ -90,89 +84,86 @@ async function sendPic(media) {
 
 }
 
+
 // PERFORMANCE_MEDIA
+const getStrapiPerformanceIds = () => {
+    performancePicsJSON.map(performance_media => {
+        performance_media.id = (performances_from_strapi.filter(s_performance => {
+                return s_performance.remote_id === performance_media.entu_id.toString()
+            })[0] || {}).id || null
+        return performance_media
+    })
+}
 
-// const getStrapiIds = () => {
-//     performancePicsJSON.map(performance_media => {
-//         performance_media.id = (performances_from_strapi.filter(s_performance => {
-//                 return s_performance.remote_id === performance_media.entu_id.toString()
-//             })[0] || {}).id || null
-//         return performance_media
-//     })
-// }
+async function send_pic_and_create_relation_performances() {
+    getStrapiPerformanceIds()
+    for (const performance_medias of performancePicsJSON) {
+        const strapi_id = performance_medias.id
+        performance_medias.performance_media = performance_medias.medias
+        delete performance_medias.medias
+        for (const media of performance_medias.performance_media) {
+            for ( let i = 0; i < Object.keys(media).length; i++){
+                await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
+                // console.log(media[Object.keys(media)[i]].id)
+                if (media[Object.keys(media)[i]].id == undefined){
+                    // console.log(media[Object.keys(media)[i]])
+                    delete media[Object.keys(media)[i]]
+                    i--
+                }
 
-// async function send_pic_and_create_relation() {
-//     getStrapiIds()
-//     for (const performance_medias of performancePicsJSON) {
-//         const strapi_id = performance_medias.id
-//         performance_medias.performance_media = performance_medias.medias
-//         delete performance_medias.medias
-//         for (const media of performance_medias.performance_media) {
-//             for ( let i = 0; i < Object.keys(media).length; i++){
-//                 await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
-//                 // console.log(media[Object.keys(media)[i]].id)
-//                 if (media[Object.keys(media)[i]].id == undefined){
-//                     // console.log(media[Object.keys(media)[i]])
-//                     delete media[Object.keys(media)[i]]
-//                     i--
-//                 }
+            }
+        }
 
-//             }
-//         }
-
-//         // console.log(JSON.stringify(performance_medias, 0, 4));
-//     }
+        // console.log(JSON.stringify(performance_medias, 0, 4));
+    }
 
 
-//     console.log(JSON.stringify(performancePicsJSON, 0, 4))
-//     putToStrapi(performancePicsJSON, 'performances')
-// }
+    console.log(JSON.stringify(performancePicsJSON, 0, 4))
+    putToStrapi(performancePicsJSON, 'performances')
+}
 
 
 // ARTICLE_MEDIA
-// const getStrapiIds = () => {
-//     echoPicsJSON.map(article_media => {
-//         article_media.id = (articles_from_strapi.filter(s_article => {
-//                 return s_article.remote_id === article_media.entu_id.toString()
-//             })[0] || {}).id || null
-//         return article_media
-//     })
-// }
+const getStrapiArticleIds = () => {
+    echoPicsJSON.map(article_media => {
+        article_media.id = (articles_from_strapi.filter(s_article => {
+                return s_article.remote_id === article_media.entu_id.toString()
+            })[0] || {}).id || null
+        return article_media
+    })
+}
 
-// async function send_pic_and_create_relation() {
-//     getStrapiIds()
-//     for (const article_medias of echoPicsJSON) {
-//         const strapi_id = article_medias.id
-//         article_medias.article_media = article_medias.medias
-//         delete article_medias.medias
-//         for (const media of article_medias.article_media) {
-//             for ( let i = 0; i < Object.keys(media).length; i++){
-//                 await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
-//                 // console.log(media[Object.keys(media)[i]].id)
-//                 if (media[Object.keys(media)[i]].id == undefined){
-//                     // console.log(media[Object.keys(media)[i]])
-//                     delete media[Object.keys(media)[i]]
-//                     i--
-//                 }
+async function send_pic_and_create_relation_articles() {
 
-//             }
-//         }
+    getStrapiArticleIds()
+    for (const article_medias of echoPicsJSON) {
+        const strapi_id = article_medias.id
+        article_medias.article_media = article_medias.medias
+        delete article_medias.medias
+        for (const media of article_medias.article_media) {
+            for ( let i = 0; i < Object.keys(media).length; i++){
+                await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
+                // console.log(media[Object.keys(media)[i]].id)
+                if (media[Object.keys(media)[i]].id == undefined){
+                    // console.log(media[Object.keys(media)[i]])
+                    delete media[Object.keys(media)[i]]
+                    i--
+                }
 
-//         // console.log(JSON.stringify(article_medias, 0, 4));
-//     }
+            }
+        }
 
-
-//     console.log(JSON.stringify(echoPicsJSON, 0, 4))
-//     putToStrapi(echoPicsJSON, 'articles')
-// }
+        // console.log(JSON.stringify(article_medias, 0, 4));
+    }
 
 
-// send_pic_and_create_relation()
-
+    console.log(JSON.stringify(echoPicsJSON, 0, 4))
+    putToStrapi(echoPicsJSON, 'articles')
+}
 
 
 // EVENT
-const getStrapiIds = () => {
+const getStrapiEventIds = () => {
     eventPicsJSON.map(event_media => {
         event_media.id = (events_from_strapi.filter(s_event => {
                 return s_event.remote_id === event_media.entu_id.toString()
@@ -181,8 +172,9 @@ const getStrapiIds = () => {
     })
 }
 
-async function send_pic_and_create_relation() {
-    getStrapiIds()
+async function send_pic_and_create_relation_events() {
+
+    getStrapiEventIds()
     for (const event_medias of eventPicsJSON) {
         const strapi_id = event_medias.id
         event_medias.event_media = event_medias.medias
@@ -209,139 +201,167 @@ async function send_pic_and_create_relation() {
 }
 
 
-send_pic_and_create_relation()
-
-
 // KIRJUTA STRAPI PERFORMANCE_MEDIA TYHJAKS
+async function delete_media_relation_performances() {
+    let performance = performancePicsJSON.map( perf => {
 
-// let performance = performancePicsJSON.map( perf => {
+        let strapi_id = performances_from_strapi.filter(s_performance => {
+            return s_performance.remote_id === perf.entu_id.toString()
+        }).map( e => e.id )
 
-//     let strapi_id = performances_from_strapi.filter(s_performance => {
-//         return s_performance.remote_id === perf.entu_id.toString()
-//     }).map( e => e.id )
+        return {
+            "id": strapi_id,
+            "performance_media": [],
+            "logos": []
+        }
 
-//     return {
-//         "id": strapi_id,
-//         "performance_media": [],
-//         "logos": []
-//     }
+    })
 
-// })
+    console.log(performance)
+    putToStrapi(performance, 'performances')
 
-// console.log(performance)
-// putToStrapi(performance, 'performances')
+}
 
+async function delete_media_relation_articles() {
 
-// let article = echoPicsJSON.map( perf => {
+    let article = echoPicsJSON.map( e_article => {
 
-//     let strapi_id = articles_from_strapi.filter(s_article => {
-//         return s_article.remote_id === perf.entu_id.toString()
-//     }).map( e => e.id )
+        let strapi_id = articles_from_strapi.filter(s_article => {
+            return s_article.remote_id === e_article.entu_id.toString()
+        }).map( e => e.id )
 
-//     return {
-//         "id": strapi_id,
-//         "article_media": []
-//     }
+        return {
+            "id": strapi_id,
+            "article_media": []
+        }
 
-// })
+    })
 
-// console.log(article)
-// putToStrapi(article, 'articles')
+    console.log(article)
+    putToStrapi(article, 'articles')
+}
+
+async function delete_media_relation_events() {
+
+    let event = eventPicsJSON.map( e_event => {
+
+        let strapi_id = events_from_strapi.filter(s_event => {
+            return s_event.remote_id === e_event.entu_id.toString()
+        }).map( e => e.id )
+
+        return {
+            "id": strapi_id,
+            "event_media": []
+        }
+
+    })
+
+    console.log(event)
+    putToStrapi(event, 'events')
+}
 
 
 // LOGOS TO STRAPI
-// async function performance_logos_and_riders_from_entu(){
-//     let dataJSON = path.join(entuDataPath, 'performance.json')
-//     let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+async function performance_logos_and_riders_from_entu(){
+    let dataJSON = path.join(entuDataPath, 'performance.json')
+    let performanceJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-//     let get_strapi_performances = performanceJSON.map( e_performance => {
-//         let performance = performances_from_strapi.filter( s_performance => {
-//             // console.log('S', s_performance.remote_id, 'E', e_performance.id);
-//             return s_performance.remote_id === e_performance.id.toString()
-//         }).map( e => e.id)
-//         e_performance.strapi_id = performance
-//     })
+    let get_strapi_performances = performanceJSON.map( e_performance => {
+        let performance = performances_from_strapi.filter( s_performance => {
+            // console.log('S', s_performance.remote_id, 'E', e_performance.id);
+            return s_performance.remote_id === e_performance.id.toString()
+        }).map( e => e.id)
+        e_performance.strapi_id = performance
+    })
 
-//     for (const performance of performanceJSON) {
-//         // console.log(performance.properties.logo.values)
-//         performance.logos = []
-//         for (const prop of performance.properties.logo.values) {
-//             // console.log(prop);
-//             await sendPic(prop)
-//         }
+    for (const performance of performanceJSON) {
+        // console.log(performance.properties.logo.values)
+        performance.logos = []
+        for (const prop of performance.properties.logo.values) {
+            // console.log(prop);
+            await sendPic(prop)
+        }
 
-//         for (const value of performance.properties.logo.values) {
-//             performance.logos.push(value.id)
-//         }
-//         performance.id = performance.strapi_id
+        for (const value of performance.properties.logo.values) {
+            performance.logos.push(value.id)
+        }
+        performance.id = performance.strapi_id
 
-//         delete performance.displaypicture
-//         delete performance.displayname
-//         delete performance.properties
-//         delete performance.strapi_id
+        delete performance.displaypicture
+        delete performance.displayname
+        delete performance.properties
+        delete performance.strapi_id
 
-//     }
+    }
 
-//     let perfJSON = []
-//     console.log(JSON.stringify(perfJSON, 0, 2))
-//     for (const perf of performanceJSON) {
-//         if (perf.logos.length > 0) {
-//             perfJSON.push(perf)
-//         }
-//     }
-//     putToStrapi(perfJSON, 'performances')
-// }
-
-// performance_logos_and_riders_from_entu()
+    let perfJSON = []
+    console.log(JSON.stringify(perfJSON, 0, 2))
+    for (const perf of performanceJSON) {
+        if (perf.logos.length > 0) {
+            perfJSON.push(perf)
+        }
+    }
+    putToStrapi(perfJSON, 'performances')
+}
 
 
-// EVENT PIC TO STRAPI
+// EVENT PIC TO STRAPI enam ei kasuta??
+async function event_pic_and_relation_to_strapi() {
 
-// async function event_pic_and_relation_to_strapi() {
+    const dataJSON = path.join(entuDataPath, 'event.json')
+    let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-//     const dataJSON = path.join(entuDataPath, 'event.json')
-//     let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+    let strapi_id = eventJSON.map( e_event => {
+        let event = events_from_strapi.filter( s_event => {
+            return e_event.id.toString() === s_event.remote_id
+        }).map( e => e.id)
+        e_event.strapi_id = event
+    })
 
-//     let strapi_id = eventJSON.map( e_event => {
-//         let event = events_from_strapi.filter( s_event => {
-//             return e_event.id.toString() === s_event.remote_id
-//         }).map( e => e.id)
-//         e_event.strapi_id = event
-//     })
+    for (const event of eventJSON) {
 
-//     for (const event of eventJSON) {
+        event.media = {}
+        if(event.properties['photo-gallery'].values.length > 0 || event.properties['photo-original'].values.length > 0 || event.properties['photo'].values.length > 0 || event.properties['photo-big'].values.length > 0){
+            event.media.gallery_image_medium = event.properties['photo-gallery'].values
+            event.media.original_image = event.properties['photo-original'].values
+            event.media.hero_image = event.properties['photo'].values
+            event.media.gallery_image_large = event.properties['photo-big'].values
 
-//         event.media = {}
-//         if(event.properties['photo-gallery'].values.length > 0 || event.properties['photo-original'].values.length > 0 || event.properties['photo'].values.length > 0 || event.properties['photo-big'].values.length > 0){
-//             event.media.gallery_image_medium = event.properties['photo-gallery'].values
-//             event.media.original_image = event.properties['photo-original'].values
-//             event.media.hero_image = event.properties['photo'].values
-//             event.media.gallery_image_large = event.properties['photo-big'].values
+        }
 
-//         }
+        if( Object.keys(event.media).length < 1){
+            delete event.media
+        }
 
-//         if( Object.keys(event.media).length < 1){
-//             delete event.media
-//         }
+        // for( const element of event.properties['photo-gallery']){
+        //     console.log(element )
+        // }
 
-//         // for( const element of event.properties['photo-gallery']){
-//         //     console.log(element )
-//         // }
+        if( event.properties.performance.values.length > 0){
+            // event.performance = event.properties.performance.values
+            delete event
+        }
+        delete event.properties
 
-//         if( event.properties.performance.values.length > 0){
-//             // event.performance = event.properties.performance.values
-//             delete event
-//         }
-//         delete event.properties
+        if( event.media ){
+            console.log(JSON.stringify(event, 0, 2))
 
-//         if( event.media ){
-//             console.log(JSON.stringify(event, 0, 2))
-
-//         }
-
-//     }
+        }
+    }
+}
 
 
-// }
+async function main() {
+    // await send_pic_and_create_relation_performances()
+    // await send_pic_and_create_relation_articles()
+    // await send_pic_and_create_relation_events()
 
-// event_pic_and_relation_to_strapi()
+    // await performance_logos_and_riders_from_entu()
+
+    // await delete_media_relation_performances()
+    // await delete_media_relation_articles()
+    // await delete_media_relation_events()
+
+}
+
+main()
