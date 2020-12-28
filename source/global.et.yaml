@@ -170,3 +170,6 @@ labels:
         phone: telefoni number
         save: salvesta oma andmed
         profile_sent: profiil saadetud
+        errUserAllreadyExists: >-
+            Sellise emailiga kasutaja on meie andmebaasis juba olemas proovi
+            mõne teise viisiga sisse logida.

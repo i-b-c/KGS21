@@ -168,3 +168,6 @@ labels:
         phone: phone number
         save: save
         profile_sent: profile sent
+        errUserAllreadyExists: >-
+            This email has already been registered in our system. Please try
+            logging in with a different provider. 
