@@ -1,22 +1,31 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
+
     .container-fluid
         .row
-            #front-carousel.event-banner.carousel.slide
-                .carousel-inner(role="listbox")
-                    figure(style='background-image: url("https://saal.entu.ee/api2/file-21116"); height: 778px;')
+            .event-banner.carousel.slide(id='front-carousel')
+                .carousel-inner(role='listbox')
+                    if self.image_hero
+                        figure(style=`background-image: url('${m_api}${self.image_hero}');`)
+                    else
+                        figure(style=`background-image: url('/assets/images/placeholder.jpg');`)
+
         .row.page-margin
             section.col-md-12
                 h2= self[`name_${self.locale}`]
                 h4= self[`subtitle_${self.locale}`]
 
-            //- VIDEO/SOUND
-            if self.audio || self.video
-                .video-sound
-                    if self.audio
-                        div!= self.audio
-                    if self.video
-                        div!= self.video
+                //- VIDEO/SOUND
+                if self.audio || self.video
+                    .video-sound
+                        if self.audio
+                            //- h2= t('title.sound')
+                            div!= self.audio
+                        if self.video
+                            //- h2= t('title.video')
+                            div!= self.video
 
-            p!= self[`description_${self.locale}`]
+                p
+                    +markdown(self[`description_${self.locale}`])

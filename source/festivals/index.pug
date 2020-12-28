@@ -11,7 +11,10 @@ block content
                 if events && events.length
                     each event in events
                         a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href=event.path)
-                            img.img-responsive(src="https://saal.entu.ee/api2/file-21105")
+                            if event.image_medium
+                                img.img-responsive(src=`${m_api}${event.image_medium}`)
+                            else
+                                img.img-responsive(src=`/assets/images/placeholder.jpg`)
                             p
                                 +dateFromTo(event.start_time, event.end_time)
                             p
