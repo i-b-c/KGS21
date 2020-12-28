@@ -22,8 +22,11 @@ const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPat
 // const dataJSON = path.join(entuDataPath, 'performance.pics.json')
 // let performancePicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
-const dataJSON = path.join(entuDataPath, 'echo.pics.json')
-let echoPicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+// const dataJSON = path.join(entuDataPath, 'echo.pics.json')
+// let echoPicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+
+const dataJSON = path.join(entuDataPath, 'event.pics.json')
+let eventPicsJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
 
 var TOKEN = ''
 
@@ -165,6 +168,48 @@ async function sendPic(media) {
 
 
 // send_pic_and_create_relation()
+
+
+
+// EVENT
+const getStrapiIds = () => {
+    eventPicsJSON.map(event_media => {
+        event_media.id = (events_from_strapi.filter(s_event => {
+                return s_event.remote_id === event_media.entu_id.toString()
+            })[0] || {}).id || null
+        return event_media
+    })
+}
+
+async function send_pic_and_create_relation() {
+    getStrapiIds()
+    for (const event_medias of eventPicsJSON) {
+        const strapi_id = event_medias.id
+        event_medias.event_media = event_medias.medias
+        delete event_medias.medias
+        for (const media of event_medias.event_media) {
+            for ( let i = 0; i < Object.keys(media).length; i++){
+                await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
+                // console.log(media[Object.keys(media)[i]].id)
+                if (media[Object.keys(media)[i]].id == undefined){
+                    // console.log(media[Object.keys(media)[i]])
+                    delete media[Object.keys(media)[i]]
+                    i--
+                }
+
+            }
+        }
+
+        // console.log(JSON.stringify(event_medias, 0, 4));
+    }
+
+
+    console.log(JSON.stringify(eventPicsJSON, 0, 4))
+    putToStrapi(eventPicsJSON, 'events')
+}
+
+
+send_pic_and_create_relation()
 
 
 // KIRJUTA STRAPI PERFORMANCE_MEDIA TYHJAKS
