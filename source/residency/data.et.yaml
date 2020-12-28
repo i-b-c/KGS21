@@ -1,2 +1,4 @@
 aliases:
     - 'et/residency'
+data:
+    events: '/_fetchdir/events.et.yaml'

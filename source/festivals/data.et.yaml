@@ -1,2 +1,4 @@
 aliases:
     - 'et/festivals'
+data:
+    events: '/_fetchdir/events.et.yaml'
