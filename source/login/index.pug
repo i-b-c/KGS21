@@ -47,14 +47,17 @@ block content
                 a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
                 .form-group
                     label(for='regEmail') email
-                    input.reg_input#regEmail.form-control(type='email' placeholder="email" name='regEmail' autocomplete="off")
+                    input.reg_input#regEmail.form-control(type='email' placeholder="email" name='regEmail' autocomplete="off" oninput='validateEmail(this.id)' )
+                    div#emailHelp(class='valid') viga
                 .form-group
                     label(for='regPsw') salasõna
-                    input.reg_input#regPsw.form-control(type='password', placeholder="salasõna" name='regPsw' autocomplete="new-password")
+                    input.reg_input#regPsw.form-control(type='password', placeholder="salasõna" name='regPsw' autocomplete="new-password" oninput="validatePsw('regPsw')")
+                    div#pswHelp(class='valid') viga
                 .form-group
                     label(for='regPswRepeat') salasõna
-                    input.reg_input#regPswRepeat.form-control(type='password', placeholder="salasõna teist korda" name='regPswRepeat' autocomplete="new-password")
-                a.btn.btn-primary.text-uppercase(onClick = "RegisterWithEmail()") registreeri
+                    input.reg_input#regPswRepeat.form-control(type='password', placeholder="salasõna teist korda" name='regPswRepeat' autocomplete="new-password" oninput="validatePswRep('regPsw', 'regPswRepeat')")
+                    div#psw2Help(class='valid') viga
+                a.btn.btn-primary.text-uppercase(onClick = "RegisterWithEmail(), validateForm()") registreeri
 
         #error-box
             p#userExists= self.labels.login.errUserAllreadyExists
