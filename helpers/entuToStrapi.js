@@ -420,9 +420,6 @@ async function articlesToStrapi() {
     // postToStrapi(articlesToPost, 'articles')
 }
 
-
-
-
 async function eventsToStrapi() {
 
     const dataJSON = path.join(entuDataPath, 'event.json')
@@ -506,7 +503,7 @@ async function eventsToStrapi() {
 
         return {
             "remote_id": event_entity.id.toString(),
-            "category": strapi_category_ids,
+            "categories": strapi_category_ids,
             "name_et": (event_entity.properties['et-name'].values.length > 0 ? event_entity.properties['et-name'].values[0].db_value : null),
             "name_en": (event_entity.properties['en-name'].values.length > 0 ? event_entity.properties['en-name'].values[0].db_value : null),
             "subtitle_et": (event_entity.properties['et-subtitle'].values.length > 0 ? event_entity.properties['et-subtitle'].values[0].db_value : null),
@@ -544,7 +541,7 @@ async function eventsToStrapi() {
     // console.log(JSON.stringify(events, null, 4))
 
     // // PUT
-    // putToStrapi(events, 'events')
+    putToStrapi(events, 'events')
 
     // // POST
     // postToStrapi(eventsToPost, 'events')
@@ -576,8 +573,6 @@ async function eventChildRelationToStrapi(){
     putToStrapi(strapi_relations, 'events')
     console.log({relationJSON, strapi_relations})
 }
-
-
 
 async function newsToStrapi() {
 
@@ -668,11 +663,11 @@ async function main() {
     // await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
-    // await eventsToStrapi()
+    await eventsToStrapi()
     // await eventChildRelationToStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
-    await articlesToStrapi()
+    // await articlesToStrapi()
 
     // await fromStrapi('banner-types')
     // await fromStrapi('banners')

@@ -204,6 +204,8 @@ EventMedia: &EventMedia
 Event: &Event # etendus
     _path: /events
     type: (Enumeration) # programm, residentuur, festival, tuur, projekt
+    categories:
+        - *Category
     name_et: (text)
     name_en: (text)
     slug_et: (UID, name_et)
