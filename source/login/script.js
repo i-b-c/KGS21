@@ -152,46 +152,37 @@ const RegisterWithEmail = async () => {
             'Content-Type': 'application/json'
         }
     }
+
     console.log(requestOptions)
+
+
     //siit ei saa erroreid kätte nagu postmanis
-    let response = await ( await fetch('https://a.saal.ee/auth/local/register', requestOptions))
 
-    if (response.status === 200) {
-        console.log("status 200 response is: ", response)
-    } else {
-        console.log("status not 200 response is: ", response)
-    }
+    let response = await (fetch('https://a.saal.ee/auth/local/register', requestOptions))
 
-    if (response.ok) {
+    if (response.statuscode !== 200) {
         const data = await response.json()
-        localStorage.setItem("ACCESS_TOKEN", data.jwt)
-        localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
-        document.dispatchEvent(userProfileLoadedEvent)
-        if (userProfile.blocked || !userProfile.confirmed) {
-            accountStatus = false
-        }
-        validateToken()
     } else {
-        var errorResponse = await response.json()
-        var errors = []
-        console.log("response: ", errorResponse)
+        let errorResponse = await response.json()
+        let errors = []
+        console.log("response ", errorResponse)
+
         try {
             for (err of errorResponse.message) {
-                for (message of err.messages) {
-                    errors.push(message.message)
+                for (messageId of err.messages) {
+                    errors.push(messageId.id)
                 }
             }
         } catch (err) {
             console.log(err)
-        }
 
-        try{
-        errors.push(errorResponse.message.detail)
-        }catch(err){
+        }
+        try {
+            errors.push(errorResponse.message.detail)
+        } catch (err) {
             console.log(err)
 
         }
-
         console.log("errors: ", errors)
         displayError(errors)
     }
