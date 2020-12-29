@@ -70,6 +70,11 @@
     },
     "performances": {
       "collection": "performance"
+    },
+    "Providers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "user-premissions.providers"
     }
   }
 }

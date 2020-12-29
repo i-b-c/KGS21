@@ -11,11 +11,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
   getToken(ctx) {
-    console.log(ctx);
-    console.log(ctx.request.body);
-    console.log('token');
     const params = _.assign({}, ctx.request.body, ctx.request.query);
-    console.log(params);
 
     let token = '';
 
@@ -43,7 +39,6 @@ module.exports = {
   },
 
   issue(payload, jwtOptions = {}) {
-    console.log('will issue strapiToken')
     _.defaults(jwtOptions, strapi.plugins['users-permissions'].config.jwt);
     return jwt.sign(
       _.clone(payload.toJSON ? payload.toJSON() : payload),

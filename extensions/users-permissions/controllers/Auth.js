@@ -22,6 +22,10 @@ module.exports = {
     console.log('callback')
     const provider = ctx.params.provider || 'local';
     const params = ctx.request.body;
+    const email = params.identifier
+
+    console.log(provider);
+    console.log(params);
 
     const store = await strapi.store({
       environment: '',
@@ -56,7 +60,7 @@ module.exports = {
         );
       }
 
-      const query = { provider };
+      const query = { email };
 
       // Check if the provided identifier is an email or not.
       const isEmail = emailRegExp.test(params.identifier);
@@ -161,8 +165,6 @@ module.exports = {
         return ctx.badRequest(null, error === 'array' ? error[0] : error);
       }
 
-      console.log('user ', user);
-
       if (!user) {
         return ctx.badRequest(null, error === 'array' ? error[0] : error);
       }
@@ -252,10 +254,10 @@ module.exports = {
       })
       .get();
 
-      console.log('begin') 
-    
+    console.log('begin')
 
-    
+
+
 
     const [requestPath] = ctx.request.url.split('?');
     const provider = requestPath.split('/')[2];
@@ -275,7 +277,7 @@ module.exports = {
     grantConfig[provider].redirect_uri = strapi.plugins[
       'users-permissions'
     ].services.providers.buildRedirectUri(provider);
-    
+
     return grant(grantConfig)(ctx, next);
   },
 
@@ -373,7 +375,6 @@ module.exports = {
 
     // Update the user.
     await strapi.query('user', 'users-permissions').update({ id: user.id }, { resetPasswordToken });
-
     ctx.send({ ok: true });
   },
 
@@ -402,7 +403,6 @@ module.exports = {
       ..._.omit(ctx.request.body, ['confirmed', 'confirmationToken', 'resetPasswordToken']),
       provider: 'local',
     };
-
     // Password is required.
     if (!params.password) {
       return ctx.badRequest(
@@ -473,11 +473,31 @@ module.exports = {
       email: params.email,
     });
 
+    // if (user.email === 'siimsutt@hotmail.com'){
+    //   console.log('exst');
+    //   let updateParams = {}
+    //   updateParams.params = {id: user.id}
+    //   updateParams.request = {body: {provider: 'google'}}
+    //   console.log(updateParams);
+    //   const updatedUser = await apiUserController.update(updateParams)
+    //   return
+    // }
+
+    if (user && user.provider) {
+      return ctx.badRequest(
+        null,
+        formatError({
+          id: 'Auth.form.error.email.taken',
+          message: 'Email is already taken. Providers.',
+        })
+      );
+    }
+
     if (user && user.provider === params.provider) {
       return ctx.badRequest(
         null,
         formatError({
-          id: 'Auth.form.error.email.taken0',
+          id: 'Auth.form.error.email.taken',
           message: 'Email is already taken.',
         })
       );
@@ -487,8 +507,8 @@ module.exports = {
       return ctx.badRequest(
         null,
         formatError({
-          id: 'Auth.form.error.email.taken1',
-          message: 'Email is already taken.',
+          id: 'Auth.form.error.email.taken',
+          message: 'Email is already taken100.',
         })
       );
     }
@@ -523,9 +543,9 @@ module.exports = {
     } catch (err) {
       const adminError = _.includes(err.message, 'username')
         ? {
-            id: 'Auth.form.error.username.taken',
-            message: 'Username already taken',
-          }
+          id: 'Auth.form.error.username.taken',
+          message: 'Username already taken',
+        }
         : { id: 'Auth.form.error.email.taken2', message: 'Email already taken' };
 
       ctx.badRequest(null, formatError(adminError));
@@ -604,7 +624,7 @@ module.exports = {
         sent: true,
       });
     } catch (err) {
-      return ctx.badRequest(null, err);
+      return ctx.badRequest('mystery', err);
     }
   },
 };

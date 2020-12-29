@@ -9,6 +9,8 @@
 const _ = require('lodash');
 const { isValidEmailTemplate } = require('./validation/email-template');
 
+const crypto = require('crypto')
+
 module.exports = {
   /**
    * Default action.
@@ -265,6 +267,49 @@ module.exports = {
       .set({ value: ctx.request.body.providers });
 
     ctx.send({ ok: true });
+  },
+
+  async removeProviders(ctx) {
+    console.log('ctx', ctx);
+    console.log('FB request ', ctx.request);
+    console.log('from FB ', ctx.request.body);
+
+    let { signed_request } = ctx.request.body
+    signed_request = signed_request.split('.');
+    var encoded_sig = signed_request[0];
+    var payload = signed_request[1];
+    var secret = ''
+
+
+    var data = JSON.parse(new Buffer.from(payload, 'base64').toString());
+
+    if (data.algorithm.toUpperCase() !== 'HMAC-SHA256')
+      return null;
+
+    var hmac = crypto.createHmac('sha256', secret);
+    var encoded_payload = hmac.update(payload).digest('base64')
+      .replace(/\//g, '_').replace(/\+/g, '-').replace(/={1,2}$/, '');
+
+    if (encoded_sig !== encoded_payload)
+      return null;
+
+    console.log(data);
+
+
+    // if (_.isEmpty(ctx.request.body)) {
+    //   return ctx.badRequest(null, [{ messages: [{ id: 'Cannot be empty' }] }]);
+    // }
+
+    // await strapi
+    //   .store({
+    //     environment: '',
+    //     type: 'plugin',
+    //     name: 'users-permissions',
+    //     key: 'grant',
+    //   })
+    //   .set({ value: ctx.request.body.providers });
+
+    // ctx.send({ ok: true });
   },
 };
 

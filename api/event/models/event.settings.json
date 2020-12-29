@@ -80,12 +80,6 @@
     "online": {
       "type": "string"
     },
-    "video": {
-      "type": "richtext"
-    },
-    "audio": {
-      "type": "richtext"
-    },
     "remote_id": {
       "type": "uid"
     },
@@ -116,6 +110,25 @@
       "type": "component",
       "repeatable": true,
       "component": "media.event-media"
+    },
+    "X_location_et": {
+      "type": "text"
+    },
+    "X_location_en": {
+      "type": "text"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
+    },
+    "audio": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
+    },
+    "categories": {
+      "collection": "category"
     }
   }
 }

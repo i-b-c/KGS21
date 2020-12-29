@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_media_media_contents",
+  "info": {
+    "name": "media_content",
+    "icon": "arrow-circle-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

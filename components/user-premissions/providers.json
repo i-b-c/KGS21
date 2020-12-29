@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_user_premissions_providers",
+  "info": {
+    "name": "Providers",
+    "icon": "fingerprint",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "userId": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "enumeration",
+      "enum": [
+        "google",
+        "facebook",
+        "local"
+      ],
+      "unique": true
+    }
+  }
+}

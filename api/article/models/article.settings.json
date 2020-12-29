@@ -46,12 +46,6 @@
     "photo_article": {
       "type": "boolean"
     },
-    "audio": {
-      "type": "text"
-    },
-    "video": {
-      "type": "text"
-    },
     "content_et": {
       "type": "richtext"
     },
@@ -79,6 +73,16 @@
     },
     "X_location_en": {
       "type": "string"
+    },
+    "audio": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
     }
   }
 }

@@ -39,7 +39,6 @@ const connect = (provider, query) => {
 
     // Get the profile.
     getProfile(provider, query, async (err, profile) => {
-      console.log('gettheprof', provider);
       if (err) {
         return reject([null, err]);
       }
@@ -54,8 +53,6 @@ const connect = (provider, query) => {
           email: profile.email,
         });
 
-        console.log(users);
-
         const advanced = await strapi
           .store({
             environment: '',
@@ -65,7 +62,16 @@ const connect = (provider, query) => {
           })
           .get();
 
-        const user = _.find(users, { provider });
+        let user = _.find(users, { provider });
+
+        if (users.length > 0) {
+          user = users[0]
+          const connectedProviders = user.provider.split(',')
+          if (!connectedProviders.includes(provider)) {
+            mergeProviders(user, provider)
+          }
+        }
+
 
         if (_.isEmpty(user) && !advanced.allow_register) {
           return resolve([
@@ -102,23 +108,20 @@ const connect = (provider, query) => {
           confirmed: true,
         });
 
-        
-        if (params.email === 'siimsutt@hotmail.com'){
-          // console.log(users[0])
-          let providers = users[0].provider
-          if (!providers.includes(provider)){
-            providers += ',' + provider
-          }
-          params.params = {id: users[0].id}
-          params.request = {body: {provider: providers}}
-          console.log(params);
-          const updatedUser = await apiUserController.update(params)
-     
-          console.log({updatedUser});
-          return resolve([updatedUser, null])
-        }
+        // if (params.email === 'siimsutt@hotmail.com'){
+        //   console.log(users[0])
+        //   let providers = users[0].provider
+        //   if (!providers.includes(provider)){
+        //     providers += ',' + provider
+        //   }
+        //   params.params = {id: users[0].id}
+        //   params.request = {body: {provider: providers}}
+        //   console.log(params);
+        //   const updatedUser = await apiUserController.update(params)
 
-        console.log('here');
+        //   console.log({updatedUser});
+        //   return resolve([updatedUser, null])
+        // }
 
         const createdUser = await strapi.query('user', 'users-permissions').create(params);
 
@@ -138,8 +141,6 @@ const connect = (provider, query) => {
  */
 
 const getProfile = async (provider, query, callback) => {
-  console.log('getProfile')
-
   const access_token = query.access_token || query.code || query.oauth_token;
 
   const grant = await strapi
@@ -164,7 +165,6 @@ const getProfile = async (provider, query, callback) => {
         .get('me?fields=name,email')
         .auth(access_token)
         .request((err, res, body) => {
-          console.log("fb-user", body)
           if (err) {
             callback(err);
           } else {
@@ -184,7 +184,6 @@ const getProfile = async (provider, query, callback) => {
         .get('tokeninfo')
         .qs({ access_token })
         .request((err, res, body) => {
-          console.log("google-user", body)
           if (err) {
             callback(err);
           } else {
@@ -208,7 +207,16 @@ const getProfile = async (provider, query, callback) => {
 const buildRedirectUri = (provider = '') =>
   `${getAbsoluteServerUrl(strapi.config)}/connect/${provider}/callback`;
 
+const mergeProviders = async (user, provider) => {
+  const params = {}
+  params.params = { id: user.id }
+  params.request = { body: { provider: user.provider + ',' + provider } }
+  const updatedUser = await apiUserController.update(params)
+  return updatedUser
+}
+
 module.exports = {
   connect,
   buildRedirectUri,
+  mergeProviders
 };
