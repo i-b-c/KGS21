@@ -11,7 +11,7 @@ block content
                     if self.image_hero
                         figure(id=`slide-${self.remote_id}` style=`background-image: url('${m_api}${self.image_hero}');`)
                     else
-                        figure(id=`slide-${self.remote_id}` style='background-image:url("assets//images/placeholder.jpg");')
+                        figure(id=`slide-${self.remote_id}` style='background-image:url("/assets/images/placeholder.jpg");')
                     header.col-md-8
                         p
                             +dateFromTo(self.start_time, self.end_time)

@@ -54,6 +54,7 @@ for (const lang of LANGUAGES) {
             conversation: oneEvent.conversation || null,
             video: oneEvent.video || null,
             audio: oneEvent.audio || null,
+            categories: oneEvent.categories || null,
             remote_id: oneEvent.remote_id || null,
             X_ticket_info: oneEvent.X_ticket_info || null,
             canceled: oneEvent.canceled || false,
