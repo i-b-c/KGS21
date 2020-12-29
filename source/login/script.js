@@ -36,6 +36,7 @@ async function GetCallback(providerToCall) {
         localStorage.setItem("ACCESS_TOKEN", data.jwt)
         localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
         localStorage.removeItem("provider")
+        localStorage.setItem("initials", makeInitials(data.user))
         document.dispatchEvent(userProfileLoadedEvent)
         if (userProfile.blocked || !userProfile.confirmed) {
             accountStatus = false
