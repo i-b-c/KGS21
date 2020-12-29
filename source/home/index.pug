@@ -72,7 +72,7 @@ block content
                     //- - nextThreeDays.setDate(nextThreeDays.getDate() + 3)
                     //- - console.log(currentDate, ' - ', pastTwoDays, ' - ', nextThreeDays)
 
-                    - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type === "program") 
+                    - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type === "program")
                     //- each performance in
                     //- - console.log(events.map(a => a.start_time))
 
@@ -180,9 +180,9 @@ block content
                     .col-xs-12.col-md-12.col-lg-12
                         h2= self.labels.nav.tours
                     - var currentDate = new Date()
-                    - var pastTwoDays = new Date()   
+                    - var pastTwoDays = new Date()
                     - pastTwoDays.setDate(pastTwoDays.getDate() - 60)
-                    - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type === "tour") 
+                    - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type === "tour")
                     if events && events.length
                         each event in events
                             - var eventDate = new Date(event.start_time)

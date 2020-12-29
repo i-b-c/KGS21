@@ -58,7 +58,7 @@ for (const lang of LANGUAGES) {
             X_ticket_info: oneEvent.X_ticket_info || null,
             canceled: oneEvent.canceled || false,
             start_date_string: `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`,
-            image_hero: oneEvent.event_media ? oneEvent.event_media.filter(e => e.hero_image).map(u => u.hero_image.url) : null,
+            image_hero: oneEvent.event_media ? oneEvent.event_media.filter(e => e.hero_image).map(u => u.hero_image.url)[0] || null : null,
             image_medium: oneEvent.event_media ? oneEvent.event_media.filter(e => e.gallery_image_medium).map(u => u.gallery_image_medium.url)[0] || null : null,
             event_media: oneEvent.event_media || null,
             child_events: oneEvent.child_events ? festival_child_events(oneEvent.child_events, lang) : null
@@ -121,6 +121,7 @@ for (const lang of LANGUAGES) {
 
         if (oneEventData.type === 'residency') {
             oneEventData.path = `resident/${oneEventData.remote_id}`
+            oneEventData.data = {categories: `/_fetchdir/categories.${lang}.yaml`}
             if (lang === 'et') {
                 oneEventData.aliases = [`et/resident/${oneEventData.remote_id}`]
             }
