@@ -183,6 +183,7 @@ const RegisterWithEmail = async () => {
 
     if (response.ok) {
         const data = await response.json()
+        console.log(data)
     } else {
         var errorResponse = await response.json()
         var errors = []
@@ -201,6 +202,48 @@ const RegisterWithEmail = async () => {
         displayError(errors)
     }
 
+}
+
+const ResetPassword = async () => {
+    console.log("lähtestan parooli")
+    let email = document.getElementById("logEmail").value
+
+    let body = JSON.stringify({
+        "email": email
+    })
+
+    let requestOptions = {
+        'method': 'POST',
+        'body': body,
+        'headers': {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    console.log(requestOptions)
+    let response = await (fetch('https://a.saal.ee/auth/forgot-password', requestOptions))
+
+    if (response.ok) {
+        const data = await response.json()
+        console.log(data)
+        console.log("email saadetud")
+    } else {
+        var errorResponse = await response.json()
+        var errors = []
+        console.log("response: ", errorResponse)
+        try {
+            for (err of errorResponse.message) {
+                for (message of err.messages) {
+                    errors.push(message.message)
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+
+        console.log("errors: ", errors)
+        displayError(errors)
+    }
 }
 
 
