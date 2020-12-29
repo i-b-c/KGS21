@@ -7,6 +7,10 @@ if(localStorage.getItem("USER_PROFILE")){
     userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
 }
 
+if(localStorage.getItem('ACCESS_TOKEN')){
+    validateToken()
+}
+
 //laetud dokumendi elementi kirjutatakse tervitus, kui kasutaja on sisse logitus ( local storage-is on tervitus)
 document.addEventListener('DOMContentLoaded', function(e) {
     if (localStorage.getItem('initials')) {
@@ -18,9 +22,9 @@ document.addEventListener('userProfileLoaded', function(e) {
     console.log("user profile loaded event triggered")
     userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
     console.log('User profile is loaded', userProfile)
-    makeUserMenuMessage()
     try{
-        showUserInfo()
+        // showUserInfo()
+        document.getElementById('user_initials').innerText = localStorage.getItem('initials')
 
     }
     catch(err){
@@ -29,32 +33,22 @@ document.addEventListener('userProfileLoaded', function(e) {
 })
 
 
-if(localStorage.getItem('ACCESS_TOKEN')){
-    validateToken()
-}
-
-function makeInitials() {
-    console.log("making initials");
+function makeInitials(profile) {
     // makes intitals from userProfile based on name or email
-    var initials=" "
-    if (userProfile.firstName && userProfile.lastName) {
-        return initials + userProfile.firstName[0] + userProfile.lastName[0] || initials + userProfile.firstName[0] || initials + userProfile.lastName[0]
+    console.log("making initals for", profile)
+    var initials = " "
+    if (profile.firstName && profile.lastName) {
+        return initials + profile.firstName[0] + profile.lastName[0] || initials + profile.firstName[0] || initials + profile.lastName[0]
     } else {
-        var parts = userProfile.email.split("@")
+        var parts = profile.email.split("@")
         parts = parts[0].split(".")
-        for(var i=0; i< parts.length; ++i){
-            initials+=parts[i][0]
+        for (var i = 0; i < parts.length; ++i) {
+            initials += parts[i][0]
         }
         return initials
     }
 }
 
-function makeUserMenuMessage() {
-    //makes massage for menu bar from pharse from Yaml  and initials genetated from profile
-    document.getElementById('user_initials').innerText = makeInitials()
-    localStorage.setItem("initials", makeInitials())
-    // location.reload()
-}
 
 function validateToken(){
     var token = localStorage.getItem('ACCESS_TOKEN')
@@ -105,7 +99,8 @@ function GetUserInfo() {
         }).then(function(data) {
             console.log("salvestan profiili local storage-isse")
             localStorage.setItem("USER_PROFILE", JSON.stringify(data))
-            makeUserMenuMessage()
+            localStorage.setItem("initials", makeInitials(data))
+            document.dispatchEvent(userProfileLoadedEvent)
         }).catch(function(error) {
             console.warn(error);
         });

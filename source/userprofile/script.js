@@ -88,17 +88,17 @@ function validateForm() {
         document.getElementById('profileSent').style.display = 'none'
     }
     // kui pole lisatud endmeid pole mõtet saata
-    if(!validateFirstName("firstName") || !validateLastName("lastName") || !validatePhoneNr("phoneNr")){
-        errors.push('No data to send')
+    // if(!validateFirstName("firstName") || !validateLastName("lastName") || !validatePhoneNr("phoneNr")){
+    //     errors.push('No data to send')
+    // }
+
+    if (!validateFirstName("firstName")) {
+        errors.push('Missing firstname')
     }
 
-    // if (!validateFirstName("firstName")) {
-    //     errors.push('Missing firstname')
-    // }
-
-    // if (!validateLastName("lastName")) {
-    //     errors.push('Missing lastname')
-    // }
+    if (!validateLastName("lastName")) {
+        errors.push('Missing lastname')
+    }
 
     // // if (!validateBDay("dob")) {
     // //     errors.push('Missing or invalid date of birth')
@@ -108,14 +108,16 @@ function validateForm() {
     // //     errors.push('Missing or invalid date of birth wrong format')
     // // }
 
-    // if (!validatePhoneNr("phoneNr")) {
-    //     errors.push('Missing phonenumber')
-    // }
+    if (!validatePhoneNr("phoneNr")) {
+        errors.push('Missing phonenumber')
+    }
 
     // console.log(errors)
     if (errors.length === 0) {
         sendUserProfile()
         console.log("valideerimine õnnestus saadan profiili Strapisse")
+    }else {
+        console.log(errors)
     }
 }
 

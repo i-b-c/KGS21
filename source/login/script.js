@@ -18,12 +18,12 @@ document.addEventListener('userProfileLoaded', function(e) {
     }
 })
 
+
 function loginWithProvider(loginProvider) {
     LogOut()
     localStorage.setItem("provider", loginProvider)
     window.location.replace('https://a.saal.ee/connect/' + loginProvider + '/')
 }
-
 
 async function GetCallback(providerToCall) {
     var requestOptions = {
