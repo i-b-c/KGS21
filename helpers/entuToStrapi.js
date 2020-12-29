@@ -217,7 +217,7 @@ async function performanceToStrapi() {
                 "photoMedium": photoMedium,
                 "photoBig": photoBig
             },
-            "raiders":
+            // "raiders":
             "id": starpi_performance_id
 
         }
@@ -348,6 +348,23 @@ async function articlesToStrapi() {
             return s_article.remote_id === article_entity.id.toString()
         }).map(e => { return e.id })[0]
 
+
+        let article_videos = []
+        if (article_entity.properties.video.values.length > 0) {
+            for( i=0; i < article_entity.properties.video.values.length; i++){
+                let video = {"content":  article_entity.properties.video.values[i].db_value }
+                article_videos.push(video)
+            }
+        }
+
+        let article_audios = []
+        if (article_entity.properties.audio.values.length > 0) {
+            for( i=0; i < article_entity.properties.audio.values.length; i++){
+                let audio = {"content":  article_entity.properties.audio.values[i].db_value }
+                article_audios.push(audio)
+            }
+        }
+
         let photo = article_entity.properties.photo.values.map(photo => {return photo.db_value} ).toString()
         let photoOriginal = article_entity.properties['photo-original'].values.map(photo => {return photo.db_value} ).toString()
         let photoMedium = article_entity.properties['photo-medium'].values.map(photo => {return photo.db_value} ).toString()
@@ -365,8 +382,8 @@ async function articlesToStrapi() {
             "authors": strapi_people_ids,
             "hide_gallery": (article_entity.properties['hide-gallery'].values.length > 0 ? article_entity.properties['hide-gallery'].values[0].db_value : null),
             "photo_article": (article_entity.properties['pics-only'].values.length > 0 ? article_entity.properties['pics-only'].values[0].db_value : null),
-            "audio": (article_entity.properties.audio.values.length > 0 ? article_entity.properties.audio.values[0].db_value : null),
-            "video": (article_entity.properties.video.values.length > 0 ? article_entity.properties.video.values[0].db_value : null),
+            "audio": article_audios,
+            "video": article_videos,
             "content_et": (article_entity.properties['et-contents'].values.length > 0 ? article_entity.properties['et-contents'].values[0].db_value : null),
             "content_en": (article_entity.properties['en-contents'].values.length > 0 ? article_entity.properties['en-contents'].values[0].db_value : null),
             "created_at": article_entity.properties['entu-created-at'].values[0].db_value,
@@ -397,20 +414,23 @@ async function articlesToStrapi() {
     // console.log(util.inspect(articles, null, 4))
 
     // PUT
-    // putToStrapi(articles, 'articles')
+    putToStrapi(articles, 'articles')
 
     // POST
     // postToStrapi(articlesToPost, 'articles')
 }
 
+
+
+
 async function eventsToStrapi() {
 
     const dataJSON = path.join(entuDataPath, 'event.json')
     let eventJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
-    let relations = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '..', 'data-transfer', 'from_entu', 'entu_kaustad_syndmused.yaml')))
-
+    let relations = yaml.safeLoad(fs.readFileSync(path.join(entuDataPath, 'entu_kaustad_syndmused.yaml')), 'utf-8')
 
     let events = eventJSON.map(event_entity => {
+
 
 
         let strapi_category_ids = event_entity.properties.category.values.map(e_category => {
@@ -453,6 +473,21 @@ async function eventsToStrapi() {
             }
         }
 
+        let event_videos = []
+        if (event_entity.properties.video.values.length > 0) {
+            for( i=0; i < event_entity.properties.video.values.length; i++){
+                let video = {"content":  event_entity.properties.video.values[i].db_value }
+                event_videos.push(video)
+            }
+        }
+
+        let event_audios = []
+        if (event_entity.properties.audio.values.length > 0) {
+            for( i=0; i < event_entity.properties.audio.values.length; i++){
+                let audio = {"content":  event_entity.properties.audio.values[i].db_value }
+                event_audios.push(audio)
+            }
+        }
 
 
         let x_ticket_info =
@@ -494,25 +529,55 @@ async function eventsToStrapi() {
             "technical_info_et": (event_entity.properties['et-technical-information'].values.length > 0 ? event_entity.properties['et-technical-information'].values[0].db_value : null),
             "technical_info_en": (event_entity.properties['en-technical-information'].values.length > 0 ? event_entity.properties['en-technical-information'].values[0].db_value : null),
             "online": (event_entity.properties.online.values.length > 0 ? event_entity.properties.online.values[0].db_value : null),
-            "video": (event_entity.properties.video.values.length > 0 ? event_entity.properties.video.values[0].db_value : null),
-            "audio": (event_entity.properties.audio.values.length > 0 ? event_entity.properties.audio.values[0].db_value : null),
+            "video": event_videos,
+            "audio": event_audios,
             "order": (event_entity.properties.ordinal.values.length > 0 ? event_entity.properties.ordinal.values[0].db_value : null),
+            // "child_events": child_events,
             "id": strapi_event_id
 
         }
     })
 
-    let eventsToPost = events.filter( e => e.id === undefined)
+    // let eventsToPost = events.filter( e => e.id === undefined)
     // console.log(eventsToPost);
 
     // console.log(JSON.stringify(events, null, 4))
 
     // // PUT
-    putToStrapi(events, 'events')
+    // putToStrapi(events, 'events')
 
     // // POST
     // postToStrapi(eventsToPost, 'events')
 }
+
+function eventRemote2Strapi(remote_id) {
+    for (const event of events_from_strapi) {
+        if (event.remote_id === remote_id.toString()){
+            return event.id
+        }
+    }
+}
+
+async function eventChildRelationToStrapi(){
+    const relationJSON = yaml.safeLoad(fs.readFileSync(path.join(entuDataPath, 'entu_festivalid.yaml')))
+
+    const strapi_relations = []
+    for(let parent_remote_id in relationJSON){
+        const strapi_relation = {}
+        // console.log('siin', parent_remote_id)
+        const child_ids = relationJSON[parent_remote_id].map(child_remote_id => eventRemote2Strapi(child_remote_id))
+        // strapi_relations[eventRemote2Strapi(parent_remote_id)] = child_ids
+        strapi_relation.id = eventRemote2Strapi(parent_remote_id)
+        strapi_relation.child_events = child_ids
+        strapi_relations.push(strapi_relation)
+
+    }
+
+    putToStrapi(strapi_relations, 'events')
+    console.log({relationJSON, strapi_relations})
+}
+
+
 
 async function newsToStrapi() {
 
@@ -603,10 +668,11 @@ async function main() {
     // await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
-    await eventsToStrapi()
+    // await eventsToStrapi()
+    // await eventChildRelationToStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
-    // await articlesToStrapi()
+    await articlesToStrapi()
 
     // await fromStrapi('banner-types')
     // await fromStrapi('banners')

@@ -10,17 +10,19 @@ nav.navbar.navbar-default.navbar-fixed-top
 
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
-                li(class= self.path === `/${lang_path}festival/${self.id}/about` ? 'active' : undefined )
-                    a(href=`/${lang_path}festival/${self.id}/about`)= self.labels.nav.festival
+                - var fest_path = `/festival/${self.remote_id}`
+                - var fest_path_lang = `/${lang_path}festival/${self.remote_id}`
+                li(class= (self.path === `${fest_path}/about/` || self.path === `${fest_path_lang}/about/`) ? 'active' : undefined )
+                    a(href=`${fest_path}/about/`)= self.labels.nav.about_festival
                 if typeof festival !== 'undefined' && festival.coverage && Object.keys(festival.coverage).length
-                    li(class= self.path === `/${lang_path}festival/${self.id}/press` ? 'active' : undefined )
-                        a(href=`/${lang_path}festival/${self.id}/press`)= self.labels.nav.press
-                li(class= (self.path === `/${lang_path}festival/${self.id}/program` || self.path === `/${lang_path}festival/${self.id}`) ? 'active' : undefined )
+                    li(class= (self.path === `${fest_path}/press/` || self.path === `${fest_path_lang}/press/`) ? 'active' : undefined )
+                        a(href=`${fest_path}/press`)= self.labels.nav.press
+                li(class= (self.path === `${fest_path}/program/` || self.path === `${fest_path_lang}/program/`) ? 'active' : undefined )
                     script.
-                        console.log(`/#{lang_path}festival/#{self.id}/program`, ' - ', `#{self.path}`)
-                    a(href=`/${lang_path}festival/${self.id}/program`)= self.labels.nav.program
-                li(class= self.path === `/${lang_path}festival/${self.id}/tickets` ? 'active' : undefined )
-                    a(href=`/${lang_path}festival/${self.id}/tickets`)= self.labels.nav.tickets
+                        console.log(`/#{lang_path}festival/#{self.remote_id}/program`, ' - ', `#{self.path}`)
+                    a(href=`${fest_path}/program`)= self.labels.nav.program
+                li(class= self.path === `${fest_path}/tickets` ? 'active' : undefined )
+                    a(href=`${fest_path}/tickets`)= self.labels.nav.tickets
 
 
             ul.nav.navbar-nav.navbar-right.social

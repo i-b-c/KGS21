@@ -1,37 +1,18 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
         .row
-            #front-carousel.event-banner.carousel.slide
-                .carousel-inner(role="listbox")
-                    figure(style='background-image: url("https://saal.entu.ee/api2/file-21116"); height: 778px;')
+            .event-banner.carousel.slide(id='front-carousel')
+                .carousel-inner(role='listbox')
+                    if self.image_hero
+                        figure(style=`background-image: url('${m_api}${self.image_hero}');`)
+                    else
+                        figure(style=`background-image: url('/assets/images/placeholder.jpg');`)
+
         .row.page-margin
             section.col-md-12
-                h2 NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL
-                p
-                p
-                    strong
-                        a(href="https://docs.google.com/forms/d/e/1FAIpQLSeyUfAKnQXZkIA4BBTLhthzbxc6zXXUsUBLEOgMcvtLbR0gfQ/viewform?fbclid=IwAR3-cvNroYGhUFqtAW6jvWLFwjcZZ0aRcYYD3SR04o1LkeOiFZxS7Z5aaUI") Külastuse registreerimine SIIT
-                    br
-                    br
-                    br
-                p
-                    | Piletid eelmüügis Fientas 8/12 EUR ja kohtade olemasolul pool tundi enne algust kohapeal 10/15 EUR (ainult sularahas).
-                    br
-                    | 5 ürituse passid müügil piiratud koguses ainult eelmüügis hinnaga 35 EUR (sissepääs 5 vabalt valitud erinevale üritusele)
-                p
-                    br
-                    | Festivalile on oodatud vaid terved inimesed. Üritustel saab kohapeal osta näomaski.
-                    | Võta kaasa soodustust tõendav dokument.
-                    br
-                    strong NUP kannab maski.
-                    br
-                    | Sooduspilet kehtib õpilastele, üliõpilastele ja pensionäridele soodustust tõendava dokumendi alusel kohapeal.
-                    br
-                    | Üritused ei ole mõeldud lastele.
-                    br
-                    | Hilinejad üritustele sisse ei pääse.
-                    br
-                    | Korraldajad jätavad endile õiguse muudatuste tegemiseks.
-                p
+            h2= self[`name_${self.locale}`]
+            p
+                +markdown(self[`technical_info_${self.locale}`])

@@ -23,7 +23,7 @@ jspm_packages/
 .env
 .env.test
 
-build/*
+# build/*
 .DS_Store
 .vscode/settings.json
 data-transfer/from_entu/*.raw.json

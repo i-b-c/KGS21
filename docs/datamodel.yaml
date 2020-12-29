@@ -71,21 +71,24 @@ X_pictures: &X_pictures
     photoMedium: (text)
     photoBig: (text)
 
+MediaContent: &MediaContent
+    content: (text)
+
 # Location
 Country: &Country
-    # _path: /countries
+    _path: /countries
     slug: (UID; name_et)
     name_et: (text)
     name_en: (text)
 
 Town: &Town
-    # _path: /towns
+    _path: /towns
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
 
-Organisation:
-#     _path: /organisations
+Organisation: &Organisation
+    _path: /organisations
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
@@ -96,7 +99,7 @@ Organisation:
     address: (text)
 
 Hall: &Hall
-    # _path: /halls
+    _path: /halls
     slug: (UID, name_et)
     name_et: (text)
     name_en: (text)
@@ -111,15 +114,15 @@ Location: &Location
     name_en: (text)
     slug_et: (UID, name)
     slug_en: (UID, name)
-    description_et: (text)
-    description_en: (text)
-    floorplan: *StrapiMedia
+    permitted_capacity: (number)
     remote_id: (UID)
-
-    # hall: *Hall
-    # town: *Town
-    # country: *Country
-    # theater: *Organisation
+    hall: *Hall
+    town: *Town
+    country: *Country
+    theater: *Organisation
+    # description_et: (text)
+    # description_en: (text)
+    # floorplan: *StrapiMedia
 
 Artist:
     person:
@@ -231,8 +234,10 @@ Event: &Event # etendus
     technical_info_et: (text rich)
     technical_info_en: (text rich)
     online: (text)
-    video: (text)
-    audio: (text)
+    video:
+        - *MediaContent
+    audio:
+        - *MediaContent
     order: (number)
     location: *Location
     X_location_et: (text)
@@ -320,6 +325,7 @@ ArticleMedia: &ArticleMedia
     gallery_image_large: *StrapiMedia
     gallery_image_medium: *StrapiMedia
 
+
 Article: &Article #Echo
     _path: /articles
     title_et: (text)
@@ -338,8 +344,10 @@ Article: &Article #Echo
         - *ArticleMedia
     hide_gallery: (boolean)
     photo_article: (boolean)
-    audio: (text)
-    video: (text)
+    audio:
+        - *MediaContent
+    video:
+        - *MediaContent
     content_et: (text rich)
     content_en: (text rich)
     remote_id: (UID)

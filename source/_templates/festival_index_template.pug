@@ -1,220 +1,121 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
+
     .container-fluid
         .row
-            #front-carousel.event-banner.carousel.slide
-                .carousel-inner(role="listbox")
-                    figure(style='background-image: url("https://saal.entu.ee/api2/file-21116"); height: 777px;')
+            .event-banner.carousel.slide(id='front-carousel')
+                .carousel-inner(role='listbox')
+                    if self.image_hero
+                        figure(style=`background-image: url('${m_api}${self.image_hero}');`)
+                    else
+                        figure(style=`background-image: url('/assets/images/placeholder.jpg');`)
+
         .row.page-margin
             section.col-md-12
-                .programme.row
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 13.11.2020
-                        p 18:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6764")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Keha leidmise hääl
-                            span.artist Eglė Budvytytė, Egija Inzule, Margit Säde, Gerry Bibby, Jelena Glazova
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 13.11.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6768")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Keha leidmise hääl
-                            span.artist Egija Inzule, Margit Säde, Gerry Bibby, Jelena Glazova, Eglė Budvytytė
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 13.11.2020
-                        p 21:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6771")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Ühiste alguste hääl
-                            span.artist Nancy Nakamura Räpipunt: liina pääsuke, IRMELI, MAAKAS, Ookean; Yasmyn
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Sveta Baar
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p laupäev
-                        p 14.11.2020
-                        p 21:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6776")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Rütmis lahustumise hääl
-                            span.artist Michele Rizzo
-                            span.name NB! ETENDUS ALGAB KELL 21:30
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p pühapäev
-                        p 15.11.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6778")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Teisiku hääl
-                            span.artist Erik Bünger
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p esmaspäev
-                        p 16.11.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6780")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Viimase lootuse hääl
-                            span.artist Sveta Grigorjeva
-                            span.name TEKHNE
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p teisipäev
-                        p 17.11.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6783")
-                            h3
-                                span.subtitle
-                                    | NU Performance Festival 2020:  Hääl läbi sajandite (koostöös NAC of Vilnius Academy of Arts)
-                            span.artist Hiwa K, Egija Inzule, Vika Matuzaité
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p TASUTA / FREE ENTRANCE
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p kolmapäev
-                        p 18.11.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6785")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Mälu hääl
-                            span.artist Ana Mendes, Lina Lapelyte
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p neljapäev
-                        p 19.11.2020
-                        p 19:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6774")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Kajahääl ja jee (koostöös Serious Serious’ega)
-                            span.artist
-                                | Lolina, Serious Serious Showreel by Michaela Kisling, Till Megerle, Artjom Astrov, Practice Room with Court Rat, arxcharlaide & baribari mai, Marta & Edgar Vunsh, Ganna Bogomol jt.
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Sakala 3
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p reede
-                        p 20.11.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6788")
-                            h3
-                                span.subtitle
-                                    | NU Performance Festival 2020: Queer-feministliku nalja hääl (koostöös Feministeeriumiga)
-                            span.artist Queer womxn DJ collective, MajorDanger, James Lórien MacDonald, Querelle
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p laupäev
-                        p 21.11.2020
-                        p 14:00
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6790")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Kogukonna hääl
-                            span.name Töötuba tulevastele ja praktiseerivatele she* DJ-dele, Queer womxn DJ collective
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Sveta Baar
-                        p TASUTA / FREE ENTRANCE
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p laupäev
-                        p 21.11.2020
-                        p 18:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6792")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Sünteetilise polüfoonia hääl
-                            span.artist Doris Hallmägi, Nicolas Buzzi, Darkside, Nina Elektrichka
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
-                    .col-xs-12.col-sm-2.col-lg-2
-                        p pühapäev
-                        p 22.11.2020
-                        p 19:30
-                    .col-xs-12.col-md-6.col-lg-6
-                        a(href="/et/performance/6794")
-                            h3
-                                span.subtitle NU Performance Festival 2020: Hoole hääl
-                            span.artist
-                                | Hanna-Liisa Lavonen, Jaanika Arum, Helen Västrik, Katrin Enni, Helle Ly Tomberg, Ellen Vene, Andre Joosep Arming, Kleer Keret Tali “Värelev siinus”
-                            span.name
-                    .col-xs-6.col-md-2.col-lg-2
-                        p.location Kanuti Gildi SAAL
-                        p 8/12/35 EUR
-                        p Kohapealt: 10/15 EUR
-                    .col-xs-12.col-md-12.col-lg-12
-                        hr
+                if self.child_events
+                    .programme.row
+                        each event in self.child_events
+                            - var eventDate = new Date(event.start_time)
+                            div(id=event.remote_id type-name="event" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' performance-categories=event.peformance_categories)
+                                .col-xs-12.col-sm-2.col-lg-2
+                                    p
+                                        +dayName(event.start_time)
+                                    p
+                                        +dateFull(event.start_time)
+                                    //- Whole day event if 23:59
+                                    if `${eventDate.getHours()}:${eventDate.getMinutes()}` !=='23:59'
+                                        p
+                                            +hoursMinutes(event.start_time)
+                                    if event.canceled
+                                        p.today JÄÄB ÄRA!
+
+                                    //- Premiere
+                                    if event.performance_X_premiere_time
+                                        if event.performance_X_premiere_time === event.start_time
+                                            p.today ESIETENDUS!
+
+                                    //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
+                                    p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
+
+                                    //- Artist talk
+                                    if event.conversation
+                                        p.today ARTIST TALK!
+
+                                .col-xs-12.col-md-6.col-lg-6
+                                    a(href=`/${lang_path}performance/${event.performance_remote_id}`)
+                                        h3
+                                            if event.performance_remote_id
+                                                    if event[`performance_X_headline_${self.locale}`]
+                                                        span.subtitle= event[`performance_X_headline_${self.locale}`]
+                                            else
+                                                span= event[`name_${self.locale}`]
+                                                    if event[`X_headline_${self.locale}`]
+                                                        span.subtitle= event[`X_headline_${self.locale}`]
+
+                                        if event.performance_X_artist
+                                            span.artist= event.performance_X_artist
+
+                                        if event.performance_X_producer
+                                            span.producer= event.performance_X_producer
+
+                                        if event.performance_X_town
+                                            span.town= event.performance_X_town
+
+                                        span.name= event[`performance_name_${self.locale}`]
+
+                                        if event[`performance_subtitle_${self.locale}`]
+                                            span.subtitle= event[`performance_subtitle_${self.locale}`]
+                                    //- else
+                                    //-     //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
+                                    //-     a(href='/' + lang_path + '/event/' + event.remote_id)= event[`name_${self.locale}`]
+                                    //-         if event[`X_headline_${self.locale}`]
+                                    //-             span.subtitle= event[`X_headline_${self.locale}`]
+
+                                    //-         if event.X_artist
+                                    //-             span.artist= event.X_artist
+
+                                    //-         if event.X_producer
+                                    //-             span.producer= event.X_producer
+
+                                    //-         if event.X_town
+                                    //-             span.town= event.X_town
+
+                                    //-         span.name= event[`name_${self.locale}`]
+
+                                    //-         if event[`subtitle_${self.locale}`]
+                                    //-             span.subtitle= event[`subtitle_${self.locale}`]
+
+                                .col-xs-6.col-md-2.col-lg-2
+                                    if event[`location_${self.locale}`]
+                                        p.location= event[`location_${self.locale}`]
+
+                                    //- if op.get(p, ['saal-location', lang + '-name'])
+                                    //-     p.location= op.get(p, ['saal-location', lang + '-name'])
+
+                                    if event.X_ticket_info
+                                        if !event.X_ticket_info.price
+                                            p TASUTA
+                                        else
+                                            p= event.X_ticket_info.price
+
+                                        if event.X_ticket_info.min_price
+                                            //- if event.X_ticket_info.min_price == op.get(p, 'max-price')
+                                            //-     p= event.X_ticket_info.min_price + '€'
+                                            //- else
+                                            //-     p= event.X_ticket_info.min_price + '/' + op.get(p, 'max-price') + '€'
+
+                                        if event.X_ticket_info.onsite_price
+                                            p= 'HIND KOHAPEAL' + ': ' + event.X_ticket_info.onsite_price + '€'
+
+                                if event.X_ticket_info
+                                    if event.X_ticket_info.sales_status
+                                        .col-xs-6.col-md-2.col-lg-2.text-right
+                                            if event.canceled
+                                                a.btn.btn-primary(class="disabled") TÜHISTATUD
+                                            else
+                                                a.btn.btn-primary(class=((event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === 'free_admission') ? "free disabled" : "") href=event.X_ticket_info.ticket_api target='_blank') DYN BTN
+
+                                .col-xs-12.col-md-12.col-lg-12
+                                    hr
