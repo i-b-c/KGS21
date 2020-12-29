@@ -71,6 +71,9 @@ X_pictures: &X_pictures
     photoMedium: (text)
     photoBig: (text)
 
+MediaContent: &MediaContent
+    content: (text)
+
 # Location
 Country: &Country
     _path: /countries
@@ -231,8 +234,10 @@ Event: &Event # etendus
     technical_info_et: (text rich)
     technical_info_en: (text rich)
     online: (text)
-    video: (text)
-    audio: (text)
+    video:
+        - *MediaContent
+    audio:
+        - *MediaContent
     order: (number)
     location: *Location
     X_location_et: (text)
@@ -320,6 +325,7 @@ ArticleMedia: &ArticleMedia
     gallery_image_large: *StrapiMedia
     gallery_image_medium: *StrapiMedia
 
+
 Article: &Article #Echo
     _path: /articles
     title_et: (text)
@@ -338,8 +344,10 @@ Article: &Article #Echo
         - *ArticleMedia
     hide_gallery: (boolean)
     photo_article: (boolean)
-    audio: (text)
-    video: (text)
+    audio:
+        - *MediaContent
+    video:
+        - *MediaContent
     content_et: (text rich)
     content_en: (text rich)
     remote_id: (UID)
