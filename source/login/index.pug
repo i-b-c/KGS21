@@ -9,13 +9,13 @@ block content
             span.value-view#email(name='email')
         div.form-group
             label.login_label(for='firstName')= self.labels.login.first_name
-            span.value-view#firstName(type='text', placeholder="eesnimi" name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
+            span.value-view#firstName(name='firstName')
         div.form-group
             label.login_label(for='lastName')= self.labels.login.family_name
-            span.value-view#lastName(type='text', placeholder="perenimi" name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
+            span.value-view#lastName(name='lastName')
         div.form-group
             label.login_label(for='phoneNr')= self.labels.login.phone
-            span.value-view#phoneNr(type='tel' placeholder="telefoni number" name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
+            span.value-view#phoneNr(name='phoneNr)
 
         #user_buttons
             a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.changeProfile
