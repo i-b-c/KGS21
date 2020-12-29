@@ -4,16 +4,16 @@ block content
     //- siin sees on kõik mida kuvatakse sisseloginud kasutajale
     #logged-in-box.container-fluid
         h2= self.labels.login.userprofileTitle
-        div.form-group
+        .form-group
             label.login_label(for='email')= self.labels.login.email
             span.value-view#email(name='email')
-        div.form-group
+        .form-group
             label.login_label(for='firstName')= self.labels.login.first_name
             span.value-view#firstName(name='firstName')
-        div.form-group
+        .form-group
             label.login_label(for='lastName')= self.labels.login.family_name
             span.value-view#lastName(name='lastName')
-        div.form-group
+        .form-group
             label.login_label(for='phoneNr')= self.labels.login.phone
             span.value-view#phoneNr(name='phoneNr')
 
@@ -29,40 +29,43 @@ block content
     //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
     #not-logged-in-box
         #login-grid
-            div#provider-login
+            #provider-login
                 h2 Sisene
                 a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
                 a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
                 .form-group()
                     label(for='logEmail') email
-                    input#logEmail.form-control(type='email' placeholder="email" name='logEmail')
+                    input#logEmail.form-control(type='email' placeholder="email" name='logEmail' oninput='validateEmail(this.id)')
+                    #logEmailHelp(class='valid') viga
                 .form-group
                     label(for='logPsw') salasõna
-                    input#logPsw.form-control(type='password' placeholder="salasõna" name='logPsw')
-                a.btn.btn-primary.text-uppercase(onClick = "LoginWithEmail()") sisene parooliga
+                    input#logPsw.form-control(type='password' placeholder="salasõna" name='logPsw' oninput="validatePsw(this.id)")
+                    #logPswHelp(class='valid') viga
+                a.btn.btn-primary.text-uppercase(onClick = "validateLogin()") sisene parooliga
 
-            div#register
+            #register
                 h2 registreeri
                 a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
                 a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
                 .form-group
                     label(for='regEmail') email
                     input.reg_input#regEmail.form-control(type='email' placeholder="email" name='regEmail' autocomplete="off" oninput='validateEmail(this.id)' )
-                    div#emailHelp(class='valid') viga
+                    #regEmailHelp(class='valid') palun isesta valiidne email
                 .form-group
                     label(for='regPsw') salasõna
                     input.reg_input#regPsw.form-control(type='password', placeholder="salasõna" name='regPsw' autocomplete="new-password" oninput="validatePsw('regPsw')")
-                    div#pswHelp(class='valid') viga
+                    #regPswHelp(class='valid') salasõna peab olema vähemalt 8 tähemärki pikk
                 .form-group
                     label(for='regPswRepeat') salasõna
                     input.reg_input#regPswRepeat.form-control(type='password', placeholder="salasõna teist korda" name='regPswRepeat' autocomplete="new-password" oninput="validatePswRep('regPsw', 'regPswRepeat')")
-                    div#psw2Help(class='valid') viga
-                a.btn.btn-primary.text-uppercase(onClick = "RegisterWithEmail(), validateForm()") registreeri
+                    #regPswRepeatHelp(class='valid') salasõnad pole samasugused
+                a.btn.btn-primary.text-uppercase(onClick = "validateRegForm() ") registreeri
 
         #error-box
             p#userExists= self.labels.login.errUserAllreadyExists
             p#invalidPsw vale salasõna või email
             p#loginError sisselogimis error
+            p#userExistsProviders sellise emailiga kasutaja on olemas proovi sisse logida facebooki või google-iga
 
     style.
         .invalid {
@@ -108,7 +111,8 @@ block content
         #logged-in-box,
         #loginError,
         #userExists,
-        #invalidPsw
+        #invalidPsw,
+        #userExistsProviders
             {
             display: none;
         }

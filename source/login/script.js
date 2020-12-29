@@ -68,8 +68,23 @@ async function GetCallback(providerToCall) {
     }
 }
 
+const validateLogin = () => {
+    var errors = []
+
+    if (!validateEmail("logEmail"))errors.push('Missing or invalid email')
+    if (logPsw && !validatePsw("logPsw"))errors.push('Missing or invalid password')
+
+    // console.log(errors)
+    if (errors.length === 0) {
+        LoginWithEmail()
+        console.log("valideerimine õnnestus saadan profiili Strapisse")
+    } else {
+        console.log(errors)
+        displayError(errors)
+    }
+}
+
 const LoginWithEmail = async() => {
-    console.log("login sisse emaili ja salasõnaga")
     let email = document.getElementById("logEmail").value
     let psw = document.getElementById("logPsw").value
 
@@ -77,7 +92,6 @@ const LoginWithEmail = async() => {
         "identifier": email,
         "password": psw
     })
-    console.log("saadan body: ", body)
 
     let requestOptions = {
             'method': 'POST',
@@ -87,15 +101,7 @@ const LoginWithEmail = async() => {
             }
     }
 
-    console.log(requestOptions)
-
     let response = await (await fetch('https://a.saal.ee/auth/local', requestOptions))
-
-    if (response.status === 200) {
-        console.log("status 200 response is: ", response)
-    } else {
-        console.log("status not 200 response is: ", response)
-    }
 
     if (response.ok) {
         const data = await response.json()
@@ -119,21 +125,40 @@ const LoginWithEmail = async() => {
         } catch (err) {
             console.log(err)
         }
-
-        try{
-        errors.push(errorResponse.message.detail)
-        }catch(err){
-            console.log(err)
-
-        }
-
         console.log("errors: ", errors)
         displayError(errors)
     }
 
 }
 
+const validateRegForm = () => {
+
+    var errors = []
+
+    if (!validateEmail("regEmail")) {
+        errors.push('Missing or invalid email')
+
+    }
+    if (regPsw && !validatePsw("regPsw")) {
+        errors.push('Missing or invalid password')
+    }
+
+    if (regPswRepeat && !validatePswRep("regPsw", "regPswRepeat")) {
+        errors.push('Missing or invalid password repeat')
+    }
+
+    // console.log(errors)
+    if (errors.length === 0) {
+        RegisterWithEmail()
+        console.log("valideerimine õnnestus saadan profiili Strapisse")
+    }else {
+        console.log(errors)
+        displayError(errors)
+    }
+}
+
 const RegisterWithEmail = async () => {
+
     console.log("login sisse emaili ja salasõnaga")
     let email = document.getElementById("regEmail").value
     let psw = document.getElementById("regPsw").value
@@ -154,35 +179,24 @@ const RegisterWithEmail = async () => {
     }
 
     console.log(requestOptions)
-
-
-    //siit ei saa erroreid kätte nagu postmanis
-
     let response = await (fetch('https://a.saal.ee/auth/local/register', requestOptions))
 
-    if (response.statuscode !== 200) {
+    if (response.ok) {
         const data = await response.json()
     } else {
-        let errorResponse = await response.json()
-        let errors = []
-        console.log("response ", errorResponse)
-
+        var errorResponse = await response.json()
+        var errors = []
+        console.log("response: ", errorResponse)
         try {
             for (err of errorResponse.message) {
-                for (messageId of err.messages) {
-                    errors.push(messageId.id)
+                for (message of err.messages) {
+                    errors.push(message.message)
                 }
             }
         } catch (err) {
             console.log(err)
-
         }
-        try {
-            errors.push(errorResponse.message.detail)
-        } catch (err) {
-            console.log(err)
 
-        }
         console.log("errors: ", errors)
         displayError(errors)
     }
@@ -201,6 +215,10 @@ function displayError(errArray){
             document.getElementById("invalidPsw").style.display = "block"
             console.log("error oli: ", err)
         break
+        case "Email is already taken. Providers.":
+            document.getElementById("userExistsProviders").style.display = "block"
+            console.log("error oli: ", err)
+        break
         case undefined:
             console.log("defineerimata: ", err)
         break
@@ -210,7 +228,7 @@ function displayError(errArray){
         }
     }
 }
-
+//"Missing or invalid email"
 //Auth.advanced.allow_register => Register action is actualy not available.
 //Auth.form.error.email.taken => Email is already taken.
 if (localStorage.getItem("provider")) {
@@ -232,25 +250,8 @@ function showUserInfo() {
     document.getElementById("not-logged-in-box").style.display = "none"
 }
 
-function validateForm() {
-
-    var errors = []
-
-    if (!validateEmail("email")) {
-        errors.push('Missing or invalid email')
-
-    }
-    if (regPsw && !validatePsw("regPsw")) {
-        errors.push('Missing or invalid password')
-    }
-
-    if (regPswRepeat && !validatePswRep("regPsw", "regPswRepeat")) {
-        errors.push('Missing or invalid password repeat')
-    }
 
 
-    // console.log(errors)
-    if (errors.length === 0) {
-        sendNewUser()
-    }
-}
+
+
+
