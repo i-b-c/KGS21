@@ -232,3 +232,25 @@ function showUserInfo() {
     document.getElementById("not-logged-in-box").style.display = "none"
 }
 
+function validateForm() {
+
+    var errors = []
+
+    if (!validateEmail("email")) {
+        errors.push('Missing or invalid email')
+
+    }
+    if (regPsw && !validatePsw("regPsw")) {
+        errors.push('Missing or invalid password')
+    }
+
+    if (regPswRepeat && !validatePswRep("regPsw", "regPswRepeat")) {
+        errors.push('Missing or invalid password repeat')
+    }
+
+
+    // console.log(errors)
+    if (errors.length === 0) {
+        sendNewUser()
+    }
+}
