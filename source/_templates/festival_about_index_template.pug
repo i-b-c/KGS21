@@ -22,10 +22,12 @@ block content
                     .video-sound
                         if self.audio
                             //- h2= t('title.sound')
-                            div!= self.audio
+                            each audio in self.audio
+                                div!= audio.content
                         if self.video
                             //- h2= t('title.video')
-                            div!= self.video
+                            each video in self.video
+                                div!= video.content
 
                 p
                     +markdown(self[`description_${self.locale}`])

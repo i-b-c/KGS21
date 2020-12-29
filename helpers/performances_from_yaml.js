@@ -33,10 +33,10 @@ for (const lang of LANGUAGES) {
 
         if (performance.remote_id) {
 
-            if (lang !== 'et') {
-                performance.path = `performance/${performance.remote_id}`
-            } else {
-                performance.path = `${lang}/performance/${performance.remote_id}`
+            performance.path = `performance/${performance.remote_id}`
+
+            if (lang === 'et') {
+                performance.aliases = [`et/performance/${performance.remote_id}`]
             }
 
 
