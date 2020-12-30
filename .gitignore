@@ -24,12 +24,9 @@ jspm_packages/
 .env.test
 
 build/*
-login/*
-
 .DS_Store
 .vscode/settings.json
 data-transfer/from_entu/*.raw.json
 
 # dynamic data
 source/_fetchdir/*
-source/login/userProfile.json
