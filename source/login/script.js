@@ -107,6 +107,7 @@ const LoginWithEmail = async() => {
         const data = await response.json()
         localStorage.setItem("ACCESS_TOKEN", data.jwt)
         localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
+        localStorage.setItem("initials", makeInitials(data.user))
         document.dispatchEvent(userProfileLoadedEvent)
         if (userProfile.blocked || !userProfile.confirmed) {
             accountStatus = false
@@ -204,7 +205,38 @@ const RegisterWithEmail = async () => {
 
 }
 
-const ResetPassword = async () => {
+const ShowPswReset = () => {
+    //alguses nähtaval
+    document.getElementById("logPsw").classList.toggle("hidden")
+    document.getElementById("sign-in-button").classList.toggle("hidden")
+    document.getElementById("to-reset-psw").classList.toggle("hidden")
+    document.getElementById("pswLabel").classList.toggle("hidden")
+    //alguses peidus
+    document.getElementById("psw-reset-button").classList.toggle("hidden")
+    document.getElementById("back-to-login").classList.toggle("hidden")
+
+}
+
+const validatePswResetForm = () => {
+
+    var errors = []
+
+    if (!validateEmail("logEmail")) {
+        errors.push('Missing or invalid email')
+
+    }
+
+    // console.log(errors)
+    if (errors.length === 0) {
+        SendPswResetLink()
+        console.log("valideerimine õnnestus saadan päringu Strapisse")
+    }else {
+        console.log(errors)
+        displayError(errors)
+    }
+}
+
+const SendPswResetLink = async () => {
     console.log("lähtestan parooli")
     let email = document.getElementById("logEmail").value
 
@@ -227,6 +259,7 @@ const ResetPassword = async () => {
         const data = await response.json()
         console.log(data)
         console.log("email saadetud")
+        document.getElementById("resetLinkSent").style.display = "block"
     } else {
         var errorResponse = await response.json()
         var errors = []
@@ -260,6 +293,14 @@ function displayError(errArray){
         break
         case "Email is already taken. Providers.":
             document.getElementById("userExistsProviders").style.display = "block"
+            console.log("error oli: ", err)
+        break
+        case "Missing or invalid password":
+            document.getElementById("invalidPsw").style.display = "block"
+            console.log("error oli: ", err)
+        break
+        case "Missing or invalid email":
+            document.getElementById("invalidEmail").style.display = "block"
             console.log("error oli: ", err)
         break
         case undefined:
