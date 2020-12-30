@@ -18,6 +18,7 @@ const strapiDataPath = path.join(__dirname, '..', 'data-transfer', 'from_strapi'
 const performances_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'performances.yaml')))
 const articles_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'articles.yaml')))
 const events_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'events.yaml')))
+const coverages_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiDataPath, 'coverages.yaml')))
 
 const performancePicsJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'performance.pics.json'), 'utf-8'))
 const echoPicsJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'echo.pics.json'), 'utf-8'))
@@ -301,9 +302,54 @@ async function performance_logos_and_riders_from_entu(){
             perfJSON.push(perf)
         }
     }
-    putToStrapi(perfJSON, 'performances')
+    // putToStrapi(perfJSON, 'performances')
 }
 
+async function coverage_media_to_strapi() {
+    let dataJSON = path.join(entuDataPath, 'coverage.json')
+    let coverageJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+
+    let get_strapi_coverages = coverageJSON.map( e_coverage => {
+        let coverage = coverages_from_strapi.filter( s_coverage => {
+            // console.log('S', s_coverage.remote_id, 'E', e_coverage.id)
+            return s_coverage.remote_id === e_coverage.id.toString()
+        }).map( e => e.id)
+        e_coverage.strapi_id = coverage
+    })
+
+    for (const coverage of coverageJSON) {
+        // console.log(coverage.properties.photo.values)
+        coverage.media = []
+        for (const prop of coverage.properties.photo.values) {
+            // console.log(prop)
+            await sendPic(prop)
+        }
+
+        for (const value of coverage.properties.photo.values) {
+            // console.log(value);
+            coverage.media.push(value.id)
+        }
+        coverage.id = coverage.strapi_id
+
+        delete coverage.displaypicture
+        delete coverage.displayname
+        delete coverage.properties
+        delete coverage.strapi_id
+        delete coverage.childs
+
+    }
+
+    let coverage_JSON = []
+    for (const coverage of coverageJSON) {
+        if (coverage.media.length > 0) {
+            coverage_JSON.push(coverage)
+        }
+    }
+    console.log(JSON.stringify(coverage_JSON, 0, 2))
+
+    putToStrapi(coverage_JSON, 'coverages')
+
+}
 
 // EVENT PIC TO STRAPI enam ei kasuta??
 async function event_pic_and_relation_to_strapi() {
@@ -357,6 +403,7 @@ async function main() {
     // await send_pic_and_create_relation_events()
 
     // await performance_logos_and_riders_from_entu()
+    // await coverage_media_to_strapi()
 
     // await delete_media_relation_performances()
     // await delete_media_relation_articles()

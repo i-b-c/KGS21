@@ -196,7 +196,7 @@ Coverage: &Coverage
     media:
         - *StrapiMedia
     content: (text rich)
-    date_published: (datetime)
+    publish_date: (datetime)
 
 #Event
 TicketInfo: &TicketInfo
