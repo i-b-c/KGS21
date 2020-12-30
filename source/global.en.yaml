@@ -142,32 +142,46 @@ labels:
         '5': Friday
         '6': Saturday
     login:
-        log_out: log out
+        log_out: sign out
         get_me: get me
-        email: email address
         first_name: first name
         family_name: family name
         dob: date of birth
         phone: phone number
         save: save
-        errUserAllreadyExists: >-
-            This email has already been registered in our system. Please try
-            logging in with a different provider. 
-        firstNameHelp: First name should consist of at least 2 characters
-        lastNameHelp: Last name should consist of at least 2 characters
-        phoneNumHelp: >-
+        first_name_help: First name should consist of at least 2 characters
+        last_name_help: Last name should consist of at least 2 characters
+        phone_num_help: >-
             Phone number can consist of numbers, a "+" in the beginning and
             should be 7-15 characters long
-        passwordHelp: The password must be at least 8 characters long
-        password2Help: The password must be identical to the one entered above
-        userprofileTitle: Your data
-        dataSaved: Data saved
-        changeProfile: Change profile
-        noFavorites: You have not saved any favorites
-        noTickets: You have no saved tickets
+        userprofile_title: Your data
+        change_profile: Change profile
+        data_saved: Data saved
         favorites: Favorites
+        no_favorites: You have not saved any favorites
         tickets: Your tickets
+        no_tickets: You have no saved tickets
+        email: email address
+        email_not_correct: Please enter valid email
+        sign_in_title: Sign in to your account
+        sign_in: Sign in
+        sign_up_title: Sign up for an account
+        sign_up: Sign_up
         psw: password
+        psw_repeat: repeat password
+        psw_reset: reset password
+        psw_help: Password should be at least 8 characters long
+        psw_repeat_help: The password must be identical to the one entered above
+        providers_list: Your authentication providers
+        err_email_used: >-
+            This email has already been registered in our system. Please try
+            logging in with a different provider. 
+        err_psw_email_not_correct: Email or password is not correct
+        err_email_used_providers: >-
+            User with this email allready exists. Try signing in with Google or
+            Facebook.
+        err_login_problem: Sign in error
+        err_profile_not_saved: Saving your profile failed
     nav:
         about: About Us
         about_festival: About

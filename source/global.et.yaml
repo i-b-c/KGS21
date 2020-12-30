@@ -146,30 +146,44 @@ labels:
     login:
         log_out: logi välja
         get_me: päri mind
-        email: e-posti aadress
         first_name: eesnimi
         family_name: perenimi
         dob: sünnikuupäev
         phone: telefoni number
         save: salvesta
-        errUserAllreadyExists: >-
-            Sellise emailiga kasutaja on meie andmebaasis juba olemas proovi
-            mõne teise viisiga sisse logida.
-        firstNameHelp: Eesnimi nimi peab koosnema vähemalt 2-st tähemärgist
-        lastNameHelp: Perekonna nimi peab koosnema vähemalt 2-st tähemärgist
-        phoneNumHelp: >-
+        first_name_help: Eesnimi nimi peab koosnema vähemalt 2-st tähemärgist
+        last_name_help: Perekonna nimi peab koosnema vähemalt 2-st tähemärgist
+        phone_num_help: >-
             Telefoni number koosneda numbritest,  "+" märgist alguses ja võib 
             olla 7-15 kohaline
-        passwordHelp: Salasõna peab olema vähemalt 8 tähemärki pikk
-        password2Help: Salasõna peab olema identne üleval sisestatule
-        userprofileTitle: Sinu andmed
-        dataSaved: Andmed salvestatud
-        changeProfile: Muuda andmeid
-        noFavorites: Sa ei ole veel ühtegi lemmikut salvestanud
-        noTickets: Sul pole salvestatud pileteid
+        userprofile_title: Sinu andmed
+        change_profile: Muuda andmeid
+        data_saved: Andmed salvestatud
         favorites: Sinu lemmikud
+        no_favorites: Sa ei ole veel ühtegi lemmikut salvestanud
         tickets: Sinu piletid
+        no_tickets: Sul pole salvestatud pileteid
+        email: e-posti aadress
+        email_not_correct: Palun sisesta korrektne email
+        sign_in_title: Sisene oma kontole
+        sign_in: Sisene
+        sign_up_title: Registreeri kasutajaks
+        sign_up: Registreeri
         psw: salasõna
+        psw_repeat: salasõna teist korda
+        psw_reset: lähtesta parool
+        psw_help: Salasõna peab olema vähemalt 8 tähemärki pikk
+        psw_repeat_help: Salasõna peab olema identne üleval sisestatule
+        providers_list: Sinu autentimis viisid
+        err_email_used: >-
+            Sellise emailiga kasutaja on meie andmebaasis juba olemas proovi
+            mõne teise viisiga sisse logida.
+        err_psw_email_not_correct: Email või salasõna pole õige
+        err_email_used_providers: >-
+            Selle emailiga kasutaja on meie andmebaasis olemas. Proovi sisse
+            ogida Google-i või Facebook-iga.
+        err_login_problem: Viga sisse logimisel
+        err_profile_not_saved: Profiili salvestamine ebaõnnestus
     nav:
         about: Meist
         about_festival: Festivalist
