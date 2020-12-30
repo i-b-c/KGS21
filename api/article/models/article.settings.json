@@ -74,12 +74,12 @@
     "X_location_en": {
       "type": "string"
     },
-    "audio": {
+    "audios": {
       "type": "component",
       "repeatable": true,
       "component": "media.media-content"
     },
-    "video": {
+    "videos": {
       "type": "component",
       "repeatable": true,
       "component": "media.media-content"

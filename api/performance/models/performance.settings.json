@@ -132,6 +132,10 @@
     },
     "X_premiere_time": {
       "type": "datetime"
+    },
+    "coverages": {
+      "via": "performance",
+      "collection": "coverage"
     }
   }
 }

@@ -117,18 +117,22 @@
     "X_location_en": {
       "type": "text"
     },
-    "video": {
+    "videos": {
       "type": "component",
       "repeatable": true,
       "component": "media.media-content"
     },
-    "audio": {
+    "audios": {
       "type": "component",
       "repeatable": true,
       "component": "media.media-content"
     },
     "categories": {
       "collection": "category"
+    },
+    "coverages": {
+      "via": "event",
+      "collection": "coverage"
     }
   }
 }
