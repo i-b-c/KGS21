@@ -279,14 +279,14 @@ async function coveragesToStrapi() {
             "source": (coverage_entity.properties.source.values.length > 0 ? coverage_entity.properties.source.values[0].db_value : null),
             "url": (coverage_entity.properties.url.values.length > 0 ? coverage_entity.properties.url.values[0].db_value : null),
             "content": (coverage_entity.properties.text.values.length > 0 ? coverage_entity.properties.text.values[0].db_value : null),
-            "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null),
+            "publish_date": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null),
             "id": starpi_coverage_id
         }
     })
-    // console.log(coverages);
+    // console.log(coverages)
 
     // PUT
-    postToStrapi(coverages, 'coverages')
+    putToStrapi(coverages, 'coverages')
 
     // postToStrapi(coverages, 'coverages')
 }
@@ -678,7 +678,7 @@ async function main() {
     // await categoriesToStrapi()
     // await personToStrapi()
     // await performanceToStrapi()
-    // await coveragesToStrapi()
+    await coveragesToStrapi()
     // await locationToStrapi()
     // await eventsToStrapi()
     // await eventChildRelationToStrapi()
