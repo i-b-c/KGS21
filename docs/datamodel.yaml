@@ -182,6 +182,22 @@ Category: &Category # category loeng, tants, teater, prformance, video, n4itus
     featured_on_front_page: (boolean)
     remote_id: (UID)
 
+#Coverage
+Coverage: &Coverage
+    _path: /coverages
+    remote_id: (UID)
+    title: (text)
+    slug: (UID, title)
+    language: (enumeration)
+    # performance: *Performance # kehepidine seos, meie kysime teisest otsast
+    # event: *Event # kehepidine seos, meie kysime teisest otsast
+    source: (text)
+    url: (text)
+    media:
+        - *StrapiMedia
+    content: (text rich)
+    date_published: (datetime)
+
 #Event
 TicketInfo: &TicketInfo
     # _path: /ticket-infos
@@ -213,7 +229,7 @@ Event: &Event # etendus
     subtitle_et: (text)
     subtitle_en: (text)
     resident: (text) # tegemist residentuuriga
-    # performance: *Performance
+    # performance: *Performance # kehepidine seos, meie kysime teisest otsast
     hide_from_page: (boolean)
     canceled: (boolean)
     conversation: (boolean) # peaks olema suurem ? inimene ka kohe kaasa kogu infoga? mida siin m6eldud, vestlus enne etendust?
@@ -236,9 +252,9 @@ Event: &Event # etendus
     technical_info_et: (text rich)
     technical_info_en: (text rich)
     online: (text)
-    video:
+    videos:
         - *MediaContent
-    audio:
+    audios:
         - *MediaContent
     order: (number)
     location: *Location
@@ -249,8 +265,9 @@ Event: &Event # etendus
     remote_id: (UID)
     parent_event: (object) #relation to event
     child_events:
-        - (id)
-        # repeatable relation to event
+        - (id) # repeatable relation to event
+    coverages:
+        - *Coverage
 
 
 #Performance
@@ -274,7 +291,6 @@ Performance: &Performance # performance #lavastus
     coproduction: (boolean)
     coproduction_importance: (number)
     front_page_promotion: (boolean)
-
     purchase_description_et: (text)
     purchase_description_en: (text)
     premiere: (datetime)
@@ -304,6 +320,8 @@ Performance: &Performance # performance #lavastus
     remote_id: (UID)
     X_pictures: *X_pictures
     X_premiere_time: (datetime)
+    coverages:
+        - *Coverage
 
 #News and Article
 Newscast: &Newscast
@@ -346,9 +364,9 @@ Article: &Article #Echo
         - *ArticleMedia
     hide_gallery: (boolean)
     photo_article: (boolean)
-    audio:
+    audios:
         - *MediaContent
-    video:
+    videos:
         - *MediaContent
     content_et: (text rich)
     content_en: (text rich)
@@ -356,19 +374,6 @@ Article: &Article #Echo
     X_pictures: *X_pictures
 
 
-Coverage: &Coverage
-    _path: /coverages
-    remote_id: (UID)
-    title: (text)
-    slug: (UID, title)
-    language: (enumeration)
-    performance: *Performance
-    source: (text)
-    url: (text)
-    media:
-        - *StrapiMedia
-    content: (text rich)
-    date_published: (datetime)
 
 Label: &Label
     name: (text)
