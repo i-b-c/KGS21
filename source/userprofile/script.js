@@ -13,6 +13,8 @@ function fillUserForm() {
         if (userProfile.firstName) firstName.value = userProfile.firstName
         if (userProfile.lastName) lastName.value = userProfile.lastName
         if (userProfile.phoneNumber) phoneNr.value = userProfile.phoneNumber
+        if (userProfile.provider.includes('google')) google.style.display = ''
+        if (userProfile.provider.includes('facebook')) facebook.style.display = ''
     } catch (err) {
         console.log(err)
     }
@@ -127,6 +129,27 @@ window.addEventListener("keydown", function (event) {
         validateForm()
     }
 })
+
+displayRemoveBtn = button => {
+    button.style.display = 'none'
+    const removeBtnId = 'remove_' + button.id
+    document.getElementById(removeBtnId).style.display = ''
+}
+
+
+displayProviderBtn = button => {
+    console.log(button.style.display);
+    button.style.display = 'none'
+    const providerBtnId = button.id.split('_')[1]
+    document.getElementById(providerBtnId).style.display = ''
+}
+
+redirectToProvider = provider => {
+    removeProviderWarning.style.display = ''
+    // if(provider === 'facebook') window.open('https://www.facebook.com/index.php?next=https%3A%2F%2Fwww.facebook.com%2Fsettings%3Ftab%3Dapplications%26ref%3Dsettings')
+    // if(provider === 'facebook') window.open('https://www.facebook.com/settings?tab=applications&ref=settings')
+}
+
 
 
 

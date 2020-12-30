@@ -2,7 +2,7 @@ extends /_templates/layout.pug
 
 block content
 
-    .container-fluid
+    #profile-grid
         .form#user_profile
             h2= self.labels.login.userprofileTitle
             .form-group
@@ -24,6 +24,19 @@ block content
             p#profileSent(style = {display: 'none'})= self.labels.login.dataSaved
             p#profileNotSent(style = {display: 'none'}) profiili salvestamine ebaõnnestus
 
+        .form#user_profile
+            h2 Autentimisviisid
+            .form-group
+                label.login_label(for='email')= self.labels.login.email
+            .form-group
+                a.btn.btn-primary.text-uppercase#google(onmouseover = 'displayRemoveBtn(this)' style= {display:'none'}) google
+                a.btn.btn-primary.text-uppercase#remove_google(onmouseout = 'displayProviderBtn(this)' onClick = "redirectToProvider('google')" style= {display:'none'}) Remove provider google
+            .form-group
+                a.btn.btn-primary.text-uppercase#facebook(onmouseover = 'displayRemoveBtn(this)' style= {display:'none'}) facebook
+                a.btn.btn-primary.text-uppercase#remove_facebook(onmouseout = 'displayProviderBtn(this)' onClick = "redirectToProvider('facebook')" style= {display:'none'}) Remove provider facebook
+
+            #removeProviderWarning(style= {display:'none'}) Do you really want to delete provider? 
+
 
     style.
         .invalid {
@@ -38,4 +51,8 @@ block content
         #user_profile{
             padding: 10rem 0 10rem 10rem;
             width: 50rem;
+        }
+        #profile-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
         }

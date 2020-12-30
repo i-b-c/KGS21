@@ -33,6 +33,7 @@ async function GetCallback(providerToCall) {
     // fetch('https://a.saal.ee/auth/' + providerToCall + '/callback' + location.search, requestOptions).then(function(response) {
     if (response.ok) {
         const data = await response.json()
+        console.log(data);
         localStorage.setItem("ACCESS_TOKEN", data.jwt)
         localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
         localStorage.removeItem("provider")
@@ -286,6 +287,7 @@ function showUserInfo() {
         if (userProfile.firstName) firstName.innerHTML = userProfile.firstName
         if (userProfile.lastName) lastName.innerHTML = userProfile.lastName
         if (userProfile.phoneNumber) phoneNr.innerHTML = userProfile.phoneNumber
+        if (userProfile.provider) providers.innerHTML = beautifyProviders(userProfile.provider)
     } catch (err) {
         console.log(err)
     }
@@ -293,6 +295,14 @@ function showUserInfo() {
     document.getElementById("not-logged-in-box").style.display = "none"
 }
 
+
+const beautifyProviders = providers => {
+    providers = providers.replace(/facebook|google/gi, x => { return x.replace(/^\w/, (c) => c.toUpperCase()) })
+    providers = providers.replace(/,/g, ', ')
+    providers = providers.replace('local', 'password')
+    console.log(providers)
+    return providers
+  }
 
 
 

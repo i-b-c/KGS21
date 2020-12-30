@@ -16,6 +16,9 @@ block content
         .form-group
             label.login_label(for='phoneNr')= self.labels.login.phone
             span.value-view#phoneNr(name='phoneNr')
+        .form-group
+            label.login_label(for='providers') autentimisviisid
+            span.value-view#providers(name='providers')    
 
         #user_buttons
             a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.changeProfile
