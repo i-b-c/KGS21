@@ -4,6 +4,8 @@ language:
     et: eesti
     en: english
 labels:
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     login:
         log_out: sign out
         get_me: get me
@@ -46,6 +48,10 @@ labels:
         undefined: null
         err_login_problem: Sign in error
         err_profile_not_saved: Saving your profile failed
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     main:
         KGS: Kanuti Gildi SAAL
         KGS_logo: Kanuti Gildi SAAL logo
@@ -183,6 +189,42 @@ labels:
         '4': Thursday
         '5': Friday
         '6': Saturday
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+    login:
+        log_out: log out
+        get_me: get me
+        email: email address
+        first_name: first name
+        family_name: family name
+        dob: date of birth
+        phone: phone number
+        save: save
+        errUserAllreadyExists: >-
+            This email has already been registered in our system. Please try
+            logging in with a different provider. 
+        firstNameHelp: First name should consist of at least 2 characters
+        lastNameHelp: Last name should consist of at least 2 characters
+        phoneNumHelp: >-
+            Phone number can consist of numbers, a "+" in the beginning and
+            should be 7-15 characters long
+        passwordHelp: The password must be at least 8 characters long
+        password2Help: The password must be identical to the one entered above
+        userprofileTitle: Your data
+        dataSaved: Data saved
+        changeProfile: Change profile
+        noFavorites: You have not saved any favorites
+        noTickets: You have no saved tickets
+        favorites: Favorites
+        tickets: Your tickets
+        psw: password
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     nav:
         about: About Us
         about_festival: About
