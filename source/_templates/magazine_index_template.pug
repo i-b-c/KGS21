@@ -19,10 +19,14 @@ block content
                     if self.X_pictures && self.X_pictures.photoBig && self.X_pictures.photoBig.length
                         - bigPhotos = self.X_pictures.photoBig.split(',')
 
+                    if bigPhotos.length === 0
+                        - bigPhotos = ['/assets/images/placeholder.jpg']
+
                     - var photoActive = 0
-                    each photo, ix in bigPhotos || ['/assets/images/placeholder.jpg']
+                    each photo, ix in bigPhotos
                         .item(class=(photoActive++ === 0 ? 'active' : ''))
-                            figure(id = `slide-${ix}`, style=`background-image: url('${f_api}${photo}');`)
+                            - photo = photo === '/assets/images/placeholder.jpg' ? photo : `${f_api}${photo}`
+                            figure(id = `slide-${ix}`, style=`background-image: url('${photo}');`)
                             header.col-md-8
                                 p= self.publish_date_string
                                 h1.artist= self[`title_${self.locale}`]
@@ -50,7 +54,13 @@ block content
         .row.front-page-margin
             .col-md-12
                 .row
-                    .video-sound
+                    //- SOUND
+                    if self.audio
+                        .video-sound
+                            //- h2= t('title.sound')
+                            each audio in self.audio
+                                div!= audio
+
                     .article.main-text.h3.col-sm-12.col-md-8.col-lg-8
                         | !{self.md(self[`content_${self.locale}`])}
 
@@ -74,29 +84,36 @@ block content
                                                     a.fancybox(rel='gallery', href=`${f_api}${photo}` )
                                                         img(src=`${f_api}${photo}`, class='img-responsive')
 
-                        .video-sound
+                        //- VIDEO
+                        if self.video
+                            .video-sound
+                                if self.video.length
+                                    h2 VIDEO LABEL
+                                    each video in self.video
+                                        div!= video.content
+
                         .comments
-                            .fb-comments.fb_iframe_widget.fb_iframe_widget_fluid_desktop(data-href="https://www.saal.ee/et/magazine/4057" data-width="100%" data-numposts="10" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1664471603808404&container_width=799&height=100&href=https%3A%2F%2Fwww.saal.ee%2Fet%2Fmagazine%2F4057&locale=et_EE&numposts=10&sdk=joey&version=v2.5&width=" style="width: 100%;")
-                                span(style="vertical-align: bottom; width: 100%; height: 356px;")
-                                    iframe(name="f1c0233958b77b8" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.5/plugins/comments.php?app_id=1664471603808404&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df11696557db15ac%26domain%3Dwww.saal.ee%26origin%3Dhttps%253A%252F%252Fwww.saal.ee%252Ff7aee678acdf34%26relation%3Dparent.parent&container_width=799&height=100&href=https%3A%2F%2Fwww.saal.ee%2Fet%2Fmagazine%2F4057&locale=et_EE&numposts=10&sdk=joey&version=v2.5&width=" style="border: none; visibility: visible; width: 100%; height: 356px;")
+                            .fb-comments(data-href='', data-width="100%", data-numposts="10")
+
                             script.
                                 document.getElementsByClassName('fb-comments')[0].setAttribute('data-href', window.location.href)
+
                     - var postCount = 0
                     .col-sm-12.col-md-4.col-lg-4
                         if self.related && self.related.length
                             h2 Seotud postitused
                             each relArticle in self.related
-                                //- if postCount++ < 15
-                                a(href=`/${lang_path}${relArticle.path}`)
-                                    p= relArticle.publish_date_string
-                                    h3
-                                        span.artist= relArticle[`title_${self.locale}`]
+                                if postCount++ < 15
+                                    a(href=`/${lang_path}${relArticle.path}`)
+                                        p= relArticle.publish_date_string
+                                        h3
+                                            span.artist= relArticle[`title_${self.locale}`]
 
-                                        if relArticle[`subtitle_${self.locale}`]
-                                            span.artist= `/ ${relArticle[`subtitle_${self.locale}`]}`
-                                    if relArticle.authors_cs
-                                        span.author= relArticle.authors_cs
-                                hr
+                                            if relArticle[`subtitle_${self.locale}`]
+                                                span.artist= `/ ${relArticle[`subtitle_${self.locale}`]}`
+                                        if relArticle.authors_cs
+                                            span.author= relArticle.authors_cs
+                                    hr
                                     //- a(href="./magazine/5350")
                                     //-     p 28.03.2018
                                     //-     h3
