@@ -181,6 +181,15 @@ async function performanceToStrapi() {
             entu_premiere_time = performance_entity.properties['premiere-time'].values[0].value
         }
 
+
+        let coverage_ids = coverages_from_strapi.filter( s_coverage => {
+            let e_coverage_remote_ids = performance_entity.childs.filter( child => {
+                return child.definition_keyname === 'coverage'
+            }).map(e_coverage => e_coverage.id.toString())
+
+            return e_coverage_remote_ids.includes(s_coverage.remote_id)
+        }).map( e => e.id)
+
         starpi_performance_id = performances_from_strapi.filter(s_performance => {
             return s_performance.remote_id === performance_entity.id.toString()
         }).map(e => { return e.id })[0]
@@ -218,6 +227,7 @@ async function performanceToStrapi() {
                 "photoBig": photoBig
             },
             // "raiders":
+            "coverages": coverage_ids,
             "id": starpi_performance_id
 
         }
@@ -265,7 +275,7 @@ async function coveragesToStrapi() {
         return {
             "remote_id": coverage_id,
             "title": (coverage_entity.properties.title.values.length > 0 ? coverage_entity.properties.title.values[0].db_value : null),
-            "performance": performance_id,
+            // "performance": performance_id,
             "source": (coverage_entity.properties.source.values.length > 0 ? coverage_entity.properties.source.values[0].db_value : null),
             "url": (coverage_entity.properties.url.values.length > 0 ? coverage_entity.properties.url.values[0].db_value : null),
             "content": (coverage_entity.properties.text.values.length > 0 ? coverage_entity.properties.text.values[0].db_value : null),
@@ -428,8 +438,6 @@ async function eventsToStrapi() {
 
     let events = eventJSON.map(event_entity => {
 
-
-
         let strapi_category_ids = event_entity.properties.category.values.map(e_category => {
             let entu_id = e_category.db_value
             let strapi_categories = categories_from_strapi.filter(s_category => {
@@ -452,7 +460,6 @@ async function eventsToStrapi() {
 
         let entu_location = ((event_entity.properties['saal-location'].values.length > 0 ? event_entity.properties['saal-location'].values[0].db_value : '') === null ? "" : (event_entity.properties['saal-location'].values.length > 0 ? event_entity.properties['saal-location'].values[0].db_value : ''))
 
-        // console.log(entu_location);
         let strapi_location_id = locations_from_strapi.filter( s_location => {
             return s_location.remote_id === entu_location.toString()
 
@@ -485,6 +492,14 @@ async function eventsToStrapi() {
                 event_audios.push(audio)
             }
         }
+
+        let coverage_ids = coverages_from_strapi.filter( s_coverage => {
+            let e_coverage_remote_ids = event_entity.childs.filter( child => {
+                return child.definition_keyname === 'coverage'
+            }).map(e_coverage => e_coverage.id.toString())
+
+            return e_coverage_remote_ids.includes(s_coverage.remote_id)
+        }).map( e => e.id)
 
 
         let x_ticket_info =
@@ -528,8 +543,8 @@ async function eventsToStrapi() {
             "online": (event_entity.properties.online.values.length > 0 ? event_entity.properties.online.values[0].db_value : null),
             "video": event_videos,
             "audio": event_audios,
+            "coverages": coverage_ids,
             "order": (event_entity.properties.ordinal.values.length > 0 ? event_entity.properties.ordinal.values[0].db_value : null),
-            // "child_events": child_events,
             "id": strapi_event_id
 
         }
@@ -538,7 +553,10 @@ async function eventsToStrapi() {
     // let eventsToPost = events.filter( e => e.id === undefined)
     // console.log(eventsToPost);
 
-    // console.log(JSON.stringify(events, null, 4))
+    // for (let i = 0; i < 10; i++) {
+    //     console.log(JSON.stringify(events, null, 4))
+
+    // }
 
     // // PUT
     putToStrapi(events, 'events')
@@ -653,7 +671,6 @@ async function fromStrapi(cType, yamlName) {
     fs.writeFileSync(path.join(strapiDataPath, filename + '.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
-
 async function main() {
 
     // await bannerTypeToStrapi()
@@ -663,7 +680,7 @@ async function main() {
     // await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
-    await eventsToStrapi()
+    // await eventsToStrapi()
     // await eventChildRelationToStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
