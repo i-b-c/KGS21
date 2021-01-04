@@ -39,7 +39,7 @@ block content
                             if location.hall.floorplan
                                 ul.list-unstyled.h3
                                     li
-                                        a(href="https://saal.entu.ee/api2/file-266" target="_blank")
+                                        a(href=`https://a.saal.ee/${location.hall.floorplan.url}` target="_blank")
                                             u= location[`name_${self.locale}`]
                                         span= ' ' + location.hall[`description_${self.locale}`]
                                     //-     a(href="https://saal.entu.ee/api2/file-265" target="_blank")
