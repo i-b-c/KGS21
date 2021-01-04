@@ -66,9 +66,6 @@ for (const lang of LANGUAGES) {
             }
             if (performance.coverages) {
                 performance.coverages = performance.coverages.sort((a, b) => new Date(b.publish_date)-new Date(a.publish_date))
-                if(performance.coverages.filter(p => p.media).length > 0) {
-                    console.log('bla: ', performance.remote_id);
-                }
             }
             performance.data = { categories: `/_fetchdir/categories.${lang}.yaml`}
 
