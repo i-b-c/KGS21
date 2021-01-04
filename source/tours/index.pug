@@ -46,15 +46,15 @@ block content
                                         p
                                             +hoursMinutes(event.start_time)
                                     if event.canceled
-                                        p.today JÄÄB ÄRA!
+                                        p.today= self.labels.button.canceled
 
                                     //- Premiere
                                     if event.performance_X_premiere_time
                                         if event.performance_X_premiere_time === event.start_time
-                                            p.today ESIETENDUS!
+                                            p.today= self.labels.button.premiere
 
                                     //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
-                                    p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
+                                    p.today(id=`today-${event.remote_id}` style='display: none;')= self.labels.button.today
 
                                 .col-xs-12.col-md-6.col-lg-6
                                     h3

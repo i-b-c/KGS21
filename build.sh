@@ -45,6 +45,9 @@ node ./helpers/configuration_from_yaml.js
 echo '==== build ==== banners_from_yaml'
 node ./helpers/banners_from_yaml.js
 
+echo '==== build ==== locations_from_yaml'
+node ./helpers/locations_from_yaml.js
+
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./config.yaml full
 
