@@ -23,9 +23,7 @@ module.exports = {
     const provider = ctx.params.provider || 'local';
     const params = ctx.request.body;
     const email = params.identifier
-
-    console.log(provider);
-    console.log(params);
+    let query
 
     const store = await strapi.store({
       environment: '',
@@ -60,7 +58,11 @@ module.exports = {
         );
       }
 
-      const query = { email };
+      if (params.identifier === 'webuser') {
+        query = { provider }
+      } else {
+        query = { email }
+      }
 
       // Check if the provided identifier is an email or not.
       const isEmail = emailRegExp.test(params.identifier);
