@@ -189,5 +189,8 @@ block content
 
             .col-md-12
                 .supporter
-                    ul.list-inline
+                    if self.logos
+                        each logo in self.logos
+                            li.col-sm-12.col-md-12.col-lg-12
+                                img(src=`${m_api}${logo.url}`, class='img-responsive')
 
