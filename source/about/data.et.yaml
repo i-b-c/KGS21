@@ -4,4 +4,5 @@ data:
     newscasts: '/_fetchdir/newscasts.et.yaml'
     configurations: '/_fetchdir/configuration.en.yaml'
     banners: '/_fetchdir/banners.yaml'
+    locations: '/_fetchdir/locations.et.yaml'
 

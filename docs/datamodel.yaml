@@ -304,6 +304,10 @@ Performance: &Performance # performance #lavastus
         - *StrapiMedia
     raiders: # fail
         - *StrapiMedia
+    videos:
+        - *MediaContent
+    audios:
+        - *MediaContent
     X_headline_et: (text)
     X_headline_en: (text)
     X_artist: (text rich)

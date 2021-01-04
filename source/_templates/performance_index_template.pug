@@ -135,6 +135,17 @@ block content
         .row.front-page-margin
             .col-md-6
 
+                if self.videos
+                    .gallery
+                        h2 VIDEO LABEL
+                            each video in self.videos
+                                div!= video.content
+                if self.audios
+                    .gallery
+                        h2 AUDIO LABEL
+                            each audio in self.audios
+                                div!= audio.content
+
                 if self.X_pictures && self.X_pictures.photoGallery && self.X_pictures.photoMedium && self.X_pictures.photoGallery.length && self.X_pictures.photoMedium.length
                     .gallery
                         h2 Galerii pealkiri
@@ -145,7 +156,41 @@ block content
                                         img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
 
             .col-md-6
+                if self.coverages && self.coverages.length
+                    .press
+                        h2 PRESS LABEL
+                        .row
+                            each press in self.coverages
+                                .col-md-12
+                                    br
+                                    if press.media && press.media.length
+                                        a(target='_blank' href=`${m_api}${press.media[0].url}`)
+                                            img(src=`${m_api}${press.media[0].formats.small.url}`, width='50', style='float:left; margin-right:1em')
+                                            if press.title
+                                                p= press.title
+                                        if press.source
+                                            a(target='_blank' href=press.url)
+                                                p.source= press.source
+                                                p
+                                                    +dateFull(press.publish_date)
+                                        else
+                                            p
+                                                +dateFull(press.publish_date)
+                                    else
+                                        if press.source
+                                            a(target='_blank' href=press.url)= press.title
+                                                p.source= press.source
+                                                p
+                                                    +dateFull(press.publish_date)
+                                        else
+                                            p
+                                                +dateFull(press.publish_date)
+
+
             .col-md-12
                 .supporter
-                    ul.list-inline
+                    if self.logos
+                        each logo in self.logos
+                            li.col-sm-12.col-md-12.col-lg-12
+                                img(src=`${m_api}${logo.url}`, class='img-responsive')
 

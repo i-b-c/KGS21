@@ -2,3 +2,4 @@ data:
     newscasts: '/_fetchdir/newscasts.en.yaml'
     configurations: '/_fetchdir/configuration.en.yaml'
     banners: '/_fetchdir/banners.yaml'
+    locations: '/_fetchdir/locations.en.yaml'
