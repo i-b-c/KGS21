@@ -1,3 +1,5 @@
+let providerToRemove
+
 if(validToken){
     fillUserForm()
 }else {
@@ -138,18 +140,35 @@ displayRemoveBtn = button => {
 
 
 displayProviderBtn = button => {
-    console.log(button.style.display);
     button.style.display = 'none'
     const providerBtnId = button.id.split('_')[1]
     document.getElementById(providerBtnId).style.display = ''
 }
 
-redirectToProvider = provider => {
+redirectToProvider = (button, provider) => {
+    authProviders.style.display = 'none'
+    providerToRemove = ''
+    providerToRemove = provider
+    console.log('redirectToProvider')
+    console.log(button);
+    console.log(provider);
+    confirmDialog.innerHTML = confirmDialog.innerHTML + ` '${provider.toUpperCase()}'`
     removeProviderWarning.style.display = ''
     // if(provider === 'facebook') window.open('https://www.facebook.com/index.php?next=https%3A%2F%2Fwww.facebook.com%2Fsettings%3Ftab%3Dapplications%26ref%3Dsettings')
     // if(provider === 'facebook') window.open('https://www.facebook.com/settings?tab=applications&ref=settings')
 }
 
+openProvider = (provider) => {
+    console.log('displayFBOptions')
+    console.log(provider)
+    confirmDialog.style.display = 'none'
+    if (provider === 'Facebook')
+        window.open('https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsettings%3Ftab%3Dapplications%26ref%3Dsettings', '_blank')
+    if (provider === 'Google')
+        window.open('https://myaccount.google.com/permissions', '_blank')    
+    doneAtProvider.innerHTML = doneAtProvider.innerHTML + ` '${provider.toUpperCase()}'`
+    doneAtProvider.style.display = ''    
+}
 
 
 

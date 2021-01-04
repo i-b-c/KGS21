@@ -26,16 +26,22 @@ block content
 
         .form#user_profile
             h2 Autentimisviisid
-            .form-group
-                label.login_label(for='email')= self.labels.login.email
-            .form-group
-                a.btn.btn-primary.text-uppercase#google(onmouseover = 'displayRemoveBtn(this)' style= {display:'none'}) google
-                a.btn.btn-primary.text-uppercase#remove_google(onmouseout = 'displayProviderBtn(this)' onClick = "redirectToProvider('google')" style= {display:'none'}) Remove provider google
-            .form-group
-                a.btn.btn-primary.text-uppercase#facebook(onmouseover = 'displayRemoveBtn(this)' style= {display:'none'}) facebook
-                a.btn.btn-primary.text-uppercase#remove_facebook(onmouseout = 'displayProviderBtn(this)' onClick = "redirectToProvider('facebook')" style= {display:'none'}) Remove provider facebook
+            #authProviders
+                .form-group
+                    label.login_label(for='email')= self.labels.login.email
+                .form-group
+                    a.btn.btn-primary.text-uppercase#google(onmouseover = 'displayRemoveBtn(this)' style= {display:'none'}) google
+                    a.btn.btn-primary.text-uppercase#remove_google(onmouseout = 'displayProviderBtn(this)' onClick = "redirectToProvider(this, 'Google')" style= {display:'none'}) Remove provider google
+                .form-group
+                    a.btn.btn-primary.text-uppercase#facebook(onmouseover = 'displayRemoveBtn(this)' style= {display:'none'}) facebook
+                    a.btn.btn-primary.text-uppercase#remove_facebook(onmouseout = 'displayProviderBtn(this)' onClick = "redirectToProvider(this, 'Facebook')" style= {display:'none'}) Remove provider facebook
 
-            #removeProviderWarning(style= {display:'none'}) Do you really want to delete provider? 
+            #removeProviderWarning(style= {display:'none'}) Removing provider
+                a.btn.btn-primary#confirmDialog(onClick='openProvider(providerToRemove)') Yes, I want to remove provider 
+                a.btn.btn-primary#doneAtProvider(style= {display:'none'} onclick='window.location.reload()') I have removed app 'kgs-auth' at provider 
+
+
+    
 
 
     style.
@@ -55,4 +61,7 @@ block content
         #profile-grid{
             display: grid;
             grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        }
+        #removeProviderWarning{
+            display: grid
         }
