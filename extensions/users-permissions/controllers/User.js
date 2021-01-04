@@ -11,7 +11,7 @@ const adminUserController = require('./user/admin');
 const apiUserController = require('./user/api');
 const { sanitizeEntity } = require('strapi-utils');
 
-const sanitizeUser = user =>
+const sanitizeUser = user => 
   sanitizeEntity(user, {
     model: strapi.query('user', 'users-permissions').model,
   });
@@ -116,13 +116,11 @@ module.exports = {
    * @return {Object|Array}
    */
   async me(ctx) {
-    console.log('ctx in me ', ctx);
     const {user} = ctx.state;
 
     if (!user) {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
     }
-
     ctx.body = sanitizeUser(user);
   },
 };
