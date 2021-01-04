@@ -45,9 +45,6 @@
     },
     "theater": {
       "model": "organisation"
-    },
-    "permitted_capacity": {
-      "type": "decimal"
     }
   }
 }

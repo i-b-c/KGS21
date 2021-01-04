@@ -131,8 +131,11 @@
       "collection": "category"
     },
     "coverages": {
-      "via": "event",
-      "collection": "coverage"
+      "collection": "coverage",
+      "via": "event"
+    },
+    "permitted_capacity": {
+      "type": "decimal"
     }
   }
 }

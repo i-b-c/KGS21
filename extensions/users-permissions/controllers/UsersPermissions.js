@@ -142,6 +142,7 @@ module.exports = {
 
   async updateRole(ctx) {
     const roleID = ctx.params.role;
+    console.log(ctx);
 
     if (_.isEmpty(ctx.request.body)) {
       return ctx.badRequest(null, [{ messages: [{ id: 'Bad request' }] }]);
