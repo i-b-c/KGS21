@@ -21,11 +21,11 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        if (['6865', '6858', '6538', '5429', '5810', '6796'].includes(performance.remote_id)){
+        // if (['6865', '6858', '6538', '5429', '5810', '6796'].includes(performance.remote_id)){
 
-        } else {
-            continue
-        }
+        // } else {
+        //     continue
+        // }
 
         // let performance.category = STRAPIDATA_CATEGORIES.filter( category => {
         //     performance.remote_id === category.
