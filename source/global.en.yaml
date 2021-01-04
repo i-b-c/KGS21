@@ -145,15 +145,15 @@ labels:
         log_out: sign out
         get_me: get me
         first_name: first name
-        family_name: family name
-        dob: date of birth
-        phone: phone number
-        save: save
         first_name_help: First name should consist of at least 2 characters
+        family_name: family name
         last_name_help: Last name should consist of at least 2 characters
+        save: save
+        dob: date of birth
         phone_num_help: >-
             Phone number can consist of numbers, a "+" in the beginning and
             should be 7-15 characters long
+        phone: phone number
         userprofile_title: Your data
         change_profile: Change profile
         data_saved: Data saved
@@ -182,6 +182,8 @@ labels:
             Facebook.
         err_login_problem: Sign in error
         err_profile_not_saved: Saving your profile failed
+        psw_reset_title: Enter new password
+        forgot_psw: I forgot my password
     nav:
         about: About Us
         about_festival: About

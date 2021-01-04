@@ -147,15 +147,15 @@ labels:
         log_out: logi välja
         get_me: päri mind
         first_name: eesnimi
-        family_name: perenimi
-        dob: sünnikuupäev
-        phone: telefoni number
-        save: salvesta
         first_name_help: Eesnimi nimi peab koosnema vähemalt 2-st tähemärgist
+        family_name: perenimi
         last_name_help: Perekonna nimi peab koosnema vähemalt 2-st tähemärgist
+        save: salvesta
+        dob: sünnikuupäev
         phone_num_help: >-
             Telefoni number koosneda numbritest,  "+" märgist alguses ja võib 
             olla 7-15 kohaline
+        phone: telefoni number
         userprofile_title: Sinu andmed
         change_profile: Muuda andmeid
         data_saved: Andmed salvestatud
@@ -184,6 +184,8 @@ labels:
             ogida Google-i või Facebook-iga.
         err_login_problem: Viga sisse logimisel
         err_profile_not_saved: Profiili salvestamine ebaõnnestus
+        psw_reset_title: Sisesta uus parool
+        forgot_psw: unustasin parooli
     nav:
         about: Meist
         about_festival: Festivalist

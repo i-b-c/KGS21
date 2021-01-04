@@ -114,7 +114,6 @@ Location: &Location
     name_en: (text)
     slug_et: (UID, name)
     slug_en: (UID, name)
-    permitted_capacity: (number)
     remote_id: (UID)
     hall: *Hall
     town: *Town
@@ -258,6 +257,7 @@ Event: &Event # etendus
         - *MediaContent
     order: (number)
     location: *Location
+    permitted_capacity: (number)
     X_location_et: (text)
     X_location_en: (text)
     event_media:
