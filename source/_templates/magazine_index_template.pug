@@ -77,7 +77,7 @@ block content
 
                                     //- If more than one, make gallery
                                     if bigPhotos.length > 1
-                                        h2 GALERIII PEALKIRI
+                                        h2= self.labels.title.gallery
                                         .row
                                             each photo in bigPhotos
                                                 .single-image.col-xs-6.col-sm-3.col-md-4
@@ -87,7 +87,7 @@ block content
                         //- VIDEO
                         if self.videos
                             .video-sound
-                                h2 VIDEO LABEL
+                                h2= self.labels.title.video
                                 each video in self.videos
                                     div!= video.content
 
@@ -100,7 +100,7 @@ block content
                     - var postCount = 0
                     .col-sm-12.col-md-4.col-lg-4
                         if self.related && self.related.length
-                            h2 Seotud postitused
+                            h2= self.labels.title.related_articles
                             each relArticle in self.related
                                 if postCount++ < 15
                                     a(href=`/${lang_path}${relArticle.path}`)
@@ -198,4 +198,4 @@ block content
                                     //- hr
                             .row
                                 .col-xs-12.col-md-12
-                                    a.load-more.btn.btn-primary(href="/et/magazine/") Vaata kõiki
+                                    a.load-more.btn.btn-primary(href="/et/magazine/")= self.labels.button.view_all
