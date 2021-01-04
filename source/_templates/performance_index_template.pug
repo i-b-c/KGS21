@@ -145,6 +145,39 @@ block content
                                         img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
 
             .col-md-6
+
+            .col-md-6
+                if self.coverages && self.coverages.length
+                    .press
+                        h2 PRESS LABEL
+                        .row
+                            each press in self.coverages
+                                .col-md-12
+                                    br
+                                    if press.media && press.media.length
+                                        a(target='_blank' href=`${m_api}${press.media[0].url}`)
+                                            img(src=`${m_api}${press.media[0].formats.small.url}`, width='50', style='float:left; margin-right:1em')
+                                            if press.title
+                                                p= press.title
+                                        if press.source
+                                            a(target='_blank' href=press.url)
+                                                p.source= press.source
+                                                p
+                                                    +dateFull(press.publish_date)
+                                        else
+                                            p
+                                                +dateFull(press.publish_date)
+                                    else
+                                        if press.source
+                                            a(target='_blank' href=press.url)= press.title
+                                                p.source= press.source
+                                                p
+                                                    +dateFull(press.publish_date)
+                                        else
+                                            p
+                                                +dateFull(press.publish_date)
+
+
             .col-md-12
                 .supporter
                     ul.list-inline

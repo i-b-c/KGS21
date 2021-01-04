@@ -18,15 +18,15 @@ block content
                 h4= self[`subtitle_${self.locale}`]
 
                 //- VIDEO/SOUND
-                if self.audio || self.video
+                if self.audios || self.videos
                     .video-sound
-                        if self.audio
+                        if self.audios
                             //- h2= t('title.sound')
-                            each audio in self.audio
+                            each audio in self.audios
                                 div!= audio.content
-                        if self.video
+                        if self.videos
                             //- h2= t('title.video')
-                            each video in self.video
+                            each video in self.videos
                                 div!= video.content
 
                 p

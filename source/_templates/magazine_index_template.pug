@@ -55,10 +55,10 @@ block content
             .col-md-12
                 .row
                     //- SOUND
-                    if self.audio
+                    if self.audios
                         .video-sound
                             //- h2= t('title.sound')
-                            each audio in self.audio
+                            each audio in self.audios
                                 div!= audio
 
                     .article.main-text.h3.col-sm-12.col-md-8.col-lg-8
@@ -85,12 +85,11 @@ block content
                                                         img(src=`${f_api}${photo}`, class='img-responsive')
 
                         //- VIDEO
-                        if self.video
+                        if self.videos
                             .video-sound
-                                if self.video.length
-                                    h2 VIDEO LABEL
-                                    each video in self.video
-                                        div!= video.content
+                                h2 VIDEO LABEL
+                                each video in self.videos
+                                    div!= video.content
 
                         .comments
                             .fb-comments(data-href='', data-width="100%", data-numposts="10")
