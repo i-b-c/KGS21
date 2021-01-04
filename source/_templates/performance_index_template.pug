@@ -135,6 +135,17 @@ block content
         .row.front-page-margin
             .col-md-6
 
+                if self.videos
+                    .gallery
+                        h2 VIDEO LABEL
+                            each video in self.videos
+                                div!= video.content
+                if self.audios
+                    .gallery
+                        h2 AUDIO LABEL
+                            each audio in self.audios
+                                div!= audio.content
+
                 if self.X_pictures && self.X_pictures.photoGallery && self.X_pictures.photoMedium && self.X_pictures.photoGallery.length && self.X_pictures.photoMedium.length
                     .gallery
                         h2 Galerii pealkiri
@@ -143,8 +154,6 @@ block content
                                 .single-image.col-sm-6.col-sm-3.col-md-4
                                     a.fancybox(rel="gallery" href=`${f_api}${galPhoto}`)
                                         img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
-
-            .col-md-6
 
             .col-md-6
                 if self.coverages && self.coverages.length
