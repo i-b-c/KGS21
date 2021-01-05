@@ -57,9 +57,6 @@
     "purchase_description_et": {
       "type": "text"
     },
-    "premiere": {
-      "type": "datetime"
-    },
     "description_et": {
       "type": "richtext"
     },
@@ -89,14 +86,11 @@
     "remote_id": {
       "type": "uid"
     },
-    "artists": {
-      "collection": "person"
-    },
     "producers": {
       "collection": "person"
     },
     "X_artist": {
-      "type": "string"
+      "type": "text"
     },
     "X_producer": {
       "type": "string"
@@ -111,8 +105,8 @@
       "type": "string"
     },
     "events": {
-      "collection": "event",
-      "via": "performance"
+      "via": "performance",
+      "collection": "event"
     },
     "X_town_et": {
       "type": "string"
@@ -130,9 +124,6 @@
       "repeatable": true,
       "component": "media.performance-media"
     },
-    "X_premiere_time": {
-      "type": "datetime"
-    },
     "coverages": {
       "collection": "coverage",
       "via": "performance"
@@ -146,6 +137,16 @@
       "type": "component",
       "repeatable": true,
       "component": "media.media-content"
+    },
+    "artists": {
+      "collection": "artist",
+      "via": "performances"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "X_premiere_time": {
+      "type": "text"
     }
   }
 }

@@ -92,8 +92,8 @@
       "component": "ticket-info.x-ticket-info"
     },
     "performance": {
-      "via": "events",
-      "model": "performance"
+      "model": "performance",
+      "via": "events"
     },
     "parent_event": {
       "model": "event",
@@ -136,6 +136,9 @@
     },
     "permitted_capacity": {
       "type": "decimal"
+    },
+    "premiere": {
+      "type": "boolean"
     }
   }
 }
