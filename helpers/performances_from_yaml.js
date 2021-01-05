@@ -9,7 +9,7 @@ const performancesDir = path.join(fetchDir, 'performances')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance']
-const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
+const STRAPIDATA_LOCATIONS = STRAPIDATA['Location']
 
 const LANGUAGES = ['et', 'en']
 
@@ -21,11 +21,11 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        // if (['6865', '6858', '6538', '5429', '5810', '6796'].includes(performance.remote_id)){
+        if (['6865', '6858', '6538', '5429', '5810', '6796', '3842'].includes(performance.remote_id)){
 
-        // } else {
-        //     continue
-        // }
+        } else {
+            continue
+        }
 
         if (performance.remote_id) {
 
@@ -49,9 +49,11 @@ for (const lang of LANGUAGES) {
                 for (const event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
-                    // if (event.resident) {
-                    //     console.log(performance.id, ' - ',performance.remote_id);
-                    // }
+
+                    if (event.location) {
+                        event.location = STRAPIDATA_LOCATIONS.filter(l => l.id === event.location)[0] || null
+                    }
+
                 }
 
 

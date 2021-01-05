@@ -14,7 +14,6 @@ const calendarJsonPath = path.join(assetsDir, 'calendar_json.json')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
 
-
 const eventCalendar = {
   minDate: moment().subtract(1, 'months'),
   maxDate: moment(),
@@ -29,11 +28,11 @@ for (const event of STRAPIDATA_EVENTS) {
     eventCalendar.maxDate = event_moment
   }
 
-  const event_date = event_moment.tz('europe/tallinn').format('YYYY-MM-DD')
+  const event_date = event_moment.tz('europe/tallinn').format('YYYY-M-D')
 
   eventCalendar.events[event_date] = eventCalendar.events[event_date] || []
   eventCalendar.events[event_date].push({
-    id: event.id,
+    eid: event.id,
     tag: [event.type],
     controller: 'performance',
     name: {
@@ -47,6 +46,6 @@ for (const event of STRAPIDATA_EVENTS) {
     }
   })
 }
-eventCalendar.minDate = eventCalendar.minDate.format('YYYY-MM-DD')
-eventCalendar.maxDate = eventCalendar.maxDate.format('YYYY-MM-DD')
+eventCalendar.minDate = eventCalendar.minDate.format('YYYY-M-D')
+eventCalendar.maxDate = eventCalendar.maxDate.format('YYYY-M-D')
 fs.writeFileSync(calendarJsonPath, JSON.stringify(eventCalendar, null, 4), options = {})
