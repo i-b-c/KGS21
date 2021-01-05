@@ -18,8 +18,6 @@ nav.navbar.navbar-default.navbar-fixed-top
                     li(class= (self.path === `${fest_path}/press/` || self.path === `${fest_path_lang}/press/`) ? 'active' : undefined )
                         a(href=`${fest_path}/press`)= self.labels.nav.press
                 li(class= (self.path === `${fest_path}/program/` || self.path === `${fest_path_lang}/program/`) ? 'active' : undefined )
-                    script.
-                        console.log(`/#{lang_path}festival/#{self.remote_id}/program`, ' - ', `#{self.path}`)
                     a(href=`${fest_path}/program`)= self.labels.nav.program
                 li(class= self.path === `${fest_path}/tickets` ? 'active' : undefined )
                     a(href=`${fest_path}/tickets`)= self.labels.nav.tickets
