@@ -23,6 +23,7 @@ const coverages_from_strapi = yaml.safeLoad(fs.readFileSync(path.join(strapiData
 const performancePicsJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'performance.pics.json'), 'utf-8'))
 const echoPicsJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'echo.pics.json'), 'utf-8'))
 const eventPicsJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'event.pics.json'), 'utf-8'))
+const coverageJSON = JSON.parse(fs.readFileSync(path.join(entuDataPath, 'coverage.json'), 'utf-8'))
 
 var TOKEN = ''
 
@@ -53,38 +54,38 @@ async function sendPic(media) {
         }
     };
      console.log('ENTU PIC ID ', entuPicId);
+
     function doRequest() {
         return new Promise(function(resolve, reject) {
             request(options, async function(error, response) {
                 console.log(response.statusCode);
-                if( response.statusCode === 413){
-                    console.log('StatusCode:', response.statusCode, 'Request Entity Too Large')
-                }
-                if (error){
-                    reject(error)
+                if( response.statusCode === 200){
+                    resolve ({id: JSON.parse(response.body)[0].id, error: null})
                 } else {
-                    resolve(response.body)
+                    resolve ({id: null, error: response.statusCode})
                 }
             })
         })
     }
 
     async function GetId() {
-        try {
-            let res = await doRequest()
-            // console.log('res = ', res);
-            media.id = JSON.parse(res)[0].id
-        } catch (error) {
-            // console.log('Error: ', error);
+        for (let retry = 0; retry < 3; retry++) {
+            const res = await doRequest()
+            if (res.error) {
+                console.log('retry', retry, 'error code', res)
+                continue
+            }
+            console.log('success', res)
+            media.id = res.id
+            return
         }
-
+        throw new Error('fail')
     }
 
 
     await GetId();
 
 }
-
 
 // PERFORMANCE_MEDIA
 const getStrapiPerformanceIds = () => {
@@ -98,31 +99,28 @@ const getStrapiPerformanceIds = () => {
 
 async function send_pic_and_create_relation_performances() {
     getStrapiPerformanceIds()
-    for (const performance_medias of performancePicsJSON) {
-        const strapi_id = performance_medias.id
-        performance_medias.performance_media = performance_medias.medias
-        delete performance_medias.medias
-        for (const media of performance_medias.performance_media) {
-            for ( let i = 0; i < Object.keys(media).length; i++){
-                await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
-                // console.log(media[Object.keys(media)[i]].id)
-                if (media[Object.keys(media)[i]].id == undefined){
-                    // console.log(media[Object.keys(media)[i]])
-                    delete media[Object.keys(media)[i]]
-                    i--
+    for (const performance of performancePicsJSON) {
+        const strapi_performance_id = performance.id
+        performance.performance_media = performance.medias
+        delete performance.medias
+        for (const media of performance.performance_media) {
+            const media_versions = Object.keys(media)
+            for (const media_version of media_versions) {
+                console.log('Lisan performance', strapi_performance_id, 'juurde meedia Strapi ID')
+                await sendPic(media[media_version]) // lisab meediale strapi id
+                console.log('Lisasin performance', strapi_performance_id, 'juurde meedia Strapi ID: ', media[media_version].id)
+                if (media[media_version].id === undefined){
+                    throw new Error('shouldnt happen')
                 }
-
             }
         }
 
-        // console.log(JSON.stringify(performance_medias, 0, 4));
+
+        // console.log(JSON.stringify([performance], 0, 4))
+        putToStrapi([performance], 'performances')
     }
 
-
-    console.log(JSON.stringify(performancePicsJSON, 0, 4))
-    putToStrapi(performancePicsJSON, 'performances')
 }
-
 
 // ARTICLE_MEDIA
 const getStrapiArticleIds = () => {
@@ -141,25 +139,37 @@ async function send_pic_and_create_relation_articles() {
         const strapi_id = article_medias.id
         article_medias.article_media = article_medias.medias
         delete article_medias.medias
-        for (const media of article_medias.article_media) {
-            for ( let i = 0; i < Object.keys(media).length; i++){
-                await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
-                // console.log(media[Object.keys(media)[i]].id)
-                if (media[Object.keys(media)[i]].id == undefined){
-                    // console.log(media[Object.keys(media)[i]])
-                    delete media[Object.keys(media)[i]]
-                    i--
-                }
 
+        for (const media of article.article_media) {
+            const media_versions = Object.keys(media)
+            for (const media_version of media_versions) {
+                console.log('Lisan article', strapi_article_id, 'juurde meedia Strapi ID')
+                await sendPic(media[media_version]) // lisab meediale strapi id
+                console.log('Lisasin article', strapi_article_id, 'juurde meedia Strapi ID: ', media[media_version].id)
+                if (media[media_version].id === undefined){
+                    throw new Error('shouldnt happen')
+                }
             }
         }
 
-        // console.log(JSON.stringify(article_medias, 0, 4));
+        // for (const media of article_medias.article_media) {
+        //     for ( let i = 0; i < Object.keys(media).length; i++){
+        //         await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
+        //         // console.log(media[Object.keys(media)[i]].id)
+        //         if (media[Object.keys(media)[i]].id == undefined){
+        //             // console.log(media[Object.keys(media)[i]])
+        //             delete media[Object.keys(media)[i]]
+        //             i--
+        //         }
+
+        //     }
+        // }
+
+        // console.log(JSON.stringify([article_medias], 0, 4))
+        putToStrapi([article_medias], 'articles')
     }
 
 
-    console.log(JSON.stringify(echoPicsJSON, 0, 4))
-    putToStrapi(echoPicsJSON, 'articles')
 }
 
 
@@ -180,87 +190,23 @@ async function send_pic_and_create_relation_events() {
         const strapi_id = event_medias.id
         event_medias.event_media = event_medias.medias
         delete event_medias.medias
-        for (const media of event_medias.event_media) {
-            for ( let i = 0; i < Object.keys(media).length; i++){
-                await sendPic(media[Object.keys(media)[i]]) // lisab meediale strapi id
-                // console.log(media[Object.keys(media)[i]].id)
-                if (media[Object.keys(media)[i]].id == undefined){
-                    // console.log(media[Object.keys(media)[i]])
-                    delete media[Object.keys(media)[i]]
-                    i--
-                }
 
+        for (const media of event.event_media) {
+            const media_versions = Object.keys(media)
+            for (const media_version of media_versions) {
+                console.log('Lisan event', strapi_event_id, 'juurde meedia Strapi ID')
+                await sendPic(media[media_version]) // lisab meediale strapi id
+                console.log('Lisasin event', strapi_event_id, 'juurde meedia Strapi ID: ', media[media_version].id)
+                if (media[media_version].id === undefined){
+                    throw new Error('shouldnt happen')
+                }
             }
         }
 
-        // console.log(JSON.stringify(event_medias, 0, 4));
+        console.log(JSON.stringify(event_medias, 0, 4))
+        putToStrapi(event_medias, 'events')
     }
-
-
-    console.log(JSON.stringify(eventPicsJSON, 0, 4))
-    putToStrapi(eventPicsJSON, 'events')
 }
-
-
-// KIRJUTA STRAPI PERFORMANCE_MEDIA TYHJAKS
-async function delete_media_relation_performances() {
-    let performance = performancePicsJSON.map( perf => {
-
-        let strapi_id = performances_from_strapi.filter(s_performance => {
-            return s_performance.remote_id === perf.entu_id.toString()
-        }).map( e => e.id )
-
-        return {
-            "id": strapi_id,
-            "performance_media": [],
-            "logos": []
-        }
-
-    })
-
-    console.log(performance)
-    putToStrapi(performance, 'performances')
-
-}
-
-async function delete_media_relation_articles() {
-
-    let article = echoPicsJSON.map( e_article => {
-
-        let strapi_id = articles_from_strapi.filter(s_article => {
-            return s_article.remote_id === e_article.entu_id.toString()
-        }).map( e => e.id )
-
-        return {
-            "id": strapi_id,
-            "article_media": []
-        }
-
-    })
-
-    console.log(article)
-    putToStrapi(article, 'articles')
-}
-
-async function delete_media_relation_events() {
-
-    let event = eventPicsJSON.map( e_event => {
-
-        let strapi_id = events_from_strapi.filter(s_event => {
-            return s_event.remote_id === e_event.entu_id.toString()
-        }).map( e => e.id )
-
-        return {
-            "id": strapi_id,
-            "event_media": []
-        }
-
-    })
-
-    console.log(event)
-    putToStrapi(event, 'events')
-}
-
 
 // LOGOS TO STRAPI
 async function performance_logos_and_riders_from_entu(){
@@ -306,8 +252,7 @@ async function performance_logos_and_riders_from_entu(){
 }
 
 async function coverage_media_to_strapi() {
-    let dataJSON = path.join(entuDataPath, 'coverage.json')
-    let coverageJSON = JSON.parse(fs.readFileSync(dataJSON, 'utf-8'))
+
 
     let get_strapi_coverages = coverageJSON.map( e_coverage => {
         let coverage = coverages_from_strapi.filter( s_coverage => {
@@ -396,9 +341,86 @@ async function event_pic_and_relation_to_strapi() {
     }
 }
 
+// KIRJUTA STRAPI PERFORMANCE_MEDIA TYHJAKS
+async function delete_media_relation_performances() {
+    let performance = performancePicsJSON.map( perf => {
+
+        let strapi_id = performances_from_strapi.filter(s_performance => {
+            return s_performance.remote_id === perf.entu_id.toString()
+        }).map( e => e.id )
+
+        return {
+            "id": strapi_id,
+            "performance_media": [],
+            "logos": []
+        }
+
+    })
+
+    console.log(performance)
+    putToStrapi(performance, 'performances')
+
+}
+
+async function delete_media_relation_articles() {
+
+    let article = echoPicsJSON.map( e_article => {
+
+        let strapi_id = articles_from_strapi.filter(s_article => {
+            return s_article.remote_id === e_article.entu_id.toString()
+        }).map( e => e.id )
+
+        return {
+            "id": strapi_id,
+            "article_media": []
+        }
+
+    })
+
+    console.log(article)
+    putToStrapi(article, 'articles')
+}
+
+async function delete_media_relation_events() {
+
+    let event = eventPicsJSON.map( e_event => {
+
+        let strapi_id = events_from_strapi.filter(s_event => {
+            return s_event.remote_id === e_event.entu_id.toString()
+        }).map( e => e.id )
+
+        return {
+            "id": strapi_id,
+            "event_media": []
+        }
+
+    })
+
+    console.log(event)
+    putToStrapi(event, 'events')
+}
+
+async function delete_covetage_media_relation() {
+
+    let coverage = coverageJSON.map( e_coverage => {
+
+        let strapi_id = coverages_from_strapi.filter(s_coverage => {
+            return s_coverage.remote_id === e_coverage.entu_id.toString()
+        }).map( e => e.id )
+
+        return {
+            "id": strapi_id,
+            "media": []
+        }
+
+    })
+
+    console.log(coverage)
+    putToStrapi(coverage, 'coverages')
+}
 
 async function main() {
-    // await send_pic_and_create_relation_performances()
+    await send_pic_and_create_relation_performances()
     // await send_pic_and_create_relation_articles()
     // await send_pic_and_create_relation_events()
 
@@ -408,6 +430,7 @@ async function main() {
     // await delete_media_relation_performances()
     // await delete_media_relation_articles()
     // await delete_media_relation_events()
+    // await delete_coverage_media_relations()
 
 }
 
