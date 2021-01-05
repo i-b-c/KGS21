@@ -442,10 +442,10 @@ async function articlesToStrapi() {
     // console.log(util.inspect(articles, null, 4))
 
     // PUT
-    putToStrapi(articles, 'articles')
+    // putToStrapi(articles, 'articles')
 
     // POST
-    // postToStrapi(articlesToPost, 'articles')
+    postToStrapi(articlesToPost, 'articles')
 }
 
 async function eventsToStrapi() {
@@ -719,3 +719,4 @@ async function main() {
 }
 
 main()
+
