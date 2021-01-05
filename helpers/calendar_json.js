@@ -20,6 +20,9 @@ const eventCalendar = {
   events: {}
 }
 for (const event of STRAPIDATA_EVENTS) {
+  if(!event.start_time) {
+    continue
+  }
   const event_moment = moment(event.start_time)
   if (moment(event_moment).isBefore(eventCalendar.minDate)) {
     continue
@@ -29,7 +32,7 @@ for (const event of STRAPIDATA_EVENTS) {
   }
 
   const event_date = event_moment.tz('europe/tallinn').format('YYYY-M-D')
-
+  // console.log({'event.id': event.id, 'event.start_time': event.start_time, event_date})
   eventCalendar.events[event_date] = eventCalendar.events[event_date] || []
   eventCalendar.events[event_date].push({
     eid: event.id,
