@@ -56,6 +56,7 @@ async function sendPic(media) {
      console.log('ENTU PIC ID ', entuPicId);
 
     function doRequest() {
+        // console.log('doRequest', JSON.stringify(options, 0,2))
         return new Promise(function(resolve, reject) {
             request(options, async function(error, response) {
                 console.log(response.statusCode);
@@ -70,14 +71,17 @@ async function sendPic(media) {
 
     async function GetId() {
         for (let retry = 0; retry < 3; retry++) {
-            const res = await doRequest()
+            // console.log('try', retry)
+            let res = await doRequest()
             if (res.error) {
                 console.log('retry', retry, 'error code', res)
                 continue
             }
-            console.log('success', res)
-            media.id = res.id
-            return
+            if (res.id) {
+                console.log('success', res)
+                media.id = res.id
+                return
+            }
         }
         throw new Error('fail')
     }

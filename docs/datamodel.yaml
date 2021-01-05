@@ -141,9 +141,9 @@ Person: &Person
 Artist: &Artist
     person: *Person
     artist_name: (text)
-    portfolio: (text)
+    # portfolio: (text)
     performances:
-        - (id)
+        - (backreference)
 
 Department: &Department
     _path: /departments
@@ -221,7 +221,6 @@ Performance: &Performance # performance #lavastus
     front_page_promotion: (boolean)
     purchase_description_et: (text)
     purchase_description_en: (text)
-    premiere: (datetime)
     description_et: (text rich)
     description_en: (text rich)
     technical_info_et: (text rich)
@@ -244,7 +243,7 @@ Performance: &Performance # performance #lavastus
     X_town_et: (text)
     X_town_en: (text)
     artists:
-        - *Artist
+        - *Artist # (backreference)
     # producers:
     #     - *Person # kas alati asutus
     events:
@@ -254,6 +253,7 @@ Performance: &Performance # performance #lavastus
     X_premiere_time: (datetime)
     coverages:
         - *Coverage
+    duration: (number)
 
 #Event
 TicketInfo: &TicketInfo
@@ -326,6 +326,7 @@ Event: &Event # etendus
         - (id) # repeatable relation to event
     coverages:
         - *Coverage
+    premiere: (boolean)
 
 #News and Article
 Newscast: &Newscast
