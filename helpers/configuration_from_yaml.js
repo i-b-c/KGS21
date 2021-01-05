@@ -23,8 +23,8 @@ for (const lang of LANGUAGES) {
         const globalData = yaml.safeLoad(fs.readFileSync(globalDataPath, 'utf8'))
 
         globalData.site_colors = {
-            bg_color: STRAPIDATA_CONFIGURATION.bg_color,
-            fg_color: STRAPIDATA_CONFIGURATION.fg_color,
+            bg_color: `#${STRAPIDATA_CONFIGURATION.bg_color}`,
+            fg_color: `#${STRAPIDATA_CONFIGURATION.fg_color}`,
         }
 
         const globalDataYAML = yaml.safeDump(globalData, { 'indent': '4' });

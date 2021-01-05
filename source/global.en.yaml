@@ -189,5 +189,5 @@ labels:
         tours: On Tour
         user_menu: Me
 site_colors:
-    bg_color: 1a1919
-    fg_color: FFFF00
+    bg_color: '#1a1919'
+    fg_color: '#FFFF00'

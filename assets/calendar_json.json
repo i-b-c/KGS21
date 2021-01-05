@@ -2,225 +2,9 @@
     "minDate": "2020-12-5",
     "maxDate": "2021-1-29",
     "events": {
-        "2021-1-19": [
-            {
-                "id": 5,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-16": [
-            {
-                "id": 7,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "17:00",
-                "location": {}
-            },
-            {
-                "id": 48,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            },
-            {
-                "id": 6,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:00",
-                "location": {}
-            },
-            {
-                "id": 1862,
-                "tag": [
-                    "residency"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "00:00",
-                "location": {}
-            }
-        ],
-        "2020-12-12": [
-            {
-                "id": 8,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:00",
-                "location": {}
-            },
-            {
-                "id": 9,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "17:00",
-                "location": {}
-            }
-        ],
-        "2020-12-10": [
-            {
-                "id": 10,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:00",
-                "location": {}
-            },
-            {
-                "id": 13,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-13": [
-            {
-                "id": 11,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-11": [
-            {
-                "id": 12,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            },
-            {
-                "id": 20,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:30",
-                "location": {}
-            }
-        ],
-        "2020-12-7": [
-            {
-                "id": 14,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-5": [
-            {
-                "id": 15,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-22": [
-            {
-                "id": 43,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-21": [
-            {
-                "id": 44,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-19": [
-            {
-                "id": 45,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-18": [
-            {
-                "id": 46,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-17": [
-            {
-                "id": 47,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
         "2021-1-20": [
             {
-                "id": 4,
+                "eid": 4,
                 "tag": [
                     "program"
                 ],
@@ -232,7 +16,201 @@
         ],
         "2021-1-21": [
             {
-                "id": 3,
+                "eid": 3,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2021-1-19": [
+            {
+                "eid": 5,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-12": [
+            {
+                "eid": 8,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:00",
+                "location": {}
+            },
+            {
+                "eid": 9,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "17:00",
+                "location": {}
+            }
+        ],
+        "2020-12-11": [
+            {
+                "eid": 12,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            },
+            {
+                "eid": 20,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "16:30",
+                "location": {}
+            }
+        ],
+        "2020-12-10": [
+            {
+                "eid": 10,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:00",
+                "location": {}
+            },
+            {
+                "eid": 13,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-13": [
+            {
+                "eid": 11,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-7": [
+            {
+                "eid": 14,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-5": [
+            {
+                "eid": 15,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-19": [
+            {
+                "eid": 45,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-18": [
+            {
+                "eid": 46,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-17": [
+            {
+                "eid": 47,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-16": [
+            {
+                "eid": 48,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            },
+            {
+                "eid": 6,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:00",
+                "location": {}
+            },
+            {
+                "eid": 7,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "17:00",
+                "location": {}
+            }
+        ],
+        "2020-12-29": [
+            {
+                "eid": 208,
                 "tag": [
                     "program"
                 ],
@@ -244,166 +222,7 @@
         ],
         "2020-12-15": [
             {
-<<<<<<< HEAD
-                "eid": 6091,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "sest meid on õpetatud madusid kartma",
-                    "en": "sest meid on õpetatud madusid kartma"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2020-12-8": [
-            {
-                "eid": 5099,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-9": [
-            {
-                "eid": 5099,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-10": [
-            {
-                "eid": 6187,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-11": [
-            {
-                "eid": 6187,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-4": [
-            {
-                "eid": 6180,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6538,
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Tartu Uus Teater, Lai 37",
-                    "en": "Tartu Uus Teater, Lai 37"
-                }
-            }
-        ],
-        "2020-11-5": [
-            {
-                "eid": 6180,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6671,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6538,
-=======
-                "id": 186,
+                "eid": 186,
                 "tag": [
                     "program"
                 ],
@@ -415,7 +234,7 @@
         ],
         "2020-12-14": [
             {
-                "id": 187,
+                "eid": 187,
                 "tag": [
                     "program"
                 ],
@@ -427,19 +246,7 @@
         ],
         "2020-12-30": [
             {
-                "id": 207,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-29": [
-            {
-                "id": 208,
+                "eid": 207,
                 "tag": [
                     "program"
                 ],
@@ -451,7 +258,7 @@
         ],
         "2020-12-9": [
             {
-                "id": 184,
+                "eid": 184,
                 "tag": [
                     "program"
                 ],
@@ -463,7 +270,7 @@
         ],
         "2020-12-8": [
             {
-                "id": 185,
+                "eid": 185,
                 "tag": [
                     "program"
                 ],
@@ -473,1266 +280,21 @@
                 "location": {}
             }
         ],
-<<<<<<< HEAD
-        "2021-01-05": [
+        "2021-1-26": [
             {
-                "id": 433,
->>>>>>> ac42b165e84468a4ab25a66037d04b70f154f3dd
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-<<<<<<< HEAD
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Tartu Uus Teater, Lai 37",
-                    "en": "Tartu Uus Teater, Lai 37"
-                }
-            }
-        ],
-        "2020-11-6": [
-            {
-                "eid": 6180,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6672,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6672,
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "Asukoht määramata!",
-                    "en": "Location missing"
-                }
-            }
-        ],
-        "2020-11-7": [
-            {
-                "eid": 6180,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6673,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6375,
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Planet Alexithymia",
-                    "en": "Planet Alexithymia"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Tartu Uus Teater, Lai 37",
-                    "en": "Tartu Uus Teater, Lai 37"
-                }
-            }
-        ],
-        "2020-10-1": [
-            {
-                "eid": 6643,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6713,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kontsertsari IMPROTEST",
-                    "en": "Concert series IMPROTEST"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-4": [
-            {
-                "eid": 6646,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-10-8": [
-            {
-                "eid": 6651,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-10-9": [
-            {
-                "eid": 6652,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-10-10": [
-            {
-                "eid": 6653,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-10-11": [
-            {
-                "eid": 6654,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-10-15": [
-            {
-                "eid": 6659,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6552,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Romeo & Julia #5",
-                    "en": "Romeo & Juliet #5"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-16": [
-            {
-                "eid": 6660,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6552,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Romeo & Julia #5",
-                    "en": "Romeo & Juliet #5"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-17": [
-            {
-                "eid": 6661,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6552,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Romeo & Julia #5",
-                    "en": "Romeo & Juliet #5"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-18": [
-            {
-                "eid": 6662,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-10-22": [
-            {
-                "eid": 6663,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-10-23": [
-            {
-                "eid": 6664,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 5194,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Workshop",
-                    "en": "Workshop"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-24": [
-            {
-                "eid": 6665,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 5194,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Workshop",
-                    "en": "Workshop"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-25": [
-            {
-                "eid": 6666,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-10-31": [
-=======
-        "2021-1-29": [
->>>>>>> e05366e2ba3bc473d3d4bf64bb7198d879ffbbdf
-            {
-                "eid": 6669,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "Asukoht määramata!",
-                    "en": "Location missing"
-                }
-            },
-            {
-                "eid": 6538,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-1": [
-            {
-                "eid": 6670,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6726,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "\"In Loving Memory Of\" albumiesitluskontsert",
-                    "en": "\"In Loving Memory Of\" record presentation concert"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-8": [
-            {
-                "eid": 6674,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6699,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Stendhali sündroom",
-                    "en": "Stendhals Syndrome"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-12": [
-            {
-                "eid": 6676,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6532,
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "supersocial",
-                    "en": "supersocial"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "Fast Forward, Dresden",
-                    "en": "Fast Forward, Dresden"
-                }
-            }
-        ],
-        "2020-11-13": [
-            {
-                "eid": 6675,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6532,
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "supersocial",
-                    "en": "supersocial"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "Fast Forward, Dresden",
-                    "en": "Fast Forward, Dresden"
-                }
-            },
-            {
-                "eid": 6759,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "18:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "18:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6764,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Eglė Budvytytė, Egija Inzule, Margit Säde, Gerry Bibby, Jelena Glazova",
-                    "en": "Eglė Budvytytė, Egija Inzule, Margit Säde, Gerry Bibby, Jelena Glazova"
-                },
-                "time": "18:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6768,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Egija Inzule, Margit Säde, Gerry Bibby, Jelena Glazova, Eglė Budvytytė",
-                    "en": "Egija Inzule, Margit Säde, Gerry Bibby, Jelena Glazova, Eglė Budvytytė"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6771,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Nancy Nakamura Räpipunt: liina pääsuke, IRMELI, MAAKAS, Ookean; Yasmyn",
-                    "en": "Nancy Nakamura Räpipunt: liina pääsuke, IRMELI, MAAKAS, Ookean; Yasmyn"
-                },
-                "time": "21:00",
-                "location": {
-                    "et": "Sveta Baar",
-                    "en": "Sveta Bar"
-                }
-            }
-        ],
-        "2020-11-14": [
-            {
-                "eid": 6677,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6532,
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "supersocial",
-                    "en": "supersocial"
-                },
-                "time": "14:00",
-                "location": {
-                    "et": "Fast Forward, Dresden",
-                    "en": "Fast Forward, Dresden"
-                }
-            },
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6776,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NB! ETENDUS ALGAB KELL 21:30",
-                    "en": "NB! THE PERFORMANCE STARTS AT 21:30"
-                },
-                "time": "21:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-15": [
-            {
-                "eid": 6678,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6532,
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "supersocial",
-                    "en": "supersocial"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "Fast Forward, Dresden",
-                    "en": "Fast Forward, Dresden"
-                }
-            },
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6778,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Erik Bünger",
-                    "en": "Erik Bünger"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-13": [
-            {
-                "eid": 6699,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Stendhali sündroom",
-                    "en": "Stendhals Syndrome"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-14": [
-            {
-                "eid": 6699,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Stendhali sündroom",
-                    "en": "Stendhals Syndrome"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-9": [
-            {
-                "eid": 6699,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Stendhali sündroom",
-                    "en": "Stendhals Syndrome"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-12": [
-            {
-                "eid": 6552,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Romeo & Julia #5",
-                    "en": "Romeo & Juliet #5"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-10-27": [
-            {
-                "eid": 6538,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-=======
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 482,
+                "eid": 1865,
                 "tag": [
                     "program"
                 ],
                 "controller": "performance",
                 "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1204,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1229,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1050,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1568,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1736,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1735,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1737,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1741,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1767,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1805,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1485,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1489,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1474,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1490,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1491,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1738,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1739,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1740,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 806,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 807,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 833,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 592,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1180,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1189,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1193,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            }
-        ],
-        "2021-01-29": [
-            {
-                "id": 1863,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
                 "time": "19:30",
                 "location": {}
             }
         ],
-        "2021-01-28": [
+        "2021-1-25": [
             {
-                "id": 1864,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2021-01-26": [
-            {
-                "id": 1865,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2021-01-25": [
-            {
-                "id": 1866,
+                "eid": 1866,
                 "tag": [
                     "program"
                 ],
@@ -1744,7 +306,7 @@
         ],
         "2020-12-20": [
             {
-                "id": 1867,
+                "eid": 1867,
                 "tag": [
                     "program"
                 ],
@@ -1752,959 +314,47 @@
                 "name": {},
                 "time": "19:30",
                 "location": {}
->>>>>>> ac42b165e84468a4ab25a66037d04b70f154f3dd
+            }
+        ],
+        "2021-1-29": [
+            {
+                "eid": 1863,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2021-1-28": [
+            {
+                "eid": 1864,
+                "tag": [
+                    "program"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2021-1-1": [
+            {
+                "eid": 1862,
+                "tag": [
+                    "residency"
+                ],
+                "controller": "performance",
+                "name": {},
+                "time": "00:00",
+                "location": {}
             }
         ],
         "2020-12-28": [
             {
-<<<<<<< HEAD
-                "eid": 6538,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-16": [
-            {
-                "eid": 6180,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6871,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "Sakala 3 teatrimaja",
-                    "en": "Sakala 3 theatre house"
-                }
-            },
-            {
-                "eid": 6871,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Sakala 3 teatrimaja",
-                    "en": "Sakala 3 theatre house"
-                }
-            }
-        ],
-        "2020-12-17": [
-            {
-                "eid": 6180,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-18": [
-            {
-                "eid": 6180,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-19": [
-            {
-                "eid": 6180,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-21": [
-            {
-                "eid": 6187,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-22": [
-            {
-                "eid": 6187,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-2": [
-            {
-                "eid": 6757,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Püha Vaimu SAALi residentuuri showing",
-                    "en": "Recidency showing of Püha Vaimu SAAL"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2020-11-16": [
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6780,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "TEKHNE",
-                    "en": "TEKHNE"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-<<<<<<< HEAD
-        "2020-11-17": [
-=======
-        "2021-1-28": [
->>>>>>> e05366e2ba3bc473d3d4bf64bb7198d879ffbbdf
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6783,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Hiwa K, Egija Inzule, Vika Matuzaité",
-                    "en": "Hiwa K, Egija Inzule, Vika Matuzaité"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-<<<<<<< HEAD
-        "2020-11-18": [
-=======
-        "2021-1-26": [
->>>>>>> e05366e2ba3bc473d3d4bf64bb7198d879ffbbdf
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6785,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Ana Mendes, Lina Lapelyte",
-                    "en": "Ana Mendes, Lina Lapelyte"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-<<<<<<< HEAD
-        "2020-11-19": [
-=======
-        "2021-1-25": [
->>>>>>> e05366e2ba3bc473d3d4bf64bb7198d879ffbbdf
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6774,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Lolina, Serious Serious Showreel by Michaela Kisling, Till Megerle, Artjom Astrov, Practice Room with Court Rat, arxcharlaide & baribari mai, Marta & Edgar Vunsh, Ganna Bogomol jt.",
-                    "en": "Lolina, Serious Serious Showreel by Michaela Kisling, Till Megerle, Artjom Astrov, Practice Room with Court Rat, arxcharlaide & baribari mai, Marta & Edgar Vunsh, Ganna Bogomol jt."
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Sakala 3",
-                    "en": "Sakala 3"
-                }
-            }
-        ],
-        "2020-11-20": [
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6788,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Queer womxn DJ collective, MajorDanger, James Lórien MacDonald, Querelle",
-                    "en": "Queer womxn DJ collective, MajorDanger, James Lórien MacDonald, Querelle"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-21": [
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6790,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Töötuba tulevastele ja praktiseerivatele she* DJ-dele, Queer womxn DJ collective",
-                    "en": "Workshop for upcoming and practicing she* DJs by Queer womxn DJ collective"
-                },
-                "time": "14:00",
-                "location": {
-                    "et": "Sveta Baar",
-                    "en": "Sveta bar"
-                }
-            },
-            {
-                "eid": 6792,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Doris Hallmägi, Nicolas Buzzi, Darkside, Nina Elektrichka",
-                    "en": "Doris Hallmägi, Nicolas Buzzi, Darkside, Nina Elektrichka"
-                },
-                "time": "18:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6796,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Me sõidame ära",
-                    "en": "We are leaving"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-11-22": [
-            {
-                "eid": 6759,
-                "tag": [
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
-                },
-                "time": "",
-                "location": {
-                    "et": "Kanuti Gildi SAAL, Sveta Baar, Sakala 3",
-                    "en": "Kanuti Gildi SAAL, Sveta Bar, Sakala 3"
-                }
-            },
-            {
-                "eid": 6794,
-                "tag": [
-                    "event",
-                    "event",
-                    "festival"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Hanna-Liisa Lavonen, Jaanika Arum, Helen Västrik, Katrin Enni, Helle Ly Tomberg, Ellen Vene, Andre Joosep Arming, Kleer Keret Tali “Värelev siinus”",
-                    "en": "Hanna-Liisa Lavonen, Jaanika Arum, Helen Västrik, Katrin Enni, Helle Ly Tomberg, Ellen Vene, Andre Joosep Arming, Kleer Keret Tali “Värelev siinus”"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6796,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Me sõidame ära",
-                    "en": "We are leaving"
-                },
-                "time": "",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6796,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Me sõidame ära",
-                    "en": "We are leaving"
-                },
-                "time": "00:01",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-11-23": [
-            {
-                "eid": 6796,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Me sõidame ära",
-                    "en": "We are leaving"
-                },
-                "time": "",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6796,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Me sõidame ära",
-                    "en": "We are leaving"
-                },
-                "time": "",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6796,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Me sõidame ära",
-                    "en": "We are leaving"
-                },
-                "time": "00:01",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            }
-        ],
-        "2020-12-11": [
-            {
-                "eid": 6821,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Puuris või pilves - kas teater saab olla võrgus?",
-                    "en": "Puuris või pilves - kas teater saab olla võrgus?"
-                },
-                "time": "16:30",
-                "location": {
-                    "et": "ONLINE",
-                    "en": "ONLINE"
-                }
-            },
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-2": [
-            {
-                "eid": 6858,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6858,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-3": [
-            {
-                "eid": 6858,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6858,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-5": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-7": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-10": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": 6871,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Sakala 3 teatrimaja",
-                    "en": "Sakala 3 theatre house"
-                }
-            }
-        ],
-        "2020-12-13": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-12": [
-            {
-                "eid": 6871,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "Sakala 3 teatrimaja",
-                    "en": "Sakala 3 theatre house"
-                }
-            },
-            {
-                "eid": 6871,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Sakala 3 teatrimaja",
-                    "en": "Sakala 3 theatre house"
-                }
-            }
-        ],
-        "2021-1-19": [
-            {
-                "eid": 6538,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-1-20": [
-            {
-                "eid": 6538,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-1-21": [
-            {
-                "eid": 6538,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-4": [
-            {
-                "eid": 6894,
-                "tag": [
-                    ""
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective",
-                    "en": "Concert series IMPROTEST: SEEDS  / Improtest 15 Collective"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-20": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-1-25": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-1-26": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-1-28": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-1-29": [
-            {
-                "eid": 6865,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-=======
-                "id": 59,
+                "eid": 59,
                 "tag": [
                     "program"
                 ],
@@ -2712,7 +362,6 @@
                 "name": {},
                 "time": "19:30",
                 "location": {}
->>>>>>> ac42b165e84468a4ab25a66037d04b70f154f3dd
             }
         ]
     }
