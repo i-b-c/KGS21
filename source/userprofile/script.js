@@ -1,8 +1,8 @@
 let providerToRemove
 
-if(validToken){
+if (validToken) {
     fillUserForm()
-}else {
+} else {
     window.open(`${location.origin}/${langpath}login`, '_self')
     saveUrl()
 }
@@ -50,17 +50,17 @@ async function sendUserProfile() {
     console.log("kasutaja profiil mida saadan ", userToSend);
 
     let requestOptions = {
-            method: 'PUT',
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-                'Content-Type': "application/json"
-            },
-            body: userToSend,
-        };
+        method: 'PUT',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+            'Content-Type': "application/json"
+        },
+        body: userToSend,
+    };
 
     let response = await (await fetch('https://a.saal.ee/users/me/', requestOptions))
 
-    if (response.status === 200){
+    if (response.status === 200) {
         console.log(response)
         document.getElementById('profileSent').style.display = 'block'
         if (localStorage.getItem('url')) {
@@ -72,14 +72,14 @@ async function sendUserProfile() {
         document.getElementById('profileNotSent').style.display = 'block'
     }
 
-        // fetch(`https://a.saal.ee/users/updateme/${userProfile.id}`, requestOptions)
-        //     .then(response => response.text())
-        //     .then(result => {
-        //         console.log(result)
-        //         GetUserInfo()
-        //         location.reload()
-        //     })
-        //     .catch(error => console.log('error', error));
+    // fetch(`https://a.saal.ee/users/updateme/${userProfile.id}`, requestOptions)
+    //     .then(response => response.text())
+    //     .then(result => {
+    //         console.log(result)
+    //         GetUserInfo()
+    //         location.reload()
+    //     })
+    //     .catch(error => console.log('error', error));
 }
 
 
@@ -120,7 +120,7 @@ function validateForm() {
     if (errors.length === 0) {
         sendUserProfile()
         console.log("valideerimine õnnestus saadan profiili Strapisse")
-    }else {
+    } else {
         console.log(errors)
     }
 }
@@ -165,9 +165,41 @@ openProvider = (provider) => {
     if (provider === 'Facebook')
         window.open('https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsettings%3Ftab%3Dapplications%26ref%3Dsettings', '_blank')
     if (provider === 'Google')
-        window.open('https://myaccount.google.com/permissions', '_blank')    
+        window.open('https://myaccount.google.com/permissions', '_blank')
     doneAtProvider.innerHTML = doneAtProvider.innerHTML + ` '${provider.toUpperCase()}'`
-    doneAtProvider.style.display = ''    
+    doneAtProvider.style.display = ''
+}
+
+showAdvancedSettings = () => {
+    showAdvancedStgBtn.style.display = 'none'
+    hideAdvancedStgBtn.style.display = ''
+    advanced_settings.style.display = ''
+}
+
+hideAdvancedSettings = () => {
+    hideAdvancedStgBtn.style.display = 'none'
+    showAdvancedStgBtn.style.display = ''
+    advanced_settings.style.display = 'none'
+}
+
+deleteAccount = () => {
+
+    const token = localStorage.getItem('ACCESS_TOKEN')
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${token}`);
+
+    var requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    fetch(`https://a.saal.ee/users/me`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
 }
 
 

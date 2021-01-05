@@ -24,7 +24,7 @@ block content
             p#profileSent(style = {display: 'none'})= self.labels.login.data_saved
             p#profileNotSent(style = {display: 'none'})=self.labels.login.err_profile_not_saved
 
-        .form#user_profile
+        .form#auth_providers
             h2 Autentimisviisid
             #authProviders
                 .form-group
@@ -39,6 +39,17 @@ block content
             #removeProviderWarning(style= {display:'none'}) Removing provider
                 a.btn.btn-primary#confirmDialog(onClick='openProvider(providerToRemove)') Yes, I want to remove app 'kgs-auth' at provider 
                 a.btn.btn-primary#doneAtProvider(style= {display:'none'} onclick='window.location.reload()') I have removed app 'kgs-auth' at provider 
+
+        .form#delete_account
+            h2 Lisavalikud
+            a.btn.btn-primary.text-uppercase#showAdvancedStgBtn(onclick='showAdvancedSettings()') Näita
+            a.btn.btn-primary.text-uppercase#hideAdvancedStgBtn(onclick='hideAdvancedSettings()' style={display: 'none'}) Peida
+
+            .form#advanced_settings(style={display:'none'}) Konto kustutamine
+                a.btn.btn-primary.text-uppercase#deleteAccountBtn(onclick='deleteAccount()') Kustuta konto
+
+    
+
 
 
     
@@ -58,10 +69,21 @@ block content
             padding: 10rem 0 10rem 10rem;
             width: 50rem;
         }
+        #auth_providers{
+            padding: 10rem 0 10rem 10rem;
+            width: 50rem;
+        }
+        #delete_account{
+            padding: 10rem 0 10rem 10rem;
+            width: 50rem;
+        }
         #profile-grid{
             display: grid;
             grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
         }
         #removeProviderWarning{
             display: grid
+        }
+        #advanced_settings{
+            display: grid;
         }
