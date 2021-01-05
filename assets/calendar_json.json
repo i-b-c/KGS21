@@ -1,8 +1,8 @@
 {
-    "minDate": "2020-12-05",
-    "maxDate": "2021-01-29",
+    "minDate": "2020-12-5",
+    "maxDate": "2021-1-29",
     "events": {
-        "2021-01-19": [
+        "2021-1-19": [
             {
                 "id": 5,
                 "tag": [
@@ -134,7 +134,7 @@
                 "location": {}
             }
         ],
-        "2020-12-07": [
+        "2020-12-7": [
             {
                 "id": 14,
                 "tag": [
@@ -146,7 +146,7 @@
                 "location": {}
             }
         ],
-        "2020-12-05": [
+        "2020-12-5": [
             {
                 "id": 15,
                 "tag": [
@@ -218,7 +218,7 @@
                 "location": {}
             }
         ],
-        "2021-01-20": [
+        "2021-1-20": [
             {
                 "id": 4,
                 "tag": [
@@ -230,7 +230,7 @@
                 "location": {}
             }
         ],
-        "2021-01-21": [
+        "2021-1-21": [
             {
                 "id": 3,
                 "tag": [
@@ -290,7 +290,7 @@
                 "location": {}
             }
         ],
-        "2020-12-09": [
+        "2020-12-9": [
             {
                 "id": 184,
                 "tag": [
@@ -302,7 +302,7 @@
                 "location": {}
             }
         ],
-        "2020-12-08": [
+        "2020-12-8": [
             {
                 "id": 185,
                 "tag": [
@@ -314,279 +314,7 @@
                 "location": {}
             }
         ],
-        "2021-01-05": [
-            {
-                "id": 433,
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 482,
-                "tag": [
-                    "program"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1204,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1229,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1050,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1568,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1736,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1735,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1737,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1741,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1767,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1805,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1485,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1489,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1474,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1490,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1491,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1738,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1739,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1740,
-                "tag": [
-                    null
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 806,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 807,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 833,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 592,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1180,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1189,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            },
-            {
-                "id": 1193,
-                "tag": [
-                    "project"
-                ],
-                "controller": "performance",
-                "name": {},
-                "time": "16:17",
-                "location": {}
-            }
-        ],
-        "2021-01-29": [
+        "2021-1-29": [
             {
                 "id": 1863,
                 "tag": [
@@ -598,7 +326,7 @@
                 "location": {}
             }
         ],
-        "2021-01-28": [
+        "2021-1-28": [
             {
                 "id": 1864,
                 "tag": [
@@ -610,7 +338,7 @@
                 "location": {}
             }
         ],
-        "2021-01-26": [
+        "2021-1-26": [
             {
                 "id": 1865,
                 "tag": [
@@ -622,7 +350,7 @@
                 "location": {}
             }
         ],
-        "2021-01-25": [
+        "2021-1-25": [
             {
                 "id": 1866,
                 "tag": [

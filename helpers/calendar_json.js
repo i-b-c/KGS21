@@ -21,6 +21,9 @@ const eventCalendar = {
   events: {}
 }
 for (const event of STRAPIDATA_EVENTS) {
+  if(!event.start_time) {
+    continue
+  }
   const event_moment = moment(event.start_time)
   if (moment(event_moment).isBefore(eventCalendar.minDate)) {
     continue
@@ -29,8 +32,8 @@ for (const event of STRAPIDATA_EVENTS) {
     eventCalendar.maxDate = event_moment
   }
 
-  const event_date = event_moment.tz('europe/tallinn').format('YYYY-MM-DD')
-
+  const event_date = event_moment.tz('europe/tallinn').format('YYYY-M-D')
+  // console.log({'event.id': event.id, 'event.start_time': event.start_time, event_date})
   eventCalendar.events[event_date] = eventCalendar.events[event_date] || []
   eventCalendar.events[event_date].push({
     id: event.id,
@@ -47,6 +50,6 @@ for (const event of STRAPIDATA_EVENTS) {
     }
   })
 }
-eventCalendar.minDate = eventCalendar.minDate.format('YYYY-MM-DD')
-eventCalendar.maxDate = eventCalendar.maxDate.format('YYYY-MM-DD')
+eventCalendar.minDate = eventCalendar.minDate.format('YYYY-M-D')
+eventCalendar.maxDate = eventCalendar.maxDate.format('YYYY-M-D')
 fs.writeFileSync(calendarJsonPath, JSON.stringify(eventCalendar, null, 4), options = {})
