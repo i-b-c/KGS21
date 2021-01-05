@@ -141,9 +141,9 @@ Person: &Person
 Artist: &Artist
     person: *Person
     artist_name: (text)
-    portfolio: (text)
+    # portfolio: (text)
     performances:
-        - (id)
+        - (backreference)
 
 Department: &Department
     _path: /departments
@@ -244,7 +244,7 @@ Performance: &Performance # performance #lavastus
     X_town_et: (text)
     X_town_en: (text)
     artists:
-        - *Artist
+        - *Artist # (backreference)
     # producers:
     #     - *Person # kas alati asutus
     events:
