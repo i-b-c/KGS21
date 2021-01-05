@@ -27,10 +27,6 @@ for (const lang of LANGUAGES) {
         //     continue
         // }
 
-        // let performance.category = STRAPIDATA_CATEGORIES.filter( category => {
-        //     performance.remote_id === category.
-        // })
-
         if (performance.remote_id) {
 
             performance.path = `performance/${performance.remote_id}`
@@ -39,6 +35,14 @@ for (const lang of LANGUAGES) {
                 performance.aliases = [`et/performance/${performance.remote_id}`]
             }
 
+            if (performance[`slug_${lang}`]) {
+                let slug = performance[`slug_${lang}`]
+                if (performance.aliases) {
+                    performance.aliases.push(`et/performance/${slug}`)
+                } else {
+                    performance.aliases = [`performance/${slug}`]
+                }
+            }
 
             if (performance.events){
 
@@ -105,3 +109,4 @@ function sort_pictures(pics) {
     return JSON.parse(JSON.stringify(pics))
 
 }
+
