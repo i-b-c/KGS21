@@ -67,6 +67,12 @@ block content
                                     GradientMaps.applyGradientMap(slide#{self.remote_id}, gradientMap);
         .row.front-page-margin
             aside.col-md-12.col-lg-3
+                #direct-to-login-btn
+                    a.btn.btn-primary.text-uppercase#direct-to-login-btn(href="/login") logi sisse
+                    span=' lemmikute salvestamiseks'
+                #save-favorite-btn(style = "display: none")
+                    a.btn.btn-primary.text-uppercase(onClick = `saveToFavorites(${self.id})`) salvesta
+                    span= ' ' + 'oma lemmikuks'
                 if self[`technical_info_${self.locale}`]
                     .meta-info
                         p
@@ -144,8 +150,8 @@ block content
                                     a.fancybox(rel="gallery" href=`${f_api}${galPhoto}`)
                                         img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
 
-            .col-md-6
-            .col-md-12
+            .col-md-6.col-md-12
                 .supporter
                     ul.list-inline
+
 
