@@ -116,11 +116,17 @@ module.exports = {
    * @return {Object|Array}
    */
   async me(ctx) {
-    const {user} = ctx.state;
+    const { user } = ctx.state;
 
     if (!user) {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
     }
     ctx.body = sanitizeUser(user);
+  },
+  async destroyme(ctx) {
+    const { id } = ctx.state.user;
+    console.log(id);
+    const data = await strapi.plugins['users-permissions'].services.user.remove({ id });
+    ctx.send(sanitizeUser(data));
   },
 };
