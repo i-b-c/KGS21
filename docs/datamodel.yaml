@@ -254,6 +254,7 @@ Performance: &Performance # performance #lavastus
     X_premiere_time: (datetime)
     coverages:
         - *Coverage
+    duration: (number)
 
 #Event
 TicketInfo: &TicketInfo
