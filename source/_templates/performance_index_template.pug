@@ -75,7 +75,7 @@ block content
                                     if event.location
                                         p= event.location[`name_${self.locale}`]
                                     span(style='float:right;')
-                                        if event.X_ticket_info.sales_status
+                                        if event.X_ticket_info && event.X_ticket_info.sales_status
                                             if event.canceled === 'true'
                                                 a.btn.btn-primary(class="disabled")= 'canceled'
                                             else

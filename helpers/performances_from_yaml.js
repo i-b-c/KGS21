@@ -21,11 +21,13 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        if (['6865', '6858', '6538', '5429', '5810', '6796', '3842'].includes(performance.remote_id)){
+        // Kommenteeri sisse kui soovid ainult konkreetsete remote_id'dega performanceid ehitada
 
-        } else {
-            continue
-        }
+        // if (['6865', '6858', '6538', '5429', '5810', '6796', '3842'].includes(performance.remote_id)){
+
+        // } else {
+        //     continue
+        // }
 
         if (performance.remote_id) {
 
