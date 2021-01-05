@@ -75,6 +75,11 @@
       "type": "component",
       "repeatable": true,
       "component": "user-premissions.providers"
+    },
+    "Favorites": {
+      "type": "component",
+      "repeatable": true,
+      "component": "performance-info.favorite"
     }
   }
 }

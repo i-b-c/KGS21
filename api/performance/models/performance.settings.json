@@ -111,8 +111,8 @@
       "type": "string"
     },
     "events": {
-      "via": "performance",
-      "collection": "event"
+      "collection": "event",
+      "via": "performance"
     },
     "X_town_et": {
       "type": "string"
@@ -134,8 +134,18 @@
       "type": "datetime"
     },
     "coverages": {
-      "via": "performance",
-      "collection": "coverage"
+      "collection": "coverage",
+      "via": "performance"
+    },
+    "videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
+    },
+    "audios": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
     }
   }
 }

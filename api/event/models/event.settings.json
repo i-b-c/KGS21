@@ -92,8 +92,8 @@
       "component": "ticket-info.x-ticket-info"
     },
     "performance": {
-      "model": "performance",
-      "via": "events"
+      "via": "events",
+      "model": "performance"
     },
     "parent_event": {
       "model": "event",
