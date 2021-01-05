@@ -12,38 +12,6 @@ labels:
         season: Hooaeg
     Jon Doe:
         nimeta: Nimeta
-    NUP:
-        get-newspaper-2016-1: Loe NUP lehte!
-    button:
-        LATEST: LAT.EST
-        NUP: NU Performance Festival 2018
-        NUPprint: NU Performance ajaleht
-        artist-talk: Vestlus
-        buy_ticket: Osta pilet
-        buy_t_Free_admission: button.buy_ticket.Free_admission
-        buy_t_canceled: Jääb ära!
-        buy_t_free_admission: Tasuta
-        buy_t_free_admission/: button.buy_ticket.free_admission/
-        buy_t_future_sale: Tuleb müüki
-        buy_t_going_now: Osta pilet
-        buy_t_no_tickets: button.buy_ticket.no_tickets
-        buy_t_presale_at_boxoffices: Müügipunktist
-        buy_t_regular_presale: Osta pilet
-        buy_t_sold_ou: button.buy_ticket.sold_ou
-        buy_t_sold_out: Välja müüdud
-        canceled: Jääb ära!
-        category: Kategooria
-        festival: SAAL Biennaal 2017
-        load-more: Lae veel
-        on_tour: Tuuril
-        premiere: Esietendus!
-        saalbiennaal: SAAL Biennaal 2017
-        search: Otsi
-        today: Täna!
-        view-all: Vaata kõiki
-        volunteer: Tule vabatahtlikuks!
-        covid_info: Koroona meelespea
-        year: Aasta
     categories:
         dance: Tants
         film: Video
@@ -52,14 +20,6 @@ labels:
         new-circus: Uus Tsirkus
         performance: Performance
         theatre: Teater
-    error:
-        Not Found: >-
-            Seda lehte pole veel valmis tehtud või siis on heaks arvatud ta
-            kustutada.
-        cache_missing_residency_past: Laadin andmeid. Minuti pärast peaks valmis olema
-        cache_missing_upcoming_events: Tulevasi sündmusi pole
-        cache_missing_upcoming_tours: Laadin andmeid. Minuti pärast peaks valmis olema
-        program_upcoming is not defined: Laadin andmeid. Minuti pärast peaks valmis olema
     label:
         days_short: p
         duration: Kestus
@@ -70,25 +30,6 @@ labels:
         et: EE
     linkto:
         intranet: Vaata Entus
-    month:
-        '1': Jaanuar
-        '2': Veebruar
-        '3': Märts
-        '4': Aprill
-        '5': Mai
-        '6': Juuni
-        '7': Juuli
-        '8': August
-        '9': September
-        '10': Oktoober
-        '11': November
-        '12': Detsember
-        '2016': month.2016
-        '2017': month.2017
-        '2018': month.2018
-        '2019': month.2019
-        '2020': month.2020
-        NaN: month.NaN
     newsletter:
         mailchimp_action: >-
             //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=11b766323b
@@ -97,44 +38,6 @@ labels:
         signup: Liitu uudiskirjaga
     placeholder:
         search: Otsi…
-    q:
-        date: Kuupäev
-        matches: vastet
-        query: Otsisid
-        results_0: Ei leidnud
-        results_1: Üks oli
-        results: Leidsin
-    title:
-        archive: Arhiiv
-        audio: Audio
-        basement: Kelder
-        calendar: Kalender
-        contact: Kontakt
-        event: SAALis
-        floorplans: Saaliplaanid
-        free: Tasuta!
-        gallery: Galerii
-        kanut-co_productions: title.kanut-co_productions
-        kanut-residency: Kanuti Gildi SAALi residendid
-        news: Uudised
-        no-echo: Artikleid pole
-        no-events: Sündmusi ei toimu
-        no-residencies: Residente ei ole
-        no-tours: Tuuril ei ole hetkel ühtki lavastust
-        onsite-price: Kohapealt
-        past: Olnud
-        press: Pressikajastus
-        pyhavaimu-residency: Pühavaimu SAALi residendid
-        related: Teised tööd
-        related-articles: Seotud postitused
-        residency: Residentuur
-        saal: Saal
-        sound: Heli
-        sponsors: Toetajad ja võrgustikud
-        studio: Stuudio
-        tour: Tuuril
-        upcoming: Tulekul
-        video: Video
     weekdays:
         '0': pühapäev
         '1': esmaspäev
@@ -147,15 +50,15 @@ labels:
         log_out: logi välja
         get_me: päri mind
         first_name: eesnimi
-        family_name: perenimi
-        dob: sünnikuupäev
-        phone: telefoni number
-        save: salvesta
         first_name_help: Eesnimi nimi peab koosnema vähemalt 2-st tähemärgist
+        family_name: perenimi
         last_name_help: Perekonna nimi peab koosnema vähemalt 2-st tähemärgist
+        save: salvesta
+        dob: sünnikuupäev
         phone_num_help: >-
             Telefoni number koosneda numbritest,  "+" märgist alguses ja võib 
             olla 7-15 kohaline
+        phone: telefoni number
         userprofile_title: Sinu andmed
         change_profile: Muuda andmeid
         data_saved: Andmed salvestatud
@@ -184,6 +87,92 @@ labels:
             ogida Google-i või Facebook-iga.
         err_login_problem: Viga sisse logimisel
         err_profile_not_saved: Profiili salvestamine ebaõnnestus
+        psw_reset_title: Sisesta uus parool
+        forgot_psw: unustasin parooli
+    error:
+        Not Found: >-
+            Seda lehte pole veel valmis tehtud või siis on heaks arvatud ta
+            kustutada.
+        cache_missing_residency_past: Laadin andmeid. Minuti pärast peaks valmis olema
+        cache_missing_upcoming_events: Tulevasi sündmusi pole
+        cache_missing_upcoming: Laadin andmeid. Minuti pärast peaks valmis olema
+    month:
+        '1': Jaanuar
+        '2': Veebruar
+        '3': Märts
+        '4': Aprill
+        '5': Mai
+        '6': Juuni
+        '7': Juuli
+        '8': August
+        '9': September
+        '10': Oktoober
+        '11': November
+        '12': Detsember
+    query:
+        date: Kuupäev
+        matches: vastet
+        query: Otsisid
+        results_0: Ei leidnud
+        results_1: Üks oli
+        results: Leidsin
+    nup:
+        get_newspaper_2016_1: Loe NUP lehte!
+    title:
+        archive: Arhiiv
+        audio: Audio
+        basement: Kelder
+        calendar: Kalender
+        contact: Kontakt
+        event: SAALis
+        floorplans: Saaliplaanid
+        free: Tasuta!
+        gallery: Galerii
+        kanut_co_productions: kaasproduktsioonid
+        kanut_residency: Kanuti Gildi SAALi residendid
+        news: Uudised
+        no_echo: Artikleid pole
+        no_events: Sündmusi ei toimu
+        no-residencies: Residente ei ole
+        no_tours: Tuuril ei ole hetkel ühtki lavastust
+        onsite_price: Kohapealt
+        past: Olnud
+        press: Pressikajastus
+        pyhavaimu_residency: Pühavaimu SAALi residendid
+        related: Teised tööd
+        related_articles: Seotud postitused
+        residency: Residentuur
+        saal: Saal
+        sound: Heli
+        sponsors: Toetajad ja võrgustikud
+        studio: Stuudio
+        tour: Tuuril
+        upcoming: Tulekul
+        video: Video
+    ticket:
+        buy_ticket: Osta pilet
+        buy_t_canceled: Jääb ära!
+        buy_t_free_admission: Tasuta
+        buy_t_future_sale: Tuleb müüki
+        buy_t_presale_at_boxoffices: Müügipunktist
+        buy_t_sold_out: Välja müüdud
+        buy_t_price_on_spot: Hind kohapeal
+    button:
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance ajaleht
+        artist_talk: Vestlus
+        canceled: Jääb ära!
+        category: Kategooria
+        load_more: Lae veel
+        on_tour: Tuuril
+        premiere: Esietendus!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Otsi
+        today: Täna!
+        view_all: Vaata kõiki
+        volunteer: Tule vabatahtlikuks!
+        covid_info: Koroona meelespea
+        year: Aasta
     nav:
         about: Meist
         about_festival: Festivalist

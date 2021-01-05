@@ -21,32 +21,34 @@ block content
                         img.img-responsive.item(src="https://saal.entu.ee/api2/file-3517")
                         img.img-responsive.item(src="https://saal.entu.ee/api2/file-3518")
                     a.left.carousel-control(href="#about-carousel" role="button" data-slide="prev")
-                        span.icon-prev.arrow-left(aria-hidden="true")                                                   
+                        span.icon-prev.arrow-left(aria-hidden="true")
                     a.right.carousel-control(href="#about-carousel" role="button" data-slide="next")
                         span.icon-next.arrow-right(aria-hidden="true")
                 article.main-text.h3
                     p
                     h3#kanuti-gildi-saali-20-juubelihooaeg= self.data.configurations.about_article[`name_${self.locale}`]
-                    p 
+                    p
                         +markdown(self.data.configurations.about_article[`content_${self.locale}`])
-                    
-                        
-                    
+
+
+
                 .floorplans
                     h2= self.labels.title.floorplans
-                    ul.list-unstyled.h3
-                        li
-                            a(href="https://saal.entu.ee/api2/file-266" target="_blank")
-                                u Kanuti Gildi SAAL
-                            span  | 10x10x6,5m - 132 kohta
-                        li
-                            a(href="https://saal.entu.ee/api2/file-265" target="_blank")
-                                u Püha Vaimu SAAL
-                            span  | 6x10x3,5m - 30-50 kohta
-                        li
-                            a(href="https://saal.entu.ee/api2/file-182" target="_blank")
-                                u Keldrisaal
-                            span  | 8x6x3,5m - 30 kohta
+                    if self.data.locations.length
+                        each location in self.data.locations
+                            if location.hall.floorplan
+                                ul.list-unstyled.h3
+                                    li
+                                        a(href=`https://a.saal.ee/${location.hall.floorplan.url}` target="_blank")
+                                            u= location[`name_${self.locale}`]
+                                        span= ' ' + location.hall[`description_${self.locale}`]
+                                    //-     a(href="https://saal.entu.ee/api2/file-265" target="_blank")
+                                    //-         u Püha Vaimu SAAL
+                                    //-     span  | 6x10x3,5m - 30-50 kohta
+                                    //- li
+                                    //-     a(href="https://saal.entu.ee/api2/file-182" target="_blank")
+                                    //-         u Keldrisaal
+                                    //-     span  | 8x6x3,5m - 30 kohta
                 .old-www
                     h2= self.labels.title.archive
                     ul.list-unstyled.h3

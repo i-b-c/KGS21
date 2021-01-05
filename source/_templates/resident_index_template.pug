@@ -60,20 +60,20 @@ block content
                 //-         div!= op.get(event, 'video')
                 //-
                 //- hr
-                if self.video
+                if self.videos
                     .gallery
-                        h2 VIDEO LABEL
-                            each video in self.video
+                        h2= self.labels.title.video
+                            each video in self.videos
                                 div!= video.content
-                if self.audio
+                if self.audios
                     .gallery
-                        h2 AUDIO LABEL
-                            each audio in self.audio
+                        h2= self.labels.title.audio
+                            each audio in self.audios
                                 div!= audio.content
 
                 if self.event_media
                     .gallery
-                        h2 GALERII LABEL
+                        h2= self.labels.title.gallery
                         .row
                             each image in self.event_media.filter(i => i.gallery_image_large || i.gallery_image_medium)
                                 .single-image.col-xs-6.col-sm-3.col-md-4

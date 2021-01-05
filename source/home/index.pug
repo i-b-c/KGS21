@@ -2,6 +2,13 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
+
+    - var pastTwoDays = new Date()
+
+    - pastTwoDays.setDate(pastTwoDays.getDate() - 2)
+
+
+
     - var featured = self.data.performances.filter(e => e.front_page_promotion)
     .container-fluid
         .row
@@ -64,13 +71,6 @@ block content
                 .programme.row
                     .col-xs-12.col-md-12.col-lg-12
                         h2= self.labels.nav.schedule
-                    - var currentDate = new Date()
-                    - var pastTwoDays = new Date()
-                    //- - var nextThreeDays = new Date()
-
-                    - pastTwoDays.setDate(pastTwoDays.getDate() - 2)
-                    //- - nextThreeDays.setDate(nextThreeDays.getDate() + 3)
-                    //- - console.log(currentDate, ' - ', pastTwoDays, ' - ', nextThreeDays)
 
                     - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type === "program")
                     //- each performance in
@@ -79,7 +79,7 @@ block content
                     if events && events.length
                         each event in events
                             - var eventDate = new Date(event.start_time)
-                            div(id=event.remote_id type-name="event" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' style='display: none;')
+                            div(id=event.remote_id type-name="program" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' style='display: none;')
                                 .col-xs-12.col-sm-2.col-lg-2
                                     p
                                         +dayName(event.start_time)
@@ -97,7 +97,6 @@ block content
                                         if event.performance_X_premiere_time === event.start_time
                                             p.today ESIETENDUS!
 
-                                    //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
                                     p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
 
                                 .col-xs-12.col-md-6.col-lg-6
@@ -141,11 +140,8 @@ block content
                                                     span.subtitle= event[`subtitle_${self.locale}`]
 
                                 .col-xs-6.col-md-2.col-lg-2
-                                    if event[`location_${self.locale}`]
-                                        p.location= event[`location_${self.locale}`]
-
-                                    //- if op.get(p, ['saal-location', lang + '-name'])
-                                    //-     p.location= op.get(p, ['saal-location', lang + '-name'])
+                                    if event.location && event.location[`name_${self.locale}`]
+                                        p.location= event.location[`name_${self.locale}`]
 
                                     if event.X_ticket_info
                                         if !event.X_ticket_info.price
@@ -175,18 +171,22 @@ block content
 
 
                     .col-xs-12.col-md-12
-                        a.load-more.btn.btn-primary(href="/et/program/")= self.labels.button['view-all']
+                        a.load-more.btn.btn-primary(href="/et/program/")= self.labels.button.view_all
+
+
+
+                //- TUURID
                 .tour.row
                     .col-xs-12.col-md-12.col-lg-12
                         h2= self.labels.nav.tours
-                    - var currentDate = new Date()
-                    - var pastTwoDays = new Date()
+                    //- BELOW ONE LINE TO BE REMOVED!!!
                     - pastTwoDays.setDate(pastTwoDays.getDate() - 60)
-                    - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type === "tour")
-                    if events && events.length
-                        each event in events
+
+                    - var tourEvents = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type === "tour")
+                    if tourEvents && tourEvents.length
+                        each event in tourEvents
                             - var eventDate = new Date(event.start_time)
-                            div(id=event.remote_id type-name="event" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '')
+                            div(id=event.remote_id type-name="tour" start-time=`${event.start_time}` style='display: none;')
                                 .col-xs-12.col-sm-2.col-lg-2
                                     p
                                         +dayName(event.start_time)
@@ -204,7 +204,6 @@ block content
                                         if event.performance_X_premiere_time === event.start_time
                                             p.today ESIETENDUS!
 
-                                    //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
                                     p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
 
                                 .col-xs-12.col-md-6.col-lg-6
@@ -248,8 +247,8 @@ block content
                                                     span.subtitle= event[`subtitle_${self.locale}`]
 
                                 .col-xs-6.col-md-2.col-lg-2
-                                    if event[`location_${self.locale}`]
-                                        p.location= event[`location_${self.locale}`]
+                                    if event.location && event.location[`name_${self.locale}`]
+                                        p.location= event.location[`name_${self.locale}`]
 
                                     //- if op.get(p, ['saal-location', lang + '-name'])
                                     //-     p.location= op.get(p, ['saal-location', lang + '-name'])
@@ -279,6 +278,48 @@ block content
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
+
+                    .col-xs-12.col-md-12
+                        a.load-more.btn.btn-primary(href='/' + self.locale + '/residency/')= self.labels.button.view_all
+
+
+                //- RESIDENTUURID
+                .tour.row
+                    .col-xs-12.col-md-12.col-lg-12
+                        h2= self.labels.nav.residency
+
+                    - var residencyEvents = self.data.events.filter(e => new Date(e.end_time)>new Date() && e.type === "residency").sort((a, b) => (new Date(b.start_time) || 0) - (new Date(a.start_time) || 0))
+                    if residencyEvents && residencyEvents.length
+                        each event in residencyEvents.slice(0, listlength)
+                            div(id=event.remote_id type-name="residency" start-time=`${event.start_time}` end-time=`${event.end_time}` style='display: none;')
+                                .col-xs-12.col-sm-2.col-lg-2
+                                    p
+                                        +dateFromTo(event.start_time, event.end_time)
+
+                                .col-xs-12.col-md-6.col-lg-6
+                                    h3
+                                        if event.remote_id
+                                            a(href=`/${lang_path}resident/${event.remote_id}`)
+
+                                                if event.resident
+                                                    span.artist= event.resident
+
+                                                if event[`name_${self.locale}`]
+                                                    span.name= event[`name_${self.locale}`]
+
+
+                                .col-xs-12.col-md-4.col-lg-4
+                                    if event.location && event.location[`name_${self.locale}`]
+                                        p.location= event.location[`name_${self.locale}`]
+
+                                .col-xs-12.col-md-12
+                                    hr
+
+                    .col-xs-12.col-md-12
+                        a.load-more.btn.btn-primary(href='/' + self.locale + '/tours/')= self.labels.button.view_all
+
+
+
 
 
             aside.col-xs-12.col-md-12.col-lg-3.sidebar

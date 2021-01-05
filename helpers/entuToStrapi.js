@@ -190,6 +190,22 @@ async function performanceToStrapi() {
             return e_coverage_remote_ids.includes(s_coverage.remote_id)
         }).map( e => e.id)
 
+        let performance_videos = []
+        if (performance_entity.properties.video.values.length > 0) {
+            for( i=0; i < performance_entity.properties.video.values.length; i++){
+                let video = {"content":  performance_entity.properties.video.values[i].db_value }
+                performance_videos.push(video)
+            }
+        }
+
+        let performance_audios = []
+        if (performance_entity.properties.audio.values.length > 0) {
+            for( i=0; i < performance_entity.properties.audio.values.length; i++){
+                let audio = {"content":  performance_entity.properties.audio.values[i].db_value }
+                performance_audios.push(audio)
+            }
+        }
+
         starpi_performance_id = performances_from_strapi.filter(s_performance => {
             return s_performance.remote_id === performance_entity.id.toString()
         }).map(e => { return e.id })[0]
@@ -228,6 +244,8 @@ async function performanceToStrapi() {
             },
             // "raiders":
             "coverages": coverage_ids,
+            "videos": performance_videos,
+            "audios": performance_audios,
             "id": starpi_performance_id
 
         }
@@ -241,9 +259,9 @@ async function performanceToStrapi() {
         // console.log(performance.remote_id)
     }
 
-    // console.log(performances);
+    // console.log(performances)
     // PUT
-    // putToStrapi(performances, 'performances')
+    putToStrapi(performances, 'performances')
 
     // POST
     // console.log(performancesToPost);
@@ -678,7 +696,7 @@ async function main() {
     // await categoriesToStrapi()
     // await personToStrapi()
     // await performanceToStrapi()
-    await coveragesToStrapi()
+    // await coveragesToStrapi()
     // await locationToStrapi()
     // await eventsToStrapi()
     // await eventChildRelationToStrapi()

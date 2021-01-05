@@ -12,38 +12,6 @@ labels:
         season: Season
     Jon Doe:
         nimeta: Unnamed
-    NUP:
-        get-newspaper-2016-1: Get NUP NEWS!
-    button:
-        LATEST: LAT.EST
-        NUP: NU Performance Festival 2018
-        NUPprint: NU Performance Newspaper
-        artist-talk: Artist talk
-        buy_ticket: Buy ticket
-        buy_t_Free_admission: null
-        buy_t_canceled: Canceled!
-        buy_t_free_admission: Free Admission
-        buy_t_free_admission/: button.buy_ticket.free_admission/
-        buy_t_future_sale: null
-        buy_t_going_now: Buy ticket
-        buy_t_no_tickets: null
-        buy_t_presale_at_boxoffices: From box office
-        buy_t_regular_presale: Buy ticket
-        buy_t_sold_ou: button.buy_ticket.sold_ou
-        buy_t_sold_out: Sold out
-        canceled: Canceled!
-        category: Category
-        festival: SAAL Biennaal 2017
-        load-more: Load more
-        on_tour: On Tour
-        premiere: Premiere!
-        saalbiennaal: SAAL Biennaal 2017
-        search: Search
-        today: Today!
-        view-all: View all
-        volunteer: Become a volunteer!
-        covid_info: Covid info
-        year: Year
     categories:
         dance: Dance
         film: Video
@@ -52,12 +20,6 @@ labels:
         new-circus: New Circus
         performance: Performance
         theatre: Theatre
-    error:
-        Not Found: Page not found
-        cache_missing_residency_past: Loading data. Should be ready in a minute
-        cache_missing_upcoming_events: No upcoming events
-        cache_missing_upcoming_tours: Loading data. Should be ready in a minute
-        program_upcoming is not defined: Loading data. Should be ready in a minute
     label:
         days_short: d
         duration: Duration
@@ -68,25 +30,6 @@ labels:
         et: EE
     linkto:
         intranet: View in Entu
-    month:
-        '1': January
-        '2': February
-        '3': March
-        '4': April
-        '5': May
-        '6': June
-        '7': July
-        '8': August
-        '9': September
-        '10': October
-        '11': November
-        '12': December
-        '2016': month.2016
-        '2017': month.2017
-        '2018': month.2018
-        '2019': month.2019
-        '2020': month.2020
-        NaN: month.NaN
     newsletter:
         mailchimp_action: >-
             //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=deab6bd3c2
@@ -95,44 +38,6 @@ labels:
         signup: Sign-up for newsletter
     placeholder:
         search: Search…
-    q:
-        date: Date
-        matches: matches
-        query: Searched for
-        results_0: No matching results
-        results_1: Found one
-        results: Results
-    title:
-        archive: Archive
-        audio: Heli
-        basement: Basement
-        calendar: Calendar
-        contact: Contact
-        event: at SAAL
-        floorplans: Floorplans
-        free: Free of charge!
-        gallery: Gallery
-        kanut-co_productions: title.kanut-co_productions
-        kanut-residency: Residents of Kanuti Gildi SAAL
-        news: News
-        no-echo: No Posts
-        no-events: No events
-        no-residencies: No Residencies
-        no-tours: No tours
-        onsite-price: At the door
-        past: Past
-        press: Press
-        pyhavaimu-residency: Residents of Pühavaimu SAAL
-        related: Other works
-        related-articles: Related posts
-        residency: Residency
-        saal: Saal
-        sound: Sound
-        sponsors: Supporters and networks
-        studio: Studio
-        tour: On tour
-        upcoming: Upcoming
-        video: Video
     weekdays:
         '0': Sunday
         '1': Monday
@@ -145,15 +50,15 @@ labels:
         log_out: sign out
         get_me: get me
         first_name: first name
-        family_name: family name
-        dob: date of birth
-        phone: phone number
-        save: save
         first_name_help: First name should consist of at least 2 characters
+        family_name: family name
         last_name_help: Last name should consist of at least 2 characters
+        save: save
+        dob: date of birth
         phone_num_help: >-
             Phone number can consist of numbers, a "+" in the beginning and
             should be 7-15 characters long
+        phone: phone number
         userprofile_title: Your data
         change_profile: Change profile
         data_saved: Data saved
@@ -182,6 +87,90 @@ labels:
             Facebook.
         err_login_problem: Sign in error
         err_profile_not_saved: Saving your profile failed
+        psw_reset_title: Enter new password
+        forgot_psw: I forgot my password
+    error:
+        Not Found: Page not found
+        cache_missing_residency_past: Loading data. Should be ready in a minute
+        cache_missing_upcoming_events: No upcoming events
+        cache_missing_upcoming: Loading data. Should be ready in a minute
+    month:
+        '1': January
+        '2': February
+        '3': March
+        '4': April
+        '5': May
+        '6': June
+        '7': July
+        '8': August
+        '9': September
+        '10': October
+        '11': November
+        '12': December
+    query:
+        date: Date
+        matches: matches
+        query: Searched for
+        results_0: No matching results
+        results_1: Found one
+        results: Results
+    nup:
+        get_newspaper_2016_1: Get NUP NEWS!
+    title:
+        archive: Archive
+        audio: Heli
+        basement: Basement
+        calendar: Calendar
+        contact: Contact
+        event: at SAAL
+        floorplans: Floorplans
+        free: Free of charge!
+        gallery: Gallery
+        kanut_co_productions: co-productions
+        kanut_residency: Residents of Kanuti Gildi SAAL
+        news: News
+        no_echo: No Posts
+        no_events: No events
+        no-residencies: No Residencies
+        no_tours: No tours
+        onsite_price: At the door
+        past: Past
+        press: Press
+        pyhavaimu_residency: Residents of Pühavaimu SAAL
+        related: Other works
+        related_articles: Related posts
+        residency: Residency
+        saal: Saal
+        sound: Sound
+        sponsors: Supporters and networks
+        studio: Studio
+        tour: On tour
+        upcoming: Upcoming
+        video: Video
+    ticket:
+        buy_ticket: Buy ticket
+        buy_t_canceled: Canceled!
+        buy_t_free_admission: Free Admission
+        buy_t_future_sale: future sale
+        buy_t_presale_at_boxoffices: From box office
+        buy_t_sold_out: Sold out
+        buy_t_price_on_spot: At the door
+    button:
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance Newspaper
+        artist_talk: Artist talk
+        canceled: Canceled!
+        category: Category
+        load_more: Load more
+        on_tour: On Tour
+        premiere: Premiere!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Search
+        today: Today!
+        view_all: View all
+        volunteer: Become a volunteer!
+        covid_info: Covid info
+        year: Year
     nav:
         about: About Us
         about_festival: About
