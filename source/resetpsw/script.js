@@ -11,10 +11,12 @@ const validatePswForm = () => {
     }
 
     // console.log(errors)
-    if (errors.length === 0) {
+    if (errors.length === 0 && !validToken) {
         SendNewPassword()
         console.log("valideerimine õnnestus saadan profiili Strapisse")
-    }else {
+    } else if (errors.length === 0 && validToken && userProfile && accountStatus) {
+        addPassword()
+    } else {
         console.log(errors)
         displayError(errors)
     }
@@ -72,4 +74,53 @@ const SendNewPassword = async () => {
         console.log("errors: ", errors)
         displayError(errors)
     }
+}
+
+const addPassword = async () => {
+    console.log("lisan parooli")
+  
+    let email = userProfile.email
+    let psw = document.getElementById("Psw").value
+
+    let body = JSON.stringify({
+        "username": email,
+        "email": email,
+        "password": psw
+    })
+    console.log("saadan body: ", body)
+
+    let requestOptions = {
+        'method': 'PUT',
+        'body': body,
+        'headers': {
+            'Authorization': `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`, 
+            'Content-Type': 'application/json'
+        }
+    }
+
+    console.log(requestOptions)
+    let response = await (fetch('https://a.saal.ee/users/me/register', requestOptions))
+
+    if (response.ok) {
+        const data = await response.json()
+        console.log(data)
+        window.open('http://localhost:4000/login')
+    } else {
+        var errorResponse = await response.json()
+        var errors = []
+        console.log("response: ", errorResponse)
+        try {
+            for (err of errorResponse.message) {
+                for (message of err.messages) {
+                    errors.push(message.message)
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+
+        console.log("errors: ", errors)
+        displayError(errors)
+    }
+
 }
