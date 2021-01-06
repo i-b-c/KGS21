@@ -190,10 +190,10 @@ const getStrapiEventIds = () => {
 async function send_pic_and_create_relation_events() {
 
     getStrapiEventIds()
-    for (const event_medias of eventPicsJSON) {
-        const strapi_id = event_medias.id
-        event_medias.event_media = event_medias.medias
-        delete event_medias.medias
+    for (const event of eventPicsJSON) {
+        const strapi_event_id = event.id
+        event.event_media = event.medias
+        delete event.medias
 
         for (const media of event.event_media) {
             const media_versions = Object.keys(media)
@@ -207,8 +207,8 @@ async function send_pic_and_create_relation_events() {
             }
         }
 
-        console.log(JSON.stringify(event_medias, 0, 4))
-        putToStrapi(event_medias, 'events')
+        console.log(JSON.stringify(event, 0, 4))
+        putToStrapi(event, 'events')
     }
 }
 
