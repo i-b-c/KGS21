@@ -139,10 +139,10 @@ const getStrapiArticleIds = () => {
 async function send_pic_and_create_relation_articles() {
 
     getStrapiArticleIds()
-    for (const article_medias of echoPicsJSON) {
-        const strapi_id = article_medias.id
-        article_medias.article_media = article_medias.medias
-        delete article_medias.medias
+    for (const article of echoPicsJSON) {
+        const strapi_article_id = article.id
+        article.article_media = article.medias
+        delete article.medias
 
         for (const media of article.article_media) {
             const media_versions = Object.keys(media)
@@ -170,7 +170,7 @@ async function send_pic_and_create_relation_articles() {
         // }
 
         // console.log(JSON.stringify([article_medias], 0, 4))
-        putToStrapi([article_medias], 'articles')
+        putToStrapi([article], 'articles')
     }
 
 
@@ -424,8 +424,8 @@ async function delete_covetage_media_relation() {
 }
 
 async function main() {
-    await send_pic_and_create_relation_performances()
-    // await send_pic_and_create_relation_articles()
+    // await send_pic_and_create_relation_performances()
+    await send_pic_and_create_relation_articles()
     // await send_pic_and_create_relation_events()
 
     // await performance_logos_and_riders_from_entu()
