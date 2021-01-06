@@ -139,10 +139,17 @@ const getStrapiArticleIds = () => {
 async function send_pic_and_create_relation_articles() {
 
     getStrapiArticleIds()
+<<<<<<< HEAD
     for (const article_medias of echoPicsJSON) {
         const strapi_id = article_medias.id
         article_medias.article_media = article_medias.medias
         delete article_medias.medias
+=======
+    for (const article of echoPicsJSON) {
+        const strapi_article_id = article.id
+        article.article_media = article.medias
+        delete article.medias
+>>>>>>> 6130ddf0f6493f9eebe0c1e028fb6748a54b4953
 
         for (const media of article.article_media) {
             const media_versions = Object.keys(media)
@@ -169,8 +176,8 @@ async function send_pic_and_create_relation_articles() {
         //     }
         // }
 
-        // console.log(JSON.stringify([article_medias], 0, 4))
-        putToStrapi([article_medias], 'articles')
+        // console.log(JSON.stringify([article], 0, 4))
+        putToStrapi([article], 'articles')
     }
 
 
@@ -190,10 +197,17 @@ const getStrapiEventIds = () => {
 async function send_pic_and_create_relation_events() {
 
     getStrapiEventIds()
+<<<<<<< HEAD
     for (const event_medias of eventPicsJSON) {
         const strapi_id = event_medias.id
         event_medias.event_media = event_medias.medias
         delete event_medias.medias
+=======
+    for (const event of eventPicsJSON) {
+        const strapi_event_id = event.id
+        event.event_media = event.medias
+        delete event.medias
+>>>>>>> 6130ddf0f6493f9eebe0c1e028fb6748a54b4953
 
         for (const media of event.event_media) {
             const media_versions = Object.keys(media)
@@ -207,8 +221,13 @@ async function send_pic_and_create_relation_events() {
             }
         }
 
+<<<<<<< HEAD
         console.log(JSON.stringify(event_medias, 0, 4))
         putToStrapi(event_medias, 'events')
+=======
+        console.log(JSON.stringify(event, 0, 4))
+        putToStrapi(event, 'events')
+>>>>>>> 6130ddf0f6493f9eebe0c1e028fb6748a54b4953
     }
 }
 
@@ -424,8 +443,13 @@ async function delete_covetage_media_relation() {
 }
 
 async function main() {
+<<<<<<< HEAD
     await send_pic_and_create_relation_performances()
     // await send_pic_and_create_relation_articles()
+=======
+    // await send_pic_and_create_relation_performances()
+    await send_pic_and_create_relation_articles()
+>>>>>>> 6130ddf0f6493f9eebe0c1e028fb6748a54b4953
     // await send_pic_and_create_relation_events()
 
     // await performance_logos_and_riders_from_entu()

@@ -144,9 +144,14 @@ block content
                                     br
                                     if press.media && press.media.length
                                         a(target='_blank' href=`${m_api}${press.media[0].url}`)
-                                            img(src=`${m_api}${press.media[0].formats.small.url}`, width='50', style='float:left; margin-right:1em')
-                                            if press.title
-                                                p= press.title
+                                            if press.media[0].formats
+                                                img(src=`${m_api}${press.media[0].formats.small.url}`, width='50', style='float:left; margin-right:1em')
+                                                if press.title
+                                                    p= press.title
+                                            else
+                                                img(src=`${m_api}${press.media[0].url}`, width='50', style='float:left; margin-right:1em')
+                                                if press.title
+                                                    p= press.title
                                         if press.source
                                             a(target='_blank' href=press.url)
                                                 p.source= press.source
