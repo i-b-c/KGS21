@@ -181,6 +181,31 @@ async function performanceToStrapi() {
             entu_premiere_time = performance_entity.properties['premiere-time'].values[0].value
         }
 
+
+        let coverage_ids = coverages_from_strapi.filter( s_coverage => {
+            let e_coverage_remote_ids = performance_entity.childs.filter( child => {
+                return child.definition_keyname === 'coverage'
+            }).map(e_coverage => e_coverage.id.toString())
+
+            return e_coverage_remote_ids.includes(s_coverage.remote_id)
+        }).map( e => e.id)
+
+        let performance_videos = []
+        if (performance_entity.properties.video.values.length > 0) {
+            for( i=0; i < performance_entity.properties.video.values.length; i++){
+                let video = {"content":  performance_entity.properties.video.values[i].db_value }
+                performance_videos.push(video)
+            }
+        }
+
+        let performance_audios = []
+        if (performance_entity.properties.audio.values.length > 0) {
+            for( i=0; i < performance_entity.properties.audio.values.length; i++){
+                let audio = {"content":  performance_entity.properties.audio.values[i].db_value }
+                performance_audios.push(audio)
+            }
+        }
+
         starpi_performance_id = performances_from_strapi.filter(s_performance => {
             return s_performance.remote_id === performance_entity.id.toString()
         }).map(e => { return e.id })[0]
@@ -210,6 +235,7 @@ async function performanceToStrapi() {
             "X_headline_en": (performance_entity.properties['en-supertitle'].values.length > 0 ? performance_entity.properties['en-supertitle'].values[0].db_value : null),
             "X_town_et": (performance_entity.properties['et-town'].values.length > 0 ? performance_entity.properties['et-town'].values[0].db_value : null),
             "X_town_en": (performance_entity.properties['en-town'].values.length > 0 ? performance_entity.properties['en-town'].values[0].db_value : null),
+            "duration": (performance_entity.properties.duration.values.length > 0 ? performance_entity.properties.duration.values[0].db_value : null),
             "X_pictures": {
                 "photoGallery": photoGallery,
                 "photo": photo,
@@ -218,6 +244,9 @@ async function performanceToStrapi() {
                 "photoBig": photoBig
             },
             // "raiders":
+            "coverages": coverage_ids,
+            "videos": performance_videos,
+            "audios": performance_audios,
             "id": starpi_performance_id
 
         }
@@ -231,9 +260,9 @@ async function performanceToStrapi() {
         // console.log(performance.remote_id)
     }
 
-    // console.log(performances);
+    // console.log(performances)
     // PUT
-    // putToStrapi(performances, 'performances')
+    putToStrapi(performances, 'performances')
 
     // POST
     // console.log(performancesToPost);
@@ -265,18 +294,18 @@ async function coveragesToStrapi() {
         return {
             "remote_id": coverage_id,
             "title": (coverage_entity.properties.title.values.length > 0 ? coverage_entity.properties.title.values[0].db_value : null),
-            "performance": performance_id,
+            // "performance": performance_id,
             "source": (coverage_entity.properties.source.values.length > 0 ? coverage_entity.properties.source.values[0].db_value : null),
             "url": (coverage_entity.properties.url.values.length > 0 ? coverage_entity.properties.url.values[0].db_value : null),
             "content": (coverage_entity.properties.text.values.length > 0 ? coverage_entity.properties.text.values[0].db_value : null),
-            "date_published": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null),
+            "publish_date": (coverage_entity.properties.date.values.length > 0 ? coverage_entity.properties.date.values[0].db_value : null),
             "id": starpi_coverage_id
         }
     })
-    // console.log(coverages);
+    // console.log(coverages)
 
     // PUT
-    postToStrapi(coverages, 'coverages')
+    putToStrapi(coverages, 'coverages')
 
     // postToStrapi(coverages, 'coverages')
 }
@@ -407,7 +436,7 @@ async function articlesToStrapi() {
 
     articlesToPost = articles.filter(article => {return article.id === undefined})
     for(article of articlesToPost){
-        // console.log(article.remote_id)
+        console.log(article.remote_id)
     }
 
 
@@ -427,8 +456,6 @@ async function eventsToStrapi() {
     let relations = yaml.safeLoad(fs.readFileSync(path.join(entuDataPath, 'entu_kaustad_syndmused.yaml')), 'utf-8')
 
     let events = eventJSON.map(event_entity => {
-
-
 
         let strapi_category_ids = event_entity.properties.category.values.map(e_category => {
             let entu_id = e_category.db_value
@@ -452,7 +479,6 @@ async function eventsToStrapi() {
 
         let entu_location = ((event_entity.properties['saal-location'].values.length > 0 ? event_entity.properties['saal-location'].values[0].db_value : '') === null ? "" : (event_entity.properties['saal-location'].values.length > 0 ? event_entity.properties['saal-location'].values[0].db_value : ''))
 
-        // console.log(entu_location);
         let strapi_location_id = locations_from_strapi.filter( s_location => {
             return s_location.remote_id === entu_location.toString()
 
@@ -485,6 +511,14 @@ async function eventsToStrapi() {
                 event_audios.push(audio)
             }
         }
+
+        let coverage_ids = coverages_from_strapi.filter( s_coverage => {
+            let e_coverage_remote_ids = event_entity.childs.filter( child => {
+                return child.definition_keyname === 'coverage'
+            }).map(e_coverage => e_coverage.id.toString())
+
+            return e_coverage_remote_ids.includes(s_coverage.remote_id)
+        }).map( e => e.id)
 
 
         let x_ticket_info =
@@ -528,8 +562,8 @@ async function eventsToStrapi() {
             "online": (event_entity.properties.online.values.length > 0 ? event_entity.properties.online.values[0].db_value : null),
             "video": event_videos,
             "audio": event_audios,
+            "coverages": coverage_ids,
             "order": (event_entity.properties.ordinal.values.length > 0 ? event_entity.properties.ordinal.values[0].db_value : null),
-            // "child_events": child_events,
             "id": strapi_event_id
 
         }
@@ -538,7 +572,10 @@ async function eventsToStrapi() {
     // let eventsToPost = events.filter( e => e.id === undefined)
     // console.log(eventsToPost);
 
-    // console.log(JSON.stringify(events, null, 4))
+    // for (let i = 0; i < 10; i++) {
+    //     console.log(JSON.stringify(events, null, 4))
+
+    // }
 
     // // PUT
     putToStrapi(events, 'events')
@@ -653,17 +690,16 @@ async function fromStrapi(cType, yamlName) {
     fs.writeFileSync(path.join(strapiDataPath, filename + '.yaml'), yaml.safeDump(data, { 'indent': '4' }), "utf8")
 }
 
-
 async function main() {
 
     // await bannerTypeToStrapi()
     // await bannerToStrapi()
     // await categoriesToStrapi()
     // await personToStrapi()
-    // await performanceToStrapi()
+    await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
-    await eventsToStrapi()
+    // await eventsToStrapi()
     // await eventChildRelationToStrapi()
     // await newsToStrapi()
     // await labelsToStrapi()
@@ -684,3 +720,4 @@ async function main() {
 }
 
 main()
+

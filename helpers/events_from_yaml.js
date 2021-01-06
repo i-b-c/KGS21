@@ -26,7 +26,13 @@ for (const lang of LANGUAGES) {
     for(oneEvent of STRAPIDATA_EVENTS) {
         let performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
         let eventDate = new Date(oneEvent.start_time)
-        let performancePremiere = performance.X_premiere_time ? new Date(performance.X_premiere_time) : null
+        // let performancePremiere = performance.X_premiere_time ? new Date(performance.X_premiere_time) : null
+        let combined_coverages = null
+        if (oneEvent.coverages) {
+            combined_coverages = oneEvent.coverages.concat(performance.coverages || 0)
+        } else if (performance.coverages) {
+            combined_coverages = performance.coverages
+        }
         let oneEventData = {
             id: oneEvent.id,
             performance_remote_id: performance.remote_id || null,
@@ -34,7 +40,7 @@ for (const lang of LANGUAGES) {
             [`performance_slug_${lang}`]: performance[`slug_${lang}`] || null,
             [`performance_X_headline_${lang}`]: performance[`X_headline_${lang}`] || null,
             [`performance_subtitle_${lang}`]: performance[`subtitle_${lang}`] || null,
-            performance_X_premiere_time: performance.X_premiere_time != null ? new Date(performancePremiere.setHours(performancePremiere.getHours()-2)).toISOString() : null,
+            // performance_X_premiere_time: performance.X_premiere_time != null ? new Date(performancePremiere.setHours(performancePremiere.getHours()-2)).toISOString() : null,
             performance_X_artist: performance.X_artist || null,
             performance_X_producer: performance.X_producer || null,
             [`performance_X_town_${lang}`]: performance[`X_town_${lang}`] || null,
@@ -48,12 +54,12 @@ for (const lang of LANGUAGES) {
             [`subtitle_${lang}`]: oneEvent[`subtitle_${lang}`] || null,
             [`description_${lang}`]: oneEvent[`description_${lang}`] || null,
             [`technical_info_${lang}`]: oneEvent[`technical_info_${lang}`] || null,
-            [`location_${lang}`]: oneEvent[`location_${lang}`] || null,
+            location: oneEvent.location || null,
             resident: oneEvent.resident || null,
             duration: oneEvent.duration || null,
             conversation: oneEvent.conversation || null,
-            video: oneEvent.video || null,
-            audio: oneEvent.audio || null,
+            videos: oneEvent.videos || null,
+            audios: oneEvent.audios || null,
             categories: oneEvent.categories || null,
             remote_id: oneEvent.remote_id || null,
             X_ticket_info: oneEvent.X_ticket_info || null,
@@ -62,7 +68,9 @@ for (const lang of LANGUAGES) {
             image_hero: oneEvent.event_media ? oneEvent.event_media.filter(e => e.hero_image).map(u => u.hero_image.url)[0] || null : null,
             image_medium: oneEvent.event_media ? oneEvent.event_media.filter(e => e.gallery_image_medium).map(u => u.gallery_image_medium.url)[0] || null : null,
             event_media: oneEvent.event_media || null,
-            child_events: oneEvent.child_events ? festival_child_events(oneEvent.child_events, lang) : null
+            child_events: oneEvent.child_events ? festival_child_events(oneEvent.child_events, lang) : null,
+            coverages: oneEvent.coverages || null,
+            coverage_dates: oneEvent.coverages ? coveragesByDate(combined_coverages) : null,
         }
 
         if (oneEventData.type === 'festival') {
@@ -112,6 +120,21 @@ for (const lang of LANGUAGES) {
             fs.writeFileSync(`${oneFestivalDirPath}/tickets/data.${lang}.yaml`, festivalTicketsYAML, 'utf8');
             fs.writeFileSync(`${oneFestivalDirPath}/tickets/index.pug`, `include /_templates/festival_tickets_index_template.pug`)
 
+            // Festival press page
+            oneEventData.path = `festival/${oneEventData.remote_id}/press/`
+
+            if (lang === 'et') {
+                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/press/`]
+            } else {
+                delete oneEventData.aliases
+            }
+
+            const festivalPressYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
+            fs.mkdirSync(`${oneFestivalDirPath}/press/`, { recursive: true });
+            fs.writeFileSync(`${oneFestivalDirPath}/press/data.${lang}.yaml`, festivalPressYAML, 'utf8');
+            fs.writeFileSync(`${oneFestivalDirPath}/press/index.pug`, `include /_templates/festival_press_index_template.pug`)
+
+
             // Reset for alldata writing
             oneEventData.path = `festival/${oneEventData.remote_id}/program/`
             if (lang === 'et') {
@@ -150,7 +173,7 @@ function festival_child_events(child_events_data, lang) {
     return child_events_data.map(ch => {
         let child_event = STRAPIDATA_EVENTS.filter(e => e.id === ch.id)[0] || []
         let event_performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
-        let event_performance_premiere = event_performance.X_premiere_time ? new Date(event_performance.X_premiere_time) : null
+        // let event_performance_premiere = event_performance.X_premiere_time ? new Date(event_performance.X_premiere_time) : null
         let eventDate = new Date(oneEvent.start_time)
 
         return {
@@ -161,11 +184,11 @@ function festival_child_events(child_events_data, lang) {
             [`performance_slug_${lang}`]: event_performance[`slug_${lang}`] || null,
             [`performance_X_headline_${lang}`]: event_performance[`X_headline_${lang}`] || null,
             [`performance_subtitle_${lang}`]: event_performance[`subtitle_${lang}`] || null,
-            performance_X_premiere_time: event_performance.X_premiere_time != null ? new Date(event_performance_premiere.setHours(event_performance_premiere.getHours()-2)).toISOString() : null,
+            // performance_X_premiere_time: event_performance.X_premiere_time != null ? new Date(event_performance_premiere.setHours(event_performance_premiere.getHours()-2)).toISOString() : null,
             performance_X_artist: event_performance.X_artist || null,
             performance_X_producer: event_performance.X_producer || null,
             [`performance_X_town_${lang}`]: event_performance[`X_town_${lang}`] || null,
-            [`location_${lang}`]: child_event[`location_${lang}`] || null,
+            location: child_event.location || null,
             conversation: child_event.conversation || null,
             remote_id: child_event.remote_id || null,
             X_ticket_info: child_event.X_ticket_info || null,
@@ -176,7 +199,19 @@ function festival_child_events(child_events_data, lang) {
             X_artist: child_event.X_artist || null,
             start_date_string: `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`,
         }
+        // performance_coverage_dates: event_performance.coverages ? coveragesByDate(event_performance.coverages) : null,
     }).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
 
 
+}
+
+function coveragesByDate(coverages) {
+    sorted_coverages = coverages.sort((a, b) => new Date(a.publish_date)-new Date(b.publish_date))
+    coverages_array = {}
+    coverge_dates = sorted_coverages.map(d => {
+        if (d.publish_date) {
+            coverages_array[d.publish_date] = sorted_coverages.filter(c =>  c.publish_date && d.publish_date && d.publish_date.substr(0,10) === c.publish_date.substr(0,10))
+        }
+    })
+    return coverages_array || null
 }

@@ -319,6 +319,45 @@ function displayError(errArray){
 if (localStorage.getItem("provider")) {
     GetCallback(localStorage.getItem("provider"))
 }
+const beautifyProviders = providers => {
+    providers = providers.replace(/facebook|google/gi, x => { return x.replace(/^\w/, (c) => c.toUpperCase()) })
+    providers = providers.replace(/,/g, ', ')
+    providers = providers.replace('local', 'password')
+    console.log(providers)
+    return providers
+}
+
+// const GetUserFavorites = () => {
+//     console.log("getting user favorites");
+//     if (validToken) {
+//         var requestOptions = {
+//             method: "GET",
+//             headers: {
+//                 Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+//             },
+//             maxRedirects: 20,
+//         };
+//         fetch("https://a.saal.ee/performance/my", requestOptions)
+//             .then(function (response) {
+//                 if (response.ok) {
+//                     return response.json();
+//                 }
+//                 return Promise.reject(response);
+//             })
+//             .then(function (data) {
+//                 console.log("lemmikud",data);
+//                 return Promise.resolve(data)
+//                 // document.getElementById("my-favorites").innerHTML = JSON.stringify(data)
+
+//             })
+//             .catch(function (error) {
+//                 console.warn(error);
+//             });
+//     } else {
+//         console.log("validToken väärtus on", validToken);
+//     }
+// }
+
 
 function showUserInfo() {
     try {
@@ -328,7 +367,8 @@ function showUserInfo() {
         if (userProfile.firstName) firstName.innerHTML = userProfile.firstName
         if (userProfile.lastName) lastName.innerHTML = userProfile.lastName
         if (userProfile.phoneNumber) phoneNr.innerHTML = userProfile.phoneNumber
-        if (userProfile.provider) providers.innerHTML = beautifyProviders(userProfile.provider)
+        // if (userProfile.provider) providers.innerHTML = beautifyProviders(userProfile.provider)
+        // if (userProfile.Favorites) GetUserFavorites()
     } catch (err) {
         console.log(err)
     }
@@ -336,14 +376,13 @@ function showUserInfo() {
     document.getElementById("not-logged-in-box").style.display = "none"
 }
 
+const showFavorites = async () => {
+    console.log("showing user favorites")
+    let favorites = await GetUserFavorites()
+    console.log(favorites.data)
 
-const beautifyProviders = providers => {
-    providers = providers.replace(/facebook|google/gi, x => { return x.replace(/^\w/, (c) => c.toUpperCase()) })
-    providers = providers.replace(/,/g, ', ')
-    providers = providers.replace('local', 'password')
-    console.log(providers)
-    return providers
-  }
+    document.getElementById("my-favorites").innerHTML = JSON.stringify(favorites.data)
+}
 
 
 

@@ -18,16 +18,18 @@ block content
             span.value-view#phoneNr(name='phoneNr')
         .form-group
             label.login_label(for='providers') autentimisviisid
-            span.value-view#providers(name='providers')    
+            span.value-view#providers(name='providers')
 
         #user_buttons
             a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.change_profile
             a.btn.btn-primary.text-uppercase(onClick = "LogOut()")= self.labels.login.log_out
             a.btn.btn-primary.text-uppercase(onClick = "GetUserInfo()")= self.labels.login.get_me
+            a.btn.btn-primary.text-uppercase(onClick = "GetUserFavorites()") Get Favo
         h2= self.labels.login.favorites
         p= self.labels.login.no_favorites
-        h2= self.labels.login.tickets
-        p= self.labels.login.no_tickets
+        p#my-favorites= "mingi info"
+        // h2= self.labels.login.tickets
+        // p= self.labels.login.no_tickets
 
     //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
     #not-logged-in-box

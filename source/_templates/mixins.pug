@@ -172,3 +172,46 @@ mixin dateFromTo(dateStringUTCFrom, dateStringUTCTo)
             eDisplayMoment1.innerHTML = `${from_time_EET}—${to_time_EET}`;
 
         })();
+
+//- 16.12.2020 Wednesday
+mixin dateAndWeekday(dateStringUTC)
+    - var dom_id = Math.random()
+    h3(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+
+            moment.updateLocale('en', {
+                longDateFormat : {
+                    LT: "hh:mm A",
+                    L: "MM/DD/YYYY",
+                    l: "M/D/YYYY",
+                    LL: "MMMM Do YYYY",
+                    ll: "MMM D YYYY",
+                    LLL: "MMMM Do YYYY LT",
+                    lll: "MMM D YYYY LT",
+                    LLLL: "dddd, MMMM Do YYYY LT",
+                    llll: "ddd, MMM D YYYY LT"
+                }
+            });
+
+            moment.updateLocale('et', {
+                longDateFormat: {
+                    LT: 'HH:mm',
+                    LTS: 'H:mm:ss',
+                    L: 'DD.MM.YYYY',
+                    LL: 'D. MMMM YYYY',
+                    LLL: 'D. MMMM YYYY H:mm',
+                    LLLL: 'dddd, D. MMMM YYYY H:mm'
+                }
+            });
+
+            moment.locale('#{self.locale}');
+            //- moment.locale('et');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var date_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('L');
+            var day_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('dddd');
+            eDisplayMoment1.innerHTML = `${date_EET} ${day_EET}`;
+
+        })();
