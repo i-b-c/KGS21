@@ -142,7 +142,6 @@ module.exports = {
 
   async updateRole(ctx) {
     const roleID = ctx.params.role;
-    console.log(ctx);
 
     if (_.isEmpty(ctx.request.body)) {
       return ctx.badRequest(null, [{ messages: [{ id: 'Bad request' }] }]);
@@ -271,9 +270,6 @@ module.exports = {
   },
 
   async removeProviders(ctx) {
-    console.log('ctx', ctx);
-    console.log('FB request ', ctx.request);
-    console.log('from FB ', ctx.request.body);
 
     let { signed_request } = ctx.request.body
     signed_request = signed_request.split('.');
@@ -293,10 +289,7 @@ module.exports = {
 
     if (encoded_sig !== encoded_payload)
       return null;
-
-    console.log(data);
-
-
+      
     // if (_.isEmpty(ctx.request.body)) {
     //   return ctx.badRequest(null, [{ messages: [{ id: 'Cannot be empty' }] }]);
     // }

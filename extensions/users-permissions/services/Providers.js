@@ -108,21 +108,6 @@ const connect = (provider, query) => {
           confirmed: true,
         });
 
-        // if (params.email === 'siimsutt@hotmail.com'){
-        //   console.log(users[0])
-        //   let providers = users[0].provider
-        //   if (!providers.includes(provider)){
-        //     providers += ',' + provider
-        //   }
-        //   params.params = {id: users[0].id}
-        //   params.request = {body: {provider: providers}}
-        //   console.log(params);
-        //   const updatedUser = await apiUserController.update(params)
-
-        //   console.log({updatedUser});
-        //   return resolve([updatedUser, null])
-        // }
-
         const createdUser = await strapi.query('user', 'users-permissions').create(params);
 
         return resolve([createdUser, null]);
@@ -208,6 +193,7 @@ const buildRedirectUri = (provider = '') =>
   `${getAbsoluteServerUrl(strapi.config)}/connect/${provider}/callback`;
 
 const mergeProviders = async (user, provider) => {
+  console.log('mergeProviders');
   const params = {}
   params.params = { id: user.id }
   params.request = { body: { provider: user.provider + ',' + provider } }

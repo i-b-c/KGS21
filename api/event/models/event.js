@@ -19,7 +19,6 @@ module.exports = {
   lifecycles: {
     beforeUpdate(params, data) {
 
-      console.log('params', params, 'data', data);
       data.slug_et = data.name_et ? slugify( data.name_et) + '-' + data.remote_id : null
       data.slug_en = data.name_en ? slugify( data.name_en) + '-' + data.remote_id : null
     },
