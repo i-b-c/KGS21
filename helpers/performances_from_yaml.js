@@ -9,7 +9,7 @@ const performancesDir = path.join(fetchDir, 'performances')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance']
-const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
+const STRAPIDATA_LOCATIONS = STRAPIDATA['Location']
 
 const LANGUAGES = ['et', 'en']
 
@@ -21,15 +21,13 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        // if (['6865', '6858', '6538'].includes(performance.remote_id)){
+        // Kommenteeri sisse kui soovid ainult konkreetsete remote_id'dega performanceid ehitada
+
+        // if (['6865', '6858', '6538', '5429', '5810', '6796', '3842'].includes(performance.remote_id)){
 
         // } else {
         //     continue
         // }
-
-        // let performance.category = STRAPIDATA_CATEGORIES.filter( category => {
-        //     performance.remote_id === category.
-        // })
 
         if (performance.remote_id) {
 
@@ -39,15 +37,25 @@ for (const lang of LANGUAGES) {
                 performance.aliases = [`et/performance/${performance.remote_id}`]
             }
 
+            if (performance[`slug_${lang}`]) {
+                let slug = performance[`slug_${lang}`]
+                if (performance.aliases) {
+                    performance.aliases.push(`et/performance/${slug}`)
+                } else {
+                    performance.aliases = [`performance/${slug}`]
+                }
+            }
 
             if (performance.events){
 
                 for (const event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
-                    // if (event.resident) {
-                    //     console.log(performance.id, ' - ',performance.remote_id);
-                    // }
+
+                    if (event.location) {
+                        event.location = STRAPIDATA_LOCATIONS.filter(l => l.id === event.location)[0] || null
+                    }
+
                 }
 
 
@@ -63,6 +71,9 @@ for (const lang of LANGUAGES) {
 
             if (performance.X_pictures) {
                 performance.X_pictures = sort_pictures(performance.X_pictures)
+            }
+            if (performance.coverages) {
+                performance.coverages = performance.coverages.sort((a, b) => new Date(b.publish_date)-new Date(a.publish_date))
             }
             performance.data = { categories: `/_fetchdir/categories.${lang}.yaml`}
 
@@ -102,3 +113,4 @@ function sort_pictures(pics) {
     return JSON.parse(JSON.stringify(pics))
 
 }
+

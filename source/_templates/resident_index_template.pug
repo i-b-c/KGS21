@@ -49,26 +49,16 @@ block content
 
         .row.front-page-margin
             .col-md-6
-                //- if op.get(event, 'audio')
-                //-     div.col-xs-12.col-md-6
-                //-         h2= t('title.sound')
-                //-         div!= op.get(event, 'audio')
-                //-
-                //- if op.get(event, 'video')
-                //-     div.col-xs-12.col-md-6
-                //-         h2= t('title.video')
-                //-         div!= op.get(event, 'video')
-                //-
-                //- hr
-                if self.video
+
+                if self.videos
                     .gallery
                         h2= self.labels.title.video
-                            each video in self.video
+                            each video in self.videos
                                 div!= video.content
-                if self.audio
+                if self.audios
                     .gallery
-                        h2=self.labels.title.audio
-                            each audio in self.audio
+                        h2= self.labels.title.audio
+                            each audio in self.audios
                                 div!= audio.content
 
                 if self.event_media

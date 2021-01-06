@@ -5,15 +5,6 @@ block content
         .row
             section.event-banner.carousel.slide(id='front-carousel' data-ride='carousel')
                 .carousel-inner(role="listbox")
-                    //- .item.active
-                    //-     svg(version="1.1" width="0" height="0")
-                    //-         filter#filter-1607343038184
-                    //-             fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
-                    //-             fecomponenttransfer(color-interpolation-filters="sRGB")
-                    //-                 fefuncr(type="table" tablevalues="0 1")
-                    //-                 fefuncg(type="table" tablevalues="0 0.7764705882352941")
-                    //-                 fefuncb(type="table" tablevalues="0 0")
-                    //-                 fefunca(type="table" tablevalues="1 1")
 
                     - var bigPhotos = []
                     if self.X_pictures && self.X_pictures.photoBig && self.X_pictures.photoBig.length
@@ -55,10 +46,10 @@ block content
             .col-md-12
                 .row
                     //- SOUND
-                    if self.audio
+                    if self.audios
                         .video-sound
                             //- h2= t('title.sound')
-                            each audio in self.audio
+                            each audio in self.audios
                                 div!= audio
 
                     .article.main-text.h3.col-sm-12.col-md-8.col-lg-8
@@ -85,12 +76,11 @@ block content
                                                         img(src=`${f_api}${photo}`, class='img-responsive')
 
                         //- VIDEO
-                        if self.video
+                        if self.videos
                             .video-sound
-                                if self.video.length
-                                    h2= self.labels.title.video
-                                    each video in self.video
-                                        div!= video.content
+                                h2= self.labels.title.video
+                                each video in self.videos
+                                    div!= video.content
 
                         .comments
                             .fb-comments(data-href='', data-width="100%", data-numposts="10")
@@ -114,89 +104,7 @@ block content
                                         if relArticle.authors_cs
                                             span.author= relArticle.authors_cs
                                     hr
-                                    //- a(href="./magazine/5350")
-                                    //-     p 28.03.2018
-                                    //-     h3
-                                    //-         span.artist Kellele on kasulik, et sa kardad?
-                                    //-     span.author Hanna Selgis
-                                    //- hr
-                                    //- a(href="./magazine/5333")
-                                    //-     p 15.03.2018
-                                    //-     h3
-                                    //-         span.artist MADE IN ESTONIA MARATON – sõna ja vormi harmoonia
-                                    //-     span.author Marta Vunš
-                                    //- hr
-                                    //- a(href="./magazine/5215")
-                                    //-     p 05.01.2018
-                                    //-     h3
-                                    //-         span.artist Avalik kiri Magasini toimetajalt
-                                    //-     span.author Kaja Kann
-                                    //- hr
-                                    //- a(href="./magazine/5214")
-                                    //-     p 28.12.2017
-                                    //-     h3
-                                    //-         span.artist Today I woke up and the day was gone
-                                    //-     span.author Alissa Šnaider
-                                    //- hr
-                                    //- a(href="./magazine/5179")
-                                    //-     p 12.12.2017
-                                    //-     h3
-                                    //-         span.artist Veel kord Mariast
-                                    //-     span.author Ilmar Branno
-                                    //- hr
-                                    //- a(href="./magazine/5141")
-                                    //-     p 26.10.2017
-                                    //-     h3
-                                    //-         span.artist kontakt
-                                    //-     span.author Henri Hütt
-                                    //- hr
-                                    //- a(href="./magazine/5075")
-                                    //-     p 15.09.2017
-                                    //-     h3
-                                    //-         span.artist KRIITIKA LAVASTUSELE, MIDA POLE OLNUD NO00
-                                    //-     span.author Henri Hütt
-                                    //- hr
-                                    //- a(href="./magazine/5074")
-                                    //-     p 13.09.2017
-                                    //-     h3
-                                    //-         span.artist KRIITIKA LAVASTUSELE, MIDA POLE OLNUD NO00
-                                    //-     span.author Maarja Kalmre
-                                    //- hr
-                                    //- a(href="./magazine/5073")
-                                    //-     p 11.09.2017
-                                    //-     h3
-                                    //-         span.artist “NOH, MITTE MIDAGI EI JUHTUNUD. AGA ARMASTAN SIND” Teater NO99 viimane teos nr 0
-                                    //-     span.author Epp Kubu
-                                    //- hr
-                                    //- a(href="./magazine/5058")
-                                    //-     p 04.09.2017
-                                    //-     h3
-                                    //-         span.artist MA EI TAHA OLLA PORGANDIKUNINGAS
-                                    //-     span.author Kaja Kann
-                                    //- hr
-                                    //- a(href="./magazine/5009")
-                                    //-     p 17.08.2017
-                                    //-     h3
-                                    //-         span.artist 2 Reality
-                                    //-     span.author Olga Tsvetkova
-                                    //- hr
-                                    //- a(href="./magazine/5007")
-                                    //-     p 15.08.2017
-                                    //-     h3
-                                    //-         span.artist Kunstniku ootused produtsendile ning produtsendi ootused kunstnikule
-                                    //- hr
-                                    //- a(href="./magazine/4997")
-                                    //-     p 01.08.2017
-                                    //-     h3
-                                    //-         span.artist SEANSS SULATUSAHJUS
-                                    //-     span.author Epp Kubu
-                                    //- hr
-                                    //- a(href="./magazine/4981")
-                                    //-     p 25.07.2017
-                                    //-     h3
-                                    //-         span.artist KARL SAKSA “SEISUND JA DISAIN” KUI RITUAALNE JA MÄLULINE RÄNNAK
-                                    //-     span.author Maarja Kalmre
-                                    //- hr
+
                             .row
                                 .col-xs-12.col-md-12
                                     a.load-more.btn.btn-primary(href="/et/magazine/")= self.labels.button.view_all

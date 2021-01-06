@@ -60,8 +60,8 @@ block content
                                         if event.performance_X_producer
                                             span.producer= event.performance_X_producer
 
-                                        if event.performance_X_town
-                                            span.town= event.performance_X_town
+                                        if event[`performance_X_town_${self.locale}`]
+                                            span.town= event[`performance_X_town_${self.locale}`]
 
                                         span.name= event[`performance_name_${self.locale}`]
 
@@ -119,3 +119,6 @@ block content
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
+
+                        script.
+                            festivalEventsToggler()

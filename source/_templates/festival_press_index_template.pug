@@ -1,111 +1,33 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
         .row
-            #front-carousel.event-banner.carousel.slide
-                .carousel-inner(role="listbox")
-                    figure(style='background-image: url("https://saal.entu.ee/api2/file-6612"); height: 778px;')
+            .event-banner.carousel.slide(id='front-carousel')
+                .carousel-inner(role='listbox')
+                    if self.image_hero
+                        figure(style=`background-image: url('${m_api}${self.image_hero}');`)
+                    else
+                        figure(style=`background-image: url('/assets/images/placeholder.jpg');`)
+
         .row.page-margin
             section.col-md-12
-                .col-12
-                    h2(style="text-align: right; transform: rotate(350deg);")
-                        a(href="https://saal.entu.ee/api2/file-1712" style="" target="_blank")= self.labels.nu.get_newspaper_2016_1
+                //- pre= JSON.stringify(festival, null, 4)
+                //- h2= op.get(festival, [lang + '-name'])
+                if self[`name_${self.locale}`] == 'NU Performance Festival'
+                    .col-12
+                        h2(style='text-align: right; transform: rotate(350deg);')
+                            a(href='https://saal.entu.ee/api2/file-1712', style='', target='_blank')= self.labels.nup.get_newspaper_2016_1
+
                 .programme.row
-                    .col-12
-                        h3 17.10.2016 esmaspäev
-                        h4 Pressiteade 17.10.2016: NU Performance Festival 2016 toimub 29.10-5.11 Tallinnas
-                        div
-                            p
-                                | NU Performance Festival 2016:
-                                br
-                                | CORPORATE OCCULT_lets talk about the body baby
-                                br
-                                | 29.10 – 5.11.2016
-                                br
-                                | Kanuti Gildi SAALis ja Punases Majas
-                                br
-                                br
-                                | Kuraator: Maria Arusoo
-                                br
-                                | Kunstnikud: Peaches, Dana Michel, Samira Elagoz, Maria Metsalu, Black Cracker, Maria Minerva, Kolbeinn Hugi, Vanessa Place, Kris Lemsalu, Helena Keskküla, Emer Värk & Renzo van Steenbergen, Huoraton /Last Gang Records, Ivo Dimchev jt.
-                                br
-                                br
-                                | NU Performance Festival toob kokku rahvusvahelise seltskonna visuaal- ja performancekunstnikke, muusikuid, koreograafe ning publiku, et luua nädal aega kestev inspireeriv ja eksperimenteeriv platvorm, mis koosneb etendustest, kontserditest, skriiningutest, vestlustest ja kõigest, mis selle ümber juhtuma hakkab.
-                                br
-                                br
-                                | CORPORATE OCCULT_lets talk about the body baby temaatiline fookus on mõistetel keha ja seksuaalsus ning projetseeritud ootuste ja stereotüüpsete kuvandite küsimuse alla seadmisel ja murdmisel. Keha ja sugu kui poliitiline platvorm, mis on samas midagi väga personaalset ja alati intiimset. Mitmed performance’id võtavad vaatluse alla piiri küsimused - piir lava ja vaataja, küber- ja füüsilise reaalsuse, intiimsuse ja vägigivalla, JAH ja EI vahel, luues imeliselt kummastava situatsiooni, kus esineja muutub iseenda arheloogiks avades end publikule.
-                                br
-                                br
-                                | Maria Arusoo: “Keha on performancekunstis alati olnud läbivaks teemaks, kuid eesoleva festivali fookus on kasutada keha narratiivina ja lähtepunktina, rääkida konstrueeritud ja muutuvatest soorollidest, nende poliitilisest tähendusest, kuid ka mõjust meie arusaamale armastusest, lähedusest ja intiimsusest. Mul on eriti hea meel, et NU Performance Festival 2016 raames tuleb selle jaoks Tallinna meeletult inspireeriv grupp kuntnikke, kellega koos neid teemasid läbi mõeldakse.”
-                                br
-                                | Mis muud kui 'let's talk about body baby'
-                                br
-                                br
-                                | Korraldaja: Uue Performantsi Selts
-                                br
-                                | Kaaskorraldaja: Kanuti Gildi SAAL
-                                br
-                                | Visuaalne identiteet: Kris Lemsalu “Aldonza Lorenzo” (2013)
-                                br
-                                | Festivali initsiaatorid: Anders Härm, Priit Raud
-                                br
-                                br
-                                | Toetajad ja partnerid: Eesti Kultuurkapital, Kaasaegse Kunsti Eesti Keskus, Islandi Kaasaegse Kunsti Keskus, Moving in November (Helsingi), Tallinn Historical Hotels, Frame Finland, Nordic Culture Point, Punane Maja, MÜRK Records, Trumm, Saaldisain jt.
-                                br
-                                | Tänud: Sten Ojavee, Antonio Trecel Diaz, Cyndy Villano, Rebeka Põldsam, Kaarin Kivirähk, Vesa Humalisto, Merike Estna, Jenni Nurmenniemi, Jennifer Boyd, Mihkel Maripuu, Raul Saaremets ja kõik, kes on festivalile kaasa aidanud.
-                                br
-                                | Piletid eelmüügis Piletilevis
-                                br()
-                                | Festivali kava: www.saal.ee/nuperformancefestival
-                                br
-                        hr
-                    .col-12
-                        h3 25.10.2016 teisipäev
-                        h4 Pressiteade 25.10.2016: NU Performance Festival 2016 algab sel laupäeval!
-                        div
-                            p
-                                | Pressiteade 25.10.2016
-                                | NU Performance Festival 2016 algab sel laupäeval!
-                            p
-                                | Laupäeval, 29. oktoobril algab NU Performance Festival 2016: CORPORATE OCCULT_lets talk about the body baby. Festival toimub 29. oktoobrist kuni 5. novembrini Kanuti Gildi SAALis ja Punases Majas.
-                            p
-                                | Kuraator: Maria Arusoo
-                                | Kunstnikud: Peaches, Dana Michel, Samira Elagoz, Maria Metsalu, Black Cracker, Maria Minerva, Kolbeinn Hugi, Vanessa Place, Kris Lemsalu, Helena Keskküla, Emer Värk & Renzo van Steenbergen, Huoraton /Last Gang Records, Ivo Dimchev.
-                                | Skriining programm: Shana Moulton, Hannah Black, George Jacotey.
-                            p
-                                | NU Performance Festival toob kokku rahvusvahelise seltskonna visuaal- ja performancekunstnikke, muusikuid, koreograafe ning publiku, et luua nädal aega kestev inspireeriv ja eksperimenteeriv platvorm, mis koosneb etendustest, kontserditest, skriiningutest, vestlustest ja kõigest, mis selle ümber juhtuma hakkab.
-                            p
-                                | CORPORATE OCCULT_lets talk about the body baby temaatiline fookus on mõistetel keha ja seksuaalsus ning projetseeritud ootuste ja stereotüüpsete kuvandite küsimuse alla seadmisel ja murdmisel. Keha ja sugu kui poliitiline platvorm, mis on samas midagi väga personaalset ja alati intiimset. Mitmed performance’id võtavad vaatluse alla piiri küsimused - piir lava ja vaataja, küber- ja füüsilise reaalsuse, intiimsuse ja vägigivalla, JAH ja EI vahel, luues imeliselt kummastava situatsiooni, kus esineja muutub iseenda arheloogiks avades end publikule.
-                            p
-                                | Maria Arusoo: “Keha on performancekunstis alati olnud läbivaks teemaks, kuid eesoleva festivali fookus on kasutada keha narratiivina ja lähtepunktina, rääkida konstrueeritud ja muutuvatest soorollidest, nende poliitilisest tähendusest, kuid ka mõjust meie arusaamale armastusest, lähedusest ja intiimsusest. Mul on eriti hea meel, et NU Performance Festival 2016 raames tuleb selle jaoks Tallinna meeletult inspireeriv grupp kuntnikke, kellega koos neid teemasid läbi mõeldakse.”
-                                | Mis muud kui 'let's talk about body baby'
-                            p Festivali kava: www.saal.ee/nuperformancefestival
-                            p
-                                | Korraldaja: Uue Performantsi Selts
-                                | Kaaskorraldaja: Kanuti Gildi SAAL
-                                | Visuaalne identiteet: Kris Lemsalu “Aldonza Lorenzo” (2013)
-                                | Festivali initsiaatorid: Anders Härm, Priit Raud
-                            p
-                                | Toetajad ja partnerid: Eesti Kultuurkapital, Kaasaegse Kunsti Eesti Keskus, Islandi Kaasaegse Kunsti Keskus, Moving in November (Helsingi), Frame Finland, Nordic Culture Point, Nordic Hotel Forum, Punane Maja, MÜRK Records, Trumm, Saaldisain, Tallinn Historical Hotels, Raasdio2, JCDecaux, BassTunes jt.
-                                | Tänud: Sten Ojavee, Antonio Trecel Diaz, Cyndy Villano, Rebeka Põldsam, Kaarin Kivirähk, Vesa Humalisto, Merike Estna, Jenni Nurmenniemi, Jennifer Boyd, Mihkel Maripuu, Raul Saaremets ja kõik, kes on festivalile kaasa aidanud.
-                            p
-                                | Piletid eelmüügis Piletilevis:
-                                a(href="http://www.piletilevi.ee/est/search:nu%20performance%20festival/") http://www.piletilevi.ee/est/search:nu%20performance%20festival/
-                            p
-                                | Kontakt:
-                                | Eneli Järs
-                                | +372 5069655 / eneli@saal.ee
-                                | www.saal.ee
-                        hr
-                    .col-12
-                        h3 26.10.2016 kolmapäev
-                        h4 Sügise kõige rajum festival
-                        div
-                        hr
-                        h4 Peaches seks on hea
-                        div
-                        hr
-                        h4 Isiklikud lood on olulised. Intervjuu Maria Arusooga
-                        div
-                        hr
+                    if self.coverage_dates
+                        each coverageDate, key in self.coverage_dates
+                            .col-12
+                                +dateAndWeekday(key)
+                                each coverage in coverageDate
+                                    h4= coverage.title
+                                    if coverage.content
+                                        div
+                                            +markdown(coverage.content)
+                                    hr
