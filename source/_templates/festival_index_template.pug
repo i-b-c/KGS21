@@ -29,19 +29,19 @@ block content
                                         p
                                             +hoursMinutes(event.start_time)
                                     if event.canceled
-                                        p.today JÄÄB ÄRA!
+                                        p.today= self.labels.button.canceled
 
                                     //- Premiere
                                     if event.performance_X_premiere_time
                                         if event.performance_X_premiere_time === event.start_time
-                                            p.today ESIETENDUS!
+                                            p.today= self.labels.button.premiere
 
                                     //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
-                                    p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
+                                    p.today(id=`today-${event.remote_id}` style='display: none;')= self.labels.button.today
 
                                     //- Artist talk
                                     if event.conversation
-                                        p.today ARTIST TALK!
+                                        p.today= self.labels.button.artist_talk
 
                                 .col-xs-12.col-md-6.col-lg-6
                                     a(href=`/${lang_path}performance/${event.performance_remote_id}`)
@@ -60,8 +60,8 @@ block content
                                         if event.performance_X_producer
                                             span.producer= event.performance_X_producer
 
-                                        if event.performance_X_town
-                                            span.town= event.performance_X_town
+                                        if event[`performance_X_town_${self.locale}`]
+                                            span.town= event[`performance_X_town_${self.locale}`]
 
                                         span.name= event[`performance_name_${self.locale}`]
 
@@ -96,7 +96,7 @@ block content
 
                                     if event.X_ticket_info
                                         if !event.X_ticket_info.price
-                                            p TASUTA
+                                            p= self.labels.ticket.buy_t_free_admission
                                         else
                                             p= event.X_ticket_info.price
 
@@ -107,15 +107,18 @@ block content
                                             //-     p= event.X_ticket_info.min_price + '/' + op.get(p, 'max-price') + '€'
 
                                         if event.X_ticket_info.onsite_price
-                                            p= 'HIND KOHAPEAL' + ': ' + event.X_ticket_info.onsite_price + '€'
+                                            p= self.labels.ticket.buy_t_price_on_spot + ': ' + event.X_ticket_info.onsite_price + '€'
 
                                 if event.X_ticket_info
                                     if event.X_ticket_info.sales_status
                                         .col-xs-6.col-md-2.col-lg-2.text-right
                                             if event.canceled
-                                                a.btn.btn-primary(class="disabled") TÜHISTATUD
+                                                a.btn.btn-primary(class="disabled")= self.labels.ticket.buy_t_canceled
                                             else
                                                 a.btn.btn-primary(class=((event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === 'free_admission') ? "free disabled" : "") href=event.X_ticket_info.ticket_api target='_blank') DYN BTN
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
+
+                        script.
+                            festivalEventsToggler()

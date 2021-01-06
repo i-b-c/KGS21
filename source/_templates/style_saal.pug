@@ -1,8 +1,8 @@
-//- KOMMENTEERISIN ALLOLEVAD MUUTUJAD VÄLJA JA DEFINEERISIN NEED STAATILISELT
-//- - var fgcolor = SDC.get(['root', 'main_color'], 'FFFF00')
-//- - var bgcolor = SDC.get(['root', 'secondary_color'], '1a1919')
-- var fgcolor = '#FFC600'
-- var bgcolor = '#1a1919'
+//- main_color
+- var fgcolor = self.site_colors.fg_color
+//- secondary_color
+- var bgcolor = self.site_colors.bg_color
+//- - console.log(typeof fgcolor, typeof bgcolor)
 style.
     /**
     ** SAAL COLOR SCHEME

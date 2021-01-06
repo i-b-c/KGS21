@@ -224,6 +224,7 @@ const foo = async () => {
                     if (model.hasOwnProperty(property_name)) {
                         const value = model[property_name]
                         // '_modelName' on üleval ise sees kirjutaud väärtus andmemudelis, mis on võrdne mudeli nimega
+                        // console.log({property_name, model});
                         if (value.hasOwnProperty('_modelName')) {
                             let search_model_name = value['_modelName']
                             // console.log('foo', search_model_name, 'in', modelName)

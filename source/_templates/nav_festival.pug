@@ -14,12 +14,10 @@ nav.navbar.navbar-default.navbar-fixed-top
                 - var fest_path_lang = `/${lang_path}festival/${self.remote_id}`
                 li(class= (self.path === `${fest_path}/about/` || self.path === `${fest_path_lang}/about/`) ? 'active' : undefined )
                     a(href=`${fest_path}/about/`)= self.labels.nav.about_festival
-                if typeof festival !== 'undefined' && festival.coverage && Object.keys(festival.coverage).length
+                if self.coverages
                     li(class= (self.path === `${fest_path}/press/` || self.path === `${fest_path_lang}/press/`) ? 'active' : undefined )
                         a(href=`${fest_path}/press`)= self.labels.nav.press
                 li(class= (self.path === `${fest_path}/program/` || self.path === `${fest_path_lang}/program/`) ? 'active' : undefined )
-                    script.
-                        console.log(`/#{lang_path}festival/#{self.remote_id}/program`, ' - ', `#{self.path}`)
                     a(href=`${fest_path}/program`)= self.labels.nav.program
                 li(class= self.path === `${fest_path}/tickets` ? 'active' : undefined )
                     a(href=`${fest_path}/tickets`)= self.labels.nav.tickets

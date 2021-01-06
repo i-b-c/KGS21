@@ -114,7 +114,6 @@ Location: &Location
     name_en: (text)
     slug_et: (UID, name)
     slug_en: (UID, name)
-    permitted_capacity: (number)
     remote_id: (UID)
     hall: *Hall
     town: *Town
@@ -123,12 +122,6 @@ Location: &Location
     # description_et: (text)
     # description_en: (text)
     # floorplan: *StrapiMedia
-
-Artist:
-    person:
-    artist_name:
-    portfolio:
-
 
 #Person
 Person: &Person
@@ -144,6 +137,13 @@ Person: &Person
     remote_id: (UID)
     # date_of_birth:
     # biography:
+
+Artist: &Artist
+    person: *Person
+    artist_name: (text)
+    # portfolio: (text)
+    performances:
+        - (backreference)
 
 Department: &Department
     _path: /departments
@@ -196,7 +196,64 @@ Coverage: &Coverage
     media:
         - *StrapiMedia
     content: (text rich)
-    date_published: (datetime)
+    publish_date: (datetime)
+
+#Performance
+
+PerformanceMedia: &PerformanceMedia
+    original_image: *StrapiMedia
+    hero_image: *StrapiMedia
+    gallery_image_large: *StrapiMedia
+    gallery_image_medium: *StrapiMedia
+
+Performance: &Performance # performance #lavastus
+    _path: /performances
+    name_et: (text)
+    name_en: (text)
+    slug_et: (UID, name_et)
+    slug_en: (UID, name_en)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    categories:
+        - *Category
+    coproduction: (boolean)
+    coproduction_importance: (number)
+    front_page_promotion: (boolean)
+    purchase_description_et: (text)
+    purchase_description_en: (text)
+    description_et: (text rich)
+    description_en: (text rich)
+    technical_info_et: (text rich)
+    technical_info_en: (text rich)
+    performance_media:
+        - *PerformanceMedia
+    logos:
+        - *StrapiMedia
+    raiders: # fail
+        - *StrapiMedia
+    videos:
+        - *MediaContent
+    audios:
+        - *MediaContent
+    X_headline_et: (text)
+    X_headline_en: (text)
+    X_artist: (text rich)
+    X_producer: (text rich)
+    X_other_works: (text rich) # seotud inimese tegemistega, tulevad inimese kyljest
+    X_town_et: (text)
+    X_town_en: (text)
+    artists:
+        - *Artist # (backreference)
+    # producers:
+    #     - *Person # kas alati asutus
+    events:
+        - (backreference) #*Event
+    remote_id: (UID)
+    X_pictures: *X_pictures
+    X_premiere_time: (datetime)
+    coverages:
+        - *Coverage
+    duration: (number)
 
 #Event
 TicketInfo: &TicketInfo
@@ -229,7 +286,7 @@ Event: &Event # etendus
     subtitle_et: (text)
     subtitle_en: (text)
     resident: (text) # tegemist residentuuriga
-    # performance: *Performance # kehepidine seos, meie kysime teisest otsast
+    performance: *Performance # (backreference)
     hide_from_page: (boolean)
     canceled: (boolean)
     conversation: (boolean) # peaks olema suurem ? inimene ka kohe kaasa kogu infoga? mida siin m6eldud, vestlus enne etendust?
@@ -258,6 +315,7 @@ Event: &Event # etendus
         - *MediaContent
     order: (number)
     location: *Location
+    permitted_capacity: (number)
     X_location_et: (text)
     X_location_en: (text)
     event_media:
@@ -268,60 +326,7 @@ Event: &Event # etendus
         - (id) # repeatable relation to event
     coverages:
         - *Coverage
-
-
-#Performance
-
-PerformanceMedia: &PerformanceMedia
-    original_image: *StrapiMedia
-    hero_image: *StrapiMedia
-    gallery_image_large: *StrapiMedia
-    gallery_image_medium: *StrapiMedia
-
-Performance: &Performance # performance #lavastus
-    _path: /performances
-    name_et: (text)
-    name_en: (text)
-    slug_et: (UID, name_et)
-    slug_en: (UID, name_en)
-    subtitle_et: (text)
-    subtitle_en: (text)
-    categories:
-        - *Category
-    coproduction: (boolean)
-    coproduction_importance: (number)
-    front_page_promotion: (boolean)
-    purchase_description_et: (text)
-    purchase_description_en: (text)
-    premiere: (datetime)
-    description_et: (text rich)
-    description_en: (text rich)
-    technical_info_et: (text rich)
-    technical_info_en: (text rich)
-    performance_media:
-        - *PerformanceMedia
-    logos:
-        - *StrapiMedia
-    raiders: # fail
-        - *StrapiMedia
-    X_headline_et: (text)
-    X_headline_en: (text)
-    X_artist: (text rich)
-    X_producer: (text rich)
-    X_other_works: (text rich) # seotud inimese tegemistega, tulevad inimese kyljest
-    X_town_et: (text)
-    X_town_en: (text)
-    artists:
-        - *Person
-    # producers:
-    #     - *Person # kas alati asutus
-    events:
-        - *Event
-    remote_id: (UID)
-    X_pictures: *X_pictures
-    X_premiere_time: (datetime)
-    coverages:
-        - *Coverage
+    premiere: (boolean)
 
 #News and Article
 Newscast: &Newscast
@@ -344,7 +349,6 @@ ArticleMedia: &ArticleMedia
     original_image: *StrapiMedia
     gallery_image_large: *StrapiMedia
     gallery_image_medium: *StrapiMedia
-
 
 Article: &Article #Echo
     _path: /articles
@@ -373,8 +377,6 @@ Article: &Article #Echo
     remote_id: (UID)
     X_pictures: *X_pictures
 
-
-
 Label: &Label
     name: (text)
     value_et: (text)
@@ -395,7 +397,6 @@ SimpleArticle: &SimpleArticle
     content_en: (text rich)
     images:
         - *StrapiMedia
-
 
 #SingleType
 Configuration: &Configuration
