@@ -7,18 +7,20 @@ const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const LANGUAGES = ['et', 'en']
+const typesToInclude = ['program', 'tour', 'festival']
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 
 const assetsDir = path.join(rootDir, 'assets')
 const calendarJsonPath = path.join(assetsDir, 'calendar_json.json')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
+const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page && (typesToInclude.includes(e.type)))
 
 const eventCalendar = {
-  minDate: moment().subtract(1, 'months'),
+  minDate: moment().subtract(2, 'months').set('date', 1),
   maxDate: moment(),
   events: {}
 }
+
 for (const event of STRAPIDATA_EVENTS) {
   if(!event.start_time) {
     continue
@@ -34,18 +36,25 @@ for (const event of STRAPIDATA_EVENTS) {
   const event_date = event_moment.tz('europe/tallinn').format('YYYY-M-D')
   // console.log({'event.id': event.id, 'event.start_time': event.start_time, event_date})
   eventCalendar.events[event_date] = eventCalendar.events[event_date] || []
+
+  let performance_name_et = event.performance.name_et ? event.performance.name_et : (event.name_et ? event.name_et : (event.performance.X_headline_et || ''))
+  let performance_name_en = event.performance.name_en ? event.performance.name_en : (event.name_en ? event.name_en : (event.performance.X_headline_en || ''))
+
   eventCalendar.events[event_date].push({
-    eid: event.id,
-    tag: [event.type],
+    eid: event.performance.remote_id,
+    tag: [event.type === 'program' ? 'event' : event.type],
     controller: 'performance',
     name: {
-      et: event.performance_name_et,
-      en: event.performance_name_en
+      et: performance_name_et,
+      en: performance_name_en
     },
     time: event_moment.tz('europe/tallinn').format('HH:mm'),
-    location: {
-      et: event.location_et,
-      en: event.location_en
+    location: event.location ? {
+      et:  event.location.name_et,
+      en: event.location.name_en
+    } : {
+      et: '',
+      en: ''
     }
   })
 }
