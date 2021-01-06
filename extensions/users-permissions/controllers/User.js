@@ -125,8 +125,7 @@ module.exports = {
   },
   async destroyme(ctx) {
     const { id } = ctx.state.user;
-    console.log(id);
     const data = await strapi.plugins['users-permissions'].services.user.remove({ id });
-    ctx.send(sanitizeUser(data));
+    ctx.send({ok: true});
   },
 };
