@@ -13,10 +13,7 @@ module.exports = {
 async my(ctx) {
     let {Favorites: favorites} = ctx.state.user
     favorites = favorites.map(item => item.performance_id)
-    console.log(favorites);
-    console.log('myevents');
     let entities;
-    console.log(ctx.query)
     if (ctx.query._q) {
       entities = await strapi.services.performance.search(ctx.query);
     } else {
@@ -35,10 +32,9 @@ async my(ctx) {
         sanitizedMyPerformance.slug_en = entity.slug_en
         sanitizedMyPerformance.artist = entity.artist
         sanitizedMyPerformance.producer = entity.producer
+        sanitizedMyPerformance.remote_id = entity.remote_id
         return sanitizedMyPerformance})
         
-    console.log(entities);
-
     return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.performance }));
 
   },
