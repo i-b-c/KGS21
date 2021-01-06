@@ -105,8 +105,8 @@
       "type": "string"
     },
     "events": {
-      "via": "performance",
-      "collection": "event"
+      "collection": "event",
+      "via": "performance"
     },
     "X_town_et": {
       "type": "string"
