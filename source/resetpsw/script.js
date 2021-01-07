@@ -78,7 +78,6 @@ const SendNewPassword = async () => {
 
 const addPassword = async () => {
     console.log("lisan parooli")
-  
     let email = userProfile.email
     let psw = document.getElementById("Psw").value
 
@@ -104,7 +103,7 @@ const addPassword = async () => {
     if (response.ok) {
         const data = await response.json()
         console.log(data)
-        window.open('http://localhost:4000/login')
+        window.open(`${document.location.origin}/login`)
     } else {
         var errorResponse = await response.json()
         var errors = []
