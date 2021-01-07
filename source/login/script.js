@@ -328,7 +328,7 @@ const GetUserFavorites = async() => {
         let errorResponse = await res.json()
         console.log("response: ", errorResponse)
     }
-    // console.log(JSON.stringify(data))
+    console.log(JSON.stringify(data))
     let locale = document.getElementById("locale").innerHTML
     document.getElementById("favo-block").style.display = "block"
     document.getElementById("no-favo").style.display = "none"
@@ -337,12 +337,15 @@ const GetUserFavorites = async() => {
         let link = oneFavo.childNodes[0].firstChild.firstChild
         let name = oneFavo.childNodes[0].firstChild.firstChild.firstChild
         let artist = oneFavo.childNodes[0].firstChild.firstChild.childNodes[1]
+        let button = oneFavo.childNodes[1].firstChild
+        button.setAttribute("onClick", `updateFavo(${favo.id})`)
         link.setAttribute("href",`performance/${favo.remote_id}`)
         name.innerHTML=favo[`name_${locale}`]
         artist.innerText=favo.artist
         oneFavo.style.display = "block"
         document.getElementById("my-favorites").appendChild(oneFavo)
     }
+        // (onClick =`updateFavo(${self.id})`)
 
 }
 
