@@ -7,8 +7,7 @@ block content
             .event-banner.carousel.slide(id='front-carousel')
                 .carousel-inner(role="listbox")
 
-                    - var photosBig = self.X_pictures && self.X_pictures.photoBig ? self.X_pictures.photoBig.split(',') : []
-                    - var photoBig = photosBig.length ? `${f_api}${photosBig[0]}` : `/assets/images/placeholder.jpg`
+                    - var photoBig = self.hero_images ? `${f_api}${self.hero_images[0]}` : `/assets/images/placeholder.jpg`
                     figure(id= `slide-${self.remote_id}` style=`background-image: url("${photoBig}");`)
                     header.col-md-8
                         if self[`X_headline_${self.locale}`]
@@ -125,14 +124,25 @@ block content
                             each audio in self.audios
                                 div!= audio.content
 
-                if self.X_pictures && self.X_pictures.photoGallery && self.X_pictures.photoMedium && self.X_pictures.photoGallery.length && self.X_pictures.photoMedium.length
+                if self.performance_media
                     .gallery
                         h2= self.labels.title.gallery
                             .row
-                            each galPhoto, key in self.X_pictures.photoGallery.split(',')
-                                .single-image.col-sm-6.col-sm-3.col-md-4
-                                    a.fancybox(rel="gallery" href=`${f_api}${galPhoto}`)
-                                        img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
+                            each galPhoto in self.performance_media
+                                if galPhoto.gallery_image_medium
+                                    .single-image.col-sm-6.col-sm-3.col-md-4
+
+                                        if galPhoto.original_image && galPhoto.original_image.url && galPhoto.hero_image
+                                            - var imgLink = galPhoto.original_image.url
+                                        else if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
+                                            - var imgLink = galPhoto.gallery_image_large.url
+                                        else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
+                                            - var imgLink = galPhoto.gallery_image_medium.url
+
+                                        a.fancybox(rel="gallery" href=`${m_api}${imgLink}`)
+                                            img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
+
+
 
             .col-md-6
                 if self.coverages && self.coverages.length

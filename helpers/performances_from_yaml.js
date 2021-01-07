@@ -77,6 +77,11 @@ for (const lang of LANGUAGES) {
             if (performance.X_pictures) {
                 performance.X_pictures = sort_pictures(performance.X_pictures)
             }
+
+            if (performance.performance_media) {
+                performance.hero_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
+            }
+
             if (performance.coverages) {
                 performance.coverages = performance.coverages.sort((a, b) => new Date(b.publish_date)-new Date(a.publish_date))
             }
