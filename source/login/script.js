@@ -307,6 +307,14 @@ const beautifyProviders = providers => {
 }
 
 
+let myLocation
+if(document.location.pathname.split("/")[1]==="en"){
+    myLocation = document.location.origin+"/en"
+}else {
+    myLocation = document.location.origin
+}
+//https://saal.netlify.app/login
+
 const GetUserFavorites = async() => {
     console.log("getting user favorites");
     // if (validToken) {
@@ -328,40 +336,43 @@ const GetUserFavorites = async() => {
         let errorResponse = await res.json()
         console.log("response: ", errorResponse)
     }
-    console.log(JSON.stringify(data))
+    // console.log(JSON.stringify(data))
     let locale = document.getElementById("locale").innerHTML
-    document.getElementById("favo-block").style.display = "block"
-    document.getElementById("no-favo").style.display = "none"
+    document.getElementById("my-favorites").innerHTML=""
     for (favo of data){
+        document.getElementById("no-favo").style.display= "none"
         let oneFavo = document.getElementById("one-favo").cloneNode(true)
+        oneFavo.setAttribute("id", favo.id)
         let link = oneFavo.childNodes[0].firstChild.firstChild
+        link.setAttribute("href",`${myLocation}/performance/${favo.remote_id}`)
         let name = oneFavo.childNodes[0].firstChild.firstChild.firstChild
-        let artist = oneFavo.childNodes[0].firstChild.firstChild.childNodes[1]
-        let button = oneFavo.childNodes[1].firstChild
-        button.setAttribute("onClick", `updateFavo(${favo.id})`)
-        link.setAttribute("href",`performance/${favo.remote_id}`)
         name.innerHTML=favo[`name_${locale}`]
+        let artist = oneFavo.childNodes[0].firstChild.firstChild.childNodes[1]
         artist.innerText=favo.artist
-        oneFavo.style.display = "block"
+        let button = oneFavo.childNodes[1].firstChild
+        // button.setAttribute("onClick", `hideFavo(${favo.id})`)
+        button.setAttribute("onClick", `updateFavo(${favo.id}), hideFavo(${favo.id})`)
+        // oneFavo.classList.toggle("hidden")
         document.getElementById("my-favorites").appendChild(oneFavo)
     }
         // (onClick =`updateFavo(${self.id})`)
 
 }
+function hideFavo(element_id){
+    console.log("panen peitu", element_id)
+    document.getElementById(element_id).classList.toggle("hidden")
+}
 
 function showUserInfo() {
     try {
-        console.log("showing user info")
+        // console.log("showing user info")
         userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
         email.innerHTML = userProfile.email
         if (userProfile.firstName) firstName.innerHTML = userProfile.firstName
         if (userProfile.lastName) lastName.innerHTML = userProfile.lastName
         if (userProfile.phoneNumber) phoneNr.innerHTML = userProfile.phoneNumber
-        // if (userProfile.provider) providers.innerHTML = beautifyProviders(userProfile.provider)
-        if (userProfile.Favorites){
-            console.log("favod")
-            GetUserFavorites()
-        }
+        if (userProfile.provider) providers.innerHTML = beautifyProviders(userProfile.provider)
+        if (userProfile.Favorites) GetUserFavorites()
     } catch (err) {
         console.log(err)
     }
