@@ -15,6 +15,7 @@ function fillUserForm() {
         if (userProfile.firstName) firstName.value = userProfile.firstName
         if (userProfile.lastName) lastName.value = userProfile.lastName
         if (userProfile.phoneNumber) phoneNr.value = userProfile.phoneNumber
+        if (userProfile.provider.includes('local')) password.style.display = ''
         if (userProfile.provider.includes('google')) google.style.display = ''
         if (userProfile.provider.includes('facebook')) facebook.style.display = ''
     } catch (err) {
@@ -167,8 +168,93 @@ openProvider = (provider) => {
     if (provider === 'Google')
         window.open('https://myaccount.google.com/permissions', '_blank')    
     doneAtProvider.innerHTML = doneAtProvider.innerHTML + ` '${provider.toUpperCase()}'`
-    doneAtProvider.style.display = ''    
+    doneAtProvider.style.display = ''
 }
+
+showAdvancedSettings = () => {
+    showAdvancedStgBtn.style.display = 'none'
+    hideAdvancedStgBtn.style.display = ''
+    advanced_settings.style.display = ''
+    if (userProfile.provider.includes('local')) resetPswdBtn.style.display = ''
+    if (!userProfile.provider.includes('local')) addPswdBtn.style.display = ''
+
+}
+
+hideAdvancedSettings = () => {
+    hideAdvancedStgBtn.style.display = 'none'
+    showAdvancedStgBtn.style.display = ''
+    advanced_settings.style.display = 'none'
+
+}
+
+const SendPswResetLink = async () => {
+    console.log("lähtestan parooli")
+    let email = userProfile.email
+
+    let body = JSON.stringify({
+        "email": email
+    })
+
+    let requestOptions = {
+        'method': 'POST',
+        'body': body,
+        'headers': {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    console.log(requestOptions)
+    let response = await (fetch('https://a.saal.ee/auth/forgot-password', requestOptions))
+
+    if (response.ok) {
+        const data = await response.json()
+        console.log(data)
+        console.log("email saadetud")
+        document.getElementById("resetLinkSent").style.display = "block"
+    } else {
+        var errorResponse = await response.json()
+        var errors = []
+        console.log("response: ", errorResponse)
+        try {
+            for (err of errorResponse.message) {
+                for (message of err.messages) {
+                    errors.push(message.message)
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+
+        console.log("errors: ", errors)
+        displayError(errors)
+    }
+}
+
+deleteAccount = async () => {
+
+    if (cnfrmDelEmail.value !== userProfile.email) return
+
+    const token = localStorage.getItem('ACCESS_TOKEN')
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${token}`);
+
+    var requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    const response = await fetch(`https://a.saal.ee/users/me`, requestOptions)
+ 
+    if (response.ok) {
+        localStorage.clear()
+        window.open('http://localhost:4000')
+    }    
+
+}
+
+
 
 
 
