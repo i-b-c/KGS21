@@ -25,7 +25,7 @@ const findEntityAndCheckPermissions = async (ability, action, model, id) => {
     throw strapi.errors.notFound();
   }
 
-  const pm = strapi.admin.services.permission.createPermissionsManager(ability, action, model);
+  const pm = strapi.admin.services.permission.createPermissionsManager({ability, action, model});
 
   const roles = _.has(entity, `${CREATED_BY_ATTRIBUTE}.id`)
     ? await strapi.query('role', 'admin').find({ 'users.id': entity[CREATED_BY_ATTRIBUTE].id }, [])
@@ -51,11 +51,11 @@ module.exports = {
     } = ctx;
     const { email, username, password } = body;
 
-    const pm = strapi.admin.services.permission.createPermissionsManager(
-      userAbility,
-      ACTIONS.create,
-      userModel
-    );
+    const pm = strapi.admin.services.permission.createPermissionsManager({
+      ability: userAbility,
+      action: ACTIONS.create,
+      model: userModel
+    });
 
     if (!pm.isAllowed) {
       throw strapi.errors.forbidden();
@@ -141,28 +141,28 @@ module.exports = {
 
   async update(ctx) {
     const advancedConfigs = await strapi
-      .store({
-        environment: '',
-        type: 'plugin',
-        name: 'users-permissions',
-        key: 'advanced',
-      })
-      .get();
-
+    .store({
+      environment: '',
+      type: 'plugin',
+      name: 'users-permissions',
+      key: 'advanced',
+    })
+    .get();
+    
     const {
       params: { id },
       request: { body },
       state: { userAbility, admin },
     } = ctx;
     const { email, username, password } = body;
-
+    
     const { pm, entity: user } = await findEntityAndCheckPermissions(
       userAbility,
       ACTIONS.edit,
       userModel,
       id
-    );
-
+      );
+      
     if (_.has(body, 'email') && !email) {
       return ctx.badRequest('email.notNull');
     }
