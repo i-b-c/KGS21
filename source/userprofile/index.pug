@@ -10,15 +10,15 @@ block content
                 #email(name='email')
             .form-group
                 label.login_label(for='firstName')= self.labels.login.first_name
-                input.login_input#firstName.form-control(type='text', placeholder="#{self.labels.login.first_name}" name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
+                input.login_input#firstName.form-control(type='text', placeholder=`${self.labels.login.first_name}` name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
                 #firstNameHelp(class='valid')= self.labels.login.first_name_help
             .form-group
                 label.login_label(for='lastName')= self.labels.login.family_name
-                input.login_input#lastName.form-control(type='text', placeholder="#{self.labels.login.family_name}" name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
+                input.login_input#lastName.form-control(type='text', placeholder=`${self.labels.login.family_name}` name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
                 #lastNameHelp(class='valid')= self.labels.login.last_name_help
             .form-group
                 label.login_label(for='phoneNr')= self.labels.login.phone
-                input.login_input#phoneNr.form-control(type='tel' placeholder="telefoni number" name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
+                input.login_input#phoneNr.form-control(type='tel' placeholder=`${self.labels.login.phone}` name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
                 #phoneNrHelp(class='valid')= self.labels.login.phone_num_help
             .form-group
                 label.login_label Sisselogimisviisid
