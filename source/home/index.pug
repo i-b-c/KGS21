@@ -93,9 +93,8 @@ block content
                                         p.today= self.labels.button.canceled
 
                                     //- Premiere
-                                    if event.performance_X_premiere_time
-                                        if event.performance_X_premiere_time === event.start_time
-                                            p.today ESIETENDUS!
+                                    if event.premiere
+                                        p.today= self.labels.button.premiere
 
                                     p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
 
@@ -145,7 +144,7 @@ block content
 
                                     if event.X_ticket_info
                                         if !event.X_ticket_info.price
-                                            p TASUTA
+                                            p= self.labels.ticket.buy_t_free_admission
                                         else
                                             p= event.X_ticket_info.price
 
@@ -200,9 +199,8 @@ block content
                                         p.today= self.labels.button.canceled
 
                                     //- Premiere
-                                    if event.performance_X_premiere_time
-                                        if event.performance_X_premiere_time === event.start_time
-                                            p.today ESIETENDUS!
+                                    if event.premiere
+                                        p.today= self.labels.button.premiere
 
                                     p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
 
@@ -255,7 +253,7 @@ block content
 
                                     if event.X_ticket_info
                                         if !event.X_ticket_info.price
-                                            p TASUTA
+                                            p= self.labels.ticket.buy_t_free_admission
                                         else
                                             p= event.X_ticket_info.price
 
@@ -266,13 +264,13 @@ block content
                                             //-     p= event.X_ticket_info.min_price + '/' + op.get(p, 'max-price') + '€'
 
                                         if event.X_ticket_info.onsite_price
-                                            p= 'HIND KOHAPEAL' + ': ' + event.X_ticket_info.onsite_price + '€'
+                                            p= self.labels.title.onsite_price + ': ' + event.X_ticket_info.onsite_price + '€'
 
                                 if event.X_ticket_info
                                     if event.X_ticket_info.sales_status
                                         .col-xs-6.col-md-2.col-lg-2.text-right
                                             if event.canceled
-                                                a.btn.btn-primary(class="disabled") TÜHISTATUD
+                                                a.btn.btn-primary(class="disabled")= self.labels.button.canceled
                                             else
                                                 a.btn.btn-primary(class=((event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === 'free_admission') ? "free disabled" : "") href=event.X_ticket_info.ticket_api target='_blank') DYN BTN
 
@@ -341,14 +339,14 @@ block content
                     #newsletter-sign-up.col-xs-12.col-sm-12.col-md-4.col-lg-12
                         p= self.labels.newsletter.signup
                     #mailchimp-sign-up.col-xs-12.col-sm-12.col-md-4.col-lg-12
-                        form#mc-embedded-subscribe-form.validate.validate(action="//saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=11b766323b" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="")
+                        form#mc-embedded-subscribe-form.validate.validate(action=self.labels.newsletter.mailchimp_action method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="")
                             .mc-field-group
-                                input#mce-EMAIL.required.email(type="text" value="" name="EMAIL" placeholder="Sinu mailiaadress")
+                                input#mce-EMAIL.required.email(type="text" value="" name="EMAIL" placeholder=self.labels.newsletter.placeholder)
                             #mce-responses.clear
                                 #mce-error-response.response(style="display:none")
                                 #mce-success-response.response(style="display:none")
                             div(style="position: absolute; left: -5000px;")
-                                input(type="text" name="b_1e1d48fe600fda5c3f6a39b75_fdc080b2d5" tabindex="-1" value="")
+                                input(type="text" name=self.labels.newsletter.inputName tabindex="-1" value="")
                             .clear
                                 input#mc-embedded-subscribe.button(type="submit" value="OK!" name="subscribe")
     //- -
