@@ -118,7 +118,8 @@ block content
                             h2= self.labels.title.related_articles
                             each relArticle in self.related
                                 if postCount++ < 15
-                                    a(href=`/${lang_path}${relArticle.path}`)
+                                    //- a(href=`/${lang_path}${relArticle.path}`)
+                                    a(href=`/${relArticle.path}`)
                                         p= relArticle.publish_date_string
                                         h3
                                             span.artist= relArticle[`title_${self.locale}`]

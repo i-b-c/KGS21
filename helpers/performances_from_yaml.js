@@ -34,18 +34,18 @@ for (const lang of LANGUAGES) {
 
             performance.path = `performance/${performance.remote_id}`
 
-            if (lang === 'et') {
-                performance.aliases = [`et/performance/${performance.remote_id}`]
-            }
+            // if (lang === 'et') {
+            //     performance.aliases = [`et/performance/${performance.remote_id}`]
+            // }
 
-            if (performance[`slug_${lang}`]) {
-                let slug = performance[`slug_${lang}`]
-                if (performance.aliases) {
-                    performance.aliases.push(`et/performance/${slug}`)
-                } else {
-                    performance.aliases = [`performance/${slug}`]
-                }
-            }
+            // if (performance[`slug_${lang}`]) {
+            //     let slug = performance[`slug_${lang}`]
+            //     if (performance.aliases) {
+            //         performance.aliases.push(`et/performance/${slug}`)
+            //     } else {
+            //         performance.aliases = [`performance/${slug}`]
+            //     }
+            // }
 
             if (performance.events){
 

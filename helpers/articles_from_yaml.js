@@ -41,7 +41,8 @@ for (const lang of LANGUAGES) {
             authors_cs: rel.authors ? rel.authors.map(a => `${a.first_name}${a.last_name ? ` ${a.last_name}` : ''}`).join(', ') : [],
             publish_date: rel.publish_date,
             publish_date_string: articlePublish,
-            path: lang !== 'et' ? `magazine/${rel.remote_id}` : `${lang}/magazine/${rel.remote_id}`,
+            // path: lang !== 'et' ? `magazine/${rel.remote_id}` : `${lang}/magazine/${rel.remote_id}`,
+            path: `magazine/${rel.remote_id}`,
         }
         return related_articles
     })
@@ -56,11 +57,11 @@ for (const lang of LANGUAGES) {
         // }
 
         if (article[`title_${lang}`] && article.remote_id) {
-            if (lang !== 'et') {
+            // if (lang !== 'et') {
                 article.path = `magazine/${article.remote_id}`
-            } else {
-                article.path = `${lang}/magazine/${article.remote_id}`
-            }
+            // } else {
+            //     article.path = `${lang}/magazine/${article.remote_id}`
+            // }
 
             if (article.authors && article.authors.length) {
                 article.authors_cs = article.authors

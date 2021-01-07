@@ -77,13 +77,13 @@ for (const lang of LANGUAGES) {
             // Festival program page / landing page
             oneEventData.path = `festival/${oneEventData.remote_id}/program/`
 
-            if (lang === 'et') {
-                oneEventData.aliases = [
-                    `et/festival/${oneEventData.remote_id}/program/`,
-                    `festival/${oneEventData.remote_id}/`,
-                    `et/festival/${oneEventData.remote_id}/`
-                    ]
-            }
+            // if (lang === 'et') {
+            //     oneEventData.aliases = [
+            //         `et/festival/${oneEventData.remote_id}/program/`,
+            //         `festival/${oneEventData.remote_id}/`,
+            //         `et/festival/${oneEventData.remote_id}/`
+            //         ]
+            // }
             const festivalYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
             const oneFestivalDirPath = path.join(festivalsDirPath, oneEventData.remote_id)
             fs.mkdirSync(oneFestivalDirPath, { recursive: true });
@@ -93,11 +93,11 @@ for (const lang of LANGUAGES) {
             // Festival about page
             oneEventData.path = `festival/${oneEventData.remote_id}/about/`
 
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/about/`]
-            } else {
-                delete oneEventData.aliases
-            }
+            // if (lang === 'et') {
+            //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/about/`]
+            // } else {
+            //     delete oneEventData.aliases
+            // }
 
             const festivalAboutYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
             fs.mkdirSync(`${oneFestivalDirPath}/about/`, { recursive: true });
@@ -108,11 +108,11 @@ for (const lang of LANGUAGES) {
             // Festival tickets page
             oneEventData.path = `festival/${oneEventData.remote_id}/tickets/`
 
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/tickets/`]
-            } else {
-                delete oneEventData.aliases
-            }
+            // if (lang === 'et') {
+            //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/tickets/`]
+            // } else {
+            //     delete oneEventData.aliases
+            // }
 
             const festivalTicketsYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
             fs.mkdirSync(`${oneFestivalDirPath}/tickets/`, { recursive: true });
@@ -122,11 +122,11 @@ for (const lang of LANGUAGES) {
             // Festival press page
             oneEventData.path = `festival/${oneEventData.remote_id}/press/`
 
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/press/`]
-            } else {
-                delete oneEventData.aliases
-            }
+            // if (lang === 'et') {
+            //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/press/`]
+            // } else {
+            //     delete oneEventData.aliases
+            // }
 
             const festivalPressYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
             fs.mkdirSync(`${oneFestivalDirPath}/press/`, { recursive: true });
@@ -136,18 +136,18 @@ for (const lang of LANGUAGES) {
 
             // Reset for alldata writing
             oneEventData.path = `festival/${oneEventData.remote_id}/program/`
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/program/`]
-            }
+            // if (lang === 'et') {
+            //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/program/`]
+            // }
 
         }
 
         if (oneEventData.type === 'residency') {
             oneEventData.path = `resident/${oneEventData.remote_id}`
             oneEventData.data = {categories: `/_fetchdir/categories.${lang}.yaml`}
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/resident/${oneEventData.remote_id}`]
-            }
+            // if (lang === 'et') {
+            //     oneEventData.aliases = [`et/resident/${oneEventData.remote_id}`]
+            // }
             const residencyYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
             const oneResidencyDirPath = path.join(residenciesDirPath, oneEventData.remote_id)
             fs.mkdirSync(oneResidencyDirPath, { recursive: true });

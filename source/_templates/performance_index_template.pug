@@ -28,6 +28,7 @@ block content
                     - var activeCategories = []
                     if self.categories
                         - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
+
                     if self.data.categories
                         ul.event-categories
                             each category in self.data.categories
@@ -204,4 +205,3 @@ block content
         .visible{
             display: block;
         }
-
