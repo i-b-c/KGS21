@@ -27,13 +27,11 @@ for (const lang of LANGUAGES) {
         let performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
         let eventDate = new Date(oneEvent.start_time)
         let combined_coverages = null
-
         if (oneEvent.coverages) {
             combined_coverages = oneEvent.coverages.concat(performance.coverages || 0)
         } else if (performance.coverages) {
             combined_coverages = performance.coverages
         }
-
         let oneEventData = {
             id: oneEvent.id,
             performance_remote_id: performance.remote_id || null,
@@ -199,6 +197,7 @@ function festival_child_events(child_events_data, lang) {
             X_artist: child_event.X_artist || null,
             start_date_string: `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`,
         }
+        // performance_coverage_dates: event_performance.coverages ? coveragesByDate(event_performance.coverages) : null,
     }).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
 
 

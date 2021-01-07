@@ -97,7 +97,7 @@ async function putToStrapi(data, model) {
             path: _path + '/' + element.id,
             method: 'PUT'
         }
-    console.log("options.path", options.path)
+    console.log("in put to strapi", element, options.path)
     results.push(await strapiQuery(options, element))
     }
     return results
