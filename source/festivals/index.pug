@@ -5,7 +5,7 @@ block content
     .container-fluid
         section.programme.row.page-margin
             .col-md-12
-                h2 Festivalid
+                h2= self.labels.title.festivals
             .grid-row
                 - var events = self.data.events.filter(e => e.type === 'festival').sort((a, b) => new Date(b.start_time)-new Date(a.start_time))
                 if events && events.length
