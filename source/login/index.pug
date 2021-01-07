@@ -23,13 +23,27 @@ block content
         #user_buttons
             a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.change_profile
             a.btn.btn-primary.text-uppercase(onClick = "LogOut()")= self.labels.login.log_out
-            a.btn.btn-primary.text-uppercase(onClick = "GetUserInfo()")= self.labels.login.get_me
-            a.btn.btn-primary.text-uppercase(onClick = "GetUserFavorites()") Get Favo
+            // a.btn.btn-primary.text-uppercase(onClick = "GetUserInfo()")= self.labels.login.get_me
+            // a.btn.btn-primary.text-uppercase(onClick = "GetUserFavorites()") Get Favo
         h2= self.labels.login.favorites
-        p= self.labels.login.no_favorites
-        p#my-favorites= "mingi info"
-        // h2= self.labels.login.tickets
-        // p= self.labels.login.no_tickets
+        p#no-favo= self.labels.login.no_favorites
+        p#my-favorites
+        #locale(style = "display: none")= self.locale
+        #favo-block(style ="display: none")
+        #my-favorites.programme.row
+            //selle template-i alusel kuvatakse lemmikuid
+            #one-favo(style ="display: none")
+                // .col-xs-2.col-md-2.col-lg-2
+                //     span !!
+                .col-xs-6.col-md-6.col-lg-8
+                    h3
+                        a(href='performance/')
+                            span.name="nimi"
+                            span.artist="artist"
+                .col-xs-4.col-md-4.col-lg-2
+                    a.btn.btn-primary.text-uppercase(onClick = "DeleteFavo()") eemalda
+                hr.col-xs-8.col-md-8.col-lg-8
+
 
     //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
     #not-logged-in-box

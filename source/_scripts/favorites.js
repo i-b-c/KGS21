@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 })
 
+
+
+
 function saveToFavorites(id) {
 	currentFavoArr = [];
 	currentFavo = userProfile.Favorites;
@@ -39,56 +42,18 @@ function saveToFavorites(id) {
 			.then(function (response) {
 				if (response.ok) {
 					return response.json();
-					GetUserInfo();
 				}
 				return Promise.reject(response);
 			})
 			.then(function (data) {
-				console.log(data);
+				console.log("salvestan profiili lisatud favoga", data);
+				localStorage.setItem("USER_PROFILE", JSON.stringify(data))
+				document.dispatchEvent(userProfileLoadedEvent)
 			})
 			.catch(function (error) {
 				console.warn(error);
 			});
 	} else {
 		console.log("selline id on juba sinu lemmikute listis", id);
-	}
-}
-
-function GetUserFavorites() {
-	console.log("getting user favorites");
-	if (validToken) {
-
-
-		var requestOptions = {
-			method: "GET",
-			headers: {
-				Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-			},
-			maxRedirects: 20,
-		}
-
-		return new Promise (function (resolve, reject) {
-			fetch("https://a.saal.ee/performance/my", requestOptions)
-				.then(function (response) {
-					if (response.ok) {
-						return response.json()
-					}
-					reject(response)
-				})
-				.then(function (data) {
-					console.log("lemmikud",data)
-					resolve(data)
-				})
-				.catch(function (error) {
-					console.warn(error)
-				})
-		})
-
-
-
-
-
-	} else {
-		console.log("validToken väärtus on", validToken);
 	}
 }

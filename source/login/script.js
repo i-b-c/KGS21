@@ -1,24 +1,3 @@
-
-if(validToken){
-    showUserInfo()
-    document.getElementById("logged-in-box").style.display = "block"
-    document.getElementById("not-logged-in-box").style.display = "none"
-}else {
-    console.log("pole sisse loginud")
-}
-
-
-document.addEventListener('userProfileLoaded', function(e) {
-    console.log("listening to userProfile loaded event in login ")
-    try{
-        showUserInfo()
-    }
-    catch(err){
-        console.log("error userProfileLoaded evendis: ",err)
-    }
-})
-
-
 function loginWithProvider(loginProvider) {
     LogOut()
     localStorage.setItem("provider", loginProvider)
@@ -327,37 +306,45 @@ const beautifyProviders = providers => {
     return providers
 }
 
-// const GetUserFavorites = () => {
-//     console.log("getting user favorites");
-//     if (validToken) {
-//         var requestOptions = {
-//             method: "GET",
-//             headers: {
-//                 Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-//             },
-//             maxRedirects: 20,
-//         };
-//         fetch("https://a.saal.ee/performance/my", requestOptions)
-//             .then(function (response) {
-//                 if (response.ok) {
-//                     return response.json();
-//                 }
-//                 return Promise.reject(response);
-//             })
-//             .then(function (data) {
-//                 console.log("lemmikud",data);
-//                 return Promise.resolve(data)
-//                 // document.getElementById("my-favorites").innerHTML = JSON.stringify(data)
 
-//             })
-//             .catch(function (error) {
-//                 console.warn(error);
-//             });
-//     } else {
-//         console.log("validToken väärtus on", validToken);
-//     }
-// }
+const GetUserFavorites = async() => {
+    console.log("getting user favorites");
+    // if (validToken) {
+    // } else {
+    //     console.log("validToken väärtus on", validToken);
+    // }
+    let requestOptions = {
+        method: "GET",
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+        },
+    }
+    let res = await fetch("https://a.saal.ee/performance/my", requestOptions)
+    let data
+    if (res.ok) {
+        data = await res.json()
+        console.log(data);
+    } else {
+        let errorResponse = await res.json()
+        console.log("response: ", errorResponse)
+    }
+    // console.log(JSON.stringify(data))
+    let locale = document.getElementById("locale").innerHTML
+    document.getElementById("favo-block").style.display = "block"
+    document.getElementById("no-favo").style.display = "none"
+    for (favo of data){
+        let oneFavo = document.getElementById("one-favo").cloneNode(true)
+        let link = oneFavo.childNodes[0].firstChild.firstChild
+        let name = oneFavo.childNodes[0].firstChild.firstChild.firstChild
+        let artist = oneFavo.childNodes[0].firstChild.firstChild.childNodes[1]
+        link.setAttribute("href",`performance/${favo.remote_id}`)
+        name.innerHTML=favo[`name_${locale}`]
+        artist.innerText=favo.artist
+        oneFavo.style.display = "block"
+        document.getElementById("my-favorites").appendChild(oneFavo)
+    }
 
+}
 
 function showUserInfo() {
     try {
@@ -368,7 +355,10 @@ function showUserInfo() {
         if (userProfile.lastName) lastName.innerHTML = userProfile.lastName
         if (userProfile.phoneNumber) phoneNr.innerHTML = userProfile.phoneNumber
         // if (userProfile.provider) providers.innerHTML = beautifyProviders(userProfile.provider)
-        // if (userProfile.Favorites) GetUserFavorites()
+        if (userProfile.Favorites){
+            console.log("favod")
+            GetUserFavorites()
+        }
     } catch (err) {
         console.log(err)
     }
@@ -376,14 +366,24 @@ function showUserInfo() {
     document.getElementById("not-logged-in-box").style.display = "none"
 }
 
-const showFavorites = async () => {
-    console.log("showing user favorites")
-    let favorites = await GetUserFavorites()
-    console.log(favorites.data)
-
-    document.getElementById("my-favorites").innerHTML = JSON.stringify(favorites.data)
+if(validToken){
+    showUserInfo()
+    document.getElementById("logged-in-box").style.display = "block"
+    document.getElementById("not-logged-in-box").style.display = "none"
+}else {
+    console.log("pole sisse loginud")
 }
 
+
+document.addEventListener('userProfileLoaded', function(e) {
+    console.log("listening to userProfile loaded event in login ")
+    try{
+        showUserInfo()
+    }
+    catch(err){
+        console.log("error userProfileLoaded evendis: ",err)
+    }
+})
 
 
 
