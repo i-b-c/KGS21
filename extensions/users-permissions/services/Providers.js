@@ -29,7 +29,6 @@ const apiUserController = require('../controllers/user/api');  //c
  */
 
 const connect = (provider, query) => {
-  console.log('inside')
   const access_token = query.access_token || query.code || query.oauth_token;
 
   return new Promise((resolve, reject) => {
@@ -193,7 +192,6 @@ const buildRedirectUri = (provider = '') =>
   `${getAbsoluteServerUrl(strapi.config)}/connect/${provider}/callback`;
 
 const mergeProviders = async (user, provider) => {
-  console.log('mergeProviders');
   const params = {}
   params.params = { id: user.id }
   params.request = { body: { provider: user.provider + ',' + provider } }

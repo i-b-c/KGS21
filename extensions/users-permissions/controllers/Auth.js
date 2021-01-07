@@ -20,7 +20,6 @@ const formatError = error => [
 
 module.exports = {
   async callback(ctx) {
-    console.log('callback')
     const provider = ctx.params.provider || 'local';
     const params = ctx.request.body;
     const email = params.identifier
@@ -245,7 +244,6 @@ module.exports = {
   },
 
   async connect(ctx, next) {
-    console.log('connect2')
     const grantConfig = await strapi
       .store({
         environment: '',
@@ -278,7 +276,6 @@ module.exports = {
   },
 
   async forgotPassword(ctx) {
-    console.log('forgotPassword');
     let { email } = ctx.request.body;
 
     // Check if the provided email is valid or not.
@@ -539,7 +536,6 @@ module.exports = {
     }
   },
   async registerme(ctx) {
-    console.log('registerme');
     const pluginStore = await strapi.store({
       environment: '',
       type: 'plugin',
