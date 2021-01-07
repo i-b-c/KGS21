@@ -7,7 +7,7 @@ block content
             .event-banner.carousel.slide(id='front-carousel')
                 .carousel-inner(role="listbox")
 
-                    - var photoBig = self.hero_images ? `${f_api}${self.hero_images[0]}` : `/assets/images/placeholder.jpg`
+                    - var photoBig = self.hero_images ? `${m_api}${self.hero_images[0]}` : `/assets/images/placeholder.jpg`
                     figure(id= `slide-${self.remote_id}` style=`background-image: url("${photoBig}");`)
                     header.col-md-8
                         if self[`X_headline_${self.locale}`]
@@ -63,11 +63,13 @@ block content
 
                 if self.minToMaxEvents && self.minToMaxEvents.length
 
-                    .past
+                    .coming
                         each event in self.minToMaxEvents
                             .row(event_type='future_events', start_time=event.start_time)
                                 .col-sm-6.col-md-5.col-lg-4
+                                    +dayName(event.start_time)
                                     p= event.start_date_string
+                                    +hoursMinutes(event.start_time)
                                 .col-sm-6.col-md-7.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
@@ -92,8 +94,6 @@ block content
                             performanceEventToggler('future_events')
 
                     .past
-                        <br>
-                        <br>
                         h2 Olnud
                         each event in self.maxToMinEvents
                             .row(event_type='past_events', start_time=event.start_time)
@@ -124,15 +124,15 @@ block content
                             each audio in self.audios
                                 div!= audio.content
 
-                if self.performance_media
+                if self.performance_media && self.performance_media.filter(m => m.gallery_image_medium).length
                     .gallery
                         h2= self.labels.title.gallery
                             .row
                             each galPhoto in self.performance_media
-                                if galPhoto.gallery_image_medium
+                                if galPhoto.gallery_image_medium && !galPhoto.hero_image
                                     .single-image.col-sm-6.col-sm-3.col-md-4
 
-                                        if galPhoto.original_image && galPhoto.original_image.url && galPhoto.hero_image
+                                        if galPhoto.original_image && galPhoto.original_image.url
                                             - var imgLink = galPhoto.original_image.url
                                         else if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
                                             - var imgLink = galPhoto.gallery_image_large.url
