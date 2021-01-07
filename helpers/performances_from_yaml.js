@@ -24,11 +24,11 @@ for (const lang of LANGUAGES) {
 
         // Kommenteeri sisse kui soovid ainult konkreetsete remote_id'dega performanceid ehitada
 
-        if (['6865', '6858', '6538', '5429', '5810', '6796', '3842'].includes(performance.remote_id)){
+        // if (['6865', '6858', '6538', '5429', '5810', '6796', '3842'].includes(performance.remote_id)){
 
-        } else {
-            continue
-        }
+        // } else {
+        //     continue
+        // }
 
         if (performance.remote_id) {
 
