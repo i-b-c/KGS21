@@ -46,11 +46,11 @@ block content
                 #direct-to-login-btn
                     a.btn.btn-primary.text-uppercase#direct-to-login-btn(href="/login")= self.labels.login.sign_in
                     span=' lemmikute salvestamiseks'
-                #performance-id(style = "display: none")=self.id
-                #save-favorite-btn(style = "display: none")
+                #performance-id.hidden=self.id
+                #save-favorite-btn.hidden
                     a.btn.btn-primary.text-uppercase(onClick =`updateFavo(${self.id})`)= self.labels.login.save
                     span= ' ' + 'oma lemmikuks'
-                #delete-favorite-btn(style = "display: none")
+                #delete-favorite-btn.hidden
                     a.btn.btn-primary.text-uppercase(onClick =`updateFavo(${self.id})`) eemalda
                     span= ' ' + 'oma lemmikute hulgast'
                 if self[`technical_info_${self.locale}`]
@@ -187,4 +187,11 @@ block content
                         each logo in self.logos
                             li.col-sm-12.col-md-12.col-lg-12
                                 img(src=`${m_api}${logo.url}`, class='img-responsive')
+    style.
+        .hidden{
+            display: none;
+        }
+        .visible{
+            display: block;
+        }
 

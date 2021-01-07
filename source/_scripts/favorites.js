@@ -13,107 +13,31 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	}
 	// console.log(validToken);
 	if (location.pathname.split("/").includes("performance") && validToken) {
-		console.log("jah!!!!!!!!");
-		document.getElementById("save-favorite-btn").style.display = "block"
-		document.getElementById("direct-to-login-btn").style.display = "none"
+		document.getElementById("save-favorite-btn").classList.toggle("hidden")
+		document.getElementById("direct-to-login-btn").classList.toggle("hidden")
 	}
 	var id = parseInt(document.getElementById("performance-id").innerHTML)
 	if (currentFavoArr.includes(id)){
 		console.log("on lemmik")
-		 document.getElementById("delete-favorite-btn").style.display = "block"
-		 document.getElementById("save-favorite-btn").style.display = "none"
-
+		document.getElementById("delete-favorite-btn").classList.toggle("hidden")
+		document.getElementById("save-favorite-btn").classList.toggle("hidden")
 	}
 
 })
 
-function deleteFromFavo(id){
-		if (currentFavoArr.includes(id)) {
-		console.log("hakkan kustutama lemmikut", id)
-		var favoUpdate = userProfile.Favorites.filter(function filterId(favo){
-			return favo.performance_id !== id
-		})
-		// console.log(favoUpdate)
-		var favo = { Favorites: favoUpdate }
-		favoJSON = JSON.stringify(favo)
-		var requestOptions = {
-			method: "PUT",
-			body: JSON.stringify(favo),
-			headers: {
-				Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-				"Content-Type": "application/json",
-			},
-		};
-		console.log("requestOptions", requestOptions);
-		fetch("https://a.saal.ee/users/me", requestOptions)
-			.then(function (response) {
-				if (response.ok) {
-					return response.json();
-				}
-				return Promise.reject(response);
-			})
-			.then(function (data) {
-				console.log("salvestan profiili lisatud favoga", data);
-				localStorage.setItem("USER_PROFILE", JSON.stringify(data))
-				document.dispatchEvent(userProfileLoadedEvent)
-			})
-			.catch(function (error) {
-				console.warn(error);
-			});
-	} else {
-		console.log("seda pole sinu lemmikute hulgas", id);
-	}
-}
-
-function saveToFavorites(id) {
-
-	if (!currentFavoArr.includes(id)) {
-		console.log("uus lemmik", id);
-		var favo = { Favorites: userProfile.Favorites };
-		favo.Favorites.push({ performance_id: id });
-		favoJSON = JSON.stringify(favo);
-
-		var requestOptions = {
-			method: "PUT",
-			body: JSON.stringify(favo),
-			headers: {
-				Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-				"Content-Type": "application/json",
-			},
-		};
-		console.log("requestOptions", requestOptions);
-		fetch("https://a.saal.ee/users/me", requestOptions)
-			.then(function (response) {
-				if (response.ok) {
-					return response.json();
-				}
-				return Promise.reject(response);
-			})
-			.then(function (data) {
-				console.log("salvestan profiili lisatud favoga", data);
-				localStorage.setItem("USER_PROFILE", JSON.stringify(data))
-				document.dispatchEvent(userProfileLoadedEvent)
-			})
-			.catch(function (error) {
-				console.warn(error);
-			});
-	} else {
-		console.log("selline id on juba sinu lemmikute listis", id);
-	}
-}
 
 function updateFavo(id){
 	function sendToStrapi(data){
 		favoJSON = JSON.stringify(data)
 		var requestOptions = {
 			method: "PUT",
-			body: JSON.stringify(favo),
+			body: favoJSON,
 			headers: {
 				Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
 				"Content-Type": "application/json",
 			},
 		};
-		console.log("requestOptions", requestOptions);
+		console.log("salvestan strapisse", requestOptions);
 		fetch("https://a.saal.ee/users/me", requestOptions)
 			.then(function (response) {
 				if (response.ok) {
@@ -122,9 +46,12 @@ function updateFavo(id){
 				return Promise.reject(response);
 			})
 			.then(function (data) {
-				console.log("salvestan profiili lisatud favoga", data);
+				console.log("salvestan profiili uute update-itud lemmikutega", data);
+				document.getElementById("delete-favorite-btn").classList.toggle("hidden")
+				document.getElementById("save-favorite-btn").classList.toggle("hidden")
 				localStorage.setItem("USER_PROFILE", JSON.stringify(data))
 				document.dispatchEvent(userProfileLoadedEvent)
+				// location.reload()
 			})
 			.catch(function (error) {
 				console.warn(error);
@@ -137,11 +64,15 @@ function updateFavo(id){
 			return favo.performance_id !== id
 		})
 		var favo = { Favorites: favoUpdate }
+		// document.getElementById("delete-favorite-btn").classList.toggle("hidden")
+		// document.getElementById("save-favorite-btn").classList.toggle("hidden")
 		sendToStrapi(favo)
 	} else {
 		console.log("lisan", id)
 		var favo = { Favorites: userProfile.Favorites };
 		favo.Favorites.push({ performance_id: id })
+		// document.getElementById("delete-favorite-btn").classList.toggle("hidden")
+		// document.getElementById("save-favorite-btn").classList.toggle("hidden")
 		sendToStrapi(favo)
 
 	}

@@ -41,7 +41,7 @@ block content
                             span.name="nimi"
                             span.artist="artist"
                 .col-xs-4.col-md-4.col-lg-2
-                    a.btn.btn-primary.text-uppercase(onClick = "DeleteFavo()") eemalda
+                    a.btn.btn-primary.text-uppercase#delete-favorite-btn(onClick = "DeleteFavo()") eemalda
                 hr.col-xs-8.col-md-8.col-lg-8
 
 
@@ -94,6 +94,12 @@ block content
             p#resetLinkSent saatsime sinu emailile lingi parooli muutmiseks, palun kontrolli ka "junk" kausta
 
     style.
+        .hidden{
+            display: none;
+        }
+        .visible{
+            display: block;
+        }
         .invalid {
             background-color: #ffc600;
             display: block;
@@ -146,10 +152,4 @@ block content
         }
         a{
             cursor: pointer;
-        }
-        .hidden{
-            display: none;
-        }
-        .visible{
-            display: block;
         }
