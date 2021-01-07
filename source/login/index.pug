@@ -5,19 +5,19 @@ block content
     #logged-in-box.container-fluid
         h2= self.labels.login.userprofile_title
         .form-group
-            label.login_label(for='email')= self.labels.login.email
+            label.login_label(for='email')= self.labels.login.email+":"
             span.value-view#email(name='email')
         .form-group
-            label.login_label(for='firstName')= self.labels.login.first_name
+            label.login_label(for='firstName')= self.labels.login.first_name+":"
             span.value-view#firstName(name='firstName')
         .form-group
-            label.login_label(for='lastName')= self.labels.login.family_name
+            label.login_label(for='lastName')= self.labels.login.family_name+":"
             span.value-view#lastName(name='lastName')
         .form-group
-            label.login_label(for='phoneNr')= self.labels.login.phone
+            label.login_label(for='phoneNr')= self.labels.login.phone+":"
             span.value-view#phoneNr(name='phoneNr')
         .form-group
-            label.login_label(for='providers') autentimisviisid
+            label.login_label(for='providers')= "autentimisviisid"+":"
             span.value-view#providers(name='providers')
 
         #user_buttons
@@ -28,21 +28,19 @@ block content
         h2= self.labels.login.favorites
         p#no-favo= self.labels.login.no_favorites
         p#my-favorites
-        #locale(style = "display: none")= self.locale
-        #favo-block(style ="display: none")
-        #my-favorites.programme.row
-            //selle template-i alusel kuvatakse lemmikuid
-            #one-favo(style ="display: none")
-                // .col-xs-2.col-md-2.col-lg-2
-                //     span !!
+        #locale.hidden= self.locale
+        //selle template-i alusel kuvatakse lemmikuid
+        #template.hidden
+            #one-favo
                 .col-xs-6.col-md-6.col-lg-8
                     h3
-                        a(href='performance/')
+                        a
                             span.name="nimi"
                             span.artist="artist"
                 .col-xs-4.col-md-4.col-lg-2
-                    a.btn.btn-primary.text-uppercase#delete-favorite-btn(onClick = "DeleteFavo()") eemalda
+                    a.btn.btn-primary.text-uppercase#remove-favo eemalda
                 hr.col-xs-8.col-md-8.col-lg-8
+        .programme.row#my-favorites
 
 
     //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
