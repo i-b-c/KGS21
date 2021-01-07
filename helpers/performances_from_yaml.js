@@ -80,6 +80,7 @@ for (const lang of LANGUAGES) {
 
             if (performance.performance_media) {
                 performance.hero_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
+                performance.medium_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
             }
 
             if (performance.coverages) {
