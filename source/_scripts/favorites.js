@@ -13,14 +13,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	}
 	// console.log(validToken);
 	if (location.pathname.split("/").includes("performance") && validToken) {
-		document.getElementById("save-favorite-btn").classList.toggle("hidden")
-		document.getElementById("direct-to-login-btn").classList.toggle("hidden")
+		if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
+		if(document.getElementById("direct-to-login-btn"))document.getElementById("direct-to-login-btn").classList.toggle("hidden")
 	}
-	var id = parseInt(document.getElementById("performance-id").innerHTML)
+	if(document.getElementById("performance-id")){
+		var id = parseInt(document.getElementById("performance-id").innerHTML)
+	}
 	if (currentFavoArr.includes(id)){
-		console.log("on lemmik")
-		document.getElementById("delete-favorite-btn").classList.toggle("hidden")
-		document.getElementById("save-favorite-btn").classList.toggle("hidden")
+		if(document.getElementById("delete-favorite-btn"))document.getElementById("delete-favorite-btn").classList.toggle("hidden")
+		if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
 	}
 
 })
@@ -47,11 +48,10 @@ function updateFavo(id){
 			})
 			.then(function (data) {
 				console.log("salvestan profiili uute update-itud lemmikutega", data);
-				document.getElementById("delete-favorite-btn").classList.toggle("hidden")
-				document.getElementById("save-favorite-btn").classList.toggle("hidden")
+				if(document.getElementById("delete-favorite-btn")) document.getElementById("delete-favorite-btn").classList.toggle("hidden")
+				if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
 				localStorage.setItem("USER_PROFILE", JSON.stringify(data))
 				document.dispatchEvent(userProfileLoadedEvent)
-				// location.reload()
 			})
 			.catch(function (error) {
 				console.warn(error);
@@ -64,15 +64,11 @@ function updateFavo(id){
 			return favo.performance_id !== id
 		})
 		var favo = { Favorites: favoUpdate }
-		// document.getElementById("delete-favorite-btn").classList.toggle("hidden")
-		// document.getElementById("save-favorite-btn").classList.toggle("hidden")
 		sendToStrapi(favo)
 	} else {
 		console.log("lisan", id)
 		var favo = { Favorites: userProfile.Favorites };
 		favo.Favorites.push({ performance_id: id })
-		// document.getElementById("delete-favorite-btn").classList.toggle("hidden")
-		// document.getElementById("save-favorite-btn").classList.toggle("hidden")
 		sendToStrapi(favo)
 
 	}

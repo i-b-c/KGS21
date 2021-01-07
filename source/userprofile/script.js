@@ -246,11 +246,11 @@ deleteAccount = async () => {
     };
 
     const response = await fetch(`https://a.saal.ee/users/me`, requestOptions)
- 
+
     if (response.ok) {
         localStorage.clear()
-        window.open('http://localhost:4000')
-    }    
+        window.open(document.location.origin)
+    }
 
 }
 
