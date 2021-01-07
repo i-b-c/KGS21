@@ -2,94 +2,95 @@ extends /_templates/layout.pug
 
 block content
     //- siin sees on kõik mida kuvatakse sisseloginud kasutajale
-    #logged-in-box.container-fluid
-        h2= self.labels.login.userprofile_title
-        .form-group
-            label.login_label(for='email')= self.labels.login.email+":"
-            span.value-view#email(name='email')
-        .form-group
-            label.login_label(for='firstName')= self.labels.login.first_name+":"
-            span.value-view#firstName(name='firstName')
-        .form-group
-            label.login_label(for='lastName')= self.labels.login.family_name+":"
-            span.value-view#lastName(name='lastName')
-        .form-group
-            label.login_label(for='phoneNr')= self.labels.login.phone+":"
-            span.value-view#phoneNr(name='phoneNr')
-        .form-group
-            label.login_label(for='providers')= "autentimisviisid"+":"
-            span.value-view#providers(name='providers')
+    .container-fluid.content
+        #logged-in-box
+            h2= self.labels.login.userprofile_title
+            .form-group
+                label.login_label(for='email')= self.labels.login.email+":"
+                span.value-view#email(name='email')
+            .form-group
+                label.login_label(for='firstName')= self.labels.login.first_name+":"
+                span.value-view#firstName(name='firstName')
+            .form-group
+                label.login_label(for='lastName')= self.labels.login.family_name+":"
+                span.value-view#lastName(name='lastName')
+            .form-group
+                label.login_label(for='phoneNr')= self.labels.login.phone+":"
+                span.value-view#phoneNr(name='phoneNr')
+            .form-group
+                label.login_label(for='providers')= "autentimisviisid"+":"
+                span.value-view#providers(name='providers')
 
-        #user_buttons
-            a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.change_profile
-            a.btn.btn-primary.text-uppercase(onClick = "LogOut()")= self.labels.login.log_out
-            // a.btn.btn-primary.text-uppercase(onClick = "GetUserInfo()")= self.labels.login.get_me
-            // a.btn.btn-primary.text-uppercase(onClick = "GetUserFavorites()") Get Favo
-        h2= self.labels.login.favorites
-        p#no-favo= self.labels.login.no_favorites
-        p#my-favorites
-        #locale.hidden= self.locale
-        //selle template-i alusel kuvatakse lemmikuid
-        #template.hidden
-            #one-favo
-                .col-xs-6.col-md-6.col-lg-8
-                    h3
-                        a
-                            span.name="nimi"
-                            span.artist="artist"
-                .col-xs-4.col-md-4.col-lg-2
-                    a.btn.btn-primary.text-uppercase#remove-favo eemalda
-                hr.col-xs-8.col-md-8.col-lg-8
-        .programme.row#my-favorites
-
-
-    //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
-    #not-logged-in-box
-        #login-grid
-            #provider-login
-                h2= self.labels.login.account_sign_in
-                a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
-                a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
-                .form-group
-                    label(for='logEmail')= self.labels.login.email
-                    input#logEmail.form-control(type='email' placeholder="email" name='logEmail' oninput='validateEmail(this.id)')
-                    #logEmailHelp(class='valid')= self.labels.login.email_not_correct
-                .form-group
-                    label#pswLabel(for='logPsw')= self.labels.login.psw
-                    input#logPsw.form-control(type='password' placeholder="salasõna" name='logPsw' oninput="validatePsw(this.id)")
-                    #logPswHelp(class='valid')= self.labels.login.psw_help
-                a.btn.btn-primary.text-uppercase#sign-in-button(onClick = "validateLogin()")= self.labels.login.sign_in
-                a.btn.btn-primary.text-uppercase.hidden#psw-reset-button(onClick = "validatePswResetForm()")= self.labels.login.psw_reset
-                a.hidden#back-to-login(onClick = "ShowPswReset()") tagasi sisse logima
-                a#to-reset-psw(onClick = "ShowPswReset()") unustasin parooli
-                //- a(onClick = "ResetPassword()")= self.labels.login.forgot_psw
+            #user_buttons
+                a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.change_profile
+                a.btn.btn-primary.text-uppercase(onClick = "LogOut()")= self.labels.login.log_out
+                // a.btn.btn-primary.text-uppercase(onClick = "GetUserInfo()")= self.labels.login.get_me
+                // a.btn.btn-primary.text-uppercase(onClick = "GetUserFavorites()") Get Favo
+            h2= self.labels.login.favorites
+            p#no-favo= self.labels.login.no_favorites
+            p#my-favorites
+            #locale.hidden= self.locale
+            //selle template-i alusel kuvatakse lemmikuid
+            #template.hidden
+                #one-favo
+                    .col-xs-6.col-md-6.col-lg-8
+                        h3
+                            a
+                                span.name="nimi"
+                                span.artist="artist"
+                    .col-xs-4.col-md-4.col-lg-2
+                        a.btn.btn-primary.text-uppercase#remove-favo eemalda
+                    hr.col-xs-8.col-md-8.col-lg-8
+            .programme.row#my-favorites
 
 
-            #register
-                h2= self.labels.login.sign_up
-                a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
-                a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
-                .form-group
-                    label(for='regEmail')= self.labels.login.email
-                    input.reg_input#regEmail.form-control(type='email' placeholder="email" name='regEmail' autocomplete="off" oninput='validateEmail(this.id)' )
-                    #regEmailHelp(class='valid')= self.labels.login.email_not_correct
-                .form-group
-                    label(for='regPsw')= self.labels.login.psw
-                    input.reg_input.form-control#regPsw(type='password', placeholder="salasõna" name='regPsw' autocomplete="new-password" oninput="validatePsw('regPsw')")
-                    #regPswHelp(class='valid')= self.labels.login.psw_help
-                .form-group
-                    label(for='regPswRepeat')= self.labels.login.psw_repeat
-                    input.reg_input#regPswRepeat.form-control(type='password', placeholder="salasõna teist korda" name='regPswRepeat' autocomplete="new-password" oninput="validatePswRep('regPsw', 'regPswRepeat')")
-                    #regPswRepeatHelp(class='valid')= self.labels.login.psw_repeat_help
-                a.btn.btn-primary.text-uppercase(onClick = "validateRegForm() ")= self.labels.login.sign_up
+        //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
+        #not-logged-in-box
+            #login-grid
+                #provider-login
+                    h2= self.labels.login.account_sign_in
+                    a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
+                    a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
+                    .form-group
+                        label(for='logEmail')= self.labels.login.email
+                        input#logEmail.form-control(type='email' placeholder="email" name='logEmail' oninput='validateEmail(this.id)')
+                        #logEmailHelp(class='valid')= self.labels.login.email_not_correct
+                    .form-group
+                        label#pswLabel(for='logPsw')= self.labels.login.psw
+                        input#logPsw.form-control(type='password' placeholder="salasõna" name='logPsw' oninput="validatePsw(this.id)")
+                        #logPswHelp(class='valid')= self.labels.login.psw_help
+                    a.btn.btn-primary.text-uppercase#sign-in-button(onClick = "validateLogin()")= self.labels.login.sign_in
+                    a.btn.btn-primary.text-uppercase.hidden#psw-reset-button(onClick = "validatePswResetForm()")= self.labels.login.psw_reset
+                    a.hidden#back-to-login(onClick = "ShowPswReset()") tagasi sisse logima
+                    a#to-reset-psw(onClick = "ShowPswReset()") unustasin parooli
+                    //- a(onClick = "ResetPassword()")= self.labels.login.forgot_psw
 
-        #error-box
-            p#userExists= self.labels.login.err_email_used
-            p#invalidPsw= self.labels.login.err_psw_email_not_correct
-            p#invalidEmail email puudu või valesti sisestatud
-            p#loginError= self.labels.login.err_login_problem
-            p#userExistsProviders= self.labels.login.err_email_used_providers
-            p#resetLinkSent saatsime sinu emailile lingi parooli muutmiseks, palun kontrolli ka "junk" kausta
+
+                #register
+                    h2= self.labels.login.sign_up
+                    a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
+                    a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
+                    .form-group
+                        label(for='regEmail')= self.labels.login.email
+                        input.reg_input#regEmail.form-control(type='email' placeholder="email" name='regEmail' autocomplete="off" oninput='validateEmail(this.id)' )
+                        #regEmailHelp(class='valid')= self.labels.login.email_not_correct
+                    .form-group
+                        label(for='regPsw')= self.labels.login.psw
+                        input.reg_input.form-control#regPsw(type='password', placeholder="salasõna" name='regPsw' autocomplete="new-password" oninput="validatePsw('regPsw')")
+                        #regPswHelp(class='valid')= self.labels.login.psw_help
+                    .form-group
+                        label(for='regPswRepeat')= self.labels.login.psw_repeat
+                        input.reg_input#regPswRepeat.form-control(type='password', placeholder="salasõna teist korda" name='regPswRepeat' autocomplete="new-password" oninput="validatePswRep('regPsw', 'regPswRepeat')")
+                        #regPswRepeatHelp(class='valid')= self.labels.login.psw_repeat_help
+                    a.btn.btn-primary.text-uppercase(onClick = "validateRegForm() ")= self.labels.login.sign_up
+
+            #error-box
+                p#userExists= self.labels.login.err_email_used
+                p#invalidPsw= self.labels.login.err_psw_email_not_correct
+                p#invalidEmail email puudu või valesti sisestatud
+                p#loginError= self.labels.login.err_login_problem
+                p#userExistsProviders= self.labels.login.err_email_used_providers
+                p#resetLinkSent saatsime sinu emailile lingi parooli muutmiseks, palun kontrolli ka "junk" kausta
 
     style.
         .hidden{
