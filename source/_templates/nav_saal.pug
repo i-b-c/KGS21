@@ -25,7 +25,7 @@ nav.navbar.navbar-default.navbar-fixed-top
                     a(href=`/${lang_path}projects`)= self.labels.nav.projects
                 li(class= self.path === `/${lang_path}magazine` ? 'active' : undefined )
                     a(href=`/${lang_path}magazine`)= self.labels.nav.magazine
-                li(class = self.path === `/${lang_path}festivals` ? 'active' : undefined )
+                li(class= self.path === `/${lang_path}festivals` ? 'active' : undefined )
                     a(href=`/${lang_path}festivals`)= self.labels.nav.festivals
                 li(class= self.path === `/${lang_path}contact` ? 'active' : undefined )
                     a(href=`/${lang_path}contact`)= self.labels.nav.contact
@@ -44,8 +44,8 @@ nav.navbar.navbar-default.navbar-fixed-top
                         //- p= locale + ' - ' + p
                         a(href=(p !== '/' ? p + '/' : '/') onClick= "GetUserInfo()")= locale
                 li.nav.nav-bar-nav.main-nav
-                    // p#user_msg_initial(style= {display: 'none'})= self.labels.nav.user_menu
+                    //- p#user_msg_initial(style= {display: 'none'})= self.labels.nav.user_menu
                     a#user_menu(href=`/${lang_path}login`)
                         span= self.labels.nav.user_menu
                         span#user_initials
-                    // span#user_initials(style= {display: 'none'}) nipi tiri
+                    //- span#user_initials(style= {display: 'none'}) nipi tiri

@@ -55,7 +55,31 @@ block content
                     .article.main-text.h3.col-sm-12.col-md-8.col-lg-8
                         | !{self.md(self[`content_${self.locale}`])}
 
+
                         //- GALLERY
+
+                        //- BELOW WAITING FOR STRAPI PICS
+
+                        //- if self.article_media
+                        //-     .gallery
+                        //-         h2= self.labels.title.gallery
+                        //-             .row
+                        //-             each galPhoto in self.article_media
+                        //-                 if galPhoto.gallery_image_medium && !galPhoto.hero_image
+                        //-                     .single-image.col-xs-6.col-sm-3.col-md-4
+
+                        //-                         if galPhoto.original_image && galPhoto.original_image.url
+                        //-                             - var imgLink = galPhoto.original_image.url
+                        //-                         else if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
+                        //-                             - var imgLink = galPhoto.gallery_image_large.url
+                        //-                         else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
+                        //-                             - var imgLink = galPhoto.gallery_image_medium.url
+
+                        //-                         a.fancybox(rel="gallery" href=`${m_api}${imgLink}`)
+                        //-                             img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
+
+
+                        //-
                         if !self.hide_gallery
                             if bigPhotos
                                 .gallery

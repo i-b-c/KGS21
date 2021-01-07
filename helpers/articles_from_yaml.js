@@ -90,6 +90,10 @@ for (const lang of LANGUAGES) {
                 article.X_pictures = sort_pictures(article.X_pictures)
             }
 
+            if (article.article_media) {
+                article.hero_images = article.article_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
+            }
+
             const articleYAML = yaml.safeDump(article, { 'noRefs': true, 'indent': '4' });
             const articleDir = path.join(articlesDir, article.remote_id)
             const articleYAMLPath = path.join(articleDir, `data.${lang}.yaml`)
