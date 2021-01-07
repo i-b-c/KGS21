@@ -235,7 +235,6 @@ async function performanceToStrapi() {
             "X_headline_en": (performance_entity.properties['en-supertitle'].values.length > 0 ? performance_entity.properties['en-supertitle'].values[0].db_value : null),
             "X_town_et": (performance_entity.properties['et-town'].values.length > 0 ? performance_entity.properties['et-town'].values[0].db_value : null),
             "X_town_en": (performance_entity.properties['en-town'].values.length > 0 ? performance_entity.properties['en-town'].values[0].db_value : null),
-            "duration": (performance_entity.properties.duration.values.length > 0 ? performance_entity.properties.duration.values[0].db_value : null),
             "X_pictures": {
                 "photoGallery": photoGallery,
                 "photo": photo,
@@ -436,7 +435,7 @@ async function articlesToStrapi() {
 
     articlesToPost = articles.filter(article => {return article.id === undefined})
     for(article of articlesToPost){
-        console.log(article.remote_id)
+        // console.log(article.remote_id)
     }
 
 
@@ -696,7 +695,7 @@ async function main() {
     // await bannerToStrapi()
     // await categoriesToStrapi()
     // await personToStrapi()
-    await performanceToStrapi()
+    // await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
     // await eventsToStrapi()
@@ -720,4 +719,3 @@ async function main() {
 }
 
 main()
-
