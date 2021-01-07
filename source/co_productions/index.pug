@@ -6,7 +6,7 @@ block content
             section.col-md-12
                 .programme.row
                     .col-xs-12.col-md-12
-                        h2 Kaasproduktsioonid
+                        h2= self.labels.title.kanut_co_productions
                     .grid-row
                         if self.data.co_productions
                             - var filtered_and_sorted_coprods = self.data.co_productions.filter(e => e.coproduction).sort((a, b) => a.coproduction_importance-b.coproduction_importance)
@@ -18,11 +18,3 @@ block content
                                         img.img-responsive(src=`/assets/images/placeholder.jpg`)
                                     p.artist= coprod.X_artist
                                     p= coprod[`name_${self.locale}`]
-                                //- a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href="/et/performance/6865" ordinal="54")
-                                //-     img.img-responsive(src="https://saal.entu.ee/api2/file-21630")
-                                //-     p.artist Karolin Poska
-                                //-     p Sinu nirvaanale
-                                //- a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href="/et/performance/6577" ordinal="55")
-                                //-     img.img-responsive(src="https://saal.entu.ee/api2/file-21071")
-                                //-     p.artist SIMONA GONELLA, PEADER KIRK
-                                //-     p KUHU MINEK

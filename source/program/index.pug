@@ -83,9 +83,8 @@ block content
                                         p.today JÄÄB ÄRA!
 
                                     //- Premiere
-                                    if event.performance_X_premiere_time
-                                        if event.performance_X_premiere_time === event.start_time
-                                            p.today ESIETENDUS!
+                                    if event.premiere
+                                        p.today ESIETENDUS!
 
                                     //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
                                     p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!

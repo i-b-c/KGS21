@@ -26,7 +26,6 @@ for (const lang of LANGUAGES) {
     for(oneEvent of STRAPIDATA_EVENTS) {
         let performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
         let eventDate = new Date(oneEvent.start_time)
-        // let performancePremiere = performance.X_premiere_time ? new Date(performance.X_premiere_time) : null
         let combined_coverages = null
         if (oneEvent.coverages) {
             combined_coverages = oneEvent.coverages.concat(performance.coverages || 0)
@@ -40,7 +39,6 @@ for (const lang of LANGUAGES) {
             [`performance_slug_${lang}`]: performance[`slug_${lang}`] || null,
             [`performance_X_headline_${lang}`]: performance[`X_headline_${lang}`] || null,
             [`performance_subtitle_${lang}`]: performance[`subtitle_${lang}`] || null,
-            // performance_X_premiere_time: performance.X_premiere_time != null ? new Date(performancePremiere.setHours(performancePremiere.getHours()-2)).toISOString() : null,
             performance_X_artist: performance.X_artist || null,
             performance_X_producer: performance.X_producer || null,
             [`performance_X_town_${lang}`]: performance[`X_town_${lang}`] || null,
@@ -49,6 +47,7 @@ for (const lang of LANGUAGES) {
             type: oneEvent.type || null,
             start_time: oneEvent.start_time || null,
             end_time: oneEvent.end_time || null,
+            premiere: oneEvent.premiere || null,
             [`name_${lang}`]: oneEvent[`name_${lang}`] || null,
             [`X_headline_${lang}`]: oneEvent[`X_headline_${lang}`] || null,
             [`subtitle_${lang}`]: oneEvent[`subtitle_${lang}`] || null,
@@ -173,18 +172,17 @@ function festival_child_events(child_events_data, lang) {
     return child_events_data.map(ch => {
         let child_event = STRAPIDATA_EVENTS.filter(e => e.id === ch.id)[0] || []
         let event_performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
-        // let event_performance_premiere = event_performance.X_premiere_time ? new Date(event_performance.X_premiere_time) : null
         let eventDate = new Date(oneEvent.start_time)
 
         return {
             id: child_event.id,
             performance_remote_id: event_performance.remote_id || null,
             start_time: child_event.start_time || null,
+            premiere: child_event.premiere || null,
             [`performance_name_${lang}`]: event_performance[`name_${lang}`] || null,
             [`performance_slug_${lang}`]: event_performance[`slug_${lang}`] || null,
             [`performance_X_headline_${lang}`]: event_performance[`X_headline_${lang}`] || null,
             [`performance_subtitle_${lang}`]: event_performance[`subtitle_${lang}`] || null,
-            // performance_X_premiere_time: event_performance.X_premiere_time != null ? new Date(event_performance_premiere.setHours(event_performance_premiere.getHours()-2)).toISOString() : null,
             performance_X_artist: event_performance.X_artist || null,
             performance_X_producer: event_performance.X_producer || null,
             [`performance_X_town_${lang}`]: event_performance[`X_town_${lang}`] || null,

@@ -10,7 +10,7 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance']
 const STRAPIDATA_LOCATIONS = STRAPIDATA['Location']
-const STRAPIDATA_EVENTS = STRAPIDATA['Event']
+const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
 
 const LANGUAGES = ['et', 'en']
 
@@ -51,9 +51,9 @@ for (const lang of LANGUAGES) {
 
                 performance.events = performance.events.map( pe => {
                     return STRAPIDATA_EVENTS.filter(e => e.id === pe.id)[0]
-                })
-                for (let event of performance.events){
+                }).filter(u => u)
 
+                for (let event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
 
