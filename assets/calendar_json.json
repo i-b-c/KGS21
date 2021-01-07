@@ -1471,24 +1471,6 @@
                     "en": "Kanuti Gildi SAAL"
                 }
             }
-        ],
-        "2020-11-1": [
-            {
-                "eid": "6670",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
         ]
     }
 }
