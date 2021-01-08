@@ -15,7 +15,7 @@ const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
 const STRAPIDATA_PERFORMANCE = STRAPIDATA['Performance']
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-const fetchSpecific = ['6762', '5663']
+// const fetchSpecific = ['6762', '5663']
 
 for (const lang of LANGUAGES) {
 
