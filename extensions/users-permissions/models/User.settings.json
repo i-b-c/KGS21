@@ -68,10 +68,7 @@
     "phoneNumber": {
       "type": "string"
     },
-    "performances": {
-      "collection": "performance"
-    },
-    "Providers": {
+    "Provider_id": {
       "type": "component",
       "repeatable": true,
       "component": "user-premissions.providers"
@@ -80,6 +77,16 @@
       "type": "component",
       "repeatable": true,
       "component": "performance-info.favorite"
+    },
+    "myArticles": {
+      "collection": "article",
+      "via": "users",
+      "dominant": true
+    },
+    "myPerformances": {
+      "collection": "performance",
+      "via": "users",
+      "dominant": true
     }
   }
 }

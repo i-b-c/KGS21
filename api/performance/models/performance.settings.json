@@ -147,6 +147,11 @@
     },
     "X_premiere_time": {
       "type": "text"
+    },
+    "users": {
+      "via": "myPerformances",
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

@@ -83,6 +83,11 @@
       "type": "component",
       "repeatable": true,
       "component": "media.media-content"
+    },
+    "users": {
+      "via": "myArticles",
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }
