@@ -297,7 +297,6 @@ async function coverage_media_to_strapi() {
     console.log(JSON.stringify(coverage_JSON, 0, 2))
 
     putToStrapi(coverage_JSON, 'coverages')
-
 }
 
 // EVENT PIC TO STRAPI enam ei kasuta??
@@ -360,10 +359,8 @@ async function delete_media_relation_performances() {
         }
 
     })
-
     console.log(performance)
     putToStrapi(performance, 'performances')
-
 }
 
 async function delete_media_relation_articles() {
@@ -448,7 +445,7 @@ async function main() {
     // await delete_media_relation_articles()
     // await delete_media_relation_events()
     // await delete_coverage_media_relations()
-    await delete_no_relation_media()
+    // await delete_no_relation_media()
 
 }
 
