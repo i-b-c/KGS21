@@ -27,25 +27,9 @@ async function sendUserProfile() {
     console.log("sending user profile")
 
     let userToSend = JSON.stringify({
-        // "username": "tapferm@tlu.ee",
-        // "email": "tapferm@tlu.ee",
-        // "provider": "google",
-        // "confirmed": true,
-        // "blocked": null,
-        //SELLE SAATMINE TULEB BLOKEERIDA BACKIS
-        // "role": {
-        //     "id": 3,
-        //     "name": "Kasutaja",
-        //     "description": "Test ",
-        //     "type": "kaustaja"
-        // },
-        // "created_at": "2020-12-14T13:02:27.465Z",
-        // "updated_at": "2020-12-15T14:14:16.995Z",
         "firstName": `${firstName.value}`,
         "lastName": `${lastName.value}`,
-        // "person": null,
         "phoneNumber": `${phoneNr.value}`,
-        // "favorite_performances": []
     })
 
     console.log("kasutaja profiil mida saadan ", userToSend);

@@ -313,33 +313,13 @@ if(document.location.pathname.split("/")[1]==="en"){
 }else {
     myLocation = document.location.origin
 }
-//https://saal.netlify.app/login
 
-const GetUserFavorites = async() => {
-    console.log("getting user favorites");
-    // if (validToken) {
-    // } else {
-    //     console.log("validToken väärtus on", validToken);
-    // }
-    let requestOptions = {
-        method: "GET",
-        headers: {
-            Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-        },
-    }
-    let res = await fetch("https://a.saal.ee/performance/my", requestOptions)
-    let data
-    if (res.ok) {
-        data = await res.json()
-        console.log(data);
-    } else {
-        let errorResponse = await res.json()
-        console.log("response: ", errorResponse)
-    }
-    // console.log(JSON.stringify(data))
+const ShowUserFavorites = (favos) => {
+    console.log("rendering user favorites");
+    console.log(JSON.stringify(favos))
     let locale = document.getElementById("locale").innerHTML
     document.getElementById("my-favorites").innerHTML=""
-    for (favo of data){
+    for (favo of favos){
         document.getElementById("no-favo").style.display= "none"
         let oneFavo = document.getElementById("one-favo").cloneNode(true)
         oneFavo.setAttribute("id", favo.id)
@@ -351,11 +331,10 @@ const GetUserFavorites = async() => {
         artist.innerText=favo.artist
         let button = oneFavo.childNodes[1].firstChild
         // button.setAttribute("onClick", `hideFavo(${favo.id})`)
-        button.setAttribute("onClick", `updateFavo(${favo.id}), hideFavo(${favo.id})`)
+        button.setAttribute("onClick", `updateFavoPerformance(${favo.id}), hideFavo(${favo.id})`)
         // oneFavo.classList.toggle("hidden")
         document.getElementById("my-favorites").appendChild(oneFavo)
     }
-        // (onClick =`updateFavo(${self.id})`)
 
 }
 function hideFavo(element_id){
@@ -372,7 +351,7 @@ function showUserInfo() {
         if (userProfile.lastName) lastName.innerHTML = userProfile.lastName
         if (userProfile.phoneNumber) phoneNr.innerHTML = userProfile.phoneNumber
         if (userProfile.provider) providers.innerHTML = beautifyProviders(userProfile.provider)
-        if (userProfile.Favorites) GetUserFavorites()
+        if (userProfile.Favorites) ShowUserFavorites(userProfile.myPerformances)
     } catch (err) {
         console.log(err)
     }
