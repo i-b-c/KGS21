@@ -139,10 +139,10 @@ const getStrapiArticleIds = () => {
 
 async function send_pic_and_create_relation_articles() {
     getStrapiArticleIds()
-    for (const article of echoPicsJSON) {
-        const strapi_article_id = article.id
-        article.article_media = article.medias
-        delete article.medias
+    for (const article_medias of echoPicsJSON) {
+        const strapi_id = article_medias.id
+        article_medias.article_media = article_medias.medias
+        delete article_medias.medias
 
         for (const media of article.article_media) {
             const media_versions = Object.keys(media)
@@ -190,10 +190,10 @@ const getStrapiEventIds = () => {
 async function send_pic_and_create_relation_events() {
 
     getStrapiEventIds()
-    for (const event of eventPicsJSON) {
-        const strapi_event_id = event.id
-        event.event_media = event.medias
-        delete event.medias
+    for (const event_medias of eventPicsJSON) {
+        const strapi_id = event_medias.id
+        event_medias.event_media = event_medias.medias
+        delete event_medias.medias
 
         for (const media of event.event_media) {
             const media_versions = Object.keys(media)
@@ -207,8 +207,8 @@ async function send_pic_and_create_relation_events() {
             }
         }
 
-        console.log(JSON.stringify(event, 0, 4))
-        putToStrapi(event, 'events')
+        console.log(JSON.stringify(event_medias, 0, 4))
+        putToStrapi(event_medias, 'events')
     }
 }
 
@@ -424,7 +424,7 @@ async function delete_no_relation_media() {
     const all_media_from_strapi = await getFromStrapi('upload/files')
 
     let no_relation = all_media_from_strapi.filter( media => {
-        return media.related.length === 0 
+        return media.related.length === 0
     }).map( strapi_id => strapi_id.id)
 
     for( let id of no_relation){
@@ -434,8 +434,10 @@ async function delete_no_relation_media() {
 }
 
 async function main() {
+    // await send_pic_and_create_relation_articles()
     // await send_pic_and_create_relation_performances()
     // await send_pic_and_create_relation_articles()
+
     // await send_pic_and_create_relation_events()
 
     // await performance_logos_and_riders_from_entu()

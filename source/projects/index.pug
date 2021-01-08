@@ -6,7 +6,7 @@ block content
         .row.page-margin
             .programme
                 .col-xs-12.col-md-12
-                    h2 Projektid
+                    h2= self.labels.nav.projects
                     #accordion.projects-group.panel-group(role="tablist" multiselectable="true")
                         - var first_project = true
                         each project in self.data.projects
