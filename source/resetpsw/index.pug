@@ -1,0 +1,33 @@
+extends /_templates/layout.pug
+
+block content
+
+    .container-fluid#psw_reset
+        h2 Sisesta uus parool
+        .form
+            //- h2= self.labels.login.psw_reset_title
+            .form-group
+                label(for='Psw')= self.labels.login.psw
+                input.reg_input#Psw.form-control(type='password', placeholder="salasõna" name='regPsw' autocomplete="new-password" oninput="validatePsw(this.id)")
+                #PswHelp(class='valid')= self.labels.login.psw_help
+            .form-group
+                label(for='PswRepeat')= self.labels.login.psw_repeat
+                input.reg_input#PswRepeat.form-control(type='password', placeholder="salasõna teist korda" name='PswRepeat' autocomplete="new-password" oninput="validatePswRep('Psw', this.id)")
+                #PswRepeatHelp(class='valid')= self.labels.login.psw_repeat_help
+            a.btn.btn-primary.text-uppercase(onClick = "validatePswForm()")= self.labels.login.save
+
+
+    style.
+        .invalid {
+            background-color: #ffc600;
+            display: block;
+            color: black
+            }
+        .valid {
+            background-color: #e6f7e6;
+            display: none;
+            }
+        #psw_reset{
+            padding: 10rem 0 10rem 10rem;
+            width: 50rem;
+        }

@@ -21,8 +21,8 @@ block content
 
                             .item(class=(featureActive++ === 0 ? 'active' : ''))
                                 a(href=carousel_url)
-                                    - var photoBig = performance.X_pictures && performance.X_pictures.photoBig ? performance.X_pictures.photoBig.split(',')[0] : '/assets/images/placeholder.jpg'
-                                    figure(id=`slide-${performance.remote_id}`, style=`background-image: url('${f_api}${photoBig}');`)
+                                    - var photoBig = performance.hero_images ? `${m_api}${performance.hero_images[0]}` : '/assets/images/placeholder.jpg'
+                                    figure(id=`slide-${performance.remote_id}`, style=`background-image: url('${photoBig}');`)
                                     header.col-md-8
                                         if performance[`X_headline_${self.locale}`]
                                             p= performance[`X_headline_${self.locale}`]

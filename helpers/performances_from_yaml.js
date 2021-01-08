@@ -24,28 +24,28 @@ for (const lang of LANGUAGES) {
 
         // Kommenteeri sisse kui soovid ainult konkreetsete remote_id'dega performanceid ehitada
 
-        if (['6865', '6858', '6538', '5429', '5810', '6796', '3842'].includes(performance.remote_id)){
+        // if (['6865', '6858', '6538', '5429', '5810', '6821', '3842'].includes(performance.remote_id)){
 
-        } else {
-            continue
-        }
+        // } else {
+        //     continue
+        // }
 
         if (performance.remote_id) {
 
             performance.path = `performance/${performance.remote_id}`
 
-            if (lang === 'et') {
-                performance.aliases = [`et/performance/${performance.remote_id}`]
-            }
+            // if (lang === 'et') {
+            //     performance.aliases = [`et/performance/${performance.remote_id}`]
+            // }
 
-            if (performance[`slug_${lang}`]) {
-                let slug = performance[`slug_${lang}`]
-                if (performance.aliases) {
-                    performance.aliases.push(`et/performance/${slug}`)
-                } else {
-                    performance.aliases = [`performance/${slug}`]
-                }
-            }
+            // if (performance[`slug_${lang}`]) {
+            //     let slug = performance[`slug_${lang}`]
+            //     if (performance.aliases) {
+            //         performance.aliases.push(`et/performance/${slug}`)
+            //     } else {
+            //         performance.aliases = [`performance/${slug}`]
+            //     }
+            // }
 
             if (performance.events){
 
@@ -56,10 +56,6 @@ for (const lang of LANGUAGES) {
                 for (let event of performance.events){
                     let eventDate = new Date(event.start_time)
                     event.start_date_string = `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`
-
-                    if (event.location) {
-                        event.location = STRAPIDATA_LOCATIONS.filter(l => l.id === event.location)[0] || null
-                    }
 
                 }
 
@@ -74,9 +70,11 @@ for (const lang of LANGUAGES) {
                 delete performance.events
             }
 
-            if (performance.X_pictures) {
-                performance.X_pictures = sort_pictures(performance.X_pictures)
+            if (performance.performance_media) {
+                performance.hero_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
+                performance.medium_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
             }
+
             if (performance.coverages) {
                 performance.coverages = performance.coverages.sort((a, b) => new Date(b.publish_date)-new Date(a.publish_date))
             }
