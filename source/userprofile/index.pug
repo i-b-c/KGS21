@@ -2,7 +2,7 @@ extends /_templates/layout.pug
 
 block content
 
-    #profile-grid
+    #profile-grid.content
         .form#user_profile
             h2= self.labels.login.userprofile_title
             .form-group
@@ -37,16 +37,14 @@ block content
             a.btn.btn-primary.text-uppercase(onclick='validateForm()')= self.labels.login.save
             p#profileSent(style = {display: 'none'})= self.labels.login.data_saved
             p#profileNotSent(style = {display: 'none'})=self.labels.login.err_profile_not_saved
-    
 
         .form#delete_account
             h2 Lisavalikud
             a.btn.btn-primary.text-uppercase#showAdvancedStgBtn(onclick='showAdvancedSettings()') Näita
             a.btn.btn-primary.text-uppercase#hideAdvancedStgBtn(onclick='hideAdvancedSettings()' style={display: 'none'}) Peida
-            
             .form-group#advanced_settings(style={display:'none'})
                 label.login_label Parooliga sisselogimine
-                a.btn.btn-primary.text-uppercase#addPswdBtn(href='http://localhost:4000/password_reset' style={display: 'none'}) Lisa salasõna
+                a.btn.btn-primary.text-uppercase#addPswdBtn(href='/password_reset' style={display: 'none'}) Lisa salasõna
                 a.btn.btn-primary.text-uppercase#resetPswdBtn(onclick = 'SendPswResetLink()' style={display:'none'}) Uuenda salasõna
                 label.login_label Konto kustutamine
                 a.btn.btn-primary.text-uppercase#deleteAccountBtn(onclick='cnfrmDeleteAccount.style.display=""') Kustuta konto

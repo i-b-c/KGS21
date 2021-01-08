@@ -14,6 +14,9 @@ const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
 const STRAPIDATA_PERFORMANCE = STRAPIDATA['Performance']
 
+// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
+// const fetchSpecific = ['6762', '5663']
+
 for (const lang of LANGUAGES) {
 
     const categoriesYAMLPath = path.join(fetchDir, `categories.${lang}.yaml`)
@@ -72,90 +75,11 @@ for (const lang of LANGUAGES) {
             coverage_dates: oneEvent.coverages ? coveragesByDate(combined_coverages) : null,
         }
 
-        if (oneEventData.type === 'festival') {
+        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.remote_id) ? true : false
 
-            // Festival program page / landing page
-            oneEventData.path = `festival/${oneEventData.remote_id}/program/`
+        if (oneEventData.type === 'festival') { createFestival(oneEventData, lang, createDir) }
 
-            if (lang === 'et') {
-                oneEventData.aliases = [
-                    `et/festival/${oneEventData.remote_id}/program/`,
-                    `festival/${oneEventData.remote_id}/`,
-                    `et/festival/${oneEventData.remote_id}/`
-                    ]
-            }
-            const festivalYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
-            const oneFestivalDirPath = path.join(festivalsDirPath, oneEventData.remote_id)
-            fs.mkdirSync(oneFestivalDirPath, { recursive: true });
-            fs.writeFileSync(`${oneFestivalDirPath}/data.${lang}.yaml`, festivalYAML, 'utf8');
-            fs.writeFileSync(`${oneFestivalDirPath}/index.pug`, `include /_templates/festival_index_template.pug`)
-
-            // Festival about page
-            oneEventData.path = `festival/${oneEventData.remote_id}/about/`
-
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/about/`]
-            } else {
-                delete oneEventData.aliases
-            }
-
-            const festivalAboutYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
-            fs.mkdirSync(`${oneFestivalDirPath}/about/`, { recursive: true });
-            fs.writeFileSync(`${oneFestivalDirPath}/about/data.${lang}.yaml`, festivalAboutYAML, 'utf8');
-            fs.writeFileSync(`${oneFestivalDirPath}/about/index.pug`, `include /_templates/festival_about_index_template.pug`)
-
-
-            // Festival tickets page
-            oneEventData.path = `festival/${oneEventData.remote_id}/tickets/`
-
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/tickets/`]
-            } else {
-                delete oneEventData.aliases
-            }
-
-            const festivalTicketsYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
-            fs.mkdirSync(`${oneFestivalDirPath}/tickets/`, { recursive: true });
-            fs.writeFileSync(`${oneFestivalDirPath}/tickets/data.${lang}.yaml`, festivalTicketsYAML, 'utf8');
-            fs.writeFileSync(`${oneFestivalDirPath}/tickets/index.pug`, `include /_templates/festival_tickets_index_template.pug`)
-
-            // Festival press page
-            oneEventData.path = `festival/${oneEventData.remote_id}/press/`
-
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/press/`]
-            } else {
-                delete oneEventData.aliases
-            }
-
-            const festivalPressYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
-            fs.mkdirSync(`${oneFestivalDirPath}/press/`, { recursive: true });
-            fs.writeFileSync(`${oneFestivalDirPath}/press/data.${lang}.yaml`, festivalPressYAML, 'utf8');
-            fs.writeFileSync(`${oneFestivalDirPath}/press/index.pug`, `include /_templates/festival_press_index_template.pug`)
-
-
-            // Reset for alldata writing
-            oneEventData.path = `festival/${oneEventData.remote_id}/program/`
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/program/`]
-            }
-
-        }
-
-        if (oneEventData.type === 'residency') {
-            oneEventData.path = `resident/${oneEventData.remote_id}`
-            oneEventData.data = {categories: `/_fetchdir/categories.${lang}.yaml`}
-            if (lang === 'et') {
-                oneEventData.aliases = [`et/resident/${oneEventData.remote_id}`]
-            }
-            const residencyYAML = yaml.safeDump(oneEventData, {'noRefs': true, 'indent': '4' });
-            const oneResidencyDirPath = path.join(residenciesDirPath, oneEventData.remote_id)
-            fs.mkdirSync(oneResidencyDirPath, { recursive: true });
-            fs.writeFileSync(`${oneResidencyDirPath}/data.${lang}.yaml`, residencyYAML, 'utf8');
-
-            fs.writeFileSync(`${oneResidencyDirPath}/index.pug`, `include /_templates/resident_index_template.pug`)
-
-        }
+        if (oneEventData.type === 'residency') { createResidency(oneEventData, lang, createDir) }
 
         allData.push(oneEventData)
 
@@ -166,6 +90,77 @@ for (const lang of LANGUAGES) {
     const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
     const eventsYAML = yaml.safeDump(allDataSortedFiltered, {'noRefs': true, 'indent': '4' });
     fs.writeFileSync(eventsYAMLPath, eventsYAML, 'utf8');
+}
+
+function createResidency(oneEventData, lang, createDir) {
+
+    oneEventData.path = `resident/${oneEventData.remote_id}`
+    oneEventData.data = { categories: `/_fetchdir/categories.${lang}.yaml` }
+    // if (lang === 'et') {
+    //     oneEventData.aliases = [`et/resident/${oneEventData.remote_id}`]
+    // }
+    if (createDir) { createDirAndFiles(oneEventData, lang, residenciesDirPath, null, 'resident') }
+
+}
+
+function createFestival(oneEventData, lang, createDir) {
+
+    // FESTIVAL PROGRAM/LANDING PAGE
+    oneEventData.path = `festival/${oneEventData.remote_id}/program/`
+
+    // if (lang === 'et') {
+    //     oneEventData.aliases = [
+    //         `et/festival/${oneEventData.remote_id}/program/`,
+    //         `festival/${oneEventData.remote_id}/`,
+    //         `et/festival/${oneEventData.remote_id}/`
+    //         ]
+    // }
+
+    if (createDir) { createDirAndFiles(oneEventData, lang, festivalsDirPath, null, 'festival') }
+
+
+    // FESTIVAL ABOUT PAGE
+    oneEventData.path = `festival/${oneEventData.remote_id}/about/`
+
+    // if (lang === 'et') {
+    //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/about/`]
+    // } else {
+    //     delete oneEventData.aliases
+    // }
+
+    if (createDir) { createDirAndFiles(oneEventData, lang, festivalsDirPath, 'about', 'festival_about') }
+
+
+    // FESTIVAL TICKETS PAGE
+    oneEventData.path = `festival/${oneEventData.remote_id}/tickets/`
+
+    // if (lang === 'et') {
+    //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/tickets/`]
+    // } else {
+    //     delete oneEventData.aliases
+    // }
+
+    if (createDir) { createDirAndFiles(oneEventData, lang, festivalsDirPath, 'tickets', 'festival_tickets') }
+
+
+    // FESTIVAL PRESS PAGE
+    oneEventData.path = `festival/${oneEventData.remote_id}/press/`
+
+    // if (lang === 'et') {
+    //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/press/`]
+    // } else {
+    //     delete oneEventData.aliases
+    // }
+
+    if (createDir) { createDirAndFiles(oneEventData, lang, festivalsDirPath, 'press', 'festival_press') }
+
+
+    // RESET FOR ALLDATA WRITING
+    oneEventData.path = `festival/${oneEventData.remote_id}/program/`
+    // if (lang === 'et') {
+    //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/program/`]
+    // }
+
 }
 
 function festival_child_events(child_events_data, lang) {
@@ -201,6 +196,15 @@ function festival_child_events(child_events_data, lang) {
     }).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
 
 
+}
+
+function createDirAndFiles(oneEventData, lang, dirPath, addPath, indexTemplateType) {
+    const thisYAML = yaml.safeDump(oneEventData, { 'noRefs': true, 'indent': '4' })
+    const onePath = addPath ? path.join(dirPath, oneEventData.remote_id, addPath) : path.join(dirPath, oneEventData.remote_id)
+    fs.mkdirSync(onePath, { recursive: true })
+    fs.writeFileSync(`${onePath}/data.${lang}.yaml`, thisYAML, 'utf8')
+
+    fs.writeFileSync(`${onePath}/index.pug`, `include /_templates/${indexTemplateType}_index_template.pug`)
 }
 
 function coveragesByDate(coverages) {
