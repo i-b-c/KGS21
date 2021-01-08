@@ -150,19 +150,22 @@ block content
 
                                         if event.X_ticket_info.onsite_price
                                             p= self.labels.title.onsite_price + ': ' + event.X_ticket_info.onsite_price + '€'
-
+                                //-  && new Date(event.start_time) > new Date()
                                 if event.X_ticket_info
                                     .col-xs-6.col-md-2.col-lg-2.text-right
                                         if event.canceled === 'true'
-                                            a.btn.btn-primary(class="disabled")= 'canceled'
+                                            a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                         else
                                             if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
-                                                a.btn.btn-primary(class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                             else
-                                                a.btn.btn-primary(class="" href=event.X_ticket_info.ticket_api target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info.ticket_api target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
+
+                        script.
+                            toggleEventButtons()
 
             nav.archive.bottom.col-md-12
                 .row

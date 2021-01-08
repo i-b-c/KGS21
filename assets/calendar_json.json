@@ -586,6 +586,40 @@
                 }
             }
         ],
+        "2020-11-1": [
+            {
+                "eid": "6726",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "\"In Loving Memory Of\" albumiesitluskontsert",
+                    "en": "\"In Loving Memory Of\" record presentation concert"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "eid": "6670",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
+                    "en": "Complete Works: Table Top Shakespeare: At Home"
+                },
+                "time": "22:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-1-19": [
             {
                 "eid": "6538",

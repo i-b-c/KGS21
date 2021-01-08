@@ -114,16 +114,19 @@ block content
                                         if event.canceled
                                             a.btn.btn-primary(class="disabled")= self.labels.ticket.buy_t_canceled
                                         else
-                                        if event.canceled === 'true'
-                                            a.btn.btn-primary(class="disabled")= 'canceled'
-                                        else
-                                            if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
-                                                a.btn.btn-primary(class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
+                                            if event.canceled === 'true'
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                             else
-                                                a.btn.btn-primary(class="" href=event.X_ticket_info.ticket_api target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
+                                                if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
+                                                else
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info.ticket_api target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
+
+                        script.
+                            toggleEventButtons()
 
                         script.
                             festivalEventsToggler()

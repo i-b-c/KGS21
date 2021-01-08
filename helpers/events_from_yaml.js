@@ -112,7 +112,7 @@ function createResidency(oneEventData, lang, createDir) {
 
 function createFestival(oneEventData, lang, createDir) {
 
-    let festivalHomePath = `festival/${oneEventData.remote_id}/program/`
+    let festivalHomePath = `festival/${oneEventData.remote_id}/`
     // FESTIVAL PROGRAM/LANDING PAGE
     oneEventData.path = `${festivalHomePath}program/`
 
