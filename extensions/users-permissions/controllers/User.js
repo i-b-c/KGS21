@@ -11,7 +11,7 @@ const adminUserController = require('./user/admin');
 const apiUserController = require('./user/api');
 const { sanitizeEntity } = require('strapi-utils');
 
-const sanitizeUser = user => 
+const sanitizeUser = user =>
   sanitizeEntity(user, {
     model: strapi.query('user', 'users-permissions').model,
   });
@@ -121,11 +121,28 @@ module.exports = {
     if (!user) {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
     }
+
+    if (user.myPerformances.length > 0) {
+      user.myPerformances.map(myPerformance => {
+        const propToRemove = ['description_et', 'description_en', 'performance_media', 'videos', 'audios', 'logos', 'raider', 'technical_info_en', 'technical_info_et', 'X_pictures']
+        for (const prop of propToRemove) delete myPerformance[prop]
+        return myPerformance
+      })
+    }
+
+    if (user.myArticles.length > 0) {
+      user.myArticles.map(myArticles => {
+        const propToRemove = ['content_et', 'content_en', 'article_media', 'videos', 'video', 'audios', 'audio', 'X_pictures']
+        for (const prop of propToRemove) delete myArticles[prop]
+        return myArticles
+      })
+    }
+
     ctx.body = sanitizeUser(user);
   },
   async destroyme(ctx) {
     const { id } = ctx.state.user;
     const data = await strapi.plugins['users-permissions'].services.user.remove({ id });
-    ctx.send({ok: true});
+    ctx.send({ ok: true });
   },
 };
