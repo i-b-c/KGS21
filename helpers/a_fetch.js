@@ -202,21 +202,6 @@ const foo = async () => {
                     modelData = [modelData]
                 }
 
-                // andmete varundamine GitHubi
-                const { exec } = require('child_process')
-                exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
-                    if (err) {
-                        console.log('failing with git rev-parse');
-                    }
-
-                    if (typeof stdout === 'string' && (stdout.trim() === 'master')) {
-                        // console.log(`The branch is master and we are prepping json for backing up`);
-                        // Call your function here conditionally as per branch
-                        let jsonStr = JSON.stringify(modelData, null, 2)
-                        fs.writeFileSync(`${__dirname}/../strapidata/${modelName}.json`, jsonStr, 'utf8')
-                    }
-                });
-
                 modelData = modelData.filter(checkDomain)
 
                 // otsime kirjet mudelis =value
