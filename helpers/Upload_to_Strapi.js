@@ -137,7 +137,6 @@ const getStrapiArticleIds = () => {
 }
 
 async function send_pic_and_create_relation_articles() {
-
     getStrapiArticleIds()
     for (const article of echoPicsJSON) {
         const strapi_article_id = article.id
@@ -169,7 +168,7 @@ async function send_pic_and_create_relation_articles() {
         //     }
         // }
 
-        // console.log(JSON.stringify([article_medias], 0, 4))
+        // console.log(JSON.stringify([article], 0, 4))
         putToStrapi([article], 'articles')
     }
 

@@ -375,7 +375,7 @@ async function articlesToStrapi() {
 
         let starpi_article_id = articles_from_strapi.filter(s_article => {
             return s_article.remote_id === article_entity.id.toString()
-        }).map(e => { return e.id })[0]
+        }).map(e => { return e.id })[0] || null
 
 
         let article_videos = []
@@ -429,23 +429,18 @@ async function articlesToStrapi() {
         }
     })
 
-    for (article of articles){
-        // console.log(article.id)
-        // console.log(article.X_pictures);
-    }
-
-    articlesToPost = articles.filter(article => {return article.id === undefined})
-    for(article of articlesToPost){
-        console.log(article.remote_id)
-    }
-
-
-    // console.log(util.inspect(articles, null, 4))
 
     // PUT
-    putToStrapi(articles, 'articles')
+    // console.log(util.inspect(articles, null, 4))
+
+    // putToStrapi(articles, 'articles')
 
     // POST
+
+    // articlesToPost = articles.filter(article => {return article.id === null})
+    // for(article of articlesToPost){
+    //     console.log(article.remote_id)
+    // }
     // postToStrapi(articlesToPost, 'articles')
 }
 
@@ -696,7 +691,7 @@ async function main() {
     // await bannerToStrapi()
     // await categoriesToStrapi()
     // await personToStrapi()
-    await performanceToStrapi()
+    // await performanceToStrapi()
     // await coveragesToStrapi()
     // await locationToStrapi()
     // await eventsToStrapi()

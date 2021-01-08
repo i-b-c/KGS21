@@ -347,7 +347,7 @@ Newscast: &Newscast
 
 ArticleMedia: &ArticleMedia
     original_image: *StrapiMedia
-    gallery_image_large: *StrapiMedia
+    hero_image: *StrapiMedia
     gallery_image_medium: *StrapiMedia
 
 Article: &Article #Echo
