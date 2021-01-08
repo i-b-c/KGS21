@@ -112,7 +112,19 @@ async function getFromStrapi(model) {
     const strapi_data = await strapiQuery(options)
     return strapi_data
 }
+
+async function deleteFromStrapi(model) {
+    const _path = `https://${StrapiHost}/${model}`
+    const options = {
+        headers: { 'Content-Type': 'application/json' },
+        path: _path,
+        method: 'DELETE',
+    }
+    const strapi_data = await strapiQuery(options)
+    return strapi_data
+}
 exports.strapiQuery = strapiQuery
 exports.postToStrapi = postToStrapi
 exports.putToStrapi = putToStrapi
 exports.getFromStrapi = getFromStrapi
+exports.deleteFromStrapi = deleteFromStrapi

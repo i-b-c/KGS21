@@ -361,7 +361,7 @@ Article: &Article #Echo
     publish_date: (datetime)
     front_page_promotion: (boolean)
     categories:
-        - *Category
+        - *Category #seotud postitused
     authors:
         - *Person
     article_media:

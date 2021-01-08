@@ -10,7 +10,8 @@ const yaml = require('js-yaml')
 const {
     strapiQuery,
     putToStrapi,
-    getFromStrapi
+    getFromStrapi,
+    deleteFromStrapi
 } = require("./strapiQueryMod.js")
 const entuDataPath = path.join(__dirname, '..', 'data-transfer', 'from_entu')
 const strapiDataPath = path.join(__dirname, '..', 'data-transfer', 'from_strapi')
@@ -422,9 +423,22 @@ async function delete_covetage_media_relation() {
     putToStrapi(coverage, 'coverages')
 }
 
+async function delete_no_relation_media() {
+    const all_media_from_strapi = await getFromStrapi('upload/files')
+
+    let no_relation = all_media_from_strapi.filter( media => {
+        return media.related.length === 0 
+    }).map( strapi_id => strapi_id.id)
+
+    for( let id of no_relation){
+        console.log(`Delete media file from Strapi, id- ${id}, no relation found`)
+        await deleteFromStrapi(`upload/files/${id}`)
+    }
+}
+
 async function main() {
     // await send_pic_and_create_relation_performances()
-    await send_pic_and_create_relation_articles()
+    // await send_pic_and_create_relation_articles()
     // await send_pic_and_create_relation_events()
 
     // await performance_logos_and_riders_from_entu()
@@ -434,6 +448,7 @@ async function main() {
     // await delete_media_relation_articles()
     // await delete_media_relation_events()
     // await delete_coverage_media_relations()
+    await delete_no_relation_media()
 
 }
 
