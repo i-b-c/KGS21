@@ -1,4 +1,5 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
@@ -19,7 +20,8 @@ block content
                             - photo = photo === '/assets/images/placeholder.jpg' ? photo : `${f_api}${photo}`
                             figure(id = `slide-${ix}`, style=`background-image: url('${photo}');`)
                             header.col-md-8
-                                p= self.publish_date_string
+                                p
+                                    +dateFull(self.publish_date)
                                 h1.artist= self[`title_${self.locale}`]
                                     if self[`subtitle_${self.locale}`]
                                         - var subTitle = self[`subtitle_${self.locale}`]
@@ -120,7 +122,8 @@ block content
                                 if postCount++ < 15
                                     //- a(href=`/${lang_path}${relArticle.path}`)
                                     a(href=`/${relArticle.path}`)
-                                        p= relArticle.publish_date_string
+                                        p
+                                            +dateFull(self.publish_date)
                                         h3
                                             span.artist= relArticle[`title_${self.locale}`]
 
