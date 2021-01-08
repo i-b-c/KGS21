@@ -1,4 +1,5 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
@@ -17,7 +18,8 @@ block content
                                     else
                                         img.img-responsive(src=`/assets/images/placeholder.jpg`)
 
-                                    p= article.publish_date_string
+                                    p
+                                        +dateFull(article.publish_date)
                                     p
                                         span.artist= article[`title_${self.locale}`]
 

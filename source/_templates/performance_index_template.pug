@@ -74,27 +74,27 @@ block content
 
                 if self.minToMaxEvents && self.minToMaxEvents.length
 
-                    .coming
+                    .tickets.row
                         each event in self.minToMaxEvents
-                            .row(event_type='future_events', start_time=event.start_time)
-                                .col-sm-6.col-md-5.col-lg-4
+                            div(event_type='future_events', start_time=event.start_time)
+                                .col-sm-4.col-md-4.col-lg-4
                                     +dayName(event.start_time)
-                                    p= event.start_date_string
+                                    +dateFull(event.start_time)
                                     +hoursMinutes(event.start_time)
-                                .col-sm-6.col-md-7.col-lg-8
+                                .col-sm-8.col-md-8.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
-                                    if event.location
-                                        p= event.location[`name_${self.locale}`]
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
                                     span(style='float:right;')
-                                        if event.X_ticket_info && event.X_ticket_info.sales_status
+                                        if event.X_ticket_info
                                             if event.canceled === 'true'
                                                 a.btn.btn-primary(class="disabled")= 'canceled'
                                             else
-                                                if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
-                                                    a.btn.btn-primary(class="free disabled" href='' target='_blank')= event.X_ticket_info.sales_status
+                                                if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
+                                                    a.btn.btn-primary(class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                                 else
-                                                    a.btn.btn-primary(class="" href='' target='_blank')= 'status'
+                                                    a.btn.btn-primary(class="" href=event.X_ticket_info.ticket_api target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
 
 
@@ -109,12 +109,12 @@ block content
                         each event in self.maxToMinEvents
                             .row(event_type='past_events', start_time=event.start_time)
                                 .col-sm-6.col-md-5.col-lg-4
-                                    p= event.start_date_string
+                                    +dateFull(event.start_time)
                                 .col-sm-6.col-md-7.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
-                                    if event.location
-                                        p= event.location[`name_${self.locale}`]
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
 

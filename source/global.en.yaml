@@ -116,14 +116,6 @@ labels:
         results: Results
     nup:
         get_newspaper_2016_1: Get NUP NEWS!
-    ticket:
-        buy_ticket: Buy ticket
-        buy_t_canceled: Canceled!
-        buy_t_free_admission: Free Admission
-        buy_t_future_sale: future sale
-        buy_t_presale_at_boxoffices: From box office
-        buy_t_sold_out: Sold out
-        buy_t_price_on_spot: At the door
     button:
         NUP: NU Performance Festival 2018
         NUPprint: NU Performance Newspaper
@@ -172,6 +164,15 @@ labels:
         upcoming: Upcoming
         video: Video
         festivals: festivals
+    ticket:
+        buy_ticket: Buy ticket
+        buy_t_canceled: Canceled!
+        buy_t_free_admission: Free Admission
+        buy_t_future_sale: future sale
+        buy_t_presale_at_boxoffices: From box office
+        buy_t_sold_out: Sold out
+        buy_t_price_on_spot: At the door
+        buy_t_regular_presale: Osta pilet
     nav:
         about: About Us
         about_festival: About
