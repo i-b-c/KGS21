@@ -18,7 +18,7 @@ const STRAPIDATA_PERFORMANCE = STRAPIDATA['Performance']
 const allPathAliases = []
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
+// const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
 
 for (const lang of LANGUAGES) {
 

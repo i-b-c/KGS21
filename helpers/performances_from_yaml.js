@@ -21,7 +21,7 @@ const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance'].map(p => {
 
 const allPathAliases = []
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
+// const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
 const LANGUAGES = ['et', 'en']
 
 let performance_index_template = `/_templates/performance_index_template.pug`

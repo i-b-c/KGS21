@@ -15,7 +15,7 @@ const LANGUAGES = ['et', 'en']
 const allPathAliases = []
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-const fetchSpecific = ['6931', '6884', '4546']
+// const fetchSpecific = ['6931', '6884', '4546']
 
 let article_index_template = `/_templates/magazine_index_template.pug`
 
