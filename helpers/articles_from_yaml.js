@@ -3,6 +3,9 @@ const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 
+// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
+// const fetchSpecific = ['6931', '6884', '4546']
+
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
@@ -10,12 +13,11 @@ const articlesDir = path.join(fetchDir, 'articles')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_ARTICLES = STRAPIDATA['Article']
+const STRAPIDATA_PERSONS = STRAPIDATA['Person']
+const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
 const LANGUAGES = ['et', 'en']
 
 const allPathAliases = []
-
-// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-// const fetchSpecific = ['6931', '6884', '4546']
 
 let article_index_template = `/_templates/magazine_index_template.pug`
 
@@ -30,6 +32,11 @@ STRAPIDATA_ARTICLES.sort((a, b) => {
     } else {
         return 1
     }
+})
+
+STRAPIDATA_ARTICLES.map(ar => {
+    ar.authors = ar.authors ? ar.authors.map(a => STRAPIDATA_PERSONS.filter(e => a.id === e.id)[0]) : null
+    ar.categories = ar.categories ? ar.categories.map(a => STRAPIDATA_CATEGORIES.filter(e => a.id === e.id)[0]) : null
 })
 
 for (const lang of LANGUAGES) {
