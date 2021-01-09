@@ -3,6 +3,9 @@ const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 
+// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
+// const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
+
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
@@ -10,15 +13,27 @@ const LANGUAGES = ['et', 'en']
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const festivalsDirPath = path.join(sourceDir, '_fetchdir', `festivals`)
 const residenciesDirPath = path.join(sourceDir, '_fetchdir', `residencies`)
-
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
-const STRAPIDATA_PERFORMANCE = STRAPIDATA['Performance']
+const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
+const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance'].map(e => {
+    if (e.categories) {
+        e.categories = e.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id))[0]
+    }
+    return e
+})
+const STRAPIDATA_LOCATIONS = STRAPIDATA['Location']
+const STRAPIDATA_COVERAGES = STRAPIDATA['Coverage']
+
+const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page).map(ev => {
+    ev.performance = ev.performance ? STRAPIDATA_PERFORMANCES.filter(e => e.id === ev.performance.id)[0] : null
+    ev.location = ev.location ? STRAPIDATA_LOCATIONS.filter(e => e.id === ev.location.id)[0] : null
+    ev.categories = ev.categories ? ev.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]) : null
+    ev.coverages = ev.coverages ? ev.coverages.map(c => STRAPIDATA_COVERAGES.filter(f => f.id === c.id)[0]) : null
+    ev.child_events = ev.child_events ? ev.child_events.map(c => STRAPIDATA['Event'].filter(f => f.id === c.id)[0]) : null
+    return ev
+})
 
 const allPathAliases = []
-
-// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-// const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
 
 for (const lang of LANGUAGES) {
 
@@ -30,8 +45,9 @@ for (const lang of LANGUAGES) {
 
 
     for(oneEvent of STRAPIDATA_EVENTS) {
-        let performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
-        let eventDate = new Date(oneEvent.start_time)
+        // let performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
+        let performance = oneEvent.performance || []
+
         let combined_coverages = null
 
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.remote_id) ? true : false
@@ -91,7 +107,6 @@ for (const lang of LANGUAGES) {
 
 
     }
-    // console.log(allData)
     let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(a.start_time)-new Date(b.start_time))
     console.log(`${allDataSortedFiltered.length} events (incl. festivals, residencies, tours) from YAML (${lang})`);
     const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
@@ -172,8 +187,7 @@ function createFestival(oneEventData, lang, createDir) {
 function festival_child_events(child_events_data, lang) {
     return child_events_data.map(ch => {
         let child_event = STRAPIDATA_EVENTS.filter(e => e.id === ch.id)[0] || []
-        let event_performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
-        let eventDate = new Date(oneEvent.start_time)
+        let event_performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
 
         return {
             id: child_event.id,
@@ -187,7 +201,7 @@ function festival_child_events(child_events_data, lang) {
             performance_X_artist: event_performance.X_artist || null,
             performance_X_producer: event_performance.X_producer || null,
             [`performance_X_town_${lang}`]: event_performance[`X_town_${lang}`] || null,
-            location: child_event.location || null,
+            location: child_event.location ? child_event.location[`name_${lang}`] : null,
             conversation: child_event.conversation || null,
             remote_id: child_event.remote_id || null,
             X_ticket_info: child_event.X_ticket_info || null,

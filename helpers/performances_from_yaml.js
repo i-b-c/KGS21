@@ -3,6 +3,9 @@ const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 
+// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
+// const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
+
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
@@ -10,18 +13,19 @@ const performancesDir = path.join(fetchDir, 'performances')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
+const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
 const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance'].map(p => {
     if (p.events) {
         p.events = p.events.map( pe => {
             return STRAPIDATA_EVENTS.filter(e => e.id === pe.id)[0]
         }).filter(u => u)
     }
+    p.categories = p.categories ? p.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]) : null
     return p
 })
 
 const allPathAliases = []
-// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-// const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
+
 const LANGUAGES = ['et', 'en']
 
 let performance_index_template = `/_templates/performance_index_template.pug`
@@ -64,7 +68,7 @@ for (const lang of LANGUAGES) {
                     let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
                     performance.minToMaxEvents = minToMaxSortedEvents.map(e => {
                         if (e.location) {
-                            e.location = e.location[`name_${lang}`]
+                            e.location = e.location[`name_${lang}`] ? e.location[`name_${lang}`] : null
                         }
                         return e
                     })
