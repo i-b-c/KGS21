@@ -130,8 +130,8 @@ block content
                                                     span.subtitle= event[`subtitle_${self.locale}`]
 
                                 .col-xs-6.col-md-2.col-lg-2
-                                    if event.location
-                                        p.location= event.location
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
 
                                     //- if op.get(p, ['saal-location', lang + '-name'])
                                     //-     p.location= op.get(p, ['saal-location', lang + '-name'])

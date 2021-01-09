@@ -4,7 +4,7 @@ const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-// const fetchSpecific = ['6931', '6884', '4546']
+const fetchSpecific = ['6931', '6884', '4546']
 
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
