@@ -10,14 +10,14 @@ if(validToken){
 function fillUserForm() {
     try {
         console.log("filling user form")
-        userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
-        email.innerHTML = userProfile.email
-        if (userProfile.firstName) firstName.value = userProfile.firstName
-        if (userProfile.lastName) lastName.value = userProfile.lastName
-        if (userProfile.phoneNumber) phoneNr.value = userProfile.phoneNumber
-        if (userProfile.provider.includes('local')) password.style.display = ''
-        if (userProfile.provider.includes('google')) google.style.display = ''
-        if (userProfile.provider.includes('facebook')) facebook.style.display = ''
+        let profile = JSON.parse(localStorage.getItem("USER_PROFILE"))
+        email.innerHTML = profile.email
+        if (profile.firstName) firstName.value = profile.firstName
+        if (profile.lastName) lastName.value = profile.lastName
+        if (profile.phoneNumber) phoneNr.value = profile.phoneNumber
+        if (profile.provider.includes('local')) password.style.display = ''
+        if (profile.provider.includes('google')) google.style.display = ''
+        if (profile.provider.includes('facebook')) facebook.style.display = ''
     } catch (err) {
         console.log(err)
     }
@@ -31,9 +31,7 @@ async function sendUserProfile() {
         "lastName": `${lastName.value}`,
         "phoneNumber": `${phoneNr.value}`,
     })
-
-    console.log("kasutaja profiil mida saadan ", userToSend);
-
+    // console.log("kasutaja profiil mida saadan ", userToSend);
     let requestOptions = {
             method: 'PUT',
             headers: {
@@ -42,7 +40,6 @@ async function sendUserProfile() {
             },
             body: userToSend,
         };
-
     let response = await (await fetch('https://a.saal.ee/users/me/', requestOptions))
 
     if (response.status === 200){
@@ -56,15 +53,6 @@ async function sendUserProfile() {
     } else {
         document.getElementById('profileNotSent').style.display = 'block'
     }
-
-        // fetch(`https://a.saal.ee/users/updateme/${userProfile.id}`, requestOptions)
-        //     .then(response => response.text())
-        //     .then(result => {
-        //         console.log(result)
-        //         GetUserInfo()
-        //         location.reload()
-        //     })
-        //     .catch(error => console.log('error', error));
 }
 
 
@@ -150,7 +138,7 @@ openProvider = (provider) => {
     if (provider === 'Facebook')
         window.open('https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsettings%3Ftab%3Dapplications%26ref%3Dsettings', '_blank')
     if (provider === 'Google')
-        window.open('https://myaccount.google.com/permissions', '_blank')    
+        window.open('https://myaccount.google.com/permissions', '_blank')
     doneAtProvider.innerHTML = doneAtProvider.innerHTML + ` '${provider.toUpperCase()}'`
     doneAtProvider.style.display = ''
 }

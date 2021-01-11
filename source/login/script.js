@@ -1,9 +1,12 @@
+if(validToken) GetUserInfo()
+
 function loginWithProvider(loginProvider) {
     LogOut()
     localStorage.setItem("provider", loginProvider)
     window.location.replace('https://a.saal.ee/connect/' + loginProvider + '/')
 }
 
+//kui local storage'isse on salvestatud providery nimi, skäib läbi callaback funktsiooni millega tagastatakse token strapist
 async function GetCallback(providerToCall) {
     var requestOptions = {
         method: 'GET',
@@ -12,13 +15,13 @@ async function GetCallback(providerToCall) {
     // fetch('https://a.saal.ee/auth/' + providerToCall + '/callback' + location.search, requestOptions).then(function(response) {
     if (response.ok) {
         const data = await response.json()
-        console.log(data);
+        console.log("sisselogimise vastus", data);
         localStorage.setItem("ACCESS_TOKEN", data.jwt)
         localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
         localStorage.removeItem("provider")
         localStorage.setItem("initials", makeInitials(data.user))
-        document.dispatchEvent(userProfileLoadedEvent)
-        if (userProfile.blocked || !userProfile.confirmed) {
+        // document.dispatchEvent(userProfileLoadedEvent)
+        if (data.user.blocked || !data.user.confirmed) {
             accountStatus = false
         }
         validateToken()
@@ -88,8 +91,8 @@ const LoginWithEmail = async() => {
         localStorage.setItem("ACCESS_TOKEN", data.jwt)
         localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
         localStorage.setItem("initials", makeInitials(data.user))
-        document.dispatchEvent(userProfileLoadedEvent)
-        if (userProfile.blocked || !userProfile.confirmed) {
+        // document.dispatchEvent(userProfileLoadedEvent)
+        if (data.user.blocked || !data.user.confirmed) {
             accountStatus = false
         }
         validateToken()
@@ -259,7 +262,7 @@ const SendPswResetLink = async () => {
     }
 }
 
-
+//siia peaks kaardistama kõik erroris ja panema need statusribale alla või üles kuvama
 function displayError(errArray){
     for (err of errArray){
         console.log("display", err)
@@ -292,6 +295,7 @@ function displayError(errArray){
         }
     }
 }
+
 //"Missing or invalid email"
 //Auth.advanced.allow_register => Register action is actualy not available.
 //Auth.form.error.email.taken => Email is already taken.
@@ -302,7 +306,7 @@ const beautifyProviders = providers => {
     providers = providers.replace(/facebook|google/gi, x => { return x.replace(/^\w/, (c) => c.toUpperCase()) })
     providers = providers.replace(/,/g, ', ')
     providers = providers.replace('local', 'password')
-    console.log(providers)
+    // console.log(providers)
     return providers
 }
 
@@ -314,24 +318,30 @@ if(document.location.pathname.split("/")[1]==="en"){
     myLocation = document.location.origin
 }
 
+
 const ShowUserFavorites = (favos) => {
     console.log("rendering user favorites");
-    console.log(JSON.stringify(favos))
+
     let locale = document.getElementById("locale").innerHTML
     document.getElementById("my-favorites").innerHTML=""
     for (favo of favos){
         document.getElementById("no-favo").style.display= "none"
+
         let oneFavo = document.getElementById("one-favo").cloneNode(true)
         oneFavo.setAttribute("id", favo.id)
+
         let link = oneFavo.childNodes[0].firstChild.firstChild
         link.setAttribute("href",`${myLocation}/performance/${favo.remote_id}`)
+
         let name = oneFavo.childNodes[0].firstChild.firstChild.firstChild
         name.innerHTML=favo[`name_${locale}`]
+
         let artist = oneFavo.childNodes[0].firstChild.firstChild.childNodes[1]
         artist.innerText=favo.artist
+
         let button = oneFavo.childNodes[1].firstChild
-        // button.setAttribute("onClick", `hideFavo(${favo.id})`)
         button.setAttribute("onClick", `updateFavoPerformance(${favo.id}), hideFavo(${favo.id})`)
+
         // oneFavo.classList.toggle("hidden")
         document.getElementById("my-favorites").appendChild(oneFavo)
     }
@@ -339,19 +349,19 @@ const ShowUserFavorites = (favos) => {
 }
 function hideFavo(element_id){
     console.log("panen peitu", element_id)
-    document.getElementById(element_id).classList.toggle("hidden")
+    // document.getElementById(element_id).classList.toggle("hidden")
 }
 
 function showUserInfo() {
     try {
         // console.log("showing user info")
-        userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
-        email.innerHTML = userProfile.email
-        if (userProfile.firstName) firstName.innerHTML = userProfile.firstName
-        if (userProfile.lastName) lastName.innerHTML = userProfile.lastName
-        if (userProfile.phoneNumber) phoneNr.innerHTML = userProfile.phoneNumber
-        if (userProfile.provider) providers.innerHTML = beautifyProviders(userProfile.provider)
-        if (userProfile.Favorites) ShowUserFavorites(userProfile.myPerformances)
+        profile = JSON.parse(localStorage.getItem("USER_PROFILE"))
+        email.innerHTML = profile.email
+        if (profile.firstName) firstName.innerHTML = profile.firstName
+        if (profile.lastName) lastName.innerHTML = profile.lastName
+        if (profile.phoneNumber) phoneNr.innerHTML = profile.phoneNumber
+        if (profile.provider) providers.innerHTML = beautifyProviders(profile.provider)
+        if (profile.Favorites) ShowUserFavorites(profile.myPerformances)
     } catch (err) {
         console.log(err)
     }

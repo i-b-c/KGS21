@@ -116,6 +116,22 @@ labels:
         results: Results
     nup:
         get_newspaper_2016_1: Get NUP NEWS!
+    button:
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance Newspaper
+        artist_talk: Artist talk
+        canceled: Canceled!
+        category: Category
+        load_more: Load more
+        on_tour: On Tour
+        premiere: Premiere!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Search
+        today: Today!
+        view_all: View all
+        volunteer: Become a volunteer!
+        covid_info: Covid info
+        year: Year
     title:
         archive: Archive
         audio: Heli
@@ -147,6 +163,7 @@ labels:
         tour: On tour
         upcoming: Upcoming
         video: Video
+        festivals: festivals
     ticket:
         buy_ticket: Buy ticket
         buy_t_canceled: Canceled!
@@ -155,22 +172,7 @@ labels:
         buy_t_presale_at_boxoffices: From box office
         buy_t_sold_out: Sold out
         buy_t_price_on_spot: At the door
-    button:
-        NUP: NU Performance Festival 2018
-        NUPprint: NU Performance Newspaper
-        artist_talk: Artist talk
-        canceled: Canceled!
-        category: Category
-        load_more: Load more
-        on_tour: On Tour
-        premiere: Premiere!
-        saalbiennaal: SAAL Biennaal 2017
-        search: Search
-        today: Today!
-        view_all: View all
-        volunteer: Become a volunteer!
-        covid_info: Covid info
-        year: Year
+        buy_t_regular_presale: Osta pilet
     nav:
         about: About Us
         about_festival: About

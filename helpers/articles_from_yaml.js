@@ -48,12 +48,12 @@ for (const lang of LANGUAGES) {
 
     for (const article of STRAPIDATA_ARTICLES) {
 
-        // var selectedFetch = ['4046', '4047', '6626', '6487']
-        // if (selectedFetch.includes(article.remote_id)) {
+        var selectedFetch = ['4046', '4047', '6626', '6487']
+        if (selectedFetch.includes(article.remote_id)) {
 
-        // } else {
-        //     continue
-        // }
+        } else {
+            continue
+        }
 
         if (article[`title_${lang}`] && article.remote_id) {
             if (lang !== 'et') {

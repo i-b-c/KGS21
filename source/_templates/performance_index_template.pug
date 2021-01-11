@@ -48,10 +48,10 @@ block content
                     span=' lemmikute salvestamiseks'
                 #performance-id.hidden=self.id
                 #save-favorite-btn.hidden
-                    a.btn.btn-primary.text-uppercase(onClick =`updateFavo(${self.id})`)= self.labels.login.save
+                    a.btn.btn-primary.text-uppercase(onClick =`updateFavoPerformance(${self.id})`)= self.labels.login.save
                     span= ' ' + 'oma lemmikuks'
                 #delete-favorite-btn.hidden
-                    a.btn.btn-primary.text-uppercase(onClick =`updateFavo(${self.id})`) eemalda
+                    a.btn.btn-primary.text-uppercase(onClick =`updateFavoPerformance(${self.id})`) eemalda
                     span= ' ' + 'oma lemmikute hulgast'
                 if self[`technical_info_${self.locale}`]
                     .meta-info
