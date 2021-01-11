@@ -172,7 +172,7 @@ block content
 
 
                     .col-xs-12.col-md-12
-                        a.load-more.btn.btn-primary(href="/et/program/")= self.labels.button.view_all
+                        a.load-more.btn.btn-primary(href=`/${lang_path}program/`)= self.labels.button.view_all
 
 
 
@@ -286,7 +286,7 @@ block content
                                 toggleEventButtons()
 
                     .col-xs-12.col-md-12
-                        a.load-more.btn.btn-primary(href='/' + self.locale + '/residency/')= self.labels.button.view_all
+                        a.load-more.btn.btn-primary(href=`/${lang_path}residency/`)= self.labels.button.view_all
 
 
                 //- RESIDENTUURID
@@ -322,7 +322,7 @@ block content
                                     hr
 
                     .col-xs-12.col-md-12
-                        a.load-more.btn.btn-primary(href='/' + self.locale + '/tours/')= self.labels.button.view_all
+                        a.load-more.btn.btn-primary(href=`/${lang_path}tours/`)= self.labels.button.view_all
 
 
 
