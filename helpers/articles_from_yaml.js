@@ -44,8 +44,6 @@ for (const lang of LANGUAGES) {
     let allData = []
 
     const RELATED = STRAPIDATA_ARTICLES.map(rel => {
-        let articleDate = new Date(rel.publish_date)
-        let articlePublish = `${('0' + articleDate.getDate()).slice(-2)}.${('0' + (articleDate.getMonth()+1)).slice(-2)}.${articleDate.getFullYear()}`
         let related_articles = {
             id: rel.id,
             remote_id: rel.remote_id,
@@ -53,7 +51,6 @@ for (const lang of LANGUAGES) {
             categories: rel.categories ? rel.categories.map(c => c.id) : [],
             authors_cs: rel.authors ? rel.authors.map(a => `${a.first_name}${a.last_name ? ` ${a.last_name}` : ''}`).join(', ') : [],
             publish_date: rel.publish_date,
-            publish_date_string: articlePublish,
             // path: lang !== 'et' ? `magazine/${rel.remote_id}` : `${lang}/magazine/${rel.remote_id}`,
             path: `magazine/${rel.remote_id}`,
         }
