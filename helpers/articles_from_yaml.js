@@ -12,7 +12,7 @@ const fetchDir = path.join(sourceDir, '_fetchdir')
 const articlesDir = path.join(fetchDir, 'articles')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_ARTICLES = STRAPIDATA['Article']
+const STRAPIDATA_ARTICLES = STRAPIDATA['Article'].filter(e => e.publish_date)
 const STRAPIDATA_PERSONS = STRAPIDATA['Person']
 const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
 const LANGUAGES = ['et', 'en']
@@ -43,7 +43,7 @@ for (const lang of LANGUAGES) {
     const articlesYAMLPath = path.join(fetchDir, `articles.${lang}.yaml`)
     let allData = []
 
-    const RELATED = STRAPIDATA_ARTICLES.filter(e => e.publish_date).map(rel => {
+    const RELATED = STRAPIDATA_ARTICLES.map(rel => {
         let articleDate = new Date(rel.publish_date)
         let articlePublish = `${('0' + articleDate.getDate()).slice(-2)}.${('0' + (articleDate.getMonth()+1)).slice(-2)}.${articleDate.getFullYear()}`
         let related_articles = {
