@@ -21,8 +21,8 @@ block content
 
                             .item(class=(featureActive++ === 0 ? 'active' : ''))
                                 a(href=carousel_url)
-                                    - var photoBig = performance.X_pictures && performance.X_pictures.photoBig ? performance.X_pictures.photoBig.split(',')[0] : '/assets/images/placeholder.jpg'
-                                    figure(id=`slide-${performance.remote_id}`, style=`background-image: url('${f_api}${photoBig}');`)
+                                    - var photoBig = performance.hero_images ? `${m_api}${performance.hero_images[0]}` : '/assets/images/placeholder.jpg'
+                                    figure(id=`slide-${performance.remote_id}`, style=`background-image: url('${photoBig}');`)
                                     header.col-md-8
                                         if performance[`X_headline_${self.locale}`]
                                             p= performance[`X_headline_${self.locale}`]
@@ -139,8 +139,8 @@ block content
                                                     span.subtitle= event[`subtitle_${self.locale}`]
 
                                 .col-xs-6.col-md-2.col-lg-2
-                                    if event.location && event.location[`name_${self.locale}`]
-                                        p.location= event.location[`name_${self.locale}`]
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
 
                                     if event.X_ticket_info
                                         if !event.X_ticket_info.price
@@ -155,22 +155,24 @@ block content
                                             //-     p= event.X_ticket_info.min_price + '/' + op.get(p, 'max-price') + '€'
 
                                         if event.X_ticket_info.onsite_price
-                                            p= 'HIND KOHAPEAL' + ': ' + event.X_ticket_info.onsite_price + '€'
+                                            p= self.labels.title.onsite_price + ': ' + event.X_ticket_info.onsite_price + '€'
 
                                 if event.X_ticket_info
-                                    if event.X_ticket_info.sales_status
-                                        .col-xs-6.col-md-2.col-lg-2.text-right
-                                            if event.canceled
-                                                a.btn.btn-primary(class="disabled") TÜHISTATUD
+                                    .col-xs-6.col-md-2.col-lg-2.text-right
+                                        if event.canceled === 'true'
+                                            a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
+                                        else
+                                            if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                             else
-                                                a.btn.btn-primary(class=((event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === 'free_admission') ? "free disabled" : "") href=event.X_ticket_info.ticket_api target='_blank') DYN BTN
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
 
 
                     .col-xs-12.col-md-12
-                        a.load-more.btn.btn-primary(href="/et/program/")= self.labels.button.view_all
+                        a.load-more.btn.btn-primary(href=`/${lang_path}program/`)= self.labels.button.view_all
 
 
 
@@ -245,8 +247,8 @@ block content
                                                     span.subtitle= event[`subtitle_${self.locale}`]
 
                                 .col-xs-6.col-md-2.col-lg-2
-                                    if event.location && event.location[`name_${self.locale}`]
-                                        p.location= event.location[`name_${self.locale}`]
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
 
                                     //- if op.get(p, ['saal-location', lang + '-name'])
                                     //-     p.location= op.get(p, ['saal-location', lang + '-name'])
@@ -267,18 +269,24 @@ block content
                                             p= self.labels.title.onsite_price + ': ' + event.X_ticket_info.onsite_price + '€'
 
                                 if event.X_ticket_info
-                                    if event.X_ticket_info.sales_status
+                                    if event.X_ticket_info
                                         .col-xs-6.col-md-2.col-lg-2.text-right
-                                            if event.canceled
-                                                a.btn.btn-primary(class="disabled")= self.labels.button.canceled
+                                            if event.canceled === 'true'
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                             else
-                                                a.btn.btn-primary(class=((event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === 'free_admission') ? "free disabled" : "") href=event.X_ticket_info.ticket_api target='_blank') DYN BTN
+                                                if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
+                                                else
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
 
+                            script.
+                                toggleEventButtons()
+
                     .col-xs-12.col-md-12
-                        a.load-more.btn.btn-primary(href='/' + self.locale + '/residency/')= self.labels.button.view_all
+                        a.load-more.btn.btn-primary(href=`/${lang_path}residency/`)= self.labels.button.view_all
 
 
                 //- RESIDENTUURID
@@ -307,14 +315,14 @@ block content
 
 
                                 .col-xs-12.col-md-4.col-lg-4
-                                    if event.location && event.location[`name_${self.locale}`]
-                                        p.location= event.location[`name_${self.locale}`]
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
 
                                 .col-xs-12.col-md-12
                                     hr
 
                     .col-xs-12.col-md-12
-                        a.load-more.btn.btn-primary(href='/' + self.locale + '/tours/')= self.labels.button.view_all
+                        a.load-more.btn.btn-primary(href=`/${lang_path}tours/`)= self.labels.button.view_all
 
 
 

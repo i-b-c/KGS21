@@ -154,6 +154,7 @@ const Compare = function (model, data, path) {
 const foo = async () => {
 
     // Replace every property_name in strapiData with object from searchData
+                                // "Performance", strapi events, strapi performances
     const ReplaceInModel = function(property_name, strapiData, searchData) {
         // console.log(property_name, strapiData, searchData)
         for (const element of strapiData) {
@@ -202,36 +203,45 @@ const foo = async () => {
                     modelData = [modelData]
                 }
 
-                // andmete varundamine GitHubi
-                const { exec } = require('child_process')
-                exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
-                    if (err) {
-                        console.log('failing with git rev-parse');
-                    }
-
-                    if (typeof stdout === 'string' && (stdout.trim() === 'master')) {
-                        // console.log(`The branch is master and we are prepping json for backing up`);
-                        // Call your function here conditionally as per branch
-                        let jsonStr = JSON.stringify(modelData, null, 2)
-                        fs.writeFileSync(`${__dirname}/../strapidata/${modelName}.json`, jsonStr, 'utf8')
-                    }
-                });
-
                 modelData = modelData.filter(checkDomain)
 
                 // otsime kirjet mudelis =value
                 for (const property_name in model) {
                     if (model.hasOwnProperty(property_name)) {
-                        const value = model[property_name]
+                        const value = (
+                            Array.isArray(model[property_name])
+                                ? model[property_name][0]
+                                : model[property_name]
+                            )
+
+                        if (value.hasOwnProperty('_modelName')) {
+                            for (strapi_object of modelData) {
+                                if (Array.isArray(strapi_object[property_name])) {
+                                    for (ix in strapi_object[property_name]) {
+                                        if (strapi_object[property_name][ix]) {
+                                            const {id} = strapi_object[property_name][ix]
+                                            strapi_object[property_name][ix] = {id: id}
+                                        }
+                                    }
+                                } else {
+                                    if (strapi_object[property_name]) {
+                                        const {id} = strapi_object[property_name]
+                                        strapi_object[property_name] = {id: id}
+                                    }
+                                }
+                            }
+                        }
                         // '_modelName' on üleval ise sees kirjutaud väärtus andmemudelis, mis on võrdne mudeli nimega
                         // console.log({property_name, model});
-                        if (value.hasOwnProperty('_modelName')) {
-                            let search_model_name = value['_modelName']
-                            // console.log('foo', search_model_name, 'in', modelName)
-                            let searchData = strapiData[search_model_name]
-                            // otsime juba olemasolevast strapi datast
-                            ReplaceInModel(property_name, modelData, searchData)
-                        }
+                        // if (value.hasOwnProperty('_modelName')) {
+                        //     let search_model_name = value['_modelName']
+                        //     // console.log('foo', search_model_name, 'in', modelName)
+                        //     let searchData = strapiData[search_model_name]
+                        //     // otsime juba olemasolevast strapi datast
+
+                        //     // "Performance", strapi events, strapi performances
+                        //     ReplaceInModel(property_name, modelData, searchData)
+                        // }
                     }
                 }
                 strapiData[modelName] = modelData

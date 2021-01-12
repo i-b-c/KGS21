@@ -39,7 +39,7 @@ node ./helpers/events_from_yaml.js
 echo '==== build ==== projects_from_yaml'
 node ./helpers/projects_from_yaml.js
 
-echo '==== build ==== projects_from_yaml'
+echo '==== build ==== configuration_from_yaml'
 node ./helpers/configuration_from_yaml.js
 
 echo '==== build ==== banners_from_yaml'

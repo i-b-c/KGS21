@@ -7,8 +7,7 @@ block content
             .event-banner.carousel.slide(id='front-carousel')
                 .carousel-inner(role="listbox")
 
-                    - var photosBig = self.X_pictures && self.X_pictures.photoBig ? self.X_pictures.photoBig.split(',') : []
-                    - var photoBig = photosBig.length ? `${f_api}${photosBig[0]}` : `/assets/images/placeholder.jpg`
+                    - var photoBig = self.hero_images ? `${m_api}${self.hero_images[0]}` : `/assets/images/placeholder.jpg`
                     figure(id= `slide-${self.remote_id}` style=`background-image: url("${photoBig}");`)
                     header.col-md-8
                         if self[`X_headline_${self.locale}`]
@@ -29,6 +28,7 @@ block content
                     - var activeCategories = []
                     if self.categories
                         - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
+
                     if self.data.categories
                         ul.event-categories
                             each category in self.data.categories
@@ -74,47 +74,48 @@ block content
 
                 if self.minToMaxEvents && self.minToMaxEvents.length
 
-                    .past
+                    .tickets.row
                         each event in self.minToMaxEvents
-                            .row(event_type='future_events', start_time=event.start_time)
-                                .col-sm-6.col-md-5.col-lg-4
-                                    p= event.start_date_string
-                                .col-sm-6.col-md-7.col-lg-8
+                            div(event_type='future_events', start_time=event.start_time)
+                                .col-sm-4.col-md-4.col-lg-4
+                                    +dayName(event.start_time)
+                                    +dateFull(event.start_time)
+                                    +hoursMinutes(event.start_time)
+                                .col-sm-8.col-md-8.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
-                                    if event.location
-                                        p= event.location[`name_${self.locale}`]
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
                                     span(style='float:right;')
-                                        if event.X_ticket_info && event.X_ticket_info.sales_status
+                                        if event.X_ticket_info
                                             if event.canceled === 'true'
-                                                a.btn.btn-primary(class="disabled")= 'canceled'
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                             else
-                                                if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
-                                                    a.btn.btn-primary(class="free disabled" href='' target='_blank')= event.X_ticket_info.sales_status
+                                                if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                                 else
-                                                    a.btn.btn-primary(class="" href='' target='_blank')= 'status'
-
-
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
 
                         script.
+                            toggleEventButtons()
+
+                        script.
                             performanceEventToggler('future_events')
 
                     .past
-                        <br>
-                        <br>
                         h2 Olnud
                         each event in self.maxToMinEvents
                             .row(event_type='past_events', start_time=event.start_time)
                                 .col-sm-6.col-md-5.col-lg-4
-                                    p= event.start_date_string
+                                    +dateFull(event.start_time)
                                 .col-sm-6.col-md-7.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
-                                    if event.location
-                                        p= event.location[`name_${self.locale}`]
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
 
@@ -135,14 +136,25 @@ block content
                             each audio in self.audios
                                 div!= audio.content
 
-                if self.X_pictures && self.X_pictures.photoGallery && self.X_pictures.photoMedium && self.X_pictures.photoGallery.length && self.X_pictures.photoMedium.length
+                if self.performance_media && self.performance_media.filter(m => m.gallery_image_medium).length
                     .gallery
                         h2= self.labels.title.gallery
                             .row
-                            each galPhoto, key in self.X_pictures.photoGallery.split(',')
-                                .single-image.col-sm-6.col-sm-3.col-md-4
-                                    a.fancybox(rel="gallery" href=`${f_api}${galPhoto}`)
-                                        img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
+                            each galPhoto in self.performance_media
+                                if galPhoto.gallery_image_medium && !galPhoto.hero_image
+                                    .single-image.col-sm-6.col-sm-3.col-md-4
+
+                                        if galPhoto.original_image && galPhoto.original_image.url
+                                            - var imgLink = galPhoto.original_image.url
+                                        else if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
+                                            - var imgLink = galPhoto.gallery_image_large.url
+                                        else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
+                                            - var imgLink = galPhoto.gallery_image_medium.url
+
+                                        a.fancybox(rel="gallery" href=`${m_api}${imgLink}`)
+                                            img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
+
+
 
             .col-md-6
                 if self.coverages && self.coverages.length
@@ -194,4 +206,3 @@ block content
         .visible{
             display: block;
         }
-

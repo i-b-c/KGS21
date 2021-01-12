@@ -9,11 +9,18 @@ block content
                         h2= self.labels.title.kanut_co_productions
                     .grid-row
                         if self.data.co_productions
-                            - var filtered_and_sorted_coprods = self.data.co_productions.filter(e => e.coproduction).sort((a, b) => a.coproduction_importance-b.coproduction_importance)
+                            -
+                                var filtered_and_sorted_coprods = self.data.co_productions.filter(e => e.coproduction).sort((a, b) => {
+                                      if (!a.coproduction_importance) { return 1 }
+                                      if (!b.coproduction_importance) { return -1 }
+                                      var sortvalue = a.coproduction_importance-b.coproduction_importance
+                                      return sortvalue
+                                })
+
                             each coprod in filtered_and_sorted_coprods
                                 a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href= `/${coprod.path}` ordinal= coprod.coproduction_importance)
-                                    if coprod.X_pictures && coprod.X_pictures.photoMedium
-                                        img.img-responsive(src=`https://saal.entu.ee/api2/file-${coprod.X_pictures.photoMedium.split(',')[0]}`)
+                                    if coprod.medium_images
+                                        img.img-responsive(src=`${m_api}${coprod.medium_images[0]}`)
                                     else
                                         img.img-responsive(src=`/assets/images/placeholder.jpg`)
                                     p.artist= coprod.X_artist

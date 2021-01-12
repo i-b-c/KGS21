@@ -32,6 +32,10 @@ script.
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-1903038-19', 'auto');
     ga('send', 'pageview');
+
+//- For calendar link
+div(id='calendar-self-locale' locale= self.locale === 'et' ? '/' : `/${self.locale}/` style='display: none;')
+
 script(src="/script.js")
 script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js')
 script(src='https://momentjs.com/downloads/moment-timezone-with-data.min.js')

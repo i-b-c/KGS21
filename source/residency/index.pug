@@ -5,13 +5,13 @@ block content
     .container-fluid
         section.programme.row.page-margin
             .col-md-12
-                h2 Residentuurid
+                h2= self.labels.nav.residency
             .grid-row
                 - var events = self.data.events.filter(e => e.type === 'residency').sort((a, b) => new Date(b.start_time)-new Date(a.start_time))
                 if events && events.length
                     each event in events
 
-                        a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href=event.path)
+                        a.col-xs-12.col-sm-6.col-md-3.col-lg-3.resident(href=`/${event.path}`)
                             if event.image_medium
                                 img.img-responsive(src=`${m_api}${event.image_medium}`)
                             else
