@@ -4,27 +4,8 @@ block content
     //- siin sees on kõik mida kuvatakse sisseloginud kasutajale
     .container-fluid.content
         #logged-in-box
-            h2= self.labels.login.userprofile_title
-            .form-group
-                label.login_label(for='email')= self.labels.login.email+":"
-                span.value-view#email(name='email')
-            .form-group
-                label.login_label(for='firstName')= self.labels.login.first_name+":"
-                span.value-view#firstName(name='firstName')
-            .form-group
-                label.login_label(for='lastName')= self.labels.login.family_name+":"
-                span.value-view#lastName(name='lastName')
-            .form-group
-                label.login_label(for='phoneNr')= self.labels.login.phone+":"
-                span.value-view#phoneNr(name='phoneNr')
-            .form-group
-                label.login_label(for='providers')= self.labels.login.providers_list+":"
-                span.value-view#providers(name='providers')
+            a.btn.btn-primary.text-uppercase#log_out(onClick = "LogOut()")= self.labels.login.log_out
 
-
-            #user_buttons
-                a.btn.btn-primary.text-uppercase(href="/profile")= self.labels.login.change_profile
-                a.btn.btn-primary.text-uppercase(onClick = "LogOut()")= self.labels.login.log_out
             h2= self.labels.login.favorites
             p#no-favo= self.labels.login.no_favorites
             p#my-favorites
@@ -43,6 +24,23 @@ block content
                     hr.col-xs-8.col-md-8.col-lg-8
             .programme.row#my-favorites
 
+            h2= self.labels.login.userprofile_title
+            .form-group
+                label.login_label(for='email')= self.labels.login.email+":"
+                span.value-view#email(name='email')
+            .form-group
+                label.login_label(for='firstName')= self.labels.login.first_name+":"
+                span.value-view#firstName(name='firstName')
+            .form-group
+                label.login_label(for='lastName')= self.labels.login.family_name+":"
+                span.value-view#lastName(name='lastName')
+            .form-group
+                label.login_label(for='phoneNr')= self.labels.login.phone+":"
+                span.value-view#phoneNr(name='phoneNr')
+            .form-group
+                label.login_label(for='providers')= self.labels.login.providers_list+":"
+                span.value-view#providers(name='providers')
+            a.btn.btn-primary.text-uppercase#edit(href="/profile")= self.labels.login.change_profile
 
         //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
         #not-logged-in-box
@@ -68,18 +66,15 @@ block content
         .invalid {
             background-color: #ffc600;
             display: block;
-            color: black
+            color: black;
             }
         .valid {
-            background-color: #e6f7e6;
             display: none;
             }
-        #user_buttons {
-            padding: 2rem 0 2rem 0;
-            }
-        #user_buttons a {
-            margin: 0 2rem 0 0;
-            }
+        #log_out,
+        #edit{
+            margin: 0 0 2rem 0;
+        }    
         .value-view{
             padding: 0 0 0 20px;
         }
