@@ -261,8 +261,8 @@ TicketInfo: &TicketInfo
     name: (text)
     slug: (UID, name)
     price: (number)
-    discount_price: (number)
-    price_on_spot: (number)
+    discount: (decimal) #kui allahindlust pole siis 0, sisesta %
+    onsite_price: (number)
     free_admission: (boolean)
     PL_event_id: (number)
     ticketing_url_et: (text)

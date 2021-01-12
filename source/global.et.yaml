@@ -118,6 +118,22 @@ labels:
         results: Leidsin
     nup:
         get_newspaper_2016_1: Loe NUP lehte!
+    button:
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance ajaleht
+        artist_talk: Vestlus
+        canceled: Jääb ära!
+        category: Kategooria
+        load_more: Lae veel
+        on_tour: Tuuril
+        premiere: Esietendus!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Otsi
+        today: Täna!
+        view_all: Vaata kõiki
+        volunteer: Tule vabatahtlikuks!
+        covid_info: Koroona meelespea
+        year: Aasta
     title:
         archive: Arhiiv
         audio: Audio
@@ -149,6 +165,7 @@ labels:
         tour: Tuuril
         upcoming: Tulekul
         video: Video
+        festivals: festivalid
     ticket:
         buy_ticket: Osta pilet
         buy_t_canceled: Jääb ära!
@@ -157,22 +174,7 @@ labels:
         buy_t_presale_at_boxoffices: Müügipunktist
         buy_t_sold_out: Välja müüdud
         buy_t_price_on_spot: Hind kohapeal
-    button:
-        NUP: NU Performance Festival 2018
-        NUPprint: NU Performance ajaleht
-        artist_talk: Vestlus
-        canceled: Jääb ära!
-        category: Kategooria
-        load_more: Lae veel
-        on_tour: Tuuril
-        premiere: Esietendus!
-        saalbiennaal: SAAL Biennaal 2017
-        search: Otsi
-        today: Täna!
-        view_all: Vaata kõiki
-        volunteer: Tule vabatahtlikuks!
-        covid_info: Koroona meelespea
-        year: Aasta
+        buy_t_regular_presale: Buy ticket
     nav:
         about: Meist
         about_festival: Festivalist
