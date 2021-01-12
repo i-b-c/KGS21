@@ -1,33 +1,39 @@
 
+// http://localhost:4000/login
+// https://saal.netlify.app/login
 
-document.addEventListener("DOMContentLoaded", function (e) {
-	// console.log(location.pathname.split("/").includes("performance"))
-	currentFavoArr = []
-	if (userProfile.Favorites){
-		currentFavo = userProfile.Favorites;
-		for (var i = 0; i < currentFavo.length; i++) {
-			currentFavoArr.push(currentFavo[i].performance_id);
+document.addEventListener("DOMContentLoaded", function (e) { 
+
+	var favoIds=[]
+	if(validToken){
+		var favorites = JSON.parse(localStorage.getItem("USER_PROFILE")).myPerformances
+
+		for (var i = 0; i < favorites.length; i++) {
+			favoIds.push(favorites[i].id)
 		}
 
-		console.log("favos", currentFavoArr)
 	}
-	// console.log(validToken);
+
+	console.log(validToken);
 	if (location.pathname.split("/").includes("performance") && validToken) {
 		if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
 		if(document.getElementById("direct-to-login-btn"))document.getElementById("direct-to-login-btn").classList.toggle("hidden")
 	}
 	if(document.getElementById("performance-id")){
 		var id = parseInt(document.getElementById("performance-id").innerHTML)
-	}
-	if (currentFavoArr.includes(id)){
-		if(document.getElementById("delete-favorite-btn"))document.getElementById("delete-favorite-btn").classList.toggle("hidden")
-		if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
+		console.log(id)
+		if (favoIds.includes(id)){
+			console.log(id, " on sinu lemmik")
+			if(document.getElementById("delete-favorite-btn"))document.getElementById("delete-favorite-btn").classList.toggle("hidden")
+			if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
+		}
 	}
 
 })
 
 
-function updateFavo(id){
+function updateFavoPerformance(thisId){
+
 	function sendToStrapi(data){
 		favoJSON = JSON.stringify(data)
 		var requestOptions = {
@@ -47,7 +53,7 @@ function updateFavo(id){
 				return Promise.reject(response);
 			})
 			.then(function (data) {
-				console.log("salvestan profiili uute update-itud lemmikutega", data);
+				console.log("salvestan profiili uute lemmikutega", data);
 				if(document.getElementById("delete-favorite-btn")) document.getElementById("delete-favorite-btn").classList.toggle("hidden")
 				if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
 				localStorage.setItem("USER_PROFILE", JSON.stringify(data))
@@ -58,19 +64,30 @@ function updateFavo(id){
 			})
 	}
 
-	if (currentFavoArr.includes(id)) {
-		console.log("kustutan", id)
-		var favoUpdate = userProfile.Favorites.filter(function filterId(favo){
-			return favo.performance_id !== id
-		})
-		var favo = { Favorites: favoUpdate }
-		sendToStrapi(favo)
-	} else {
-		console.log("lisan", id)
-		var favo = { Favorites: userProfile.Favorites };
-		favo.Favorites.push({ performance_id: id })
-		sendToStrapi(favo)
+	var favorites = JSON.parse(localStorage.getItem("USER_PROFILE")).myPerformances
 
+	var favos=[]
+	for (var i = 0; i < favorites.length; i++) {
+		favos.push({"id": favorites[i].id})
 	}
+
+	var favoIds=[]
+	for (var i = 0; i < favorites.length; i++) {
+		favoIds.push(favorites[i].id)
+	}
+
+	if(favoIds.includes(thisId)){
+		console.log("see on lemmik, kustutan ära")
+		favos= favos.filter(function(favo){
+			return favo.id !== thisId
+		})
+	}else{
+		console.log("see pole sinu lemmik lisan")
+		favos.push({ "id": thisId })
+	}
+
+	sendToStrapi({myPerformances: favos})
+	console.log("current favoIds ", favoIds);
+	console.log("new favos ", favos);
 }
 

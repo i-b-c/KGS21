@@ -1,11 +1,15 @@
 var validToken = false
 var accountStatus = true
-var userProfile
+
+// https://saal.netlify.app/login
+// http://localhost:4000/login
+
+// var userProfile
 var userProfileLoadedEvent = new CustomEvent('userProfileLoaded')
 
-if(localStorage.getItem("USER_PROFILE")){
-    userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
-}
+// if(localStorage.getItem("USER_PROFILE")){
+//     userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
+// }
 
 if(localStorage.getItem('ACCESS_TOKEN')){
     validateToken()
@@ -19,13 +23,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
 })
 
 document.addEventListener('userProfileLoaded', function(e) {
-    console.log("user profile loaded event triggered")
-    userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
-    console.log('User profile is loaded', userProfile)
     try{
-        // showUserInfo()
         document.getElementById('user_initials').innerText = localStorage.getItem('initials')
-
     }
     catch(err){
         console.log("error userProfileLoaded evendis: ",err)
@@ -47,6 +46,7 @@ function makeInitials(profile) {
         }
         return initials
     }
+    document.getElementById('user_initials').innerText = localStorage.getItem('initials')
 }
 
 
@@ -77,11 +77,12 @@ function validateToken(){
         console.log(err)
         validToken = false
     }
+    console.log("Token", validToken, "expDate", new Date(expDate))
 }
 
 
 function GetUserInfo() {
-    console.log("getting user info")
+    console.log("getting user info from strapi")
     if(validToken){
         var requestOptions = {
             'method': 'GET',
@@ -93,7 +94,6 @@ function GetUserInfo() {
         fetch('https://a.saal.ee/users/me', requestOptions).then(function(response) {
             if (response.ok) {
                 return response.json();
-
             }
             return Promise.reject(response);
         }).then(function(data) {
@@ -105,7 +105,7 @@ function GetUserInfo() {
             console.warn(error);
         });
     }else{
-        console.log("validToken väärtus on", validToken)
+        console.log("Token väärtus on", validToken)
     }
 
 }
