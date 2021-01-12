@@ -4,7 +4,7 @@ const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-// const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
+const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
 
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
@@ -48,7 +48,7 @@ for (const lang of LANGUAGES) {
 
             if (performance.performance_media) {
                 performance.hero_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
-                performance.medium_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
+                performance.medium_images = performance.performance_media.filter(h => h.gallery_image_medium).map(h => h.gallery_image_medium.url) || null
             }
 
             if (createDir) {
