@@ -1,32 +1,37 @@
 
+// http://localhost:4000/login
+// https://saal.netlify.app/login
 
-document.addEventListener("DOMContentLoaded", function (e) { //
-	myFavos =[]
-	var favos = JSON.parse(localStorage.getItem("USER_PROFILE")).myPerformances;
-	console.log("sinu favod", favos)
-	// if (userProfile.myPerformances.length > 0){
-	// 	currentFavos = userProfile.myPerformances
-	// 	for (var i = 0; i < currentFavos.length; i++) {
-	// 		myFavos.push({"id": currentFavos[i].id})
-	// 	}
-	// 	console.log("favos", myFavos)
-	// }
-	// console.log(validToken);
+document.addEventListener("DOMContentLoaded", function (e) { 
+
+	var favoIds=[]
+	if(validToken){
+		var favorites = JSON.parse(localStorage.getItem("USER_PROFILE")).myPerformances
+
+		for (var i = 0; i < favorites.length; i++) {
+			favoIds.push(favorites[i].id)
+		}
+
+	}
+
+	console.log(validToken);
 	if (location.pathname.split("/").includes("performance") && validToken) {
 		if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
 		if(document.getElementById("direct-to-login-btn"))document.getElementById("direct-to-login-btn").classList.toggle("hidden")
 	}
 	if(document.getElementById("performance-id")){
 		var id = parseInt(document.getElementById("performance-id").innerHTML)
-	}
-	if (myFavos.some(function(favo){return favo.id === parseInt(thisId)})){
-		if(document.getElementById("delete-favorite-btn"))document.getElementById("delete-favorite-btn").classList.toggle("hidden")
-		if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
+		console.log(id)
+		if (favoIds.includes(id)){
+			console.log(id, " on sinu lemmik")
+			if(document.getElementById("delete-favorite-btn"))document.getElementById("delete-favorite-btn").classList.toggle("hidden")
+			if(document.getElementById("save-favorite-btn"))document.getElementById("save-favorite-btn").classList.toggle("hidden")
+		}
 	}
 
 })
 
-// see on vaja üle vaadata
+
 function updateFavoPerformance(thisId){
 
 	function sendToStrapi(data){
@@ -72,7 +77,7 @@ function updateFavoPerformance(thisId){
 	}
 
 	if(favoIds.includes(thisId)){
-		console.log("see on sinu lemmik, kustutan ära")
+		console.log("see on lemmik, kustutan ära")
 		favos= favos.filter(function(favo){
 			return favo.id !== thisId
 		})

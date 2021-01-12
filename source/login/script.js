@@ -6,7 +6,7 @@ function loginWithProvider(loginProvider) {
     window.location.replace('https://a.saal.ee/connect/' + loginProvider + '/')
 }
 
-//kui local storage'isse on salvestatud providery nimi, skäib läbi callaback funktsiooni millega tagastatakse token strapist
+//kui local storage'isse on salvestatud providery nimi, käib läbi callaback funktsiooni millega tagastatakse token strapist
 async function GetCallback(providerToCall) {
     var requestOptions = {
         method: 'GET',
@@ -20,7 +20,7 @@ async function GetCallback(providerToCall) {
         localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
         localStorage.removeItem("provider")
         localStorage.setItem("initials", makeInitials(data.user))
-        // document.dispatchEvent(userProfileLoadedEvent)
+        document.dispatchEvent(userProfileLoadedEvent)
         if (data.user.blocked || !data.user.confirmed) {
             accountStatus = false
         }
@@ -44,217 +44,6 @@ async function GetCallback(providerToCall) {
         }catch(err){
             console.log(err)
 
-        }
-
-        console.log("errors: ", errors)
-        displayError(errors)
-    }
-}
-
-const validateLogin = () => {
-    var errors = []
-
-    if (!validateEmail("logEmail"))errors.push('Missing or invalid email')
-    if (logPsw && !validatePsw("logPsw"))errors.push('Missing or invalid password')
-
-    // console.log(errors)
-    if (errors.length === 0) {
-        LoginWithEmail()
-        console.log("valideerimine õnnestus saadan profiili Strapisse")
-    } else {
-        console.log(errors)
-        displayError(errors)
-    }
-}
-
-const LoginWithEmail = async() => {
-    let email = document.getElementById("logEmail").value
-    let psw = document.getElementById("logPsw").value
-
-    let body = JSON.stringify({
-        "identifier": email,
-        "password": psw
-    })
-
-    let requestOptions = {
-            'method': 'POST',
-            'body': body,
-            'headers': {
-                'Content-Type': 'application/json'
-            }
-    }
-
-    let response = await (await fetch('https://a.saal.ee/auth/local', requestOptions))
-
-    if (response.ok) {
-        const data = await response.json()
-        localStorage.setItem("ACCESS_TOKEN", data.jwt)
-        localStorage.setItem("USER_PROFILE", JSON.stringify(data.user))
-        localStorage.setItem("initials", makeInitials(data.user))
-        // document.dispatchEvent(userProfileLoadedEvent)
-        if (data.user.blocked || !data.user.confirmed) {
-            accountStatus = false
-        }
-        validateToken()
-    } else {
-        var errorResponse = await response.json()
-        var errors = []
-        console.log("response: ", errorResponse)
-        try {
-            for (err of errorResponse.message) {
-                for (message of err.messages) {
-                    errors.push(message.message)
-                }
-            }
-        } catch (err) {
-            console.log(err)
-        }
-        console.log("errors: ", errors)
-        displayError(errors)
-    }
-
-}
-
-const validateRegForm = () => {
-
-    var errors = []
-
-    if (!validateEmail("regEmail")) {
-        errors.push('Missing or invalid email')
-
-    }
-    if (regPsw && !validatePsw("regPsw")) {
-        errors.push('Missing or invalid password')
-    }
-
-    if (regPswRepeat && !validatePswRep("regPsw", "regPswRepeat")) {
-        errors.push('Missing or invalid password repeat')
-    }
-
-    // console.log(errors)
-    if (errors.length === 0) {
-        RegisterWithEmail()
-        console.log("valideerimine õnnestus saadan profiili Strapisse")
-    }else {
-        console.log(errors)
-        displayError(errors)
-    }
-}
-
-const RegisterWithEmail = async () => {
-
-    console.log("login sisse emaili ja salasõnaga")
-    let email = document.getElementById("regEmail").value
-    let psw = document.getElementById("regPsw").value
-
-    let body = JSON.stringify({
-        "username": email,
-        "email": email,
-        "password": psw
-    })
-    console.log("saadan body: ", body)
-
-    let requestOptions = {
-        'method': 'POST',
-        'body': body,
-        'headers': {
-            'Content-Type': 'application/json'
-        }
-    }
-
-    console.log(requestOptions)
-    let response = await (fetch('https://a.saal.ee/auth/local/register', requestOptions))
-
-    if (response.ok) {
-        const data = await response.json()
-        console.log(data)
-    } else {
-        var errorResponse = await response.json()
-        var errors = []
-        console.log("response: ", errorResponse)
-        try {
-            for (err of errorResponse.message) {
-                for (message of err.messages) {
-                    errors.push(message.message)
-                }
-            }
-        } catch (err) {
-            console.log(err)
-        }
-
-        console.log("errors: ", errors)
-        displayError(errors)
-    }
-
-}
-
-const ShowPswReset = () => {
-    //alguses nähtaval
-    document.getElementById("logPsw").classList.toggle("hidden")
-    document.getElementById("sign-in-button").classList.toggle("hidden")
-    document.getElementById("to-reset-psw").classList.toggle("hidden")
-    document.getElementById("pswLabel").classList.toggle("hidden")
-    //alguses peidus
-    document.getElementById("psw-reset-button").classList.toggle("hidden")
-    document.getElementById("back-to-login").classList.toggle("hidden")
-
-}
-
-const validatePswResetForm = () => {
-
-    var errors = []
-
-    if (!validateEmail("logEmail")) {
-        errors.push('Missing or invalid email')
-
-    }
-
-    // console.log(errors)
-    if (errors.length === 0) {
-        SendPswResetLink()
-        console.log("valideerimine õnnestus saadan päringu Strapisse")
-    }else {
-        console.log(errors)
-        displayError(errors)
-    }
-}
-
-const SendPswResetLink = async () => {
-    console.log("lähtestan parooli")
-    let email = document.getElementById("logEmail").value
-
-    let body = JSON.stringify({
-        "email": email
-    })
-
-    let requestOptions = {
-        'method': 'POST',
-        'body': body,
-        'headers': {
-            'Content-Type': 'application/json'
-        }
-    }
-
-    console.log(requestOptions)
-    let response = await (fetch('https://a.saal.ee/auth/forgot-password', requestOptions))
-
-    if (response.ok) {
-        const data = await response.json()
-        console.log(data)
-        console.log("email saadetud")
-        document.getElementById("resetLinkSent").style.display = "block"
-    } else {
-        var errorResponse = await response.json()
-        var errors = []
-        console.log("response: ", errorResponse)
-        try {
-            for (err of errorResponse.message) {
-                for (message of err.messages) {
-                    errors.push(message.message)
-                }
-            }
-        } catch (err) {
-            console.log(err)
         }
 
         console.log("errors: ", errors)
@@ -296,9 +85,6 @@ function displayError(errArray){
     }
 }
 
-//"Missing or invalid email"
-//Auth.advanced.allow_register => Register action is actualy not available.
-//Auth.form.error.email.taken => Email is already taken.
 if (localStorage.getItem("provider")) {
     GetCallback(localStorage.getItem("provider"))
 }
@@ -349,7 +135,7 @@ const ShowUserFavorites = (favos) => {
 }
 function hideFavo(element_id){
     console.log("panen peitu", element_id)
-    // document.getElementById(element_id).classList.toggle("hidden")
+    document.getElementById(element_id).classList.toggle("hidden")
 }
 
 function showUserInfo() {
