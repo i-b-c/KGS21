@@ -8,3 +8,4 @@ Not targetable:
 	Configurations (kui just ei ole eelnevalt konrollitud, et lehe värve ei muudetud) - ['about', 'contact', VÄRVID KÕIKIDEL LEHTEDEL]
 	Categories - [ARTIKLID, FESTIVALID, RESIDENTUURID, PERFORMANCES, EVENTS]
     Labels - [KÕIK LEHED]
+    Locations - [KÕIK EVENTID, PERFORMANCE]

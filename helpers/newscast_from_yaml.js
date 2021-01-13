@@ -25,5 +25,5 @@ for (const lang of LANGUAGES) {
 }
 
 if (targeted) {
-    addConfigPathAliases(['about/', 'about/', 'about/', 'about/',])
+    addConfigPathAliases(['about/'])
 }
