@@ -38,7 +38,6 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        // Kommenteeri sisse kui soovid ainult konkreetsete remote_id'dega performanceid ehitada
 
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.remote_id) ? true : false
 

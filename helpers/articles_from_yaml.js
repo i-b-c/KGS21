@@ -61,6 +61,7 @@ for (const lang of LANGUAGES) {
 
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(article.remote_id) ? true : false
 
+
         if (article[`title_${lang}`] && article.remote_id) {
 
             article.path = `magazine/${article.remote_id}`
