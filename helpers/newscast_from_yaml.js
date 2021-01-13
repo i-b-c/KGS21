@@ -1,7 +1,10 @@
+
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
+const addConfigPathAliases = require('./add_config_path_aliases.js')
 
+const targeted = process.argv[2] === '-t' ? true : false
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
@@ -19,4 +22,8 @@ for (const lang of LANGUAGES) {
     console.log(`${allData.length} newscasts from YAML (${lang})`);
     const newscastsYAML = yaml.safeDump(allData, { 'indent': '4' });
     fs.writeFileSync(newscastsYAMLPath, newscastsYAML, 'utf8');
+}
+
+if (targeted) {
+    addConfigPathAliases(['about/', 'about/', 'about/', 'about/',])
 }
