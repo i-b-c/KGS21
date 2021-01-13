@@ -11,10 +11,33 @@ const typesToInclude = ['program', 'tour', 'festival']
 const assetsDir = path.join(rootDir, 'assets')
 const calendarJsonPath = path.join(assetsDir, 'calendar_json.json')
 const strapiDataDirPath = path.join(fetchDir, 'strapidata')
-const strapiDataEventsPath = path.join(strapiDataDirPath, 'Event.yaml')
 
-const STRAPIDATA_EVENTS = yaml.safeLoad(fs.readFileSync(strapiDataEventsPath, 'utf8'))
-                            .filter(e => !e.hide_from_page && (typesToInclude.includes(e.type)))
+const strapiDataCategoriesPath = path.join(strapiDataDirPath, `Category.yaml`)
+const strapiDataPerformancesPath = path.join(strapiDataDirPath, `Performance.yaml`)
+const strapiDataLocationsPath = path.join(strapiDataDirPath, `Location.yaml`)
+const strapiDataCoveragesPath = path.join(strapiDataDirPath, `Coverage.yaml`)
+const strapiDataEventsPath = path.join(strapiDataDirPath, `Event.yaml`)
+
+const STRAPIDATA_CATEGORIES = yaml.safeLoad(fs.readFileSync(strapiDataCategoriesPath, 'utf8'))
+const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerformancesPath, 'utf8')).map(e => {
+    if (e.categories) {
+        e.categories = e.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id))[0]
+    }
+    return e
+})
+const STRAPIDATA_LOCATIONS = yaml.safeLoad(fs.readFileSync(strapiDataLocationsPath, 'utf8'))
+const STRAPIDATA_COVERAGES = yaml.safeLoad(fs.readFileSync(strapiDataCoveragesPath, 'utf8'))
+const STRAPIDATA_EVENTS_YAML = yaml.safeLoad(fs.readFileSync(strapiDataEventsPath, 'utf8'))
+const STRAPIDATA_EVENTS = STRAPIDATA_EVENTS_YAML
+                            .filter(e => !e.hide_from_page && typesToInclude.includes(e.type))
+                            .map(ev => {
+                                ev.performance = ev.performance ? STRAPIDATA_PERFORMANCES.filter(e => e.id === ev.performance.id)[0] : null
+                                ev.location = ev.location ? STRAPIDATA_LOCATIONS.filter(e => e.id === ev.location.id)[0] : null
+                                ev.categories = ev.categories ? ev.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]) : null
+                                ev.coverages = ev.coverages ? ev.coverages.map(c => STRAPIDATA_COVERAGES.filter(f => f.id === c.id)[0]) : null
+                                ev.child_events = ev.child_events ? ev.child_events.map(c => STRAPIDATA_EVENTS_YAML.filter(f => f.id === c.id)[0]) : null
+                                return ev
+                            })
 
 const eventCalendar = {
   minDate: moment().subtract(2, 'months').set('date', 1),

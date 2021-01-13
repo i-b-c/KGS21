@@ -61,7 +61,8 @@ for (const lang of LANGUAGES) {
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.remote_id) ? true : false
 
         if (oneEvent.coverages) {
-            combined_coverages = oneEvent.coverages.concat(performance.coverages || 0)
+            performance.coverages = performance.coverages ? performance.coverages.map(c => STRAPIDATA_COVERAGES.filter(sc => sc.id === c.id)[0]) : []
+            combined_coverages = oneEvent.coverages.concat(performance.coverages)
         } else if (performance.coverages) {
             combined_coverages = performance.coverages
         }
@@ -86,6 +87,7 @@ for (const lang of LANGUAGES) {
             [`X_headline_${lang}`]: oneEvent[`X_headline_${lang}`] || null,
             [`subtitle_${lang}`]: oneEvent[`subtitle_${lang}`] || null,
             location: oneEvent.location ? (oneEvent.location[`name_${lang}`] || null) : null,
+            X_location: oneEvent[`X_location_${lang}`] || null,
             resident: oneEvent.resident || null,
             categories: oneEvent.categories || null,
             X_ticket_info: oneEvent.X_ticket_info || null,
@@ -210,6 +212,7 @@ function festival_child_events(child_events_data, lang) {
             performance_X_producer: event_performance.X_producer || null,
             [`performance_X_town_${lang}`]: event_performance[`X_town_${lang}`] || null,
             location: child_event.location ? child_event.location[`name_${lang}`] : null,
+            X_location: child_event[`X_location_${lang}`] || null,
             conversation: child_event.conversation || null,
             remote_id: child_event.remote_id || null,
             X_ticket_info: child_event.X_ticket_info || null,
