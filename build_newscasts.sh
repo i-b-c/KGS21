@@ -1,4 +1,6 @@
 SECONDS=0
+cd $PWD
+echo $PWD
 
 printf "\nBuilding...\n"
 

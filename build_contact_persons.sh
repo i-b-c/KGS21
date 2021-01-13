@@ -1,4 +1,6 @@
 SECONDS=0
+cd $PWD
+echo $PWD
 
 printf "\nBuilding...\n"
 
@@ -17,3 +19,4 @@ duration=$SECONDS
 minutes=$((duration/60))
 seconds=$((duration%60))
 printf "\n\nBUILD FINISHED IN $minutes m $seconds s.\n\n"
+
