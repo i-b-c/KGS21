@@ -5,9 +5,9 @@ const path = require('path')
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_PERSONS = STRAPIDATA['Person']
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataPersonsPath = path.join(strapiDataDirPath, 'Person.yaml')
+const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPersonsPath, 'utf8'))
 
 let allData = STRAPIDATA_PERSONS
     .filter(e => e.order)

@@ -4,10 +4,11 @@ const path = require('path')
 
 const sourceDir = path.join(__dirname, '..', 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_SIMPLE_ARTICLES = STRAPIDATA['SimpleArticle']
-const STRAPIDATA_CONFIGURATIONS = STRAPIDATA['Configuration'].map(e => {
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataSimpleArticlesPath = path.join(strapiDataDirPath, 'SimpleArticle.yaml')
+const strapiDataConfigurationsPath = path.join(strapiDataDirPath, 'Configuration.yaml')
+const STRAPIDATA_SIMPLE_ARTICLES = yaml.safeLoad(fs.readFileSync(strapiDataSimpleArticlesPath, 'utf8'))
+const STRAPIDATA_CONFIGURATIONS = yaml.safeLoad(fs.readFileSync(strapiDataConfigurationsPath, 'utf8')).map(e => {
     e.about_article = e.about_article ? STRAPIDATA_SIMPLE_ARTICLES.filter(a => a.id === e.about_article.id)[0] : null
     e.corona_article = e.corona_article ? STRAPIDATA_SIMPLE_ARTICLES.filter(a => a.id === e.corona_article.id)[0] : null
     e.council_article = e.council_article ? STRAPIDATA_SIMPLE_ARTICLES.filter(a => a.id === e.council_article.id)[0] : null

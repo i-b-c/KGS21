@@ -10,26 +10,33 @@ const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const LANGUAGES = ['et', 'en']
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const festivalsDirPath = path.join(sourceDir, '_fetchdir', `festivals`)
-const residenciesDirPath = path.join(sourceDir, '_fetchdir', `residencies`)
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
-const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance'].map(e => {
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const festivalsDirPath = path.join(fetchDir, `festivals`)
+const residenciesDirPath = path.join(fetchDir, `residencies`)
+
+const strapiDataCategoriesPath = path.join(strapiDataDirPath, `Category.yaml`)
+const strapiDataPerformancesPath = path.join(strapiDataDirPath, `Performance.yaml`)
+const strapiDataLocationsPath = path.join(strapiDataDirPath, `Location.yaml`)
+const strapiDataCoveragesPath = path.join(strapiDataDirPath, `Coverage.yaml`)
+const strapiDataEventsPath = path.join(strapiDataDirPath, `Event.yaml`)
+const STRAPIDATA_CATEGORIES = yaml.safeLoad(fs.readFileSync(strapiDataCategoriesPath, 'utf8'))
+const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerformancesPath, 'utf8')).map(e => {
     if (e.categories) {
         e.categories = e.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id))[0]
     }
     return e
 })
-const STRAPIDATA_LOCATIONS = STRAPIDATA['Location']
-const STRAPIDATA_COVERAGES = STRAPIDATA['Coverage']
+const STRAPIDATA_LOCATIONS = yaml.safeLoad(fs.readFileSync(strapiDataLocationsPath, 'utf8'))
+const STRAPIDATA_COVERAGES = yaml.safeLoad(fs.readFileSync(strapiDataCoveragesPath, 'utf8'))
 
-const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page).map(ev => {
+const STRAPIDATA_EVENTS_YAML = yaml.safeLoad(fs.readFileSync(strapiDataEventsPath, 'utf8'))
+
+const STRAPIDATA_EVENTS = STRAPIDATA_EVENTS_YAML.filter(e => !e.hide_from_page).map(ev => {
     ev.performance = ev.performance ? STRAPIDATA_PERFORMANCES.filter(e => e.id === ev.performance.id)[0] : null
     ev.location = ev.location ? STRAPIDATA_LOCATIONS.filter(e => e.id === ev.location.id)[0] : null
     ev.categories = ev.categories ? ev.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]) : null
     ev.coverages = ev.coverages ? ev.coverages.map(c => STRAPIDATA_COVERAGES.filter(f => f.id === c.id)[0]) : null
-    ev.child_events = ev.child_events ? ev.child_events.map(c => STRAPIDATA['Event'].filter(f => f.id === c.id)[0]) : null
+    ev.child_events = ev.child_events ? ev.child_events.map(c => STRAPIDATA_EVENTS_YAML.filter(f => f.id === c.id)[0]) : null
     return ev
 })
 

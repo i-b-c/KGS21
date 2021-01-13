@@ -6,9 +6,9 @@ const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const labelsDir = path.join(fetchDir, 'labels')
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_LABELS = STRAPIDATA['LabelGroup']
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataLabelsPath = path.join(strapiDataDirPath, 'LabelGroup.yaml')
+const STRAPIDATA_LABELS = yaml.safeLoad(fs.readFileSync(strapiDataLabelsPath, 'utf8'))
 const LANGUAGES = ['et', 'en']
 
 // let article_index_template = `/_templates/magazine_index_template.pug`
