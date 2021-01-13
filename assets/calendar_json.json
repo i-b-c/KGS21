@@ -77,32 +77,6 @@
                 "location": {}
             }
         ],
-        "2020-12-3": [
-            {
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "",
-                    "en": ""
-                },
-                "time": "20:30",
-                "location": {}
-            },
-            {
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "",
-                    "en": ""
-                },
-                "time": "18:00",
-                "location": {}
-            }
-        ],
         "2020-12-10": [
             {
                 "tag": [
@@ -233,6 +207,32 @@
                 }
             }
         ],
+        "2020-12-3": [
+            {
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "",
+                    "en": ""
+                },
+                "time": "20:30",
+                "location": {}
+            },
+            {
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "",
+                    "en": ""
+                },
+                "time": "18:00",
+                "location": {}
+            }
+        ],
         "2020-11-2": [
             {
                 "tag": [
@@ -244,6 +244,32 @@
                     "en": ""
                 },
                 "time": "19:30",
+                "location": {}
+            }
+        ],
+        "2020-12-2": [
+            {
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "",
+                    "en": ""
+                },
+                "time": "20:30",
+                "location": {}
+            },
+            {
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "",
+                    "en": ""
+                },
+                "time": "18:00",
                 "location": {}
             }
         ],
@@ -666,32 +692,6 @@
                     "en": ""
                 },
                 "time": "19:30",
-                "location": {}
-            }
-        ],
-        "2020-12-2": [
-            {
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "",
-                    "en": ""
-                },
-                "time": "20:30",
-                "location": {}
-            },
-            {
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "",
-                    "en": ""
-                },
-                "time": "18:00",
                 "location": {}
             }
         ],
