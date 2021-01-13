@@ -4,7 +4,7 @@ const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-const fetchSpecific = ['6931', '6884', '4546']
+// const fetchSpecific = ['6931', '6884', '4546', '4343']
 
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
@@ -12,7 +12,7 @@ const fetchDir = path.join(sourceDir, '_fetchdir')
 const articlesDir = path.join(fetchDir, 'articles')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_ARTICLES = STRAPIDATA['Article']
+const STRAPIDATA_ARTICLES = STRAPIDATA['Article'].filter(e => e.publish_date)
 const STRAPIDATA_PERSONS = STRAPIDATA['Person']
 const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
 const LANGUAGES = ['et', 'en']
@@ -43,9 +43,7 @@ for (const lang of LANGUAGES) {
     const articlesYAMLPath = path.join(fetchDir, `articles.${lang}.yaml`)
     let allData = []
 
-    const RELATED = STRAPIDATA_ARTICLES.filter(e => e.publish_date).map(rel => {
-        let articleDate = new Date(rel.publish_date)
-        let articlePublish = `${('0' + articleDate.getDate()).slice(-2)}.${('0' + (articleDate.getMonth()+1)).slice(-2)}.${articleDate.getFullYear()}`
+    const RELATED = STRAPIDATA_ARTICLES.map(rel => {
         let related_articles = {
             id: rel.id,
             remote_id: rel.remote_id,
@@ -53,7 +51,6 @@ for (const lang of LANGUAGES) {
             categories: rel.categories ? rel.categories.map(c => c.id) : [],
             authors_cs: rel.authors ? rel.authors.map(a => `${a.first_name}${a.last_name ? ` ${a.last_name}` : ''}`).join(', ') : [],
             publish_date: rel.publish_date,
-            publish_date_string: articlePublish,
             // path: lang !== 'et' ? `magazine/${rel.remote_id}` : `${lang}/magazine/${rel.remote_id}`,
             path: `magazine/${rel.remote_id}`,
         }
@@ -63,6 +60,7 @@ for (const lang of LANGUAGES) {
     for (const article of STRAPIDATA_ARTICLES) {
 
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(article.remote_id) ? true : false
+
 
         if (article[`title_${lang}`] && article.remote_id) {
 

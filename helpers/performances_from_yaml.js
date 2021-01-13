@@ -4,7 +4,7 @@ const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
+// const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
 
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
@@ -14,6 +14,7 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
 const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
+const STRAPIDATA_COVERAGES = STRAPIDATA['Coverage']
 const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance'].map(p => {
     if (p.events) {
         p.events = p.events.map( pe => {
@@ -21,6 +22,7 @@ const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance'].map(p => {
         }).filter(u => u)
     }
     p.categories = p.categories ? p.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]) : null
+    p.coverages = p.coverages ? p.coverages.map(c => STRAPIDATA_COVERAGES.filter(f => f.id === c.id)[0]) : null
     return p
 })
 
@@ -36,7 +38,6 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        // Kommenteeri sisse kui soovid ainult konkreetsete remote_id'dega performanceid ehitada
 
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.remote_id) ? true : false
 
@@ -46,7 +47,7 @@ for (const lang of LANGUAGES) {
 
             if (performance.performance_media) {
                 performance.hero_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
-                performance.medium_images = performance.performance_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
+                performance.medium_images = performance.performance_media.filter(h => h.gallery_image_medium).map(h => h.gallery_image_medium.url) || null
             }
 
             if (createDir) {

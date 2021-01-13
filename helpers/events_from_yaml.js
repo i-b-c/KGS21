@@ -4,7 +4,7 @@ const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
+// const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
 
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
@@ -45,6 +45,7 @@ for (const lang of LANGUAGES) {
 
 
     for(oneEvent of STRAPIDATA_EVENTS) {
+
         // let performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
         let performance = oneEvent.performance || []
 

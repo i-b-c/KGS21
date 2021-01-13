@@ -48,10 +48,10 @@ block content
                     span=' lemmikute salvestamiseks'
                 #performance-id.hidden=self.id
                 #save-favorite-btn.hidden
-                    a.btn.btn-primary.text-uppercase(onClick =`updateFavo(${self.id})`)= self.labels.login.save
+                    a.btn.btn-primary.text-uppercase(onClick =`updateFavoPerformance(${self.id})`)= self.labels.login.save
                     span= ' ' + 'oma lemmikuks'
                 #delete-favorite-btn.hidden
-                    a.btn.btn-primary.text-uppercase(onClick =`updateFavo(${self.id})`) eemalda
+                    a.btn.btn-primary.text-uppercase(onClick =`updateFavoPerformance(${self.id})`) eemalda
                     span= ' ' + 'oma lemmikute hulgast'
                 if self[`technical_info_${self.locale}`]
                     .meta-info
@@ -94,7 +94,7 @@ block content
                                                 if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
                                                     a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                                 else
-                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info.ticket_api target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
