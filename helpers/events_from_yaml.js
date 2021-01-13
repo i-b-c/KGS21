@@ -1,21 +1,46 @@
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
+const pathAliasesFunc = require('./path_aliases_func.js')
+
+// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
+// const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
 
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const LANGUAGES = ['et', 'en']
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const festivalsDirPath = path.join(sourceDir, '_fetchdir', `festivals`)
-const residenciesDirPath = path.join(sourceDir, '_fetchdir', `residencies`)
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const festivalsDirPath = path.join(fetchDir, `festivals`)
+const residenciesDirPath = path.join(fetchDir, `residencies`)
 
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
-const STRAPIDATA_PERFORMANCE = STRAPIDATA['Performance']
+const strapiDataCategoriesPath = path.join(strapiDataDirPath, `Category.yaml`)
+const strapiDataPerformancesPath = path.join(strapiDataDirPath, `Performance.yaml`)
+const strapiDataLocationsPath = path.join(strapiDataDirPath, `Location.yaml`)
+const strapiDataCoveragesPath = path.join(strapiDataDirPath, `Coverage.yaml`)
+const strapiDataEventsPath = path.join(strapiDataDirPath, `Event.yaml`)
+const STRAPIDATA_CATEGORIES = yaml.safeLoad(fs.readFileSync(strapiDataCategoriesPath, 'utf8'))
+const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerformancesPath, 'utf8')).map(e => {
+    if (e.categories) {
+        e.categories = e.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id))[0]
+    }
+    return e
+})
+const STRAPIDATA_LOCATIONS = yaml.safeLoad(fs.readFileSync(strapiDataLocationsPath, 'utf8'))
+const STRAPIDATA_COVERAGES = yaml.safeLoad(fs.readFileSync(strapiDataCoveragesPath, 'utf8'))
 
-// REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
-// const fetchSpecific = ['6762', '5663']
+const STRAPIDATA_EVENTS_YAML = yaml.safeLoad(fs.readFileSync(strapiDataEventsPath, 'utf8'))
+
+const STRAPIDATA_EVENTS = STRAPIDATA_EVENTS_YAML.filter(e => !e.hide_from_page).map(ev => {
+    ev.performance = ev.performance ? STRAPIDATA_PERFORMANCES.filter(e => e.id === ev.performance.id)[0] : null
+    ev.location = ev.location ? STRAPIDATA_LOCATIONS.filter(e => e.id === ev.location.id)[0] : null
+    ev.categories = ev.categories ? ev.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]) : null
+    ev.coverages = ev.coverages ? ev.coverages.map(c => STRAPIDATA_COVERAGES.filter(f => f.id === c.id)[0]) : null
+    ev.child_events = ev.child_events ? ev.child_events.map(c => STRAPIDATA_EVENTS_YAML.filter(f => f.id === c.id)[0]) : null
+    return ev
+})
+
+const allPathAliases = []
 
 for (const lang of LANGUAGES) {
 
@@ -27,14 +52,20 @@ for (const lang of LANGUAGES) {
 
 
     for(oneEvent of STRAPIDATA_EVENTS) {
-        let performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
-        let eventDate = new Date(oneEvent.start_time)
+
+        // let performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
+        let performance = oneEvent.performance || []
+
         let combined_coverages = null
+
+        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.remote_id) ? true : false
+
         if (oneEvent.coverages) {
             combined_coverages = oneEvent.coverages.concat(performance.coverages || 0)
         } else if (performance.coverages) {
             combined_coverages = performance.coverages
         }
+
         let oneEventData = {
             id: oneEvent.id,
             performance_remote_id: performance.remote_id || null,
@@ -54,37 +85,36 @@ for (const lang of LANGUAGES) {
             [`name_${lang}`]: oneEvent[`name_${lang}`] || null,
             [`X_headline_${lang}`]: oneEvent[`X_headline_${lang}`] || null,
             [`subtitle_${lang}`]: oneEvent[`subtitle_${lang}`] || null,
-            [`description_${lang}`]: oneEvent[`description_${lang}`] || null,
-            [`technical_info_${lang}`]: oneEvent[`technical_info_${lang}`] || null,
-            location: oneEvent.location || null,
+            location: oneEvent.location ? (oneEvent.location[`name_${lang}`] || null) : null,
             resident: oneEvent.resident || null,
-            duration: oneEvent.duration || null,
-            conversation: oneEvent.conversation || null,
-            videos: oneEvent.videos || null,
-            audios: oneEvent.audios || null,
             categories: oneEvent.categories || null,
-            remote_id: oneEvent.remote_id || null,
             X_ticket_info: oneEvent.X_ticket_info || null,
             canceled: oneEvent.canceled || false,
-            start_date_string: `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`,
-            image_hero: oneEvent.event_media ? oneEvent.event_media.filter(e => e.hero_image).map(u => u.hero_image.url)[0] || null : null,
             image_medium: oneEvent.event_media ? oneEvent.event_media.filter(e => e.gallery_image_medium).map(u => u.gallery_image_medium.url)[0] || null : null,
-            event_media: oneEvent.event_media || null,
-            child_events: oneEvent.child_events ? festival_child_events(oneEvent.child_events, lang) : null,
-            coverages: oneEvent.coverages || null,
-            coverage_dates: oneEvent.coverages ? coveragesByDate(combined_coverages) : null,
         }
 
-        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.remote_id) ? true : false
+        allData.push(oneEventData)
+
+        if (createDir) {
+            oneEventData[`description_${lang}`] = oneEvent[`description_${lang}`] || null
+            oneEventData[`technical_info_${lang}`] = oneEvent[`technical_info_${lang}`] || null
+            oneEventData.duration = oneEvent.duration || null
+            oneEventData.conversation = oneEvent.conversation || null
+            oneEventData.videos = oneEvent.videos || null
+            oneEventData.audios = oneEvent.audios || null
+            oneEventData.image_hero = oneEvent.event_media ? oneEvent.event_media.filter(e => e.hero_image).map(u => u.hero_image.url)[0] || null : null
+            oneEventData.event_media = oneEvent.event_media || null
+            oneEventData.child_events = oneEvent.child_events ? festival_child_events(oneEvent.child_events, lang) : null
+            oneEventData.coverages = oneEvent.coverages || null
+            oneEventData.coverage_dates = oneEvent.coverages ? coveragesByDate(combined_coverages) : null
+        }
 
         if (oneEventData.type === 'festival') { createFestival(oneEventData, lang, createDir) }
 
         if (oneEventData.type === 'residency') { createResidency(oneEventData, lang, createDir) }
 
-        allData.push(oneEventData)
 
     }
-    // console.log(allData)
     let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(a.start_time)-new Date(b.start_time))
     console.log(`${allDataSortedFiltered.length} events (incl. festivals, residencies, tours) from YAML (${lang})`);
     const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
@@ -96,78 +126,76 @@ function createResidency(oneEventData, lang, createDir) {
 
     oneEventData.path = `resident/${oneEventData.remote_id}`
     oneEventData.data = { categories: `/_fetchdir/categories.${lang}.yaml` }
-    // if (lang === 'et') {
-    //     oneEventData.aliases = [`et/resident/${oneEventData.remote_id}`]
-    // }
+    if (lang === 'et') {
+        addAliases(oneEventData, [`et/resident/${oneEventData.remote_id}`])
+    }
     if (createDir) { createDirAndFiles(oneEventData, lang, residenciesDirPath, null, 'resident') }
 
 }
 
 function createFestival(oneEventData, lang, createDir) {
 
+    let festivalHomePath = `festival/${oneEventData.remote_id}/`
     // FESTIVAL PROGRAM/LANDING PAGE
-    oneEventData.path = `festival/${oneEventData.remote_id}/program/`
+    oneEventData.path = `${festivalHomePath}program/`
 
-    // if (lang === 'et') {
-    //     oneEventData.aliases = [
-    //         `et/festival/${oneEventData.remote_id}/program/`,
-    //         `festival/${oneEventData.remote_id}/`,
-    //         `et/festival/${oneEventData.remote_id}/`
-    //         ]
-    // }
+    if (lang === 'et') {
+        addAliases(oneEventData, [`et/${festivalHomePath}program/`,])
+        addAliases(oneEventData, [`${festivalHomePath}`])
+        addAliases(oneEventData, [`et/${festivalHomePath}`])
+    }
 
     if (createDir) { createDirAndFiles(oneEventData, lang, festivalsDirPath, null, 'festival') }
 
 
     // FESTIVAL ABOUT PAGE
-    oneEventData.path = `festival/${oneEventData.remote_id}/about/`
+    oneEventData.path = `${festivalHomePath}about/`
 
-    // if (lang === 'et') {
-    //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/about/`]
-    // } else {
-    //     delete oneEventData.aliases
-    // }
+    if (lang === 'et') {
+        addAliases(oneEventData, [`et/${festivalHomePath}about/`])
+    } else {
+        // delete oneEventData.aliases
+    }
 
     if (createDir) { createDirAndFiles(oneEventData, lang, festivalsDirPath, 'about', 'festival_about') }
 
 
     // FESTIVAL TICKETS PAGE
-    oneEventData.path = `festival/${oneEventData.remote_id}/tickets/`
+    oneEventData.path = `${festivalHomePath}tickets/`
 
-    // if (lang === 'et') {
-    //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/tickets/`]
-    // } else {
-    //     delete oneEventData.aliases
-    // }
+    if (lang === 'et') {
+        addAliases(oneEventData, [`et/${festivalHomePath}tickets/`])
+    } else {
+        // delete oneEventData.aliases
+    }
 
     if (createDir) { createDirAndFiles(oneEventData, lang, festivalsDirPath, 'tickets', 'festival_tickets') }
 
 
     // FESTIVAL PRESS PAGE
-    oneEventData.path = `festival/${oneEventData.remote_id}/press/`
+    oneEventData.path = `${festivalHomePath}press/`
 
-    // if (lang === 'et') {
-    //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/press/`]
-    // } else {
-    //     delete oneEventData.aliases
-    // }
+    if (lang === 'et') {
+        addAliases(oneEventData, [`et/${festivalHomePath}press/`])
+    } else {
+        // delete oneEventData.aliases
+    }
 
     if (createDir) { createDirAndFiles(oneEventData, lang, festivalsDirPath, 'press', 'festival_press') }
 
 
     // RESET FOR ALLDATA WRITING
-    oneEventData.path = `festival/${oneEventData.remote_id}/program/`
-    // if (lang === 'et') {
-    //     oneEventData.aliases = [`et/festival/${oneEventData.remote_id}/program/`]
-    // }
+    oneEventData.path = `${festivalHomePath}program/`
+    if (lang === 'et') {
+        addAliases(oneEventData, [`et/${festivalHomePath}program/`])
+    }
 
 }
 
 function festival_child_events(child_events_data, lang) {
     return child_events_data.map(ch => {
         let child_event = STRAPIDATA_EVENTS.filter(e => e.id === ch.id)[0] || []
-        let event_performance = STRAPIDATA_PERFORMANCE.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
-        let eventDate = new Date(oneEvent.start_time)
+        let event_performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
 
         return {
             id: child_event.id,
@@ -181,7 +209,7 @@ function festival_child_events(child_events_data, lang) {
             performance_X_artist: event_performance.X_artist || null,
             performance_X_producer: event_performance.X_producer || null,
             [`performance_X_town_${lang}`]: event_performance[`X_town_${lang}`] || null,
-            location: child_event.location || null,
+            location: child_event.location ? child_event.location[`name_${lang}`] : null,
             conversation: child_event.conversation || null,
             remote_id: child_event.remote_id || null,
             X_ticket_info: child_event.X_ticket_info || null,
@@ -190,9 +218,7 @@ function festival_child_events(child_events_data, lang) {
             [`subtitle_${lang}`]: child_event[`subtitle_${lang}`] || null,
             [`X_headline_${lang}`]: child_event[`X_headline_${lang}`] || null,
             X_artist: child_event.X_artist || null,
-            start_date_string: `${('0' + eventDate.getDate()).slice(-2)}.${('0' + (eventDate.getMonth()+1)).slice(-2)}.${eventDate.getFullYear()}`,
         }
-        // performance_coverage_dates: event_performance.coverages ? coveragesByDate(event_performance.coverages) : null,
     }).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
 
 
@@ -217,3 +243,10 @@ function coveragesByDate(coverages) {
     })
     return coverages_array || null
 }
+
+function addAliases(oneEventData, pathAliases) {
+    // oneEventData.aliases = pathAliases
+    pathAliases.map(a => allPathAliases.push({from: a, to: oneEventData.path}))
+}
+
+pathAliasesFunc(fetchDir, allPathAliases, 'events')

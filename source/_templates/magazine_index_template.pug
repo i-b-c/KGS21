@@ -1,4 +1,5 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
     .container-fluid
@@ -7,19 +8,21 @@ block content
                 .carousel-inner(role="listbox")
 
                     - var bigPhotos = []
-                    if self.X_pictures && self.X_pictures.photoBig && self.X_pictures.photoBig.length
-                        - bigPhotos = self.X_pictures.photoBig.split(',')
+                    if self.hero_images
+                        - bigPhotos = self.hero_images
 
                     if bigPhotos.length === 0
                         - bigPhotos = ['/assets/images/placeholder.jpg']
 
                     - var photoActive = 0
-                    each photo, ix in bigPhotos
-                        .item(class=(photoActive++ === 0 ? 'active' : ''))
-                            - photo = photo === '/assets/images/placeholder.jpg' ? photo : `${f_api}${photo}`
-                            figure(id = `slide-${ix}`, style=`background-image: url('${photo}');`)
+                    each photo in bigPhotos
+                        .item(class=(photoActive === 0 ? 'active' : ''))
+                            - photo = photo === '/assets/images/placeholder.jpg' ? photo : `${m_api}${photo}`
+                            figure(id = `slide-${photoActive}`, style=`background-image: url('${photo}');`)
+                            - photoActive++
                             header.col-md-8
-                                p= self.publish_date_string
+                                p
+                                    +dateFull(self.publish_date)
                                 h1.artist= self[`title_${self.locale}`]
                                     if self[`subtitle_${self.locale}`]
                                         - var subTitle = self[`subtitle_${self.locale}`]
@@ -57,47 +60,31 @@ block content
 
 
                         //- GALLERY
+                        if self.article_media && !self.hide_gallery
+                            .gallery
+                                    .row
 
-                        //- BELOW WAITING FOR STRAPI PICS
-
-                        //- if self.article_media
-                        //-     .gallery
-                        //-         h2= self.labels.title.gallery
-                        //-             .row
-                        //-             each galPhoto in self.article_media
-                        //-                 if galPhoto.gallery_image_medium && !galPhoto.hero_image
-                        //-                     .single-image.col-xs-6.col-sm-3.col-md-4
-
-                        //-                         if galPhoto.original_image && galPhoto.original_image.url
-                        //-                             - var imgLink = galPhoto.original_image.url
-                        //-                         else if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
-                        //-                             - var imgLink = galPhoto.gallery_image_large.url
-                        //-                         else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
-                        //-                             - var imgLink = galPhoto.gallery_image_medium.url
-
-                        //-                         a.fancybox(rel="gallery" href=`${m_api}${imgLink}`)
-                        //-                             img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
-
-
-                        //-
-                        if !self.hide_gallery
-                            if bigPhotos
-                                .gallery
-                                    //- If is single image
-                                    if bigPhotos.length === 1
+                                    if self.hero_images && self.hero_images.length === 1
                                         .row
                                             .col-xs-12
-                                                if bigPhotos
-                                                    img(src=`${f_api}${bigPhotos[0]}`, class='img-responsive')
+                                                img(src=`${m_api}${self.hero_images[0]}`, class='img-responsive')
 
-                                    //- If more than one, make gallery
-                                    if bigPhotos.length > 1
+                                    else
                                         h2= self.labels.title.gallery
-                                        .row
-                                            each photo in bigPhotos
+                                        each galPhoto in self.article_media
+                                            if galPhoto.gallery_image_medium
                                                 .single-image.col-xs-6.col-sm-3.col-md-4
-                                                    a.fancybox(rel='gallery', href=`${f_api}${photo}` )
-                                                        img(src=`${f_api}${photo}`, class='img-responsive')
+
+                                                    if galPhoto.original_image && galPhoto.original_image.url
+                                                        - var imgLink = galPhoto.original_image.url
+                                                    else if galPhoto.hero_image && galPhoto.hero_image.url
+                                                        - var imgLink = galPhoto.hero_image.url
+                                                    else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
+                                                        - var imgLink = galPhoto.gallery_image_medium.url
+
+                                                    a.fancybox(rel="gallery" href=`${m_api}${imgLink}`)
+                                                        img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
+
 
                         //- VIDEO
                         if self.videos
@@ -120,7 +107,8 @@ block content
                                 if postCount++ < 15
                                     //- a(href=`/${lang_path}${relArticle.path}`)
                                     a(href=`/${relArticle.path}`)
-                                        p= relArticle.publish_date_string
+                                        p
+                                            +dateFull(self.publish_date)
                                         h3
                                             span.artist= relArticle[`title_${self.locale}`]
 
@@ -132,4 +120,4 @@ block content
 
                             .row
                                 .col-xs-12.col-md-12
-                                    a.load-more.btn.btn-primary(href="/et/magazine/")= self.labels.button.view_all
+                                    a.load-more.btn.btn-primary(href=`/${lang_path}magazine/`)= self.labels.button.view_all

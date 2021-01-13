@@ -7,6 +7,7 @@ const { spin } = require("./spinner")
 const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
 fs.mkdirSync(dirPath, { recursive: true })
+fs.mkdirSync(path.join(dirPath, 'strapidata'), { recursive: true })
 
 const DOMAIN = process.env['DOMAIN'] || false
 const modelFile = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
@@ -154,6 +155,7 @@ const Compare = function (model, data, path) {
 const foo = async () => {
 
     // Replace every property_name in strapiData with object from searchData
+                                // "Performance", strapi events, strapi performances
     const ReplaceInModel = function(property_name, strapiData, searchData) {
         // console.log(property_name, strapiData, searchData)
         for (const element of strapiData) {
@@ -207,16 +209,40 @@ const foo = async () => {
                 // otsime kirjet mudelis =value
                 for (const property_name in model) {
                     if (model.hasOwnProperty(property_name)) {
-                        const value = model[property_name]
+                        const value = (
+                            Array.isArray(model[property_name])
+                                ? model[property_name][0]
+                                : model[property_name]
+                            )
+
+                        if (value.hasOwnProperty('_modelName')) {
+                            for (strapi_object of modelData) {
+                                if (Array.isArray(strapi_object[property_name])) {
+                                    for (ix in strapi_object[property_name]) {
+                                        if (strapi_object[property_name][ix]) {
+                                            const {id} = strapi_object[property_name][ix]
+                                            strapi_object[property_name][ix] = {id: id}
+                                        }
+                                    }
+                                } else {
+                                    if (strapi_object[property_name]) {
+                                        const {id} = strapi_object[property_name]
+                                        strapi_object[property_name] = {id: id}
+                                    }
+                                }
+                            }
+                        }
                         // '_modelName' on üleval ise sees kirjutaud väärtus andmemudelis, mis on võrdne mudeli nimega
                         // console.log({property_name, model});
-                        if (value.hasOwnProperty('_modelName')) {
-                            let search_model_name = value['_modelName']
-                            // console.log('foo', search_model_name, 'in', modelName)
-                            let searchData = strapiData[search_model_name]
-                            // otsime juba olemasolevast strapi datast
-                            ReplaceInModel(property_name, modelData, searchData)
-                        }
+                        // if (value.hasOwnProperty('_modelName')) {
+                        //     let search_model_name = value['_modelName']
+                        //     // console.log('foo', search_model_name, 'in', modelName)
+                        //     let searchData = strapiData[search_model_name]
+                        //     // otsime juba olemasolevast strapi datast
+
+                        //     // "Performance", strapi events, strapi performances
+                        //     ReplaceInModel(property_name, modelData, searchData)
+                        // }
                     }
                 }
                 strapiData[modelName] = modelData
@@ -253,9 +279,16 @@ const foo = async () => {
     spin.stop()
     console.log('.')
 
-    let yamlStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData)), { 'noRefs': true, 'indent': '4' })
-    // let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
-    fs.writeFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', yamlStr, 'utf8')
+    // let yamlStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData)), { 'noRefs': true, 'indent': '4' })
+    // // let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
+    // fs.writeFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', yamlStr, 'utf8')
+
+    for ( let modelName in strapiData ) {
+       // console.log(JSON.stringify(strapiData[modelName], 0, 2))
+       let yamlSmallStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData[modelName])), { 'noRefs': true, 'indent': '4' })
+       fs.writeFileSync(__dirname + `/../source/_fetchdir/strapidata/${modelName}.yaml`, yamlSmallStr, 'utf8')
+    }
+
 
 }
 
