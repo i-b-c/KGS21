@@ -1,0 +1,91 @@
+extends /_templates/layout.pug
+
+block content
+
+    #profile-grid.content
+        .form#user_profile
+            h2= self.labels.login.userprofile_title
+            .form-group
+                label.login_label(for='email')= self.labels.login.email
+                #email(name='email')
+            .form-group
+                label.login_label(for='firstName')= self.labels.login.first_name
+                input.login_input#firstName.form-control(type='text', placeholder=`${self.labels.login.first_name}` name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
+                #firstNameHelp(class='valid')= self.labels.login.first_name_help
+            .form-group
+                label.login_label(for='lastName')= self.labels.login.family_name
+                input.login_input#lastName.form-control(type='text', placeholder=`${self.labels.login.family_name}` name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
+                #lastNameHelp(class='valid')= self.labels.login.last_name_help
+            .form-group
+                label.login_label(for='phoneNr')= self.labels.login.phone
+                input.login_input#phoneNr.form-control(type='tel' placeholder=`${self.labels.login.phone}` name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
+                #phoneNrHelp(class='valid')= self.labels.login.phone_num_help
+            .form-group
+                label.login_label Sisselogimisviisid
+                #authProviders
+                    .form-group#password(style={display:'none'})
+                        label.login_label(for='email') parool
+                    .form-group
+                        a.btn.btn-primary.text-uppercase#google(onmouseover = 'displayRemoveBtn(this)' style= {display:'none'}) google
+                        a.btn.btn-primary.text-uppercase#remove_google(onmouseout = 'displayProviderBtn(this)' onClick = "redirectToProvider(this, 'Google')" style= {display:'none'}) Remove provider google
+                    .form-group
+                        a.btn.btn-primary.text-uppercase#facebook(onmouseover = 'displayRemoveBtn(this)' style= {display:'none'}) facebook
+                        a.btn.btn-primary.text-uppercase#remove_facebook(onmouseout = 'displayProviderBtn(this)' onClick = "redirectToProvider(this, 'Facebook')" style= {display:'none'}) Remove provider facebook
+                #removeProviderWarning(style= {display:'none'}) Removing provider
+                    a.btn.btn-primary#confirmDialog(onClick='openProvider(providerToRemove)') Yes, I want to remove app 'kgs-auth' at provider 
+                    a.btn.btn-primary#doneAtProvider(style= {display:'none'} onclick='window.location.reload()') I have removed app 'kgs-auth' at provider 
+            a.btn.btn-primary.text-uppercase(onclick='validateForm()')= self.labels.login.save
+            p#profileSent(style = {display: 'none'})= self.labels.login.data_saved
+            p#profileNotSent(style = {display: 'none'})=self.labels.login.err_profile_not_saved
+
+        .form#delete_account
+            h2 Lisavalikud
+            a.btn.btn-primary.text-uppercase#showAdvancedStgBtn(onclick='showAdvancedSettings()') Näita
+            a.btn.btn-primary.text-uppercase#hideAdvancedStgBtn(onclick='hideAdvancedSettings()' style={display: 'none'}) Peida
+            .form-group#advanced_settings(style={display:'none'})
+                label.login_label Parooliga sisselogimine
+                a.btn.btn-primary.text-uppercase#addPswdBtn(href='/password_reset' style={display: 'none'}) Lisa salasõna
+                a.btn.btn-primary.text-uppercase#resetPswdBtn(onclick = 'SendPswResetLink()' style={display:'none'}) Uuenda salasõna
+                label.login_label Konto kustutamine
+                a.btn.btn-primary.text-uppercase#deleteAccountBtn(onclick='cnfrmDeleteAccount.style.display=""') Kustuta konto
+                #cnfrmDeleteAccount(style={display:'none'})
+                    input#cnfrmDelEmail(type='text', placeholder='type your email for account DEL confirmation')
+                    a.btn.btn-primary.text-uppercase(onclick='deleteAccount()') Confirm
+
+    style.
+        .invalid {
+            background-color: #f5e4e9;
+            display: block;
+            color: black
+            }
+        .valid {
+            background-color: #e6f7e6;
+            display: none;
+            }
+        #user_profile{
+            padding: 10rem 0 10rem 10rem;
+            width: 50rem;
+        }
+        #authProviders{
+            display: grid;
+            width: 50rem;
+            grid-template-columns: auto auto auto auto auto
+        }
+        #delete_account{
+            padding: 10rem 0 10rem 10rem;
+            width: 50rem;
+        }
+        #profile-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        }
+        #removeProviderWarning{
+            display: grid
+        }
+        #advanced_settings{
+            display: grid;
+            grid-template-rows: auto auto
+        }
+        #cnfrmDeleteAccount{
+            display: grid
+        }

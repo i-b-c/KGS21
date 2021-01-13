@@ -39,7 +39,7 @@ node ./helpers/events_from_yaml.js
 echo '==== build ==== projects_from_yaml'
 node ./helpers/projects_from_yaml.js
 
-echo '==== build ==== projects_from_yaml'
+echo '==== build ==== configuration_from_yaml'
 node ./helpers/configuration_from_yaml.js
 
 echo '==== build ==== banners_from_yaml'
@@ -47,6 +47,9 @@ node ./helpers/banners_from_yaml.js
 
 echo '==== build ==== locations_from_yaml'
 node ./helpers/locations_from_yaml.js
+
+echo '==== build ==== calendar_json.js'
+node ./helpers/calendar_json.js
 
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./config.yaml full

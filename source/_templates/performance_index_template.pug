@@ -6,16 +6,8 @@ block content
         .row
             .event-banner.carousel.slide(id='front-carousel')
                 .carousel-inner(role="listbox")
-                    //- svg(version="1.1" width="0" height="0")
-                    //-     filter#filter-1607341824491
-                    //-         fecolormatrix(type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray")
-                    //-         fecomponenttransfer(color-interpolation-filters="sRGB")
-                    //-             fefuncr(type="table" tablevalues="0 1")
-                    //-             fefuncg(type="table" tablevalues="0 0.7764705882352941")
-                    //-             fefuncb(type="table" tablevalues="0 0")
-                    //-             fefunca(type="table" tablevalues="1 1")
-                    - var photosBig = self.X_pictures && self.X_pictures.photoBig ? self.X_pictures.photoBig.split(',') : []
-                    - var photoBig = photosBig.length ? `${f_api}${photosBig[0]}` : `/assets/images/placeholder.jpg`
+
+                    - var photoBig = self.hero_images ? `${m_api}${self.hero_images[0]}` : `/assets/images/placeholder.jpg`
                     figure(id= `slide-${self.remote_id}` style=`background-image: url("${photoBig}");`)
                     header.col-md-8
                         if self[`X_headline_${self.locale}`]
@@ -36,6 +28,7 @@ block content
                     - var activeCategories = []
                     if self.categories
                         - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
+
                     if self.data.categories
                         ul.event-categories
                             each category in self.data.categories
@@ -43,89 +36,86 @@ block content
                                     li.text-uppercase.h3( class =( activeCategories.includes(category.remote_id)? "" : "unactive" ) )
                                         span
                                             a(href="")= category[`name_${self.locale}`]
-                                    //- li.text-uppercase.h3.unactive
-                                    //-     span
-                                    //-         a(href="search?q=category:3809") Tants
-                                    //- li.text-uppercase.h3
-                                    //-     span
-                                    //-         a(href="search?q=category:3810") Performance
-                                    //- li.text-uppercase.h3.unactive
-                                    //-     span
-                                    //-         a(href="search?q=category:3811") Teater
-                                    //- li.text-uppercase.h3.unactive
-                                    //-     span
-                                    //-         a(href="search?q=category:3812") Muusika
-                                    //- li.text-uppercase.h3.unactive
-                                    //-     span
-                                    //-         a(href="search?q=category:3814") Video
-                                    //- li.text-uppercase.h3.unactive
-                                    //-     span
-                                    //-         a(href="search?q=category:5027") Näitus
+
                                 script.
                                     var slide#{self.remote_id} = document.getElementById('slide-#{self.remote_id}');
                                     var gradientMap = '#000000, #FFC600';
                                     GradientMaps.applyGradientMap(slide#{self.remote_id}, gradientMap);
         .row.front-page-margin
             aside.col-md-12.col-lg-3
+                #direct-to-login-btn
+                    a.btn.btn-primary.text-uppercase#direct-to-login-btn(href="/login")= self.labels.login.sign_in
+                    span=' lemmikute salvestamiseks'
+                #performance-id.hidden=self.id
+                #save-favorite-btn.hidden
+                    a.btn.btn-primary.text-uppercase(onClick =`updateFavo(${self.id})`)= self.labels.login.save
+                    span= ' ' + 'oma lemmikuks'
+                #delete-favorite-btn.hidden
+                    a.btn.btn-primary.text-uppercase(onClick =`updateFavo(${self.id})`) eemalda
+                    span= ' ' + 'oma lemmikute hulgast'
                 if self[`technical_info_${self.locale}`]
                     .meta-info
                         p
                             +format(self[`technical_info_${self.locale}`])
+
+                - var duration = self.duration
+
+                if duration
+                    - var dur_m = (duration % 60 > 0) ? duration % 60 + ' ' + self.labels.label.minutes_short : ''
+                    - var dur_h = (((duration - duration % 60) / 60) % 24 > 0) ? ((duration - duration % 60) / 60) % 24 + ' ' + self.labels.label.hours_short : ''
+                    - var dur_d = ((duration - duration % 1440) / 1440 > 0) ? (duration - duration % 1440) / 1440 + ' ' + self.labels.label.days_short : ''
+                    .meta-info= self.labels.label.duration + ': ' + dur_d + ' ' + dur_h + ' ' + dur_m
 
             article.readMore.main-text.col-md-8.col-lg-6.h3
                 p
                     +format(self[`description_${self.locale}`])
 
             aside.col-md-4.col-lg-3
-                //- - var currentDate = new Date()
-                //- if self.events && self.events.length
-                //-     .tickets.row
-                //-         each event in self.events
-                //-             if currentDate <= event.start_time
-                //-                 .col-sm-4.col-md-4.col-lg-4
-                //-                     p= event.start_time
 
                 if self.minToMaxEvents && self.minToMaxEvents.length
 
-                    .past
+                    .tickets.row
                         each event in self.minToMaxEvents
-                            .row(event_type='future_events', start_time=event.start_time)
-                                .col-sm-6.col-md-5.col-lg-4
-                                    p= event.start_date_string
-                                .col-sm-6.col-md-7.col-lg-8
+                            div(event_type='future_events', start_time=event.start_time)
+                                .col-sm-4.col-md-4.col-lg-4
+                                    +dayName(event.start_time)
+                                    +dateFull(event.start_time)
+                                    +hoursMinutes(event.start_time)
+                                .col-sm-8.col-md-8.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
-                                    p Kanuti Gildi SAAL
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
                                     span(style='float:right;')
-                                        if event.X_ticket_info.sales_status
+                                        if event.X_ticket_info
                                             if event.canceled === 'true'
-                                                a.btn.btn-primary(class="disabled")= 'canceled'
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                             else
-                                                if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
-                                                    a.btn.btn-primary(class="free disabled" href='' target='_blank')= event.X_ticket_info.sales_status
+                                                if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                                 else
-                                                    a.btn.btn-primary(class="" href='' target='_blank')= 'status'
-
-
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info.ticket_api target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
 
                         script.
+                            toggleEventButtons()
+
+                        script.
                             performanceEventToggler('future_events')
 
                     .past
-                        <br>
-                        <br>
                         h2 Olnud
                         each event in self.maxToMinEvents
                             .row(event_type='past_events', start_time=event.start_time)
                                 .col-sm-6.col-md-5.col-lg-4
-                                    p= event.start_date_string
+                                    +dateFull(event.start_time)
                                 .col-sm-6.col-md-7.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
-                                    p Kanuti Gildi SAAL
+                                    if event.location || event[`X_location_${self.locale}`]
+                                        p= event.location || event[`X_location_${self.locale}`]
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
 
@@ -137,37 +127,53 @@ block content
 
                 if self.videos
                     .gallery
-                        h2 VIDEO LABEL
+                        h2= self.labels.title.video
                             each video in self.videos
                                 div!= video.content
                 if self.audios
                     .gallery
-                        h2 AUDIO LABEL
+                        h2= self.labels.title.audio
                             each audio in self.audios
                                 div!= audio.content
 
-                if self.X_pictures && self.X_pictures.photoGallery && self.X_pictures.photoMedium && self.X_pictures.photoGallery.length && self.X_pictures.photoMedium.length
+                if self.performance_media && self.performance_media.filter(m => m.gallery_image_medium).length
                     .gallery
-                        h2 Galerii pealkiri
+                        h2= self.labels.title.gallery
                             .row
-                            each galPhoto, key in self.X_pictures.photoGallery.split(',')
-                                .single-image.col-sm-6.col-sm-3.col-md-4
-                                    a.fancybox(rel="gallery" href=`${f_api}${galPhoto}`)
-                                        img.img-responsive(src=`${f_api}${self.X_pictures.photoMedium.split(',')[key]}`)
+                            each galPhoto in self.performance_media
+                                if galPhoto.gallery_image_medium && !galPhoto.hero_image
+                                    .single-image.col-sm-6.col-sm-3.col-md-4
+
+                                        if galPhoto.original_image && galPhoto.original_image.url
+                                            - var imgLink = galPhoto.original_image.url
+                                        else if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
+                                            - var imgLink = galPhoto.gallery_image_large.url
+                                        else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
+                                            - var imgLink = galPhoto.gallery_image_medium.url
+
+                                        a.fancybox(rel="gallery" href=`${m_api}${imgLink}`)
+                                            img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
+
+
 
             .col-md-6
                 if self.coverages && self.coverages.length
                     .press
-                        h2 PRESS LABEL
+                        h2= self.labels.title.press
                         .row
                             each press in self.coverages
                                 .col-md-12
                                     br
                                     if press.media && press.media.length
                                         a(target='_blank' href=`${m_api}${press.media[0].url}`)
-                                            img(src=`${m_api}${press.media[0].formats.small.url}`, width='50', style='float:left; margin-right:1em')
-                                            if press.title
-                                                p= press.title
+                                            if press.media[0].formats
+                                                img(src=`${m_api}${press.media[0].formats.small.url}`, width='50', style='float:left; margin-right:1em')
+                                                if press.title
+                                                    p= press.title
+                                            else
+                                                img(src=`${m_api}${press.media[0].url}`, width='50', style='float:left; margin-right:1em')
+                                                if press.title
+                                                    p= press.title
                                         if press.source
                                             a(target='_blank' href=press.url)
                                                 p.source= press.source
@@ -193,4 +199,10 @@ block content
                         each logo in self.logos
                             li.col-sm-12.col-md-12.col-lg-12
                                 img(src=`${m_api}${logo.url}`, class='img-responsive')
-
+    style.
+        .hidden{
+            display: none;
+        }
+        .visible{
+            display: block;
+        }

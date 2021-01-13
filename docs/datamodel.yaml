@@ -347,7 +347,7 @@ Newscast: &Newscast
 
 ArticleMedia: &ArticleMedia
     original_image: *StrapiMedia
-    gallery_image_large: *StrapiMedia
+    hero_image: *StrapiMedia
     gallery_image_medium: *StrapiMedia
 
 Article: &Article #Echo
@@ -361,7 +361,7 @@ Article: &Article #Echo
     publish_date: (datetime)
     front_page_promotion: (boolean)
     categories:
-        - *Category
+        - *Category #seotud postitused
     authors:
         - *Person
     article_media:
@@ -389,6 +389,7 @@ LabelGroup:
         - *Label
 
 SimpleArticle: &SimpleArticle
+    _path: /simple-articles
     name_et: (text)
     name_en: (text)
     subtitle_et: (text)
