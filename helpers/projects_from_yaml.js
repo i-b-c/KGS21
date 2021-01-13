@@ -5,9 +5,9 @@ const path = require('path')
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_EVENTS = STRAPIDATA['Event']
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataEventsPath = path.join(strapiDataDirPath, 'Event.yaml')
+const STRAPIDATA_EVENTS = yaml.safeLoad(fs.readFileSync(strapiDataEventsPath, 'utf8'))
 const LANGUAGES = ['et', 'en']
 
 

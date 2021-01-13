@@ -10,10 +10,10 @@ printf "\nBuilding...\n"
 [ ! -d "build" ] && mkdir -p build
 [ ! -d "build/assets" ] && mkdir -p build/assets
 
-echo '==== build ==== Fetch strapiData.yaml from Strapi'
+echo '==== build ==== Fetch data from Strapi'
 node ./helpers/a_fetch.js
 
-printf '\n\n---------- Creating separate YAML files from strapiData.yaml ----------\n\n'
+printf '\n\n---------- Creating separate YAML files from data ----------\n\n'
 
 echo '==== build ==== fetch_articles_from_yaml'
 node ./helpers/articles_from_yaml.js

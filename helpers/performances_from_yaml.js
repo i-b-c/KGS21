@@ -10,12 +10,17 @@ const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const performancesDir = path.join(fetchDir, 'performances')
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_EVENTS = STRAPIDATA['Event'].filter(e => !e.hide_from_page)
-const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
-const STRAPIDATA_COVERAGES = STRAPIDATA['Coverage']
-const STRAPIDATA_PERFORMANCES = STRAPIDATA['Performance'].map(p => {
+
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataEventsPath = path.join(strapiDataDirPath, 'Event.yaml')
+const strapiDataCategoriesPath = path.join(strapiDataDirPath, 'Category.yaml')
+const strapiDataCoveragesPath = path.join(strapiDataDirPath, 'Coverage.yaml')
+const strapiDataPerformancesPath = path.join(strapiDataDirPath, 'Performance.yaml')
+
+const STRAPIDATA_EVENTS = yaml.safeLoad(fs.readFileSync(strapiDataEventsPath, 'utf8')).filter(e => !e.hide_from_page)
+const STRAPIDATA_CATEGORIES = yaml.safeLoad(fs.readFileSync(strapiDataCategoriesPath, 'utf8'))
+const STRAPIDATA_COVERAGES = yaml.safeLoad(fs.readFileSync(strapiDataCoveragesPath, 'utf8'))
+const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerformancesPath, 'utf8')).map(p => {
     if (p.events) {
         p.events = p.events.map( pe => {
             return STRAPIDATA_EVENTS.filter(e => e.id === pe.id)[0]

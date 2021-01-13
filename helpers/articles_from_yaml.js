@@ -10,11 +10,15 @@ const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const articlesDir = path.join(fetchDir, 'articles')
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_ARTICLES = STRAPIDATA['Article'].filter(e => e.publish_date)
-const STRAPIDATA_PERSONS = STRAPIDATA['Person']
-const STRAPIDATA_CATEGORIES = STRAPIDATA['Category']
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataArticlesPath = path.join(strapiDataDirPath, 'Article.yaml')
+const strapiDataPersonsPath = path.join(strapiDataDirPath, 'Person.yaml')
+const strapiDataCategorysPath = path.join(strapiDataDirPath, 'Category.yaml')
+
+const STRAPIDATA_ARTICLES = yaml.safeLoad(fs.readFileSync(strapiDataArticlesPath, 'utf8')).filter(e => e.publish_date)
+const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPersonsPath, 'utf8'))
+const STRAPIDATA_CATEGORIES = yaml.safeLoad(fs.readFileSync(strapiDataCategorysPath, 'utf8'))
+
 const LANGUAGES = ['et', 'en']
 
 const allPathAliases = []

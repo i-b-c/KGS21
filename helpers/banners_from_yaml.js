@@ -3,9 +3,10 @@ const yaml = require('js-yaml')
 const path = require('path')
 
 const fetchDir = path.join(__dirname, '..', 'source', '_fetchdir')
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_BANNERS = STRAPIDATA['Banner']
+const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataBannersPath = path.join(strapiDataDirPath, 'Banner.yaml')
+
+const STRAPIDATA_BANNERS = yaml.safeLoad(fs.readFileSync(strapiDataBannersPath, 'utf8'))
 
 const bannersYAMLPath = path.join(fetchDir, `banners.yaml`)
 let allData = STRAPIDATA_BANNERS

@@ -169,7 +169,7 @@ labels:
         no_tickets: You have no saved tickets
         email: email address
         email_not_correct: Please enter valid email
-        sign_in_title: Sign in with provider
+        sign_in_title: Sign in
         sign_in: Sign in
         sign_up_title: Sign up for an account
         sign_up: Sign_up
