@@ -1,4 +1,7 @@
 SECONDS=0
+cd $PWD
+echo $PWD
+
 printf "\nStarting to fetch new data:\n"
 
 

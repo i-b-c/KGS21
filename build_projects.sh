@@ -1,5 +1,5 @@
 SECONDS=0
-
+cd $PWD
 echo $PWD
 
 printf "\nBuilding...\n"
@@ -10,7 +10,7 @@ echo '==== build ==== projects_from_yaml'
 node ./helpers/projects_from_yaml.js -t
 
 echo '==== build ==== ENTU SSG'
-# node ./node_modules/entu-ssg/src/build.js ./config.yaml full
+node ./node_modules/entu-ssg/src/build.js ./config.yaml full
 
 echo '==== build ==== reset_config_path_aliases'
 node ./helpers/reset_config_path_aliases.js
