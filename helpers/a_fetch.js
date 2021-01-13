@@ -7,7 +7,6 @@ const { spin } = require("./spinner")
 const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
 fs.mkdirSync(dirPath, { recursive: true })
-fs.mkdirSync(path.join(dirPath, 'strapiData'), { recursive: true })
 
 const DOMAIN = process.env['DOMAIN'] || false
 const modelFile = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
@@ -204,13 +203,28 @@ const foo = async () => {
                     modelData = [modelData]
                 }
 
-                modelData = modelData.filter(checkDomain)
+                // andmete varundamine GitHubi
+                // const { exec } = require('child_process')
+                // exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
+                //     if (err) {
+                //         console.log('failing with git rev-parse');
+                //     }
+
+                //     if (typeof stdout === 'string' && (stdout.trim() === 'master')) {
+                //         // console.log(`The branch is master and we are prepping json for backing up`);
+                //         // Call your function here conditionally as per branch
+                //         let jsonStr = JSON.stringify(modelData, null, 2)
+                //         fs.writeFileSync(`${__dirname}/../strapidata/${modelName}.json`, jsonStr, 'utf8')
+                //     }
+                // });
+
+                // modelData = modelData.filter(checkDomain)
 
                 // otsime kirjet mudelis =value
                 for (const property_name in model) {
                     if (model.hasOwnProperty(property_name)) {
                         const value = (
-                            Array.isArray(model[property_name])
+                            Array.isArray(model[property_name]) 
                                 ? model[property_name][0]
                                 : model[property_name]
                             )
@@ -279,16 +293,9 @@ const foo = async () => {
     spin.stop()
     console.log('.')
 
-    // let yamlStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData)), { 'noRefs': true, 'indent': '4' })
-    // // let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
-    // fs.writeFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', yamlStr, 'utf8')
-
-    for ( let modelName in strapiData ) {
-       // console.log(JSON.stringify(strapiData[modelName], 0, 2))
-       let yamlSmallStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData[modelName])), { 'noRefs': true, 'indent': '4' })
-       fs.writeFileSync(__dirname + `/../source/_fetchdir/strapiData/${modelName}.yaml`, yamlSmallStr, 'utf8')
-    }
-    
+    let yamlStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData)), { 'noRefs': true, 'indent': '4' })
+    // let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', yamlStr, 'utf8')
 
 }
 
