@@ -6,8 +6,8 @@ printf "\nBuilding...\n"
 
 printf '\n\n---------- Creating separate YAML files from data ----------\n\n'
 
-echo '==== build ==== banners_from_yaml'
-node ./helpers/banners_from_yaml.js -t
+echo '==== build ==== projects_from_yaml'
+node ./helpers/projects_from_yaml.js -t
 
 echo '==== build ==== ENTU SSG'
 node ./node_modules/entu-ssg/src/build.js ./config.yaml full

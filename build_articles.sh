@@ -1,11 +1,13 @@
 SECONDS=0
+cd $PWD
+echo $PWD
 
 printf "\nBuilding...\n"
 
 printf '\n\n---------- Creating separate YAML files from data ----------\n\n'
 
 echo '==== build ==== articles_from_yaml'
-node ./helpers/articles_from_yaml.js -t 5350
+node ./helpers/articles_from_yaml.js -t $1
 
 echo '==== build ==== ENTU SSG'
 node ./node_modules/entu-ssg/src/build.js ./config.yaml full
