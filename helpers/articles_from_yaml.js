@@ -24,13 +24,12 @@ const STRAPIDATA_ARTICLES = processArticles(STRAPIDATA_ARTICLES_FROM_YAML)
 const LANGUAGES = ['et', 'en']
 
 const allPathAliases = []
-let fetchSpecific = []
 
-let article_index_template = `/_templates/magazine_index_template.pug`
-
-
+// 5350
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
 fetchSpecific = targeted ? target : []
+
+let article_index_template = `/_templates/magazine_index_template.pug`
 
 const targetedArticle = STRAPIDATA_ARTICLES.filter(a => a.remote_id === target[0])[0] || []
 const targetArticleRelations = targetedArticle.related ? targetedArticle.related.map(a => a.remote_id) : []

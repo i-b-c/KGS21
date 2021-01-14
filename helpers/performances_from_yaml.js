@@ -2,6 +2,7 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
+const addConfigPathAliases = require('./add_config_path_aliases.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
 // const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
@@ -31,6 +32,12 @@ const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerforma
     return p
 })
 
+const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
+const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.events.map(ev => ev.remote_id).includes(process.argv[4])))[0] || []).remote_id
+const target = process.argv[3] && process.argv[3] === 'e' && process.argv[4] ? (eventPerformanceId ? eventPerformanceId : []) : process.argv[3]
+
+fetchSpecific = targeted ? [target] : []
+
 const allPathAliases = []
 
 const LANGUAGES = ['et', 'en']
@@ -42,7 +49,6 @@ for (const lang of LANGUAGES) {
     let allData = []
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
-
 
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.remote_id) ? true : false
 
@@ -123,3 +129,9 @@ function addAliases(oneEventData, pathAliases) {
 }
 
 pathAliasesFunc(fetchDir, allPathAliases, 'performances')
+
+if (targeted) {
+    const allTargets = fetchSpecific.map(a => `_fetchdir/performances/${a}`)
+    // allTargets.push(`magazine/`)
+    addConfigPathAliases(allTargets)
+}
