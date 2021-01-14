@@ -2,6 +2,7 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
+const addConfigPathAliases = require('./add_config_path_aliases.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
 // const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
@@ -40,7 +41,18 @@ const STRAPIDATA_EVENTS = STRAPIDATA_EVENTS_YAML.filter(e => !e.hide_from_page).
     return ev
 })
 
+const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
+const performanceEventsIds = (STRAPIDATA_EVENTS.filter(e => e.performance && e.performance.remote_id === process.argv[4]) || []).map(e => e.remote_id)
+const target = process.argv[3] && process.argv[3] === 'p' && process.argv[4] ? (performanceEventsIds ? performanceEventsIds : []) : [process.argv[3]]
+
+let fetchSpecific = targeted ? target : []
+
 const allPathAliases = []
+
+// const targetedEvent = STRAPIDATA_EVENTS.filter(a => a.remote_id === target[0])[0] || []
+// const targetEventChildEvents = targetedEvent.child_events ? targetedEvent.child_events.map(c => c.remote_id) : []
+// console.log(targetEventChildEvents);
+// targetEventChildEvents.map(a => fetchSpecific.push(a))
 
 for (const lang of LANGUAGES) {
 
@@ -253,3 +265,39 @@ function addAliases(oneEventData, pathAliases) {
 }
 
 pathAliasesFunc(fetchDir, allPathAliases, 'events')
+
+if (targeted) {
+    let isFestival = false
+    let isResidency = false
+    let isTour = false
+    let isProject = false
+
+    const allTargets = fetchSpecific.map(a => {
+
+        const eventType = STRAPIDATA_EVENTS.filter(e => e.remote_id === a)[0]
+
+        if (eventType) {
+            if (eventType.type === 'festival') {
+                isFestival = true
+                return `_fetchdir/festival/${a}`
+            } else if (eventType.type === 'residency') {
+                isResidency = true
+                return `_fetchdir/residencies/${a}`
+            } else if (eventType.type === 'tour') {
+                isTour = true
+                return null
+            }
+        }
+        return null
+    }).filter(a => a !== null)
+
+    if (isFestival) { allTargets.push(`festivals/`) }
+    if (isResidency) { allTargets.push(`residency/`) }
+    if (isTour) { allTargets.push(`tours/`) }
+    if (isProject) { allTargets.push(`projects/`) }
+
+    allTargets.push(`home/`)
+    allTargets.push(`program/`)
+
+    addConfigPathAliases(allTargets)
+}
