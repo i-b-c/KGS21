@@ -14,10 +14,10 @@
     "price": {
       "type": "decimal"
     },
-    "discount_price": {
+    "discount": {
       "type": "decimal"
     },
-    "price_on_spot": {
+    "onsite_price": {
       "type": "decimal"
     },
     "ticketing_url_et": {

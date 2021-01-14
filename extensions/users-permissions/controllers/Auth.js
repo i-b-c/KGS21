@@ -34,7 +34,6 @@ module.exports = {
       if (!_.get(await store.get({ key: 'grant' }), 'email.enabled')) {
         return ctx.badRequest(null, 'This provider is disabled.');
       }
-
       // The identifier is required.
       if (!params.identifier) {
         return ctx.badRequest(
@@ -272,6 +271,9 @@ module.exports = {
       'users-permissions'
     ].services.providers.buildRedirectUri(provider);
 
+    if (ctx.request.header.referer === 'http://localhost:4000/'){
+    grantConfig.google.callback = 'http://localhost:4000/login'
+  }
     return grant(grantConfig)(ctx, next);
   },
 
@@ -751,7 +753,7 @@ module.exports = {
           key: 'advanced',
         })
         .get();
-
+      
       ctx.redirect(settings.email_confirmation_redirection || '/');
     }
   },

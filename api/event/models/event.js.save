@@ -1,0 +1,36 @@
+'use strict';
+
+/**
+ * Read the documentation (https://strapi.io/documentation/v3.x/concepts/models.html#lifecycle-hooks)
+ * to customize this model
+ */
+
+function slugify(text)
+{
+    return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start of text
+        .replace(/-+$/, '');            // Trim - from end of text
+}
+
+const { execFile } = require('child_process');
+
+module.exports = {
+  lifecycles: {
+    beforeUpdate(params, data) {
+
+      console.log('data', data, params);
+      data.slug_et = data.name_et ? slugify( data.name_et) + '-' + data.remote_id : null
+      data.slug_en = data.name_en ? slugify( data.name_en) + '-' + data.remote_id : null
+      
+	const child = execFile(ror, stdout, stderr) => {
+  	if (error) {
+    		throw error;
+  	}
+  		console.log(stdout);
+	});
+    },
+  },
+};

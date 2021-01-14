@@ -57,7 +57,6 @@ module.exports = {
   },
 
   async updateContentTypeConfiguration(ctx) {
-    console.log('updateContentTypeConfiguration');
     const { userAbility } = ctx.state;
     const { uid } = ctx.params;
     const { body } = ctx.request;
@@ -86,7 +85,6 @@ module.exports = {
         strict: true,
       });
     } catch (error) {
-      console.log(error);
       return ctx.badRequest(null, {
         name: 'validationError',
         errors: error.errors,

@@ -17,7 +17,7 @@
         "facebook",
         "local"
       ],
-      "unique": true
+      "unique": false
     }
   }
 }

@@ -66,7 +66,6 @@ const RelationPreviewTooltip = ({
       try {
         tooltipRef.current.updatePosition();
       } catch (err) {
-        console.log(err);
       }
     }
   }, [isLoading]);
