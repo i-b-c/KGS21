@@ -50,7 +50,7 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.id) ? true : false
+        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.id.toString()) ? true : false
 
         if (performance.remote_id) {
 
@@ -62,6 +62,7 @@ for (const lang of LANGUAGES) {
             }
 
             if (createDir) {
+
                 if (lang === 'et') {
                     addAliases(performance, [`et/performance/${performance.remote_id}`])
                 }
