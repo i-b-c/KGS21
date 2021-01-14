@@ -4,8 +4,9 @@ const path = require('path')
 const addConfigPathAliases = require('./add_config_path_aliases.js')
 
 const targeted = process.argv[2] === '-t' ? true : false
+const sourceDir = path.join(__dirname, '..', 'source')
 const fetchDir = path.join(__dirname, '..', 'source', '_fetchdir')
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const strapiDataBannersPath = path.join(strapiDataDirPath, 'Banner.yaml')
 
 const STRAPIDATA_BANNERS = yaml.safeLoad(fs.readFileSync(strapiDataBannersPath, 'utf8'))

@@ -10,7 +10,7 @@ const typesToInclude = ['program', 'tour', 'festival']
 
 const assetsDir = path.join(rootDir, 'assets')
 const calendarJsonPath = path.join(assetsDir, 'calendar_json.json')
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 
 const strapiDataCategoriesPath = path.join(strapiDataDirPath, `Category.yaml`)
 const strapiDataPerformancesPath = path.join(strapiDataDirPath, `Performance.yaml`)
