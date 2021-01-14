@@ -41,7 +41,7 @@ for (const lang of LANGUAGES) {
 
     for (const article of STRAPIDATA_ARTICLES) {
 
-        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(article.id) ? true : false
+        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(article.id.toString()) ? true : false
 
 
         if (article[`title_${lang}`] && article.remote_id) {
