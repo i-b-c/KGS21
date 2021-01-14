@@ -20,7 +20,7 @@ for (const lang of LANGUAGES) {
         .sort((a, b) => new Date(b.publish_time) - new Date(a.publish_time))
 
     console.log(`${allData.length} newscasts from YAML (${lang})`);
-    const newscastsYAML = yaml.safeDump(allData, { 'indent': '4' });
+    const newscastsYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(newscastsYAMLPath, newscastsYAML, 'utf8');
 }
 

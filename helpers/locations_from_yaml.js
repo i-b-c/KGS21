@@ -30,6 +30,6 @@ for (const lang of LANGUAGES) {
     let allData = STRAPIDATA_LOCATIONS.filter(e => e[`name_${lang}`])
     allData.sort((a,b) => b.order - a.order)
     console.log(`Locations from YAML`)
-    const locationsYAML = yaml.safeDump(allData, { 'indent': '4' })
+    const locationsYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(locationsYAMLPath, locationsYAML, 'utf8')
 }

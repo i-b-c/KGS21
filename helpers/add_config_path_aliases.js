@@ -14,7 +14,7 @@ function addConfigPathAliases(pathAliases = []) {
 
     BUILD_CONFIG.dev.paths = unique_paths
 
-    const BUILD_CONFIG_YAML = yaml.safeDump(BUILD_CONFIG, { 'indent': '4' });
+    const BUILD_CONFIG_YAML = yaml.safeDump(BUILD_CONFIG, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(buildConfigPath, BUILD_CONFIG_YAML, 'utf8');
 
     console.log('Added config build paths:')
