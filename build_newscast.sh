@@ -20,7 +20,6 @@ done
 printf '\n\n---------- Creating separate YAML files from data ----------\n\n'
 
 echo '==== build ==== newscast_from_yaml'
-pwd
 node ./helpers/newscast_from_yaml.js -t
 
 echo '==== build ==== ENTU SSG'
