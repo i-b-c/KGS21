@@ -78,10 +78,44 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaa",
-                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaa"
+                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa"
                 },
                 "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-12-3": [
+            {
+                "eid": "6858",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
+                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
+                },
+                "time": "20:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "eid": "6858",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
+                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
+                },
+                "time": "18:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
@@ -242,40 +276,6 @@
                 }
             }
         ],
-        "2020-12-3": [
-            {
-                "eid": "6858",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": "6858",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2020-11-2": [
             {
                 "eid": "6757",
@@ -291,40 +291,6 @@
                 "location": {
                     "et": "Püha Vaimu SAAL",
                     "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2020-12-2": [
-            {
-                "eid": "6858",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": "6858",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -526,8 +492,8 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaa",
-                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaa"
+                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa"
                 },
                 "time": "19:00",
                 "location": {
@@ -594,8 +560,8 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaa",
-                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaa"
+                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa"
                 },
                 "time": "19:00",
                 "location": {
@@ -662,8 +628,8 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaa",
-                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaa"
+                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa"
                 },
                 "time": "19:30",
                 "location": {
@@ -814,10 +780,44 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaa",
-                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaa"
+                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa"
                 },
                 "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-12-2": [
+            {
+                "eid": "6858",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
+                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
+                },
+                "time": "20:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "eid": "6858",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
+                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
+                },
+                "time": "18:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
@@ -1010,8 +1010,8 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaa",
-                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaa"
+                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa"
                 },
                 "time": "19:30",
                 "location": {
@@ -1028,8 +1028,8 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaa",
-                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaa"
+                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa"
                 },
                 "time": "19:30",
                 "location": {
@@ -1496,8 +1496,8 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaa",
-                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaa"
+                    "et": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "en": "Kas te olete oma kohaga rahulaaaaaaaaaaaaaaaaaaaaaaaa"
                 },
                 "time": "19:30",
                 "location": {
