@@ -42,15 +42,14 @@ const STRAPIDATA_EVENTS = STRAPIDATA_EVENTS_YAML.filter(e => !e.hide_from_page).
 })
 
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
-const performanceEventsIds = (STRAPIDATA_EVENTS.filter(e => e.performance && e.performance.remote_id === process.argv[4]) || []).map(e => e.remote_id)
+const performanceEventsIds = (STRAPIDATA_EVENTS.filter(e => e.performance && e.performance.id === process.argv[4]) || []).map(e => e.id)
 const target = process.argv[3] && process.argv[3] === 'p' && process.argv[4] ? (performanceEventsIds ? performanceEventsIds : []) : [process.argv[3]]
 
 let fetchSpecific = targeted ? target : []
-
 const allPathAliases = []
 
-// const targetedEvent = STRAPIDATA_EVENTS.filter(a => a.remote_id === target[0])[0] || []
-// const targetEventChildEvents = targetedEvent.child_events ? targetedEvent.child_events.map(c => c.remote_id) : []
+// const targetedEvent = STRAPIDATA_EVENTS.filter(a => a.id === target[0])[0] || []
+// const targetEventChildEvents = targetedEvent.child_events ? targetedEvent.child_events.map(c => c.id) : []
 // console.log(targetEventChildEvents);
 // targetEventChildEvents.map(a => fetchSpecific.push(a))
 
@@ -70,7 +69,7 @@ for (const lang of LANGUAGES) {
 
         let combined_coverages = null
 
-        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.remote_id) ? true : false
+        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.id.toString()) ? true : false
 
         if (oneEvent.coverages) {
             performance.coverages = performance.coverages ? performance.coverages.map(c => STRAPIDATA_COVERAGES.filter(sc => sc.id === c.id)[0]) : []
@@ -241,7 +240,8 @@ function festival_child_events(child_events_data, lang) {
 
 function createDirAndFiles(oneEventData, lang, dirPath, addPath, indexTemplateType) {
     const thisYAML = yaml.safeDump(oneEventData, { 'noRefs': true, 'indent': '4' })
-    const onePath = addPath ? path.join(dirPath, oneEventData.remote_id, addPath) : path.join(dirPath, oneEventData.remote_id)
+    const idToString = oneEventData.id.toString()
+    const onePath = addPath ? path.join(dirPath, idToString, addPath) : path.join(dirPath, idToString)
     fs.mkdirSync(onePath, { recursive: true })
     fs.writeFileSync(`${onePath}/data.${lang}.yaml`, thisYAML, 'utf8')
 
@@ -274,7 +274,7 @@ if (targeted) {
 
     const allTargets = fetchSpecific.map(a => {
 
-        const eventType = STRAPIDATA_EVENTS.filter(e => e.remote_id === a)[0]
+        const eventType = STRAPIDATA_EVENTS.filter(e => e.id.toString() === a)[0]
 
         if (eventType) {
             if (eventType.type === 'festival') {

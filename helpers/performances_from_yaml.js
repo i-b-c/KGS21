@@ -33,7 +33,7 @@ const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerforma
 })
 
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
-const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.events.map(ev => ev.remote_id).includes(process.argv[4])))[0] || []).remote_id
+const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.events.map(ev => ev.id).includes(process.argv[4])))[0] || []).id
 const target = process.argv[3] && process.argv[3] === 'e' && process.argv[4] ? (eventPerformanceId ? eventPerformanceId : []) : process.argv[3]
 
 fetchSpecific = targeted ? [target] : []
@@ -50,7 +50,7 @@ for (const lang of LANGUAGES) {
 
     for (const performance of STRAPIDATA_PERFORMANCES) {
 
-        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.remote_id) ? true : false
+        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.id) ? true : false
 
         if (performance.remote_id) {
 
@@ -98,7 +98,7 @@ for (const lang of LANGUAGES) {
                 performance.data = { categories: `/_fetchdir/categories.${lang}.yaml`}
 
                 const performanceYAML = yaml.safeDump(performance, {'noRefs': true, 'indent': '4' });
-                const performanceDir = path.join(performancesDir, performance.remote_id)
+                const performanceDir = path.join(performancesDir, performance.id.toString())
                 const performanceYAMLPath = path.join(performanceDir, `data.${lang}.yaml`)
 
                 fs.mkdirSync(performanceDir, { recursive: true });

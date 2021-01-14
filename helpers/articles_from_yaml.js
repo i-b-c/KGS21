@@ -31,8 +31,8 @@ fetchSpecific = targeted ? target : []
 
 let article_index_template = `/_templates/magazine_index_template.pug`
 
-const targetedArticle = STRAPIDATA_ARTICLES.filter(a => a.remote_id === target[0])[0] || []
-const targetArticleRelations = targetedArticle.related ? targetedArticle.related.map(a => a.remote_id) : []
+const targetedArticle = STRAPIDATA_ARTICLES.filter(a => a.id === target[0])[0] || []
+const targetArticleRelations = targetedArticle.related ? targetedArticle.related.map(a => a.id) : []
 targetArticleRelations.map(a => fetchSpecific.push(a))
 
 for (const lang of LANGUAGES) {
@@ -41,7 +41,7 @@ for (const lang of LANGUAGES) {
 
     for (const article of STRAPIDATA_ARTICLES) {
 
-        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(article.remote_id) ? true : false
+        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(article.id) ? true : false
 
 
         if (article[`title_${lang}`] && article.remote_id) {
@@ -63,7 +63,7 @@ for (const lang of LANGUAGES) {
                 }
 
                 const articleYAML = yaml.safeDump(article, { 'noRefs': true, 'indent': '4' });
-                const articleDir = path.join(articlesDir, article.remote_id)
+                const articleDir = path.join(articlesDir, article.id.toString())
                 const articleYAMLPath = path.join(articleDir, `data.${lang}.yaml`)
 
                 fs.mkdirSync(articleDir, { recursive: true });
