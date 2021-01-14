@@ -11,7 +11,7 @@ const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const LANGUAGES = ['et', 'en']
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const festivalsDirPath = path.join(fetchDir, `festivals`)
 const residenciesDirPath = path.join(fetchDir, `residencies`)
 

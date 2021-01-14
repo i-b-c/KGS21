@@ -7,7 +7,7 @@ const targeted = process.argv[2] === '-t' ? true : false
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const strapiDataPersonsPath = path.join(strapiDataDirPath, 'Person.yaml')
 const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPersonsPath, 'utf8'))
 

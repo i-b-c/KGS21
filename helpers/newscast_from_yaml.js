@@ -8,7 +8,7 @@ const targeted = process.argv[2] === '-t' ? true : false
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const strapiDataNewscastsPath = path.join(strapiDataDirPath, 'Newscast.yaml')
 const STRAPIDATA_NEWSCASTS = yaml.safeLoad(fs.readFileSync(strapiDataNewscastsPath, 'utf8'))
 const LANGUAGES = ['et', 'en']

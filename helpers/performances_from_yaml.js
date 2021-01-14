@@ -12,7 +12,7 @@ const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const performancesDir = path.join(fetchDir, 'performances')
 
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const strapiDataEventsPath = path.join(strapiDataDirPath, 'Event.yaml')
 const strapiDataCategoriesPath = path.join(strapiDataDirPath, 'Category.yaml')
 const strapiDataCoveragesPath = path.join(strapiDataDirPath, 'Coverage.yaml')
