@@ -5,22 +5,23 @@ nav.navbar.navbar-default.navbar-fixed-top
                 .icon-bar
                 .icon-bar
                 .icon-bar
-            a.navbar-brand.logo(href='festivals')
+            a.navbar-brand.logo(href=`/${lang_path}festivals`)
                 img(src='/assets/images/saal_logo.svg', alt='LOGO ALT TEXT!')
 
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
-                - var fest_path = `/festival/${self.remote_id}`
-                - var fest_path_lang = `/${lang_path}festival/${self.remote_id}`
+                - var fest_path = self[`slug_${self.locale}`] || self.remote_id ? (self[`slug_${self.locale}`] ? `festival/${self[`slug_${self.locale}`]}` : `festival/${self.remote_id}`) : null
+                - var fest_path_lang = `/${lang_path}${fest_path}`
+
                 li(class= (self.path === `${fest_path}/about/` || self.path === `${fest_path_lang}/about/`) ? 'active' : undefined )
-                    a(href=`${fest_path}/about/`)= self.labels.nav.about_festival
+                    a(href=`/${lang_path}${fest_path}/about/`)= self.labels.nav.about_festival
                 if self.coverages
                     li(class= (self.path === `${fest_path}/press/` || self.path === `${fest_path_lang}/press/`) ? 'active' : undefined )
-                        a(href=`${fest_path}/press`)= self.labels.nav.press
+                        a(href=`/${lang_path}${fest_path}/press`)= self.labels.nav.press
                 li(class= (self.path === `${fest_path}/program/` || self.path === `${fest_path_lang}/program/`) ? 'active' : undefined )
-                    a(href=`${fest_path}/program`)= self.labels.nav.program
-                li(class= self.path === `${fest_path}/tickets` ? 'active' : undefined )
-                    a(href=`${fest_path}/tickets`)= self.labels.nav.tickets
+                    a(href=`/${lang_path}${fest_path}/program`)= self.labels.nav.program
+                li(class= (self.path === `${fest_path}/tickets/` || self.path === `${fest_path_lang}/tickets/`) ? 'active' : undefined )
+                    a(href=`/${lang_path}${fest_path}/tickets`)= self.labels.nav.tickets
 
 
             ul.nav.navbar-nav.navbar-right.social

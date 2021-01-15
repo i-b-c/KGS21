@@ -65,7 +65,8 @@ for (const event of STRAPIDATA_EVENTS) {
   let performance_name_en = event.performance.name_en ? event.performance.name_en : (event.name_en ? event.name_en : (event.performance.X_headline_en || ''))
 
   eventCalendar.events[event_date].push({
-    eid: event.performance.remote_id,
+    et_id: event.performance.slug_et || event.performance.remote_id ? (event.performance.slug_et ? event.performance.slug_et : event.performance.remote_id) : null,
+    en_id: event.performance.slug_en || event.performance.remote_id ? (event.performance.slug_en ? event.performance.slug_en : event.performance.remote_id) : null,
     tag: [event.type === 'program' ? 'event' : event.type],
     controller: 'performance',
     name: {

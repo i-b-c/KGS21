@@ -22,7 +22,7 @@ block content
                             .item(class=(featureActive++ === 0 ? 'active' : ''))
                                 a(href=carousel_url)
                                     - var photoBig = performance.hero_images ? `${m_api}${performance.hero_images[0]}` : '/assets/images/placeholder.jpg'
-                                    figure(id=`slide-${performance.remote_id}`, style=`background-image: url('${photoBig}');`)
+                                    figure(id=`slide-${performance.id}`, style=`background-image: url('${photoBig}');`)
                                     header.col-md-8
                                         if performance[`X_headline_${self.locale}`]
                                             p= performance[`X_headline_${self.locale}`]
@@ -42,12 +42,12 @@ block content
 
                                 - var activeCategories = []
                                     if performance.categories
-                                        - activeCategories = performance.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
+                                        - activeCategories = performance.categories.filter( e => e.featured_on_front_page).map( e => e.id )
                                     ul.event-categories
                                         if self.data.categories
                                             each category in self.data.categories
                                                 if category.featured_on_front_page
-                                                    li.text-uppercase.h3( class =( activeCategories.includes(category.remote_id) ? "" : "unactive" ) )
+                                                    li.text-uppercase.h3( class =( activeCategories.includes(category.id) ? "" : "unactive" ) )
                                                         span
                                                             a(href="")= category[`name_${self.locale}`]
 
@@ -61,8 +61,8 @@ block content
                     each performance in featured
                         script.
                             var gradientMap = '#000000, #FFC600';
-                            var slide#{performance.remote_id} = document.getElementById('slide-#{performance.remote_id}');
-                            GradientMaps.applyGradientMap(slide#{performance.remote_id}, gradientMap);
+                            var slide#{performance.id} = document.getElementById('slide-#{performance.id}');
+                            GradientMaps.applyGradientMap(slide#{performance.id}, gradientMap);
 
         .row.front-page-margin
             section.col-xs-12.col-md-12.col-lg-9
@@ -79,7 +79,7 @@ block content
                     if events && events.length
                         each event in events
                             - var eventDate = new Date(event.start_time)
-                            div(id=event.remote_id type-name="program" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' style='display: none;')
+                            div(id=event.id type-name="program" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' style='display: none;')
                                 .col-xs-12.col-sm-2.col-lg-2
                                     p
                                         +dayName(event.start_time)
@@ -96,12 +96,12 @@ block content
                                     if event.premiere
                                         p.today= self.labels.button.premiere
 
-                                    p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
+                                    p.today(id=`today-${event.id}` style='display: none;') TÄNA!
 
                                 .col-xs-12.col-md-6.col-lg-6
                                     h3
-                                        if event.performance_remote_id
-                                            a(href=`/${lang_path}performance/${event.performance_remote_id}`)
+                                        if event.performance_path
+                                            a(href=`/${lang_path}${event.performance_path}`)
                                                 if event[`performance_X_headline_${self.locale}`]
                                                     span.subtitle= event[`performance_X_headline_${self.locale}`]
 
@@ -120,7 +120,7 @@ block content
                                                     span.subtitle= event[`performance_subtitle_${self.locale}`]
                                         else
                                             //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
-                                            a(href='/' + lang_path + '/event/' + event.remote_id)= event[`name_${self.locale}`]
+                                            a(href=`/${lang_path}${event.path}`)= event[`name_${self.locale}`]
                                                 if event[`X_headline_${self.locale}`]
                                                     span.subtitle= event[`X_headline_${self.locale}`]
 
@@ -187,7 +187,7 @@ block content
                     if tourEvents && tourEvents.length
                         each event in tourEvents
                             - var eventDate = new Date(event.start_time)
-                            div(id=event.remote_id type-name="tour" start-time=`${event.start_time}` style='display: none;')
+                            div(id=event.id type-name="tour" start-time=`${event.start_time}` style='display: none;')
                                 .col-xs-12.col-sm-2.col-lg-2
                                     p
                                         +dayName(event.start_time)
@@ -204,12 +204,12 @@ block content
                                     if event.premiere
                                         p.today= self.labels.button.premiere
 
-                                    p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
+                                    p.today(id=`today-${event.id}` style='display: none;') TÄNA!
 
                                 .col-xs-12.col-md-6.col-lg-6
                                     h3
-                                        if event.performance_remote_id
-                                            a(href=`/${lang_path}performance/${event.performance_remote_id}`)
+                                        if event.performance_path
+                                            a(href=`/${lang_path}${event.performance_path}`)
                                                 if event[`performance_X_headline_${self.locale}`]
                                                     span.subtitle= event[`performance_X_headline_${self.locale}`]
 
@@ -228,7 +228,7 @@ block content
                                                     span.subtitle= event[`performance_subtitle_${self.locale}`]
                                         else
                                             //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
-                                            a(href='/' + lang_path + '/event/' + event.remote_id)= event[`name_${self.locale}`]
+                                            a(href=`/${lang_path}${event.path}`)= event[`name_${self.locale}`]
                                                 if event[`X_headline_${self.locale}`]
                                                     span.subtitle= event[`X_headline_${self.locale}`]
 
@@ -297,15 +297,15 @@ block content
                     - var residencyEvents = self.data.events.filter(e => new Date(e.end_time)>new Date() && e.type === "residency").sort((a, b) => (new Date(b.start_time) || 0) - (new Date(a.start_time) || 0))
                     if residencyEvents && residencyEvents.length
                         each event in residencyEvents.slice(0, listlength)
-                            div(id=event.remote_id type-name="residency" start-time=`${event.start_time}` end-time=`${event.end_time}` style='display: none;')
+                            div(id=event.id type-name="residency" start-time=`${event.start_time}` end-time=`${event.end_time}` style='display: none;')
                                 .col-xs-12.col-sm-2.col-lg-2
                                     p
                                         +dateFromTo(event.start_time, event.end_time)
 
                                 .col-xs-12.col-md-6.col-lg-6
                                     h3
-                                        if event.remote_id
-                                            a(href=`/${lang_path}resident/${event.remote_id}`)
+                                        if event.path
+                                            a(href=`/${lang_path}${event.path}`)
 
                                                 if event.resident
                                                     span.artist= event.resident
