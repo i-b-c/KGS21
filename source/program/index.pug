@@ -11,33 +11,10 @@ block content
                             - categories = self.data.categories.filter(c => c.featured_on_front_page)
                                 if categories.length
                                     each category in categories
-                                        a(onclick=`toggleCat(${category.remote_id});`)
+                                        a(onclick=`toggleCat(${category.id});`)
                                             .active= category[`name_${self.locale}`]
-                                                span(id=category.remote_id).icon-checkmark
-                                        //- a(href="program/2020/12/623,3810,3811,3812,3814,5027")
-                                        //-     .active
-                                        //-         | Tants
-                                        //-         span.icon-checkmark
-                                        //- a(href="program/2020/12/623,3809,3811,3812,3814,5027")
-                                        //-     .active
-                                        //-         | Performance
-                                        //-         span.icon-checkmark
-                                        //- a(href="program/2020/12/623,3809,3810,3812,3814,5027")
-                                        //-     .active
-                                        //-         | Teater
-                                        //-         span.icon-checkmark
-                                        //- a(href="program/2020/12/623,3809,3810,3811,3814,5027")
-                                        //-     .active
-                                        //-         | Muusika
-                                        //-         span.icon-checkmark
-                                        //- a(href="program/2020/12/623,3809,3810,3811,3812,5027")
-                                        //-     .active
-                                        //-         | Video
-                                        //-         span.icon-checkmark
-                                        //- a(href="program/2020/12/623,3809,3810,3811,3812,3814")
-                                        //-     .active
-                                        //-         | Näitus
-                                        //-         span.icon-checkmark
+                                                span(id=category.id).icon-checkmark
+
                 .row
                     .col-sm-12.col-md-12.col-lg-12
                         ul.pager
@@ -69,7 +46,7 @@ block content
                     if events && events.length
                         each event in events
                             - var eventDate = new Date(event.start_time)
-                            div(id=event.remote_id type-name="event" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' performance-categories=event.peformance_categories style='display: none;')
+                            div(id=event.id type-name="event" start-time=`${event.start_time}` premiere-time= event.performance_X_premiere_time ? event.performance_X_premiere_time : '' performance-categories=event.peformance_categories style='display: none;')
                                 .col-xs-12.col-sm-2.col-lg-2
                                     p
                                         +dayName(event.start_time)
@@ -87,12 +64,12 @@ block content
                                         p.today ESIETENDUS!
 
                                     //- if `${eventDate.getMonth()}.${eventDate.getDate()}` === `${currentDate.getMonth()}.${currentDate.getDate()}`
-                                    p.today(id=`today-${event.remote_id}` style='display: none;') TÄNA!
+                                    p.today(id=`today-${event.id}` style='display: none;') TÄNA!
 
                                 .col-xs-12.col-md-6.col-lg-6
                                     h3
-                                        if event.performance_remote_id
-                                            a(href=`/${lang_path}performance/${event.performance_remote_id}`)
+                                        if event.performance_path
+                                            a(href=`/${lang_path}${event.performance_path}`)
                                                 if event[`performance_X_headline_${self.locale}`]
                                                     span.subtitle= event[`performance_X_headline_${self.locale}`]
 
@@ -111,7 +88,7 @@ block content
                                                     span.subtitle= event[`performance_subtitle_${self.locale}`]
                                         else
                                             //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
-                                            a(href='/' + lang_path + '/event/' + event.remote_id)= event[`name_${self.locale}`]
+                                            a(href=`/${lang_path}${event.path}`)= event[`name_${self.locale}`]
                                                 if event[`X_headline_${self.locale}`]
                                                     span.subtitle= event[`X_headline_${self.locale}`]
 

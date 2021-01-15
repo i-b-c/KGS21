@@ -63,12 +63,12 @@ block content
                         - var count = 0
                         each newscast in self.data.newscasts
                             .panel
-                                div(id=`heading-${newscast.remote_id}` role="tab")
+                                div(id=`heading-${newscast.id}` role="tab")
                                     h3
-                                        a.collapsed(data-toggle="collapse" data-parent="#accordion" href=`#collapse-${newscast.remote_id}` aria-expanded="true" aria-controls=`collapse-${newscast.remote_id}`)= newscast[`title_${self.locale}`]
+                                        a.collapsed(data-toggle="collapse" data-parent="#accordion" href=`#collapse-${newscast.id}` aria-expanded="true" aria-controls=`collapse-${newscast.id}`)= newscast[`title_${self.locale}`]
                                 if count === 0
                                     - count++
-                                    div.panel-collapse.collapse.in(id=`collapse-${newscast.remote_id}` role="tabpanel" aria-labelledby=`heading-${newscast.remote_id}`)
+                                    div.panel-collapse.collapse.in(id=`collapse-${newscast.id}` role="tabpanel" aria-labelledby=`heading-${newscast.id}`)
                                         div
                                             p
                                             p
@@ -77,7 +77,7 @@ block content
                                             p
                                 else
 
-                                    div.panel-collapse.collapse(id=`collapse-${newscast.remote_id}` role="tabpanel" aria-labelledby=`heading-${newscast.remote_id}`)
+                                    div.panel-collapse.collapse(id=`collapse-${newscast.id}` role="tabpanel" aria-labelledby=`heading-${newscast.id}`)
                                         div
                                             p
                                             p

@@ -8,7 +8,7 @@ block content
                 .carousel-inner(role="listbox")
 
                     - var photoBig = self.hero_images ? `${m_api}${self.hero_images[0]}` : `/assets/images/placeholder.jpg`
-                    figure(id= `slide-${self.remote_id}` style=`background-image: url("${photoBig}");`)
+                    figure(id= `slide-${self.id}` style=`background-image: url("${photoBig}");`)
                     header.col-md-8
                         if self[`X_headline_${self.locale}`]
                             p= self[`X_headline_${self.locale}`]
@@ -27,20 +27,20 @@ block content
 
                     - var activeCategories = []
                     if self.categories
-                        - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
+                        - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.id )
 
                     if self.data.categories
                         ul.event-categories
                             each category in self.data.categories
                                 if category.featured_on_front_page
-                                    li.text-uppercase.h3( class =( activeCategories.includes(category.remote_id)? "" : "unactive" ) )
+                                    li.text-uppercase.h3( class =( activeCategories.includes(category.id)? "" : "unactive" ) )
                                         span
                                             a(href="")= category[`name_${self.locale}`]
 
                                 script.
-                                    var slide#{self.remote_id} = document.getElementById('slide-#{self.remote_id}');
+                                    var slide#{self.id} = document.getElementById('slide-#{self.id}');
                                     var gradientMap = '#000000, #FFC600';
-                                    GradientMaps.applyGradientMap(slide#{self.remote_id}, gradientMap);
+                                    GradientMaps.applyGradientMap(slide#{self.id}, gradientMap);
         .row.front-page-margin
             aside.col-md-12.col-lg-3
                 #direct-to-login-btn

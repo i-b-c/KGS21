@@ -58,7 +58,7 @@ for (const lang of LANGUAGES) {
     const categoriesYAMLPath = path.join(fetchDir, `categories.${lang}.yaml`)
     const categories = yaml.safeLoad(fs.readFileSync(categoriesYAMLPath, 'utf8'))
         .filter(c => c.featured_on_front_page)
-        .map(c => c.remote_id)
+        .map(c => c.id)
     let allData = []
 
 
@@ -81,6 +81,7 @@ for (const lang of LANGUAGES) {
         let oneEventData = {
             id: oneEvent.id,
             performance_remote_id: performance.remote_id || null,
+            performance_path: performance[`slug_${lang}`] || performance.remote_id ? (performance[`slug_${lang}`] ? `performance/${performance[`slug_${lang}`]}` : `performance/${performance.remote_id}`) : null,
             [`performance_name_${lang}`]: performance[`name_${lang}`] || null,
             [`performance_slug_${lang}`]: performance[`slug_${lang}`] || null,
             [`performance_X_headline_${lang}`]: performance[`X_headline_${lang}`] || null,
@@ -88,8 +89,10 @@ for (const lang of LANGUAGES) {
             performance_X_artist: performance.X_artist || null,
             performance_X_producer: performance.X_producer || null,
             [`performance_X_town_${lang}`]: performance[`X_town_${lang}`] || null,
-            peformance_categories: performance.categories ? performance.categories.map(c => c.remote_id).filter(c => categories.includes(c)) : null,
+            peformance_categories: performance.categories ? performance.categories.map(c => c.id).filter(c => categories.includes(c)) : null,
             remote_id: oneEvent.remote_id || null,
+            slug_et: oneEvent.slug_et || null,
+            slug_en: oneEvent.slug_en || null,
             type: oneEvent.type || null,
             start_time: oneEvent.start_time || null,
             end_time: oneEvent.end_time || null,
@@ -137,7 +140,7 @@ for (const lang of LANGUAGES) {
 
 function createResidency(oneEventData, lang, createDir) {
 
-    oneEventData.path = `resident/${oneEventData.remote_id}`
+    oneEventData.path = oneEventData[`slug_${lang}`] || oneEventData.remote_id ? (oneEventData[`slug_${lang}`] ? `resident/${oneEventData[`slug_${lang}`]}` : `resident/${oneEventData.remote_id}`) : null
     oneEventData.data = { categories: `/_fetchdir/categories.${lang}.yaml` }
     if (lang === 'et') {
         addAliases(oneEventData, [`et/resident/${oneEventData.remote_id}`])
@@ -148,12 +151,12 @@ function createResidency(oneEventData, lang, createDir) {
 
 function createFestival(oneEventData, lang, createDir) {
 
-    let festivalHomePath = `festival/${oneEventData.remote_id}/`
+    let festivalHomePath = oneEventData[`slug_${lang}`] || oneEventData.remote_id ? (oneEventData[`slug_${lang}`] ? `festival/${oneEventData[`slug_${lang}`]}/` : `festival/${oneEventData.remote_id}/`) : null
     // FESTIVAL PROGRAM/LANDING PAGE
-    oneEventData.path = `${festivalHomePath}program/`
+    oneEventData.path = `${festivalHomePath}program`
 
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}program/`,])
+        addAliases(oneEventData, [`et/${festivalHomePath}program`,])
         addAliases(oneEventData, [`${festivalHomePath}`])
         addAliases(oneEventData, [`et/${festivalHomePath}`])
     }
@@ -162,10 +165,10 @@ function createFestival(oneEventData, lang, createDir) {
 
 
     // FESTIVAL ABOUT PAGE
-    oneEventData.path = `${festivalHomePath}about/`
+    oneEventData.path = `${festivalHomePath}about`
 
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}about/`])
+        addAliases(oneEventData, [`et/${festivalHomePath}about`])
     } else {
         // delete oneEventData.aliases
     }
@@ -174,10 +177,10 @@ function createFestival(oneEventData, lang, createDir) {
 
 
     // FESTIVAL TICKETS PAGE
-    oneEventData.path = `${festivalHomePath}tickets/`
+    oneEventData.path = `${festivalHomePath}tickets`
 
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}tickets/`])
+        addAliases(oneEventData, [`et/${festivalHomePath}tickets`])
     } else {
         // delete oneEventData.aliases
     }
@@ -186,10 +189,10 @@ function createFestival(oneEventData, lang, createDir) {
 
 
     // FESTIVAL PRESS PAGE
-    oneEventData.path = `${festivalHomePath}press/`
+    oneEventData.path = `${festivalHomePath}press`
 
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}press/`])
+        addAliases(oneEventData, [`et/${festivalHomePath}press`])
     } else {
         // delete oneEventData.aliases
     }
@@ -198,9 +201,9 @@ function createFestival(oneEventData, lang, createDir) {
 
 
     // RESET FOR ALLDATA WRITING
-    oneEventData.path = `${festivalHomePath}program/`
+    oneEventData.path = `${festivalHomePath}program`
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}program/`])
+        addAliases(oneEventData, [`et/${festivalHomePath}program`])
     }
 
 }
@@ -212,7 +215,7 @@ function festival_child_events(child_events_data, lang) {
 
         return {
             id: child_event.id,
-            performance_remote_id: event_performance.remote_id || null,
+            performance_path: event_performance[`slug_${lang}`] || event_performance.remote_id ? (event_performance[`slug_${lang}`] ? `performance/${event_performance[`slug_${lang}`]}` : `performance/${event_performance.remote_id}`) : null,
             start_time: child_event.start_time || null,
             premiere: child_event.premiere || null,
             [`performance_name_${lang}`]: event_performance[`name_${lang}`] || null,
