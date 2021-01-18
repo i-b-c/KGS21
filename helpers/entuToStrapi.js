@@ -98,7 +98,7 @@ async function categoriesToStrapi() {
 
         starpi_category_id = categories_from_strapi.filter(s_category => {
             return s_category.remote_id === category_entity.id.toString()
-        }).map(e => { return e.id })[0]
+        }).map(e => { return e.id })[0] || null
 
         return {
             "remote_id": category_entity.id.toString(),
@@ -114,6 +114,9 @@ async function categoriesToStrapi() {
     putToStrapi(category, 'categories')
 
     // POST
+    let categriesToWrite = category.filter( e => {
+        return e.id === undefined
+    })
     // postToStrapi(category, 'categories')
 }
 
@@ -208,7 +211,7 @@ async function performanceToStrapi() {
 
         starpi_performance_id = performances_from_strapi.filter(s_performance => {
             return s_performance.remote_id === performance_entity.id.toString()
-        }).map(e => { return e.id })[0]
+        }).map(e => { return e.id })[0] || null
 
 
         return {
@@ -253,21 +256,20 @@ async function performanceToStrapi() {
 
     })
 
-    performancesToPost = performances.filter(performance => {return performance.id === undefined})
+    let performancesToPost = performances.filter(performance => {return performance.id === null})
     // console.log(JSON.stringify(performances.filter(p => p.X_town_et), null, 4))
     // console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id + ' ' + t.id).join("\n"))
-    for(performance of performancesToPost){
+    // for(performance of performancesToPost){
         // console.log(performance.remote_id)
-    }
+    // }
 
     // console.log(performances)
     // PUT
-    putToStrapi(performances, 'performances')
+    // putToStrapi(performances, 'performances')
 
     // POST
-    // console.log(performancesToPost);
+    console.log(performancesToPost);
     // postToStrapi(performancesToPost, 'performances')
-
 }
 
 async function coveragesToStrapi() {
@@ -289,7 +291,7 @@ async function coveragesToStrapi() {
 
         starpi_coverage_id = coverages_from_strapi.filter(s_coverage => {
             return s_coverage.remote_id === coverage_entity.id.toString()
-        }).map(e => { return e.id })[0]
+        }).map(e => { return e.id })[0] || null
 
         return {
             "remote_id": coverage_id,
@@ -305,9 +307,13 @@ async function coveragesToStrapi() {
     // console.log(coverages)
 
     // PUT
-    putToStrapi(coverages, 'coverages')
+    // putToStrapi(coverages, 'coverages')
 
-    // postToStrapi(coverages, 'coverages')
+    let coveragesToPost = coverages.filter( e => {
+        return e.id === null
+    })
+    console.log(coveragesToPost)
+    // postToStrapi(coveragesToPost, 'coverages')
 }
 
 async function locationToStrapi() {
@@ -564,8 +570,8 @@ async function eventsToStrapi() {
         }
     })
 
-    // let eventsToPost = events.filter( e => e.id === undefined)
-    // console.log(eventsToPost);
+    let eventsToPost = events.filter( e => e.id === null)
+    console.log(eventsToPost);
 
     // for (let i = 0; i < 10; i++) {
     //     console.log(JSON.stringify(events, null, 4))
@@ -573,10 +579,10 @@ async function eventsToStrapi() {
     // }
 
     // // PUT
-    putToStrapi(events, 'events')
+    // putToStrapi(events, 'events')
 
     // // POST
-    // postToStrapi(eventsToPost, 'events')
+    postToStrapi(eventsToPost, 'events')
 }
 
 function eventRemote2Strapi(remote_id) {
@@ -636,10 +642,14 @@ async function newsToStrapi() {
     // console.log(util.inspect(news, null, 4))
 
     // PUT
-    putToStrapi(news, 'newscasts')
+    // putToStrapi(news, 'newscasts')
 
     // POST
-    // postToStrapi(news, 'newscasts')
+    let newsToPost = news.filter( e => {
+        return e.id === null
+    })
+    console.log(JSON.stringify(newsToPost, 0, 2))
+    // postToStrapi(newsToPost, 'newscasts')
 }
 
 async function labelsToStrapi() {
@@ -696,8 +706,8 @@ async function main() {
     // await locationToStrapi()
     // await eventsToStrapi()
     // await eventChildRelationToStrapi()
-    // await newsToStrapi()
-    // await labelsToStrapi()
+    await newsToStrapi()
+    // await labelsToStrapi() // palju k4sitsi lisatud, sisulist vajadust kirjutamiseks pole
     // await articlesToStrapi()
 
     // await fromStrapi('banner-types')
