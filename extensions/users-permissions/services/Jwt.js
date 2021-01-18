@@ -8,6 +8,7 @@
 
 const _ = require('lodash');
 const jwt = require('jsonwebtoken');
+const { updateme } = require ('../controllers/user/api')
 
 module.exports = {
   getToken(ctx) {
@@ -39,6 +40,11 @@ module.exports = {
   },
 
   issue(payload, jwtOptions = {}) {
+    console.log({payload});
+    updateme({ctx: 
+      {state: 
+        {user: 
+          { id: 349}}}})
     _.defaults(jwtOptions, strapi.plugins['users-permissions'].config.jwt);
     return jwt.sign(
       _.clone(payload.toJSON ? payload.toJSON() : payload),

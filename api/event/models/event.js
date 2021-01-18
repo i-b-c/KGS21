@@ -41,19 +41,20 @@ function modify_strapi_data_yaml(result) {
 module.exports = {
   lifecycles: {
     beforeUpdate(params, data) {
-
-      data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
-      data.slug_en = data.name_en ? slugify(data.name_en) + '-' + params.id : null
-
+      if(data.name_et) {
+        data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
+        data.slug_en = data.name_en ? slugify(data.name_en) + '-' + params.id : null
+      } else {
+        data.slug_et = data.subtitle_et ? slugify(data.subtitle_et) + '-' + params.id : null
+        data.slug_en = data.subtitle_en ? slugify(data.subtitle_en) + '-' + params.id : null
+      }
     },
     afterUpdate(result, params, data) {
       if (result.published_at) {
         modify_strapi_data_yaml(result);
         const model_name = (__dirname.split('/').slice(-2)[0])
-        // console.log(model_name)
         if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
-          console.log(result.type, result)
-          const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result.id, result.type], (error, stdout, stderr) => {
+            const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result.id, result.type], (error, stdout, stderr) => {
             if (error) {
               throw error;
             }

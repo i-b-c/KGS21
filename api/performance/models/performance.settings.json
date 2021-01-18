@@ -18,12 +18,11 @@
       "type": "string"
     },
     "slug_et": {
-      "type": "uid",
-      "targetField": "name_et"
+      "type": "uid"
     },
     "slug_en": {
       "type": "uid",
-      "targetField": "name_en"
+      "targetField": "subtitle_en"
     },
     "subtitle_et": {
       "type": "string"
@@ -105,8 +104,8 @@
       "type": "string"
     },
     "events": {
-      "collection": "event",
-      "via": "performance"
+      "via": "performance",
+      "collection": "event"
     },
     "X_town_et": {
       "type": "string"
@@ -149,9 +148,9 @@
       "type": "text"
     },
     "users": {
-      "via": "myPerformances",
       "plugin": "users-permissions",
-      "collection": "user"
+      "collection": "user",
+      "via": "myPerformances"
     }
   }
 }

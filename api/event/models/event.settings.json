@@ -15,8 +15,7 @@
       "type": "string"
     },
     "slug_et": {
-      "type": "uid",
-      "targetField": "name_et"
+      "type": "uid"
     },
     "name_en": {
       "type": "string"
@@ -92,8 +91,8 @@
       "component": "ticket-info.x-ticket-info"
     },
     "performance": {
-      "via": "events",
-      "model": "performance"
+      "model": "performance",
+      "via": "events"
     },
     "parent_event": {
       "model": "event",

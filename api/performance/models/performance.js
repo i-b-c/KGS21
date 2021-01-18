@@ -41,31 +41,40 @@ function modify_strapi_data_yaml(result) {
 module.exports = {
   lifecycles: {
     beforeUpdate(params, data) {
+      if(data.name_et){
+        data.slug_et = data.name_et ? slugify( data.name_et) + '-' + params.id : null
+        data.slug_en = data.name_en ? slugify( data.name_en) + '-' + params.id : null
+      } else if(data.subtitle_et) {
+        data.slug_et = data.subtitle_et ? slugify( data.subtitle_et) + '-' + params.id : null
+        data.slug_en = data.subtitle_en ? slugify( data.subtitle_en) + '-' + params.id : null
+      } else {
+        data.slug_et = data.X_headline_et ? slugify( data.X_headline_et) + '-' + params.id : null
+        data.slug_en = data.X_headline_en ? slugify( data.X_headline_en) + '-' + params.id : null
+      }
 
-      data.slug_et = data.name_et ? slugify( data.name_et) + '-' + params.id : null
-      data.slug_en = data.name_en ? slugify( data.name_en) + '-' + params.id : null
+
     },
     afterUpdate(result, params, data) {
       if (result.published_at) {
         modify_strapi_data_yaml(result);
-        const model_name = (__dirname.split('/').slice(-2)[0])
+       const model_name = (__dirname.split('/').slice(-2)[0])
         // console.log(model_name)
-        if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
-          const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result.id], (error, stdout, stderr) => {
-            if (error) {
-              throw error;
-            }
-            console.log(stdout);
-          })
-        } else {
-          const child = execFile('bash', [`/srv/ssg/build.sh`, result.id], (error, stdout, stderr) => {
-            if (error) {
-              throw error;
-            }
-            console.log(stdout);
-          })
-        }
+      if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
+         const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result.id], (error, stdout, stderr) => {
+           if (error) {
+             throw error;
+           }
+           console.log(stdout);
+         })
+       } else {
+         const child = execFile('bash', [`/srv/ssg/build.sh`, result.id], (error, stdout, stderr) => {
+           if (error) {
+             throw error;
+           }
+           console.log(stdout);
+         })
+       }
       }
     }
   }
-};
+}
