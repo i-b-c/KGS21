@@ -2,6 +2,7 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
+const addConfigPathAliases = require('./add_config_path_aliases.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
 // const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
@@ -10,7 +11,7 @@ const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const LANGUAGES = ['et', 'en']
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const festivalsDirPath = path.join(fetchDir, `festivals`)
 const residenciesDirPath = path.join(fetchDir, `residencies`)
 
@@ -40,14 +41,24 @@ const STRAPIDATA_EVENTS = STRAPIDATA_EVENTS_YAML.filter(e => !e.hide_from_page).
     return ev
 })
 
+const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
+const performanceEventsIds = (STRAPIDATA_EVENTS.filter(e => e.performance && e.performance.id === process.argv[4]) || []).map(e => e.id)
+const target = process.argv[3] && process.argv[3] === 'p' && process.argv[4] ? (performanceEventsIds ? performanceEventsIds : []) : [process.argv[3]]
+
+let fetchSpecific = targeted ? target : []
 const allPathAliases = []
+
+// const targetedEvent = STRAPIDATA_EVENTS.filter(a => a.id === target[0])[0] || []
+// const targetEventChildEvents = targetedEvent.child_events ? targetedEvent.child_events.map(c => c.id) : []
+// console.log(targetEventChildEvents);
+// targetEventChildEvents.map(a => fetchSpecific.push(a))
 
 for (const lang of LANGUAGES) {
 
     const categoriesYAMLPath = path.join(fetchDir, `categories.${lang}.yaml`)
     const categories = yaml.safeLoad(fs.readFileSync(categoriesYAMLPath, 'utf8'))
         .filter(c => c.featured_on_front_page)
-        .map(c => c.remote_id)
+        .map(c => c.id)
     let allData = []
 
 
@@ -58,10 +69,11 @@ for (const lang of LANGUAGES) {
 
         let combined_coverages = null
 
-        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.remote_id) ? true : false
+        let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.id.toString()) ? true : false
 
         if (oneEvent.coverages) {
-            combined_coverages = oneEvent.coverages.concat(performance.coverages || 0)
+            performance.coverages = performance.coverages ? performance.coverages.map(c => STRAPIDATA_COVERAGES.filter(sc => sc.id === c.id)[0]) : []
+            combined_coverages = oneEvent.coverages.concat(performance.coverages)
         } else if (performance.coverages) {
             combined_coverages = performance.coverages
         }
@@ -69,6 +81,7 @@ for (const lang of LANGUAGES) {
         let oneEventData = {
             id: oneEvent.id,
             performance_remote_id: performance.remote_id || null,
+            performance_path: performance[`slug_${lang}`] || performance.remote_id ? (performance[`slug_${lang}`] ? `performance/${performance[`slug_${lang}`]}` : `performance/${performance.remote_id}`) : null,
             [`performance_name_${lang}`]: performance[`name_${lang}`] || null,
             [`performance_slug_${lang}`]: performance[`slug_${lang}`] || null,
             [`performance_X_headline_${lang}`]: performance[`X_headline_${lang}`] || null,
@@ -76,8 +89,10 @@ for (const lang of LANGUAGES) {
             performance_X_artist: performance.X_artist || null,
             performance_X_producer: performance.X_producer || null,
             [`performance_X_town_${lang}`]: performance[`X_town_${lang}`] || null,
-            peformance_categories: performance.categories ? performance.categories.map(c => c.remote_id).filter(c => categories.includes(c)) : null,
+            peformance_categories: performance.categories ? performance.categories.map(c => c.id).filter(c => categories.includes(c)) : null,
             remote_id: oneEvent.remote_id || null,
+            slug_et: oneEvent.slug_et || null,
+            slug_en: oneEvent.slug_en || null,
             type: oneEvent.type || null,
             start_time: oneEvent.start_time || null,
             end_time: oneEvent.end_time || null,
@@ -86,6 +101,7 @@ for (const lang of LANGUAGES) {
             [`X_headline_${lang}`]: oneEvent[`X_headline_${lang}`] || null,
             [`subtitle_${lang}`]: oneEvent[`subtitle_${lang}`] || null,
             location: oneEvent.location ? (oneEvent.location[`name_${lang}`] || null) : null,
+            X_location: oneEvent[`X_location_${lang}`] || null,
             resident: oneEvent.resident || null,
             categories: oneEvent.categories || null,
             X_ticket_info: oneEvent.X_ticket_info || null,
@@ -124,7 +140,7 @@ for (const lang of LANGUAGES) {
 
 function createResidency(oneEventData, lang, createDir) {
 
-    oneEventData.path = `resident/${oneEventData.remote_id}`
+    oneEventData.path = oneEventData[`slug_${lang}`] || oneEventData.remote_id ? (oneEventData[`slug_${lang}`] ? `resident/${oneEventData[`slug_${lang}`]}` : `resident/${oneEventData.remote_id}`) : null
     oneEventData.data = { categories: `/_fetchdir/categories.${lang}.yaml` }
     if (lang === 'et') {
         addAliases(oneEventData, [`et/resident/${oneEventData.remote_id}`])
@@ -135,12 +151,12 @@ function createResidency(oneEventData, lang, createDir) {
 
 function createFestival(oneEventData, lang, createDir) {
 
-    let festivalHomePath = `festival/${oneEventData.remote_id}/`
+    let festivalHomePath = oneEventData[`slug_${lang}`] || oneEventData.remote_id ? (oneEventData[`slug_${lang}`] ? `festival/${oneEventData[`slug_${lang}`]}/` : `festival/${oneEventData.remote_id}/`) : null
     // FESTIVAL PROGRAM/LANDING PAGE
-    oneEventData.path = `${festivalHomePath}program/`
+    oneEventData.path = `${festivalHomePath}program`
 
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}program/`,])
+        addAliases(oneEventData, [`et/${festivalHomePath}program`,])
         addAliases(oneEventData, [`${festivalHomePath}`])
         addAliases(oneEventData, [`et/${festivalHomePath}`])
     }
@@ -149,10 +165,10 @@ function createFestival(oneEventData, lang, createDir) {
 
 
     // FESTIVAL ABOUT PAGE
-    oneEventData.path = `${festivalHomePath}about/`
+    oneEventData.path = `${festivalHomePath}about`
 
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}about/`])
+        addAliases(oneEventData, [`et/${festivalHomePath}about`])
     } else {
         // delete oneEventData.aliases
     }
@@ -161,10 +177,10 @@ function createFestival(oneEventData, lang, createDir) {
 
 
     // FESTIVAL TICKETS PAGE
-    oneEventData.path = `${festivalHomePath}tickets/`
+    oneEventData.path = `${festivalHomePath}tickets`
 
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}tickets/`])
+        addAliases(oneEventData, [`et/${festivalHomePath}tickets`])
     } else {
         // delete oneEventData.aliases
     }
@@ -173,10 +189,10 @@ function createFestival(oneEventData, lang, createDir) {
 
 
     // FESTIVAL PRESS PAGE
-    oneEventData.path = `${festivalHomePath}press/`
+    oneEventData.path = `${festivalHomePath}press`
 
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}press/`])
+        addAliases(oneEventData, [`et/${festivalHomePath}press`])
     } else {
         // delete oneEventData.aliases
     }
@@ -185,9 +201,9 @@ function createFestival(oneEventData, lang, createDir) {
 
 
     // RESET FOR ALLDATA WRITING
-    oneEventData.path = `${festivalHomePath}program/`
+    oneEventData.path = `${festivalHomePath}program`
     if (lang === 'et') {
-        addAliases(oneEventData, [`et/${festivalHomePath}program/`])
+        addAliases(oneEventData, [`et/${festivalHomePath}program`])
     }
 
 }
@@ -199,7 +215,7 @@ function festival_child_events(child_events_data, lang) {
 
         return {
             id: child_event.id,
-            performance_remote_id: event_performance.remote_id || null,
+            performance_path: event_performance[`slug_${lang}`] || event_performance.remote_id ? (event_performance[`slug_${lang}`] ? `performance/${event_performance[`slug_${lang}`]}` : `performance/${event_performance.remote_id}`) : null,
             start_time: child_event.start_time || null,
             premiere: child_event.premiere || null,
             [`performance_name_${lang}`]: event_performance[`name_${lang}`] || null,
@@ -210,6 +226,7 @@ function festival_child_events(child_events_data, lang) {
             performance_X_producer: event_performance.X_producer || null,
             [`performance_X_town_${lang}`]: event_performance[`X_town_${lang}`] || null,
             location: child_event.location ? child_event.location[`name_${lang}`] : null,
+            X_location: child_event[`X_location_${lang}`] || null,
             conversation: child_event.conversation || null,
             remote_id: child_event.remote_id || null,
             X_ticket_info: child_event.X_ticket_info || null,
@@ -226,7 +243,8 @@ function festival_child_events(child_events_data, lang) {
 
 function createDirAndFiles(oneEventData, lang, dirPath, addPath, indexTemplateType) {
     const thisYAML = yaml.safeDump(oneEventData, { 'noRefs': true, 'indent': '4' })
-    const onePath = addPath ? path.join(dirPath, oneEventData.remote_id, addPath) : path.join(dirPath, oneEventData.remote_id)
+    const idToString = oneEventData.id.toString()
+    const onePath = addPath ? path.join(dirPath, idToString, addPath) : path.join(dirPath, idToString)
     fs.mkdirSync(onePath, { recursive: true })
     fs.writeFileSync(`${onePath}/data.${lang}.yaml`, thisYAML, 'utf8')
 
@@ -250,3 +268,39 @@ function addAliases(oneEventData, pathAliases) {
 }
 
 pathAliasesFunc(fetchDir, allPathAliases, 'events')
+
+if (targeted) {
+    let isFestival = false
+    let isResidency = false
+    let isTour = false
+    let isProject = false
+
+    const allTargets = fetchSpecific.map(a => {
+
+        const eventType = STRAPIDATA_EVENTS.filter(e => e.id.toString() === a)[0]
+
+        if (eventType) {
+            if (eventType.type === 'festival') {
+                isFestival = true
+                return `_fetchdir/festival/${a}`
+            } else if (eventType.type === 'residency') {
+                isResidency = true
+                return `_fetchdir/residencies/${a}`
+            } else if (eventType.type === 'tour') {
+                isTour = true
+                return null
+            }
+        }
+        return null
+    }).filter(a => a !== null)
+
+    if (isFestival) { allTargets.push(`festivals/`) }
+    if (isResidency) { allTargets.push(`residency/`) }
+    if (isTour) { allTargets.push(`tours/`) }
+    if (isProject) { allTargets.push(`projects/`) }
+
+    allTargets.push(`home/`)
+    allTargets.push(`program/`)
+
+    addConfigPathAliases(allTargets)
+}

@@ -30,3 +30,4 @@ data-transfer/from_entu/*.raw.json
 
 # dynamic data
 source/_fetchdir/*
+source/strapidata/*

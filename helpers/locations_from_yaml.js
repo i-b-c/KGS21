@@ -2,8 +2,9 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 
+const sourceDir = path.join(__dirname, '..', 'source')
 const fetchDir = path.join(__dirname, '..', 'source', '_fetchdir')
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const strapiDataHallsPath = path.join(strapiDataDirPath, 'Hall.yaml')
 const strapiDataTownsPath = path.join(strapiDataDirPath, 'Town.yaml')
 const strapiDataCountriesPath = path.join(strapiDataDirPath, 'Country.yaml')
@@ -30,6 +31,6 @@ for (const lang of LANGUAGES) {
     let allData = STRAPIDATA_LOCATIONS.filter(e => e[`name_${lang}`])
     allData.sort((a,b) => b.order - a.order)
     console.log(`Locations from YAML`)
-    const locationsYAML = yaml.safeDump(allData, { 'indent': '4' })
+    const locationsYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(locationsYAMLPath, locationsYAML, 'utf8')
 }

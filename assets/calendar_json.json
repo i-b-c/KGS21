@@ -4,7 +4,8 @@
     "events": {
         "2020-11-22": [
             {
-                "eid": "6794",
+                "et_id": "6794",
+                "en_id": "6794",
                 "tag": [
                     "event"
                 ],
@@ -20,7 +21,8 @@
                 }
             },
             {
-                "eid": "6796",
+                "et_id": "me-sidame-ra-185",
+                "en_id": "we-are-leaving-185",
                 "tag": [
                     "event"
                 ],
@@ -38,7 +40,8 @@
         ],
         "2020-12-12": [
             {
-                "eid": "6871",
+                "et_id": "cathexis-85",
+                "en_id": "cathexis-85",
                 "tag": [
                     "event"
                 ],
@@ -54,7 +57,8 @@
                 }
             },
             {
-                "eid": "6871",
+                "et_id": "cathexis-85",
+                "en_id": "cathexis-85",
                 "tag": [
                     "event"
                 ],
@@ -72,7 +76,8 @@
         ],
         "2021-1-21": [
             {
-                "eid": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -90,7 +95,8 @@
         ],
         "2020-12-3": [
             {
-                "eid": "6858",
+                "et_id": "jb-ra-uncanny-valley-vaorg-183",
+                "en_id": "jb-ra-uncanny-valley-183",
                 "tag": [
                     "event"
                 ],
@@ -106,7 +112,8 @@
                 }
             },
             {
-                "eid": "6858",
+                "et_id": "jb-ra-uncanny-valley-vaorg-183",
+                "en_id": "jb-ra-uncanny-valley-183",
                 "tag": [
                     "event"
                 ],
@@ -124,7 +131,8 @@
         ],
         "2020-12-10": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -140,7 +148,8 @@
                 }
             },
             {
-                "eid": "6871",
+                "et_id": "cathexis-85",
+                "en_id": "cathexis-85",
                 "tag": [
                     "event"
                 ],
@@ -158,7 +167,8 @@
         ],
         "2020-12-13": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -176,7 +186,8 @@
         ],
         "2020-12-11": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -192,7 +203,8 @@
                 }
             },
             {
-                "eid": "6821",
+                "et_id": "puuris-vi-pilves-kas-teater-saab-olla-vrgus-184",
+                "en_id": "puuris-vi-pilves-kas-teater-saab-olla-vrgus-184",
                 "tag": [
                     "event"
                 ],
@@ -210,7 +222,8 @@
         ],
         "2020-12-7": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -228,7 +241,8 @@
         ],
         "2020-11-15": [
             {
-                "eid": "6532",
+                "et_id": "supersocial-245",
+                "en_id": "supersocial-245",
                 "tag": [
                     "tour"
                 ],
@@ -244,7 +258,8 @@
                 }
             },
             {
-                "eid": "6778",
+                "et_id": "6778",
+                "en_id": "6778",
                 "tag": [
                     "event"
                 ],
@@ -260,7 +275,8 @@
                 }
             },
             {
-                "eid": "6678",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-204",
+                "en_id": "complete-works-table-top-shakespeare-at-home-204",
                 "tag": [
                     "event"
                 ],
@@ -278,7 +294,8 @@
         ],
         "2020-11-2": [
             {
-                "eid": "6757",
+                "et_id": "pha-vaimu-saali-residentuuri-showing-200",
+                "en_id": "recidency-showing-of-pha-vaimu-saal-200",
                 "tag": [
                     "event"
                 ],
@@ -296,7 +313,8 @@
         ],
         "2020-11-21": [
             {
-                "eid": "6792",
+                "et_id": "6792",
+                "en_id": "6792",
                 "tag": [
                     "event"
                 ],
@@ -312,7 +330,8 @@
                 }
             },
             {
-                "eid": "6796",
+                "et_id": "me-sidame-ra-185",
+                "en_id": "we-are-leaving-185",
                 "tag": [
                     "event"
                 ],
@@ -328,7 +347,8 @@
                 }
             },
             {
-                "eid": "6790",
+                "et_id": "ttuba-tulevastele-ja-praktiseerivatele-she-dj-dele-queer-womxn-dj-collective-188",
+                "en_id": "workshop-for-upcoming-and-practicing-she-djs-by-queer-womxn-dj-collective-188",
                 "tag": [
                     "event"
                 ],
@@ -346,7 +366,8 @@
         ],
         "2020-12-19": [
             {
-                "eid": "6180",
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
                 "tag": [
                     "event"
                 ],
@@ -364,7 +385,8 @@
         ],
         "2020-11-19": [
             {
-                "eid": "6774",
+                "et_id": "6774",
+                "en_id": "6774",
                 "tag": [
                     "event"
                 ],
@@ -382,7 +404,8 @@
         ],
         "2020-11-20": [
             {
-                "eid": "6788",
+                "et_id": "6788",
+                "en_id": "6788",
                 "tag": [
                     "event"
                 ],
@@ -400,7 +423,8 @@
         ],
         "2020-12-18": [
             {
-                "eid": "6180",
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
                 "tag": [
                     "event"
                 ],
@@ -418,7 +442,8 @@
         ],
         "2020-12-17": [
             {
-                "eid": "6180",
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
                 "tag": [
                     "event"
                 ],
@@ -436,7 +461,8 @@
         ],
         "2020-12-16": [
             {
-                "eid": "6180",
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
                 "tag": [
                     "event"
                 ],
@@ -452,7 +478,8 @@
                 }
             },
             {
-                "eid": "6871",
+                "et_id": "cathexis-85",
+                "en_id": "cathexis-85",
                 "tag": [
                     "event"
                 ],
@@ -468,7 +495,8 @@
                 }
             },
             {
-                "eid": "6871",
+                "et_id": "cathexis-85",
+                "en_id": "cathexis-85",
                 "tag": [
                     "event"
                 ],
@@ -486,7 +514,8 @@
         ],
         "2020-11-5": [
             {
-                "eid": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "tour"
                 ],
@@ -502,7 +531,8 @@
                 }
             },
             {
-                "eid": "6671",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-211",
+                "en_id": "complete-works-table-top-shakespeare-at-home-211",
                 "tag": [
                     "event"
                 ],
@@ -518,7 +548,8 @@
                 }
             },
             {
-                "eid": "6180",
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
                 "tag": [
                     "event"
                 ],
@@ -536,7 +567,8 @@
         ],
         "2020-12-5": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -554,7 +586,8 @@
         ],
         "2020-11-4": [
             {
-                "eid": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "tour"
                 ],
@@ -570,7 +603,8 @@
                 }
             },
             {
-                "eid": "6180",
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
                 "tag": [
                     "event"
                 ],
@@ -588,7 +622,8 @@
         ],
         "2020-11-1": [
             {
-                "eid": "6726",
+                "et_id": "in-loving-memory-of-albumiesitluskontsert-201",
+                "en_id": "in-loving-memory-of-record-presentation-concert-201",
                 "tag": [
                     "event"
                 ],
@@ -604,7 +639,8 @@
                 }
             },
             {
-                "eid": "6670",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-212",
+                "en_id": "complete-works-table-top-shakespeare-at-home-212",
                 "tag": [
                     "event"
                 ],
@@ -622,7 +658,8 @@
         ],
         "2021-1-19": [
             {
-                "eid": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -640,7 +677,8 @@
         ],
         "2020-11-8": [
             {
-                "eid": "6699",
+                "et_id": "stendhali-sndroom-203",
+                "en_id": "stendhals-syndrome-203",
                 "tag": [
                     "event"
                 ],
@@ -656,7 +694,8 @@
                 }
             },
             {
-                "eid": "6674",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-208",
+                "en_id": "complete-works-table-top-shakespeare-at-home-208",
                 "tag": [
                     "event"
                 ],
@@ -674,7 +713,8 @@
         ],
         "2020-11-14": [
             {
-                "eid": "6677",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-205",
+                "en_id": "complete-works-table-top-shakespeare-at-home-205",
                 "tag": [
                     "event"
                 ],
@@ -690,7 +730,8 @@
                 }
             },
             {
-                "eid": "6776",
+                "et_id": "nb-etendus-algab-kell-2130-194",
+                "en_id": "nb-the-performance-starts-at-2130-194",
                 "tag": [
                     "event"
                 ],
@@ -706,7 +747,8 @@
                 }
             },
             {
-                "eid": "6532",
+                "et_id": "supersocial-245",
+                "en_id": "supersocial-245",
                 "tag": [
                     "tour"
                 ],
@@ -724,7 +766,8 @@
         ],
         "2020-11-7": [
             {
-                "eid": "6673",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-209",
+                "en_id": "complete-works-table-top-shakespeare-at-home-209",
                 "tag": [
                     "event"
                 ],
@@ -740,7 +783,8 @@
                 }
             },
             {
-                "eid": "6180",
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
                 "tag": [
                     "event"
                 ],
@@ -756,7 +800,8 @@
                 }
             },
             {
-                "eid": "6375",
+                "et_id": "planet-alexithymia-261",
+                "en_id": "planet-alexithymia-261",
                 "tag": [
                     "tour"
                 ],
@@ -774,7 +819,8 @@
         ],
         "2021-1-20": [
             {
-                "eid": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -792,7 +838,8 @@
         ],
         "2020-12-2": [
             {
-                "eid": "6858",
+                "et_id": "jb-ra-uncanny-valley-vaorg-183",
+                "en_id": "jb-ra-uncanny-valley-183",
                 "tag": [
                     "event"
                 ],
@@ -808,7 +855,8 @@
                 }
             },
             {
-                "eid": "6858",
+                "et_id": "jb-ra-uncanny-valley-vaorg-183",
+                "en_id": "jb-ra-uncanny-valley-183",
                 "tag": [
                     "event"
                 ],
@@ -826,7 +874,8 @@
         ],
         "2020-11-11": [
             {
-                "eid": "6187",
+                "et_id": "evolutsiooni-revolutsioon-279",
+                "en_id": "the-revolution-on-evolution-279",
                 "tag": [
                     "event"
                 ],
@@ -844,7 +893,8 @@
         ],
         "2020-12-15": [
             {
-                "eid": "6091",
+                "et_id": "sest-meid-on-petatud-madusid-kartma-97",
+                "en_id": "sest-meid-on-petatud-madusid-kartma-97",
                 "tag": [
                     "event"
                 ],
@@ -862,7 +912,8 @@
         ],
         "2020-12-14": [
             {
-                "eid": "6091",
+                "et_id": "sest-meid-on-petatud-madusid-kartma-97",
+                "en_id": "sest-meid-on-petatud-madusid-kartma-97",
                 "tag": [
                     "event"
                 ],
@@ -880,7 +931,8 @@
         ],
         "2020-11-30": [
             {
-                "eid": "6091",
+                "et_id": "sest-meid-on-petatud-madusid-kartma-97",
+                "en_id": "sest-meid-on-petatud-madusid-kartma-97",
                 "tag": [
                     "event"
                 ],
@@ -898,7 +950,8 @@
         ],
         "2020-11-29": [
             {
-                "eid": "6091",
+                "et_id": "sest-meid-on-petatud-madusid-kartma-97",
+                "en_id": "sest-meid-on-petatud-madusid-kartma-97",
                 "tag": [
                     "event"
                 ],
@@ -914,7 +967,8 @@
                 }
             },
             {
-                "eid": "6890",
+                "et_id": "videoinstallatsioon-kummaline-snum-teiselt-thelt-127",
+                "en_id": "video-installation-strange-message-from-another-star-127",
                 "tag": [
                     "event"
                 ],
@@ -932,7 +986,8 @@
         ],
         "2020-11-27": [
             {
-                "eid": "6091",
+                "et_id": "sest-meid-on-petatud-madusid-kartma-97",
+                "en_id": "sest-meid-on-petatud-madusid-kartma-97",
                 "tag": [
                     "event"
                 ],
@@ -950,7 +1005,8 @@
         ],
         "2020-11-28": [
             {
-                "eid": "6099",
+                "et_id": "enneminevik-96",
+                "en_id": "past-perfect-96",
                 "tag": [
                     "event"
                 ],
@@ -968,7 +1024,8 @@
         ],
         "2020-11-26": [
             {
-                "eid": "6099",
+                "et_id": "enneminevik-96",
+                "en_id": "past-perfect-96",
                 "tag": [
                     "event"
                 ],
@@ -986,7 +1043,8 @@
         ],
         "2020-11-25": [
             {
-                "eid": "6099",
+                "et_id": "enneminevik-96",
+                "en_id": "past-perfect-96",
                 "tag": [
                     "event"
                 ],
@@ -1004,7 +1062,8 @@
         ],
         "2020-12-30": [
             {
-                "eid": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -1022,7 +1081,8 @@
         ],
         "2020-12-29": [
             {
-                "eid": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -1040,7 +1100,8 @@
         ],
         "2020-11-12": [
             {
-                "eid": "6532",
+                "et_id": "supersocial-245",
+                "en_id": "supersocial-245",
                 "tag": [
                     "tour"
                 ],
@@ -1056,7 +1117,8 @@
                 }
             },
             {
-                "eid": "6676",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-206",
+                "en_id": "complete-works-table-top-shakespeare-at-home-206",
                 "tag": [
                     "event"
                 ],
@@ -1074,7 +1136,8 @@
         ],
         "2020-11-6": [
             {
-                "eid": "6180",
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
                 "tag": [
                     "event"
                 ],
@@ -1090,7 +1153,8 @@
                 }
             },
             {
-                "eid": "6672",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-210",
+                "en_id": "complete-works-table-top-shakespeare-at-home-210",
                 "tag": [
                     "tour"
                 ],
@@ -1106,7 +1170,8 @@
                 }
             },
             {
-                "eid": "6672",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-210",
+                "en_id": "complete-works-table-top-shakespeare-at-home-210",
                 "tag": [
                     "event"
                 ],
@@ -1124,7 +1189,8 @@
         ],
         "2020-11-10": [
             {
-                "eid": "6187",
+                "et_id": "evolutsiooni-revolutsioon-279",
+                "en_id": "the-revolution-on-evolution-279",
                 "tag": [
                     "event"
                 ],
@@ -1142,7 +1208,8 @@
         ],
         "2020-12-9": [
             {
-                "eid": "5099",
+                "et_id": "peks-misatallis-tallinnas-5099",
+                "en_id": "beating-at-the-stables-of-the-manor-in-tallinn-5099",
                 "tag": [
                     "event"
                 ],
@@ -1160,7 +1227,8 @@
         ],
         "2020-12-8": [
             {
-                "eid": "5099",
+                "et_id": "peks-misatallis-tallinnas-5099",
+                "en_id": "beating-at-the-stables-of-the-manor-in-tallinn-5099",
                 "tag": [
                     "event"
                 ],
@@ -1178,7 +1246,8 @@
         ],
         "2020-12-4": [
             {
-                "eid": "6894",
+                "et_id": "kontsertsari-improtest-seemned-improtest-15-collective-179",
+                "en_id": "concert-series-improtest-seeds-improtest-15-collective-179",
                 "tag": [
                     "event"
                 ],
@@ -1196,7 +1265,8 @@
         ],
         "2021-1-26": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -1214,7 +1284,8 @@
         ],
         "2021-1-25": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -1232,7 +1303,8 @@
         ],
         "2020-12-20": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -1250,7 +1322,8 @@
         ],
         "2020-11-17": [
             {
-                "eid": "6783",
+                "et_id": "6783",
+                "en_id": "6783",
                 "tag": [
                     "event"
                 ],
@@ -1268,7 +1341,8 @@
         ],
         "2020-11-18": [
             {
-                "eid": "6785",
+                "et_id": "6785",
+                "en_id": "6785",
                 "tag": [
                     "event"
                 ],
@@ -1286,7 +1360,8 @@
         ],
         "2020-11-16": [
             {
-                "eid": "6780",
+                "et_id": "tekhne-192",
+                "en_id": "tekhne-192",
                 "tag": [
                     "event"
                 ],
@@ -1304,7 +1379,8 @@
         ],
         "2020-11-13": [
             {
-                "eid": "6771",
+                "et_id": "6771",
+                "en_id": "6771",
                 "tag": [
                     "event"
                 ],
@@ -1320,7 +1396,8 @@
                 }
             },
             {
-                "eid": "6768",
+                "et_id": "6768",
+                "en_id": "6768",
                 "tag": [
                     "event"
                 ],
@@ -1336,7 +1413,8 @@
                 }
             },
             {
-                "eid": "6764",
+                "et_id": "6764",
+                "en_id": "6764",
                 "tag": [
                     "event"
                 ],
@@ -1352,7 +1430,8 @@
                 }
             },
             {
-                "eid": "6532",
+                "et_id": "supersocial-245",
+                "en_id": "supersocial-245",
                 "tag": [
                     "tour"
                 ],
@@ -1368,7 +1447,8 @@
                 }
             },
             {
-                "eid": "6759",
+                "et_id": "nu-performance-festival-2020-hl-ja-midagi-veel-199",
+                "en_id": "nu-performance-festival-2020-voice-and-something-more-199",
                 "tag": [
                     "event"
                 ],
@@ -1384,7 +1464,8 @@
                 }
             },
             {
-                "eid": "6675",
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-207",
+                "en_id": "complete-works-table-top-shakespeare-at-home-207",
                 "tag": [
                     "event"
                 ],
@@ -1400,7 +1481,8 @@
                 }
             },
             {
-                "eid": "6759",
+                "et_id": "nu-performance-festival-2020-hl-ja-midagi-veel-199",
+                "en_id": "nu-performance-festival-2020-voice-and-something-more-199",
                 "tag": [
                     "festival"
                 ],
@@ -1418,7 +1500,8 @@
         ],
         "2021-1-29": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -1436,7 +1519,8 @@
         ],
         "2020-11-23": [
             {
-                "eid": "6796",
+                "et_id": "me-sidame-ra-185",
+                "en_id": "we-are-leaving-185",
                 "tag": [
                     "event"
                 ],
@@ -1454,7 +1538,8 @@
         ],
         "2020-11-9": [
             {
-                "eid": "6699",
+                "et_id": "stendhali-sndroom-203",
+                "en_id": "stendhals-syndrome-203",
                 "tag": [
                     "event"
                 ],
@@ -1472,7 +1557,8 @@
         ],
         "2021-1-28": [
             {
-                "eid": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -1490,7 +1576,8 @@
         ],
         "2020-12-28": [
             {
-                "eid": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],

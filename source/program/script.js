@@ -29,7 +29,7 @@ if (urlParams.getAll.length) {
     if(urlParams.get('c')) {
         let UrlCatsString = urlParams.get('c').split(',')
         for (cat of UrlCatsString) {
-            toggleCat(cat)
+            toggleCat(parseInt(cat, 10))
         }
     }
 }
@@ -150,16 +150,16 @@ function setYearMonthTextAndBtns() {
     setUrlParams()
 }
 
-function toggleCat(remoteId) {
-    let catBtn = document.getElementById(remoteId)
+function toggleCat(catId) {
+    let catBtn = document.getElementById(catId)
     let catBtnClass = catBtn.className
 
     if(catBtnClass === 'icon-checkmark') {
         catBtnClass = catBtn.className = 'icon-checkmark2'
-        hiddenCats.push(`${remoteId}`)
+        hiddenCats.push(catId)
     } else {
         catBtnClass = catBtn.className = 'icon-checkmark'
-        hiddenCats = hiddenCats.filter(c => c !== `${remoteId}`)
+        hiddenCats = hiddenCats.filter(c => c !== catId)
     }
 
     toggleEvents()

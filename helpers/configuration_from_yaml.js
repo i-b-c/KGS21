@@ -4,7 +4,7 @@ const path = require('path')
 
 const sourceDir = path.join(__dirname, '..', 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const strapiDataSimpleArticlesPath = path.join(strapiDataDirPath, 'SimpleArticle.yaml')
 const strapiDataConfigurationsPath = path.join(strapiDataDirPath, 'Configuration.yaml')
 const STRAPIDATA_SIMPLE_ARTICLES = yaml.safeLoad(fs.readFileSync(strapiDataSimpleArticlesPath, 'utf8'))

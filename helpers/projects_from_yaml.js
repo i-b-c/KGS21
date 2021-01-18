@@ -1,15 +1,16 @@
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
+const addConfigPathAliases = require('./add_config_path_aliases.js')
 
+const targeted = process.argv[2] === '-t' ? true : false
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-const strapiDataDirPath = path.join(fetchDir, 'strapidata')
+const strapiDataDirPath = path.join(sourceDir, 'strapidata')
 const strapiDataEventsPath = path.join(strapiDataDirPath, 'Event.yaml')
 const STRAPIDATA_EVENTS = yaml.safeLoad(fs.readFileSync(strapiDataEventsPath, 'utf8'))
 const LANGUAGES = ['et', 'en']
-
 
 const strapi_projects = STRAPIDATA_EVENTS
     .filter((event) => event.type === 'project')
@@ -32,3 +33,6 @@ for (const lang of LANGUAGES) {
     fs.writeFileSync(projectsYAMLPath, projectsYAML, 'utf8')
 }
 
+if (targeted) {
+    addConfigPathAliases(['projects/'])
+}

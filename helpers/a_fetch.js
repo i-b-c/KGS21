@@ -4,9 +4,9 @@ const path = require('path')
 const { getModel } = require("./strapiQuery.js")
 const { spin } = require("./spinner")
 
-const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
+const dirPath =  path.join(__dirname, '..', 'source')
 
-fs.mkdirSync(dirPath, { recursive: true })
+fs.mkdirSync(path.join(dirPath, '_fetchdir'), { recursive: true })
 fs.mkdirSync(path.join(dirPath, 'strapidata'), { recursive: true })
 
 const DOMAIN = process.env['DOMAIN'] || false
@@ -281,12 +281,12 @@ const foo = async () => {
 
     // let yamlStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData)), { 'noRefs': true, 'indent': '4' })
     // // let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
-    // fs.writeFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', yamlStr, 'utf8')
+    // fs.writeFileSync(__dirname + '/../source/strapiData.yaml', yamlStr, 'utf8')
 
     for ( let modelName in strapiData ) {
        // console.log(JSON.stringify(strapiData[modelName], 0, 2))
        let yamlSmallStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData[modelName])), { 'noRefs': true, 'indent': '4' })
-       fs.writeFileSync(__dirname + `/../source/_fetchdir/strapidata/${modelName}.yaml`, yamlSmallStr, 'utf8')
+       fs.writeFileSync(__dirname + `/../source/strapidata/${modelName}.yaml`, yamlSmallStr, 'utf8')
     }
 
 
