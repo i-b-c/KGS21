@@ -238,7 +238,6 @@ async function performanceToStrapi() {
             "X_headline_en": (performance_entity.properties['en-supertitle'].values.length > 0 ? performance_entity.properties['en-supertitle'].values[0].db_value : null),
             "X_town_et": (performance_entity.properties['et-town'].values.length > 0 ? performance_entity.properties['et-town'].values[0].db_value : null),
             "X_town_en": (performance_entity.properties['en-town'].values.length > 0 ? performance_entity.properties['en-town'].values[0].db_value : null),
-            "duration": (performance_entity.properties.duration.values.length > 0 ? performance_entity.properties.duration.values[0].db_value : null),
             "X_pictures": {
                 "photoGallery": photoGallery,
                 "photo": photo,
@@ -443,10 +442,10 @@ async function articlesToStrapi() {
 
     // POST
 
-    // articlesToPost = articles.filter(article => {return article.id === null})
-    // for(article of articlesToPost){
-    //     console.log(article.remote_id)
-    // }
+    articlesToPost = articles.filter(article => {return article.id === null})
+    for(article of articlesToPost){
+        console.log(article.remote_id)
+    }
     // postToStrapi(articlesToPost, 'articles')
 }
 
@@ -648,7 +647,7 @@ async function newsToStrapi() {
     let newsToPost = news.filter( e => {
         return e.id === null
     })
-    console.log(JSON.stringify(newsToPost, 0, 2))
+    console.log('NEWS TO POST', JSON.stringify(newsToPost, 0, 2))
     // postToStrapi(newsToPost, 'newscasts')
 }
 
@@ -706,7 +705,7 @@ async function main() {
     // await locationToStrapi()
     // await eventsToStrapi()
     // await eventChildRelationToStrapi()
-    await newsToStrapi()
+    // await newsToStrapi()
     // await labelsToStrapi() // palju k4sitsi lisatud, sisulist vajadust kirjutamiseks pole
     // await articlesToStrapi()
 
@@ -725,4 +724,3 @@ async function main() {
 }
 
 main()
-
