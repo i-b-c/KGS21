@@ -43,16 +43,16 @@ block content
                                     GradientMaps.applyGradientMap(slide#{self.id}, gradientMap);
         .row.front-page-margin
             aside.col-md-12.col-lg-3
-                #direct-to-login-btn
-                    a.btn.btn-primary.text-uppercase#direct-to-login-btn(href="/login")= self.labels.login.sign_in
-                    span=' lemmikute salvestamiseks'
-                #performance-id.hidden=self.id
-                #save-favorite-btn.hidden
-                    a.btn.btn-primary.text-uppercase(onClick =`updateFavoPerformance(${self.id})`)= self.labels.login.save
-                    span= ' ' + 'oma lemmikuks'
-                #delete-favorite-btn.hidden
-                    a.btn.btn-primary.text-uppercase(onClick =`updateFavoPerformance(${self.id})`) eemalda
-                    span= ' ' + 'oma lemmikute hulgast'
+                //- #direct-to-login-btn
+                //-     a.btn.btn-primary.text-uppercase#direct-to-login-btn(href="/login")= self.labels.login.sign_in
+                //-     span=' '+ self.labels.login.to_save_favo
+                //- #performance-id.hidden=self.id
+                //- #save-favorite-btn.hidden
+                //-     a.btn.btn-primary.text-uppercase(onClick =`updateFavoPerformance(${self.id})`)= self.labels.login.save
+                //-     span= ' ' + self.labels.login.save_as_favo
+                //- #delete-favorite-btn.hidden
+                //-     a.btn.btn-primary.text-uppercase(onClick =`updateFavoPerformance(${self.id})`)= self.labels.login.remove
+                //-     span= ' ' + self.labels.login.rm_from_favo
                 if self[`technical_info_${self.locale}`]
                     .meta-info
                         p
