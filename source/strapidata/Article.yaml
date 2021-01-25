@@ -1719,6 +1719,109 @@
         -
             id: 296
 -
+    id: 139
+    title_et: 'RESKRIPTI REEDE: TASASELT KÕRGE'
+    title_en: 'RESKRIPTI REEDE: TASASELT KÕRGE (CURRENTLY AVAILABLE ONLY IN ESTONIAN)'
+    publish_date: '2021-01-08T00:00:00.000Z'
+    hide_gallery: true
+    content_et: '![reskript_vol_4_tasaselt_korge](https://saal.entu.ee/api2/file-21719)'
+    content_en: |-
+        NB! CURRENTLY AVAILABLE ONLY IN ESTONIAN!
+
+        ![reskript_vol_4_tasaselt_korge](https://saal.entu.ee/api2/file-21719)
+    remote_id: '6941'
+    X_pictures:
+        id: 6007
+        photoOriginal: '21720'
+        photoMedium: '21722'
+        photoBig: '21721'
+    article_media:
+        -
+            id: 450
+            original_image:
+                id: 7999
+                name: reskripti reede foto aksel haagensen.jpg
+                width: 1000
+                height: 667
+                formats:
+                    small:
+                        url: >-
+                            /uploads/small_reskripti_reede_foto_aksel_haagensen_31ad36bc41.jpg
+                        name: small_reskripti reede foto aksel haagensen.jpg
+                    medium:
+                        url: >-
+                            /uploads/medium_reskripti_reede_foto_aksel_haagensen_31ad36bc41.jpg
+                        name: medium_reskripti reede foto aksel haagensen.jpg
+                    thumbnail:
+                        url: >-
+                            /uploads/thumbnail_reskripti_reede_foto_aksel_haagensen_31ad36bc41.jpg
+                        name: thumbnail_reskripti reede foto aksel haagensen.jpg
+                hash: reskripti_reede_foto_aksel_haagensen_31ad36bc41
+                ext: .jpg
+                url: /uploads/reskripti_reede_foto_aksel_haagensen_31ad36bc41.jpg
+        -
+            id: 451
+            hero_image:
+                id: 8000
+                name: RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
+                width: 1399
+                height: 702
+                formats:
+                    large:
+                        url: >-
+                            /uploads/large_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_81d9e4263e.jpg
+                        name: >-
+                            large_RESKRIPT vol 1 foto Aksel Haagensen
+                            1400x700.jpg
+                    small:
+                        url: >-
+                            /uploads/small_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_81d9e4263e.jpg
+                        name: >-
+                            small_RESKRIPT vol 1 foto Aksel Haagensen
+                            1400x700.jpg
+                    medium:
+                        url: >-
+                            /uploads/medium_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_81d9e4263e.jpg
+                        name: >-
+                            medium_RESKRIPT vol 1 foto Aksel Haagensen
+                            1400x700.jpg
+                    thumbnail:
+                        url: >-
+                            /uploads/thumbnail_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_81d9e4263e.jpg
+                        name: >-
+                            thumbnail_RESKRIPT vol 1 foto Aksel Haagensen
+                            1400x700.jpg
+                hash: RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_81d9e4263e
+                ext: .jpg
+                url: >-
+                    /uploads/RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_81d9e4263e.jpg
+        -
+            id: 452
+            gallery_image_medium:
+                id: 8001
+                name: reskripti reede foto aksel haagensen.jpg
+                width: 1000
+                height: 667
+                formats:
+                    small:
+                        url: >-
+                            /uploads/small_reskripti_reede_foto_aksel_haagensen_bc52142368.jpg
+                        name: small_reskripti reede foto aksel haagensen.jpg
+                    medium:
+                        url: >-
+                            /uploads/medium_reskripti_reede_foto_aksel_haagensen_bc52142368.jpg
+                        name: medium_reskripti reede foto aksel haagensen.jpg
+                    thumbnail:
+                        url: >-
+                            /uploads/thumbnail_reskripti_reede_foto_aksel_haagensen_bc52142368.jpg
+                        name: thumbnail_reskripti reede foto aksel haagensen.jpg
+                hash: reskripti_reede_foto_aksel_haagensen_bc52142368
+                ext: .jpg
+                url: /uploads/reskripti_reede_foto_aksel_haagensen_bc52142368.jpg
+    authors:
+        -
+            id: 287
+-
     id: 7
     title_et: 'The realness of the Internet, Post-Internet practices and sexuality'
     title_en: 'The realness of the Internet, Post-Internet practices and sexuality'

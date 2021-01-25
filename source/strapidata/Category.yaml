@@ -115,14 +115,15 @@
     featured_on_front_page: true
     remote_id: '626'
 -
-    id: 5
-    name_et: Loeng
-    name_en: Lecture
-    remote_id: '623'
--
     id: 12
     slug: performance
     name_et: Performance
     name_en: Performance
     featured_on_front_page: true
     remote_id: '3810'
+-
+    id: 5
+    slug: loeng
+    name_et: Loeng
+    name_en: Lecture
+    remote_id: '623'

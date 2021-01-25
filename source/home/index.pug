@@ -162,7 +162,7 @@ block content
                                         if event.canceled === 'true'
                                             a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                         else
-                                            if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
+                                            if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission")
                                                 a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                             else
                                                 a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
@@ -274,7 +274,7 @@ block content
                                             if event.canceled === 'true'
                                                 a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                             else
-                                                if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status) === "free_admission"
+                                                if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission")
                                                     a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                                 else
                                                     a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
@@ -282,8 +282,8 @@ block content
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
 
-                            script.
-                                toggleEventButtons()
+                    script.
+                        toggleEventButtons()
 
                     .col-xs-12.col-md-12
                         a.load-more.btn.btn-primary(href=`/${lang_path}residency/`)= self.labels.button.view_all
