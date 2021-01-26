@@ -19,6 +19,9 @@ done
 
 printf '\n\n---------- Creating separate YAML files from data ----------\n\n'
 
+echo '==== build ==== reset_config_path_aliases'
+node ./helpers/reset_config_path_aliases.js
+
 echo '==== build ==== newscast_from_yaml'
 node ./helpers/newscast_from_yaml.js -t
 

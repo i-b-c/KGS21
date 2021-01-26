@@ -5,6 +5,9 @@ echo $PWD
 
 printf "\nBuilding...\n"
 
+echo '==== build ==== reset_config_path_aliases'
+node ./helpers/reset_config_path_aliases.js
+
 printf '\n\n---------- Creating separate YAML files from data ----------\n\n'
 
 echo '==== build ==== performances_from_yaml'
