@@ -330,6 +330,222 @@
             value_et: Loe NUP lehte!
             value_en: Get NUP NEWS!
 -
+    id: 20
+    name: login
+    label:
+        -
+            id: 152
+            name: log_out
+            value_et: logi välja
+            value_en: sign out
+        -
+            id: 153
+            name: get_me
+            value_et: päri mind
+            value_en: get me
+        -
+            id: 155
+            name: first_name
+            value_et: eesnimi
+            value_en: first name
+        -
+            id: 163
+            name: first_name_help
+            value_et: Eesnimi nimi peab koosnema vähemalt 2-st tähemärgist
+            value_en: First name should consist of at least 2 characters
+        -
+            id: 156
+            name: family_name
+            value_et: perenimi
+            value_en: family name
+        -
+            id: 164
+            name: last_name_help
+            value_et: Perekonna nimi peab koosnema vähemalt 2-st tähemärgist
+            value_en: Last name should consist of at least 2 characters
+        -
+            id: 159
+            name: save
+            value_et: salvesta
+            value_en: save
+        -
+            id: 157
+            name: dob
+            value_et: sünnikuupäev
+            value_en: date of birth
+        -
+            id: 165
+            name: phone_num_help
+            value_et: >-
+                Telefoni number koosneda numbritest,  "+" märgist alguses ja
+                võib  olla 7-15 kohaline
+            value_en: >-
+                Phone number can consist of numbers, a "+" in the beginning and
+                should be 7-15 characters long
+        -
+            id: 158
+            name: phone
+            value_et: telefoni number
+            value_en: phone number
+        -
+            id: 168
+            name: userprofile_title
+            value_et: Sinu andmed
+            value_en: Your data
+        -
+            id: 179
+            name: change_profile
+            value_et: Muuda andmeid
+            value_en: Change profile
+        -
+            id: 169
+            name: data_saved
+            value_et: Andmed salvestatud
+            value_en: Data saved
+        -
+            id: 182
+            name: favorites
+            value_et: Sinu lemmikud
+            value_en: Favorites
+        -
+            id: 180
+            name: no_favorites
+            value_et: Sa ei ole veel ühtegi lemmikut salvestanud
+            value_en: You have not saved any favorites
+        -
+            id: 183
+            name: tickets
+            value_et: Sinu piletid
+            value_en: Your tickets
+        -
+            id: 181
+            name: no_tickets
+            value_et: Sul pole salvestatud pileteid
+            value_en: You have no saved tickets
+        -
+            id: 154
+            name: email
+            value_et: e-posti aadress
+            value_en: email address
+        -
+            id: 185
+            name: email_not_correct
+            value_et: Palun sisesta korrektne email
+            value_en: Please enter valid email
+        -
+            id: 186
+            name: sign_in_title
+            value_et: Sisene
+            value_en: Sign in
+        -
+            id: 187
+            name: sign_in
+            value_et: Sisene
+            value_en: Sign in
+        -
+            id: 188
+            name: sign_up_title
+            value_et: Registreeri kasutajaks
+            value_en: Sign up for an account
+        -
+            id: 189
+            name: sign_up
+            value_et: Registreeri
+            value_en: Sign_up
+        -
+            id: 184
+            name: psw
+            value_et: salasõna
+            value_en: password
+        -
+            id: 190
+            name: psw_repeat
+            value_et: salasõna teist korda
+            value_en: repeat password
+        -
+            id: 191
+            name: psw_reset
+            value_et: lähtesta parool
+            value_en: reset password
+        -
+            id: 192
+            name: psw_help
+            value_et: Salasõna peab olema vähemalt 8 tähemärki pikk
+            value_en: Password should be at least 8 characters long
+        -
+            id: 167
+            name: psw_repeat_help
+            value_et: Salasõna peab olema identne üleval sisestatule
+            value_en: The password must be identical to the one entered above
+        -
+            id: 193
+            name: providers_list
+            value_et: sinu autentimis viisid
+            value_en: your authentication providers
+        -
+            id: 162
+            name: err_email_used
+            value_et: >-
+                Sellise emailiga kasutaja on meie andmebaasis juba olemas proovi
+                mõne teise viisiga sisse logida.
+            value_en: >-
+                This email has already been registered in our system. Please try
+                logging in with a different provider. 
+        -
+            id: 194
+            name: err_psw_email_not_correct
+            value_et: Email või salasõna pole õige
+            value_en: Email or password is not correct
+        -
+            id: 198
+            name: err_email_used_providers
+            value_et: >-
+                Selle emailiga kasutaja on meie andmebaasis olemas. Proovi sisse
+                ogida Google-i või Facebook-iga.
+            value_en: >-
+                User with this email allready exists. Try signing in with Google
+                or Facebook.
+        -
+            id: 200
+            name: err_login_problem
+            value_et: Viga sisse logimisel
+            value_en: Sign in error
+        -
+            id: 201
+            name: err_profile_not_saved
+            value_et: Profiili salvestamine ebaõnnestus
+            value_en: Saving your profile failed
+        -
+            id: 202
+            name: psw_reset_title
+            value_et: Sisesta uus parool
+            value_en: Enter new password
+        -
+            id: 203
+            name: forgot_psw
+            value_et: unustasin parooli
+            value_en: I forgot my password
+        -
+            id: 250
+            name: remove
+            value_et: Eemalda
+            value_en: Remove
+        -
+            id: 251
+            name: to_save_favo
+            value_et: lemmikute salvestamiseks
+            value_en: to saving favourites
+        -
+            id: 252
+            name: save_as_favo
+            value_et: oma lemmikuks
+            value_en: as your favourite
+        -
+            id: 253
+            name: rm_from_favo
+            value_et: oma lemmikute hulgast
+            value_en: from your favourites
+-
     id: 5
     name: button
     label:
@@ -695,199 +911,3 @@
             name: user_menu
             value_et: Mina
             value_en: Me
--
-    id: 20
-    name: login
-    label:
-        -
-            id: 152
-            name: log_out
-            value_et: logi välja
-            value_en: sign out
-        -
-            id: 153
-            name: get_me
-            value_et: päri mind
-            value_en: get me
-        -
-            id: 155
-            name: first_name
-            value_et: eesnimi
-            value_en: first name
-        -
-            id: 163
-            name: first_name_help
-            value_et: Eesnimi nimi peab koosnema vähemalt 2-st tähemärgist
-            value_en: First name should consist of at least 2 characters
-        -
-            id: 156
-            name: family_name
-            value_et: perenimi
-            value_en: family name
-        -
-            id: 164
-            name: last_name_help
-            value_et: Perekonna nimi peab koosnema vähemalt 2-st tähemärgist
-            value_en: Last name should consist of at least 2 characters
-        -
-            id: 159
-            name: save
-            value_et: salvesta
-            value_en: save
-        -
-            id: 157
-            name: dob
-            value_et: sünnikuupäev
-            value_en: date of birth
-        -
-            id: 165
-            name: phone_num_help
-            value_et: >-
-                Telefoni number koosneda numbritest,  "+" märgist alguses ja
-                võib  olla 7-15 kohaline
-            value_en: >-
-                Phone number can consist of numbers, a "+" in the beginning and
-                should be 7-15 characters long
-        -
-            id: 158
-            name: phone
-            value_et: telefoni number
-            value_en: phone number
-        -
-            id: 168
-            name: userprofile_title
-            value_et: Sinu andmed
-            value_en: Your data
-        -
-            id: 179
-            name: change_profile
-            value_et: Muuda andmeid
-            value_en: Change profile
-        -
-            id: 169
-            name: data_saved
-            value_et: Andmed salvestatud
-            value_en: Data saved
-        -
-            id: 182
-            name: favorites
-            value_et: Sinu lemmikud
-            value_en: Favorites
-        -
-            id: 180
-            name: no_favorites
-            value_et: Sa ei ole veel ühtegi lemmikut salvestanud
-            value_en: You have not saved any favorites
-        -
-            id: 183
-            name: tickets
-            value_et: Sinu piletid
-            value_en: Your tickets
-        -
-            id: 181
-            name: no_tickets
-            value_et: Sul pole salvestatud pileteid
-            value_en: You have no saved tickets
-        -
-            id: 154
-            name: email
-            value_et: e-posti aadress
-            value_en: email address
-        -
-            id: 185
-            name: email_not_correct
-            value_et: Palun sisesta korrektne email
-            value_en: Please enter valid email
-        -
-            id: 186
-            name: sign_in_title
-            value_et: Sisene
-            value_en: Sign in
-        -
-            id: 187
-            name: sign_in
-            value_et: Sisene
-            value_en: Sign in
-        -
-            id: 188
-            name: sign_up_title
-            value_et: Registreeri kasutajaks
-            value_en: Sign up for an account
-        -
-            id: 189
-            name: sign_up
-            value_et: Registreeri
-            value_en: Sign_up
-        -
-            id: 184
-            name: psw
-            value_et: salasõna
-            value_en: password
-        -
-            id: 190
-            name: psw_repeat
-            value_et: salasõna teist korda
-            value_en: repeat password
-        -
-            id: 191
-            name: psw_reset
-            value_et: lähtesta parool
-            value_en: reset password
-        -
-            id: 192
-            name: psw_help
-            value_et: Salasõna peab olema vähemalt 8 tähemärki pikk
-            value_en: Password should be at least 8 characters long
-        -
-            id: 167
-            name: psw_repeat_help
-            value_et: Salasõna peab olema identne üleval sisestatule
-            value_en: The password must be identical to the one entered above
-        -
-            id: 193
-            name: providers_list
-            value_et: sinu autentimis viisid
-            value_en: your authentication providers
-        -
-            id: 162
-            name: err_email_used
-            value_et: >-
-                Sellise emailiga kasutaja on meie andmebaasis juba olemas proovi
-                mõne teise viisiga sisse logida.
-            value_en: >-
-                This email has already been registered in our system. Please try
-                logging in with a different provider. 
-        -
-            id: 194
-            name: err_psw_email_not_correct
-            value_et: Email või salasõna pole õige
-            value_en: Email or password is not correct
-        -
-            id: 198
-            name: err_email_used_providers
-            value_et: >-
-                Selle emailiga kasutaja on meie andmebaasis olemas. Proovi sisse
-                ogida Google-i või Facebook-iga.
-            value_en: >-
-                User with this email allready exists. Try signing in with Google
-                or Facebook.
-        -
-            id: 200
-            name: err_login_problem
-            value_et: Viga sisse logimisel
-            value_en: Sign in error
-        -
-            id: 201
-            name: err_profile_not_saved
-            value_et: Profiili salvestamine ebaõnnestus
-            value_en: Saving your profile failed
-        -
-            id: 202
-            name: psw_reset_title
-            value_et: Sisesta uus parool
-            value_en: Enter new password
-        -
-            id: 203
-            name: forgot_psw
-            value_et: unustasin parooli
-            value_en: I forgot my password

@@ -20,26 +20,28 @@ block content
                                 span.name="nimi"
                                 span.artist="artist"
                     .col-xs-4.col-md-4.col-lg-2
-                        a.btn.btn-primary.text-uppercase#remove-favo eemalda
+                        a.btn.btn-primary.text-uppercase#remove-favo= self.labels.login.remove
                     hr.col-xs-8.col-md-8.col-lg-8
             .programme.row#my-favorites
 
             h2= self.labels.login.userprofile_title
-            .form-group
-                label.login_label(for='email')= self.labels.login.email+":"
-                span.value-view#email(name='email')
-            .form-group
-                label.login_label(for='firstName')= self.labels.login.first_name+":"
-                span.value-view#firstName(name='firstName')
-            .form-group
-                label.login_label(for='lastName')= self.labels.login.family_name+":"
-                span.value-view#lastName(name='lastName')
-            .form-group
-                label.login_label(for='phoneNr')= self.labels.login.phone+":"
-                span.value-view#phoneNr(name='phoneNr')
-            .form-group
-                label.login_label(for='providers')= self.labels.login.providers_list+":"
-                span.value-view#providers(name='providers')
+            table
+                tr
+                    td.login_label(for='email')= self.labels.login.email+":"
+                    td.value-view#email(name='email')
+                tr
+                    td.login_label(for='firstName')= self.labels.login.first_name+":"
+                    td.value-view#firstName(name='firstName')
+                tr
+                    td.login_label(for='lastName')= self.labels.login.family_name+":"
+                    td.value-view#lastName(name='lastName')
+                tr
+                    td.login_label(for='phoneNr')= self.labels.login.phone+":"
+                    td.value-view#phoneNr(name='phoneNr')
+                tr
+                    td.login_label(for='providers')= self.labels.login.providers_list+":"
+                    td.value-view#providers(name='providers')
+
             a.btn.btn-primary.text-uppercase#edit(href="/profile")= self.labels.login.change_profile
 
         //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
@@ -57,6 +59,20 @@ block content
                 p#loginError= self.labels.login.err_login_problem
 
     style.
+        #my-favorites div div{
+            padding-left: 0;
+        }
+        #logged-in-box td{
+            padding: 1rem 0 1rem 0;
+        }
+        #logged-in-box .login_label{
+            padding-right: 1.5rem;
+            font-weight: bold;
+        }
+        #logged-in-box table{
+            margin: 2rem 0 2rem 0;
+        }
+
         .hidden{
             display: none;
         }
@@ -71,10 +87,9 @@ block content
         .valid {
             display: none;
             }
-        #log_out,
-        #edit{
+        #log_out{
             margin: 0 0 2rem 0;
-        }    
+        }
         .value-view{
             padding: 0 0 0 20px;
         }

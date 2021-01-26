@@ -11,25 +11,25 @@ var userProfileLoadedEvent = new CustomEvent('userProfileLoaded')
 //     userProfile = JSON.parse(localStorage.getItem("USER_PROFILE"))
 // }
 
-if(localStorage.getItem('ACCESS_TOKEN')){
-    validateToken()
-}
+// if(localStorage.getItem('ACCESS_TOKEN')){
+//     validateToken()
+// }
 
 //laetud dokumendi elementi kirjutatakse tervitus, kui kasutaja on sisse logitus ( local storage-is on tervitus)
-document.addEventListener('DOMContentLoaded', function(e) {
-    if (localStorage.getItem('initials')) {
-        document.getElementById('user_initials').innerText = localStorage.getItem('initials')
-    }
-})
+// document.addEventListener('DOMContentLoaded', function(e) {
+//     if (localStorage.getItem('initials')) {
+//         document.getElementById('user_initials').innerText = localStorage.getItem('initials')
+//     }
+// })
 
-document.addEventListener('userProfileLoaded', function(e) {
-    try{
-        document.getElementById('user_initials').innerText = localStorage.getItem('initials')
-    }
-    catch(err){
-        console.log("error userProfileLoaded evendis: ",err)
-    }
-})
+// document.addEventListener('userProfileLoaded', function(e) {
+//     try{
+//         document.getElementById('user_initials').innerText = localStorage.getItem('initials')
+//     }
+//     catch(err){
+//         console.log("error userProfileLoaded evendis: ",err)
+//     }
+// })
 
 
 function makeInitials(profile) {
