@@ -34,7 +34,7 @@ const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerforma
 
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
 const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.events.map(ev => ev.id.toString()).includes(process.argv[4])))[0] || []).id
-const target = process.argv[3] && process.argv[3] === 'e' && process.argv[4] ? (eventPerformanceId ? eventPerformanceId : []) : process.argv[3]
+const target = process.argv[3] && process.argv[3] === 'e' && process.argv[4] ? (eventPerformanceId ? eventPerformanceId : null) : process.argv[3]
 
 fetchSpecific = targeted ? [target] : []
 
@@ -132,7 +132,7 @@ function addAliases(oneEventData, pathAliases) {
 pathAliasesFunc(fetchDir, allPathAliases, 'performances')
 
 if (targeted) {
-    const allTargets = fetchSpecific.map(a => `_fetchdir/performances/${a}`)
+    const allTargets = fetchSpecific.filter(a => a).map(a => `_fetchdir/performances/${a}`)
     allTargets.push(`co_productions/`)
     addConfigPathAliases(allTargets)
 }
