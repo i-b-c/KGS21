@@ -5,10 +5,10 @@ echo $PWD
 
 printf "\nBuilding...\n"
 
+printf '\n\n---------- Creating separate YAML files from data ----------\n\n'
+
 echo '==== build ==== reset_config_path_aliases'
 node ./helpers/reset_config_path_aliases.js
-
-printf '\n\n---------- Creating separate YAML files from data ----------\n\n'
 
 echo '==== build ==== performances_from_yaml'
 node ./helpers/performances_from_yaml.js -t $1
