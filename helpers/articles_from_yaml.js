@@ -44,9 +44,9 @@ for (const lang of LANGUAGES) {
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(article.id.toString()) ? true : false
 
 
-        if (article[`title_${lang}`] && article.remote_id) {
+        if (article[`slug_${lang}`] || article.remote_id) {
 
-            article.path = `magazine/${article.remote_id}`
+            article.path = article[`slug_${lang}`] || article.remote_id ? (article[`slug_${lang}`] ? `magazine/${article[`slug_${lang}`]}` : `magazine/${article.remote_id}`) : null
 
             if (lang === 'et') {
                 addAliases(article, [`${lang}/magazine/${article.remote_id}`])
@@ -55,6 +55,13 @@ for (const lang of LANGUAGES) {
             if (article.article_media) {
                 article.hero_images = article.article_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
             }
+
+            if (article.related) {
+                article.related.map(a => {
+                    a.path = a[`slug_${lang}`] || a.remote_id ? (a[`slug_${lang}`] ? `magazine/${a[`slug_${lang}`]}` : `magazine/${a.remote_id}`) : null
+                })
+            }
+
             if (createDir) {
                 if (article.authors && article.authors.length) {
                     article.authors_cs = article.authors
@@ -106,14 +113,14 @@ function processArticles(STRAPIDATA_ARTICLES) {
     const RELATED = STRAPIDATA_ARTICLES.map(rel => {
         let related_articles = {
             id: rel.id,
-            remote_id: rel.remote_id,
-            title_et: rel.title_et,
-            title_en: rel.title_en,
+            remote_id: rel.remote_id || null,
+            title_et: rel.title_et || null,
+            title_en: rel.title_en || null,
+            slug_et: rel.slug_et || null,
+            slug_en: rel.slug_en || null,
             categories: rel.categories ? rel.categories.map(c => c.id) : [],
             authors_cs: rel.authors ? rel.authors.map(a => `${a.first_name}${a.last_name ? ` ${a.last_name}` : ''}`).join(', ') : [],
-            publish_date: rel.publish_date,
-            // path: lang !== 'et' ? `magazine/${rel.remote_id}` : `${lang}/magazine/${rel.remote_id}`,
-            path: `magazine/${rel.remote_id}`,
+            publish_date: rel.publish_date || null,
         }
         return related_articles
     })

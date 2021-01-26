@@ -12,7 +12,7 @@ block content
                         if self.data.articles
                             each article in self.data.articles
                                 //- a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href= `/${lang_path}${article.path}`)
-                                a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href= `/${article.path}`)
+                                a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href= `/${lang_path}${article.path}`)
                                     if article.article_media && article.article_media.filter(e => e.gallery_image_medium).length
                                         img.img-responsive(src=`${m_api}${article.article_media.filter(e => e.gallery_image_medium)[0].gallery_image_medium.url}`)
                                     else

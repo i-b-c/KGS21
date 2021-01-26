@@ -160,7 +160,7 @@ if(validToken){
     document.getElementById("logged-in-box").style.display = "block"
     document.getElementById("not-logged-in-box").style.display = "none"
 }else {
-    console.log("pole sisse loginud")
+    // console.log("pole sisse loginud")
 }
 
 

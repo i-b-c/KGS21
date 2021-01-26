@@ -9,9 +9,9 @@ block content
             .event-banner.carousel.slide(id='front-carousel' data-ride='carousel')
                 .carousel-inner(role='listbox')
                     if self.image_hero
-                        figure(id=`slide-${self.remote_id}` style=`background-image: url('${m_api}${self.image_hero}');`)
+                        figure(id=`slide-${self.id}` style=`background-image: url('${m_api}${self.image_hero}');`)
                     else
-                        figure(id=`slide-${self.remote_id}` style='background-image:url("/assets/images/placeholder.jpg");')
+                        figure(id=`slide-${self.id}` style='background-image:url("/assets/images/placeholder.jpg");')
                     header.col-md-8
                         p
                             +dateFromTo(self.start_time, self.end_time)
@@ -28,20 +28,20 @@ block content
 
                     - var activeCategories = []
                     if self.categories
-                        - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.remote_id )
+                        - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.id )
                     if self.data.categories
                         ul.event-categories
                             each category in self.data.categories
                                 if category.featured_on_front_page
-                                    li.text-uppercase.h3( class =( activeCategories.includes(category.remote_id)? "" : "unactive" ) )
+                                    li.text-uppercase.h3( class =( activeCategories.includes(category.id)? "" : "unactive" ) )
                                         span
                                             a(href="")= category[`name_${self.locale}`]
 
                     script.
-                        var slide#{self.remote_id} = document.getElementById('slide-#{self.remote_id}');
+                        var slide#{self.id} = document.getElementById('slide-#{self.id}');
                         var gradientMap = '#000000, #FFC600';
 
-                        GradientMaps.applyGradientMap(slide#{self.remote_id}, gradientMap);
+                        GradientMaps.applyGradientMap(slide#{self.id}, gradientMap);
 
         .row.front-page-margin
             article.main-text.col-md-12.col-lg-12.h3

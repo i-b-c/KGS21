@@ -43,9 +43,7 @@ nav.navbar.navbar-default.navbar-fixed-top
                         //- a(href='/'+self.locale+'/'+self.path)= t('lang.' + self.locale)
                         //- p= locale + ' - ' + p
                         a(href=(p !== '/' ? p + '/' : '/') onClick= "GetUserInfo()")= locale
-                li.nav.nav-bar-nav.main-nav
-                    //- p#user_msg_initial(style= {display: 'none'})= self.labels.nav.user_menu
-                    a#user_menu(href=`/${lang_path}login`)
-                        span= self.labels.nav.user_menu
-                        span#user_initials
-                    //- span#user_initials(style= {display: 'none'}) nipi tiri
+                //- li.nav.nav-bar-nav.main-nav
+                //-     a#user_menu(href=`/${lang_path}login`)
+                //-         span= self.labels.nav.user_menu
+                //-         span#user_initials
