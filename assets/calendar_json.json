@@ -2,40 +2,6 @@
     "minDate": "2020-11-1",
     "maxDate": "2021-1-29",
     "events": {
-        "2020-11-22": [
-            {
-                "eid": "6794",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: Hoole hääl",
-                    "en": "NU Performance Festival 2020: Voice of Taking Care"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "eid": "6796",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Me sõidame ära",
-                    "en": "We are leaving"
-                },
-                "time": "00:01",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2020-12-12": [
             {
                 "eid": "6871",
@@ -276,6 +242,40 @@
                 }
             }
         ],
+        "2020-11-22": [
+            {
+                "eid": "6794",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020: Hoole hääl",
+                    "en": "NU Performance Festival 2020: Voice of Taking Care"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "eid": "6796",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Me sõidame ära",
+                    "en": "We are leaving"
+                },
+                "time": "00:01",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2020-11-2": [
             {
                 "eid": "6757",
@@ -312,22 +312,6 @@
                 }
             },
             {
-                "eid": "6796",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Me sõidame ära",
-                    "en": "We are leaving"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
                 "eid": "6790",
                 "tag": [
                     "event"
@@ -338,6 +322,22 @@
                     "en": "Workshop for upcoming and practicing she* DJs by Queer womxn DJ collective"
                 },
                 "time": "14:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "eid": "6796",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Me sõidame ära",
+                    "en": "We are leaving"
+                },
+                "time": "20:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -354,42 +354,6 @@
                 "name": {
                     "et": "LÄVI",
                     "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-19": [
-            {
-                "eid": "6774",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: Kajahääl ja jee (koostöös Serious Serious’ega)",
-                    "en": "NU Performance Festival 2020: Voice of Echoes and Yeah (together with Serious Serious)"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2020-11-20": [
-            {
-                "eid": "6788",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: Queer-feministliku nalja hääl (koostöös Feministeeriumiga)",
-                    "en": "NU Performance Festival 2020: Voice of Queer Feminist Fun (together with Feministeerium)"
                 },
                 "time": "19:30",
                 "location": {
@@ -738,6 +702,24 @@
                 }
             }
         ],
+        "2020-11-20": [
+            {
+                "eid": "6788",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020: Queer-feministliku nalja hääl (koostöös Feministeeriumiga)",
+                    "en": "NU Performance Festival 2020: Voice of Queer Feminist Fun (together with Feministeerium)"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
         "2021-1-20": [
             {
                 "eid": "6538",
@@ -787,6 +769,24 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-11-19": [
+            {
+                "eid": "6774",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020: Kajahääl ja jee (koostöös Serious Serious’ega)",
+                    "en": "NU Performance Festival 2020: Voice of Echoes and Yeah (together with Serious Serious)"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1214,24 +1214,6 @@
                 }
             }
         ],
-        "2020-11-17": [
-            {
-                "eid": "6783",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020:  Hääl läbi sajandite (koostöös NAC of Vilnius Academy of Arts)",
-                    "en": "NU Performance Festival 2020: Voice over Centuries (together with NAC of Vilnius Academy of Arts)"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2020-11-18": [
             {
                 "eid": "6785",
@@ -1242,6 +1224,24 @@
                 "name": {
                     "et": "NU Performance Festival 2020: Mälu hääl",
                     "en": "NU Performance Festival 2020: Voice of Memory"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-11-17": [
+            {
+                "eid": "6783",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020:  Hääl läbi sajandite (koostöös NAC of Vilnius Academy of Arts)",
+                    "en": "NU Performance Festival 2020: Voice over Centuries (together with NAC of Vilnius Academy of Arts)"
                 },
                 "time": "19:30",
                 "location": {
@@ -1469,24 +1469,6 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-1": [
-            {
-                "eid": "6670",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "",
-                    "en": ""
                 }
             }
         ]
