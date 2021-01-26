@@ -133,6 +133,6 @@ pathAliasesFunc(fetchDir, allPathAliases, 'performances')
 
 if (targeted) {
     const allTargets = fetchSpecific.map(a => `_fetchdir/performances/${a}`)
-    // allTargets.push(`magazine/`)
+    allTargets.push(`co_productions/`)
     addConfigPathAliases(allTargets)
 }
