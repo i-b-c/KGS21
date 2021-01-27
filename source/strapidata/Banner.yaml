@@ -1,9 +1,4 @@
 -
-    id: 2
-    name: Baltoscandal
-    url: 'http://www.baltoscandal.ee/'
-    remote_id: '615'
--
     id: 3
     name: Väike SAAL Biennaal 2015
     url: 'http://www.saal.ee/event/828/'
@@ -100,3 +95,8 @@
         hash: kulka_01853c592d
         ext: .png
         url: /uploads/kulka_01853c592d.png
+-
+    id: 2
+    name: Baltoscandal
+    url: 'http://www.baltoscandal.ee/'
+    remote_id: '615'

@@ -255,7 +255,7 @@ async function performanceToStrapi() {
 
     })
 
-    let performancesToPost = performances.filter(performance => {return performance.id === null})
+    // let performancesToPost = performances.filter(performance => {return performance.id === null})
     // console.log(JSON.stringify(performances.filter(p => p.X_town_et), null, 4))
     // console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id + ' ' + t.id).join("\n"))
     // for(performance of performancesToPost){
@@ -267,7 +267,7 @@ async function performanceToStrapi() {
     // putToStrapi(performances, 'performances')
 
     // POST
-    console.log(performancesToPost);
+    // console.log(performancesToPost);
     // postToStrapi(performancesToPost, 'performances')
 }
 
@@ -308,10 +308,10 @@ async function coveragesToStrapi() {
     // PUT
     // putToStrapi(coverages, 'coverages')
 
-    let coveragesToPost = coverages.filter( e => {
-        return e.id === null
-    })
-    console.log(coveragesToPost)
+    // let coveragesToPost = coverages.filter( e => {
+    //     return e.id === null
+    // })
+    // console.log(coveragesToPost)
     // postToStrapi(coveragesToPost, 'coverages')
 }
 
@@ -442,10 +442,10 @@ async function articlesToStrapi() {
 
     // POST
 
-    articlesToPost = articles.filter(article => {return article.id === null})
-    for(article of articlesToPost){
-        console.log(article.remote_id)
-    }
+    // articlesToPost = articles.filter(article => {return article.id === null})
+    // for(article of articlesToPost){
+    //     console.log(article.remote_id)
+    // }
     // postToStrapi(articlesToPost, 'articles')
 }
 
@@ -569,19 +569,13 @@ async function eventsToStrapi() {
         }
     })
 
-    let eventsToPost = events.filter( e => e.id === null)
-    console.log(eventsToPost);
-
-    // for (let i = 0; i < 10; i++) {
-    //     console.log(JSON.stringify(events, null, 4))
-
-    // }
-
     // // PUT
     // putToStrapi(events, 'events')
 
     // // POST
-    postToStrapi(eventsToPost, 'events')
+    // let eventsToPost = events.filter( e => e.id === null)
+    // console.log(eventsToPost)
+    // postToStrapi(eventsToPost, 'events')
 }
 
 function eventRemote2Strapi(remote_id) {
@@ -644,10 +638,10 @@ async function newsToStrapi() {
     // putToStrapi(news, 'newscasts')
 
     // POST
-    let newsToPost = news.filter( e => {
-        return e.id === null
-    })
-    console.log('NEWS TO POST', JSON.stringify(newsToPost, 0, 2))
+    // let newsToPost = news.filter( e => {
+    //     return e.id === null
+    // })
+    // console.log('NEWS TO POST', JSON.stringify(newsToPost, 0, 2))
     // postToStrapi(newsToPost, 'newscasts')
 }
 
