@@ -570,8 +570,8 @@ async function eventsToStrapi() {
         }
     })
 
-    let eventsToPost = events.filter( e => e.id === null)
-    console.log(eventsToPost);
+    // let eventsToPost = events.filter( e => e.id === null)
+    // console.log(eventsToPost);
 
     // for (let i = 0; i < 10; i++) {
     //     console.log(JSON.stringify(events, null, 4))
@@ -579,10 +579,10 @@ async function eventsToStrapi() {
     // }
 
     // // PUT
-    // putToStrapi(events, 'events')
+    putToStrapi(events, 'events')
 
     // // POST
-    postToStrapi(eventsToPost, 'events')
+    // postToStrapi(eventsToPost, 'events')
 }
 
 function eventRemote2Strapi(remote_id) {
@@ -706,7 +706,7 @@ async function main() {
     // await locationToStrapi()
     // await eventsToStrapi()
     // await eventChildRelationToStrapi()
-    await newsToStrapi()
+    // await newsToStrapi()
     // await labelsToStrapi() // palju k4sitsi lisatud, sisulist vajadust kirjutamiseks pole
     // await articlesToStrapi()
 
