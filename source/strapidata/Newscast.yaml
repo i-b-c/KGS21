@@ -452,68 +452,6 @@
     remote_id: '1926'
     title_et: Pressiteade
 -
-    id: 325
-    publish_time: '2020-11-27T00:00:00.000Z'
-    content_et: >-
-        Karolin Poska soolo “Sinu nirvaanale” esietendub 5. detsembril Kanuti
-        Gildi SAALis. Tegu on kohaspetsiifilise lavastusega, kus Poska kutsub
-        publiku endaga rännakule läbi keldrisoppide ning mida mahub tänastele
-        oludele vastavalt vaatama vaid piiratud publikuhulk.  
-
-
-        Lavastus “Sinu nirvaanale” proovib läbi kehalise kogemuse jõuda lähemale
-        tänapäeval elamise tundele. Lavastaja ei hakka moraali lugema ega anna
-        hinnanguid, vaid kutsub tumedatel aegadel lahtiste silmadega unistama.
-        Kasutades keha, objekte, häält, maagiat ja ruumi, proovib ta elamise
-        ärevuses luua lohutust.  
-
-
-        Ta paneb enda puusad valetama, ta paneb sibula nutma, ta teeb midagi,
-        mis viib mitte millegini – miski pole tõene ja kõik on võimalik. Ta näeb
-        igavesti, ootab nirvaanat, kaaperdab, kukub jalad koos ja ihkab, mida
-        süda saab. Ta kutsub sind osa saama ilma osalemata.  
-
-
-        Karolin Poska on Tallinnas tegutsev koreograaf, etenduskunstnik ja
-        tantsija. Talle meeldib transformeerida reaalsust, mängida objektide ja
-        publiku ootustega. Tema esimene soololavastus “Thank you, you are
-        welcome, THANK YOU, you are welcome, thank you” etendus mitmel pool
-        Eestis ja ka piiri taga. Hetkel uudistab ta visuaalkunsti piirimail,
-        õppides kaasaegset kunsti Eesti Kunstiakadeemias.  
-
-
-        “Sinu nirvaanale” etendused Kanuti Gildi SAALis 5. - 13. detsembrini ja
-        25. - 29. jaanuarini.   
-
-
-        Lavastaja/etendaja: Karolin Poska  
-
-        Kunstnik: Maret Tamme  
-
-        Helikujundaja: Katrin Enni  
-
-        Valgus: Marko Odar  
-
-        Dramaturgiline tugi, projektijuht: Kaie Küünal  
-
-        Aitäh: Hanna Kritten Tangsoo, Theodore Parker   
-
-        Toetajad: Eesti Kultuurkapital, Floratrade OÜ  
-
-        Kaasproduktsioon: Kanuti Gildi SAAL  
-
-        Esietendus: 5.12.2020 Kanuti Gildi SAAL  
-
-        Keel ei ole takistuseks.   
-
-
-        Lavastusele puudub ligipääs liikumisraskustega inimestele, vabandame!  
-
-
-        Fotod: Martin Buschmann
-    remote_id: '6886'
-    title_et: Karolin Poska proovib elamise ärevuses luua lohutust
--
     id: 341
     publish_time: '2020-04-29T00:00:00.000Z'
     content_et: >-
@@ -603,6 +541,69 @@
         PALJU ÕNNE!
     remote_id: '5809'
     title_et: Teartiauhindade nominendid 2019!
+-
+    id: 325
+    slug_et: karolin-poska-proovib-elamise-revuses-luua-lohutust-325
+    publish_time: '2020-11-27T00:00:00.000Z'
+    content_et: >-
+        Karolin Poska soolo “Sinu nirvaanale” esietendub 5. detsembril Kanuti
+        Gildi SAALis. Tegu on kohaspetsiifilise lavastusega, kus Poska kutsub
+        publiku endaga rännakule läbi keldrisoppide ning mida mahub tänastele
+        oludele vastavalt vaatama vaid piiratud publikuhulk.  
+
+
+        Lavastus “Sinu nirvaanale” proovib läbi kehalise kogemuse jõuda lähemale
+        tänapäeval elamise tundele. Lavastaja ei hakka moraali lugema ega anna
+        hinnanguid, vaid kutsub tumedatel aegadel lahtiste silmadega unistama.
+        Kasutades keha, objekte, häält, maagiat ja ruumi, proovib ta elamise
+        ärevuses luua lohutust.  
+
+
+        Ta paneb enda puusad valetama, ta paneb sibula nutma, ta teeb midagi,
+        mis viib mitte millegini – miski pole tõene ja kõik on võimalik. Ta näeb
+        igavesti, ootab nirvaanat, kaaperdab, kukub jalad koos ja ihkab, mida
+        süda saab. Ta kutsub sind osa saama ilma osalemata.  
+
+
+        Karolin Poska on Tallinnas tegutsev koreograaf, etenduskunstnik ja
+        tantsija. Talle meeldib transformeerida reaalsust, mängida objektide ja
+        publiku ootustega. Tema esimene soololavastus “Thank you, you are
+        welcome, THANK YOU, you are welcome, thank you” etendus mitmel pool
+        Eestis ja ka piiri taga. Hetkel uudistab ta visuaalkunsti piirimail,
+        õppides kaasaegset kunsti Eesti Kunstiakadeemias.  
+
+
+        “Sinu nirvaanale” etendused Kanuti Gildi SAALis 5. - 13. detsembrini ja
+        25. - 29. jaanuarini.   
+
+
+        Lavastaja/etendaja: Karolin Poska  
+
+        Kunstnik: Maret Tamme  
+
+        Helikujundaja: Katrin Enni  
+
+        Valgus: Marko Odar  
+
+        Dramaturgiline tugi, projektijuht: Kaie Küünal  
+
+        Aitäh: Hanna Kritten Tangsoo, Theodore Parker   
+
+        Toetajad: Eesti Kultuurkapital, Floratrade OÜ  
+
+        Kaasproduktsioon: Kanuti Gildi SAAL  
+
+        Esietendus: 5.12.2020 Kanuti Gildi SAAL  
+
+        Keel ei ole takistuseks.   
+
+
+        Lavastusele puudub ligipääs liikumisraskustega inimestele, vabandame!  
+
+
+        Fotod: Martin Buschmann
+    remote_id: '6886'
+    title_et: Karolin Poska proovib elamise ärevuses luua lohutust
 -
     id: 348
     publish_time: '2019-12-15T00:00:00.000Z'

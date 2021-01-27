@@ -44,10 +44,6 @@
     email: rannoait@gmail.com
     remote_id: '1909'
 -
-    id: 224
-    first_name: 10 x 10 meters
-    remote_id: '6734'
--
     id: 225
     first_name: Maarja
     last_name: Kalmre
@@ -211,14 +207,6 @@
     first_name: Jürgen
     remote_id: '4411'
 -
-    id: 254
-    first_name: Kaie
-    last_name: Küünal
-    phone_number: 5347 8523
-    email: kyynal@saal.ee
-    occupation: Projektijuht
-    remote_id: '5713'
--
     id: 255
     first_name: Kaie
     last_name: Olmre
@@ -374,6 +362,19 @@
     id: 231
     first_name: Alissa
     remote_id: '5762'
+-
+    id: 224
+    first_name: 10 x 10 meters
+    remote_id: '6734'
+-
+    id: 254
+    first_name: Kaie
+    last_name: Küünal
+    phone_number: 5347 8523
+    order: 7
+    email: kyynal@saal.ee
+    occupation: Projektijuht
+    remote_id: '5713'
 -
     id: 294
     first_name: Tencu
