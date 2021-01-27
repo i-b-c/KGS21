@@ -238,7 +238,6 @@ async function performanceToStrapi() {
             "X_headline_en": (performance_entity.properties['en-supertitle'].values.length > 0 ? performance_entity.properties['en-supertitle'].values[0].db_value : null),
             "X_town_et": (performance_entity.properties['et-town'].values.length > 0 ? performance_entity.properties['et-town'].values[0].db_value : null),
             "X_town_en": (performance_entity.properties['en-town'].values.length > 0 ? performance_entity.properties['en-town'].values[0].db_value : null),
-            "duration": (performance_entity.properties.duration.values.length > 0 ? performance_entity.properties.duration.values[0].db_value : null),
             "X_pictures": {
                 "photoGallery": photoGallery,
                 "photo": photo,
@@ -256,7 +255,7 @@ async function performanceToStrapi() {
 
     })
 
-    let performancesToPost = performances.filter(performance => {return performance.id === null})
+    // let performancesToPost = performances.filter(performance => {return performance.id === null})
     // console.log(JSON.stringify(performances.filter(p => p.X_town_et), null, 4))
     // console.log(performances.filter(p => p.X_town_et).map(t => t.X_town_et + ', ' + t.X_town_en + ' ' + t.remote_id + ' ' + t.id).join("\n"))
     // for(performance of performancesToPost){
@@ -268,7 +267,7 @@ async function performanceToStrapi() {
     // putToStrapi(performances, 'performances')
 
     // POST
-    console.log(performancesToPost);
+    // console.log(performancesToPost);
     // postToStrapi(performancesToPost, 'performances')
 }
 
@@ -309,10 +308,10 @@ async function coveragesToStrapi() {
     // PUT
     // putToStrapi(coverages, 'coverages')
 
-    let coveragesToPost = coverages.filter( e => {
-        return e.id === null
-    })
-    console.log(coveragesToPost)
+    // let coveragesToPost = coverages.filter( e => {
+    //     return e.id === null
+    // })
+    // console.log(coveragesToPost)
     // postToStrapi(coveragesToPost, 'coverages')
 }
 
@@ -570,18 +569,12 @@ async function eventsToStrapi() {
         }
     })
 
-    // let eventsToPost = events.filter( e => e.id === null)
-    // console.log(eventsToPost);
-
-    // for (let i = 0; i < 10; i++) {
-    //     console.log(JSON.stringify(events, null, 4))
-
-    // }
-
     // // PUT
-    putToStrapi(events, 'events')
+    // putToStrapi(events, 'events')
 
     // // POST
+    // let eventsToPost = events.filter( e => e.id === null)
+    // console.log(eventsToPost)
     // postToStrapi(eventsToPost, 'events')
 }
 
@@ -645,10 +638,10 @@ async function newsToStrapi() {
     // putToStrapi(news, 'newscasts')
 
     // POST
-    let newsToPost = news.filter( e => {
-        return e.id === null
-    })
-    console.log(JSON.stringify(newsToPost, 0, 2))
+    // let newsToPost = news.filter( e => {
+    //     return e.id === null
+    // })
+    // console.log('NEWS TO POST', JSON.stringify(newsToPost, 0, 2))
     // postToStrapi(newsToPost, 'newscasts')
 }
 
@@ -725,4 +718,3 @@ async function main() {
 }
 
 main()
-

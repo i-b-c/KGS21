@@ -2,79 +2,7 @@
     "minDate": "2020-11-1",
     "maxDate": "2021-1-29",
     "events": {
-        "2020-12-12": [
-            {
-                "et_id": "cathexis-85",
-                "en_id": "cathexis-85",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "cathexis-85",
-                "en_id": "cathexis-85",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2021-1-21": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2020-12-3": [
-            {
-                "et_id": "jb-ra-uncanny-valley-vaorg-183",
-                "en_id": "jb-ra-uncanny-valley-183",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
             {
                 "et_id": "jb-ra-uncanny-valley-vaorg-183",
                 "en_id": "jb-ra-uncanny-valley-183",
@@ -91,45 +19,26 @@
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
-            }
-        ],
-        "2020-12-10": [
+            },
             {
-                "et_id": "sinu-nirvaanale-129",
-                "en_id": "for-your-nirvana-129",
+                "et_id": "jb-ra-uncanny-valley-vaorg-183",
+                "en_id": "jb-ra-uncanny-valley-183",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
+                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
+                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
                 },
-                "time": "19:30",
+                "time": "20:30",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
-            },
-            {
-                "et_id": "cathexis-85",
-                "en_id": "cathexis-85",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
             }
         ],
-        "2020-12-13": [
+        "2020-12-7": [
             {
                 "et_id": "sinu-nirvaanale-129",
                 "en_id": "for-your-nirvana-129",
@@ -184,7 +93,7 @@
                 }
             }
         ],
-        "2020-12-7": [
+        "2020-12-10": [
             {
                 "et_id": "sinu-nirvaanale-129",
                 "en_id": "for-your-nirvana-129",
@@ -201,65 +110,65 @@
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
-            }
-        ],
-        "2020-11-15": [
-            {
-                "et_id": "supersocial-245",
-                "en_id": "supersocial-245",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "supersocial",
-                    "en": "supersocial"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
             },
             {
-                "et_id": "6778",
-                "en_id": "6778",
+                "et_id": "cathexis-85",
+                "en_id": "cathexis-85",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "NU Performance Festival 2020: Teisiku hääl",
-                    "en": "NU Performance Festival 2020: Voice of the Double"
+                    "et": "Cathexis",
+                    "en": "Cathexis"
                 },
-                "time": "19:30",
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2020-12-2": [
+            {
+                "et_id": "jb-ra-uncanny-valley-vaorg-183",
+                "en_id": "jb-ra-uncanny-valley-183",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
+                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
+                },
+                "time": "20:30",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
             },
             {
-                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-204",
-                "en_id": "complete-works-table-top-shakespeare-at-home-204",
+                "et_id": "jb-ra-uncanny-valley-vaorg-183",
+                "en_id": "jb-ra-uncanny-valley-183",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
+                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
+                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
                 },
-                "time": "22:00",
+                "time": "18:00",
                 "location": {
-                    "et": "",
-                    "en": ""
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
         "2020-11-22": [
             {
-                "et_id": "6794",
-                "en_id": "6794",
+                "et_id": "nu-performance-festival-2020-hoole-hl-186",
+                "en_id": "nu-performance-festival-2020-voice-of-taking-care-186",
                 "tag": [
                     "event"
                 ],
@@ -292,29 +201,10 @@
                 }
             }
         ],
-        "2020-11-2": [
-            {
-                "et_id": "pha-vaimu-saali-residentuuri-showing-200",
-                "en_id": "recidency-showing-of-pha-vaimu-saal-200",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Püha Vaimu SAALi residentuuri showing",
-                    "en": "Recidency showing of Püha Vaimu SAAL"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
         "2020-11-21": [
             {
-                "et_id": "6792",
-                "en_id": "6792",
+                "et_id": "nu-performance-festival-2020-snteetilise-polfoonia-hl-187",
+                "en_id": "nu-performance-festival-2020-voice-of-synthetic-polyphony-187",
                 "tag": [
                     "event"
                 ],
@@ -364,7 +254,83 @@
                 }
             }
         ],
-        "2020-12-19": [
+        "2020-11-20": [
+            {
+                "et_id": "nu-performance-festival-2020-queer-feministliku-nalja-hl-koosts-feministeeriumiga-189",
+                "en_id": "nu-performance-festival-2020-voice-of-queer-feminist-fun-together-with-feministeerium-189",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020: Queer-feministliku nalja hääl (koostöös Feministeeriumiga)",
+                    "en": "NU Performance Festival 2020: Voice of Queer Feminist Fun (together with Feministeerium)"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-11-19": [
+            {
+                "et_id": "nu-performance-festival-2020-kajahl-ja-jee-koosts-serious-seriousega-195",
+                "en_id": "nu-performance-festival-2020-voice-of-echoes-and-yeah-together-with-serious-serious-195",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020: Kajahääl ja jee (koostöös Serious Serious’ega)",
+                    "en": "NU Performance Festival 2020: Voice of Echoes and Yeah (together with Serious Serious)"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2020-11-2": [
+            {
+                "et_id": "pha-vaimu-saali-residentuuri-showing-200",
+                "en_id": "recidency-showing-of-pha-vaimu-saal-200",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Püha Vaimu SAALi residentuuri showing",
+                    "en": "Recidency showing of Püha Vaimu SAAL"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2021-1-21": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-12-18": [
             {
                 "et_id": "lvi-281",
                 "en_id": "lvi-281",
@@ -383,7 +349,26 @@
                 }
             }
         ],
-        "2020-12-18": [
+        "2021-1-20": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-12-19": [
             {
                 "et_id": "lvi-281",
                 "en_id": "lvi-281",
@@ -474,78 +459,6 @@
                 }
             }
         ],
-        "2020-11-5": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-211",
-                "en_id": "complete-works-table-top-shakespeare-at-home-211",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
-                    "en": "Complete Works: Table Top Shakespeare: At Home"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "lvi-281",
-                "en_id": "lvi-281",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-5": [
-            {
-                "et_id": "sinu-nirvaanale-129",
-                "en_id": "for-your-nirvana-129",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2020-11-4": [
             {
                 "et_id": "kas-te-olete-oma-kohaga-rahul-244",
@@ -582,22 +495,92 @@
                 }
             }
         ],
-        "2021-1-19": [
+        "2020-11-1": [
             {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "et_id": "in-loving-memory-of-albumiesitluskontsert-201",
+                "en_id": "in-loving-memory-of-record-presentation-concert-201",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
+                    "et": "\"In Loving Memory Of\" albumiesitluskontsert",
+                    "en": "\"In Loving Memory Of\" record presentation concert"
                 },
                 "time": "19:30",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-212",
+                "en_id": "complete-works-table-top-shakespeare-at-home-212",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
+                    "en": "Complete Works: Table Top Shakespeare: At Home"
+                },
+                "time": "22:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2020-11-15": [
+            {
+                "et_id": "supersocial-245",
+                "en_id": "supersocial-245",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "supersocial",
+                    "en": "supersocial"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "nu-performance-festival-2020-teisiku-hl-193",
+                "en_id": "nu-performance-festival-2020-voice-of-the-double-193",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020: Teisiku hääl",
+                    "en": "NU Performance Festival 2020: Voice of the Double"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-204",
+                "en_id": "complete-works-table-top-shakespeare-at-home-204",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
+                    "en": "Complete Works: Table Top Shakespeare: At Home"
+                },
+                "time": "22:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -690,6 +673,133 @@
                 }
             }
         ],
+        "2020-12-13": [
+            {
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sinu nirvaanale",
+                    "en": "For your nirvana"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-1-19": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-12-12": [
+            {
+                "et_id": "cathexis-85",
+                "en_id": "cathexis-85",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Cathexis",
+                    "en": "Cathexis"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "cathexis-85",
+                "en_id": "cathexis-85",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Cathexis",
+                    "en": "Cathexis"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2020-11-5": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-211",
+                "en_id": "complete-works-table-top-shakespeare-at-home-211",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kogutud teosed: lauapealne Shakespeare: Kodus",
+                    "en": "Complete Works: Table Top Shakespeare: At Home"
+                },
+                "time": "22:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "lvi-281",
+                "en_id": "lvi-281",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "LÄVI",
+                    "en": "LÄVI"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
         "2020-11-7": [
             {
                 "et_id": "kogutud-teosed-lauapealne-shakespeare-kodus-209",
@@ -740,118 +850,6 @@
                 "location": {
                     "et": "",
                     "en": ""
-                }
-            }
-        ],
-        "2020-11-20": [
-            {
-                "et_id": "6788",
-                "en_id": "6788",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: Queer-feministliku nalja hääl (koostöös Feministeeriumiga)",
-                    "en": "NU Performance Festival 2020: Voice of Queer Feminist Fun (together with Feministeerium)"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-1-20": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-2": [
-            {
-                "et_id": "jb-ra-uncanny-valley-vaorg-183",
-                "en_id": "jb-ra-uncanny-valley-183",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "jb-ra-uncanny-valley-vaorg-183",
-                "en_id": "jb-ra-uncanny-valley-183",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-19": [
-            {
-                "et_id": "6774",
-                "en_id": "6774",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: Kajahääl ja jee (koostöös Serious Serious’ega)",
-                    "en": "NU Performance Festival 2020: Voice of Echoes and Yeah (together with Serious Serious)"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2020-11-11": [
-            {
-                "et_id": "evolutsiooni-revolutsioon-279",
-                "en_id": "the-revolution-on-evolution-279",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -1043,25 +1041,6 @@
                 }
             }
         ],
-        "2020-12-29": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2020-11-12": [
             {
                 "et_id": "supersocial-245",
@@ -1095,6 +1074,101 @@
                 "location": {
                     "et": "",
                     "en": ""
+                }
+            }
+        ],
+        "2020-11-11": [
+            {
+                "et_id": "evolutsiooni-revolutsioon-279",
+                "en_id": "the-revolution-on-evolution-279",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Evolutsiooni revolutsioon",
+                    "en": "The revolution on evolution"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-12-29": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-11-10": [
+            {
+                "et_id": "evolutsiooni-revolutsioon-279",
+                "en_id": "the-revolution-on-evolution-279",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Evolutsiooni revolutsioon",
+                    "en": "The revolution on evolution"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-12-9": [
+            {
+                "et_id": "peks-misatallis-tallinnas-439",
+                "en_id": "beating-at-the-stables-of-the-manor-in-tallinn-439",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Peks mõisatallis / Tallinnas",
+                    "en": "Beating at the stables of the manor / in Tallinn"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-12-8": [
+            {
+                "et_id": "peks-misatallis-tallinnas-439",
+                "en_id": "beating-at-the-stables-of-the-manor-in-tallinn-439",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Peks mõisatallis / Tallinnas",
+                    "en": "Beating at the stables of the manor / in Tallinn"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -1148,82 +1222,6 @@
                 "location": {
                     "et": "",
                     "en": ""
-                }
-            }
-        ],
-        "2020-11-10": [
-            {
-                "et_id": "evolutsiooni-revolutsioon-279",
-                "en_id": "the-revolution-on-evolution-279",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-9": [
-            {
-                "et_id": "peks-misatallis-tallinnas-5099",
-                "en_id": "beating-at-the-stables-of-the-manor-in-tallinn-5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-8": [
-            {
-                "et_id": "peks-misatallis-tallinnas-5099",
-                "en_id": "beating-at-the-stables-of-the-manor-in-tallinn-5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-4": [
-            {
-                "et_id": "kontsertsari-improtest-seemned-improtest-15-collective-179",
-                "en_id": "concert-series-improtest-seeds-improtest-15-collective-179",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective",
-                    "en": "Concert series IMPROTEST: SEEDS  / Improtest 15 Collective"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -1284,55 +1282,17 @@
                 }
             }
         ],
-        "2020-11-18": [
+        "2020-12-4": [
             {
-                "et_id": "6785",
-                "en_id": "6785",
+                "et_id": "kontsertsari-improtest-seemned-improtest-15-collective-179",
+                "en_id": "concert-series-improtest-seeds-improtest-15-collective-179",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "NU Performance Festival 2020: Mälu hääl",
-                    "en": "NU Performance Festival 2020: Voice of Memory"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-17": [
-            {
-                "et_id": "6783",
-                "en_id": "6783",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020:  Hääl läbi sajandite (koostöös NAC of Vilnius Academy of Arts)",
-                    "en": "NU Performance Festival 2020: Voice over Centuries (together with NAC of Vilnius Academy of Arts)"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-11-16": [
-            {
-                "et_id": "tekhne-192",
-                "en_id": "tekhne-192",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "TEKHNE",
-                    "en": "TEKHNE"
+                    "et": "Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective",
+                    "en": "Concert series IMPROTEST: SEEDS  / Improtest 15 Collective"
                 },
                 "time": "19:30",
                 "location": {
@@ -1343,8 +1303,25 @@
         ],
         "2020-11-13": [
             {
-                "et_id": "6771",
-                "en_id": "6771",
+                "et_id": "nu-performance-festival-2020-keha-leidmise-hl-197",
+                "en_id": "nu-performance-festival-2020-voice-finding-its-body-197",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020: Keha leidmise hääl",
+                    "en": "NU Performance Festival 2020: Voice Finding its Body"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "nu-performance-festival-2020-histe-alguste-hl-196",
+                "en_id": "nu-performance-festival-2020-voice-of-shared-beginnings-196",
                 "tag": [
                     "event"
                 ],
@@ -1360,25 +1337,8 @@
                 }
             },
             {
-                "et_id": "6768",
-                "en_id": "6768",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "NU Performance Festival 2020: Keha leidmise hääl",
-                    "en": "NU Performance Festival 2020: Voice Finding its Body"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "6764",
-                "en_id": "6764",
+                "et_id": "nu-performance-festival-2020-keha-leidmise-hl-198",
+                "en_id": "nu-performance-festival-2020-voice-finding-its-body-198",
                 "tag": [
                     "event"
                 ],
@@ -1391,6 +1351,23 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "nu-performance-festival-2020-hl-ja-midagi-veel-199",
+                "en_id": "nu-performance-festival-2020-voice-and-something-more-199",
+                "tag": [
+                    "festival"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
+                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
+                },
+                "time": "18:30",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             },
             {
@@ -1443,22 +1420,62 @@
                     "et": "",
                     "en": ""
                 }
-            },
+            }
+        ],
+        "2020-11-18": [
             {
-                "et_id": "nu-performance-festival-2020-hl-ja-midagi-veel-199",
-                "en_id": "nu-performance-festival-2020-voice-and-something-more-199",
+                "et_id": "nu-performance-festival-2020-mlu-hl-190",
+                "en_id": "nu-performance-festival-2020-voice-of-memory-190",
                 "tag": [
-                    "festival"
+                    "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "NU Performance Festival 2020: HÄÄL JA MIDAGI VEEL",
-                    "en": "NU Performance Festival 2020: VOICE AND SOMETHING MORE"
+                    "et": "NU Performance Festival 2020: Mälu hääl",
+                    "en": "NU Performance Festival 2020: Voice of Memory"
                 },
-                "time": "18:30",
+                "time": "19:30",
                 "location": {
-                    "et": "",
-                    "en": ""
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-11-17": [
+            {
+                "et_id": "nu-performance-festival-2020-hl-lbi-sajandite-koosts-nac-of-vilnius-academy-of-arts-191",
+                "en_id": "nu-performance-festival-2020-voice-over-centuries-together-with-nac-of-vilnius-academy-of-arts-191",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "NU Performance Festival 2020:  Hääl läbi sajandite (koostöös NAC of Vilnius Academy of Arts)",
+                    "en": "NU Performance Festival 2020: Voice over Centuries (together with NAC of Vilnius Academy of Arts)"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2020-11-16": [
+            {
+                "et_id": "tekhne-192",
+                "en_id": "tekhne-192",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "TEKHNE",
+                    "en": "TEKHNE"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
