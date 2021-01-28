@@ -5,10 +5,10 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd $DIR
 echo $PWD
 
-echo '\nMaking copy from live site\n'
+printf '\nMaking copy from live site\n'
 cp -a /srv/www/. /srv/www-bak/`date +"%Y-%m-%d_%H-%M-%S"`/
 
 
-echo '\nReplace live site'
+printf '\nReplace live site'
 rsync -avh /srv/ssg/build/. /srv/www/  --delete-after
 

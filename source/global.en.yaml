@@ -3,7 +3,197 @@ root: /
 language:
     et: eesti
     en: english
-labels: {}
+labels:
+    main:
+        KGS: Kanuti Gildi SAAL
+        KGS_logo: Kanuti Gildi SAAL logo
+        NUP_logo: New Performance logo
+        SB_logo: SAAL Bieannaal logo
+        season: Season
+    Jon Doe:
+        nimeta: Unnamed
+    categories:
+        dance: Dance
+        film: Video
+        lecture: Lecture
+        music: Music
+        new-circus: New Circus
+        performance: Performance
+        theatre: Theatre
+    label:
+        days_short: d
+        duration: Duration
+        hours_short: h
+        minutes_short: min
+    lang:
+        en: EN
+        et: EE
+    linkto:
+        intranet: View in Entu
+    newsletter:
+        mailchimp_action: >-
+            //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=deab6bd3c2
+        inputName: b_b4d371ad73e2be3853f5cd989_deab6bd3c2
+        placeholder: Enter e-mail
+        signup: Sign-up for newsletter
+    placeholder:
+        search: Search…
+    weekdays:
+        '0': Sunday
+        '1': Monday
+        '2': Tuesday
+        '3': Wednesday
+        '4': Thursday
+        '5': Friday
+        '6': Saturday
+    error:
+        Not Found: Page not found
+        cache_missing_residency_past: Loading data. Should be ready in a minute
+        cache_missing_upcoming_events: No upcoming events
+        cache_missing_upcoming: Loading data. Should be ready in a minute
+    month:
+        '1': January
+        '2': February
+        '3': March
+        '4': April
+        '5': May
+        '6': June
+        '7': July
+        '8': August
+        '9': September
+        '10': October
+        '11': November
+        '12': December
+    query:
+        date: Date
+        matches: matches
+        query: Searched for
+        results_0: No matching results
+        results_1: Found one
+        results: Results
+    nup:
+        get_newspaper_2016_1: Get NUP NEWS!
+    login:
+        log_out: sign out
+        get_me: get me
+        first_name: first name
+        first_name_help: First name should consist of at least 2 characters
+        family_name: family name
+        last_name_help: Last name should consist of at least 2 characters
+        save: save
+        dob: date of birth
+        phone_num_help: >-
+            Phone number can consist of numbers, a "+" in the beginning and
+            should be 7-15 characters long
+        phone: phone number
+        userprofile_title: Your data
+        change_profile: Change profile
+        data_saved: Data saved
+        favorites: Favorites
+        no_favorites: You have not saved any favorites
+        tickets: Your tickets
+        no_tickets: You have no saved tickets
+        email: email address
+        email_not_correct: Please enter valid email
+        sign_in_title: Sign in
+        sign_in: Sign in
+        sign_up_title: Sign up for an account
+        sign_up: Sign_up
+        psw: password
+        psw_repeat: repeat password
+        psw_reset: reset password
+        psw_help: Password should be at least 8 characters long
+        psw_repeat_help: The password must be identical to the one entered above
+        providers_list: your authentication providers
+        err_email_used: >-
+            This email has already been registered in our system. Please try
+            logging in with a different provider. 
+        err_psw_email_not_correct: Email or password is not correct
+        err_email_used_providers: >-
+            User with this email allready exists. Try signing in with Google or
+            Facebook.
+        err_login_problem: Sign in error
+        err_profile_not_saved: Saving your profile failed
+        psw_reset_title: Enter new password
+        forgot_psw: I forgot my password
+        remove: Remove
+        to_save_favo: to saving favourites
+        save_as_favo: as your favourite
+        rm_from_favo: from your favourites
+    button:
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance Newspaper
+        artist_talk: Artist talk
+        canceled: Canceled!
+        category: Category
+        load_more: Load more
+        on_tour: On Tour
+        premiere: Premiere!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Search
+        today: Today!
+        view_all: View all
+        volunteer: Become a volunteer!
+        covid_info: Covid info
+        year: Year
+    title:
+        archive: Archive
+        audio: Heli
+        basement: Basement
+        calendar: Calendar
+        contact: Contact
+        event: at SAAL
+        floorplans: Floorplans
+        free: Free of charge!
+        gallery: Gallery
+        kanut_co_productions: co-productions
+        kanut_residency: Residents of Kanuti Gildi SAAL
+        news: News
+        no_echo: No Posts
+        no_events: No events
+        no-residencies: No Residencies
+        no_tours: No tours
+        onsite_price: At the door
+        past: Past
+        press: Press
+        pyhavaimu_residency: Residents of Pühavaimu SAAL
+        related: Other works
+        related_articles: Related posts
+        residency: Residency
+        saal: Saal
+        sound: Sound
+        sponsors: Supporters and networks
+        studio: Studio
+        tour: On tour
+        upcoming: Upcoming
+        video: Video
+        festivals: festivals
+    ticket:
+        buy_ticket: Buy ticket
+        buy_t_canceled: Canceled!
+        buy_t_free_admission: Free Admission
+        buy_t_future_sale: future sale
+        buy_t_presale_at_boxoffices: From box office
+        buy_t_sold_out: Sold out
+        buy_t_price_on_spot: At the door
+        buy_t_regular_presale: Osta pilet
+    nav:
+        about: About Us
+        about_festival: About
+        contact: Info
+        coproductions: Co-Productions
+        festivals: Festivals
+        magazine: Magazine
+        media: Media
+        press: Press
+        program: Program
+        projects: Projects
+        residency: Residencies
+        schedule: Program
+        sponsors: Supporters
+        tickets: Tickets
+        tours: On Tour
+        user_menu: Me
 site_colors:
     bg_color: '#1a1919'
     fg_color: '#FFC600'
