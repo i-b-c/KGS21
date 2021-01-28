@@ -50,9 +50,11 @@ module.exports = {
       if (result.published_at) {
         modify_strapi_data_yaml(result);
         const model_name = (__dirname.split('/').slice(-2)[0])
-        // console.log(model_name)
+        // console.log('testing: ' + model_name)
         if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
+          // console.log('testing: target build file exists', model_name);
           const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result.id], (error, stdout, stderr) => {
+            // console.log('testing: tries to bash build');
             if (error) {
               throw error;
             }

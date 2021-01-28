@@ -24,6 +24,7 @@ function modify_strapi_data_yaml(result) {
   const model_name = (__dirname.split('/').slice(-2)[0]);
   const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
   const data_path = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
+  // console.log(data_path)
   const model_yaml = yaml.parse(fs.readFileSync(data_path, 'utf8'))
   const model_id = result.id
 
@@ -50,7 +51,7 @@ module.exports = {
       if (result.published_at) {
         modify_strapi_data_yaml(result);
         const model_name = (__dirname.split('/').slice(-2)[0])
-        // console.log(model_name)
+        // console.log('\nparams', params, '\ndata', data, '\nresult', result);
         if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
           const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result.id], (error, stdout, stderr) => {
             if (error) {
