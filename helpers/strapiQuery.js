@@ -106,7 +106,7 @@ async function getModel(model, filters={}) {
         filter_str_a.push(key + '=' + encodeURIComponent(value).replace('%20','+'))
     }
 
-    const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
+    const _path = `https://${STRAPI_URL}${DATAMODEL[model]['_path']}`
 
     const options = {
         headers: { 'Content-Type': 'application/json' },
@@ -134,7 +134,7 @@ async function putModel(model, data) {
         return false
     }
 
-    const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
+    const _path = `https://${STRAPI_URL}${DATAMODEL[model]['_path']}`
     let results = []
     for (const element of data) {
         const options = {
