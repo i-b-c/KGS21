@@ -1,5 +1,5 @@
 'use strict';
-
+const dotenv = require('dotenv')
 
 /**
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/models.html#lifecycle-hooks)
@@ -44,8 +44,9 @@ module.exports = {
       if (result.published_at) {
         modify_strapi_data_yaml(result);
         const model_name = (__dirname.split('/').slice(-2)[0])
-        // console.log(model_name)
+        console.log(result.fg_color)
         if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
+          console.log('====MINIBUILD=====')
           const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result.id], (error, stdout, stderr) => {
             if (error) {
               throw error;
@@ -53,6 +54,7 @@ module.exports = {
             console.log(stdout);
           })
         } else {
+          console.log('====FULLBUILD=====')
           const child = execFile('bash', [`/srv/ssg/build.sh`, result.id], (error, stdout, stderr) => {
             if (error) {
               throw error;
