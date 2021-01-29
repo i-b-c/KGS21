@@ -26,4 +26,5 @@ for (const lang of LANGUAGES) {
 
 if (targeted) {
     addConfigPathAliases(['about/'])
+    addConfigPathAliases(['newscasts_archive/'])
 }
