@@ -1,0 +1,36 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+    .container-fluid
+        .row.page-margin
+            .programme
+                .col-xs-12.col-md-12
+                    if self.data.newscasts.length
+                        - var currentYear = new Date().getFullYear()
+                        - var oldestNewsCastYear = new Date(self.data.newscasts.slice(-1)[0].publish_time).getFullYear()
+                        h2= `${self.labels.title.newscast_archive} ${oldestNewsCastYear}-${currentYear-1}`
+                    #accordion.projects-group.panel-group(role="tablist" multiselectable="true")
+                        - var first_newscast = true
+                        if self.data.newscasts.length
+                            each newscast in self.data.newscasts.filter(a => new Date(a.publish_time).getFullYear() !== currentYear)
+                                .panel
+                                    - var content = newscast[`content_${self.locale}`]
+                                    div(id=newscast.id, role='tab')
+                                        h3
+                                            a(data-toggle='collapse', data-parent='#accordion', href='#collapse-'+newscast.id, aria-expanded='true', aria-controls='collapse-'+newscast.id)= newscast[`title_${self.locale}`]
+                                    if first_newscast
+                                        - first_newscast = false
+                                        div.panel-collapse.collapse.in(id='collapse-'+newscast.id, role='tabpanel', aria-labelledby='heading-'+newscast.id)
+                                            div
+                                                p
+                                                p
+                                                    +markdown(newscast[`content_${self.locale}`])
+                                                p
+                                    else
+                                        div.panel-collapse.collapse(id='collapse-'+newscast.id, role='tabpanel', aria-labelledby='heading-'+newscast.id)
+                                            div
+                                                p
+                                                p
+                                                    +markdown(newscast[`content_${self.locale}`])
+                                                p

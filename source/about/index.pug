@@ -60,8 +60,9 @@ block content
                 h2= self.labels.title.news
                 #accordion.panel-group(role="tablist" multiselectable="true")
                     if self.data.newscasts.length
+                        - var currentYear = new Date().getFullYear()
                         - var count = 0
-                        each newscast in self.data.newscasts
+                        each newscast in self.data.newscasts.filter(a => new Date(a.publish_time).getFullYear() === currentYear)
                             .panel
                                 div(id=`heading-${newscast.id}` role="tab")
                                     h3
@@ -72,8 +73,7 @@ block content
                                         div
                                             p
                                             p
-                                                - var content = newscast[`content_${self.locale}`]
-                                                | !{self.md(content)}
+                                                +markdown(newscast[`content_${self.locale}`])
                                             p
                                 else
 
@@ -81,9 +81,16 @@ block content
                                         div
                                             p
                                             p
-                                                - var content = newscast[`content_${self.locale}`]
-                                                | !{self.md(content)}
+                                                +markdown(newscast[`content_${self.locale}`])
                                             p
+
+                        br
+                        .row
+                            .col-sm-12.col-md-12.col-lg-12
+                                ul.pager
+                                    li.next
+                                        a(href="/news-archive")= self.labels.title.newscast_archive
+
     .row.page-margin
         .supporter.col-md-12
             h2= self.labels.title.sponsors
