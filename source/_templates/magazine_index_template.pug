@@ -54,8 +54,7 @@ block content
                             //- h2= t('title.sound')
                             each audio in self.audios
                                 div!= audio
-
-                    .article.main-text.h3.col-sm-12.col-md-8.col-lg-8
+                    div(class='article main-text h3 col-sm-12 col-md-8 col-lg-8 photo-article-' + self.photo_article)
                         | !{self.md(self[`content_${self.locale}`])}
 
 

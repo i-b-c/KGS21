@@ -3187,6 +3187,21 @@ footer {
 }
 /*{class="img-in-text"} use when entering text from strapi*/
 
-.img-in-text{
+
+/*vorming siis kui artili sisu koosneb ainult pildist*/
+/*.photo-article-true{
+    border: 2px solid green;
+
+}*/
+
+/*vorming siis kui on tavaline artikkel*/
+/*.photo-article-undefined,
+.photo-article-false{
+    border-left: 2px solid red!important;
+}*/
+
+/*teksti sees olevate piltide suurus tavalises artikklis*/
+.photo-article-false img,
+.photo-article-undefined img{
     max-height: 80vh;
 }
