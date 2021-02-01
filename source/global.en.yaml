@@ -10,8 +10,6 @@ labels:
         NUP_logo: New Performance logo
         SB_logo: SAAL Bieannaal logo
         season: Season
-    Jon Doe:
-        nimeta: Unnamed
     categories:
         dance: Dance
         film: Video
@@ -46,6 +44,8 @@ labels:
         '4': Thursday
         '5': Friday
         '6': Saturday
+    Jon Doe.:
+        nimeta: Unnamed
     error:
         Not Found: Page not found
         cache_missing_residency_past: Loading data. Should be ready in a minute
@@ -136,6 +136,23 @@ labels:
         volunteer: Become a volunteer!
         covid_info: Covid info
         year: Year
+    nav:
+        about: About Us
+        about_festival: About
+        contact: Info
+        coproductions: Co-Productions
+        festivals: Festivals
+        magazine: Magazine
+        media: Media
+        press: Press
+        program: Program
+        projects: Projects
+        residency: Residencies
+        schedule: Program
+        sponsors: Supporters
+        tickets: Tickets
+        tours: On Tour
+        user_menu: Me
     title:
         archive: Archive
         audio: Heli
@@ -168,6 +185,7 @@ labels:
         upcoming: Upcoming
         video: Video
         festivals: festivals
+        newscast_archive: News archive
     ticket:
         buy_ticket: Buy ticket
         buy_t_canceled: Canceled!
@@ -177,23 +195,7 @@ labels:
         buy_t_sold_out: Sold out
         buy_t_price_on_spot: At the door
         buy_t_regular_presale: Osta pilet
-    nav:
-        about: About Us
-        about_festival: About
-        contact: Info
-        coproductions: Co-Productions
-        festivals: Festivals
-        magazine: Magazine
-        media: Media
-        press: Press
-        program: Program
-        projects: Projects
-        residency: Residencies
-        schedule: Program
-        sponsors: Supporters
-        tickets: Tickets
-        tours: On Tour
-        user_menu: Me
+        buy_t_online: Online
 site_colors:
     bg_color: '#1a1919'
     fg_color: '#FFC600'
