@@ -28,15 +28,6 @@
             value_et: Hooaeg
             value_en: Season
 -
-    id: 3
-    name: Jon Doe
-    label:
-        -
-            id: 7
-            name: nimeta
-            value_et: Nimeta
-            value_en: Unnamed
--
     id: 6
     name: categories
     label:
@@ -196,6 +187,15 @@
             name: '6'
             value_et: laupäev
             value_en: Saturday
+-
+    id: 3
+    name: Jon Doe.
+    label:
+        -
+            id: 7
+            name: nimeta
+            value_et: Nimeta
+            value_en: Unnamed
 -
     id: 7
     name: error
@@ -625,6 +625,90 @@
             value_et: Aasta
             value_en: Year
 -
+    id: 12
+    name: nav
+    label:
+        -
+            id: 75
+            name: about
+            value_et: Meist
+            value_en: About Us
+        -
+            id: 76
+            name: about_festival
+            value_et: Festivalist
+            value_en: About
+        -
+            id: 77
+            name: contact
+            value_et: Info
+            value_en: Info
+        -
+            id: 78
+            name: coproductions
+            value_et: Kaasproduktsioonid
+            value_en: Co-Productions
+        -
+            id: 79
+            name: festivals
+            value_et: Festivalid
+            value_en: Festivals
+        -
+            id: 80
+            name: magazine
+            value_et: Magasin
+            value_en: Magazine
+        -
+            id: 81
+            name: media
+            value_et: Meedia
+            value_en: Media
+        -
+            id: 82
+            name: press
+            value_et: Press
+            value_en: Press
+        -
+            id: 83
+            name: program
+            value_et: Programm
+            value_en: Program
+        -
+            id: 84
+            name: projects
+            value_et: Projektid
+            value_en: Projects
+        -
+            id: 85
+            name: residency
+            value_et: Residentuurid
+            value_en: Residencies
+        -
+            id: 86
+            name: schedule
+            value_et: Kava
+            value_en: Program
+        -
+            id: 87
+            name: sponsors
+            value_et: Toetajad
+            value_en: Supporters
+        -
+            id: 88
+            name: tickets
+            value_et: Piletid
+            value_en: Tickets
+        -
+            id: 89
+            name: tours
+            value_et: Tuurid
+            value_en: On Tour
+        -
+            id: 161
+            name: user_menu
+            value_et: Mina
+            value_en: Me
+-
     id: 16
     name: title
     label:
@@ -783,6 +867,11 @@
             name: festivals
             value_et: festivalid
             value_en: festivals
+        -
+            id: 255
+            name: newscast_archive
+            value_et: Uudiste arhiiv
+            value_en: News archive
 -
     id: 21
     name: ticket
@@ -827,87 +916,8 @@
             name: buy_t_regular_presale
             value_et: Buy ticket
             value_en: Osta pilet
--
-    id: 12
-    name: nav
-    label:
         -
-            id: 75
-            name: about
-            value_et: Meist
-            value_en: About Us
-        -
-            id: 76
-            name: about_festival
-            value_et: Festivalist
-            value_en: About
-        -
-            id: 77
-            name: contact
-            value_et: Info
-            value_en: Info
-        -
-            id: 78
-            name: coproductions
-            value_et: Kaasproduktsioonid
-            value_en: Co-Productions
-        -
-            id: 79
-            name: festivals
-            value_et: Festivalid
-            value_en: Festivals
-        -
-            id: 80
-            name: magazine
-            value_et: Magasin
-            value_en: Magazine
-        -
-            id: 81
-            name: media
-            value_et: Meedia
-            value_en: Media
-        -
-            id: 82
-            name: press
-            value_et: Press
-            value_en: Press
-        -
-            id: 83
-            name: program
-            value_et: Programm
-            value_en: Program
-        -
-            id: 84
-            name: projects
-            value_et: Projektid
-            value_en: Projects
-        -
-            id: 85
-            name: residency
-            value_et: Residentuurid
-            value_en: Residencies
-        -
-            id: 86
-            name: schedule
-            value_et: Kava
-            value_en: Program
-        -
-            id: 87
-            name: sponsors
-            value_et: Toetajad
-            value_en: Supporters
-        -
-            id: 88
-            name: tickets
-            value_et: Piletid
-            value_en: Tickets
-        -
-            id: 89
-            name: tours
-            value_et: Tuurid
-            value_en: On Tour
-        -
-            id: 161
-            name: user_menu
-            value_et: Mina
-            value_en: Me
+            id: 257
+            name: buy_t_online
+            value_et: Online
+            value_en: Online

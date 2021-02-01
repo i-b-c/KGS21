@@ -14,11 +14,6 @@
     last_name: Suisalu
     remote_id: '4290'
 -
-    id: 284
-    first_name: Olga
-    last_name: Tsvetkova
-    remote_id: '5010'
--
     id: 285
     first_name: Perrine en
     last_name: Morceaux
@@ -71,15 +66,6 @@
     occupation: Tehnik
     remote_id: '1907'
 -
-    id: 228
-    first_name: Annika
-    last_name: Üprus
-    phone_number: +372 51 75 775
-    order: 4
-    email: annika@saal.ee
-    occupation: 'SAAL Biennaali kunstiline juht, projektijuht'
-    remote_id: '612'
--
     id: 229
     first_name: Eneli
     last_name: Järs
@@ -88,20 +74,6 @@
     email: eneli@saal.ee
     occupation: Projektijuht
     remote_id: '1906'
--
-    id: 230
-    first_name: Kaie
-    last_name: Olmre
-    phone_number: '+3725241778'
-    order: 6
-    email: kaie@saal.ee
-    occupation: Projektijuht
-    remote_id: '4789'
--
-    id: 232
-    first_name: Alissa
-    last_name: Šnaider
-    remote_id: '4050'
 -
     id: 233
     first_name: Angela
@@ -226,11 +198,6 @@
     id: 258
     first_name: Karl
     remote_id: '5764'
--
-    id: 259
-    first_name: Kaspar
-    last_name: Aus
-    remote_id: '6170'
 -
     id: 260
     first_name: Katrin
@@ -376,6 +343,33 @@
     occupation: Projektijuht
     remote_id: '5713'
 -
+    id: 232
+    first_name: Alissa
+    last_name: 'Šnaider '
+    remote_id: '4050'
+-
+    id: 298
+    first_name: Urmas
+    last_name: Lüüs
+-
+    id: 230
+    first_name: Kaie
+    last_name: Olmre
+    phone_number: '+3725241778'
+    order: 9
+    email: kaie@saal.ee
+    occupation: Lapsehoolduspuhkusel
+    remote_id: '4789'
+-
+    id: 228
+    first_name: Annika
+    last_name: 'Üprus '
+    phone_number: +372 51 75 775
+    order: 4
+    email: annika@saal.ee
+    occupation: 'SAAL Biennaali kunstiline juht, projektijuht'
+    remote_id: '612'
+-
     id: 294
     first_name: Tencu
     remote_id: '6357'
@@ -392,3 +386,13 @@
     id: 297
     first_name: Üüve-Lydia Toompere
     remote_id: '4512'
+-
+    id: 284
+    first_name: Olga
+    last_name: 'Tsvetkova '
+    remote_id: '5010'
+-
+    id: 259
+    first_name: Kaspar
+    last_name: 'Aus '
+    remote_id: '6170'

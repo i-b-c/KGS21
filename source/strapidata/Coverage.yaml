@@ -2435,13 +2435,13 @@
     publish_date: '2019-06-20T00:00:00.000Z'
     remote_id: '6340'
 -
-    id: 2271
-    title: '“Teater katku ajal” Madis Kolk, Valle-Sten Maiste, Meelis Oidsalu'
-    slug: teater-katku-ajal-madis-kolk-valle-sten-maiste-meelis-oidsalu-2271
-    source: Teatrivaht
-    url: 'https://vikerraadio.err.ee/1134153/teatrivaht-teater-katku-ajal'
-    publish_date: '2020-09-11T00:00:00.000Z'
-    remote_id: '6752'
+    id: 2279
+    title: '“Millest me räägime, kui me räägima kinnisvarast?” Oliver Issak'
+    slug: millest-me-rgime-kui-me-rgima-kinnisvarast-oliver-issak-2279
+    source: Teater. Muusika. Kino.
+    url: 'https://www.temuki.ee/archives/2356'
+    publish_date: '2020-10-01T00:00:00.000Z'
+    remote_id: '6747'
 -
     id: 2364
     title: '"Pühanalja poole" Eika Herman ja Karl Saks, kirja pannud Kaja Kann'
@@ -2931,6 +2931,19 @@
     publish_date: '2015-09-08T00:00:00.000Z'
     remote_id: '1960'
 -
+    id: 2271
+    title: '“Teater katku ajal” Madis Kolk, Valle-Sten Maiste, Meelis Oidsalu'
+    slug: teater-katku-ajal-madis-kolk-valle-sten-maiste-meelis-oidsalu-2271
+    source: Teatrivaht
+    url: 'https://vikerraadio.err.ee/1134153/teatrivaht-teater-katku-ajal'
+    publish_date: '2020-09-11T00:00:00.000Z'
+    remote_id: '6752'
+-
+    id: 2370
+    title: '"Kui nirvaana puhkeb õiest õide" Kärt Kelder'
+    source: Sirp
+    url: 'https://www.sirp.ee/s1-artiklid/teater/kui-nirvaana-puhkeb-oiest-oide/'
+-
     id: 2268
     title: '"99 tundi etendust"'
     slug: 99-tundi-etendust-2268
@@ -2948,31 +2961,6 @@
         https://kultuur.err.ee/1135698/arvustus-ka-juhuslikest-pusletukkidest-voib-tulla-pilt
     publish_date: '2020-09-20T00:00:00.000Z'
     remote_id: '6819'
--
-    id: 2269
-    title: “Vaba tahte kohavalik” Marie Pullerits
-    slug: vaba-tahte-kohavalik-marie-pullerits-2269
-    source: Sirp
-    url: 'https://sirp.ee/s1-artiklid/teater/vaba-tahte-kohavalik/'
-    publish_date: '2020-09-11T00:00:00.000Z'
-    remote_id: '6753'
--
-    id: 2270
-    title: “Miljoni dollari kvarteti hääbumisgruuv” Valle-Sten Maiste
-    slug: miljoni-dollari-kvarteti-hbumisgruuv-valle-sten-maiste-2270
-    source: Sirp
-    url: >-
-        https://www.sirp.ee/s1-artiklid/teater/miljoni-dollari-kvarteti-haabumisgruuv/
-    publish_date: '2020-09-11T00:00:00.000Z'
-    remote_id: '6754'
--
-    id: 2261
-    title: 'Kultuuriuudised - Reet Weidebaum (alates 20:58)'
-    slug: kultuuriuudised-reet-weidebaum-alates-2058-2261
-    source: Aktuaalne Kaamera
-    url: 'https://etv.err.ee/1121034/aktuaalne-kaamera-ilm'
-    publish_date: '2020-08-19T00:00:00.000Z'
-    remote_id: '6755'
 -
     id: 2264
     title: >-
@@ -3069,6 +3057,14 @@
     publish_date: '2018-04-09T00:00:00.000Z'
     remote_id: '5323'
 -
+    id: 2269
+    title: “Vaba tahte kohavalik” Marie Pullerits
+    slug: vaba-tahte-kohavalik-marie-pullerits-2269
+    source: Sirp
+    url: 'https://sirp.ee/s1-artiklid/teater/vaba-tahte-kohavalik/'
+    publish_date: '2020-09-11T00:00:00.000Z'
+    remote_id: '6753'
+-
     id: 2262
     title: >-
         KULTUURIBIIT | Etenduskunstnike Üüve-Lydia Toompere ja Siim Tõniste
@@ -3113,14 +3109,31 @@
         http://kuukiri.tantsuharidus.ee/artikkel/henri-hutt-oma-soololavastusest-rhythm-is-a-dancer/
     remote_id: '4281'
 -
-    id: 2274
-    title: “Teatud joviaalne ühisvangistuse tunne” Meelis Oidsalu
-    slug: teatud-joviaalne-hisvangistuse-tunne-meelis-oidsalu-2274
-    source: Postimees
+    id: 2371
+    title: >-
+        KULTUURIBIIT | Etenduskunstnike Jette Loona Hermanise ja Johhan
+        Rosenbergi playlist 
+    source: Eesti Päevalehe KULTUURIBIIT
     url: >-
-        https://leht.postimees.ee/7064225/teatud-joviaalne-uhisvangistuse-tunne?_ga=2.63651947.558127200.1600265890-1436981919.1599689359
-    publish_date: '2020-09-17T00:00:00.000Z'
-    remote_id: '6749'
+        https://epl.delfi.ee/artikkel/92401667/kultuuribiit-etenduskunstnike-jette-loona-hermanise-ja-johhan-rosenbergi-playlist?fbclid=IwAR28Qp3Nejo5ib8BUkRUjHw2_WOhXVRy7bzgazt7Yu-ZKiiO0atirD7Pu84
+    publish_date: '2021-01-29T10:00:00.000Z'
+-
+    id: 2270
+    title: “Miljoni dollari kvarteti hääbumisgruuv” Valle-Sten Maiste
+    slug: miljoni-dollari-kvarteti-hbumisgruuv-valle-sten-maiste-2270
+    source: Sirp
+    url: >-
+        https://www.sirp.ee/s1-artiklid/teater/miljoni-dollari-kvarteti-haabumisgruuv/
+    publish_date: '2020-09-11T00:00:00.000Z'
+    remote_id: '6754'
+-
+    id: 2261
+    title: 'Kultuuriuudised - Reet Weidebaum (alates 20:58)'
+    slug: kultuuriuudised-reet-weidebaum-alates-2058-2261
+    source: Aktuaalne Kaamera
+    url: 'https://etv.err.ee/1121034/aktuaalne-kaamera-ilm'
+    publish_date: '2020-08-19T00:00:00.000Z'
+    remote_id: '6755'
 -
     id: 2193
     title: '"Fearing Russian Influence, Estonia Turns to the Arts" - Carmen Gray'
@@ -3266,14 +3279,14 @@
     publish_date: '2019-08-28T00:00:00.000Z'
     remote_id: '6339'
 -
-    id: 2272
-    title: 'Publikumärk - Liis Seljamaa (alates 24:20)'
-    slug: publikumrk-liis-seljamaa-alates-2420-2272
-    source: KUKU raadio
+    id: 2274
+    title: “Teatud joviaalne ühisvangistuse tunne” Meelis Oidsalu
+    slug: teatud-joviaalne-hisvangistuse-tunne-meelis-oidsalu-2274
+    source: Postimees
     url: >-
-        https://router.euddn.net/media.kuku.ee/publikumark/publikumark20200912.mp3
-    publish_date: '2020-09-12T00:00:00.000Z'
-    remote_id: '6751'
+        https://leht.postimees.ee/7064225/teatud-joviaalne-uhisvangistuse-tunne?_ga=2.63651947.558127200.1600265890-1436981919.1599689359
+    publish_date: '2020-09-17T00:00:00.000Z'
+    remote_id: '6749'
 -
     id: 2252
     title: 'Publikumärk, Liisi Seljamaa'
@@ -3292,15 +3305,6 @@
         https://kultuur.err.ee/1064199/arvustus-uleharitud-koreograafide-tupikseis
     publish_date: '2020-03-15T00:00:00.000Z'
     remote_id: '6554'
--
-    id: 2247
-    title: '"100% KATMATA KAADER", Tiiu Suvi'
-    slug: 100-katmata-kaader-tiiu-suvi-2247
-    source: Anne&Stiil
-    url: >-
-        https://lood.delfi.ee/annestiil/ajakiri/100-katmata-kaader-video-ja-visuaalkunstnik-emer-vark-mulle-on-oeldud-et-parast-intensiivset-seksi-lohnan-nagu-kanep?id=88556797
-    publish_date: '2020-01-05T00:00:00.000Z'
-    remote_id: '6262'
 -
     id: 2248
     title: >-
@@ -3410,6 +3414,24 @@
     publish_date: '2016-04-07T00:00:00.000Z'
     remote_id: '4409'
 -
+    id: 2272
+    title: 'Publikumärk - Liis Seljamaa (alates 24:20)'
+    slug: publikumrk-liis-seljamaa-alates-2420-2272
+    source: KUKU raadio
+    url: >-
+        https://router.euddn.net/media.kuku.ee/publikumark/publikumark20200912.mp3
+    publish_date: '2020-09-12T00:00:00.000Z'
+    remote_id: '6751'
+-
+    id: 2247
+    title: '"100% KATMATA KAADER", Tiiu Suvi  '
+    slug: 100-katmata-kaader-tiiu-suvi-2247
+    source: Anne&Stiil
+    url: >-
+        https://lood.delfi.ee/annestiil/ajakiri/100-katmata-kaader-video-ja-visuaalkunstnik-emer-vark-mulle-on-oeldud-et-parast-intensiivset-seksi-lohnan-nagu-kanep?id=88556797
+    publish_date: '2020-01-05T00:00:00.000Z'
+    remote_id: '6262'
+-
     id: 2275
     title: '"Ei! See ei saa olla vastus" Ott Karulin'
     slug: ei-see-ei-saa-olla-vastus-ott-karulin-2275
@@ -3418,18 +3440,6 @@
         https://leht.postimees.ee/7065928/ei-see-ei-saa-olla-vastus?_ga=2.138484784.2013313253.1599676893-432447941.1598624596&fbclid=IwAR05K8sPA7xgSIuOyrb8P3Nq388-x2zvDlu_j7i3fm1eDwbDZ4AjkLrkbWs
     publish_date: '2020-09-18T00:00:00.000Z'
     remote_id: '6818'
--
-    id: 2278
-    title: >-
-        “Kanuti ja Von Krahli uuslavastused” Madis Kolk, Valle-Sten Maiste,
-        Meelis Oidsalu
-    slug: >-
-        kanuti-ja-von-krahli-uuslavastused-madis-kolk-valle-sten-maiste-meelis-oidsalu-2278
-    source: Teatrivaht
-    url: >-
-        https://vikerraadio.err.ee/1140089/teatrivaht-kanuti-ja-von-krahli-uuslavastused
-    publish_date: '2020-09-27T00:00:00.000Z'
-    remote_id: '6748'
 -
     id: 2260
     title: '"Sõnatu hinge sündroom" Madis Kolk'
@@ -3590,6 +3600,18 @@
     publish_date: '2019-09-16T00:00:00.000Z'
     remote_id: '6345'
 -
+    id: 2278
+    title: >-
+        “Kanuti ja Von Krahli uuslavastused” Madis Kolk, Valle-Sten Maiste,
+        Meelis Oidsalu
+    slug: >-
+        kanuti-ja-von-krahli-uuslavastused-madis-kolk-valle-sten-maiste-meelis-oidsalu-2278
+    source: Teatrivaht
+    url: >-
+        https://vikerraadio.err.ee/1140089/teatrivaht-kanuti-ja-von-krahli-uuslavastused
+    publish_date: '2020-09-27T00:00:00.000Z'
+    remote_id: '6748'
+-
     id: 2150
     title: Siim Tõniste ja Üüve-Lydia Toompere loevad värskeid ajalehti
     slug: siim-tniste-ja-ve-lydia-toompere-loevad-vrskeid-ajalehti-2150
@@ -3744,14 +3766,6 @@
         https://leht.postimees.ee/7063322/teatrimaastikul-on-kasvanud-teadmatus-ja-ebavordsus
     publish_date: '2020-09-15T00:00:00.000Z'
     remote_id: '6750'
--
-    id: 2279
-    title: '“Millest me räägime, kui me räägima kinnisvarast?” Oliver Issak'
-    slug: millest-me-rgime-kui-me-rgima-kinnisvarast-oliver-issak-2279
-    source: Teater. Muusika. Kino.
-    url: 'https://www.temuki.ee/archives/2356'
-    publish_date: '2020-10-01T00:00:00.000Z'
-    remote_id: '6747'
 -
     id: 2242
     title: '"Lähisuhtevägivald ja kunstnikuvastutus" Marianne Kõver'

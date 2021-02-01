@@ -10,8 +10,6 @@ labels:
         NUP_logo: New Performance logo
         SB_logo: SAAL Bieannaal logo
         season: Hooaeg
-    Jon Doe:
-        nimeta: Nimeta
     categories:
         dance: Tants
         film: Video
@@ -46,6 +44,8 @@ labels:
         '4': neljapäev
         '5': reede
         '6': laupäev
+    Jon Doe.:
+        nimeta: Nimeta
     error:
         Not Found: >-
             Seda lehte pole veel valmis tehtud või siis on heaks arvatud ta
@@ -138,6 +138,23 @@ labels:
         volunteer: Tule vabatahtlikuks!
         covid_info: Koroona meelespea
         year: Aasta
+    nav:
+        about: Meist
+        about_festival: Festivalist
+        contact: Info
+        coproductions: Kaasproduktsioonid
+        festivals: Festivalid
+        magazine: Magasin
+        media: Meedia
+        press: Press
+        program: Programm
+        projects: Projektid
+        residency: Residentuurid
+        schedule: Kava
+        sponsors: Toetajad
+        tickets: Piletid
+        tours: Tuurid
+        user_menu: Mina
     title:
         archive: Arhiiv
         audio: Audio
@@ -170,6 +187,7 @@ labels:
         upcoming: Tulekul
         video: Video
         festivals: festivalid
+        newscast_archive: Uudiste arhiiv
     ticket:
         buy_ticket: Osta pilet
         buy_t_canceled: Jääb ära!
@@ -179,23 +197,7 @@ labels:
         buy_t_sold_out: Välja müüdud
         buy_t_price_on_spot: Hind kohapeal
         buy_t_regular_presale: Buy ticket
-    nav:
-        about: Meist
-        about_festival: Festivalist
-        contact: Info
-        coproductions: Kaasproduktsioonid
-        festivals: Festivalid
-        magazine: Magasin
-        media: Meedia
-        press: Press
-        program: Programm
-        projects: Projektid
-        residency: Residentuurid
-        schedule: Kava
-        sponsors: Toetajad
-        tickets: Piletid
-        tours: Tuurid
-        user_menu: Mina
+        buy_t_online: Online
 site_colors:
     bg_color: '#1a1919'
     fg_color: '#FFC600'
