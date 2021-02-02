@@ -38,6 +38,10 @@ function modify_strapi_data_yaml(result) {
   console.log(fs.writeFileSync(data_path, yaml.stringify(model_yaml), 'utf8'))
 }
 
+// function change_Strapi_LeftMenuHeader_colour() {
+//   let LeftMenuHeader_path = path.join('/srv', 'strapi', 'strapi-development', 'admin', 'src', 'components', 'LeftMenu', 'Wrapper.js')
+// }
+
 module.exports = {
   lifecycles: {
     afterUpdate(result, params, data) {
