@@ -63,22 +63,22 @@ block content
                             .gallery
                                     .row
 
-                                    if self.hero_images && self.hero_images.length === 1
+                                    - var mediumImages = self.article_media.filter(a => a.gallery_image_medium)
+
+                                    if mediumImages.length === 1
                                         .row
                                             .col-xs-12
-                                                img(src=`${m_api}${self.hero_images[0]}`, class='img-responsive')
+                                                img(src=`${m_api}${mediumImages[0].hero_image ? mediumImages[0].hero_image.url : mediumImages[0].gallery_image_medium.url}`, class='img-responsive')
 
-                                    else
+                                    if mediumImages.length > 1
                                         h2= self.labels.title.gallery
-                                        each galPhoto in self.article_media
+                                        each galPhoto in mediumImages
                                             if galPhoto.gallery_image_medium
                                                 .single-image.col-xs-6.col-sm-3.col-md-4
 
-                                                    if galPhoto.original_image && galPhoto.original_image.url
-                                                        - var imgLink = galPhoto.original_image.url
-                                                    else if galPhoto.hero_image && galPhoto.hero_image.url
+                                                    if galPhoto.hero_image && galPhoto.hero_image.url
                                                         - var imgLink = galPhoto.hero_image.url
-                                                    else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
+                                                    else
                                                         - var imgLink = galPhoto.gallery_image_medium.url
 
                                                     a.fancybox(rel="gallery" href=`${m_api}${imgLink}`)

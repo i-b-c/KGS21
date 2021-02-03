@@ -147,9 +147,7 @@ block content
                                 if galPhoto.gallery_image_medium && !galPhoto.hero_image
                                     .single-image.col-sm-6.col-sm-3.col-md-4
 
-                                        if galPhoto.original_image && galPhoto.original_image.url
-                                            - var imgLink = galPhoto.original_image.url
-                                        else if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
+                                        if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
                                             - var imgLink = galPhoto.gallery_image_large.url
                                         else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
                                             - var imgLink = galPhoto.gallery_image_medium.url
