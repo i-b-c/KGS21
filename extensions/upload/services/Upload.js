@@ -166,7 +166,7 @@ module.exports = {
     const allFiles = await generateALL(fileData)
     // console.log("ALL FILES", allFiles)
 
-    if(allFiles.length > 0) {
+    if(allFiles && allFiles.length > 0) {
       for (let oneFile of allFiles) {
         await strapi.plugins.upload.provider.upload(oneFile);
         const { width, height } = await getDimensions(oneFile.buffer);
