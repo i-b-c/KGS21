@@ -44,7 +44,7 @@ labels:
         '4': neljapäev
         '5': reede
         '6': laupäev
-    Jon Doe.:
+    Jon Doe:
         nimeta: Nimeta
     error:
         Not Found: >-

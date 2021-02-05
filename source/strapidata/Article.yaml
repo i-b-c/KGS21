@@ -1562,94 +1562,24 @@
     photoMedium: 21735,21736
     photoBig: "21734"
   article_media:
-    - id: 457
-      original_image:
-        id: 8014
-        name: Photo09_10A.jpg
-        width: 3724
-        height: 2484
-        formats:
-          large:
-            url: /uploads/large_Photo09_10_A_a0aff0db67.jpg
-            name: large_Photo09_10A.jpg
-          small:
-            url: /uploads/small_Photo09_10_A_a0aff0db67.jpg
-            name: small_Photo09_10A.jpg
-          medium:
-            url: /uploads/medium_Photo09_10_A_a0aff0db67.jpg
-            name: medium_Photo09_10A.jpg
-          thumbnail:
-            url: /uploads/thumbnail_Photo09_10_A_a0aff0db67.jpg
-            name: thumbnail_Photo09_10A.jpg
-        hash: Photo09_10_A_a0aff0db67
-        ext: .jpg
-        url: /uploads/Photo09_10_A_a0aff0db67.jpg
-    - id: 458
+    - id: 666
       hero_image:
-        id: 8015
-        name: kolmkusimusturmasluusile_1400x700_01.jpeg
-        width: 1399
+        id: 8603
+        name: MAGASIN_kolmkusimusturmasluusile_originaal_01_1400x700.jpg
+        width: 1400
         height: 700
-        formats:
-          large:
-            url: /uploads/large_kolmkusimusturmasluusile_1400x700_01_bee880a74f.jpeg
-            name: large_kolmkusimusturmasluusile_1400x700_01.jpeg
-          small:
-            url: /uploads/small_kolmkusimusturmasluusile_1400x700_01_bee880a74f.jpeg
-            name: small_kolmkusimusturmasluusile_1400x700_01.jpeg
-          medium:
-            url: /uploads/medium_kolmkusimusturmasluusile_1400x700_01_bee880a74f.jpeg
-            name: medium_kolmkusimusturmasluusile_1400x700_01.jpeg
-          thumbnail:
-            url: /uploads/thumbnail_kolmkusimusturmasluusile_1400x700_01_bee880a74f.jpeg
-            name: thumbnail_kolmkusimusturmasluusile_1400x700_01.jpeg
-        hash: kolmkusimusturmasluusile_1400x700_01_bee880a74f
-        ext: .jpeg
-        url: /uploads/kolmkusimusturmasluusile_1400x700_01_bee880a74f.jpeg
-    - id: 459
+        hash: MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_1400x700
+        ext: .jpg
+        url: /uploads/MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_1400x700.jpg
+    - id: 667
       gallery_image_medium:
-        id: 8016
-        name: kolmkusimusturmasluusile_700x1400_02.jpeg
-        width: 700
-        height: 1400
-        formats:
-          large:
-            url: /uploads/large_kolmkusimusturmasluusile_700x1400_02_cb07e099aa.jpeg
-            name: large_kolmkusimusturmasluusile_700x1400_02.jpeg
-          small:
-            url: /uploads/small_kolmkusimusturmasluusile_700x1400_02_cb07e099aa.jpeg
-            name: small_kolmkusimusturmasluusile_700x1400_02.jpeg
-          medium:
-            url: /uploads/medium_kolmkusimusturmasluusile_700x1400_02_cb07e099aa.jpeg
-            name: medium_kolmkusimusturmasluusile_700x1400_02.jpeg
-          thumbnail:
-            url: /uploads/thumbnail_kolmkusimusturmasluusile_700x1400_02_cb07e099aa.jpeg
-            name: thumbnail_kolmkusimusturmasluusile_700x1400_02.jpeg
-        hash: kolmkusimusturmasluusile_700x1400_02_cb07e099aa
-        ext: .jpeg
-        url: /uploads/kolmkusimusturmasluusile_700x1400_02_cb07e099aa.jpeg
-    - id: 460
-      gallery_image_medium:
-        id: 8017
-        name: kolmkusimusturmasluusile_700x1400_03.jpeg
-        width: 700
-        height: 1400
-        formats:
-          large:
-            url: /uploads/large_kolmkusimusturmasluusile_700x1400_03_6b4bcd9d3d.jpeg
-            name: large_kolmkusimusturmasluusile_700x1400_03.jpeg
-          small:
-            url: /uploads/small_kolmkusimusturmasluusile_700x1400_03_6b4bcd9d3d.jpeg
-            name: small_kolmkusimusturmasluusile_700x1400_03.jpeg
-          medium:
-            url: /uploads/medium_kolmkusimusturmasluusile_700x1400_03_6b4bcd9d3d.jpeg
-            name: medium_kolmkusimusturmasluusile_700x1400_03.jpeg
-          thumbnail:
-            url: /uploads/thumbnail_kolmkusimusturmasluusile_700x1400_03_6b4bcd9d3d.jpeg
-            name: thumbnail_kolmkusimusturmasluusile_700x1400_03.jpeg
-        hash: kolmkusimusturmasluusile_700x1400_03_6b4bcd9d3d
-        ext: .jpeg
-        url: /uploads/kolmkusimusturmasluusile_700x1400_03_6b4bcd9d3d.jpeg
+        id: 8600
+        name: MAGASIN_kolmkusimusturmasluusile_originaal_01_350x350.jpg
+        width: 350
+        height: 350
+        hash: MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_350x350
+        ext: .jpg
+        url: /uploads/MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_350x350.jpg
   authors:
     - id: 267
 - id: 70
@@ -1721,243 +1651,6 @@
     - id: 2
     - id: 3
     - id: 19
-- id: 141
-  title_et: "RESKRIPTI REEDE: LAHUTATUD"
-  title_en: "RESKRIPTI REEDE: LAHUTATUD  (CURRENTLY AVAILABLE ONLY IN ESTONIAN!)"
-  slug_et: reskripti-reede-lahutatud-141
-  slug_en: reskripti-reede-lahutatud-currently-available-only-in-estonian-141
-  subtitle_et: null
-  subtitle_en: null
-  publish_date: 2021-01-22T00:00:00.000Z
-  first_page_promotion: null
-  hide_gallery: true
-  photo_article: true
-  audio: null
-  video: null
-  content_et: "![reskript_vol_5_lahutatud](https://saal.entu.ee/api2/file-21733)"
-  content_en: |-
-    NB! CURRENTLY AVAILABLE ONLY IN ESTONIAN!  
-
-    ![reskript_vol_5_lahutatud](https://saal.entu.ee/api2/file-21733)
-  published_at: 2021-01-22T17:21:23.000Z
-  created_by: null
-  updated_by:
-    id: 4
-    firstname: Mariann
-    lastname: Tapfer
-    username: tapferm@gmail.com
-    email: tapferm@gmail.com
-    password: $2a$10$9rxGnv9ugnFdKXzh9UCoueP620dNvg5a0ij0/s7J25bzLyWumyz86
-    resetPasswordToken: null
-    registrationToken: null
-    isActive: true
-    blocked: null
-  created_at: 2021-01-27T08:46:04.985Z
-  updated_at: 2021-02-01T12:37:42.778Z
-  front_page_promotion: false
-  remote_id: "6972"
-  X_premiere_time: null
-  X_location_et: null
-  X_location_en: null
-  X_pictures:
-    id: 6470
-    photoGallery: null
-    photo: ""
-    photoOriginal: "21730"
-    photoMedium: "21732"
-    photoBig: "21731"
-  article_media:
-    - id: 461
-      original_image:
-        id: 8018
-        name: reskripti reede foto aksel haagensen.jpg
-        alternativeText: null
-        caption: null
-        width: 1000
-        height: 667
-        formats:
-          small:
-            ext: .jpg
-            url: /uploads/small_reskripti_reede_foto_aksel_haagensen_387b659949.jpg
-            hash: small_reskripti_reede_foto_aksel_haagensen_387b659949
-            mime: image/jpeg
-            name: small_reskripti reede foto aksel haagensen.jpg
-            path: null
-            size: 30.16
-            width: 500
-            height: 334
-          medium:
-            ext: .jpg
-            url: /uploads/medium_reskripti_reede_foto_aksel_haagensen_387b659949.jpg
-            hash: medium_reskripti_reede_foto_aksel_haagensen_387b659949
-            mime: image/jpeg
-            name: medium_reskripti reede foto aksel haagensen.jpg
-            path: null
-            size: 57.34
-            width: 750
-            height: 500
-          thumbnail:
-            ext: .jpg
-            url: /uploads/thumbnail_reskripti_reede_foto_aksel_haagensen_387b659949.jpg
-            hash: thumbnail_reskripti_reede_foto_aksel_haagensen_387b659949
-            mime: image/jpeg
-            name: thumbnail_reskripti reede foto aksel haagensen.jpg
-            path: null
-            size: 9.46
-            width: 234
-            height: 156
-        hash: reskripti_reede_foto_aksel_haagensen_387b659949
-        ext: .jpg
-        mime: image/jpeg
-        size: 94.27
-        url: /uploads/reskripti_reede_foto_aksel_haagensen_387b659949.jpg
-        previewUrl: null
-        provider: local
-        provider_metadata: null
-        created_by: null
-        updated_by: null
-        created_at: 2021-01-27T09:59:59.799Z
-        updated_at: 2021-01-27T09:59:59.799Z
-      hero_image: null
-      gallery_image_medium: null
-    - id: 462
-      original_image: null
-      hero_image:
-        id: 8019
-        name: RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
-        alternativeText: null
-        caption: null
-        width: 1399
-        height: 702
-        formats:
-          large:
-            ext: .jpg
-            url: /uploads/large_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
-            hash: large_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde
-            mime: image/jpeg
-            name: large_RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
-            path: null
-            size: 71.77
-            width: 1000
-            height: 502
-          small:
-            ext: .jpg
-            url: /uploads/small_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
-            hash: small_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde
-            mime: image/jpeg
-            name: small_RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
-            path: null
-            size: 23.12
-            width: 500
-            height: 251
-          medium:
-            ext: .jpg
-            url: /uploads/medium_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
-            hash: medium_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde
-            mime: image/jpeg
-            name: medium_RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
-            path: null
-            size: 43.36
-            width: 750
-            height: 376
-          thumbnail:
-            ext: .jpg
-            url: /uploads/thumbnail_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
-            hash: thumbnail_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde
-            mime: image/jpeg
-            name: thumbnail_RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
-            path: null
-            size: 8.26
-            width: 245
-            height: 123
-        hash: RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde
-        ext: .jpg
-        mime: image/jpeg
-        size: 134.84
-        url: /uploads/RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
-        previewUrl: null
-        provider: local
-        provider_metadata: null
-        created_by: null
-        updated_by: null
-        created_at: 2021-01-27T10:00:01.453Z
-        updated_at: 2021-01-27T10:00:01.453Z
-      gallery_image_medium: null
-    - id: 463
-      original_image: null
-      hero_image: null
-      gallery_image_medium:
-        id: 8020
-        name: reskripti reede foto aksel haagensen.jpg
-        alternativeText: null
-        caption: null
-        width: 1000
-        height: 667
-        formats:
-          small:
-            ext: .jpg
-            url: /uploads/small_reskripti_reede_foto_aksel_haagensen_7daf39f197.jpg
-            hash: small_reskripti_reede_foto_aksel_haagensen_7daf39f197
-            mime: image/jpeg
-            name: small_reskripti reede foto aksel haagensen.jpg
-            path: null
-            size: 30.16
-            width: 500
-            height: 334
-          medium:
-            ext: .jpg
-            url: /uploads/medium_reskripti_reede_foto_aksel_haagensen_7daf39f197.jpg
-            hash: medium_reskripti_reede_foto_aksel_haagensen_7daf39f197
-            mime: image/jpeg
-            name: medium_reskripti reede foto aksel haagensen.jpg
-            path: null
-            size: 57.34
-            width: 750
-            height: 500
-          thumbnail:
-            ext: .jpg
-            url: /uploads/thumbnail_reskripti_reede_foto_aksel_haagensen_7daf39f197.jpg
-            hash: thumbnail_reskripti_reede_foto_aksel_haagensen_7daf39f197
-            mime: image/jpeg
-            name: thumbnail_reskripti reede foto aksel haagensen.jpg
-            path: null
-            size: 9.46
-            width: 234
-            height: 156
-        hash: reskripti_reede_foto_aksel_haagensen_7daf39f197
-        ext: .jpg
-        mime: image/jpeg
-        size: 94.27
-        url: /uploads/reskripti_reede_foto_aksel_haagensen_7daf39f197.jpg
-        previewUrl: null
-        provider: local
-        provider_metadata: null
-        created_by: null
-        updated_by: null
-        created_at: 2021-01-27T10:00:03.719Z
-        updated_at: 2021-01-27T10:00:03.719Z
-  audios: []
-  videos: []
-  authors:
-    - id: 287
-      first_name: RESKRIPT
-      last_name: null
-      e_mail: null
-      phone_number: null
-      profession: null
-      order: null
-      created_by: null
-      updated_by: null
-      created_at: 2020-12-04T13:12:40.851Z
-      updated_at: 2020-12-04T13:12:40.851Z
-      email: null
-      occupation: null
-      remote_id: "6227"
-      user: null
-      full_name: null
-      picture: null
-  categories: []
-  users: []
 - id: 138
   title_et: Aastalõpu lisa
   title_en: Aastalõpu lisa (CURRENTLY AVAILABLE ONLY IN ESTONIAN)
@@ -3550,6 +3243,262 @@
         url: /uploads/kaisa_kattai_magasin_350x350_6243a1f23f.jpg
   authors:
     - id: 256
+- id: 141
+  title_et: "RESKRIPTI REEDE: LAHUTATUD"
+  title_en: "RESKRIPTI REEDE: LAHUTATUD  (CURRENTLY AVAILABLE ONLY IN ESTONIAN!)"
+  slug_et: reskripti-reede-lahutatud-141
+  slug_en: reskripti-reede-lahutatud-currently-available-only-in-estonian-141
+  publish_date: 2021-01-22T00:00:00.000Z
+  hide_gallery: true
+  photo_article: true
+  content_et: "![reskript_vol_5_lahutatud](https://saal.entu.ee/api2/file-21733)"
+  content_en: |-
+    NB! CURRENTLY AVAILABLE ONLY IN ESTONIAN!  
+
+    ![reskript_vol_5_lahutatud](https://saal.entu.ee/api2/file-21733)
+  remote_id: "6972"
+  X_pictures:
+    id: 6470
+    photoOriginal: "21730"
+    photoMedium: "21732"
+    photoBig: "21731"
+  article_media:
+    - id: 461
+      original_image:
+        id: 8018
+        name: reskripti reede foto aksel haagensen.jpg
+        width: 1000
+        height: 667
+        formats:
+          small:
+            url: /uploads/small_reskripti_reede_foto_aksel_haagensen_387b659949.jpg
+            name: small_reskripti reede foto aksel haagensen.jpg
+          medium:
+            url: /uploads/medium_reskripti_reede_foto_aksel_haagensen_387b659949.jpg
+            name: medium_reskripti reede foto aksel haagensen.jpg
+          thumbnail:
+            url: /uploads/thumbnail_reskripti_reede_foto_aksel_haagensen_387b659949.jpg
+            name: thumbnail_reskripti reede foto aksel haagensen.jpg
+        hash: reskripti_reede_foto_aksel_haagensen_387b659949
+        ext: .jpg
+        url: /uploads/reskripti_reede_foto_aksel_haagensen_387b659949.jpg
+    - id: 462
+      hero_image:
+        id: 8019
+        name: RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
+        width: 1399
+        height: 702
+        formats:
+          large:
+            url: /uploads/large_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
+            name: large_RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
+          small:
+            url: /uploads/small_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
+            name: small_RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
+          medium:
+            url: /uploads/medium_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
+            name: medium_RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
+          thumbnail:
+            url: /uploads/thumbnail_RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
+            name: thumbnail_RESKRIPT vol 1 foto Aksel Haagensen 1400x700.jpg
+        hash: RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde
+        ext: .jpg
+        url: /uploads/RESKRIPT_vol_1_foto_Aksel_Haagensen_1400x700_50de05ecde.jpg
+    - id: 463
+      gallery_image_medium:
+        id: 8020
+        name: reskripti reede foto aksel haagensen.jpg
+        width: 1000
+        height: 667
+        formats:
+          small:
+            url: /uploads/small_reskripti_reede_foto_aksel_haagensen_7daf39f197.jpg
+            name: small_reskripti reede foto aksel haagensen.jpg
+          medium:
+            url: /uploads/medium_reskripti_reede_foto_aksel_haagensen_7daf39f197.jpg
+            name: medium_reskripti reede foto aksel haagensen.jpg
+          thumbnail:
+            url: /uploads/thumbnail_reskripti_reede_foto_aksel_haagensen_7daf39f197.jpg
+            name: thumbnail_reskripti reede foto aksel haagensen.jpg
+        hash: reskripti_reede_foto_aksel_haagensen_7daf39f197
+        ext: .jpg
+        url: /uploads/reskripti_reede_foto_aksel_haagensen_7daf39f197.jpg
+  authors:
+    - id: 287
+- id: 142
+  title_et: "Märkmeid Pühast Vaimust: asjade performatiivsusest ja vaikivatest
+    koreograafidest"
+  title_en: "Märkmeid Pühast Vaimust: asjade performatiivsusest ja vaikivatest
+    koreograafidest (CURRENTLY ONLY AVAILABLE IN ENGLISH)"
+  slug_et: mrkmeid-phast-vaimust-asjade-performatiivsusest-ja-vaikivatest-koreograafidest-142
+  slug_en: mrkmeid-phast-vaimust-asjade-performatiivsusest-ja-vaikivatest-koreograafidest-currently-only-available-in-english-142
+  publish_date: 2021-02-04T10:00:00.000Z
+  content_et: >-
+    Tere, minu nimi on Urmas Lüüs ja viibisin oktoobri kuus Kanuti Gildi Püha
+    Vaimu SAALis residentuuris. Kel vähem kanutikogemust, siis Pühavaimuks
+    nimetatakse *black box*´i, mis asub tribüüniga pealava ja tualettide vahel.
+    Astud Pikalt tänavalt sisse, teed paar sammu edasi (vahepeal on mõned
+    trepiastmed, ära komista!), kuni eeskoda lõpeb kahe uksega. Valid
+    parempoolse. Ukse taga on väike lett, kus tavaliselt kontrollitakse pileteid
+    ja vasakul asub kraanikausiga ruumis kaks tualetti. Astud taas paar sammu
+    otse edasi, kuid selle asemel, et läbida kahepoolset ust, mis viib oote- ja
+    baarialale, mida tribüüni üleval hoidvate metallpostide tõttu ka "metsaks"
+    nimetatakse, pöörad hoopis vasakule, kust leiad eest tagasihoidliku mustaks
+    võõbatud puitukse. Avad selle (NB! Ettevaatust, kohe ukse taga on aste!!!)
+    ja liigud läbi lühikese paarimeetrise koridori pikliku kujuga musta ruumi.
+    Tere tulemast, oled jõudnud Püha Vaimu *black box*´i, mis on saanud oma nime
+    Pika tänavaga paralleelselt teisel pool maja jooksva Pühavaimu tänava järgi.
+    Janovot, seal tumedas saalis ma kuu aega olingi. Sellest, miks ma teekonda
+    tavapärast detailsemalt kirjeldasin, juba hiljem.  
+
+
+    Veidikene taustaloost. Need, kes mind juba veidike rohkem teavad, teavad ka seda, et mul pole mitte mingit varasemat tantsuharidust ja ometi pakkusin end just kaasaegse tantsu ja etenduskunstidega tegelevat residentuuri läbima. Või kui aus olla, siis täiesti tantsuharimata ka ei ole. Kunagi algklasside lõpus ja põhikooli alguses käisin võistlustantsu tunnis. Rumba, samba, cha-cha-cha – teate küll. Algul pidid kõik lapsed minu klassist sinna minema, hiljem need, keda vanemad edasi käima survestasid. Miks see oluline on, sellest juba hiljem.   
+
+
+    Oma põhihariduse omandasin Eesti Kunstiakadeemia Disainiteaduskonnas sepakunsti erialal. Minu peamiseks tööks on mõtestatud esemete valmistamine. Selline kunstimaailma jaoks väheke vastuvõetavam versioon tavalisest traditsioone kandvast käsitöölisest (mis sest, et ka käsitöölise staatuse vastu poleks mul midagi ja inglise keeleruumis kasutatakse minusuguste kohta terminit *contemporary craft*). Niisiis olen ma kunstnik, kes töötab materjaliga, nii nagu seda teeb maalija või skulptor, kuid minu ideed ja kontseptsioonid on seotud ennekõike inimkeha ja tema poolt tarbitavate objektidega.  
+
+
+    Siin jõuame ühe mu alustala juurde. Kehaga seotus – sellest tulenev ja seda pikendav. Kehapikendus ei ole "tillipikendus". Kehapikendus on näiteks kiviajal leiutatud oda. Mingi hetk inimene lihtsalt littis lahti, et kiviga kitsele pähe virutamise asemel on märksa mõistlikum kivi varre otsa siduda ja sellega kaugemalt äsada, sest kitsel on ohtlikud sarved. Sedasi sai odast kiviaegse inimese käe pikendus. Oda -> vibu -> amb -> kahur -> revolver -> automaatkuulipildija -> tank -> hävituslennuk -> kaugjuhitav lahingudroon. Need kõik on oma arengujadas rusika pikendamine pikivahe hoidmiseks, et kakluses ise nii palju haiget ei saaks. Keha võimestajate ja pikendajate kontekstis saame vaadata ka riideid (et külm ei näpistaks), jalatseid (et tallanahk kiviklibu vastu paksem oleks), autosid (et kiiremini liikuda), telefone (et hääl kaugemale kajaks), ajalehti (et kuulujutte rohkematele rääkida) jne. Disainiteoorias olen üks neist, kes peavad disainiks absoluutselt kõike, mida inimese käsi ja mõistus modifitseerinud on (vastupidiselt neile, kes eelistavad alustada disainiajalugu tööstusrevolutsioonist, mis ei ole ka terminoloogiliselt sugugi väär seisukoht). Disainimine on minu jaoks oma elukeskkonna teadlik muutmine.  
+     
+    Inimene on üks äraütlemata sitt looduse looming. Ta kipub igasugu muutuste käigus ära surema. Küüned on tal õhukesed, kihvad mannetud, karvkate hõre, jalad aeglased, käed nõrgad, seedimine habras. Igal loomal on oma supervõime. Gepard jookseb, lind lendab, kilpkonn kannab maja kaasas, siil tõmbab faalanksi turri, jääkaru ajab karva puhevile. Inimene seevastu elas enamiku oma põllumajandusrevolutsiooni eelset elu toitumispüramiidi üpriski keskmistel astmetel. Selleks, et kuidagigi oma võimalusi suurendada, ei saanud ta jääd lootma oma loomuomastele võimetele. Tal oli ka oma supervõimet vaja. Inimese supervõimeks sai kunstliku keskkonna loomine. Ma ei ela toorest liha järades looduslikus koopas, vaid mind ümbritseb mustaks võõbatud korrapärase nelinurkse põhiplaaniga ritskülikukujuline kunstkoobasblackbox. Mu kütt-korilase vajadused saavad rahuldatud jahiretkedega Vanalinna Mini-Rimisse. Sinna minnes ei jää ma sügistuultes lootma hõredatele tuultes võbelevatele karvadele, vaid mind katab surnud looma nahatükkidest kokku õmmeldud jakk. Nagu ütleb Harari varajaste inimeste kohta: "Aafrika savannides elanud ahvide järeltulijast Indoneesia sapiens sai aga Vaikse ookeani asukaks, ilma et ta oleks pidanud endale morsa loivad kasvatama või ootama, kuni ta nina evolutsiooni käigus nagu vaalal pea peale nihkuks. Selle asemel ehitas ta laevu ja õppis neid juhtima."(1) Kõik, mille loomadelt üle võtta suutsime, me ka võtsime. Jääkarudelt võtsime naha maha, et Arktika külmadele vastu panna. Kilpkonnakilpidest tehti sõjakilbid. Edevad isaslindude suled pandi edvistamiseks endile pähe. Karu südant süües saad karu jõu, karu nahka kandes saad sooja. Mida otse üle võtta ei saanud, omistati koopiate kaudu. Allveelaevad ujuvad vaaladega koos vee all. Linnud lendavad lennukitega taevas.  
+     
+    Kuigi poeesiat tappes võib öelda, et linnud ei lenda lennukitega taevas, vaid inimesed kasutavad lennukeid ühest kohast teise lendamiseks ja linnud jäävad mõnikord lihtsalt tee peale ette. Kõigi nende asjadega, mida inimene enda jaoks loonud on, teeb ta midagi. Olgu selle kasutusotstarve kui abstraktne ja tühine tahes, ikka on objektidel mingi eesmärk täita. Siinkohal jõuangi ma objektide performatiivsuseni. Väga subjektiivse meelevaldsusega ütlen, et miski on performatiivne, kui see teeb midagi. Performatiivne võib olla inimene, kui ta kõnnib üle lava või tänava. Performatiivne võib olla heli, kui ta kuulutab käreda undamisega pommilennukite silmapiirile ilmumist. Performatiivne võib olla teleekraanil vehklev diktor ja ekraanilt kiiskav valgusvõbelus pimeda toa seinal. Performatiivne võib olla kuumal pliidil keeva veega aurav pott ja seinal tiksuv kell. Tik-tok-tik-tok-tik-tok interpreteerib ta kaduviku sonaati. Inimene etleb koos asjadega. Lööb haamriga naela seina või üritab pindpinevuseni täisvalatud kohvitassiga köögist kirjutuslauani hiilida. Performatiivne võib olla sõna, kui ta laulatab kahte üheks. Räägitakse, et Alguses oli Sõna." Ἐν ἀρχῇ ἦν ὁ λόγος,..." Eesti füüsikult Tiit Lukkilt küsiti kord, kas Jumal on olemas. Ja ta vastas, et muidugi. Ta võiks isegi välja arvutada Jumala külgetõmbejõu. Näiteks võiks ta liita kokku umbkaudse energiakoguse, mida inimesed kulutavad, et liikuda pühapäeva hommikuti kirikusse. Muidugi võtaks taoline arvutus võimatu koguse aega ja pühendumist, kuid võime olla kindlad, et tuletatav energiakogus võrduks mõne võimsa geoloogilise protsessiga. Ja me räägime reaalsest energiast. Energiast, mis sõna otseses mõttes võiks liigutada mägesid. Performatiivsest kineetilisest energiast.
+
+    Kuna mul pole professionaalset kogemust etenduskunstide ega tantsu vallas, tundus silmakirjalik hakata looma koreograafiat. Pean jätkama lavaruumiga endiselt delikaatset flirti nagu siiani. Minema lavale kui kunstnik, mitte tantsija. Leidma koodi, mis lavastaks minu eest. Ja siinkohal tulidki mängu asjad – mulle sedavõrd tuttav ja turvaline maailm. Meenus algklasside aegne tantsuõpetaja, kes armastas kanda ebaratsionaalselt kõrgeid kontsi. Nii kõrgeid, et ta ei suutnud isegi põlvi sirgeks lükata. Niipea, kui ta oli tavatuhvlid kontsade vastu vahetanud, muutus kogu liikumismaneer. Tuli sisse (paraku vibalevalt) gasellilik nõtkus. Ettevaatlikus. Iga hetk võis kontsale toetuv jalg vääratada ja pahkluu rebestada. See karkudel tuigerdamine tekitas minus lapsena alati hämmeldust. Paistab, et kood on käes. Ma ei peagi looma koreograafiat. Ma pean valmistama kehaga seotud objekte, mis loovad kogu koreograafia minu eest. Objekt kui minu esimene vaikiv koreograaf.  
+
+
+    Peter Brook on öelnud, et peab teatriks seda, kui keegi jalutab üle tühja lava ja keegi teine teda vaatab. Residentuuri lätteks on mul vaja algelementi. Võtan inimese, ühiku, nimetagem teda anonüümseks lihakehaks, ja panen ta kõndima üle lava. Kõndiv inimkeha. Paljasjalgne. Loomulik ja loomalik nii kuis loodud. Nüüd on vaja viga, nö *error*´it, mis triksterina vimka sisse lööks ja kogu liikumisloogikat muudaks. Mul on vaja vaikivat koreograafi, kes ühegi sõnata muudaks üle lava liikuva keha motoorikat. Võtan kunagise tantsuõpetaja eeskujul kontsakingad. Laval liikuja rütm muutub aeglasemaks, ebakindlamaks. Survestan ebakindlust veelgi, kui muudan lisarihmadega kingad suuremaks ja lasen neiu asemel noormehel neid kanda. Kohtumine tundmatuga. Asi läheb huvitavamaks. Keeran vinti veel peale ning asendan ühe kontsakinga raske tanksaapaga. Rütm hakkab laperdama. Teise kontsakinga asendan ortoosiga, millele on rulluisu rattad alla kruvitud. Rütm muutub kaootiliseks. Tanksaapa külge kinnitan kargu. Liikuja on sunnitud minema põlvili, et mingitki stabiilsust säilitada. Luban tal hetkeks toolil puhata, kuid see on vaid järjekordne triksteri trikk. Seon keha rihmadega tooli külge, mis fikseerib ta istuvasse asendisse. Nüüd on võimalik liikuda vaid maas roomates küünarnukkidel keha järele vedades. Liikuja ägiseb – higine, vaevatud, hingeldab. Laelampide külge on paigaldatud liikumisandurid. Liikuja keha lülitab neid sisse ja välja. Objektid ja valgustid pole enam butafoorid, keha taustajõud, vaid võtavad lavastaja rolli. Nüüd on nemad määrajad, kuidas inimene laval liigub ja mida temast näha on. Kogu lavastus on antud inimkätest üle asjadele. Nad kamandavad ja väänavad ja dikteerivad ja survestavad. Jah "nad". "Nad" ei ole enam "need". Müütiline animism võtab oma. Distants kaob. Inimene ja asi ühinevad. Toolil istuv inimene moondub inimtool-kimääriks. 
+
+
+    Vana pärimuse kohaselt, mille algallikat enam viidata ei mäleta, ärkasid ükskord kõik asjad ellu. Nuga ihus kättemaksu ja luud pühkis omaniku teelt. Nii nagu inimesed kasutasid asju, hakkasid asjad inimesi kasutama. Enam polnud aru saada, kumb oli kumma teinud. Pärimus lõppes sõnadega, et see on juhtunud ja kord juhtub taas. Müütiline mõtlemine ei rapsi tühja, seal on sisu sees. Hariduselt disainerina huvitab mind küsimus, kuidas loovad inimesed asju ja kuidas loovad asjad inimesi. Kumb oli enne? Muistne pärimus osutus tõeks. Aeg, mil asjad ärkavad ellu, on kogu aeg käes olnud. Jumal hakkas looma inimest, niipea kui inimene oli loonud Jumala.  
+
+
+    Asjad mitte üksnes ei mõjuta keha otseselt nagu korsett või lahas, vaid vormivad ka meie kokkuleppelist intersubjektiivset identiteeti. Oma performatiivsuses suunavad need me mõtteid ja käitumist. Performatiivne akt väljendub rollide loomises, jaotamises ja hoidmises. Millal lõppes Eestis Nõukogude Liit? Kas iseseisvuse dokumentide allkirjastamisega? Vene vägede väljaviimisega? Kaljavaatide kadumisega? Leninitel, Stalinitel ja Kingisseppadel peade mahasaagisega? Valgete triibulise koega trussikute *boxer briefs*´ide vastu vahetamisega? Pronkssõdur ohkas ja lontsis närbunud nelgikimp näpus Tõnismäelt Kaitseväe kalmistule, jättes maha purunenud akende ja põlevate prügikastidega kesklinna. Me defineerime oma identiteeti läbi asjade rohkem,kui seda tunnistada meeldiks. Oleks banaalselt üleliigne tõmmata võrdlust kirjandusklassikalise tsitaadiga, kus elu võrdsustatakse rolliga näitelaval. Me ei sära sel laval tuima butafooria taustal. Me oleme kõrvalosas.   
+
+
+    Italo Calvino räägib Sitsiilias üles kirjutatud muinasloos ullike Giufast(2), kes läks ühte tallu almust paluma. Nähes ta näruseid riideid, aeti koerad kallale. Emal oli Giufast kahju. Muretses pika mantli, paari pükse ja ilusa vesti. Giufa läks samasse tallu. Peent härrat nähes kutsuti ta pererahvaga koos lauda. Kui Giufale toit ette toodi, hakkas ta seda kätega taskutesse ajama ise kõneldes: "Sööge, sööge, mu riideräbalad, pererahvas kostitab ju teid, mitte mind!”.  
+
+
+    Luigi Pirandello lohutab oma näidendis "Henry IV" kuninga suu läbi teenijatüdrukut, et staatused seisnevad vaid riietes. Kuningas on kuningas ja teenijatüdruk teenija senikaua, kui nad täisriideis üksteise ees seisavad. Voodisse minnes jäävad rõivastega nagisse ka nende rollid. Mõtlesin ühel õhtul magama asutades alasti voodi äärel istudes selle näidendi peale. Jalgade ees maas lebasid veel kehast soojad riided. Nagu laip, hing seest läinud. Käkras, kägaras, uperpalliti. Olles mõnda aega tõtt vaadanud (mingil kummalisel kombel tavatseme nimetada "tõeks" seda umbmäärast punkti, kus silmad ühtki kindlat objekti välja ei fokusseeri, kuid pilk jääb kusagile tapeedi ja lõpmatuse vahele), tõusis kaltsukubu mu jalge ees püsti. Viivuks pööras paar kraadi minu poole nagu tahaks miskit viisakusest sõnada, kuid mõistes olukorra mõttetust, loivas liigsete tundeväljendusteta aknast ergava tänavalaterna vihus uksest välja, jättes mu identiteeditult voodiservale istuma. Türa ja tühi hing, nagu meil armees tavaks öelda oli, kui suitsunurgas konutades eelmise sigaretikoni hõõguva otsaga järgmise läitsime.  
+
+
+    Seega pole mitte aint me teod, vaid ka mõtted asjadest juhitud. Odast ei arenenud vibu ja vibust amb ja ammust impeeriumite diktatuurid mitte sellepärast, et kuskil katkestas keegi geenius tuima kestvuse ja viis väikese revolutsiooniga sisse tehnoloogilise uuenduse. Revolutsioon kehtestab end ise. Iga uuendus juhtub seetõttu, et teisiti enam ei saa. Pole vaja geeniust, et leiutada aurumootorit või elektripirni. Enamik suuri leiutisi mõeldakse tihtipeale välja samal ajal üksteisest sõltumatute inimeste poolt. Põllumajandusrevolutsioon ei saanud alguse ühest lättest. Kellegi geeniuse jalajälge puistatud esimestest idanema läinud seemnetest. Nagu täheldab Harari:" Kunagi uskusid teadlased, et põlluharimine levis ühestainsast Lähis-Ida "kasvuhoonest" kõigisse nelja ilmakaarde. Tänasel päeval on teadlased aga ühisel seisukohal, et maaviljelusega hakati maailma eri paigus tegelema iseseisvalt, ilma et Lähis-Ida põlluharijad oleksid pidanud oma revolutsioonilist eluviisi eksportima. Kesk-Ameerikas elanud inimesed hakkasid kasvatama maisi ja ube, ilma et nad oleksid teadnud midagi samal ajal Lähis-Idas alanud nisu- ja hernekasvatusest."(3) Omamoodi laseb see leppida tõsiasjaga, et mitte meie ei lähe tehnoloogiliste manipulatsioonidega liiale, vaid tehnoloogia kasutab meid kui sümbioosis orje. Mitte meie ei vii maailma hävingu äärele,vaid maailm üritab hävitada meid. Suur, elav ja hingav omatahteline Gaia on murdnud end välja esoteerikute unelmaist ja asunud lavastajana marionett-teatri nööride kallale. Vahet pole, kas elame Jumala, Looduse või enese seaduste järgi. Seadus on sama.  
+
+
+    Inimlikust perspektiivist meeldib meile mõtelda, nagu suruks raske vägi nõrkushetkedel maadligi. Taevakatus kukub kaela. Kuid meie peade kohal laiub lage lõputu tühjus. Vaba eeter, kus keha tükkeks rebitaks ja aatomitena laotusesse paisataks. Üleval on vabadus, all aga orjastav gravitatsiooniahel. Kõik mis läheb üles, tuleb prantsatades alla tagasi (kui just piisavalt kaugele ei lähe). Tavalise magnetvälja asemel meeldib mulle maakera ette kujutada hiiglasliku magnetina, mis muudkui tuuma poole tirib. Paneb mandrilaamad leemes hulpima. Keerutab ja kurrutab. Sulatab ja pritsib uute laamade neelates taas pinnale. Kogu elu on gravitatsiooni vastu võitlemine. Juba me esivanemad võitlesid. Vaar-vaar-vaar-esivanemad, kel veel inimese kujugi polnud. Nagu surikaadid ajasid end aegajalt tagajalgele ja piidlesid üle stepituttide ohtlikku ümbrust. Siis otsustasid seisma jäädagi. Nüüd teeb iga inimlaps läbi väikese evolutsiooni. Kõigepealt vedeleb abitult,selg vastu maad. Seejärel hakkab end gravitatsiooni kütkeist lahti rebima. Roomab vaevaliselt hällivangikongi trellideni ning sirutab väetid käed ülespoole. Varbade toel ajab end põlvili, kuid peagi võtab gravitatsioon oma. Laps haaratakse tagasi madratsile ning gravitatsioon tõmbab ta habrast keha üksjagu linade sisse peitu. Üha uuesti ja uuesti proovib ta ületada oma horisontaalset taaka, kuni jäsemed sitkemaks muutuvad ja ta püstloodi pidama jääb.  
+
+
+    See on residentuuri teine vaikiv koreograaf. Traditsiooniliselt treenib tantsija end võimalikult vähest vaeva välja näidates gravitatsiooni ületama. Hüppab, keerutab, teeb tõsteid. Minu eesmärgiks oli anda gravitatsioonile tema täieõiguslik voli. Iga kehale lisatud objekt vähendas laval liikuja vastupanuvõimet maa keskme kutsele. Õõtsus kontsadel, kooserdas ratastel, roomas aheldatuna hullusärgiks moondunud pikakäiselises nahktagis.  
+     
+    Kolmanda koreograafina istub lavastajatoolile ruum. Kuidas jõuad Pikalt tänavalt Püha Vaimu saali? Ikka läbi koridori trepist üles, paremat kätt uksest sisse, vasakpööre enne baari, uks lahti (ettevaatust kohe ukse taga on aste!), paari sammuga läbi kitsa eeskoja ja oledki pikliku põhiplaaniga tumedas ruumis. Seda koreograafiat ei mõelnud sa ise välja. Mitte ka mina. Isegi Priit Raud mitte. Selle koreograafia mõtles välja keegi arhitekt, kes just nendesse kohtadesse seinad joonestas. “*Ruler*”(4) tähendab valitseja kõrval ka joonlauda. Vaadake Ameerika Ühendriikide kaarti võrdluses looduslike pinnavormidega, mis traditsiooniliselt põlisrahvaste piire tähistasid. Võrrelge Lasnamäe ruudustikku vanalinna risti-rästi songermaaga. Planeeringuga elumajad, linnaosad ja keskused on viimase täpsuseni koreograafiliselt läbi töötatud. Toidupoes asetatakse piimatooted, leivad-saiad ja kuivained üksteisest kõige kaugematesse nurkadesse. Kõikvõimalikud maiustused, delikatessid, teed-kohvid ja luksustooted nende vahele, et sissepääsust kassadeni liikuvat dramaturgilist kurvi pidi neist mingil juhul mööda ei mindaks. Ostleja on asetatud labürinti. Iga ta samm on kaardistatud, analüüsitud, ette planeeritud. Nii nagu tantsijad märgivad mustade teibitükkidega tansupõrandale maha, kust punktist kuhu liikumine jõudma teab, liigub klient poodides koreograafiliste sõlmpunktide vahel. Et minna seejärel eskalaatoriga kaubanduskeskuse kolmandal korrusel olevasse restorani, tuleb iga korruse järel ringliikumisega läbida pool keskuse aatriumit, et jõuda järgmise liikuva trepini. Ikka selleks, et sundkoreograafia käigus ei jääks ükski vaateaken soovimatu pakkumisega nägemata. Katedraali minnes ei sisene me vaid suurde kõrgete lagedega ruumi. See on sisenemine elamusse. Uude reaalsusesse, mis meid mõjutab üha vähem, kuid keskaegne tööline, kes oli harjunud vaid luitunud maavillaste toonide ja kitsikusega, leidis end katedraalis ulmailmast. See oli ilmutus, makett kõikvõimsa jumalariigi vägemusest.  
+
+
+    Erinevad ruumid mitte ainult ei suuna meie füüsilist liikumist, vaid võtavad üle kõik me käitumismustrid. Erinevates ruumides teeme me erinevaid asju. Viime läbi erinevaid performatiivseid toiminguid. Jalutades kord Jaapanis Yokohamas ringi kohaliku sõbraga, viitas ta tunnitasulistele hotellidele. Renti ei küsitud ööpäeva, vaid ruumis viibitud tundide eest. Niisamuti reisisid kord mu (juba väärikas eas) tuttavad autoga Etioopias. Päike oli ammu loojunud, kui nad leidsid tee äärest täispargitud esisega motelli. Prooviti õnne. Leiduski vaba tuba. Retseptsioonis küsiti, kas nad soovivad maksta tunniarvestuse või koguöise tariifi järgi. Lubati jääda terveks ööks. Võtmed käes suunduti tuppa. Alles sel hetkel lahendus nende jaoks müsteerium. Hämarad looritatud punased valgused, kergestipestavate pindadega mööbel, seintel inspireerivad pildid, riiulil piits ja roosakarvased käerauad, öökapil vaagen kondoomidega ja kapis riiul joovastava minibaariga. Hommikul teele asudes seisis keset tühja parklat nende üksik tolmune rendimaastur. Püha isa avab kabeli ukse ja süütab küünlad, mis heidavad seinetele punakalt küütlevat helki. Ta sammub puidust pingiridade vahelt läbi. Mööda seinu jookseb miniatuursete maalingute seeria, mis tuletab meelde Kristuse ristiretke. Ta võtab riiulilt puidust numbrid ja asetab need seinale kinnitatud tahvlile, et märgistada lauluraamatust palvuseks plaanitud leheküljed. Kapikesel lebab kandik, mille täidab oblaatidega ja kapis pudel Kagor´i. Tunnihotellid on selleks, et seal seksida, kirik selleks, et seal pärast hinge puhtaks pesta. Sünnitusmajas sünnitatakse ja krematooriumis pannaks äraelanud inimesed põlema. Neid spetsiaalsel eesmärgiga ruume täidavad spetsiaalse eesmärgiga objektid. Me ei lähe kirikusse seksima, see ei tundu õige ka siis kui religioon kaugeks jääb. Sel ruumil on teine otstarve, teine eesmärk, teine atmosfäär. Mõlemal juhul ripub seinal paljas ihu. Tunnihotellis raamitud postril iharas poosis mees, kirikus krutsifiksil nõtke Kristus. Need objektid ei ole seal vaid olemiseks, need täidavad ülesannet. Hoolimata sellest,et krutsifiksiga ei saa konservi avada, on tal ikkagi eesmärk.  
+
+
+    Istun ikka veel paljalt voodiserval. Tõttvaatamine on asendunud telefoni otsimisega, et seada ta end hommikul üles äratama. Taaskordne julm performatiivne akt. Sund masinat mind une kütkeist rebima ja paiskama tagasi teiste inimestega ühiselt jagatud narratiivi. Tõusen voodiservalt. Astun paar sammu, et parempööret tehes jõuda ukseni. Kohe peale ukseava läbimist keeran ahju kõrvalt taas vasakule. Astun kaks astet, mis viivad mu elutuppa. Liigun kirjutuslaua ja diivani vahelt läbi, ümber kraanikausi, vajutan järgmise ukse juures olevast kahest lülitist alumise sisse. Teen ukse lahti ning astun pooliku astme jagu kõrgemasse ruumi. Lõdvestun. Olen jõudnud taaskord vääramatu täpsusega oma igaöise tantsukava lõpp-punkti ning suunan potti galantse kusejoa.  
+
+
+    Fotod: Pille Alasi, Hans-Otto Ojaste, Mihkel Säre ja Urmas Lüüs  
+
+    Performerid: Sarah Nõmm, Loora Kaubi, Marie Vihur, Ats Kruusing ja Jasper Roost  
+
+
+    (1) Yuval Noah Harari, Sapiens: Inimkonna lühiajalugu, lk 90  
+
+    (2) Italo Calvino, Aus talupoeg Massaro Verita, lk 28  
+
+    (3) Yuval Noah Harari, Sapiens: Inimkonna lühiajalugu, lk 108  
+
+    (4) Tähelepanek antropoloog Tim Ingoldilt  
+  content_en: >-
+    NB! CURRENTLY ONLY AVAILABLE IN ENGLISH!
+
+
+    Tere, minu nimi on Urmas Lüüs ja viibisin oktoobri kuus Kanuti Gildi Püha Vaimu SAALis residentuuris. Kel vähem kanutikogemust, siis Pühavaimuks nimetatakse *black box*´i, mis asub tribüüniga pealava ja tualettide vahel. Astud Pikalt tänavalt sisse, teed paar sammu edasi (vahepeal on mõned trepiastmed, ära komista!), kuni eeskoda lõpeb kahe uksega. Valid parempoolse. Ukse taga on väike lett, kus tavaliselt kontrollitakse pileteid ja vasakul asub kraanikausiga ruumis kaks tualetti. Astud taas paar sammu otse edasi, kuid selle asemel, et läbida kahepoolset ust, mis viib oote- ja baarialale, mida tribüüni üleval hoidvate metallpostide tõttu ka "metsaks" nimetatakse, pöörad hoopis vasakule, kust leiad eest tagasihoidliku mustaks võõbatud puitukse. Avad selle (NB! Ettevaatust, kohe ukse taga on aste!!!) ja liigud läbi lühikese paarimeetrise koridori pikliku kujuga musta ruumi. Tere tulemast, oled jõudnud Püha Vaimu *black box*´i, mis on saanud oma nime Pika tänavaga paralleelselt teisel pool maja jooksva Pühavaimu tänava järgi. Janovot, seal tumedas saalis ma kuu aega olingi. Sellest, miks ma teekonda tavapärast detailsemalt kirjeldasin, juba hiljem.  
+
+
+    Veidikene taustaloost. Need, kes mind juba veidike rohkem teavad, teavad ka seda, et mul pole mitte mingit varasemat tantsuharidust ja ometi pakkusin end just kaasaegse tantsu ja etenduskunstidega tegelevat residentuuri läbima. Või kui aus olla, siis täiesti tantsuharimata ka ei ole. Kunagi algklasside lõpus ja põhikooli alguses käisin võistlustantsu tunnis. Rumba, samba, cha-cha-cha – teate küll. Algul pidid kõik lapsed minu klassist sinna minema, hiljem need, keda vanemad edasi käima survestasid. Miks see oluline on, sellest juba hiljem.   
+
+
+    Oma põhihariduse omandasin Eesti Kunstiakadeemia Disainiteaduskonnas sepakunsti erialal. Minu peamiseks tööks on mõtestatud esemete valmistamine. Selline kunstimaailma jaoks väheke vastuvõetavam versioon tavalisest traditsioone kandvast käsitöölisest (mis sest, et ka käsitöölise staatuse vastu poleks mul midagi ja inglise keeleruumis kasutatakse minusuguste kohta terminit *contemporary craft*). Niisiis olen ma kunstnik, kes töötab materjaliga, nii nagu seda teeb maalija või skulptor, kuid minu ideed ja kontseptsioonid on seotud ennekõike inimkeha ja tema poolt tarbitavate objektidega.  
+
+
+    Siin jõuame ühe mu alustala juurde. Kehaga seotus – sellest tulenev ja seda pikendav. Kehapikendus ei ole "tillipikendus". Kehapikendus on näiteks kiviajal leiutatud oda. Mingi hetk inimene lihtsalt littis lahti, et kiviga kitsele pähe virutamise asemel on märksa mõistlikum kivi varre otsa siduda ja sellega kaugemalt äsada, sest kitsel on ohtlikud sarved. Sedasi sai odast kiviaegse inimese käe pikendus. Oda -> vibu -> amb -> kahur -> revolver -> automaatkuulipildija -> tank -> hävituslennuk -> kaugjuhitav lahingudroon. Need kõik on oma arengujadas rusika pikendamine pikivahe hoidmiseks, et kakluses ise nii palju haiget ei saaks. Keha võimestajate ja pikendajate kontekstis saame vaadata ka riideid (et külm ei näpistaks), jalatseid (et tallanahk kiviklibu vastu paksem oleks), autosid (et kiiremini liikuda), telefone (et hääl kaugemale kajaks), ajalehti (et kuulujutte rohkematele rääkida) jne. Disainiteoorias olen üks neist, kes peavad disainiks absoluutselt kõike, mida inimese käsi ja mõistus modifitseerinud on (vastupidiselt neile, kes eelistavad alustada disainiajalugu tööstusrevolutsioonist, mis ei ole ka terminoloogiliselt sugugi väär seisukoht). Disainimine on minu jaoks oma elukeskkonna teadlik muutmine.  
+     
+    Inimene on üks äraütlemata sitt looduse looming. Ta kipub igasugu muutuste käigus ära surema. Küüned on tal õhukesed, kihvad mannetud, karvkate hõre, jalad aeglased, käed nõrgad, seedimine habras. Igal loomal on oma supervõime. Gepard jookseb, lind lendab, kilpkonn kannab maja kaasas, siil tõmbab faalanksi turri, jääkaru ajab karva puhevile. Inimene seevastu elas enamiku oma põllumajandusrevolutsiooni eelset elu toitumispüramiidi üpriski keskmistel astmetel. Selleks, et kuidagigi oma võimalusi suurendada, ei saanud ta jääd lootma oma loomuomastele võimetele. Tal oli ka oma supervõimet vaja. Inimese supervõimeks sai kunstliku keskkonna loomine. Ma ei ela toorest liha järades looduslikus koopas, vaid mind ümbritseb mustaks võõbatud korrapärase nelinurkse põhiplaaniga ritskülikukujuline kunstkoobasblackbox. Mu kütt-korilase vajadused saavad rahuldatud jahiretkedega Vanalinna Mini-Rimisse. Sinna minnes ei jää ma sügistuultes lootma hõredatele tuultes võbelevatele karvadele, vaid mind katab surnud looma nahatükkidest kokku õmmeldud jakk. Nagu ütleb Harari varajaste inimeste kohta: "Aafrika savannides elanud ahvide järeltulijast Indoneesia sapiens sai aga Vaikse ookeani asukaks, ilma et ta oleks pidanud endale morsa loivad kasvatama või ootama, kuni ta nina evolutsiooni käigus nagu vaalal pea peale nihkuks. Selle asemel ehitas ta laevu ja õppis neid juhtima."(1) Kõik, mille loomadelt üle võtta suutsime, me ka võtsime. Jääkarudelt võtsime naha maha, et Arktika külmadele vastu panna. Kilpkonnakilpidest tehti sõjakilbid. Edevad isaslindude suled pandi edvistamiseks endile pähe. Karu südant süües saad karu jõu, karu nahka kandes saad sooja. Mida otse üle võtta ei saanud, omistati koopiate kaudu. Allveelaevad ujuvad vaaladega koos vee all. Linnud lendavad lennukitega taevas.  
+     
+    Kuigi poeesiat tappes võib öelda, et linnud ei lenda lennukitega taevas, vaid inimesed kasutavad lennukeid ühest kohast teise lendamiseks ja linnud jäävad mõnikord lihtsalt tee peale ette. Kõigi nende asjadega, mida inimene enda jaoks loonud on, teeb ta midagi. Olgu selle kasutusotstarve kui abstraktne ja tühine tahes, ikka on objektidel mingi eesmärk täita. Siinkohal jõuangi ma objektide performatiivsuseni. Väga subjektiivse meelevaldsusega ütlen, et miski on performatiivne, kui see teeb midagi. Performatiivne võib olla inimene, kui ta kõnnib üle lava või tänava. Performatiivne võib olla heli, kui ta kuulutab käreda undamisega pommilennukite silmapiirile ilmumist. Performatiivne võib olla teleekraanil vehklev diktor ja ekraanilt kiiskav valgusvõbelus pimeda toa seinal. Performatiivne võib olla kuumal pliidil keeva veega aurav pott ja seinal tiksuv kell. Tik-tok-tik-tok-tik-tok interpreteerib ta kaduviku sonaati. Inimene etleb koos asjadega. Lööb haamriga naela seina või üritab pindpinevuseni täisvalatud kohvitassiga köögist kirjutuslauani hiilida. Performatiivne võib olla sõna, kui ta laulatab kahte üheks. Räägitakse, et Alguses oli Sõna." Ἐν ἀρχῇ ἦν ὁ λόγος,..." Eesti füüsikult Tiit Lukkilt küsiti kord, kas Jumal on olemas. Ja ta vastas, et muidugi. Ta võiks isegi välja arvutada Jumala külgetõmbejõu. Näiteks võiks ta liita kokku umbkaudse energiakoguse, mida inimesed kulutavad, et liikuda pühapäeva hommikuti kirikusse. Muidugi võtaks taoline arvutus võimatu koguse aega ja pühendumist, kuid võime olla kindlad, et tuletatav energiakogus võrduks mõne võimsa geoloogilise protsessiga. Ja me räägime reaalsest energiast. Energiast, mis sõna otseses mõttes võiks liigutada mägesid. Performatiivsest kineetilisest energiast.
+
+    Kuna mul pole professionaalset kogemust etenduskunstide ega tantsu vallas, tundus silmakirjalik hakata looma koreograafiat. Pean jätkama lavaruumiga endiselt delikaatset flirti nagu siiani. Minema lavale kui kunstnik, mitte tantsija. Leidma koodi, mis lavastaks minu eest. Ja siinkohal tulidki mängu asjad – mulle sedavõrd tuttav ja turvaline maailm. Meenus algklasside aegne tantsuõpetaja, kes armastas kanda ebaratsionaalselt kõrgeid kontsi. Nii kõrgeid, et ta ei suutnud isegi põlvi sirgeks lükata. Niipea, kui ta oli tavatuhvlid kontsade vastu vahetanud, muutus kogu liikumismaneer. Tuli sisse (paraku vibalevalt) gasellilik nõtkus. Ettevaatlikus. Iga hetk võis kontsale toetuv jalg vääratada ja pahkluu rebestada. See karkudel tuigerdamine tekitas minus lapsena alati hämmeldust. Paistab, et kood on käes. Ma ei peagi looma koreograafiat. Ma pean valmistama kehaga seotud objekte, mis loovad kogu koreograafia minu eest. Objekt kui minu esimene vaikiv koreograaf.  
+
+
+    Peter Brook on öelnud, et peab teatriks seda, kui keegi jalutab üle tühja lava ja keegi teine teda vaatab. Residentuuri lätteks on mul vaja algelementi. Võtan inimese, ühiku, nimetagem teda anonüümseks lihakehaks, ja panen ta kõndima üle lava. Kõndiv inimkeha. Paljasjalgne. Loomulik ja loomalik nii kuis loodud. Nüüd on vaja viga, nö *error*´it, mis triksterina vimka sisse lööks ja kogu liikumisloogikat muudaks. Mul on vaja vaikivat koreograafi, kes ühegi sõnata muudaks üle lava liikuva keha motoorikat. Võtan kunagise tantsuõpetaja eeskujul kontsakingad. Laval liikuja rütm muutub aeglasemaks, ebakindlamaks. Survestan ebakindlust veelgi, kui muudan lisarihmadega kingad suuremaks ja lasen neiu asemel noormehel neid kanda. Kohtumine tundmatuga. Asi läheb huvitavamaks. Keeran vinti veel peale ning asendan ühe kontsakinga raske tanksaapaga. Rütm hakkab laperdama. Teise kontsakinga asendan ortoosiga, millele on rulluisu rattad alla kruvitud. Rütm muutub kaootiliseks. Tanksaapa külge kinnitan kargu. Liikuja on sunnitud minema põlvili, et mingitki stabiilsust säilitada. Luban tal hetkeks toolil puhata, kuid see on vaid järjekordne triksteri trikk. Seon keha rihmadega tooli külge, mis fikseerib ta istuvasse asendisse. Nüüd on võimalik liikuda vaid maas roomates küünarnukkidel keha järele vedades. Liikuja ägiseb – higine, vaevatud, hingeldab. Laelampide külge on paigaldatud liikumisandurid. Liikuja keha lülitab neid sisse ja välja. Objektid ja valgustid pole enam butafoorid, keha taustajõud, vaid võtavad lavastaja rolli. Nüüd on nemad määrajad, kuidas inimene laval liigub ja mida temast näha on. Kogu lavastus on antud inimkätest üle asjadele. Nad kamandavad ja väänavad ja dikteerivad ja survestavad. Jah "nad". "Nad" ei ole enam "need". Müütiline animism võtab oma. Distants kaob. Inimene ja asi ühinevad. Toolil istuv inimene moondub inimtool-kimääriks. 
+
+
+    Vana pärimuse kohaselt, mille algallikat enam viidata ei mäleta, ärkasid ükskord kõik asjad ellu. Nuga ihus kättemaksu ja luud pühkis omaniku teelt. Nii nagu inimesed kasutasid asju, hakkasid asjad inimesi kasutama. Enam polnud aru saada, kumb oli kumma teinud. Pärimus lõppes sõnadega, et see on juhtunud ja kord juhtub taas. Müütiline mõtlemine ei rapsi tühja, seal on sisu sees. Hariduselt disainerina huvitab mind küsimus, kuidas loovad inimesed asju ja kuidas loovad asjad inimesi. Kumb oli enne? Muistne pärimus osutus tõeks. Aeg, mil asjad ärkavad ellu, on kogu aeg käes olnud. Jumal hakkas looma inimest, niipea kui inimene oli loonud Jumala.  
+
+
+    Asjad mitte üksnes ei mõjuta keha otseselt nagu korsett või lahas, vaid vormivad ka meie kokkuleppelist intersubjektiivset identiteeti. Oma performatiivsuses suunavad need me mõtteid ja käitumist. Performatiivne akt väljendub rollide loomises, jaotamises ja hoidmises. Millal lõppes Eestis Nõukogude Liit? Kas iseseisvuse dokumentide allkirjastamisega? Vene vägede väljaviimisega? Kaljavaatide kadumisega? Leninitel, Stalinitel ja Kingisseppadel peade mahasaagisega? Valgete triibulise koega trussikute *boxer briefs*´ide vastu vahetamisega? Pronkssõdur ohkas ja lontsis närbunud nelgikimp näpus Tõnismäelt Kaitseväe kalmistule, jättes maha purunenud akende ja põlevate prügikastidega kesklinna. Me defineerime oma identiteeti läbi asjade rohkem,kui seda tunnistada meeldiks. Oleks banaalselt üleliigne tõmmata võrdlust kirjandusklassikalise tsitaadiga, kus elu võrdsustatakse rolliga näitelaval. Me ei sära sel laval tuima butafooria taustal. Me oleme kõrvalosas.   
+
+
+    Italo Calvino räägib Sitsiilias üles kirjutatud muinasloos ullike Giufast(2), kes läks ühte tallu almust paluma. Nähes ta näruseid riideid, aeti koerad kallale. Emal oli Giufast kahju. Muretses pika mantli, paari pükse ja ilusa vesti. Giufa läks samasse tallu. Peent härrat nähes kutsuti ta pererahvaga koos lauda. Kui Giufale toit ette toodi, hakkas ta seda kätega taskutesse ajama ise kõneldes: "Sööge, sööge, mu riideräbalad, pererahvas kostitab ju teid, mitte mind!”.  
+
+
+    Luigi Pirandello lohutab oma näidendis "Henry IV" kuninga suu läbi teenijatüdrukut, et staatused seisnevad vaid riietes. Kuningas on kuningas ja teenijatüdruk teenija senikaua, kui nad täisriideis üksteise ees seisavad. Voodisse minnes jäävad rõivastega nagisse ka nende rollid. Mõtlesin ühel õhtul magama asutades alasti voodi äärel istudes selle näidendi peale. Jalgade ees maas lebasid veel kehast soojad riided. Nagu laip, hing seest läinud. Käkras, kägaras, uperpalliti. Olles mõnda aega tõtt vaadanud (mingil kummalisel kombel tavatseme nimetada "tõeks" seda umbmäärast punkti, kus silmad ühtki kindlat objekti välja ei fokusseeri, kuid pilk jääb kusagile tapeedi ja lõpmatuse vahele), tõusis kaltsukubu mu jalge ees püsti. Viivuks pööras paar kraadi minu poole nagu tahaks miskit viisakusest sõnada, kuid mõistes olukorra mõttetust, loivas liigsete tundeväljendusteta aknast ergava tänavalaterna vihus uksest välja, jättes mu identiteeditult voodiservale istuma. Türa ja tühi hing, nagu meil armees tavaks öelda oli, kui suitsunurgas konutades eelmise sigaretikoni hõõguva otsaga järgmise läitsime.  
+
+
+    Seega pole mitte aint me teod, vaid ka mõtted asjadest juhitud. Odast ei arenenud vibu ja vibust amb ja ammust impeeriumite diktatuurid mitte sellepärast, et kuskil katkestas keegi geenius tuima kestvuse ja viis väikese revolutsiooniga sisse tehnoloogilise uuenduse. Revolutsioon kehtestab end ise. Iga uuendus juhtub seetõttu, et teisiti enam ei saa. Pole vaja geeniust, et leiutada aurumootorit või elektripirni. Enamik suuri leiutisi mõeldakse tihtipeale välja samal ajal üksteisest sõltumatute inimeste poolt. Põllumajandusrevolutsioon ei saanud alguse ühest lättest. Kellegi geeniuse jalajälge puistatud esimestest idanema läinud seemnetest. Nagu täheldab Harari:" Kunagi uskusid teadlased, et põlluharimine levis ühestainsast Lähis-Ida "kasvuhoonest" kõigisse nelja ilmakaarde. Tänasel päeval on teadlased aga ühisel seisukohal, et maaviljelusega hakati maailma eri paigus tegelema iseseisvalt, ilma et Lähis-Ida põlluharijad oleksid pidanud oma revolutsioonilist eluviisi eksportima. Kesk-Ameerikas elanud inimesed hakkasid kasvatama maisi ja ube, ilma et nad oleksid teadnud midagi samal ajal Lähis-Idas alanud nisu- ja hernekasvatusest."(3) Omamoodi laseb see leppida tõsiasjaga, et mitte meie ei lähe tehnoloogiliste manipulatsioonidega liiale, vaid tehnoloogia kasutab meid kui sümbioosis orje. Mitte meie ei vii maailma hävingu äärele,vaid maailm üritab hävitada meid. Suur, elav ja hingav omatahteline Gaia on murdnud end välja esoteerikute unelmaist ja asunud lavastajana marionett-teatri nööride kallale. Vahet pole, kas elame Jumala, Looduse või enese seaduste järgi. Seadus on sama.  
+
+
+    Inimlikust perspektiivist meeldib meile mõtelda, nagu suruks raske vägi nõrkushetkedel maadligi. Taevakatus kukub kaela. Kuid meie peade kohal laiub lage lõputu tühjus. Vaba eeter, kus keha tükkeks rebitaks ja aatomitena laotusesse paisataks. Üleval on vabadus, all aga orjastav gravitatsiooniahel. Kõik mis läheb üles, tuleb prantsatades alla tagasi (kui just piisavalt kaugele ei lähe). Tavalise magnetvälja asemel meeldib mulle maakera ette kujutada hiiglasliku magnetina, mis muudkui tuuma poole tirib. Paneb mandrilaamad leemes hulpima. Keerutab ja kurrutab. Sulatab ja pritsib uute laamade neelates taas pinnale. Kogu elu on gravitatsiooni vastu võitlemine. Juba me esivanemad võitlesid. Vaar-vaar-vaar-esivanemad, kel veel inimese kujugi polnud. Nagu surikaadid ajasid end aegajalt tagajalgele ja piidlesid üle stepituttide ohtlikku ümbrust. Siis otsustasid seisma jäädagi. Nüüd teeb iga inimlaps läbi väikese evolutsiooni. Kõigepealt vedeleb abitult,selg vastu maad. Seejärel hakkab end gravitatsiooni kütkeist lahti rebima. Roomab vaevaliselt hällivangikongi trellideni ning sirutab väetid käed ülespoole. Varbade toel ajab end põlvili, kuid peagi võtab gravitatsioon oma. Laps haaratakse tagasi madratsile ning gravitatsioon tõmbab ta habrast keha üksjagu linade sisse peitu. Üha uuesti ja uuesti proovib ta ületada oma horisontaalset taaka, kuni jäsemed sitkemaks muutuvad ja ta püstloodi pidama jääb.  
+
+
+    See on residentuuri teine vaikiv koreograaf. Traditsiooniliselt treenib tantsija end võimalikult vähest vaeva välja näidates gravitatsiooni ületama. Hüppab, keerutab, teeb tõsteid. Minu eesmärgiks oli anda gravitatsioonile tema täieõiguslik voli. Iga kehale lisatud objekt vähendas laval liikuja vastupanuvõimet maa keskme kutsele. Õõtsus kontsadel, kooserdas ratastel, roomas aheldatuna hullusärgiks moondunud pikakäiselises nahktagis.  
+     
+    Kolmanda koreograafina istub lavastajatoolile ruum. Kuidas jõuad Pikalt tänavalt Püha Vaimu saali? Ikka läbi koridori trepist üles, paremat kätt uksest sisse, vasakpööre enne baari, uks lahti (ettevaatust kohe ukse taga on aste!), paari sammuga läbi kitsa eeskoja ja oledki pikliku põhiplaaniga tumedas ruumis. Seda koreograafiat ei mõelnud sa ise välja. Mitte ka mina. Isegi Priit Raud mitte. Selle koreograafia mõtles välja keegi arhitekt, kes just nendesse kohtadesse seinad joonestas. “*Ruler*”(4) tähendab valitseja kõrval ka joonlauda. Vaadake Ameerika Ühendriikide kaarti võrdluses looduslike pinnavormidega, mis traditsiooniliselt põlisrahvaste piire tähistasid. Võrrelge Lasnamäe ruudustikku vanalinna risti-rästi songermaaga. Planeeringuga elumajad, linnaosad ja keskused on viimase täpsuseni koreograafiliselt läbi töötatud. Toidupoes asetatakse piimatooted, leivad-saiad ja kuivained üksteisest kõige kaugematesse nurkadesse. Kõikvõimalikud maiustused, delikatessid, teed-kohvid ja luksustooted nende vahele, et sissepääsust kassadeni liikuvat dramaturgilist kurvi pidi neist mingil juhul mööda ei mindaks. Ostleja on asetatud labürinti. Iga ta samm on kaardistatud, analüüsitud, ette planeeritud. Nii nagu tantsijad märgivad mustade teibitükkidega tansupõrandale maha, kust punktist kuhu liikumine jõudma teab, liigub klient poodides koreograafiliste sõlmpunktide vahel. Et minna seejärel eskalaatoriga kaubanduskeskuse kolmandal korrusel olevasse restorani, tuleb iga korruse järel ringliikumisega läbida pool keskuse aatriumit, et jõuda järgmise liikuva trepini. Ikka selleks, et sundkoreograafia käigus ei jääks ükski vaateaken soovimatu pakkumisega nägemata. Katedraali minnes ei sisene me vaid suurde kõrgete lagedega ruumi. See on sisenemine elamusse. Uude reaalsusesse, mis meid mõjutab üha vähem, kuid keskaegne tööline, kes oli harjunud vaid luitunud maavillaste toonide ja kitsikusega, leidis end katedraalis ulmailmast. See oli ilmutus, makett kõikvõimsa jumalariigi vägemusest.  
+
+
+    Erinevad ruumid mitte ainult ei suuna meie füüsilist liikumist, vaid võtavad üle kõik me käitumismustrid. Erinevates ruumides teeme me erinevaid asju. Viime läbi erinevaid performatiivseid toiminguid. Jalutades kord Jaapanis Yokohamas ringi kohaliku sõbraga, viitas ta tunnitasulistele hotellidele. Renti ei küsitud ööpäeva, vaid ruumis viibitud tundide eest. Niisamuti reisisid kord mu (juba väärikas eas) tuttavad autoga Etioopias. Päike oli ammu loojunud, kui nad leidsid tee äärest täispargitud esisega motelli. Prooviti õnne. Leiduski vaba tuba. Retseptsioonis küsiti, kas nad soovivad maksta tunniarvestuse või koguöise tariifi järgi. Lubati jääda terveks ööks. Võtmed käes suunduti tuppa. Alles sel hetkel lahendus nende jaoks müsteerium. Hämarad looritatud punased valgused, kergestipestavate pindadega mööbel, seintel inspireerivad pildid, riiulil piits ja roosakarvased käerauad, öökapil vaagen kondoomidega ja kapis riiul joovastava minibaariga. Hommikul teele asudes seisis keset tühja parklat nende üksik tolmune rendimaastur. Püha isa avab kabeli ukse ja süütab küünlad, mis heidavad seinetele punakalt küütlevat helki. Ta sammub puidust pingiridade vahelt läbi. Mööda seinu jookseb miniatuursete maalingute seeria, mis tuletab meelde Kristuse ristiretke. Ta võtab riiulilt puidust numbrid ja asetab need seinale kinnitatud tahvlile, et märgistada lauluraamatust palvuseks plaanitud leheküljed. Kapikesel lebab kandik, mille täidab oblaatidega ja kapis pudel Kagor´i. Tunnihotellid on selleks, et seal seksida, kirik selleks, et seal pärast hinge puhtaks pesta. Sünnitusmajas sünnitatakse ja krematooriumis pannaks äraelanud inimesed põlema. Neid spetsiaalsel eesmärgiga ruume täidavad spetsiaalse eesmärgiga objektid. Me ei lähe kirikusse seksima, see ei tundu õige ka siis kui religioon kaugeks jääb. Sel ruumil on teine otstarve, teine eesmärk, teine atmosfäär. Mõlemal juhul ripub seinal paljas ihu. Tunnihotellis raamitud postril iharas poosis mees, kirikus krutsifiksil nõtke Kristus. Need objektid ei ole seal vaid olemiseks, need täidavad ülesannet. Hoolimata sellest,et krutsifiksiga ei saa konservi avada, on tal ikkagi eesmärk.  
+
+
+    Istun ikka veel paljalt voodiserval. Tõttvaatamine on asendunud telefoni otsimisega, et seada ta end hommikul üles äratama. Taaskordne julm performatiivne akt. Sund masinat mind une kütkeist rebima ja paiskama tagasi teiste inimestega ühiselt jagatud narratiivi. Tõusen voodiservalt. Astun paar sammu, et parempööret tehes jõuda ukseni. Kohe peale ukseava läbimist keeran ahju kõrvalt taas vasakule. Astun kaks astet, mis viivad mu elutuppa. Liigun kirjutuslaua ja diivani vahelt läbi, ümber kraanikausi, vajutan järgmise ukse juures olevast kahest lülitist alumise sisse. Teen ukse lahti ning astun pooliku astme jagu kõrgemasse ruumi. Lõdvestun. Olen jõudnud taaskord vääramatu täpsusega oma igaöise tantsukava lõpp-punkti ning suunan potti galantse kusejoa.  
+
+
+    Fotod: Pille Alasi, Hans-Otto Ojaste, Mihkel Säre ja Urmas Lüüs  
+
+    Performerid: Sarah Nõmm, Loora Kaubi, Marie Vihur, Ats Kruusing ja Jasper Roost  
+
+
+    (1) Yuval Noah Harari, Sapiens: Inimkonna lühiajalugu, lk 90  
+
+    (2) Italo Calvino, Aus talupoeg Massaro Verita, lk 28  
+
+    (3) Yuval Noah Harari, Sapiens: Inimkonna lühiajalugu, lk 108  
+
+    (4) Tähelepanek antropoloog Tim Ingoldilt  
+  remote_id: article
+  article_media:
+    - id: 668
+      hero_image:
+        id: 8663
+        name: MAGASIN_markmeidpuhastvaimust_01_1400x700.jpeg
+        width: 1400
+        height: 700
+        hash: MAGASIN_markmeidpuhastvaimust_01_59d10cca93_1400x700
+        ext: .jpeg
+        url: /uploads/MAGASIN_markmeidpuhastvaimust_01_59d10cca93_1400x700.jpeg
+    - id: 669
+      gallery_image_medium:
+        id: 8662
+        name: MAGASIN_markmeidpuhastvaimust_01_350x350.jpeg
+        width: 350
+        height: 350
+        hash: MAGASIN_markmeidpuhastvaimust_01_59d10cca93_350x350
+        ext: .jpeg
+        url: /uploads/MAGASIN_markmeidpuhastvaimust_01_59d10cca93_350x350.jpeg
+  authors:
+    - id: 298
 - id: 9
   title_et: Riders on the storm (an open rehearsal space)
   title_en: Riders on the storm (an open rehearsal space)
@@ -3658,10 +3607,10 @@
         ext: .jpg
         url: /uploads/riders_on_the_storm_1400x700_350x350_fa2cb4adef.jpg
   authors:
-    - id: 260
     - id: 232
-    - id: 290
+    - id: 260
     - id: 284
+    - id: 290
     - id: 269
     - id: 285
 - id: 21
@@ -7677,8 +7626,8 @@
         ext: .jpg
         url: /uploads/alissa_grete_magasin_144x700_350x350_419f8c4371.jpg
   authors:
-    - id: 258
     - id: 244
+    - id: 258
     - id: 231
 - id: 43
   title_et: RÜTMITUNNETUS LIIKUDES LÄBI NUMBRITE
@@ -10540,8 +10489,8 @@
         ext: .jpg
         url: /uploads/kaja_viimane_henri_1400x700_7cba5d1e06.jpg
   authors:
-    - id: 257
     - id: 249
+    - id: 257
 - id: 52
   title_et: Kellele on kasulik, et sa kardad?
   title_en: Kellele on kasulik, et sa kardad? (CURRENTLY ONLY IN ESTONIAN,
@@ -11063,9 +11012,9 @@
         ext: .jpg
         url: /uploads/searching_for_presence_III_still_350x350_561d6740b6.jpg
   authors:
-    - id: 249
     - id: 242
     - id: 225
+    - id: 249
 - id: 56
   title_et: Searching for presence II
   title_en: Searching for presence II
@@ -11090,9 +11039,9 @@
         ext: .jpg
         url: /uploads/searching_for_presence_II_still_350x350_aef2549d2b.jpg
   authors:
-    - id: 249
-    - id: 225
     - id: 242
+    - id: 225
+    - id: 249
 - id: 57
   title_et: Searching for presence I
   title_en: Searching for presence I
@@ -11123,9 +11072,9 @@
         ext: .jpg
         url: /uploads/searching_for_perfect_moment_I_still_350x350_368688a739.jpg
   authors:
-    - id: 242
     - id: 225
     - id: 249
+    - id: 242
 - id: 62
   title_et: kontakt
   title_en: kontakt (CURRENTLY ONLY IN ESTONIAN, TRANSLATION WILL FOLLOW.)
@@ -15356,8 +15305,8 @@
     - id: 3
     - id: 7
 - id: 23
-  title_et: '"Ei ühtegi sõna" '
-  title_en: '"Ei ühtegi sõna"'
+  title_et: '"Ei ühtegi sõna"'
+  title_en: '"Ei ühtegi sõna" '
   slug_et: ei-htegi-sna-23
   slug_en: ei-htegi-sna-23
   publish_date: 2019-10-10T00:00:00.000Z
@@ -18906,6 +18855,13 @@
     	•	Well, then you’ll have to come to my show, I don’t want to talk about it.  
     	•	Then we have nothing to talk about.
 
+
+
+
+
+
+
+
     	
     In 2016, fourteen years later, same questions are still standing and the artists are still giving similar answers. There’s no discussion on what is really happening on stage as the artists seem to be clinging to their mystic being by tooth and claw. Would a revelation, that in reality throughout the creation process the artist is often cracking their knuckles for ideas, somehow diminish the value of their art? Instead, we talk of atmosphere and excitement and energy, emptiness and void or worse yet, research and analysis.
 
@@ -20318,8 +20274,8 @@
         ext: .jpg
         url: /uploads/aga_kui_laseks_sulanduda_Pantelis_Sakkadakis_350x350_ba8988ff10.jpg
   authors:
-    - id: 268
     - id: 283
+    - id: 268
 - id: 110
   title_et: Teatripäeva kohtumisõhtu kriitikutega Eesti Teatri- ja Muusikamuuseumis
   title_en: Teatripäeva kohtumisõhtu kriitikutega Eesti Teatri- ja
@@ -22929,10 +22885,10 @@
         ext: .jpg
         url: /uploads/magasin_kellavargiga_persik_350x350_9593baf150.jpg
   authors:
-    - id: 238
-    - id: 253
     - id: 292
+    - id: 238
     - id: 270
+    - id: 253
   categories:
     - id: 1
     - id: 2
@@ -27104,9 +27060,9 @@
         ext: .jpg
         url: /uploads/visuaalne_essee_19_09_19_02_350x350_b912500ab0.jpg
   authors:
+    - id: 225
     - id: 242
     - id: 249
-    - id: 225
 - id: 27
   title_et: Kuuldemäng “Hiiumaa TantsuFestival 10”
   title_en: Kuuldemäng “Hiiumaa TantsuFestival 10”
@@ -29661,8 +29617,8 @@
         ext: .jpg
         url: /uploads/springfestivalutrechtis_b83ac2f1b4.jpg
   authors:
-    - id: 256
     - id: 261
+    - id: 256
 - id: 130
   title_et: Must Reede
   title_en: Must Reede  (CURRENTLY AVAILABLE ONLY IN ESTONIAN!)
@@ -30041,3 +29997,243 @@
         url: /uploads/tom_brennecke_communicatine_1400x700_05_02_20_350x350_69cd5ffea0.jpg
   authors:
     - id: 295
+- id: 150
+  title_et: "tere   "
+  title_en: null
+  slug_et: tere-150
+  slug_en: null
+  subtitle_et: null
+  subtitle_en: null
+  publish_date: null
+  first_page_promotion: null
+  hide_gallery: null
+  photo_article: null
+  audio: null
+  video: null
+  content_et: null
+  content_en: null
+  published_at: 2021-02-05T07:40:26.276Z
+  created_by:
+    id: 2
+    firstname: Liis
+    lastname: Käsper
+    username: null
+    email: liis.kasper@gmail.com
+    password: $2a$10$1prnUnxJjhHXHU67KuNbougPY4w7u/HDznJlISBttUd1TWCmZQ3bq
+    resetPasswordToken: null
+    registrationToken: 88c2c1963cef0f4e5a7478f59b51f7925682ccc3
+    isActive: true
+    blocked: null
+  updated_by:
+    id: 2
+    firstname: Liis
+    lastname: Käsper
+    username: null
+    email: liis.kasper@gmail.com
+    password: $2a$10$1prnUnxJjhHXHU67KuNbougPY4w7u/HDznJlISBttUd1TWCmZQ3bq
+    resetPasswordToken: null
+    registrationToken: 88c2c1963cef0f4e5a7478f59b51f7925682ccc3
+    isActive: true
+    blocked: null
+  created_at: 2021-02-05T07:40:19.567Z
+  updated_at: 2021-02-05T08:50:14.542Z
+  front_page_promotion: null
+  remote_id: null
+  X_premiere_time: null
+  X_location_et: null
+  X_location_en: null
+  X_pictures: null
+  article_media: []
+  audios: []
+  videos: []
+  authors: []
+  categories: []
+  users: []
+- &a1
+  id: 150
+  title_et: tere
+  title_en: null
+  slug_et: null
+  slug_en: null
+  subtitle_et: null
+  subtitle_en: null
+  publish_date: null
+  first_page_promotion: null
+  hide_gallery: null
+  photo_article: null
+  audio: null
+  video: null
+  content_et: null
+  content_en: null
+  published_at: 2021-02-05T07:40:26.276Z
+  created_by:
+    id: 2
+    firstname: Liis
+    lastname: Käsper
+    username: null
+    email: liis.kasper@gmail.com
+    password: $2a$10$1prnUnxJjhHXHU67KuNbougPY4w7u/HDznJlISBttUd1TWCmZQ3bq
+    resetPasswordToken: null
+    registrationToken: 88c2c1963cef0f4e5a7478f59b51f7925682ccc3
+    isActive: true
+    blocked: null
+  updated_by:
+    id: 2
+    firstname: Liis
+    lastname: Käsper
+    username: null
+    email: liis.kasper@gmail.com
+    password: $2a$10$1prnUnxJjhHXHU67KuNbougPY4w7u/HDznJlISBttUd1TWCmZQ3bq
+    resetPasswordToken: null
+    registrationToken: 88c2c1963cef0f4e5a7478f59b51f7925682ccc3
+    isActive: true
+    blocked: null
+  created_at: 2021-02-05T07:40:19.567Z
+  updated_at: 2021-02-05T07:40:26.392Z
+  front_page_promotion: null
+  remote_id: null
+  X_premiere_time: null
+  X_location_et: null
+  X_location_en: null
+  X_pictures: null
+  article_media: []
+  audios: []
+  videos: []
+  authors: []
+  categories: []
+  users: []
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1
+- *a1

@@ -44,7 +44,7 @@ labels:
         '4': Thursday
         '5': Friday
         '6': Saturday
-    Jon Doe.:
+    Jon Doe:
         nimeta: Unnamed
     error:
         Not Found: Page not found

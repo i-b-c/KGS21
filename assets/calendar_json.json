@@ -615,6 +615,25 @@
                 }
             }
         ],
+        "2021-3-15": [
+            {
+                "et_id": "kontsertsari-improtest-1604",
+                "en_id": "concert-series-improtest-1604",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kontsertsari IMPROTEST",
+                    "en": "Concert series IMPROTEST"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-2-14": [
             {
                 "et_id": "sinu-nirvaanale-129",
@@ -924,7 +943,7 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kontsertsari IMPROTEST",
+                    "et": "Kontsertsari IMPROTEST ",
                     "en": "Concert series IMPROTEST"
                 },
                 "time": "19:30",
@@ -1122,7 +1141,7 @@
                 }
             }
         ],
-        "2021-2-7": [
+        "2021-2-1": [
             {
                 "et_id": "eden-detail-1598",
                 "en_id": "eden-detail-1598",
@@ -1141,7 +1160,7 @@
                 }
             }
         ],
-        "2021-2-1": [
+        "2021-2-7": [
             {
                 "et_id": "eden-detail-1598",
                 "en_id": "eden-detail-1598",
