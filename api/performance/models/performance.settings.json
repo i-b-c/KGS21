@@ -155,7 +155,7 @@
     },
     "other_works": {
       "collection": "performance",
-      "via": "performances_b",
+      "via": "other_works_back",
       "dominant": true
     },
     "other_works_back": {

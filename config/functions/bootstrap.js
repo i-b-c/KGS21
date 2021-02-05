@@ -18,7 +18,7 @@ const path = require('path')
 
 function callRsync(){
 
-    const put_command = `rsync -raz --delete --progress /srv/strapi/strapi-development/public/uploads/ /srv/ssg/assets/img-dynamic`;
+    const put_command = `rsync -raz --progress /srv/strapi/strapi-development/public/uploads/ /srv/www/img-dynamic`;
     exec( put_command, (err, stdout, stderr) => {
       if (err) {
           console.log('vsjo problema');
