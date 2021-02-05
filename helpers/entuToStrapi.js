@@ -209,6 +209,14 @@ async function performanceToStrapi() {
             }
         }
 
+        let other_works = null
+        let e_db_value_other_works = (performance_entity.properties.otherWork.values.length > 0 ? performance_entity.properties.otherWork.values[0].db_value : null)
+        if (e_db_value_other_works){
+            other_works = performances_from_strapi.filter(s_performance => {
+            return s_performance.remote_id === e_db_value_other_works.toString()
+            }).map( e => e.id)
+        }
+
         starpi_performance_id = performances_from_strapi.filter(s_performance => {
             return s_performance.remote_id === performance_entity.id.toString()
         }).map(e => { return e.id })[0] || null
@@ -233,7 +241,7 @@ async function performanceToStrapi() {
             "technical_info_en": (performance_entity.properties['en-technical-information'].values.length > 0 ? performance_entity.properties['en-technical-information'].values[0].db_value : null),
             "X_artist": (performance_entity.properties.artist.values.length > 0 ? performance_entity.properties.artist.values[0].db_value : ''),
             "X_producer": (performance_entity.properties.producer.values.length > 0 ? performance_entity.properties.producer.values[0].db_value : ''),
-            "X_other_works": (performance_entity.properties.otherWork.values.length > 0 ? performance_entity.properties.otherWork.values[0].value : ''),
+            "other_works": other_works,
             "X_headline_et": (performance_entity.properties['et-supertitle'].values.length > 0 ? performance_entity.properties['et-supertitle'].values[0].db_value : null),
             "X_headline_en": (performance_entity.properties['en-supertitle'].values.length > 0 ? performance_entity.properties['en-supertitle'].values[0].db_value : null),
             "X_town_et": (performance_entity.properties['et-town'].values.length > 0 ? performance_entity.properties['et-town'].values[0].db_value : null),
@@ -262,9 +270,14 @@ async function performanceToStrapi() {
         // console.log(performance.remote_id)
     // }
 
+    let performancesToPut = performances.filter(performance => {
+        return performance.other_works
+    })
+    // console.log(performancesToPut)
+
     // console.log(performances)
     // PUT
-    // putToStrapi(performances, 'performances')
+    putToStrapi(performancesToPut, 'performances')
 
     // POST
     // console.log(performancesToPost);
@@ -718,3 +731,4 @@ async function main() {
 }
 
 main()
+
