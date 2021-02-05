@@ -14,10 +14,12 @@ function toggleEvents(type) {
         let eventId = eventElem.getAttribute('id')
         let eventStart = eventElem.getAttribute('start-time')
         let eventEnd = eventElem.getAttribute('end-time')
+        let eventEndDate = eventEnd ? new Date(eventEnd) : null
+        let eventStatus = eventElem.getAttribute('sales-status')
         let eventStartDate = null
 
 
-        if (type === 'residency') {
+        if (type === 'residency' || eventStatus === 'online') {
 
             eventEndDate = new Date(eventEnd)
 
