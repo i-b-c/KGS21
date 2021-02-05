@@ -50,6 +50,9 @@
     },
     "remote_id": {
       "type": "uid"
+    },
+    "publish_time": {
+      "type": "datetime"
     }
   }
 }

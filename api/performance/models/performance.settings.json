@@ -104,8 +104,8 @@
       "type": "string"
     },
     "events": {
-      "via": "performance",
-      "collection": "event"
+      "collection": "event",
+      "via": "performance"
     },
     "X_town_et": {
       "type": "string"
@@ -137,10 +137,6 @@
       "repeatable": true,
       "component": "media.media-content"
     },
-    "artists": {
-      "collection": "artist",
-      "via": "performances"
-    },
     "duration": {
       "type": "integer"
     },
@@ -151,6 +147,20 @@
       "plugin": "users-permissions",
       "collection": "user",
       "via": "myPerformances"
+    },
+    "search_field": {
+      "type": "string",
+      "private": true,
+      "default": "Event'i juures kuvamiseks kirjuta siia midagi mille järgi event üles leida"
+    },
+    "other_works": {
+      "collection": "performance",
+      "via": "other_works_back",
+      "dominant": true
+    },
+    "other_works_back": {
+      "collection": "performance",
+      "via": "other_works"
     }
   }
 }

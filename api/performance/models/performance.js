@@ -1,4 +1,5 @@
 'use strict';
+// module.exports = {};
 
 
 /**
@@ -41,6 +42,7 @@ function modify_strapi_data_yaml(result) {
 module.exports = {
   lifecycles: {
     beforeUpdate(params, data) {
+      console.log(data)
       if(data.name_et){
         data.slug_et = data.name_et ? slugify( data.name_et) + '-' + params.id : null
         data.slug_en = data.name_en ? slugify( data.name_en) + '-' + params.id : null

@@ -40,6 +40,11 @@ function modify_strapi_data_yaml(result) {
 
 module.exports = {
   lifecycles: {
+    beforeUpdate(params, data) {
+      data.full_name = data.first_name.trim() + ' ' + data.last_name.trim()
+      data.first_name = data.first_name.trim()
+      data.last_name = data.last_name.trim()
+    },
     afterUpdate(result, params, data) {
       if (result.published_at) {
         modify_strapi_data_yaml(result);
@@ -64,3 +69,5 @@ module.exports = {
     }
   }
 };
+
+
