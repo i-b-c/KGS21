@@ -1,1 +1,75 @@
-
+-
+    id: 6
+    hall:
+        id: 6
+    theater:
+        id: 2
+    town:
+        id: 1
+    country:
+        id: 1
+    name_et: Projektiruum
+    name_en: Project room
+    remote_id: '5085'
+    slug_et: projektiruum
+    slug_en: project-room
+-
+    id: 7
+    hall:
+        id: 5
+    theater:
+        id: 2
+    town:
+        id: 1
+    country:
+        id: 1
+    name_et: Stuudio
+    name_en: Studio
+    remote_id: '2162'
+    slug_et: stuudio
+    slug_en: studio
+-
+    id: 8
+    hall:
+        id: 4
+    theater:
+        id: 2
+    town:
+        id: 1
+    country:
+        id: 1
+    name_et: Keldrisaal
+    name_en: Keldrisaal
+    remote_id: '2155'
+    slug_et: keldrisaal
+    slug_en: keldrisaal
+-
+    id: 9
+    hall:
+        id: 3
+    theater:
+        id: 2
+    town:
+        id: 1
+    country:
+        id: 1
+    name_et: Püha Vaimu SAAL
+    name_en: Püha Vaimu SAAL
+    remote_id: '2111'
+    slug_et: pha-vaimu-saal
+    slug_en: pha-vaimu-saal
+-
+    id: 10
+    hall:
+        id: 2
+    theater:
+        id: 2
+    town:
+        id: 1
+    country:
+        id: 1
+    name_et: Kanuti Gildi SAAL
+    name_en: Kanuti Gildi SAAL
+    remote_id: '2110'
+    slug_et: kanuti-gildi-saal
+    slug_en: kanuti-gildi-saal

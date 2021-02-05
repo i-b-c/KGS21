@@ -577,13 +577,26 @@ async function eventsToStrapi() {
             "audio": event_audios,
             "coverages": coverage_ids,
             "order": (event_entity.properties.ordinal.values.length > 0 ? event_entity.properties.ordinal.values[0].db_value : null),
+
+            "created_at": (event_entity.properties['entu-created-at'].values.length > 0 ? event_entity.properties['entu-created-at'].values[0].db_value : null),
+            "updated_at": (event_entity.properties['entu-changed-at'].values.length > 0 ? event_entity.properties['entu-changed-at'].values[0].db_value : null),
+            
             "id": strapi_event_id
 
         }
     })
 
+
+
+    let eventsToUpdate = events.filter(e => {
+        let controlDate = new Date('2020-11-01T00:00:00+02:00')
+        return new Date(e.created_at) >= controlDate
+
+    })
+    // console.count(eventsToUpdate)
+
     // // PUT
-    // putToStrapi(events, 'events')
+    putToStrapi(eventsToUpdate, 'events')
 
     // // POST
     // let eventsToPost = events.filter( e => e.id === null)

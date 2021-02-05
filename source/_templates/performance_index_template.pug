@@ -66,6 +66,18 @@ block content
                     - var dur_d = ((duration - duration % 1440) / 1440 > 0) ? (duration - duration % 1440) / 1440 + ' ' + self.labels.label.days_short : ''
                     .meta-info= self.labels.label.duration + ': ' + dur_d + ' ' + dur_h + ' ' + dur_m
 
+                if self.other_works && self.other_works.length
+                    .related-perfomance
+                        h2= self.labels.title.related
+                        each otherWork in self.other_works
+                            .row
+                                .col-sm-12
+                                    a(href=`/performance/${lang_path}` + otherWork[`name_${self.locale}`])
+                                        p= otherWork[`name_${self.locale}`]
+                                .col-sm-12.col-md-12.col-lg-12
+                                    hr
+
+
             article.readMore.main-text.col-md-8.col-lg-6.h3
                 p
                     +format(self[`description_${self.locale}`])
@@ -91,8 +103,11 @@ block content
                                             if event.canceled === 'true'
                                                 a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                             else
-                                                if  event.X_ticket_info.sales_status && (event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission")
-                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
+                                                if  event.X_ticket_info.sales_status
+                                                    if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
+                                                        a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
+                                                    else if event.X_ticket_info.sales_status === "online"
+                                                        a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                                 else
                                                     a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
@@ -144,9 +159,7 @@ block content
                                 if galPhoto.gallery_image_medium && !galPhoto.hero_image
                                     .single-image.col-sm-6.col-sm-3.col-md-4
 
-                                        if galPhoto.original_image && galPhoto.original_image.url
-                                            - var imgLink = galPhoto.original_image.url
-                                        else if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
+                                        if galPhoto.gallery_image_large && galPhoto.gallery_image_large.url
                                             - var imgLink = galPhoto.gallery_image_large.url
                                         else if galPhoto.gallery_image_medium && galPhoto.gallery_image_medium.url
                                             - var imgLink = galPhoto.gallery_image_medium.url

@@ -1,1 +1,923 @@
-
+-
+    id: 2
+    name: main
+    label:
+        -
+            id: 2
+            name: KGS
+            value_et: Kanuti Gildi SAAL
+            value_en: Kanuti Gildi SAAL
+        -
+            id: 3
+            name: KGS_logo
+            value_et: Kanuti Gildi SAALi logo
+            value_en: Kanuti Gildi SAAL logo
+        -
+            id: 4
+            name: NUP_logo
+            value_et: New Performance logo
+            value_en: New Performance logo
+        -
+            id: 5
+            name: SB_logo
+            value_et: SAAL Bieannaal logo
+            value_en: SAAL Bieannaal logo
+        -
+            id: 6
+            name: season
+            value_et: Hooaeg
+            value_en: Season
+-
+    id: 6
+    name: categories
+    label:
+        -
+            id: 38
+            name: dance
+            value_et: Tants
+            value_en: Dance
+        -
+            id: 39
+            name: film
+            value_et: Video
+            value_en: Video
+        -
+            id: 40
+            name: lecture
+            value_et: Loeng
+            value_en: Lecture
+        -
+            id: 41
+            name: music
+            value_et: Muusika
+            value_en: Music
+        -
+            id: 42
+            name: new-circus
+            value_et: Uus Tsirkus
+            value_en: New Circus
+        -
+            id: 43
+            name: performance
+            value_et: Performance
+            value_en: Performance
+        -
+            id: 44
+            name: theatre
+            value_et: Teater
+            value_en: Theatre
+-
+    id: 8
+    name: label
+    label:
+        -
+            id: 50
+            name: days_short
+            value_et: p
+            value_en: d
+        -
+            id: 51
+            name: duration
+            value_et: Kestus
+            value_en: Duration
+        -
+            id: 52
+            name: hours_short
+            value_et: t
+            value_en: h
+        -
+            id: 53
+            name: minutes_short
+            value_et: min
+            value_en: min
+-
+    id: 9
+    name: lang
+    label:
+        -
+            id: 54
+            name: en
+            value_et: EN
+            value_en: EN
+        -
+            id: 55
+            name: et
+            value_et: EE
+            value_en: EE
+-
+    id: 10
+    name: linkto
+    label:
+        -
+            id: 56
+            name: intranet
+            value_et: Vaata Entus
+            value_en: View in Entu
+-
+    id: 13
+    name: newsletter
+    label:
+        -
+            id: 90
+            name: mailchimp_action
+            value_et: >-
+                //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=11b766323b
+            value_en: >-
+                //saal.us9.list-manage.com/subscribe/post?u=b4d371ad73e2be3853f5cd989&amp;id=deab6bd3c2
+        -
+            id: 91
+            name: inputName
+            value_et: b_1e1d48fe600fda5c3f6a39b75_fdc080b2d5
+            value_en: b_b4d371ad73e2be3853f5cd989_deab6bd3c2
+        -
+            id: 92
+            name: placeholder
+            value_et: Sinu mailiaadress
+            value_en: Enter e-mail
+        -
+            id: 93
+            name: signup
+            value_et: Liitu uudiskirjaga
+            value_en: Sign-up for newsletter
+-
+    id: 14
+    name: placeholder
+    label:
+        -
+            id: 94
+            name: search
+            value_et: Otsi…
+            value_en: Search…
+-
+    id: 17
+    name: weekdays
+    label:
+        -
+            id: 131
+            name: '0'
+            value_et: pühapäev
+            value_en: Sunday
+        -
+            id: 132
+            name: '1'
+            value_et: esmaspäev
+            value_en: Monday
+        -
+            id: 133
+            name: '2'
+            value_et: teisipäev
+            value_en: Tuesday
+        -
+            id: 134
+            name: '3'
+            value_et: kolmapäev
+            value_en: Wednesday
+        -
+            id: 135
+            name: '4'
+            value_et: neljapäev
+            value_en: Thursday
+        -
+            id: 136
+            name: '5'
+            value_et: reede
+            value_en: Friday
+        -
+            id: 137
+            name: '6'
+            value_et: laupäev
+            value_en: Saturday
+-
+    id: 3
+    name: Jon Doe.
+    label:
+        -
+            id: 7
+            name: nimeta
+            value_et: Nimeta
+            value_en: Unnamed
+-
+    id: 7
+    name: error
+    label:
+        -
+            id: 45
+            name: Not Found
+            value_et: >-
+                Seda lehte pole veel valmis tehtud või siis on heaks arvatud ta
+                kustutada.
+            value_en: Page not found
+        -
+            id: 46
+            name: cache_missing_residency_past
+            value_et: Laadin andmeid. Minuti pärast peaks valmis olema
+            value_en: Loading data. Should be ready in a minute
+        -
+            id: 47
+            name: cache_missing_upcoming_events
+            value_et: Tulevasi sündmusi pole
+            value_en: No upcoming events
+        -
+            id: 48
+            name: cache_missing_upcoming
+            value_et: Laadin andmeid. Minuti pärast peaks valmis olema
+            value_en: Loading data. Should be ready in a minute
+-
+    id: 11
+    name: month
+    label:
+        -
+            id: 57
+            name: '1'
+            value_et: Jaanuar
+            value_en: January
+        -
+            id: 58
+            name: '2'
+            value_et: Veebruar
+            value_en: February
+        -
+            id: 59
+            name: '3'
+            value_et: Märts
+            value_en: March
+        -
+            id: 60
+            name: '4'
+            value_et: Aprill
+            value_en: April
+        -
+            id: 61
+            name: '5'
+            value_et: Mai
+            value_en: May
+        -
+            id: 62
+            name: '6'
+            value_et: Juuni
+            value_en: June
+        -
+            id: 63
+            name: '7'
+            value_et: Juuli
+            value_en: July
+        -
+            id: 64
+            name: '8'
+            value_et: August
+            value_en: August
+        -
+            id: 65
+            name: '9'
+            value_et: September
+            value_en: September
+        -
+            id: 66
+            name: '10'
+            value_et: Oktoober
+            value_en: October
+        -
+            id: 67
+            name: '11'
+            value_et: November
+            value_en: November
+        -
+            id: 68
+            name: '12'
+            value_et: Detsember
+            value_en: December
+-
+    id: 15
+    name: query
+    label:
+        -
+            id: 95
+            name: date
+            value_et: Kuupäev
+            value_en: Date
+        -
+            id: 96
+            name: matches
+            value_et: vastet
+            value_en: matches
+        -
+            id: 97
+            name: query
+            value_et: Otsisid
+            value_en: Searched for
+        -
+            id: 98
+            name: results_0
+            value_et: Ei leidnud
+            value_en: No matching results
+        -
+            id: 99
+            name: results_1
+            value_et: Üks oli
+            value_en: Found one
+        -
+            id: 100
+            name: results
+            value_et: Leidsin
+            value_en: Results
+-
+    id: 4
+    name: nup
+    label:
+        -
+            id: 8
+            name: get_newspaper_2016_1
+            value_et: Loe NUP lehte!
+            value_en: Get NUP NEWS!
+-
+    id: 20
+    name: login
+    label:
+        -
+            id: 152
+            name: log_out
+            value_et: logi välja
+            value_en: sign out
+        -
+            id: 153
+            name: get_me
+            value_et: päri mind
+            value_en: get me
+        -
+            id: 155
+            name: first_name
+            value_et: eesnimi
+            value_en: first name
+        -
+            id: 163
+            name: first_name_help
+            value_et: Eesnimi nimi peab koosnema vähemalt 2-st tähemärgist
+            value_en: First name should consist of at least 2 characters
+        -
+            id: 156
+            name: family_name
+            value_et: perenimi
+            value_en: family name
+        -
+            id: 164
+            name: last_name_help
+            value_et: Perekonna nimi peab koosnema vähemalt 2-st tähemärgist
+            value_en: Last name should consist of at least 2 characters
+        -
+            id: 159
+            name: save
+            value_et: salvesta
+            value_en: save
+        -
+            id: 157
+            name: dob
+            value_et: sünnikuupäev
+            value_en: date of birth
+        -
+            id: 165
+            name: phone_num_help
+            value_et: >-
+                Telefoni number koosneda numbritest,  "+" märgist alguses ja
+                võib  olla 7-15 kohaline
+            value_en: >-
+                Phone number can consist of numbers, a "+" in the beginning and
+                should be 7-15 characters long
+        -
+            id: 158
+            name: phone
+            value_et: telefoni number
+            value_en: phone number
+        -
+            id: 168
+            name: userprofile_title
+            value_et: Sinu andmed
+            value_en: Your data
+        -
+            id: 179
+            name: change_profile
+            value_et: Muuda andmeid
+            value_en: Change profile
+        -
+            id: 169
+            name: data_saved
+            value_et: Andmed salvestatud
+            value_en: Data saved
+        -
+            id: 182
+            name: favorites
+            value_et: Sinu lemmikud
+            value_en: Favorites
+        -
+            id: 180
+            name: no_favorites
+            value_et: Sa ei ole veel ühtegi lemmikut salvestanud
+            value_en: You have not saved any favorites
+        -
+            id: 183
+            name: tickets
+            value_et: Sinu piletid
+            value_en: Your tickets
+        -
+            id: 181
+            name: no_tickets
+            value_et: Sul pole salvestatud pileteid
+            value_en: You have no saved tickets
+        -
+            id: 154
+            name: email
+            value_et: e-posti aadress
+            value_en: email address
+        -
+            id: 185
+            name: email_not_correct
+            value_et: Palun sisesta korrektne email
+            value_en: Please enter valid email
+        -
+            id: 186
+            name: sign_in_title
+            value_et: Sisene
+            value_en: Sign in
+        -
+            id: 187
+            name: sign_in
+            value_et: Sisene
+            value_en: Sign in
+        -
+            id: 188
+            name: sign_up_title
+            value_et: Registreeri kasutajaks
+            value_en: Sign up for an account
+        -
+            id: 189
+            name: sign_up
+            value_et: Registreeri
+            value_en: Sign_up
+        -
+            id: 184
+            name: psw
+            value_et: salasõna
+            value_en: password
+        -
+            id: 190
+            name: psw_repeat
+            value_et: salasõna teist korda
+            value_en: repeat password
+        -
+            id: 191
+            name: psw_reset
+            value_et: lähtesta parool
+            value_en: reset password
+        -
+            id: 192
+            name: psw_help
+            value_et: Salasõna peab olema vähemalt 8 tähemärki pikk
+            value_en: Password should be at least 8 characters long
+        -
+            id: 167
+            name: psw_repeat_help
+            value_et: Salasõna peab olema identne üleval sisestatule
+            value_en: The password must be identical to the one entered above
+        -
+            id: 193
+            name: providers_list
+            value_et: sinu autentimis viisid
+            value_en: your authentication providers
+        -
+            id: 162
+            name: err_email_used
+            value_et: >-
+                Sellise emailiga kasutaja on meie andmebaasis juba olemas proovi
+                mõne teise viisiga sisse logida.
+            value_en: >-
+                This email has already been registered in our system. Please try
+                logging in with a different provider. 
+        -
+            id: 194
+            name: err_psw_email_not_correct
+            value_et: Email või salasõna pole õige
+            value_en: Email or password is not correct
+        -
+            id: 198
+            name: err_email_used_providers
+            value_et: >-
+                Selle emailiga kasutaja on meie andmebaasis olemas. Proovi sisse
+                ogida Google-i või Facebook-iga.
+            value_en: >-
+                User with this email allready exists. Try signing in with Google
+                or Facebook.
+        -
+            id: 200
+            name: err_login_problem
+            value_et: Viga sisse logimisel
+            value_en: Sign in error
+        -
+            id: 201
+            name: err_profile_not_saved
+            value_et: Profiili salvestamine ebaõnnestus
+            value_en: Saving your profile failed
+        -
+            id: 202
+            name: psw_reset_title
+            value_et: Sisesta uus parool
+            value_en: Enter new password
+        -
+            id: 203
+            name: forgot_psw
+            value_et: unustasin parooli
+            value_en: I forgot my password
+        -
+            id: 250
+            name: remove
+            value_et: Eemalda
+            value_en: Remove
+        -
+            id: 251
+            name: to_save_favo
+            value_et: lemmikute salvestamiseks
+            value_en: to saving favourites
+        -
+            id: 252
+            name: save_as_favo
+            value_et: oma lemmikuks
+            value_en: as your favourite
+        -
+            id: 253
+            name: rm_from_favo
+            value_et: oma lemmikute hulgast
+            value_en: from your favourites
+-
+    id: 5
+    name: button
+    label:
+        -
+            id: 10
+            name: NUP
+            value_et: NU Performance Festival 2018
+            value_en: NU Performance Festival 2018
+        -
+            id: 11
+            name: NUPprint
+            value_et: NU Performance ajaleht
+            value_en: NU Performance Newspaper
+        -
+            id: 12
+            name: artist_talk
+            value_et: Vestlus
+            value_en: Artist talk
+        -
+            id: 25
+            name: canceled
+            value_et: Jääb ära!
+            value_en: Canceled!
+        -
+            id: 26
+            name: category
+            value_et: Kategooria
+            value_en: Category
+        -
+            id: 28
+            name: load_more
+            value_et: Lae veel
+            value_en: Load more
+        -
+            id: 29
+            name: on_tour
+            value_et: Tuuril
+            value_en: On Tour
+        -
+            id: 30
+            name: premiere
+            value_et: Esietendus!
+            value_en: Premiere!
+        -
+            id: 31
+            name: saalbiennaal
+            value_et: SAAL Biennaal 2017
+            value_en: SAAL Biennaal 2017
+        -
+            id: 32
+            name: search
+            value_et: Otsi
+            value_en: Search
+        -
+            id: 33
+            name: today
+            value_et: Täna!
+            value_en: Today!
+        -
+            id: 34
+            name: view_all
+            value_et: Vaata kõiki
+            value_en: View all
+        -
+            id: 35
+            name: volunteer
+            value_et: Tule vabatahtlikuks!
+            value_en: Become a volunteer!
+        -
+            id: 36
+            name: covid_info
+            value_et: Koroona meelespea
+            value_en: Covid info
+        -
+            id: 37
+            name: year
+            value_et: Aasta
+            value_en: Year
+-
+    id: 12
+    name: nav
+    label:
+        -
+            id: 75
+            name: about
+            value_et: Meist
+            value_en: About Us
+        -
+            id: 76
+            name: about_festival
+            value_et: Festivalist
+            value_en: About
+        -
+            id: 77
+            name: contact
+            value_et: Info
+            value_en: Info
+        -
+            id: 78
+            name: coproductions
+            value_et: Kaasproduktsioonid
+            value_en: Co-Productions
+        -
+            id: 79
+            name: festivals
+            value_et: Festivalid
+            value_en: Festivals
+        -
+            id: 80
+            name: magazine
+            value_et: Magasin
+            value_en: Magazine
+        -
+            id: 81
+            name: media
+            value_et: Meedia
+            value_en: Media
+        -
+            id: 82
+            name: press
+            value_et: Press
+            value_en: Press
+        -
+            id: 83
+            name: program
+            value_et: Programm
+            value_en: Program
+        -
+            id: 84
+            name: projects
+            value_et: Projektid
+            value_en: Projects
+        -
+            id: 85
+            name: residency
+            value_et: Residentuurid
+            value_en: Residencies
+        -
+            id: 86
+            name: schedule
+            value_et: Kava
+            value_en: Program
+        -
+            id: 87
+            name: sponsors
+            value_et: Toetajad
+            value_en: Supporters
+        -
+            id: 88
+            name: tickets
+            value_et: Piletid
+            value_en: Tickets
+        -
+            id: 89
+            name: tours
+            value_et: Tuurid
+            value_en: On Tour
+        -
+            id: 161
+            name: user_menu
+            value_et: Mina
+            value_en: Me
+-
+    id: 16
+    name: title
+    label:
+        -
+            id: 101
+            name: archive
+            value_et: Arhiiv
+            value_en: Archive
+        -
+            id: 102
+            name: audio
+            value_et: Audio
+            value_en: Heli
+        -
+            id: 103
+            name: basement
+            value_et: Kelder
+            value_en: Basement
+        -
+            id: 104
+            name: calendar
+            value_et: Kalender
+            value_en: Calendar
+        -
+            id: 105
+            name: contact
+            value_et: Kontakt
+            value_en: Contact
+        -
+            id: 106
+            name: event
+            value_et: SAALis
+            value_en: at SAAL
+        -
+            id: 107
+            name: floorplans
+            value_et: Saaliplaanid
+            value_en: Floorplans
+        -
+            id: 108
+            name: free
+            value_et: Tasuta!
+            value_en: Free of charge!
+        -
+            id: 109
+            name: gallery
+            value_et: Galerii
+            value_en: Gallery
+        -
+            id: 110
+            name: kanut_co_productions
+            value_et: kaasproduktsioonid
+            value_en: co-productions
+        -
+            id: 111
+            name: kanut_residency
+            value_et: Kanuti Gildi SAALi residendid
+            value_en: Residents of Kanuti Gildi SAAL
+        -
+            id: 112
+            name: news
+            value_et: Uudised
+            value_en: News
+        -
+            id: 113
+            name: no_echo
+            value_et: Artikleid pole
+            value_en: No Posts
+        -
+            id: 114
+            name: no_events
+            value_et: Sündmusi ei toimu
+            value_en: No events
+        -
+            id: 115
+            name: no-residencies
+            value_et: Residente ei ole
+            value_en: No Residencies
+        -
+            id: 116
+            name: no_tours
+            value_et: Tuuril ei ole hetkel ühtki lavastust
+            value_en: No tours
+        -
+            id: 117
+            name: onsite_price
+            value_et: Kohapealt
+            value_en: At the door
+        -
+            id: 118
+            name: past
+            value_et: Olnud
+            value_en: Past
+        -
+            id: 119
+            name: press
+            value_et: Pressikajastus
+            value_en: Press
+        -
+            id: 120
+            name: pyhavaimu_residency
+            value_et: Pühavaimu SAALi residendid
+            value_en: Residents of Pühavaimu SAAL
+        -
+            id: 121
+            name: related
+            value_et: Teised tööd
+            value_en: Other works
+        -
+            id: 122
+            name: related_articles
+            value_et: Seotud postitused
+            value_en: Related posts
+        -
+            id: 123
+            name: residency
+            value_et: Residentuur
+            value_en: Residency
+        -
+            id: 124
+            name: saal
+            value_et: Saal
+            value_en: Saal
+        -
+            id: 125
+            name: sound
+            value_et: Heli
+            value_en: Sound
+        -
+            id: 126
+            name: sponsors
+            value_et: Toetajad ja võrgustikud
+            value_en: Supporters and networks
+        -
+            id: 127
+            name: studio
+            value_et: Stuudio
+            value_en: Studio
+        -
+            id: 128
+            name: tour
+            value_et: Tuuril
+            value_en: On tour
+        -
+            id: 129
+            name: upcoming
+            value_et: Tulekul
+            value_en: Upcoming
+        -
+            id: 130
+            name: video
+            value_et: Video
+            value_en: Video
+        -
+            id: 211
+            name: festivals
+            value_et: festivalid
+            value_en: festivals
+        -
+            id: 255
+            name: newscast_archive
+            value_et: Uudiste arhiiv
+            value_en: News archive
+-
+    id: 21
+    name: ticket
+    label:
+        -
+            id: 204
+            name: buy_ticket
+            value_et: Osta pilet
+            value_en: Buy ticket
+        -
+            id: 205
+            name: buy_t_canceled
+            value_et: Jääb ära!
+            value_en: Canceled!
+        -
+            id: 206
+            name: buy_t_free_admission
+            value_et: Tasuta
+            value_en: Free Admission
+        -
+            id: 207
+            name: buy_t_future_sale
+            value_et: Tuleb müüki
+            value_en: future sale
+        -
+            id: 208
+            name: buy_t_presale_at_boxoffices
+            value_et: Müügipunktist
+            value_en: From box office
+        -
+            id: 209
+            name: buy_t_sold_out
+            value_et: Välja müüdud
+            value_en: Sold out
+        -
+            id: 210
+            name: buy_t_price_on_spot
+            value_et: Hind kohapeal
+            value_en: At the door
+        -
+            id: 212
+            name: buy_t_regular_presale
+            value_et: Buy ticket
+            value_en: Osta pilet
+        -
+            id: 257
+            name: buy_t_online
+            value_et: Online
+            value_en: Online

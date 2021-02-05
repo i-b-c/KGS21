@@ -16,7 +16,7 @@ const LANGUAGES = ['et', 'en']
 for (const lang of LANGUAGES) {
     const newscastsYAMLPath = path.join(fetchDir, `newscasts.${lang}.yaml`)
     let allData = STRAPIDATA_NEWSCASTS
-        .filter(e => e[`title_${lang}`] && e[`content_${lang}`])
+        .filter(e => e[`title_${lang}`] && e[`content_${lang}`] && e.publish_time)
         .sort((a, b) => new Date(b.publish_time) - new Date(a.publish_time))
 
     console.log(`${allData.length} newscasts from YAML (${lang})`);
@@ -26,4 +26,5 @@ for (const lang of LANGUAGES) {
 
 if (targeted) {
     addConfigPathAliases(['about/'])
+    addConfigPathAliases(['newscasts_archive/'])
 }
