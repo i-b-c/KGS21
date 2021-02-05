@@ -113,4 +113,5 @@ exports
 *.config
 build
 .strapi-updater.json
-config
+config/*
+!config/functions
