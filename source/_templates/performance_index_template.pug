@@ -88,7 +88,7 @@ block content
 
                     .tickets.row
                         each event in self.minToMaxEvents
-                            div(event_type='future_events', start_time=event.start_time)
+                            div(event_type='future_events' start-time=event.start_time end-time=event.end_time sales-status=event.X_ticket_info ? event.X_ticket_info.sales_status : undefined)
                                 .col-sm-4.col-md-4.col-lg-4
                                     +dayName(event.start_time)
                                     +dateFull(event.start_time)
@@ -123,7 +123,7 @@ block content
                     .past
                         h2 Olnud
                         each event in self.maxToMinEvents
-                            .row(event_type='past_events', start_time=event.start_time)
+                            .row(event_type='past_events', start-time=event.start_time end-time=event.end_time sales-status=event.X_ticket_info ? event.X_ticket_info.sales_status : undefined)
                                 .col-sm-6.col-md-5.col-lg-4
                                     +dateFull(event.start_time)
                                 .col-sm-6.col-md-7.col-lg-8

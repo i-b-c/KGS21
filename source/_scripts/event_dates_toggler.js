@@ -4,26 +4,35 @@ function performanceEventToggler(timing) {
     var currentTime = new Date()
 
     for( var event in eventElement){
+        if (eventElement.hasOwnProperty(event)) {
 
-        if ( timing === 'future_events'){
+            var eventEnd = eventElement.getAttribute('end-time') || null
+            var evendEndDate = eventEnd ? new Date(eventEnd) : null
+            var eventStatus = eventElement.getAttribute('sales-status') || null
+            var eventStart = eventElement[event].getAttribute('start-time')
+            var eventStartTime = eventStart ? new Date(eventStart) : null
 
-            if (eventElement.hasOwnProperty(event) && currentTime >= new Date(eventElement[event].getAttribute('start_time'))){
-                eventElement[event].style.display='none'
-            } else if (eventElement.hasOwnProperty(event) && currentTime <= new Date(eventElement[event].getAttribute('start_time'))) {
-                futureEventCount++
+            if (timing === 'future_events'){
+                console.log(eventEnd, evendEndDate,eventStatus);
+                if (eventStartTime && currentTime <= eventStartTime) {
+                    futureEventCount++
+                } else if (evendEndDate && evendEndDate >= currentTime && eventStatus === 'online') {
+                    futureEventCount++
+                } else if (eventStartTime && currentTime >= eventStartTime){
+                    eventElement[event].style.display='none'
+                }
             }
 
-        }
+            if ( timing === 'past_events'){
+                console.log('past', evendEndDate, currentTime, eventStatus);
+                if (evendEndDate && evendEndDate >= currentTime && eventStatus === 'online') {
+                    eventElement[event].style.display='none'
+                } else if (eventStartTime && currentTime <= eventStartTime){
+                    eventElement[event].style.display='none'
+                }
 
-        if ( timing === 'past_events'){
-
-            if (eventElement.hasOwnProperty(event) && currentTime <= new Date(eventElement[event].getAttribute('start_time'))){
-
-                eventElement[event].style.display='none'
             }
-
         }
-
     }
 
     if (futureEventCount > 0) {
