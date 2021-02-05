@@ -254,7 +254,11 @@ Performance: &Performance # performance #lavastus
     coverages:
         - *Coverage
     duration: (number)
-
+    other_works: 
+        - (backreference) #*Performance
+    other_works_back: 
+        - (backreference) #*Performance
+        
 #Event
 TicketInfo: &TicketInfo
     # _path: /ticket-infos

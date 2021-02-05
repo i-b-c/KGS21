@@ -66,6 +66,18 @@ block content
                     - var dur_d = ((duration - duration % 1440) / 1440 > 0) ? (duration - duration % 1440) / 1440 + ' ' + self.labels.label.days_short : ''
                     .meta-info= self.labels.label.duration + ': ' + dur_d + ' ' + dur_h + ' ' + dur_m
 
+                if self.other_works && self.other_works.length
+                    .related-perfomance
+                        h2= self.labels.title.related
+                        each otherWork in self.other_works
+                            .row
+                                .col-sm-12
+                                    a(href=`/performance/${lang_path}` + otherWork[`name_${self.locale}`])
+                                        p= otherWork[`name_${self.locale}`]
+                                .col-sm-12.col-md-12.col-lg-12
+                                    hr
+
+
             article.readMore.main-text.col-md-8.col-lg-6.h3
                 p
                     +format(self[`description_${self.locale}`])
