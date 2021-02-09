@@ -746,25 +746,6 @@
                 }
             }
         ],
-        "2021-2-13": [
-            {
-                "et_id": "sinu-nirvaanale-129",
-                "en_id": "for-your-nirvana-129",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2021-2-2": [
             {
                 "et_id": "pha-vaimu-saali-residentuuri-showing-1586",
@@ -781,6 +762,25 @@
                 "location": {
                     "et": "Püha Vaimu SAAL",
                     "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2021-2-13": [
+            {
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sinu nirvaanale",
+                    "en": "For your nirvana"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -841,25 +841,6 @@
                 }
             }
         ],
-        "2021-2-11": [
-            {
-                "et_id": "evolutsiooni-revolutsioon-279",
-                "en_id": "the-revolution-on-evolution-279",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2021-2-9": [
             {
                 "et_id": "peks-misatallis-tallinnas-439",
@@ -879,17 +860,17 @@
                 }
             }
         ],
-        "2021-3-24": [
+        "2021-2-11": [
             {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "et_id": "evolutsiooni-revolutsioon-279",
+                "en_id": "the-revolution-on-evolution-279",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
+                    "et": "Evolutsiooni revolutsioon",
+                    "en": "The revolution on evolution"
                 },
                 "time": "19:30",
                 "location": {
@@ -945,6 +926,25 @@
                 "name": {
                     "et": "Kontsertsari IMPROTEST ",
                     "en": "Concert series IMPROTEST"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-3-24": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul",
+                    "en": "Kas te olete oma kohaga rahul"
                 },
                 "time": "19:30",
                 "location": {
@@ -1029,25 +1029,6 @@
                 }
             }
         ],
-        "2021-3-23": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2021-2-12": [
             {
                 "et_id": "evolutsiooni-revolutsioon-279",
@@ -1095,6 +1076,25 @@
                 "name": {
                     "et": "Eden Detail",
                     "en": "Eden Detail"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-3-23": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul",
+                    "en": "Kas te olete oma kohaga rahul"
                 },
                 "time": "19:30",
                 "location": {

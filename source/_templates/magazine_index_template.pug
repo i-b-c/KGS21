@@ -7,43 +7,28 @@ block content
             section.event-banner.carousel.slide(id='front-carousel' data-ride='carousel')
                 .carousel-inner(role="listbox")
 
-                    - var bigPhotos = []
+                    //- Only one displayed as per requested
                     if self.hero_images
-                        - bigPhotos = self.hero_images
+                        - hero_image = `${m_api}${self.hero_images[0]}`
+                    else
+                        - hero_image = '/assets/images/placeholder.jpg'
 
-                    if bigPhotos.length === 0
-                        - bigPhotos = ['/assets/images/placeholder.jpg']
+                    .item(class='active')
+                        figure(id = `slide-1`, style=`background-image: url('${hero_image}');`)
+                        header.col-md-8
+                            p
+                                +dateFull(self.publish_date)
+                            h1.artist= self[`title_${self.locale}`]
+                                if self[`subtitle_${self.locale}`]
+                                    - var subTitle = self[`subtitle_${self.locale}`]
+                                    span= ` / ${subTitle}`
+                            if self.authors_cs
+                                p.subtitle= self.authors_cs
 
-                    - var photoActive = 0
-                    each photo in bigPhotos
-                        .item(class=(photoActive === 0 ? 'active' : ''))
-                            - photo = photo === '/assets/images/placeholder.jpg' ? photo : `${m_api}${photo}`
-                            figure(id = `slide-${photoActive}`, style=`background-image: url('${photo}');`)
-                            - photoActive++
-                            header.col-md-8
-                                p
-                                    +dateFull(self.publish_date)
-                                h1.artist= self[`title_${self.locale}`]
-                                    if self[`subtitle_${self.locale}`]
-                                        - var subTitle = self[`subtitle_${self.locale}`]
-                                        span= ` / ${subTitle}`
-                                if self.authors_cs
-                                    p.subtitle= self.authors_cs
-
-                if bigPhotos.length > 1
-                    a.left.carousel-control(href='#front-carousel' role='button' data-slide='prev')
-                        span.icon-prev.arrow-left(aria-hidden='true')
-                        span.sr-only Previous
-                    a.right.carousel-control(href='#front-carousel' role='button' data-slide='next')
-                        span.icon-next.arrow-right(aria-hidden='true')
-                        span.sr-only Next
-                            ul.event-categories
-
-                //- Gradient Map for images
-                each photo, ix in bigPhotos
-                    script.
-                        var slide#{ix} = document.getElementById('slide-#{ix}');
-                        GradientMaps.applyGradientMap(slide#{ix}, '#000000, #FFC600');
+                //- Gradient Map for hero_image
+                script.
+                    var slide1 = document.getElementById('slide-1');
+                    GradientMaps.applyGradientMap(slide1, '#000000, #FFC600');
 
         .row.front-page-margin
             .col-md-12
