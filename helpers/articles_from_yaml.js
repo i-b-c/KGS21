@@ -40,11 +40,8 @@ for (const lang of LANGUAGES) {
     let allData = []
 
     for (const article of STRAPIDATA_ARTICLES) {
-
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(article.id.toString()) ? true : false
-
         if (article[`slug_${lang}`] || article.remote_id) {
-
             article.path = article[`slug_${lang}`] || article.remote_id ? (article[`slug_${lang}`] ? `magazine/${article[`slug_${lang}`]}` : `magazine/${article.remote_id}`) : null
 
             if (lang === 'et') {

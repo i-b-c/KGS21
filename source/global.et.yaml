@@ -44,8 +44,6 @@ labels:
         '4': neljapäev
         '5': reede
         '6': laupäev
-    Jon Doe:
-        nimeta: Nimeta
     error:
         Not Found: >-
             Seda lehte pole veel valmis tehtud või siis on heaks arvatud ta
@@ -53,6 +51,8 @@ labels:
         cache_missing_residency_past: Laadin andmeid. Minuti pärast peaks valmis olema
         cache_missing_upcoming_events: Tulevasi sündmusi pole
         cache_missing_upcoming: Laadin andmeid. Minuti pärast peaks valmis olema
+    Jon Doe:
+        nimeta: Nimeta
     month:
         '1': Jaanuar
         '2': Veebruar

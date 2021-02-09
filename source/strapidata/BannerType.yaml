@@ -1,11 +1,4 @@
 -
-    id: 17
-    name: Esilehe banner
-    width: 302
-    height: 192
-    slug: prefix_esilehe-banner
-    remote_id: '3806'
--
     id: 18
     name: Karussell "about" lehel
     width: 640
@@ -19,3 +12,10 @@
     height: 50
     slug: 19-toetajad-about-lehel
     remote_id: '2787'
+-
+    id: 17
+    name: 'Esilehe banner '
+    width: 302
+    height: 192
+    slug: 17-esilehe-banner
+    remote_id: '3806'

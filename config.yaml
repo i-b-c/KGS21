@@ -16,6 +16,4 @@ server:
     assets: /assets/
 dev:
     aliases: true
-    paths:
-        - _fetchdir/performances/245
-        - co_productions/
+    paths: null

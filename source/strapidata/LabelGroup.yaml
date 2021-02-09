@@ -188,15 +188,6 @@
             value_et: laupäev
             value_en: Saturday
 -
-    id: 3
-    name: Jon Doe
-    label:
-        -
-            id: 7
-            name: nimeta
-            value_et: Nimeta
-            value_en: Unnamed
--
     id: 7
     name: error
     label:
@@ -222,6 +213,15 @@
             name: cache_missing_upcoming
             value_et: Laadin andmeid. Minuti pärast peaks valmis olema
             value_en: Loading data. Should be ready in a minute
+-
+    id: 3
+    name: Jon Doe
+    label:
+        -
+            id: 7
+            name: nimeta
+            value_et: Nimeta
+            value_en: Unnamed
 -
     id: 11
     name: month
