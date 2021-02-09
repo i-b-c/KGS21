@@ -52,7 +52,7 @@ for (const lang of LANGUAGES) {
             }
 
             if (article.article_media) {
-                article.hero_images = article.article_media.filter(h => h.hero_image).map(h => h.hero_image.url) || null
+                article.hero_image = article.article_media.filter(h => h.hero_image).map(h => h.hero_image.url)[0] || null
             }
 
             if (article.related) {

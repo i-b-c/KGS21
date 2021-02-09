@@ -8,8 +8,8 @@ block content
                 .carousel-inner(role="listbox")
 
                     //- Only one displayed as per requested
-                    if self.hero_images
-                        - hero_image = `${m_api}${self.hero_images[0]}`
+                    if self.hero_image
+                        - hero_image = `${m_api}${self.hero_image}`
                     else
                         - hero_image = '/assets/images/placeholder.jpg'
 
@@ -58,15 +58,10 @@ block content
                                     if mediumImages.length > 1
                                         h2= self.labels.title.gallery
                                         each galPhoto in mediumImages
-                                            if galPhoto.gallery_image_medium
+                                            if galPhoto.gallery_image_medium && galPhoto.hero_image
                                                 .single-image.col-xs-6.col-sm-3.col-md-4
 
-                                                    if galPhoto.hero_image && galPhoto.hero_image.url
-                                                        - var imgLink = galPhoto.hero_image.url
-                                                    else
-                                                        - var imgLink = galPhoto.gallery_image_medium.url
-
-                                                    a.fancybox(rel="gallery" href=`${m_api}${imgLink}`)
+                                                    a.fancybox(rel="gallery" href=`${m_api}${galPhoto.hero_image.url}`)
                                                         img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
 
 
