@@ -1501,7 +1501,14 @@
   title_en: Kolm küsimust Urmas Lüüsile (CURRENTLY AVAILABLE ONLY IN ESTONIAN!)
   slug_et: kolm-ksimust-urmas-lsile-140
   slug_en: kolm-ksimust-urmas-lsile-currently-available-only-in-estonian-140
+  subtitle_et: null
+  subtitle_en: null
   publish_date: 2021-01-25T00:00:00.000Z
+  first_page_promotion: null
+  hide_gallery: false
+  photo_article: false
+  audio: null
+  video: null
   content_et: >-
       **Küsib: Lilli-Krõõt Repnau (LKR) Vastab: Urmas Lüüs (UL)**  
 
@@ -1546,7 +1553,7 @@
       **UL:** Paraku pean sellele taaskord vastama kui disainer. Absoluutselt kõik on kollektiivne. Peeter Laurits on ühes oma Tartu Ülikooli loengus hästi välja toonud, et ega me ise mõelnud välja numbrit 0, ega vaielnud selgeks, kas 0 tühjusena võib olla ka kvantitatiivne väärtus. Mina pole välja mõtelnud seda keelt ja neid tähti, mille abil ma siin neid mõtteid konstrueerin. Mina sain selle kõik juba nö valmis kasutajapaketina, mis tuli vaid lapsena ajju installeerida. Oma egoismis võin küll väita, et see kirjutuslaud, mille taga hetkel tähti tipin on sae, puuri, tappide, peitsi ja vahaga individuaalselt minu loodud, aga samas ma ei võtnud metsas neid puid maha ega laasinud oma kätega, vaid ostsin saekaatris valmis lastud prussid ja latid. Samuti tuleb minu teadmine, mis asi on laud ja millistele parameetritele peab üks laud vastama, et seda oleks hea kirjutuslauana kasutada, juba eelnevate inimeste tarkusest. Mina vaid rakendan seda tarkust ja ehitusmaterjali oma võimetele vastavalt. Niisamuti on teatritraditsioon, millega Kanutis suhestuma hakkasin, juba sadade tuhandete teatritegijate poolt eriti sügavalt adraga kultuurimaastikku sisse küntud. Kõik mida me üksi või mitmekesi teeme on kantud paratamatust kollektiivsusest.  
 
 
-      **LKR:** Viimasel ajal on palju kõneainet andnud voog-teatri temaatika. (Äkki võiks lihtsalt panna zoomi tööle ja koogata mööda põrandaid… ) Mis on need märksõnad, mis sind hetkel kõnetavad etenduskunstide puhul?  
+      **LKR:** Viimasel ajal on palju kõneainet andnud voog-teatri temaatika. (Äkki võiks lihtsalt panna zoomi tööle ja koogata mööda põrandaid… ) Mis on need märksõnad, mis sind hetkel kõnetavad etenduskunstide puhul?   
 
 
       **UL:** Kindlasti on toonud piirangud meid lähemale kodusele ekraaniteatrile, aga enamasti ei ületa need minu jaoks klassikalist teleteatrit. Ka need paljukiidetud virtuaalnäitused ei ületa minu jaoks kellegi instakonto või koduka skrollimist. Üks põhjuseid, mis ma olen kunstnikuna teatrist valgele galeriikuubile alternatiivi otsima hakanud on kohalolu ja ajalis-ruumiline terviklikkus. Galeriist on võimalik vabalt valitud ajal läbi joosta ja paari minutiga kõigele tiir peale teha. Hinnang "meeldib-ei meeldi" ja "on oma aja panustamist väärt-pohhui ei viitsi seda vaadata" tuleb väga kergekäeliselt. Samas paljud teosed, eriti ruumikogemusele üles ehitatud installatsioonid, hakkavad toimima alles pärast mõningase aja panustamist. Enese teatris istekohale sulgemises on omajagu sado-masohhistlikku naudingut. Sund võtta aeg, sund süveneda, sund kogeda ruumi. Mida virtuaalsemaks muutub maailm, seda rohkem janunen inimliku kohalolu järele. Sedavõrd enam ei taha lihtsalt näha, mida keegi vaatamiseks kusagile galeriisse on jätnud, vaid soovin viibida eksklusiivses tervikliku kogemuse momendis. See on janu terviku järele. Mitte suvaliste arvutikõllide plärin vaid endasse mattev helimaastik. Peensuseni häälestatud ruumikogemus. Valguse dünaamika. Minu tähelepanuga mängimine. Teiste inimestega koos jagatud kogemus ja rituaalid (teatripuhvet). Ajaline piirang, mis lukustab mind oma raamidesse ja ei kordu sellises vormis enam kunagi. Vb olen ma paadunud romantik, aga no fakk off, seda ekraani ei suuda küll enam sedasi kaua jõllitada raisk.  
@@ -1555,66 +1562,163 @@
       **Fotod:** Hans-Otto Ojaste  
 
       **Sääremodell:** Jasper Roost
+  published_at: 2021-01-25T10:31:48.000Z
+  created_by: null
+  updated_by:
+      id: 8
+      firstname: Annika
+      lastname: Üprus
+      username: null
+      email: annika@saal.ee
+      password: $2a$10$h/zy7cFwjLK67U.ex6T7qO2Dvfeta.j3w0rTAUi11LIQ8US.PaE6e
+      resetPasswordToken: 7f5dce6f5512240c09ac238e987352bfde5fc596
+      registrationToken: null
+      isActive: true
+      blocked: null
+  created_at: 2021-01-27T08:46:04.289Z
+  updated_at: 2021-02-10T07:19:40.404Z
+  front_page_promotion: false
   remote_id: "6974"
+  X_premiere_time: null
+  X_location_et: null
+  X_location_en: null
   X_pictures:
       id: 6469
+      photoGallery: null
+      photo: ""
       photoOriginal: "21737"
       photoMedium: 21735,21736
       photoBig: "21734"
   article_media:
       - id: 666
+        original_image: null
         hero_image:
             id: 8603
             name: MAGASIN_kolmkusimusturmasluusile_originaal_01_1400x700.jpg
+            alternativeText: ""
+            caption: ""
             width: 1400
             height: 700
+            formats: null
             hash: MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_1400x700
             ext: .jpg
+            mime: image/jpeg
+            size: 177.46
             url: /uploads/MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_1400x700.jpg
-        gallery_image_medium:
-            id: 8600
-            name: MAGASIN_kolmkusimusturmasluusile_originaal_01_350x350.jpg
-            width: 350
-            height: 350
-            hash: MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_350x350
-            ext: .jpg
-            url: /uploads/MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_350x350.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-03T10:05:03.570Z
+            updated_at: 2021-02-03T10:05:03.876Z
+        gallery_image_medium: null
       - id: 667
+        original_image: null
         hero_image:
             id: 8604
             name: MAGASIN_kolmkusimusturmasluusile_originaal_01_700x1400.jpg
+            alternativeText: ""
+            caption: ""
             width: 700
             height: 1400
+            formats: null
             hash: MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_700x1400
             ext: .jpg
+            mime: image/jpeg
+            size: 161.3
             url: /uploads/MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_700x1400.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-03T10:05:03.771Z
+            updated_at: 2021-02-03T10:05:03.962Z
         gallery_image_medium:
             id: 8600
             name: MAGASIN_kolmkusimusturmasluusile_originaal_01_350x350.jpg
+            alternativeText: ""
+            caption: ""
             width: 350
             height: 350
+            formats: null
             hash: MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_350x350
             ext: .jpg
+            mime: image/jpeg
+            size: 24.6
             url: /uploads/MAGASIN_kolmkusimusturmasluusile_originaal_01_c2d715e43c_350x350.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-03T10:05:03.493Z
+            updated_at: 2021-02-03T10:05:03.809Z
       - id: 670
+        original_image: null
         hero_image:
             id: 8624
             name: MAGASIN_markmeidpuhastvaimust_11_700x1400.jpg
+            alternativeText: ""
+            caption: ""
             width: 700
             height: 1400
+            formats: null
             hash: MAGASIN_markmeidpuhastvaimust_11_3dc2282f78_700x1400
             ext: .jpg
+            mime: image/jpeg
+            size: 217.6
             url: /uploads/MAGASIN_markmeidpuhastvaimust_11_3dc2282f78_700x1400.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-03T10:07:25.780Z
+            updated_at: 2021-02-03T10:07:25.891Z
         gallery_image_medium:
             id: 8709
             name: MAGASIN_kolmkusimusturmasluusile_IKOON_350x350_02.jpg
+            alternativeText: ""
+            caption: ""
             width: 350
             height: 352
+            formats: null
             hash: MAGASIN_kolmkusimusturmasluusile_IKOON_350x350_02_0a1ff2af68
             ext: .jpg
+            mime: image/jpeg
+            size: 38.14
             url: /uploads/MAGASIN_kolmkusimusturmasluusile_IKOON_350x350_02_0a1ff2af68.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-09T18:29:08.699Z
+            updated_at: 2021-02-09T18:29:11.568Z
+  audios: []
+  videos: []
   authors:
       - id: 267
+        first_name: Lilli-Krõõt
+        last_name: Repnau
+        e_mail: null
+        phone_number: null
+        profession: null
+        order: null
+        created_by: null
+        updated_by: 1
+        created_at: 2020-12-04T13:12:36.851Z
+        updated_at: 2021-02-04T12:46:41.071Z
+        email: null
+        occupation: null
+        remote_id: "6770"
+        user: null
+        full_name: Lilli-Krõõt Repnau
+        picture: null
+  categories: []
+  users: []
 - id: 70
   title_et: Kunstniku ootused produtsendile ning produtsendi ootused kunstnikule
   title_en: Kunstniku ootused produtsendile ning produtsendi ootused kunstnikule
@@ -3367,7 +3471,14 @@
       koreograafidest (CURRENTLY ONLY AVAILABLE IN ENGLISH)"
   slug_et: mrkmeid-phast-vaimust-asjade-performatiivsusest-ja-vaikivatest-koreograafidest-142
   slug_en: mrkmeid-phast-vaimust-asjade-performatiivsusest-ja-vaikivatest-koreograafidest-currently-only-available-in-english-142
+  subtitle_et: null
+  subtitle_en: null
   publish_date: 2021-02-04T10:00:00.000Z
+  first_page_promotion: null
+  hide_gallery: null
+  photo_article: null
+  audio: null
+  video: null
   content_et: >-
       Tere, minu nimi on Urmas Lüüs ja viibisin oktoobri kuus Kanuti Gildi Püha
       Vaimu SAALis residentuuris. Kel vähem kanutikogemust, siis Pühavaimuks
@@ -3394,11 +3505,12 @@
       Oma põhihariduse omandasin Eesti Kunstiakadeemia Disainiteaduskonnas sepakunsti erialal. Minu peamiseks tööks on mõtestatud esemete valmistamine. Selline kunstimaailma jaoks väheke vastuvõetavam versioon tavalisest traditsioone kandvast käsitöölisest (mis sest, et ka käsitöölise staatuse vastu poleks mul midagi ja inglise keeleruumis kasutatakse minusuguste kohta terminit *contemporary craft*). Niisiis olen ma kunstnik, kes töötab materjaliga, nii nagu seda teeb maalija või skulptor, kuid minu ideed ja kontseptsioonid on seotud ennekõike inimkeha ja tema poolt tarbitavate objektidega.  
 
 
-      Siin jõuame ühe mu alustala juurde. Kehaga seotus – sellest tulenev ja seda pikendav. Kehapikendus ei ole "tillipikendus". Kehapikendus on näiteks kiviajal leiutatud oda. Mingi hetk inimene lihtsalt littis lahti, et kiviga kitsele pähe virutamise asemel on märksa mõistlikum kivi varre otsa siduda ja sellega kaugemalt äsada, sest kitsel on ohtlikud sarved. Sedasi sai odast kiviaegse inimese käe pikendus. Oda -> vibu -> amb -> kahur -> revolver -> automaatkuulipildija -> tank -> hävituslennuk -> kaugjuhitav lahingudroon. Need kõik on oma arengujadas rusika pikendamine pikivahe hoidmiseks, et kakluses ise nii palju haiget ei saaks. Keha võimestajate ja pikendajate kontekstis saame vaadata ka riideid (et külm ei näpistaks), jalatseid (et tallanahk kiviklibu vastu paksem oleks), autosid (et kiiremini liikuda), telefone (et hääl kaugemale kajaks), ajalehti (et kuulujutte rohkematele rääkida) jne. Disainiteoorias olen üks neist, kes peavad disainiks absoluutselt kõike, mida inimese käsi ja mõistus modifitseerinud on (vastupidiselt neile, kes eelistavad alustada disainiajalugu tööstusrevolutsioonist, mis ei ole ka terminoloogiliselt sugugi väär seisukoht). Disainimine on minu jaoks oma elukeskkonna teadlik muutmine.  
+      Siin jõuame ühe mu alustala juurde. Kehaga seotus – sellest tulenev ja seda pikendav. Kehapikendus ei ole "tillipikendus". Kehapikendus on näiteks kiviajal leiutatud oda. Mingi hetk inimene lihtsalt littis lahti, et kiviga kitsele pähe virutamise asemel on märksa mõistlikum kivi varre otsa siduda ja sellega kaugemalt äsada, sest kitsel on ohtlikud sarved. Sedasi sai odast kiviaegse inimese käe pikendus. Oda -> vibu -> amb -> kahur -> revolver -> automaatkuulipilduja -> tank -> hävituslennuk -> kaugjuhitav lahingudroon. Need kõik on oma arengujadas rusika pikendamine pikivahe hoidmiseks, et kakluses ise nii palju haiget ei saaks. Keha võimestajate ja pikendajate kontekstis saame vaadata ka riideid (et külm ei näpistaks), jalatseid (et tallanahk kiviklibu vastu paksem oleks), autosid (et kiiremini liikuda), telefone (et hääl kaugemale kajaks), ajalehti (et kuulujutte rohkematele rääkida) jne. Disainiteoorias olen üks neist, kes peavad disainiks absoluutselt kõike, mida inimese käsi ja mõistus modifitseerinud on (vastupidiselt neile, kes eelistavad alustada disainiajalugu tööstusrevolutsioonist, mis ei ole ka terminoloogiliselt sugugi väär seisukoht). Disainimine on minu jaoks oma elukeskkonna teadlik muutmine.  
        
-      Inimene on üks äraütlemata sitt looduse looming. Ta kipub igasugu muutuste käigus ära surema. Küüned on tal õhukesed, kihvad mannetud, karvkate hõre, jalad aeglased, käed nõrgad, seedimine habras. Igal loomal on oma supervõime. Gepard jookseb, lind lendab, kilpkonn kannab maja kaasas, siil tõmbab faalanksi turri, jääkaru ajab karva puhevile. Inimene seevastu elas enamiku oma põllumajandusrevolutsiooni eelset elu toitumispüramiidi üpriski keskmistel astmetel. Selleks, et kuidagigi oma võimalusi suurendada, ei saanud ta jääd lootma oma loomuomastele võimetele. Tal oli ka oma supervõimet vaja. Inimese supervõimeks sai kunstliku keskkonna loomine. Ma ei ela toorest liha järades looduslikus koopas, vaid mind ümbritseb mustaks võõbatud korrapärase nelinurkse põhiplaaniga ritskülikukujuline kunstkoobasblackbox. Mu kütt-korilase vajadused saavad rahuldatud jahiretkedega Vanalinna Mini-Rimisse. Sinna minnes ei jää ma sügistuultes lootma hõredatele tuultes võbelevatele karvadele, vaid mind katab surnud looma nahatükkidest kokku õmmeldud jakk. Nagu ütleb Harari varajaste inimeste kohta: "Aafrika savannides elanud ahvide järeltulijast Indoneesia sapiens sai aga Vaikse ookeani asukaks, ilma et ta oleks pidanud endale morsa loivad kasvatama või ootama, kuni ta nina evolutsiooni käigus nagu vaalal pea peale nihkuks. Selle asemel ehitas ta laevu ja õppis neid juhtima."(1) Kõik, mille loomadelt üle võtta suutsime, me ka võtsime. Jääkarudelt võtsime naha maha, et Arktika külmadele vastu panna. Kilpkonnakilpidest tehti sõjakilbid. Edevad isaslindude suled pandi edvistamiseks endile pähe. Karu südant süües saad karu jõu, karu nahka kandes saad sooja. Mida otse üle võtta ei saanud, omistati koopiate kaudu. Allveelaevad ujuvad vaaladega koos vee all. Linnud lendavad lennukitega taevas.  
+      Inimene on üks äraütlemata sitt looduse looming. Ta kipub igasugu muutuste käigus ära surema. Küüned on tal õhukesed, kihvad mannetud, karvkate hõre, jalad aeglased, käed nõrgad, seedimine habras. Igal loomal on oma supervõime. Gepard jookseb, lind lendab, kilpkonn kannab maja kaasas, siil tõmbab faalanksi turri, jääkaru ajab karva puhevile. Inimene seevastu elas enamiku oma põllumajandusrevolutsiooni eelset elu toitumispüramiidi üpriski keskmistel astmetel. Selleks, et kuidagigi oma võimalusi suurendada, ei saanud ta jääd lootma oma loomuomastele võimetele. Tal oli ka oma supervõimet vaja. Inimese supervõimeks sai kunstliku keskkonna loomine. Ma ei ela toorest liha järades looduslikus koopas, vaid mind ümbritseb mustaks võõbatud korrapärase nelinurkse põhiplaaniga ristkülikukujuline kunstkoobas*blackbox*. Mu kütt-korilase vajadused saavad rahuldatud jahiretkedega Vanalinna Mini-Rimisse. Sinna minnes ei jää ma sügistuultes lootma hõredatele tuultes võbelevatele karvadele, vaid mind katab surnud looma nahatükkidest kokku õmmeldud jakk. Nagu ütleb Harari varajaste inimeste kohta: "Aafrika savannides elanud ahvide järeltulijast Indoneesia sapiens sai aga Vaikse ookeani asukaks, ilma et ta oleks pidanud endale morsa loivad kasvatama või ootama, kuni ta nina evolutsiooni käigus nagu vaalal pea peale nihkuks. Selle asemel ehitas ta laevu ja õppis neid juhtima."(1) Kõik, mille loomadelt üle võtta suutsime, me ka võtsime. Jääkarudelt võtsime naha maha, et Arktika külmadele vastu panna. Kilpkonnakilpidest tehti sõjakilbid. Edevad isaslindude suled pandi edvistamiseks endile pähe. Karu südant süües saad karu jõu, karu nahka kandes saad sooja. Mida otse üle võtta ei saanud, omistati koopiate kaudu. Allveelaevad ujuvad vaaladega koos vee all. Linnud lendavad lennukitega taevas.  
        
-      Kuigi poeesiat tappes võib öelda, et linnud ei lenda lennukitega taevas, vaid inimesed kasutavad lennukeid ühest kohast teise lendamiseks ja linnud jäävad mõnikord lihtsalt tee peale ette. Kõigi nende asjadega, mida inimene enda jaoks loonud on, teeb ta midagi. Olgu selle kasutusotstarve kui abstraktne ja tühine tahes, ikka on objektidel mingi eesmärk täita. Siinkohal jõuangi ma objektide performatiivsuseni. Väga subjektiivse meelevaldsusega ütlen, et miski on performatiivne, kui see teeb midagi. Performatiivne võib olla inimene, kui ta kõnnib üle lava või tänava. Performatiivne võib olla heli, kui ta kuulutab käreda undamisega pommilennukite silmapiirile ilmumist. Performatiivne võib olla teleekraanil vehklev diktor ja ekraanilt kiiskav valgusvõbelus pimeda toa seinal. Performatiivne võib olla kuumal pliidil keeva veega aurav pott ja seinal tiksuv kell. Tik-tok-tik-tok-tik-tok interpreteerib ta kaduviku sonaati. Inimene etleb koos asjadega. Lööb haamriga naela seina või üritab pindpinevuseni täisvalatud kohvitassiga köögist kirjutuslauani hiilida. Performatiivne võib olla sõna, kui ta laulatab kahte üheks. Räägitakse, et Alguses oli Sõna." Ἐν ἀρχῇ ἦν ὁ λόγος,..." Eesti füüsikult Tiit Lukkilt küsiti kord, kas Jumal on olemas. Ja ta vastas, et muidugi. Ta võiks isegi välja arvutada Jumala külgetõmbejõu. Näiteks võiks ta liita kokku umbkaudse energiakoguse, mida inimesed kulutavad, et liikuda pühapäeva hommikuti kirikusse. Muidugi võtaks taoline arvutus võimatu koguse aega ja pühendumist, kuid võime olla kindlad, et tuletatav energiakogus võrduks mõne võimsa geoloogilise protsessiga. Ja me räägime reaalsest energiast. Energiast, mis sõna otseses mõttes võiks liigutada mägesid. Performatiivsest kineetilisest energiast.
+      Kuigi poeesiat tappes võib öelda, et linnud ei lenda lennukitega taevas, vaid inimesed kasutavad lennukeid ühest kohast teise lendamiseks ja linnud jäävad mõnikord lihtsalt tee peale ette. Kõigi nende asjadega, mida inimene enda jaoks loonud on, teeb ta midagi. Olgu selle kasutusotstarve kui abstraktne ja tühine tahes, ikka on objektidel mingi eesmärk täita. Siinkohal jõuangi ma objektide performatiivsuseni. Väga subjektiivse meelevaldsusega ütlen, et miski on performatiivne, kui see teeb midagi. Performatiivne võib olla inimene, kui ta kõnnib üle lava või tänava. Performatiivne võib olla heli, kui ta kuulutab käreda undamisega pommilennukite silmapiirile ilmumist. Performatiivne võib olla teleekraanil vehklev diktor ja ekraanilt kiiskav valgusvõbelus pimeda toa seinal. Performatiivne võib olla kuumal pliidil keeva veega aurav pott ja seinal tiksuv kell. Tik-tok-tik-tok-tik-tok interpreteerib ta kaduviku sonaati. Inimene etleb koos asjadega. Lööb haamriga naela seina või üritab pindpinevuseni täisvalatud kohvitassiga köögist kirjutuslauani hiilida. Performatiivne võib olla sõna, kui ta laulatab kahte üheks. Räägitakse, et Alguses oli Sõna." Ἐν ἀρχῇ ἦν ὁ λόγος,..." Eesti füüsikult Tiit Lukkilt küsiti kord, kas Jumal on olemas. Ja ta vastas, et muidugi. Ta võiks isegi välja arvutada Jumala külgetõmbejõu. Näiteks võiks ta liita kokku umbkaudse energiakoguse, mida inimesed kulutavad, et liikuda pühapäeva hommikuti kirikusse. Muidugi võtaks taoline arvutus võimatu koguse aega ja pühendumist, kuid võime olla kindlad, et tuletatav energiakogus võrduks mõne võimsa geoloogilise protsessiga. Ja me räägime reaalsest energiast. Energiast, mis sõna otseses mõttes võiks liigutada mägesid. Performatiivsest kineetilisest energiast.  
+
 
       Kuna mul pole professionaalset kogemust etenduskunstide ega tantsu vallas, tundus silmakirjalik hakata looma koreograafiat. Pean jätkama lavaruumiga endiselt delikaatset flirti nagu siiani. Minema lavale kui kunstnik, mitte tantsija. Leidma koodi, mis lavastaks minu eest. Ja siinkohal tulidki mängu asjad – mulle sedavõrd tuttav ja turvaline maailm. Meenus algklasside aegne tantsuõpetaja, kes armastas kanda ebaratsionaalselt kõrgeid kontsi. Nii kõrgeid, et ta ei suutnud isegi põlvi sirgeks lükata. Niipea, kui ta oli tavatuhvlid kontsade vastu vahetanud, muutus kogu liikumismaneer. Tuli sisse (paraku vibalevalt) gasellilik nõtkus. Ettevaatlikus. Iga hetk võis kontsale toetuv jalg vääratada ja pahkluu rebestada. See karkudel tuigerdamine tekitas minus lapsena alati hämmeldust. Paistab, et kood on käes. Ma ei peagi looma koreograafiat. Ma pean valmistama kehaga seotud objekte, mis loovad kogu koreograafia minu eest. Objekt kui minu esimene vaikiv koreograaf.  
 
@@ -3409,7 +3521,7 @@
       Vana pärimuse kohaselt, mille algallikat enam viidata ei mäleta, ärkasid ükskord kõik asjad ellu. Nuga ihus kättemaksu ja luud pühkis omaniku teelt. Nii nagu inimesed kasutasid asju, hakkasid asjad inimesi kasutama. Enam polnud aru saada, kumb oli kumma teinud. Pärimus lõppes sõnadega, et see on juhtunud ja kord juhtub taas. Müütiline mõtlemine ei rapsi tühja, seal on sisu sees. Hariduselt disainerina huvitab mind küsimus, kuidas loovad inimesed asju ja kuidas loovad asjad inimesi. Kumb oli enne? Muistne pärimus osutus tõeks. Aeg, mil asjad ärkavad ellu, on kogu aeg käes olnud. Jumal hakkas looma inimest, niipea kui inimene oli loonud Jumala.  
 
 
-      Asjad mitte üksnes ei mõjuta keha otseselt nagu korsett või lahas, vaid vormivad ka meie kokkuleppelist intersubjektiivset identiteeti. Oma performatiivsuses suunavad need me mõtteid ja käitumist. Performatiivne akt väljendub rollide loomises, jaotamises ja hoidmises. Millal lõppes Eestis Nõukogude Liit? Kas iseseisvuse dokumentide allkirjastamisega? Vene vägede väljaviimisega? Kaljavaatide kadumisega? Leninitel, Stalinitel ja Kingisseppadel peade mahasaagisega? Valgete triibulise koega trussikute *boxer briefs*´ide vastu vahetamisega? Pronkssõdur ohkas ja lontsis närbunud nelgikimp näpus Tõnismäelt Kaitseväe kalmistule, jättes maha purunenud akende ja põlevate prügikastidega kesklinna. Me defineerime oma identiteeti läbi asjade rohkem,kui seda tunnistada meeldiks. Oleks banaalselt üleliigne tõmmata võrdlust kirjandusklassikalise tsitaadiga, kus elu võrdsustatakse rolliga näitelaval. Me ei sära sel laval tuima butafooria taustal. Me oleme kõrvalosas.   
+      Asjad mitte üksnes ei mõjuta keha otseselt nagu korsett või lahas, vaid vormivad ka meie kokkuleppelist intersubjektiivset identiteeti. Oma performatiivsuses suunavad need me mõtteid ja käitumist. Performatiivne akt väljendub rollide loomises, jaotamises ja hoidmises. Millal lõppes Eestis Nõukogude Liit? Kas iseseisvuse dokumentide allkirjastamisega? Vene vägede väljaviimisega? Kaljavaatide kadumisega? Leninitel, Stalinitel ja Kingisseppadel peade mahasaagimisega? Valgete triibulise koega trussikute *boxer briefs*´ide vastu vahetamisega? Pronkssõdur ohkas ja lontsis närbunud nelgikimp näpus Tõnismäelt Kaitseväe kalmistule, jättes maha purunenud akende ja põlevate prügikastidega kesklinna. Me defineerime oma identiteeti läbi asjade rohkem kui seda tunnistada meeldiks. Oleks banaalselt üleliigne tõmmata võrdlust kirjandusklassikalise tsitaadiga, kus elu võrdsustatakse rolliga näitelaval. Me ei sära sel laval tuima butafooria taustal. Me oleme kõrvalosas.   
 
 
       Italo Calvino räägib Sitsiilias üles kirjutatud muinasloos ullike Giufast(2), kes läks ühte tallu almust paluma. Nähes ta näruseid riideid, aeti koerad kallale. Emal oli Giufast kahju. Muretses pika mantli, paari pükse ja ilusa vesti. Giufa läks samasse tallu. Peent härrat nähes kutsuti ta pererahvaga koos lauda. Kui Giufale toit ette toodi, hakkas ta seda kätega taskutesse ajama ise kõneldes: "Sööge, sööge, mu riideräbalad, pererahvas kostitab ju teid, mitte mind!”.  
@@ -3418,18 +3530,18 @@
       Luigi Pirandello lohutab oma näidendis "Henry IV" kuninga suu läbi teenijatüdrukut, et staatused seisnevad vaid riietes. Kuningas on kuningas ja teenijatüdruk teenija senikaua, kui nad täisriideis üksteise ees seisavad. Voodisse minnes jäävad rõivastega nagisse ka nende rollid. Mõtlesin ühel õhtul magama asutades alasti voodi äärel istudes selle näidendi peale. Jalgade ees maas lebasid veel kehast soojad riided. Nagu laip, hing seest läinud. Käkras, kägaras, uperpalliti. Olles mõnda aega tõtt vaadanud (mingil kummalisel kombel tavatseme nimetada "tõeks" seda umbmäärast punkti, kus silmad ühtki kindlat objekti välja ei fokusseeri, kuid pilk jääb kusagile tapeedi ja lõpmatuse vahele), tõusis kaltsukubu mu jalge ees püsti. Viivuks pööras paar kraadi minu poole nagu tahaks miskit viisakusest sõnada, kuid mõistes olukorra mõttetust, loivas liigsete tundeväljendusteta aknast ergava tänavalaterna vihus uksest välja, jättes mu identiteeditult voodiservale istuma. Türa ja tühi hing, nagu meil armees tavaks öelda oli, kui suitsunurgas konutades eelmise sigaretikoni hõõguva otsaga järgmise läitsime.  
 
 
-      Seega pole mitte aint me teod, vaid ka mõtted asjadest juhitud. Odast ei arenenud vibu ja vibust amb ja ammust impeeriumite diktatuurid mitte sellepärast, et kuskil katkestas keegi geenius tuima kestvuse ja viis väikese revolutsiooniga sisse tehnoloogilise uuenduse. Revolutsioon kehtestab end ise. Iga uuendus juhtub seetõttu, et teisiti enam ei saa. Pole vaja geeniust, et leiutada aurumootorit või elektripirni. Enamik suuri leiutisi mõeldakse tihtipeale välja samal ajal üksteisest sõltumatute inimeste poolt. Põllumajandusrevolutsioon ei saanud alguse ühest lättest. Kellegi geeniuse jalajälge puistatud esimestest idanema läinud seemnetest. Nagu täheldab Harari:" Kunagi uskusid teadlased, et põlluharimine levis ühestainsast Lähis-Ida "kasvuhoonest" kõigisse nelja ilmakaarde. Tänasel päeval on teadlased aga ühisel seisukohal, et maaviljelusega hakati maailma eri paigus tegelema iseseisvalt, ilma et Lähis-Ida põlluharijad oleksid pidanud oma revolutsioonilist eluviisi eksportima. Kesk-Ameerikas elanud inimesed hakkasid kasvatama maisi ja ube, ilma et nad oleksid teadnud midagi samal ajal Lähis-Idas alanud nisu- ja hernekasvatusest."(3) Omamoodi laseb see leppida tõsiasjaga, et mitte meie ei lähe tehnoloogiliste manipulatsioonidega liiale, vaid tehnoloogia kasutab meid kui sümbioosis orje. Mitte meie ei vii maailma hävingu äärele,vaid maailm üritab hävitada meid. Suur, elav ja hingav omatahteline Gaia on murdnud end välja esoteerikute unelmaist ja asunud lavastajana marionett-teatri nööride kallale. Vahet pole, kas elame Jumala, Looduse või enese seaduste järgi. Seadus on sama.  
+      Seega pole mitte aint me teod, vaid ka mõtted asjadest juhitud. Odast ei arenenud vibu ja vibust amb ja ammust impeeriumite diktatuurid mitte sellepärast, et kuskil katkestas keegi geenius tuima kestvuse ja viis väikese revolutsiooniga sisse tehnoloogilise uuenduse. Revolutsioon kehtestab end ise. Iga uuendus juhtub seetõttu, et teisiti enam ei saa. Pole vaja geeniust, et leiutada aurumootorit või elektripirni. Enamik suuri leiutisi mõeldakse tihtipeale välja samal ajal üksteisest sõltumatute inimeste poolt. Põllumajandusrevolutsioon ei saanud alguse ühest lättest. Kellegi geeniuse jalajälge puistatud esimestest idanema läinud seemnetest. Nagu täheldab Harari:" Kunagi uskusid teadlased, et põlluharimine levis ühestainsast Lähis-Ida "kasvuhoonest" kõigisse nelja ilmakaarde. Tänasel päeval on teadlased aga ühisel seisukohal, et maaviljelusega hakati maailma eri paigus tegelema iseseisvalt, ilma et Lähis-Ida põlluharijad oleksid pidanud oma revolutsioonilist eluviisi eksportima. Kesk-Ameerikas elanud inimesed hakkasid kasvatama maisi ja ube, ilma et nad oleksid teadnud midagi samal ajal Lähis-Idas alanud nisu- ja hernekasvatusest."(3) Omamoodi laseb see leppida tõsiasjaga, et mitte meie ei lähe tehnoloogiliste manipulatsioonidega liiale, vaid tehnoloogia kasutab meid kui sümbioosis orje. Mitte meie ei vii maailma hävingu äärele vaid maailm üritab hävitada meid. Suur, elav ja hingav omatahteline Gaia on murdnud end välja esoteerikute unelmaist ja asunud lavastajana marionett-teatri nööride kallale. Vahet pole, kas elame Jumala, Looduse või enese seaduste järgi. Seadus on sama.  
 
 
-      Inimlikust perspektiivist meeldib meile mõtelda, nagu suruks raske vägi nõrkushetkedel maadligi. Taevakatus kukub kaela. Kuid meie peade kohal laiub lage lõputu tühjus. Vaba eeter, kus keha tükkeks rebitaks ja aatomitena laotusesse paisataks. Üleval on vabadus, all aga orjastav gravitatsiooniahel. Kõik mis läheb üles, tuleb prantsatades alla tagasi (kui just piisavalt kaugele ei lähe). Tavalise magnetvälja asemel meeldib mulle maakera ette kujutada hiiglasliku magnetina, mis muudkui tuuma poole tirib. Paneb mandrilaamad leemes hulpima. Keerutab ja kurrutab. Sulatab ja pritsib uute laamade neelates taas pinnale. Kogu elu on gravitatsiooni vastu võitlemine. Juba me esivanemad võitlesid. Vaar-vaar-vaar-esivanemad, kel veel inimese kujugi polnud. Nagu surikaadid ajasid end aegajalt tagajalgele ja piidlesid üle stepituttide ohtlikku ümbrust. Siis otsustasid seisma jäädagi. Nüüd teeb iga inimlaps läbi väikese evolutsiooni. Kõigepealt vedeleb abitult,selg vastu maad. Seejärel hakkab end gravitatsiooni kütkeist lahti rebima. Roomab vaevaliselt hällivangikongi trellideni ning sirutab väetid käed ülespoole. Varbade toel ajab end põlvili, kuid peagi võtab gravitatsioon oma. Laps haaratakse tagasi madratsile ning gravitatsioon tõmbab ta habrast keha üksjagu linade sisse peitu. Üha uuesti ja uuesti proovib ta ületada oma horisontaalset taaka, kuni jäsemed sitkemaks muutuvad ja ta püstloodi pidama jääb.  
+      Inimlikust perspektiivist meeldib meile mõtelda, nagu suruks raske vägi nõrkushetkedel maadligi. Taevakatus kukub kaela. Kuid meie peade kohal laiub lage lõputu tühjus. Vaba eeter, kus keha tükkeks rebitaks ja aatomitena laotusesse paisataks. Üleval on vabadus, all aga orjastav gravitatsiooniahel. Kõik mis läheb üles, tuleb prantsatades alla tagasi (kui just piisavalt kaugele ei lähe). Tavalise magnetvälja asemel meeldib mulle maakera ette kujutada hiiglasliku magnetina, mis muudkui tuuma poole tirib. Paneb mandrilaamad leemes hulpima. Keerutab ja kurrutab. Sulatab ja pritsib uute laamade neelates taas pinnale. Kogu elu on gravitatsiooni vastu võitlemine. Juba me esivanemad võitlesid. Vaar-vaar-vaar-esivanemad, kel veel inimese kujugi polnud. Nagu surikaadid ajasid end aegajalt tagajalgele ja piidlesid üle stepituttide ohtlikku ümbrust. Siis otsustasid seisma jäädagi. Nüüd teeb iga inimlaps läbi väikese evolutsiooni. Kõigepealt vedeleb abitult selg vastu maad. Seejärel hakkab end gravitatsiooni kütkeist lahti rebima. Roomab vaevaliselt hällivangikongi trellideni ning sirutab väetid käed ülespoole. Varbade toel ajab end põlvili, kuid peagi võtab gravitatsioon oma. Laps haaratakse tagasi madratsile ning gravitatsioon tõmbab ta habrast keha üksjagu linade sisse peitu. Üha uuesti ja uuesti proovib ta ületada oma horisontaalset taaka, kuni jäsemed sitkemaks muutuvad ja ta püstloodi pidama jääb.  
 
 
       See on residentuuri teine vaikiv koreograaf. Traditsiooniliselt treenib tantsija end võimalikult vähest vaeva välja näidates gravitatsiooni ületama. Hüppab, keerutab, teeb tõsteid. Minu eesmärgiks oli anda gravitatsioonile tema täieõiguslik voli. Iga kehale lisatud objekt vähendas laval liikuja vastupanuvõimet maa keskme kutsele. Õõtsus kontsadel, kooserdas ratastel, roomas aheldatuna hullusärgiks moondunud pikakäiselises nahktagis.  
        
-      Kolmanda koreograafina istub lavastajatoolile ruum. Kuidas jõuad Pikalt tänavalt Püha Vaimu saali? Ikka läbi koridori trepist üles, paremat kätt uksest sisse, vasakpööre enne baari, uks lahti (ettevaatust kohe ukse taga on aste!), paari sammuga läbi kitsa eeskoja ja oledki pikliku põhiplaaniga tumedas ruumis. Seda koreograafiat ei mõelnud sa ise välja. Mitte ka mina. Isegi Priit Raud mitte. Selle koreograafia mõtles välja keegi arhitekt, kes just nendesse kohtadesse seinad joonestas. “*Ruler*”(4) tähendab valitseja kõrval ka joonlauda. Vaadake Ameerika Ühendriikide kaarti võrdluses looduslike pinnavormidega, mis traditsiooniliselt põlisrahvaste piire tähistasid. Võrrelge Lasnamäe ruudustikku vanalinna risti-rästi songermaaga. Planeeringuga elumajad, linnaosad ja keskused on viimase täpsuseni koreograafiliselt läbi töötatud. Toidupoes asetatakse piimatooted, leivad-saiad ja kuivained üksteisest kõige kaugematesse nurkadesse. Kõikvõimalikud maiustused, delikatessid, teed-kohvid ja luksustooted nende vahele, et sissepääsust kassadeni liikuvat dramaturgilist kurvi pidi neist mingil juhul mööda ei mindaks. Ostleja on asetatud labürinti. Iga ta samm on kaardistatud, analüüsitud, ette planeeritud. Nii nagu tantsijad märgivad mustade teibitükkidega tansupõrandale maha, kust punktist kuhu liikumine jõudma teab, liigub klient poodides koreograafiliste sõlmpunktide vahel. Et minna seejärel eskalaatoriga kaubanduskeskuse kolmandal korrusel olevasse restorani, tuleb iga korruse järel ringliikumisega läbida pool keskuse aatriumit, et jõuda järgmise liikuva trepini. Ikka selleks, et sundkoreograafia käigus ei jääks ükski vaateaken soovimatu pakkumisega nägemata. Katedraali minnes ei sisene me vaid suurde kõrgete lagedega ruumi. See on sisenemine elamusse. Uude reaalsusesse, mis meid mõjutab üha vähem, kuid keskaegne tööline, kes oli harjunud vaid luitunud maavillaste toonide ja kitsikusega, leidis end katedraalis ulmailmast. See oli ilmutus, makett kõikvõimsa jumalariigi vägemusest.  
+      Kolmanda koreograafina istub lavastajatoolile ruum. Kuidas jõuad Pikalt tänavalt Püha Vaimu saali? Ikka läbi koridori trepist üles, paremat kätt uksest sisse, vasakpööre enne baari, uks lahti (ettevaatust kohe ukse taga on aste!), paari sammuga läbi kitsa eeskoja ja oledki pikliku põhiplaaniga tumedas ruumis. Seda koreograafiat ei mõelnud sa ise välja. Mitte ka mina. Isegi Priit Raud mitte. Selle koreograafia mõtles välja keegi arhitekt, kes just nendesse kohtadesse seinad joonestas. “*Ruler*”(4) tähendab valitseja kõrval ka joonlauda. Vaadake Ameerika Ühendriikide kaarti võrdluses looduslike pinnavormidega, mis traditsiooniliselt põlisrahvaste piire tähistasid. Võrrelge Lasnamäe ruudustikku vanalinna risti-rästi songermaaga. Planeeringuga elumajad, linnaosad ja keskused on viimase täpsuseni koreograafiliselt läbi töötatud. Toidupoes asetatakse piimatooted, leivad-saiad ja kuivained üksteisest kõige kaugematesse nurkadesse. Kõikvõimalikud maiustused, delikatessid, teed-kohvid ja luksustooted nende vahele, et sissepääsust kassadeni liikuvat dramaturgilist kurvi pidi neist mingil juhul mööda ei mindaks. Ostleja on asetatud labürinti. Iga ta samm on kaardistatud, analüüsitud, ette planeeritud. Nii nagu tantsijad märgivad mustade teibitükkidega tansupõrandale maha, kust punktist kuhu liikumine jõudma peab, liigub klient poodides koreograafiliste sõlmpunktide vahel. Et minna seejärel eskalaatoriga kaubanduskeskuse kolmandal korrusel olevasse restorani, tuleb iga korruse järel ringliikumisega läbida pool keskuse aatriumit, et jõuda järgmise liikuva trepini. Ikka selleks, et sundkoreograafia käigus ei jääks ükski vaateaken soovimatu pakkumisega nägemata. Katedraali minnes ei sisene me vaid suurde kõrgete lagedega ruumi. See on sisenemine elamusse. Uude reaalsusesse, mis meid mõjutab üha vähem, kuid keskaegne tööline, kes oli harjunud vaid luitunud maavillaste toonide ja kitsikusega, leidis end katedraalis ulmailmast. See oli ilmutus, makett kõikvõimsa jumalariigi vägemusest.  
 
 
-      Erinevad ruumid mitte ainult ei suuna meie füüsilist liikumist, vaid võtavad üle kõik me käitumismustrid. Erinevates ruumides teeme me erinevaid asju. Viime läbi erinevaid performatiivseid toiminguid. Jalutades kord Jaapanis Yokohamas ringi kohaliku sõbraga, viitas ta tunnitasulistele hotellidele. Renti ei küsitud ööpäeva, vaid ruumis viibitud tundide eest. Niisamuti reisisid kord mu (juba väärikas eas) tuttavad autoga Etioopias. Päike oli ammu loojunud, kui nad leidsid tee äärest täispargitud esisega motelli. Prooviti õnne. Leiduski vaba tuba. Retseptsioonis küsiti, kas nad soovivad maksta tunniarvestuse või koguöise tariifi järgi. Lubati jääda terveks ööks. Võtmed käes suunduti tuppa. Alles sel hetkel lahendus nende jaoks müsteerium. Hämarad looritatud punased valgused, kergestipestavate pindadega mööbel, seintel inspireerivad pildid, riiulil piits ja roosakarvased käerauad, öökapil vaagen kondoomidega ja kapis riiul joovastava minibaariga. Hommikul teele asudes seisis keset tühja parklat nende üksik tolmune rendimaastur. Püha isa avab kabeli ukse ja süütab küünlad, mis heidavad seinetele punakalt küütlevat helki. Ta sammub puidust pingiridade vahelt läbi. Mööda seinu jookseb miniatuursete maalingute seeria, mis tuletab meelde Kristuse ristiretke. Ta võtab riiulilt puidust numbrid ja asetab need seinale kinnitatud tahvlile, et märgistada lauluraamatust palvuseks plaanitud leheküljed. Kapikesel lebab kandik, mille täidab oblaatidega ja kapis pudel Kagor´i. Tunnihotellid on selleks, et seal seksida, kirik selleks, et seal pärast hinge puhtaks pesta. Sünnitusmajas sünnitatakse ja krematooriumis pannaks äraelanud inimesed põlema. Neid spetsiaalsel eesmärgiga ruume täidavad spetsiaalse eesmärgiga objektid. Me ei lähe kirikusse seksima, see ei tundu õige ka siis kui religioon kaugeks jääb. Sel ruumil on teine otstarve, teine eesmärk, teine atmosfäär. Mõlemal juhul ripub seinal paljas ihu. Tunnihotellis raamitud postril iharas poosis mees, kirikus krutsifiksil nõtke Kristus. Need objektid ei ole seal vaid olemiseks, need täidavad ülesannet. Hoolimata sellest,et krutsifiksiga ei saa konservi avada, on tal ikkagi eesmärk.  
+      Erinevad ruumid mitte ainult ei suuna meie füüsilist liikumist, vaid võtavad üle kõik me käitumismustrid. Erinevates ruumides teeme me erinevaid asju. Viime läbi erinevaid performatiivseid toiminguid. Jalutades kord Jaapanis Yokohamas ringi kohaliku sõbraga, viitas ta tunnitasulistele hotellidele. Renti ei küsitud ööpäeva, vaid ruumis viibitud tundide eest. Niisamuti reisisid kord mu (juba väärikas eas) tuttavad autoga Etioopias. Päike oli ammu loojunud, kui nad leidsid tee äärest täispargitud esisega motelli. Prooviti õnne. Leiduski vaba tuba. Retseptsioonis küsiti, kas nad soovivad maksta tunniarvestuse või koguöise tariifi järgi. Lubati jääda terveks ööks. Võtmed käes suunduti tuppa. Alles sel hetkel lahendus nende jaoks müsteerium. Hämarad looritatud punased valgused, kergestipestavate pindadega mööbel, seintel inspireerivad pildid, riiulil piits ja roosakarvased käerauad, öökapil vaagen kondoomidega ja kapis riiul joovastava minibaariga. Hommikul teele asudes seisis keset tühja parklat nende üksik tolmune rendimaastur. Püha isa avab kabeli ukse ja süütab küünlad, mis heidavad seinetele punakalt küütlevat helki. Ta sammub puidust pingiridade vahelt läbi. Mööda seinu jookseb miniatuursete maalingute seeria, mis tuletab meelde Kristuse ristiretke. Ta võtab riiulilt puidust numbrid ja asetab need seinale kinnitatud tahvlile, et märgistada lauluraamatust palvuseks plaanitud leheküljed. Kapikesel lebab kandik, mille täidab oblaatidega ja kapis pudel Kagor´i. Tunnihotellid on selleks, et seal seksida, kirik selleks, et seal pärast hinge puhtaks pesta. Sünnitusmajas sünnitatakse ja krematooriumis pannaks äraelanud inimesed põlema. Neid spetsiaalsel eesmärgiga ruume täidavad spetsiaalse eesmärgiga objektid. Me ei lähe kirikusse seksima, see ei tundu õige ka siis kui religioon kaugeks jääb. Sel ruumil on teine otstarve, teine eesmärk, teine atmosfäär. Mõlemal juhul ripub seinal paljas ihu. Tunnihotellis raamitud postril iharas poosis mees, kirikus krutsifiksil nõtke Kristus. Need objektid ei ole seal vaid olemiseks, need täidavad ülesannet. Hoolimata sellest, et krutsifiksiga ei saa konservi avada, on tal ikkagi eesmärk.  
 
 
       Istun ikka veel paljalt voodiserval. Tõttvaatamine on asendunud telefoni otsimisega, et seada ta end hommikul üles äratama. Taaskordne julm performatiivne akt. Sund masinat mind une kütkeist rebima ja paiskama tagasi teiste inimestega ühiselt jagatud narratiivi. Tõusen voodiservalt. Astun paar sammu, et parempööret tehes jõuda ukseni. Kohe peale ukseava läbimist keeran ahju kõrvalt taas vasakule. Astun kaks astet, mis viivad mu elutuppa. Liigun kirjutuslaua ja diivani vahelt läbi, ümber kraanikausi, vajutan järgmise ukse juures olevast kahest lülitist alumise sisse. Teen ukse lahti ning astun pooliku astme jagu kõrgemasse ruumi. Lõdvestun. Olen jõudnud taaskord vääramatu täpsusega oma igaöise tantsukava lõpp-punkti ning suunan potti galantse kusejoa.  
@@ -3448,7 +3560,7 @@
 
       (4) Tähelepanek antropoloog Tim Ingoldilt  
   content_en: >-
-      NB! CURRENTLY ONLY AVAILABLE IN ENGLISH!
+      NB! CURRENTLY AVAILABLE ONLY IN ESTONIAN!    
 
 
       Tere, minu nimi on Urmas Lüüs ja viibisin oktoobri kuus Kanuti Gildi Püha Vaimu SAALis residentuuris. Kel vähem kanutikogemust, siis Pühavaimuks nimetatakse *black box*´i, mis asub tribüüniga pealava ja tualettide vahel. Astud Pikalt tänavalt sisse, teed paar sammu edasi (vahepeal on mõned trepiastmed, ära komista!), kuni eeskoda lõpeb kahe uksega. Valid parempoolse. Ukse taga on väike lett, kus tavaliselt kontrollitakse pileteid ja vasakul asub kraanikausiga ruumis kaks tualetti. Astud taas paar sammu otse edasi, kuid selle asemel, et läbida kahepoolset ust, mis viib oote- ja baarialale, mida tribüüni üleval hoidvate metallpostide tõttu ka "metsaks" nimetatakse, pöörad hoopis vasakule, kust leiad eest tagasihoidliku mustaks võõbatud puitukse. Avad selle (NB! Ettevaatust, kohe ukse taga on aste!!!) ja liigud läbi lühikese paarimeetrise koridori pikliku kujuga musta ruumi. Tere tulemast, oled jõudnud Püha Vaimu *black box*´i, mis on saanud oma nime Pika tänavaga paralleelselt teisel pool maja jooksva Pühavaimu tänava järgi. Janovot, seal tumedas saalis ma kuu aega olingi. Sellest, miks ma teekonda tavapärast detailsemalt kirjeldasin, juba hiljem.  
@@ -3460,11 +3572,12 @@
       Oma põhihariduse omandasin Eesti Kunstiakadeemia Disainiteaduskonnas sepakunsti erialal. Minu peamiseks tööks on mõtestatud esemete valmistamine. Selline kunstimaailma jaoks väheke vastuvõetavam versioon tavalisest traditsioone kandvast käsitöölisest (mis sest, et ka käsitöölise staatuse vastu poleks mul midagi ja inglise keeleruumis kasutatakse minusuguste kohta terminit *contemporary craft*). Niisiis olen ma kunstnik, kes töötab materjaliga, nii nagu seda teeb maalija või skulptor, kuid minu ideed ja kontseptsioonid on seotud ennekõike inimkeha ja tema poolt tarbitavate objektidega.  
 
 
-      Siin jõuame ühe mu alustala juurde. Kehaga seotus – sellest tulenev ja seda pikendav. Kehapikendus ei ole "tillipikendus". Kehapikendus on näiteks kiviajal leiutatud oda. Mingi hetk inimene lihtsalt littis lahti, et kiviga kitsele pähe virutamise asemel on märksa mõistlikum kivi varre otsa siduda ja sellega kaugemalt äsada, sest kitsel on ohtlikud sarved. Sedasi sai odast kiviaegse inimese käe pikendus. Oda -> vibu -> amb -> kahur -> revolver -> automaatkuulipildija -> tank -> hävituslennuk -> kaugjuhitav lahingudroon. Need kõik on oma arengujadas rusika pikendamine pikivahe hoidmiseks, et kakluses ise nii palju haiget ei saaks. Keha võimestajate ja pikendajate kontekstis saame vaadata ka riideid (et külm ei näpistaks), jalatseid (et tallanahk kiviklibu vastu paksem oleks), autosid (et kiiremini liikuda), telefone (et hääl kaugemale kajaks), ajalehti (et kuulujutte rohkematele rääkida) jne. Disainiteoorias olen üks neist, kes peavad disainiks absoluutselt kõike, mida inimese käsi ja mõistus modifitseerinud on (vastupidiselt neile, kes eelistavad alustada disainiajalugu tööstusrevolutsioonist, mis ei ole ka terminoloogiliselt sugugi väär seisukoht). Disainimine on minu jaoks oma elukeskkonna teadlik muutmine.  
+      Siin jõuame ühe mu alustala juurde. Kehaga seotus – sellest tulenev ja seda pikendav. Kehapikendus ei ole "tillipikendus". Kehapikendus on näiteks kiviajal leiutatud oda. Mingi hetk inimene lihtsalt littis lahti, et kiviga kitsele pähe virutamise asemel on märksa mõistlikum kivi varre otsa siduda ja sellega kaugemalt äsada, sest kitsel on ohtlikud sarved. Sedasi sai odast kiviaegse inimese käe pikendus. Oda -> vibu -> amb -> kahur -> revolver -> automaatkuulipilduja -> tank -> hävituslennuk -> kaugjuhitav lahingudroon. Need kõik on oma arengujadas rusika pikendamine pikivahe hoidmiseks, et kakluses ise nii palju haiget ei saaks. Keha võimestajate ja pikendajate kontekstis saame vaadata ka riideid (et külm ei näpistaks), jalatseid (et tallanahk kiviklibu vastu paksem oleks), autosid (et kiiremini liikuda), telefone (et hääl kaugemale kajaks), ajalehti (et kuulujutte rohkematele rääkida) jne. Disainiteoorias olen üks neist, kes peavad disainiks absoluutselt kõike, mida inimese käsi ja mõistus modifitseerinud on (vastupidiselt neile, kes eelistavad alustada disainiajalugu tööstusrevolutsioonist, mis ei ole ka terminoloogiliselt sugugi väär seisukoht). Disainimine on minu jaoks oma elukeskkonna teadlik muutmine.  
        
-      Inimene on üks äraütlemata sitt looduse looming. Ta kipub igasugu muutuste käigus ära surema. Küüned on tal õhukesed, kihvad mannetud, karvkate hõre, jalad aeglased, käed nõrgad, seedimine habras. Igal loomal on oma supervõime. Gepard jookseb, lind lendab, kilpkonn kannab maja kaasas, siil tõmbab faalanksi turri, jääkaru ajab karva puhevile. Inimene seevastu elas enamiku oma põllumajandusrevolutsiooni eelset elu toitumispüramiidi üpriski keskmistel astmetel. Selleks, et kuidagigi oma võimalusi suurendada, ei saanud ta jääd lootma oma loomuomastele võimetele. Tal oli ka oma supervõimet vaja. Inimese supervõimeks sai kunstliku keskkonna loomine. Ma ei ela toorest liha järades looduslikus koopas, vaid mind ümbritseb mustaks võõbatud korrapärase nelinurkse põhiplaaniga ritskülikukujuline kunstkoobasblackbox. Mu kütt-korilase vajadused saavad rahuldatud jahiretkedega Vanalinna Mini-Rimisse. Sinna minnes ei jää ma sügistuultes lootma hõredatele tuultes võbelevatele karvadele, vaid mind katab surnud looma nahatükkidest kokku õmmeldud jakk. Nagu ütleb Harari varajaste inimeste kohta: "Aafrika savannides elanud ahvide järeltulijast Indoneesia sapiens sai aga Vaikse ookeani asukaks, ilma et ta oleks pidanud endale morsa loivad kasvatama või ootama, kuni ta nina evolutsiooni käigus nagu vaalal pea peale nihkuks. Selle asemel ehitas ta laevu ja õppis neid juhtima."(1) Kõik, mille loomadelt üle võtta suutsime, me ka võtsime. Jääkarudelt võtsime naha maha, et Arktika külmadele vastu panna. Kilpkonnakilpidest tehti sõjakilbid. Edevad isaslindude suled pandi edvistamiseks endile pähe. Karu südant süües saad karu jõu, karu nahka kandes saad sooja. Mida otse üle võtta ei saanud, omistati koopiate kaudu. Allveelaevad ujuvad vaaladega koos vee all. Linnud lendavad lennukitega taevas.  
+      Inimene on üks äraütlemata sitt looduse looming. Ta kipub igasugu muutuste käigus ära surema. Küüned on tal õhukesed, kihvad mannetud, karvkate hõre, jalad aeglased, käed nõrgad, seedimine habras. Igal loomal on oma supervõime. Gepard jookseb, lind lendab, kilpkonn kannab maja kaasas, siil tõmbab faalanksi turri, jääkaru ajab karva puhevile. Inimene seevastu elas enamiku oma põllumajandusrevolutsiooni eelset elu toitumispüramiidi üpriski keskmistel astmetel. Selleks, et kuidagigi oma võimalusi suurendada, ei saanud ta jääd lootma oma loomuomastele võimetele. Tal oli ka oma supervõimet vaja. Inimese supervõimeks sai kunstliku keskkonna loomine. Ma ei ela toorest liha järades looduslikus koopas, vaid mind ümbritseb mustaks võõbatud korrapärase nelinurkse põhiplaaniga ristkülikukujuline kunstkoobas*blackbox*. Mu kütt-korilase vajadused saavad rahuldatud jahiretkedega Vanalinna Mini-Rimisse. Sinna minnes ei jää ma sügistuultes lootma hõredatele tuultes võbelevatele karvadele, vaid mind katab surnud looma nahatükkidest kokku õmmeldud jakk. Nagu ütleb Harari varajaste inimeste kohta: "Aafrika savannides elanud ahvide järeltulijast Indoneesia sapiens sai aga Vaikse ookeani asukaks, ilma et ta oleks pidanud endale morsa loivad kasvatama või ootama, kuni ta nina evolutsiooni käigus nagu vaalal pea peale nihkuks. Selle asemel ehitas ta laevu ja õppis neid juhtima."(1) Kõik, mille loomadelt üle võtta suutsime, me ka võtsime. Jääkarudelt võtsime naha maha, et Arktika külmadele vastu panna. Kilpkonnakilpidest tehti sõjakilbid. Edevad isaslindude suled pandi edvistamiseks endile pähe. Karu südant süües saad karu jõu, karu nahka kandes saad sooja. Mida otse üle võtta ei saanud, omistati koopiate kaudu. Allveelaevad ujuvad vaaladega koos vee all. Linnud lendavad lennukitega taevas.  
        
-      Kuigi poeesiat tappes võib öelda, et linnud ei lenda lennukitega taevas, vaid inimesed kasutavad lennukeid ühest kohast teise lendamiseks ja linnud jäävad mõnikord lihtsalt tee peale ette. Kõigi nende asjadega, mida inimene enda jaoks loonud on, teeb ta midagi. Olgu selle kasutusotstarve kui abstraktne ja tühine tahes, ikka on objektidel mingi eesmärk täita. Siinkohal jõuangi ma objektide performatiivsuseni. Väga subjektiivse meelevaldsusega ütlen, et miski on performatiivne, kui see teeb midagi. Performatiivne võib olla inimene, kui ta kõnnib üle lava või tänava. Performatiivne võib olla heli, kui ta kuulutab käreda undamisega pommilennukite silmapiirile ilmumist. Performatiivne võib olla teleekraanil vehklev diktor ja ekraanilt kiiskav valgusvõbelus pimeda toa seinal. Performatiivne võib olla kuumal pliidil keeva veega aurav pott ja seinal tiksuv kell. Tik-tok-tik-tok-tik-tok interpreteerib ta kaduviku sonaati. Inimene etleb koos asjadega. Lööb haamriga naela seina või üritab pindpinevuseni täisvalatud kohvitassiga köögist kirjutuslauani hiilida. Performatiivne võib olla sõna, kui ta laulatab kahte üheks. Räägitakse, et Alguses oli Sõna." Ἐν ἀρχῇ ἦν ὁ λόγος,..." Eesti füüsikult Tiit Lukkilt küsiti kord, kas Jumal on olemas. Ja ta vastas, et muidugi. Ta võiks isegi välja arvutada Jumala külgetõmbejõu. Näiteks võiks ta liita kokku umbkaudse energiakoguse, mida inimesed kulutavad, et liikuda pühapäeva hommikuti kirikusse. Muidugi võtaks taoline arvutus võimatu koguse aega ja pühendumist, kuid võime olla kindlad, et tuletatav energiakogus võrduks mõne võimsa geoloogilise protsessiga. Ja me räägime reaalsest energiast. Energiast, mis sõna otseses mõttes võiks liigutada mägesid. Performatiivsest kineetilisest energiast.
+      Kuigi poeesiat tappes võib öelda, et linnud ei lenda lennukitega taevas, vaid inimesed kasutavad lennukeid ühest kohast teise lendamiseks ja linnud jäävad mõnikord lihtsalt tee peale ette. Kõigi nende asjadega, mida inimene enda jaoks loonud on, teeb ta midagi. Olgu selle kasutusotstarve kui abstraktne ja tühine tahes, ikka on objektidel mingi eesmärk täita. Siinkohal jõuangi ma objektide performatiivsuseni. Väga subjektiivse meelevaldsusega ütlen, et miski on performatiivne, kui see teeb midagi. Performatiivne võib olla inimene, kui ta kõnnib üle lava või tänava. Performatiivne võib olla heli, kui ta kuulutab käreda undamisega pommilennukite silmapiirile ilmumist. Performatiivne võib olla teleekraanil vehklev diktor ja ekraanilt kiiskav valgusvõbelus pimeda toa seinal. Performatiivne võib olla kuumal pliidil keeva veega aurav pott ja seinal tiksuv kell. Tik-tok-tik-tok-tik-tok interpreteerib ta kaduviku sonaati. Inimene etleb koos asjadega. Lööb haamriga naela seina või üritab pindpinevuseni täisvalatud kohvitassiga köögist kirjutuslauani hiilida. Performatiivne võib olla sõna, kui ta laulatab kahte üheks. Räägitakse, et Alguses oli Sõna." Ἐν ἀρχῇ ἦν ὁ λόγος,..." Eesti füüsikult Tiit Lukkilt küsiti kord, kas Jumal on olemas. Ja ta vastas, et muidugi. Ta võiks isegi välja arvutada Jumala külgetõmbejõu. Näiteks võiks ta liita kokku umbkaudse energiakoguse, mida inimesed kulutavad, et liikuda pühapäeva hommikuti kirikusse. Muidugi võtaks taoline arvutus võimatu koguse aega ja pühendumist, kuid võime olla kindlad, et tuletatav energiakogus võrduks mõne võimsa geoloogilise protsessiga. Ja me räägime reaalsest energiast. Energiast, mis sõna otseses mõttes võiks liigutada mägesid. Performatiivsest kineetilisest energiast.  
+
 
       Kuna mul pole professionaalset kogemust etenduskunstide ega tantsu vallas, tundus silmakirjalik hakata looma koreograafiat. Pean jätkama lavaruumiga endiselt delikaatset flirti nagu siiani. Minema lavale kui kunstnik, mitte tantsija. Leidma koodi, mis lavastaks minu eest. Ja siinkohal tulidki mängu asjad – mulle sedavõrd tuttav ja turvaline maailm. Meenus algklasside aegne tantsuõpetaja, kes armastas kanda ebaratsionaalselt kõrgeid kontsi. Nii kõrgeid, et ta ei suutnud isegi põlvi sirgeks lükata. Niipea, kui ta oli tavatuhvlid kontsade vastu vahetanud, muutus kogu liikumismaneer. Tuli sisse (paraku vibalevalt) gasellilik nõtkus. Ettevaatlikus. Iga hetk võis kontsale toetuv jalg vääratada ja pahkluu rebestada. See karkudel tuigerdamine tekitas minus lapsena alati hämmeldust. Paistab, et kood on käes. Ma ei peagi looma koreograafiat. Ma pean valmistama kehaga seotud objekte, mis loovad kogu koreograafia minu eest. Objekt kui minu esimene vaikiv koreograaf.  
 
@@ -3475,7 +3588,7 @@
       Vana pärimuse kohaselt, mille algallikat enam viidata ei mäleta, ärkasid ükskord kõik asjad ellu. Nuga ihus kättemaksu ja luud pühkis omaniku teelt. Nii nagu inimesed kasutasid asju, hakkasid asjad inimesi kasutama. Enam polnud aru saada, kumb oli kumma teinud. Pärimus lõppes sõnadega, et see on juhtunud ja kord juhtub taas. Müütiline mõtlemine ei rapsi tühja, seal on sisu sees. Hariduselt disainerina huvitab mind küsimus, kuidas loovad inimesed asju ja kuidas loovad asjad inimesi. Kumb oli enne? Muistne pärimus osutus tõeks. Aeg, mil asjad ärkavad ellu, on kogu aeg käes olnud. Jumal hakkas looma inimest, niipea kui inimene oli loonud Jumala.  
 
 
-      Asjad mitte üksnes ei mõjuta keha otseselt nagu korsett või lahas, vaid vormivad ka meie kokkuleppelist intersubjektiivset identiteeti. Oma performatiivsuses suunavad need me mõtteid ja käitumist. Performatiivne akt väljendub rollide loomises, jaotamises ja hoidmises. Millal lõppes Eestis Nõukogude Liit? Kas iseseisvuse dokumentide allkirjastamisega? Vene vägede väljaviimisega? Kaljavaatide kadumisega? Leninitel, Stalinitel ja Kingisseppadel peade mahasaagisega? Valgete triibulise koega trussikute *boxer briefs*´ide vastu vahetamisega? Pronkssõdur ohkas ja lontsis närbunud nelgikimp näpus Tõnismäelt Kaitseväe kalmistule, jättes maha purunenud akende ja põlevate prügikastidega kesklinna. Me defineerime oma identiteeti läbi asjade rohkem,kui seda tunnistada meeldiks. Oleks banaalselt üleliigne tõmmata võrdlust kirjandusklassikalise tsitaadiga, kus elu võrdsustatakse rolliga näitelaval. Me ei sära sel laval tuima butafooria taustal. Me oleme kõrvalosas.   
+      Asjad mitte üksnes ei mõjuta keha otseselt nagu korsett või lahas, vaid vormivad ka meie kokkuleppelist intersubjektiivset identiteeti. Oma performatiivsuses suunavad need me mõtteid ja käitumist. Performatiivne akt väljendub rollide loomises, jaotamises ja hoidmises. Millal lõppes Eestis Nõukogude Liit? Kas iseseisvuse dokumentide allkirjastamisega? Vene vägede väljaviimisega? Kaljavaatide kadumisega? Leninitel, Stalinitel ja Kingisseppadel peade mahasaagimisega? Valgete triibulise koega trussikute *boxer briefs*´ide vastu vahetamisega? Pronkssõdur ohkas ja lontsis närbunud nelgikimp näpus Tõnismäelt Kaitseväe kalmistule, jättes maha purunenud akende ja põlevate prügikastidega kesklinna. Me defineerime oma identiteeti läbi asjade rohkem kui seda tunnistada meeldiks. Oleks banaalselt üleliigne tõmmata võrdlust kirjandusklassikalise tsitaadiga, kus elu võrdsustatakse rolliga näitelaval. Me ei sära sel laval tuima butafooria taustal. Me oleme kõrvalosas.   
 
 
       Italo Calvino räägib Sitsiilias üles kirjutatud muinasloos ullike Giufast(2), kes läks ühte tallu almust paluma. Nähes ta näruseid riideid, aeti koerad kallale. Emal oli Giufast kahju. Muretses pika mantli, paari pükse ja ilusa vesti. Giufa läks samasse tallu. Peent härrat nähes kutsuti ta pererahvaga koos lauda. Kui Giufale toit ette toodi, hakkas ta seda kätega taskutesse ajama ise kõneldes: "Sööge, sööge, mu riideräbalad, pererahvas kostitab ju teid, mitte mind!”.  
@@ -3484,18 +3597,18 @@
       Luigi Pirandello lohutab oma näidendis "Henry IV" kuninga suu läbi teenijatüdrukut, et staatused seisnevad vaid riietes. Kuningas on kuningas ja teenijatüdruk teenija senikaua, kui nad täisriideis üksteise ees seisavad. Voodisse minnes jäävad rõivastega nagisse ka nende rollid. Mõtlesin ühel õhtul magama asutades alasti voodi äärel istudes selle näidendi peale. Jalgade ees maas lebasid veel kehast soojad riided. Nagu laip, hing seest läinud. Käkras, kägaras, uperpalliti. Olles mõnda aega tõtt vaadanud (mingil kummalisel kombel tavatseme nimetada "tõeks" seda umbmäärast punkti, kus silmad ühtki kindlat objekti välja ei fokusseeri, kuid pilk jääb kusagile tapeedi ja lõpmatuse vahele), tõusis kaltsukubu mu jalge ees püsti. Viivuks pööras paar kraadi minu poole nagu tahaks miskit viisakusest sõnada, kuid mõistes olukorra mõttetust, loivas liigsete tundeväljendusteta aknast ergava tänavalaterna vihus uksest välja, jättes mu identiteeditult voodiservale istuma. Türa ja tühi hing, nagu meil armees tavaks öelda oli, kui suitsunurgas konutades eelmise sigaretikoni hõõguva otsaga järgmise läitsime.  
 
 
-      Seega pole mitte aint me teod, vaid ka mõtted asjadest juhitud. Odast ei arenenud vibu ja vibust amb ja ammust impeeriumite diktatuurid mitte sellepärast, et kuskil katkestas keegi geenius tuima kestvuse ja viis väikese revolutsiooniga sisse tehnoloogilise uuenduse. Revolutsioon kehtestab end ise. Iga uuendus juhtub seetõttu, et teisiti enam ei saa. Pole vaja geeniust, et leiutada aurumootorit või elektripirni. Enamik suuri leiutisi mõeldakse tihtipeale välja samal ajal üksteisest sõltumatute inimeste poolt. Põllumajandusrevolutsioon ei saanud alguse ühest lättest. Kellegi geeniuse jalajälge puistatud esimestest idanema läinud seemnetest. Nagu täheldab Harari:" Kunagi uskusid teadlased, et põlluharimine levis ühestainsast Lähis-Ida "kasvuhoonest" kõigisse nelja ilmakaarde. Tänasel päeval on teadlased aga ühisel seisukohal, et maaviljelusega hakati maailma eri paigus tegelema iseseisvalt, ilma et Lähis-Ida põlluharijad oleksid pidanud oma revolutsioonilist eluviisi eksportima. Kesk-Ameerikas elanud inimesed hakkasid kasvatama maisi ja ube, ilma et nad oleksid teadnud midagi samal ajal Lähis-Idas alanud nisu- ja hernekasvatusest."(3) Omamoodi laseb see leppida tõsiasjaga, et mitte meie ei lähe tehnoloogiliste manipulatsioonidega liiale, vaid tehnoloogia kasutab meid kui sümbioosis orje. Mitte meie ei vii maailma hävingu äärele,vaid maailm üritab hävitada meid. Suur, elav ja hingav omatahteline Gaia on murdnud end välja esoteerikute unelmaist ja asunud lavastajana marionett-teatri nööride kallale. Vahet pole, kas elame Jumala, Looduse või enese seaduste järgi. Seadus on sama.  
+      Seega pole mitte aint me teod, vaid ka mõtted asjadest juhitud. Odast ei arenenud vibu ja vibust amb ja ammust impeeriumite diktatuurid mitte sellepärast, et kuskil katkestas keegi geenius tuima kestvuse ja viis väikese revolutsiooniga sisse tehnoloogilise uuenduse. Revolutsioon kehtestab end ise. Iga uuendus juhtub seetõttu, et teisiti enam ei saa. Pole vaja geeniust, et leiutada aurumootorit või elektripirni. Enamik suuri leiutisi mõeldakse tihtipeale välja samal ajal üksteisest sõltumatute inimeste poolt. Põllumajandusrevolutsioon ei saanud alguse ühest lättest. Kellegi geeniuse jalajälge puistatud esimestest idanema läinud seemnetest. Nagu täheldab Harari:" Kunagi uskusid teadlased, et põlluharimine levis ühestainsast Lähis-Ida "kasvuhoonest" kõigisse nelja ilmakaarde. Tänasel päeval on teadlased aga ühisel seisukohal, et maaviljelusega hakati maailma eri paigus tegelema iseseisvalt, ilma et Lähis-Ida põlluharijad oleksid pidanud oma revolutsioonilist eluviisi eksportima. Kesk-Ameerikas elanud inimesed hakkasid kasvatama maisi ja ube, ilma et nad oleksid teadnud midagi samal ajal Lähis-Idas alanud nisu- ja hernekasvatusest."(3) Omamoodi laseb see leppida tõsiasjaga, et mitte meie ei lähe tehnoloogiliste manipulatsioonidega liiale, vaid tehnoloogia kasutab meid kui sümbioosis orje. Mitte meie ei vii maailma hävingu äärele vaid maailm üritab hävitada meid. Suur, elav ja hingav omatahteline Gaia on murdnud end välja esoteerikute unelmaist ja asunud lavastajana marionett-teatri nööride kallale. Vahet pole, kas elame Jumala, Looduse või enese seaduste järgi. Seadus on sama.  
 
 
-      Inimlikust perspektiivist meeldib meile mõtelda, nagu suruks raske vägi nõrkushetkedel maadligi. Taevakatus kukub kaela. Kuid meie peade kohal laiub lage lõputu tühjus. Vaba eeter, kus keha tükkeks rebitaks ja aatomitena laotusesse paisataks. Üleval on vabadus, all aga orjastav gravitatsiooniahel. Kõik mis läheb üles, tuleb prantsatades alla tagasi (kui just piisavalt kaugele ei lähe). Tavalise magnetvälja asemel meeldib mulle maakera ette kujutada hiiglasliku magnetina, mis muudkui tuuma poole tirib. Paneb mandrilaamad leemes hulpima. Keerutab ja kurrutab. Sulatab ja pritsib uute laamade neelates taas pinnale. Kogu elu on gravitatsiooni vastu võitlemine. Juba me esivanemad võitlesid. Vaar-vaar-vaar-esivanemad, kel veel inimese kujugi polnud. Nagu surikaadid ajasid end aegajalt tagajalgele ja piidlesid üle stepituttide ohtlikku ümbrust. Siis otsustasid seisma jäädagi. Nüüd teeb iga inimlaps läbi väikese evolutsiooni. Kõigepealt vedeleb abitult,selg vastu maad. Seejärel hakkab end gravitatsiooni kütkeist lahti rebima. Roomab vaevaliselt hällivangikongi trellideni ning sirutab väetid käed ülespoole. Varbade toel ajab end põlvili, kuid peagi võtab gravitatsioon oma. Laps haaratakse tagasi madratsile ning gravitatsioon tõmbab ta habrast keha üksjagu linade sisse peitu. Üha uuesti ja uuesti proovib ta ületada oma horisontaalset taaka, kuni jäsemed sitkemaks muutuvad ja ta püstloodi pidama jääb.  
+      Inimlikust perspektiivist meeldib meile mõtelda, nagu suruks raske vägi nõrkushetkedel maadligi. Taevakatus kukub kaela. Kuid meie peade kohal laiub lage lõputu tühjus. Vaba eeter, kus keha tükkeks rebitaks ja aatomitena laotusesse paisataks. Üleval on vabadus, all aga orjastav gravitatsiooniahel. Kõik mis läheb üles, tuleb prantsatades alla tagasi (kui just piisavalt kaugele ei lähe). Tavalise magnetvälja asemel meeldib mulle maakera ette kujutada hiiglasliku magnetina, mis muudkui tuuma poole tirib. Paneb mandrilaamad leemes hulpima. Keerutab ja kurrutab. Sulatab ja pritsib uute laamade neelates taas pinnale. Kogu elu on gravitatsiooni vastu võitlemine. Juba me esivanemad võitlesid. Vaar-vaar-vaar-esivanemad, kel veel inimese kujugi polnud. Nagu surikaadid ajasid end aegajalt tagajalgele ja piidlesid üle stepituttide ohtlikku ümbrust. Siis otsustasid seisma jäädagi. Nüüd teeb iga inimlaps läbi väikese evolutsiooni. Kõigepealt vedeleb abitult selg vastu maad. Seejärel hakkab end gravitatsiooni kütkeist lahti rebima. Roomab vaevaliselt hällivangikongi trellideni ning sirutab väetid käed ülespoole. Varbade toel ajab end põlvili, kuid peagi võtab gravitatsioon oma. Laps haaratakse tagasi madratsile ning gravitatsioon tõmbab ta habrast keha üksjagu linade sisse peitu. Üha uuesti ja uuesti proovib ta ületada oma horisontaalset taaka, kuni jäsemed sitkemaks muutuvad ja ta püstloodi pidama jääb.  
 
 
       See on residentuuri teine vaikiv koreograaf. Traditsiooniliselt treenib tantsija end võimalikult vähest vaeva välja näidates gravitatsiooni ületama. Hüppab, keerutab, teeb tõsteid. Minu eesmärgiks oli anda gravitatsioonile tema täieõiguslik voli. Iga kehale lisatud objekt vähendas laval liikuja vastupanuvõimet maa keskme kutsele. Õõtsus kontsadel, kooserdas ratastel, roomas aheldatuna hullusärgiks moondunud pikakäiselises nahktagis.  
        
-      Kolmanda koreograafina istub lavastajatoolile ruum. Kuidas jõuad Pikalt tänavalt Püha Vaimu saali? Ikka läbi koridori trepist üles, paremat kätt uksest sisse, vasakpööre enne baari, uks lahti (ettevaatust kohe ukse taga on aste!), paari sammuga läbi kitsa eeskoja ja oledki pikliku põhiplaaniga tumedas ruumis. Seda koreograafiat ei mõelnud sa ise välja. Mitte ka mina. Isegi Priit Raud mitte. Selle koreograafia mõtles välja keegi arhitekt, kes just nendesse kohtadesse seinad joonestas. “*Ruler*”(4) tähendab valitseja kõrval ka joonlauda. Vaadake Ameerika Ühendriikide kaarti võrdluses looduslike pinnavormidega, mis traditsiooniliselt põlisrahvaste piire tähistasid. Võrrelge Lasnamäe ruudustikku vanalinna risti-rästi songermaaga. Planeeringuga elumajad, linnaosad ja keskused on viimase täpsuseni koreograafiliselt läbi töötatud. Toidupoes asetatakse piimatooted, leivad-saiad ja kuivained üksteisest kõige kaugematesse nurkadesse. Kõikvõimalikud maiustused, delikatessid, teed-kohvid ja luksustooted nende vahele, et sissepääsust kassadeni liikuvat dramaturgilist kurvi pidi neist mingil juhul mööda ei mindaks. Ostleja on asetatud labürinti. Iga ta samm on kaardistatud, analüüsitud, ette planeeritud. Nii nagu tantsijad märgivad mustade teibitükkidega tansupõrandale maha, kust punktist kuhu liikumine jõudma teab, liigub klient poodides koreograafiliste sõlmpunktide vahel. Et minna seejärel eskalaatoriga kaubanduskeskuse kolmandal korrusel olevasse restorani, tuleb iga korruse järel ringliikumisega läbida pool keskuse aatriumit, et jõuda järgmise liikuva trepini. Ikka selleks, et sundkoreograafia käigus ei jääks ükski vaateaken soovimatu pakkumisega nägemata. Katedraali minnes ei sisene me vaid suurde kõrgete lagedega ruumi. See on sisenemine elamusse. Uude reaalsusesse, mis meid mõjutab üha vähem, kuid keskaegne tööline, kes oli harjunud vaid luitunud maavillaste toonide ja kitsikusega, leidis end katedraalis ulmailmast. See oli ilmutus, makett kõikvõimsa jumalariigi vägemusest.  
+      Kolmanda koreograafina istub lavastajatoolile ruum. Kuidas jõuad Pikalt tänavalt Püha Vaimu saali? Ikka läbi koridori trepist üles, paremat kätt uksest sisse, vasakpööre enne baari, uks lahti (ettevaatust kohe ukse taga on aste!), paari sammuga läbi kitsa eeskoja ja oledki pikliku põhiplaaniga tumedas ruumis. Seda koreograafiat ei mõelnud sa ise välja. Mitte ka mina. Isegi Priit Raud mitte. Selle koreograafia mõtles välja keegi arhitekt, kes just nendesse kohtadesse seinad joonestas. “*Ruler*”(4) tähendab valitseja kõrval ka joonlauda. Vaadake Ameerika Ühendriikide kaarti võrdluses looduslike pinnavormidega, mis traditsiooniliselt põlisrahvaste piire tähistasid. Võrrelge Lasnamäe ruudustikku vanalinna risti-rästi songermaaga. Planeeringuga elumajad, linnaosad ja keskused on viimase täpsuseni koreograafiliselt läbi töötatud. Toidupoes asetatakse piimatooted, leivad-saiad ja kuivained üksteisest kõige kaugematesse nurkadesse. Kõikvõimalikud maiustused, delikatessid, teed-kohvid ja luksustooted nende vahele, et sissepääsust kassadeni liikuvat dramaturgilist kurvi pidi neist mingil juhul mööda ei mindaks. Ostleja on asetatud labürinti. Iga ta samm on kaardistatud, analüüsitud, ette planeeritud. Nii nagu tantsijad märgivad mustade teibitükkidega tansupõrandale maha, kust punktist kuhu liikumine jõudma peab, liigub klient poodides koreograafiliste sõlmpunktide vahel. Et minna seejärel eskalaatoriga kaubanduskeskuse kolmandal korrusel olevasse restorani, tuleb iga korruse järel ringliikumisega läbida pool keskuse aatriumit, et jõuda järgmise liikuva trepini. Ikka selleks, et sundkoreograafia käigus ei jääks ükski vaateaken soovimatu pakkumisega nägemata. Katedraali minnes ei sisene me vaid suurde kõrgete lagedega ruumi. See on sisenemine elamusse. Uude reaalsusesse, mis meid mõjutab üha vähem, kuid keskaegne tööline, kes oli harjunud vaid luitunud maavillaste toonide ja kitsikusega, leidis end katedraalis ulmailmast. See oli ilmutus, makett kõikvõimsa jumalariigi vägemusest.  
 
 
-      Erinevad ruumid mitte ainult ei suuna meie füüsilist liikumist, vaid võtavad üle kõik me käitumismustrid. Erinevates ruumides teeme me erinevaid asju. Viime läbi erinevaid performatiivseid toiminguid. Jalutades kord Jaapanis Yokohamas ringi kohaliku sõbraga, viitas ta tunnitasulistele hotellidele. Renti ei küsitud ööpäeva, vaid ruumis viibitud tundide eest. Niisamuti reisisid kord mu (juba väärikas eas) tuttavad autoga Etioopias. Päike oli ammu loojunud, kui nad leidsid tee äärest täispargitud esisega motelli. Prooviti õnne. Leiduski vaba tuba. Retseptsioonis küsiti, kas nad soovivad maksta tunniarvestuse või koguöise tariifi järgi. Lubati jääda terveks ööks. Võtmed käes suunduti tuppa. Alles sel hetkel lahendus nende jaoks müsteerium. Hämarad looritatud punased valgused, kergestipestavate pindadega mööbel, seintel inspireerivad pildid, riiulil piits ja roosakarvased käerauad, öökapil vaagen kondoomidega ja kapis riiul joovastava minibaariga. Hommikul teele asudes seisis keset tühja parklat nende üksik tolmune rendimaastur. Püha isa avab kabeli ukse ja süütab küünlad, mis heidavad seinetele punakalt küütlevat helki. Ta sammub puidust pingiridade vahelt läbi. Mööda seinu jookseb miniatuursete maalingute seeria, mis tuletab meelde Kristuse ristiretke. Ta võtab riiulilt puidust numbrid ja asetab need seinale kinnitatud tahvlile, et märgistada lauluraamatust palvuseks plaanitud leheküljed. Kapikesel lebab kandik, mille täidab oblaatidega ja kapis pudel Kagor´i. Tunnihotellid on selleks, et seal seksida, kirik selleks, et seal pärast hinge puhtaks pesta. Sünnitusmajas sünnitatakse ja krematooriumis pannaks äraelanud inimesed põlema. Neid spetsiaalsel eesmärgiga ruume täidavad spetsiaalse eesmärgiga objektid. Me ei lähe kirikusse seksima, see ei tundu õige ka siis kui religioon kaugeks jääb. Sel ruumil on teine otstarve, teine eesmärk, teine atmosfäär. Mõlemal juhul ripub seinal paljas ihu. Tunnihotellis raamitud postril iharas poosis mees, kirikus krutsifiksil nõtke Kristus. Need objektid ei ole seal vaid olemiseks, need täidavad ülesannet. Hoolimata sellest,et krutsifiksiga ei saa konservi avada, on tal ikkagi eesmärk.  
+      Erinevad ruumid mitte ainult ei suuna meie füüsilist liikumist, vaid võtavad üle kõik me käitumismustrid. Erinevates ruumides teeme me erinevaid asju. Viime läbi erinevaid performatiivseid toiminguid. Jalutades kord Jaapanis Yokohamas ringi kohaliku sõbraga, viitas ta tunnitasulistele hotellidele. Renti ei küsitud ööpäeva, vaid ruumis viibitud tundide eest. Niisamuti reisisid kord mu (juba väärikas eas) tuttavad autoga Etioopias. Päike oli ammu loojunud, kui nad leidsid tee äärest täispargitud esisega motelli. Prooviti õnne. Leiduski vaba tuba. Retseptsioonis küsiti, kas nad soovivad maksta tunniarvestuse või koguöise tariifi järgi. Lubati jääda terveks ööks. Võtmed käes suunduti tuppa. Alles sel hetkel lahendus nende jaoks müsteerium. Hämarad looritatud punased valgused, kergestipestavate pindadega mööbel, seintel inspireerivad pildid, riiulil piits ja roosakarvased käerauad, öökapil vaagen kondoomidega ja kapis riiul joovastava minibaariga. Hommikul teele asudes seisis keset tühja parklat nende üksik tolmune rendimaastur. Püha isa avab kabeli ukse ja süütab küünlad, mis heidavad seinetele punakalt küütlevat helki. Ta sammub puidust pingiridade vahelt läbi. Mööda seinu jookseb miniatuursete maalingute seeria, mis tuletab meelde Kristuse ristiretke. Ta võtab riiulilt puidust numbrid ja asetab need seinale kinnitatud tahvlile, et märgistada lauluraamatust palvuseks plaanitud leheküljed. Kapikesel lebab kandik, mille täidab oblaatidega ja kapis pudel Kagor´i. Tunnihotellid on selleks, et seal seksida, kirik selleks, et seal pärast hinge puhtaks pesta. Sünnitusmajas sünnitatakse ja krematooriumis pannaks äraelanud inimesed põlema. Neid spetsiaalsel eesmärgiga ruume täidavad spetsiaalse eesmärgiga objektid. Me ei lähe kirikusse seksima, see ei tundu õige ka siis kui religioon kaugeks jääb. Sel ruumil on teine otstarve, teine eesmärk, teine atmosfäär. Mõlemal juhul ripub seinal paljas ihu. Tunnihotellis raamitud postril iharas poosis mees, kirikus krutsifiksil nõtke Kristus. Need objektid ei ole seal vaid olemiseks, need täidavad ülesannet. Hoolimata sellest, et krutsifiksiga ei saa konservi avada, on tal ikkagi eesmärk.  
 
 
       Istun ikka veel paljalt voodiserval. Tõttvaatamine on asendunud telefoni otsimisega, et seada ta end hommikul üles äratama. Taaskordne julm performatiivne akt. Sund masinat mind une kütkeist rebima ja paiskama tagasi teiste inimestega ühiselt jagatud narratiivi. Tõusen voodiservalt. Astun paar sammu, et parempööret tehes jõuda ukseni. Kohe peale ukseava läbimist keeran ahju kõrvalt taas vasakule. Astun kaks astet, mis viivad mu elutuppa. Liigun kirjutuslaua ja diivani vahelt läbi, ümber kraanikausi, vajutan järgmise ukse juures olevast kahest lülitist alumise sisse. Teen ukse lahti ning astun pooliku astme jagu kõrgemasse ruumi. Lõdvestun. Olen jõudnud taaskord vääramatu täpsusega oma igaöise tantsukava lõpp-punkti ning suunan potti galantse kusejoa.  
@@ -3513,28 +3626,106 @@
       (3) Yuval Noah Harari, Sapiens: Inimkonna lühiajalugu, lk 108  
 
       (4) Tähelepanek antropoloog Tim Ingoldilt  
+  published_at: 2021-02-04T15:13:31.892Z
+  created_by:
+      id: 8
+      firstname: Annika
+      lastname: Üprus
+      username: null
+      email: annika@saal.ee
+      password: $2a$10$h/zy7cFwjLK67U.ex6T7qO2Dvfeta.j3w0rTAUi11LIQ8US.PaE6e
+      resetPasswordToken: 7f5dce6f5512240c09ac238e987352bfde5fc596
+      registrationToken: null
+      isActive: true
+      blocked: null
+  updated_by:
+      id: 8
+      firstname: Annika
+      lastname: Üprus
+      username: null
+      email: annika@saal.ee
+      password: $2a$10$h/zy7cFwjLK67U.ex6T7qO2Dvfeta.j3w0rTAUi11LIQ8US.PaE6e
+      resetPasswordToken: 7f5dce6f5512240c09ac238e987352bfde5fc596
+      registrationToken: null
+      isActive: true
+      blocked: null
+  created_at: 2021-01-29T09:43:49.449Z
+  updated_at: 2021-02-10T08:10:10.053Z
+  front_page_promotion: null
   remote_id: article
+  X_premiere_time: null
+  X_location_et: null
+  X_location_en: null
+  X_pictures: null
   article_media:
       - id: 668
+        original_image: null
         hero_image:
             id: 8663
             name: MAGASIN_markmeidpuhastvaimust_01_1400x700.jpeg
+            alternativeText: ""
+            caption: ""
             width: 1400
             height: 700
+            formats: null
             hash: MAGASIN_markmeidpuhastvaimust_01_59d10cca93_1400x700
             ext: .jpeg
+            mime: image/jpeg
+            size: 154.33
             url: /uploads/MAGASIN_markmeidpuhastvaimust_01_59d10cca93_1400x700.jpeg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-03T10:07:53.257Z
+            updated_at: 2021-02-03T10:07:53.518Z
+        gallery_image_medium: null
       - id: 669
+        original_image: null
+        hero_image: null
         gallery_image_medium:
             id: 8662
             name: MAGASIN_markmeidpuhastvaimust_01_350x350.jpeg
+            alternativeText: ""
+            caption: ""
             width: 350
             height: 350
+            formats: null
             hash: MAGASIN_markmeidpuhastvaimust_01_59d10cca93_350x350
             ext: .jpeg
+            mime: image/jpeg
+            size: 26.49
             url: /uploads/MAGASIN_markmeidpuhastvaimust_01_59d10cca93_350x350.jpeg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-03T10:07:53.121Z
+            updated_at: 2021-02-03T10:07:53.416Z
+  audios: []
+  videos: []
   authors:
       - id: 298
+        first_name: Urmas
+        last_name: Lüüs
+        e_mail: null
+        phone_number: null
+        profession: null
+        order: null
+        created_by: 8
+        updated_by: 1
+        created_at: 2021-01-29T09:44:49.571Z
+        updated_at: 2021-02-04T12:47:46.439Z
+        email: null
+        occupation: null
+        remote_id: null
+        user: null
+        full_name: Urmas Lüüs
+        picture: null
+  categories: []
+  users: []
 - id: 9
   title_et: Riders on the storm (an open rehearsal space)
   title_en: Riders on the storm (an open rehearsal space)
@@ -15470,30 +15661,118 @@
       IN ESTONIAN)"
   slug_et: reskripti-reede-ainult-vastustest-piisab-169
   slug_en: reskripti-reede-ainult-vastustest-piisab-currently-available-only-in-estonian-169
+  subtitle_et: null
+  subtitle_en: null
   publish_date: 2021-02-09T10:00:00.000Z
+  first_page_promotion: null
   hide_gallery: true
   photo_article: true
+  audio: null
+  video: null
   content_et: "![06_RESKRIPTI_REEDE_Ainult_vastustest_piisab_originaal.png](https\
       ://a.saal.ee/uploads/06_RESKRIPTI_REEDE_Ainult_vastustest_piisab_originaa\
       l_cd4b9764c9.png)"
+  content_en: >-
+      NB! CURRENTLY AVAILABLE ONLY IN ESTONIAN!
+
+
+      ![06_RESKRIPTI_REEDE_Ainult_vastustest_piisab_originaal.png](https://a.saal.ee/uploads/06_RESKRIPTI_REEDE_Ainult_vastustest_piisab_originaal_cd4b9764c9.png)
+  published_at: 2021-02-09T18:35:02.656Z
+  created_by:
+      id: 8
+      firstname: Annika
+      lastname: Üprus
+      username: null
+      email: annika@saal.ee
+      password: $2a$10$h/zy7cFwjLK67U.ex6T7qO2Dvfeta.j3w0rTAUi11LIQ8US.PaE6e
+      resetPasswordToken: 7f5dce6f5512240c09ac238e987352bfde5fc596
+      registrationToken: null
+      isActive: true
+      blocked: null
+  updated_by:
+      id: 8
+      firstname: Annika
+      lastname: Üprus
+      username: null
+      email: annika@saal.ee
+      password: $2a$10$h/zy7cFwjLK67U.ex6T7qO2Dvfeta.j3w0rTAUi11LIQ8US.PaE6e
+      resetPasswordToken: 7f5dce6f5512240c09ac238e987352bfde5fc596
+      registrationToken: null
+      isActive: true
+      blocked: null
+  created_at: 2021-02-09T18:34:59.797Z
+  updated_at: 2021-02-10T07:28:18.331Z
+  front_page_promotion: null
+  remote_id: null
+  X_premiere_time: null
+  X_location_et: null
+  X_location_en: null
+  X_pictures: null
   article_media:
       - id: 671
+        original_image: null
         hero_image:
             id: 8719
             name: RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_1400x700.jpg
+            alternativeText: ""
+            caption: ""
             width: 1400
             height: 700
+            formats: null
             hash: RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_aeac2af757_1400x700
             ext: .jpg
+            mime: image/jpeg
+            size: 115.75
             url: /uploads/RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_aeac2af757_1400x700.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-09T18:37:51.005Z
+            updated_at: 2021-02-09T18:40:22.793Z
         gallery_image_medium:
             id: 8718
             name: RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_350x350.jpg
+            alternativeText: ""
+            caption: ""
             width: 350
             height: 350
+            formats: null
             hash: RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_aeac2af757_350x350
             ext: .jpg
+            mime: image/jpeg
+            size: 21.81
             url: /uploads/RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_aeac2af757_350x350.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 8
+            updated_by: 8
+            created_at: 2021-02-09T18:37:50.968Z
+            updated_at: 2021-02-09T18:37:53.101Z
+  audios: []
+  videos: []
+  authors:
+      - id: 287
+        first_name: RESKRIPT
+        last_name: ""
+        e_mail: null
+        phone_number: null
+        profession: null
+        order: null
+        created_by: null
+        updated_by: 1
+        created_at: 2020-12-04T13:12:40.851Z
+        updated_at: 2021-02-04T12:40:11.471Z
+        email: null
+        occupation: null
+        remote_id: "6227"
+        user: null
+        full_name: "RESKRIPT "
+        picture: null
+  categories: []
+  users: []
 - id: 111
   title_et: Teatripäeva kohtumisõhtu kriitikutega Eesti Teatri- ja Muusikamuuseumis
   slug_et: teatripeva-kohtumishtu-kriitikutega-eesti-teatri-ja-muusikamuuseumis-111
@@ -18928,6 +19207,11 @@
       	•	No you didn’t, I want to know precisely how you examine things and what are you really showing the audience?  
       	•	Well, then you’ll have to come to my show, I don’t want to talk about it.  
       	•	Then we have nothing to talk about.
+
+
+
+
+
 
 
 
@@ -30156,55 +30440,3 @@
             url: /uploads/tom_brennecke_communicatine_1400x700_05_02_20_350x350_69cd5ffea0.jpg
   authors:
       - id: 295
-- id: 171
-  title_et: aaaaaaaaaaa
-  title_en: aaaaaaaaaaaaaaaaaaa
-  slug_et: null
-  slug_en: null
-  subtitle_et: null
-  subtitle_en: null
-  publish_date: null
-  first_page_promotion: null
-  hide_gallery: null
-  photo_article: null
-  audio: null
-  video: null
-  content_et: null
-  content_en: null
-  published_at: 2021-02-09T21:25:28.314Z
-  created_by:
-      id: 5
-      firstname: Martin
-      lastname: Pennaste
-      username: pennaste04@gmail.com
-      email: pennaste04@gmail.com
-      password: $2a$10$ifXcNulpUo8I8exR9qohDu1/qnNOooMPp1LjsT5jpY4hcG3rHnYZS
-      resetPasswordToken: null
-      registrationToken: null
-      isActive: true
-      blocked: null
-  updated_by:
-      id: 5
-      firstname: Martin
-      lastname: Pennaste
-      username: pennaste04@gmail.com
-      email: pennaste04@gmail.com
-      password: $2a$10$ifXcNulpUo8I8exR9qohDu1/qnNOooMPp1LjsT5jpY4hcG3rHnYZS
-      resetPasswordToken: null
-      registrationToken: null
-      isActive: true
-      blocked: null
-  created_at: 2021-02-09T21:25:24.372Z
-  updated_at: 2021-02-09T21:25:28.536Z
-  front_page_promotion: null
-  remote_id: null
-  X_premiere_time: null
-  X_location_et: null
-  X_location_en: null
-  X_pictures: null
-  article_media: []
-  audios: []
-  videos: []
-  authors: []
-  categories: []
-  users: []
