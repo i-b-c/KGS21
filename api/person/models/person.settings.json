@@ -40,9 +40,6 @@
     "order": {
       "type": "integer"
     },
-    "departments": {
-      "collection": "department"
-    },
     "remote_id": {
       "type": "uid"
     },

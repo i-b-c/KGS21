@@ -1,80 +1,39 @@
 'use strict';
 
-
 /**
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/models.html#lifecycle-hooks)
  * to customize this model
  */
-const { execFile } = require('child_process');
-const fs = require('fs');
-const yaml = require('yaml');
+
 const path = require('path');
+const { 
+  slugify, 
+  load_yaml, 
+  modify_strapi_data_yaml, 
+  delete_model, 
+  call_build 
+} = require('/srv/strapi/strapi-development/helpers/strapi_lifecycle_helpers.js')
 
-function slugify(text)
-{
-    return text.toString().toLowerCase()
-        .replace(/\s+/g, '-')           // Replace spaces with -
-        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-        .replace(/^-+/, '')             // Trim - from start of text
-        .replace(/-+$/, '');            // Trim - from end of text
-}
-
-function replace_name(){
-  const model_name = (__dirname.split('/').slice(-2)[0]);
-  
-  let name = function(){
-    const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
-    let mod_name = name_upperC.split('-');
-    if(mod_name.length > 1){
-
-    }
-  }
-
-  return name_upperC
-}
-
-function modify_strapi_data_yaml(result) {
-  
-  console.log(replace_name())
-  // const data_path = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
-  // const model_yaml = yaml.parse(fs.readFileSync(data_path, 'utf8'))
-  // const model_id = result.id
-
-  // for(let model_ix in model_yaml) {
-  //   const model = model_yaml[model_ix]
-  //   if(model.id === model_id) {
-  //     model_yaml[model_ix] = result
-  //     break
-  //   }
-  // }
-
-  // console.log(fs.writeFileSync(data_path, yaml.stringify(model_yaml), 'utf8'))
-}
+const model_name = (__dirname.split('/').slice(-2)[0]);
 
 module.exports = {
   lifecycles: {
+    beforeUpdate(params, data) {
+      if(data.published_at === null ) {
+        let model_id = params.id
+        delete_model(model_id, modelDirPath)
+        call_build(params, model_name)
+      }
+    },
     afterUpdate(result, params, data) {
       if (result.published_at) {
-        // modify_strapi_data_yaml(result);
-        const model_name = (__dirname.split('/').slice(-2)[0])
-        console.log(model_name)
-        if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
-          const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result.id], (error, stdout, stderr) => {
-            if (error) {
-              throw error;
-            }
-            console.log(stdout);
-          })
-        } else {
-          const child = execFile('bash', [`/srv/ssg/build.sh`, result.id], (error, stdout, stderr) => {
-            if (error) {
-              throw error;
-            }
-            console.log(stdout);
-          })
-        }
+        call_build(result, model_name)
+
       }
+    },
+    afterDelete(result, params){
+      let model_id = result.id
+      call_build(result, model_name)
     }
   }
 };
