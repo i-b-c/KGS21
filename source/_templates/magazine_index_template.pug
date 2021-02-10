@@ -46,23 +46,23 @@ block content
                         //- GALLERY
                         if self.article_media && !self.hide_gallery
                             .gallery
+
+                                - var galleryImages = self.article_media.filter(a => a.gallery_image_medium && a.hero_image)
+
+                                //- If is single image
+                                if galleryImages.length === 1
                                     .row
+                                        .col-xs-12
+                                            img(src=`${m_api}${galleryImages[0].hero_image.url}`, class='img-responsive')
 
-                                    - var mediumImages = self.article_media.filter(a => a.gallery_image_medium)
-
-                                    if mediumImages.length === 1
-                                        .row
-                                            .col-xs-12
-                                                img(src=`${m_api}${mediumImages[0].hero_image ? mediumImages[0].hero_image.url : mediumImages[0].gallery_image_medium.url}`, class='img-responsive')
-
-                                    if mediumImages.length > 1
-                                        h2= self.labels.title.gallery
-                                        each galPhoto in mediumImages
-                                            if galPhoto.gallery_image_medium && galPhoto.hero_image
-                                                .single-image.col-xs-6.col-sm-3.col-md-4
-
-                                                    a.fancybox(rel="gallery" href=`${m_api}${galPhoto.hero_image.url}`)
-                                                        img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
+                                //- If more than one, make gallery
+                                if galleryImages.length > 1
+                                    h2= self.labels.title.gallery
+                                    .row
+                                        each galPhoto in galleryImages
+                                            .single-image.col-xs-6.col-sm-3.col-md-4
+                                                a.fancybox(rel="gallery" href=`${m_api}${galPhoto.hero_image.url}`)
+                                                    img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
 
 
                         //- VIDEO

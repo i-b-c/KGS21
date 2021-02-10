@@ -254,11 +254,11 @@ Performance: &Performance # performance #lavastus
     coverages:
         - *Coverage
     duration: (number)
-    other_works: 
+    other_works:
         - (backreference) #*Performance
-    other_works_back: 
+    other_works_back:
         - (backreference) #*Performance
-        
+
 #Event
 TicketInfo: &TicketInfo
     # _path: /ticket-infos
@@ -350,7 +350,6 @@ Newscast: &Newscast
     remote_id: (text)
 
 ArticleMedia: &ArticleMedia
-    original_image: *StrapiMedia
     hero_image: *StrapiMedia
     gallery_image_medium: *StrapiMedia
 
