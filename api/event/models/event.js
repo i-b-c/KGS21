@@ -7,8 +7,8 @@
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/models.html#lifecycle-hooks)
  * to customize this model
  */
-
-const path = require('path');
+const moment = require('moment')
+const path = require('path')
 const { 
   slugify, 
   load_yaml, 
@@ -37,12 +37,12 @@ function replace_name(data){
   if (data.performance && !(data.name_et && data.name_en)){
     obj = find_one_performance(data)
   }
-  if (data.performance && !data.name_et){
-    data.name_et = obj.name_et
+  if (obj && obj.name_et && data.performance && !data.name_et){
+    data.name_et = obj.name_et 
   }
-  if (data.performance && !data.name_en){
+  if (obj && obj.name_en && data.performance && !data.name_en){
     data.name_en = obj.name_en
-  } 
+  }
 }
 
 module.exports = {
@@ -53,6 +53,7 @@ module.exports = {
     beforeUpdate(params, data) {
       // console.log('Event data', data.performance, 'Event params',  params)
       replace_name(data)
+
       if(data.name_et) {
         data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
         data.slug_en = data.name_en ? slugify(data.name_en) + '-' + params.id : null
@@ -65,7 +66,19 @@ module.exports = {
         delete_model(model_id, modelDirPath)
         call_build(params, model_name)
       }
+      if(data.search_field === null || data.search_field === ''){
+        if(!data.name_et){
+          data.search_field = moment(data.start_time).format('DD.MM.YY')
+        }
+        if(!data.start_time){
+          data.search_field = data.name_et.trim()
+        }
+        else {
+          data.search_field = moment(data.start_time).format('DD.MM.YY') + ' ' +  data.name_et.trim()
+        }
+        
 
+      }
     },
     afterUpdate(result, params, data) {
 

@@ -34,8 +34,16 @@ module.exports = {
         data.slug_et = data.X_headline_et ? slugify( data.X_headline_et) + '-' + params.id : null
         data.slug_en = data.X_headline_en ? slugify( data.X_headline_en) + '-' + params.id : null
       }
-      if(data.search_field === null){
-        data.search_field = data.X_artist.trim() + ' ' + data.name_et.trim()
+      if(data.search_field === null || data.search_field === ''){
+        if(!data.X_artist){
+          data.search_field = data.name_et.trim()
+        }
+        if(!data.name_et){
+          data.search_field = data.X_artist.trim()
+        }
+        else {
+          data.search_field = data.X_artist.trim() + ' ' + data.name_et.trim()
+        }
       }
       if(data.published_at === null ) {
         let model_id = params.id

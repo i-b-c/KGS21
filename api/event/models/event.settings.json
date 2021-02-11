@@ -91,8 +91,8 @@
       "component": "ticket-info.x-ticket-info"
     },
     "performance": {
-      "via": "events",
-      "model": "performance"
+      "model": "performance",
+      "via": "events"
     },
     "parent_event": {
       "model": "event",
@@ -138,6 +138,9 @@
     },
     "premiere": {
       "type": "boolean"
+    },
+    "search_field": {
+      "type": "string"
     }
   }
 }
