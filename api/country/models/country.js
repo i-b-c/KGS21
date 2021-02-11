@@ -23,8 +23,9 @@ const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_up
 module.exports = {
   lifecycles: {
     beforeUpdate(params, data) {
-
-      data.slug = data.name_et ? slugify(data.name_et) : null
+      if(data.name_et) {
+        data.slug = data.name_et ? slugify(data.name_et) : null
+      }
       if(data.published_at === null ) {
         let model_id = params.id
         delete_model(model_id, modelDirPath)

@@ -26,8 +26,12 @@ module.exports = {
     beforeUpdate(params, data) {
 
       // console.log('params', params, 'data', data);
-      data.slug_et = data.name_et ? slugify( data.name_et) : null
-      data.slug_en = data.name_en ? slugify( data.name_en) : null
+      if(data.name_et){
+        data.slug_et = data.name_et ? slugify( data.name_et) : null
+      }
+      if(data.name_en){
+        data.slug_en = data.name_en ? slugify( data.name_en) : null
+      }
       if(data.published_at === null ) {
         let model_id = params.id
         delete_model(model_id, modelDirPath)

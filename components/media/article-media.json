@@ -7,15 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "original_image": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
     "hero_image": {
       "model": "file",
       "via": "related",

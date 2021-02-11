@@ -22,35 +22,36 @@ const resizeTo = (buffer, options) =>
     .toBuffer()
     .catch(() => null);
 
-const MINI_RESIZE_OPTIONS = {
-  width: 200,
-  height: 200,
-  fit: 'cover',
-  position: sharp.strategy.attention,
-};
+// customer don't use this format - 10.2.2021
+// const MINI_RESIZE_OPTIONS = {
+//   width: 200,
+//   height: 200,
+//   fit: 'cover',
+//   position: sharp.strategy.attention,
+// };
 
 const MEDIUM_RESIZE_OPTIONS = {
   width: 350,
   height: 350,
   fit: 'cover',
-  position: sharp.strategy.attention,
+  position: sharp.strategy.entropy,
 };
 
 const PORTRAIT_RESIZE_OPTIONS = {
   width: 1400,
   height: 700,
   fit: 'cover',
-  position: sharp.strategy.attention,
+  position: sharp.strategy.entropy,
 };
 
 const LANDSCAPE_RESIZE_OPTIONS = {
   width: 700,
   height: 1400,
   fit: 'cover',
-  position: sharp.strategy.attention,
+  position: sharp.strategy.entropy,
 };
 
-const ALL_OPTIONS =[MINI_RESIZE_OPTIONS, MEDIUM_RESIZE_OPTIONS, PORTRAIT_RESIZE_OPTIONS, LANDSCAPE_RESIZE_OPTIONS,]
+const ALL_OPTIONS =[MEDIUM_RESIZE_OPTIONS, PORTRAIT_RESIZE_OPTIONS, LANDSCAPE_RESIZE_OPTIONS,]
 
 
 const generateALL = async file => {

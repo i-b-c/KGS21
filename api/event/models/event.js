@@ -22,10 +22,37 @@ const model_name = (__dirname.split('/').slice(-2)[0]);
 const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
 const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
 
+function find_one_performance(data) {
+  let performanceDataPath = path.join('/srv', 'ssg', 'source', 'strapidata', 'Performance.yaml')
+  let all_performances = load_yaml(performanceDataPath)
+  for (let performance of all_performances){
+    if (performance.id === data.performance){
+      return performance
+    }
+  }
+}
+
+function replace_name(data){
+  let obj = null
+  if (data.performance && !(data.name_et && data.name_en)){
+    obj = find_one_performance(data)
+  }
+  if (data.performance && !data.name_et){
+    data.name_et = obj.name_et
+  }
+  if (data.performance && !data.name_en){
+    data.name_en = obj.name_en
+  } 
+}
 
 module.exports = {
   lifecycles: {
+    beforeCreate(data) {
+      replace_name(data)
+    },
     beforeUpdate(params, data) {
+      // console.log('Event data', data.performance, 'Event params',  params)
+      replace_name(data)
       if(data.name_et) {
         data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
         data.slug_en = data.name_en ? slugify(data.name_en) + '-' + params.id : null
@@ -38,13 +65,14 @@ module.exports = {
         delete_model(model_id, modelDirPath)
         call_build(params, model_name)
       }
+
     },
     afterUpdate(result, params, data) {
+
       if (result.published_at) {
         modify_strapi_data_yaml(result, modelDirPath)
         call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)
-
       }
     },
     afterDelete(result, params){

@@ -27,7 +27,7 @@ function modify_strapi_data_yaml(result, modelDirPath) {
   for(let model_ix in model_yaml) {
     const model = model_yaml[model_ix]
     if(model.id === model_id) {
-      console.log('Updated ARTICLES YAML:', result.id);
+      console.log('Updated YAML:', result.id);
       model_yaml[model_ix] = result
       break
     }
@@ -38,7 +38,7 @@ function modify_strapi_data_yaml(result, modelDirPath) {
     list_of_models.push(model.id)
   }
   if(!list_of_models.includes(result.id)){
-    console.log('New ARTICLE in YAML :', result.id)
+    console.log('New YAML :', result.id)
     model_yaml.push(result)
   }
 
@@ -50,7 +50,7 @@ function delete_model(deleted_id, modelDirPath) {
   for (let model_ix in model_yaml) {
     const model = model_yaml[model_ix]
     if (model.id === deleted_id) {
-      console.log('Delete ARTICLES YAML:', deleted_id)
+      console.log(`Delete YAML:`, deleted_id)
       delete model_yaml[model_ix]
       break
     }

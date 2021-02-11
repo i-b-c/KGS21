@@ -23,7 +23,7 @@ const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_up
 module.exports = {
   lifecycles: {
     beforeUpdate(params, data) {
-      // console.log(data.other_works, data.other_works_back)
+      console.log(data.search_field)
       if(data.name_et){
         data.slug_et = data.name_et ? slugify( data.name_et) + '-' + params.id : null
         data.slug_en = data.name_en ? slugify( data.name_en) + '-' + params.id : null
@@ -34,19 +34,21 @@ module.exports = {
         data.slug_et = data.X_headline_et ? slugify( data.X_headline_et) + '-' + params.id : null
         data.slug_en = data.X_headline_en ? slugify( data.X_headline_en) + '-' + params.id : null
       }
-      for (let work of data.other_works_back) {
-        if(!data.other_works.includes(work)) {
-          data.other_works.push(work)
-        }
+      if(data.search_field === null){
+        data.search_field = data.X_artist.trim() + ' ' + data.name_et.trim()
       }
       if(data.published_at === null ) {
         let model_id = params.id
         delete_model(model_id, modelDirPath)
         call_build(params, model_name)
       }
+      if (data.other_works){
+        data.other_works_back = data.other_works
+      }
     },
     afterUpdate(result, params, data) {
       if (result.published_at) {
+
         modify_strapi_data_yaml(result, modelDirPath)
         call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)

@@ -150,8 +150,7 @@
     },
     "search_field": {
       "type": "string",
-      "private": true,
-      "default": "Event'i juures kuvamiseks kirjuta siia midagi mille järgi event üles leida"
+      "private": true
     },
     "other_works": {
       "collection": "performance",

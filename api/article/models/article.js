@@ -25,8 +25,12 @@ module.exports = {
   lifecycles: {
     beforeUpdate(params, data) {
       // console.log('\nparams enne', params, '\ndata enne', data);
-      data.slug_et = data.title_et ? slugify( data.title_et + '-' + params.id ) : null
-      data.slug_en = data.title_en ? slugify( data.title_en + '-' + params.id ) : null
+      if(data.title_et){
+        data.slug_et = data.title_et ? slugify( data.title_et + '-' + params.id ) : null
+      }
+      if(data.title_en){
+        data.slug_en = data.title_en ? slugify( data.title_en + '-' + params.id ) : null
+      }
       if(data.published_at === null ) {
         let model_id = params.id
         delete_model(model_id, modelDirPath)
