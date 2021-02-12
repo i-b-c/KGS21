@@ -18,8 +18,16 @@ block content
                                     - first_project = false
                                     div.panel-collapse.collapse.in(id='collapse-'+project.id, role='tabpanel', aria-labelledby='heading-'+project.id)
                                         .main-text.h3
+                                            if project.event_media && project.event_media.original_image
+                                                img(src=`${m_api}${project.event_media.original_image.url}`)
+                                                br
+                                                br
                                             +markdown(project.description)
                                 else
                                     div.panel-collapse.collapse(id='collapse-'+project.id, role='tabpanel', aria-labelledby='heading-'+project.id)
                                         .main-text.h3
+                                            if project.event_media && project.event_media.original_image
+                                                img(src=`${m_api}${project.event_media.original_image.url}`)
+                                                br
+                                                br
                                             +markdown(project.description)

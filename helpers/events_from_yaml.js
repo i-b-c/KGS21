@@ -3,6 +3,7 @@ const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 const addConfigPathAliases = require('./add_config_path_aliases.js')
+const replaceImgPaths = require('./replace_img_paths.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
 // const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
@@ -112,8 +113,8 @@ for (const lang of LANGUAGES) {
         allData.push(oneEventData)
 
         if (createDir) {
-            oneEventData[`description_${lang}`] = oneEvent[`description_${lang}`] || null
-            oneEventData[`technical_info_${lang}`] = oneEvent[`technical_info_${lang}`] || null
+            oneEventData[`description_${lang}`] = oneEvent[`description_${lang}`] ? replaceImgPaths(oneEvent[`description_${lang}`]) : null
+            oneEventData[`technical_info_${lang}`] = oneEvent[`technical_info_${lang}`] ? replaceImgPaths(oneEvent[`technical_info_${lang}`]) : null
             oneEventData.duration = oneEvent.duration || null
             oneEventData.conversation = oneEvent.conversation || null
             oneEventData.videos = oneEvent.videos || null

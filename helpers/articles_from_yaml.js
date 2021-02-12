@@ -3,6 +3,7 @@ const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 const addConfigPathAliases = require('./add_config_path_aliases.js')
+const replaceImgPaths = require('./replace_img_paths.js')
 
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
 const target = [process.argv[3]]
@@ -57,6 +58,8 @@ for (const lang of LANGUAGES) {
                     a.path = a[`slug_${lang}`] || a.remote_id ? (a[`slug_${lang}`] ? `magazine/${a[`slug_${lang}`]}` : `magazine/${a.remote_id}`) : null
                 })
             }
+
+            if (article[`content_${lang}`]) { article[`content_${lang}`] = replaceImgPaths(article[`content_${lang}`])}
 
             if (createDir) {
                 if (article.authors && article.authors.length) {
