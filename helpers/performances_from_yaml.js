@@ -53,7 +53,7 @@ for (const lang of LANGUAGES) {
 
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.id.toString()) ? true : false
 
-        if (performance.remote_id) {
+        if (performance[`slug_${lang}`] || performance.remote_id) {
 
             performance.path = performance[`slug_${lang}`] || performance.remote_id ? (performance[`slug_${lang}`] ? `performance/${performance[`slug_${lang}`]}` : `performance/${performance.remote_id}`) : null
 
