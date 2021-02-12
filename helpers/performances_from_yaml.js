@@ -3,6 +3,7 @@ const yaml = require('js-yaml')
 const path = require('path')
 const pathAliasesFunc = require('./path_aliases_func.js')
 const addConfigPathAliases = require('./add_config_path_aliases.js')
+const replaceImgPaths = require('./replace_img_paths.js')
 
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
 // const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
@@ -75,6 +76,9 @@ for (const lang of LANGUAGES) {
                         addAliases(performance, [`performance/${slug}`])
                     }
                 }
+
+                if (performance[`description_${lang}`]) { performance[`description_${lang}`] = replaceImgPaths(performance[`description_${lang}`])}
+                if (performance[`technical_info_${lang}`]) { performance[`technical_info_${lang}`] = replaceImgPaths(performance[`technical_info_${lang}`])}
 
                 if (performance.events){
 
