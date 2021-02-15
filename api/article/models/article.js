@@ -20,10 +20,10 @@ const model_name = (__dirname.split('/').slice(-2)[0]);
 const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
 const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
 
-
 module.exports = {
   lifecycles: {
     beforeUpdate(params, data) {
+
       // console.log('\nparams enne', params, '\ndata enne', data);
       if(data.title_et){
         data.slug_et = data.title_et ? slugify( data.title_et + '-' + params.id ) : null
