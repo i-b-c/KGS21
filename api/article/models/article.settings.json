@@ -85,9 +85,14 @@
       "component": "media.media-content"
     },
     "users": {
-      "via": "myArticles",
       "plugin": "users-permissions",
-      "collection": "user"
+      "collection": "user",
+      "via": "myArticles"
+    },
+    "meedia_arenduses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.new-media"
     }
   }
 }

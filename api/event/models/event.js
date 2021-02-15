@@ -7,7 +7,7 @@
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/models.html#lifecycle-hooks)
  * to customize this model
  */
-const moment = require('moment')
+const moment = require('moment-timezone')
 const path = require('path')
 const { 
   slugify, 
@@ -68,16 +68,14 @@ module.exports = {
       }
       if(data.search_field === null || data.search_field === ''){
         if(!data.name_et){
-          data.search_field = moment(data.start_time).format('DD.MM.YY')
+          data.search_field = moment(data.start_time).tz('Europe/Tallinn').format('DD.MM.YY HH.mm')
         }
         if(!data.start_time){
-          data.search_field = data.name_et.trim()
+          data.search_field = data.name_et
         }
         else {
-          data.search_field = moment(data.start_time).format('DD.MM.YY') + ' ' +  data.name_et.trim()
+          data.search_field = moment(data.start_time).tz('Europe/Tallinn').format('DD.MM.YY HH.mm') + ' ' +  data.name_et
         }
-        
-
       }
     },
     afterUpdate(result, params, data) {

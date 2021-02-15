@@ -79,8 +79,8 @@
       "component": "performance-info.favorite"
     },
     "myArticles": {
-      "collection": "article",
       "via": "users",
+      "collection": "article",
       "dominant": true
     },
     "myPerformances": {
