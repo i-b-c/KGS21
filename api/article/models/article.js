@@ -1,4 +1,6 @@
 'use strict';
+var HTMLparser = require('node-html-parser')
+
 // module.exports = {};
 
 /**
@@ -35,6 +37,24 @@ module.exports = {
         let model_id = params.id
         delete_model(model_id, modelDirPath)
         call_build(params, model_name)
+      }
+      if (data.audios) {
+        let counter = 0
+        for (let audio of data.audios) {
+          counter++
+          if (!HTMLparser.valid(audio.content)) {
+            throw strapi.errors.badRequest("Can't save, audio " + counter + " html invalid!")
+          }
+        }
+      }
+      if (data.videos) {
+        let counter = 0
+        for (let video of data.videos) {
+          counter++
+          if (!HTMLparser.valid(video.content)) {
+            throw strapi.errors.badRequest("Can't save, video " + counter + " html invalid!")
+          }
+        }
       }
     },
     afterUpdate(result, params, data) {
