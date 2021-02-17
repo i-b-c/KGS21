@@ -24,8 +24,13 @@ const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_up
 
 module.exports = {
   lifecycles: {
+    async afterCreate(result, data) {
+      console.log('Result:', result, '\nObjekt loodud, teeb kohe: ')
+      delete(result.published_at)
+      await strapi.query('article').update({id : result.id }, result)
+    },
     beforeUpdate(params, data) {
-
+      console.log('beforeUpdate', params)
       // console.log('\nparams enne', params, '\ndata enne', data);
       if(data.title_et){
         data.slug_et = data.title_et ? slugify( data.title_et + '-' + params.id ) : null
@@ -34,6 +39,7 @@ module.exports = {
         data.slug_en = data.title_en ? slugify( data.title_en + '-' + params.id ) : null
       }
       if(data.published_at === null ) {
+        console.log('Draf olek, kustutan strapidatast ja build')
         let model_id = params.id
         delete_model(model_id, modelDirPath)
         call_build(params, model_name)
@@ -58,8 +64,11 @@ module.exports = {
       }
     },
     afterUpdate(result, params, data) {
+      console.log('afterUpdate', {result, params, data})
+
       // console.log('\nparams', params, '\ndata', data, '\nresult', result)
       if (result.published_at) {
+        console.log('Muudan strapidata ja build')
         modify_strapi_data_yaml(result, modelDirPath)
         call_build(result, model_name)
 

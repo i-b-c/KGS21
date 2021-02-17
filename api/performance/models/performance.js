@@ -23,10 +23,20 @@ const model_name = (__dirname.split('/').slice(-2)[0]);
 const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
 const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
 
+// async function find_one(data){
+//   return await strapi.query('performance').find({id: data.id})
+
+// }
+
 module.exports = {
+
   lifecycles: {
-    beforeUpdate(params, data) {
-      console.log(data.search_field)
+    async afterCreate(result, data) {
+      delete(result.published_at)
+      await strapi.query('performance').update({id : result.id }, result)
+    },
+    async beforeUpdate(params, data) {
+
       if (data.name_et) {
         data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
         data.slug_en = data.name_en ? slugify(data.name_en) + '-' + params.id : null
@@ -38,14 +48,14 @@ module.exports = {
         data.slug_en = data.X_headline_en ? slugify(data.X_headline_en) + '-' + params.id : null
       }
       if (data.search_field === null || data.search_field === '') {
-        if (!data.X_artist) {
-          data.search_field = data.name_et.trim()
+        if(!data.X_artist) {
+          data.search_field = data.name_et
         }
-        if (!data.name_et) {
-          data.search_field = data.X_artist.trim()
+        else if(!data.name_et) {
+          data.search_field = data.X_artist
         }
         else {
-          data.search_field = data.X_artist.trim() + ' ' + data.name_et.trim()
+          data.search_field = data.X_artist + ' ' + data.name_et
         }
       }
       if (data.published_at === null) {
@@ -76,10 +86,12 @@ module.exports = {
       }
     },
     afterUpdate(result, params, data) {
+      console.log('afterUpdate')
+
       if (result.published_at) {
 
-        // modify_strapi_data_yaml(result, modelDirPath)
-        // call_build(result, model_name)
+        modify_strapi_data_yaml(result, modelDirPath)
+        call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)
       }
     },

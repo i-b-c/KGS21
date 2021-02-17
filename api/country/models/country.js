@@ -22,6 +22,10 @@ const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_up
 
 module.exports = {
   lifecycles: {
+    async afterCreate(result, data) {
+      delete(result.published_at)
+      await strapi.query('country').update({id : result.id }, result)
+    },
     beforeUpdate(params, data) {
       if(data.name_et) {
         data.slug = data.name_et ? slugify(data.name_et) : null

@@ -20,6 +20,10 @@ const model_name = (__dirname.split('/').slice(-2)[0]);
 
 module.exports = {
   lifecycles: {
+    async afterCreate(result, data) {
+      delete(result.published_at)
+      await strapi.query('banner_type').update({id : result.id }, result)
+    },
     beforeUpdate(params, data) {
       // console.log('params', params, 'data', data);
       if(data.name){

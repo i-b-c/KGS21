@@ -39,7 +39,7 @@ function replace_name(data){
   if (data.performance && !(data.name_et && data.name_en)){
     obj = find_one_performance(data)
   }
-  if (obj && obj.name_et && data.performance && !data.name_et){
+  else if (obj && obj.name_et && data.performance && !data.name_et){
     data.name_et = obj.name_et 
   }
   if (obj && obj.name_en && data.performance && !data.name_en){
@@ -49,8 +49,9 @@ function replace_name(data){
 
 module.exports = {
   lifecycles: {
-    beforeCreate(data) {
-      replace_name(data)
+    async afterCreate(result, data) {
+      delete(result.published_at)
+      await strapi.query('event').update({id : result.id }, result)
     },
     beforeUpdate(params, data) {
       // console.log('Event data', data.performance, 'Event params',  params)

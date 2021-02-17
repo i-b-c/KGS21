@@ -23,6 +23,10 @@ const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_up
 
 module.exports = {
   lifecycles: {
+    async afterCreate(result, data) {
+      delete(result.published_at)
+      await strapi.query('newscast').update({id : result.id }, result)
+    },
     beforeUpdate(params, data) {
 
       // console.log('params', params, 'data', data);
