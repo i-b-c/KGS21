@@ -6,7 +6,7 @@ cd $DIR
 echo $PWD
 
 printf '\nMaking copy of live site\n'
-cp -a /srv/www/saal.ee/. /srv/www-bak/`date +"%Y-%m-%d_%H-%M-%S"`/
+cp -a /srv/www/saal.ee/. /srv/backup/temp/
 
 FILECOUNT="$(ls /srv/ssg/build -a | wc -l)"
 if [ $FILECOUNT -gt 4 ]
@@ -16,3 +16,5 @@ then
 else
 	printf '\n== Check build directory, something went wrong ==\n'
 fi
+
+bash /srv/ssg/TEST.sh

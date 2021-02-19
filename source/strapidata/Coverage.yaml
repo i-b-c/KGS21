@@ -1474,14 +1474,6 @@
     publish_date: '2017-01-20T00:00:00.000Z'
     remote_id: '4588'
 -
-    id: 2282
-    title: Taustamängijate tuleproov - Janar Ala
-    slug: taustamngijate-tuleproov-janar-ala-2282
-    source: Postimees
-    url: 'https://leht.postimees.ee/7097965/taustamangijate-tuleproov'
-    publish_date: '2020-10-29T00:00:00.000Z'
-    remote_id: '6822'
--
     id: 2266
     title: >-
         KULTUURIBIIT | Etenduskunstnike Üüve-Lydia Toompere ja Siim Tõniste
@@ -1825,6 +1817,14 @@
         http://kultuur.postimees.ee/4064875/superego-grammatilised-seiklused-kanuti-gildi-saalis
     publish_date: '2017-04-18T00:00:00.000Z'
     remote_id: '4732'
+-
+    id: 2282
+    title: Taustamängijate tuleproov - Janar Ala
+    slug: taustamngijate-tuleproov-janar-ala-2282
+    source: Postimees
+    url: 'https://leht.postimees.ee/7097965/taustamangijate-tuleproov'
+    publish_date: '2020-10-29T00:00:00.000Z'
+    remote_id: '6822'
 -
     id: 2064
     source: 'Kultuuriuudis, kultuur.err.ee'
@@ -2364,6 +2364,14 @@
     publish_date: '2017-06-26T00:00:00.000Z'
     remote_id: '4960'
 -
+    id: 2279
+    title: '“Millest me räägime, kui me räägima kinnisvarast?” Oliver Issak'
+    slug: millest-me-rgime-kui-me-rgima-kinnisvarast-oliver-issak-2279
+    source: Teater. Muusika. Kino.
+    url: 'https://www.temuki.ee/archives/2356'
+    publish_date: '2020-10-01T00:00:00.000Z'
+    remote_id: '6747'
+-
     id: 2041
     title: Esietendub Riina Maidre ja Nero Urke lavastus "Skaala surm"
     slug: esietendub-riina-maidre-ja-nero-urke-lavastus-skaala-surm-2041
@@ -2399,14 +2407,6 @@
     publish_date: '2017-03-28T00:00:00.000Z'
     remote_id: '4969'
 -
-    id: 2279
-    title: '“Millest me räägime, kui me räägima kinnisvarast?” Oliver Issak'
-    slug: millest-me-rgime-kui-me-rgima-kinnisvarast-oliver-issak-2279
-    source: Teater. Muusika. Kino.
-    url: 'https://www.temuki.ee/archives/2356'
-    publish_date: '2020-10-01T00:00:00.000Z'
-    remote_id: '6747'
--
     id: 2087
     title: >-
         “Mõtisklus Iggy Lond Malmborgi lavastusest “Physics and Phantasma””
@@ -2426,6 +2426,14 @@
     url: 'https://www.saal.ee/et/magazine/4721'
     publish_date: '2017-04-11T00:00:00.000Z'
     remote_id: '4731'
+-
+    id: 2271
+    title: '“Teater katku ajal” Madis Kolk, Valle-Sten Maiste, Meelis Oidsalu'
+    slug: teater-katku-ajal-madis-kolk-valle-sten-maiste-meelis-oidsalu-2271
+    source: Teatrivaht
+    url: 'https://vikerraadio.err.ee/1134153/teatrivaht-teater-katku-ajal'
+    publish_date: '2020-09-11T00:00:00.000Z'
+    remote_id: '6752'
 -
     id: 2241
     title: Sa näed nii palju ilusaid asju
@@ -2579,14 +2587,6 @@
         tutvustas riigiettevõttete juhtimise reformi.
     publish_date: '2015-09-08T00:00:00.000Z'
     remote_id: '1960'
--
-    id: 2271
-    title: '“Teater katku ajal” Madis Kolk, Valle-Sten Maiste, Meelis Oidsalu'
-    slug: teater-katku-ajal-madis-kolk-valle-sten-maiste-meelis-oidsalu-2271
-    source: Teatrivaht
-    url: 'https://vikerraadio.err.ee/1134153/teatrivaht-teater-katku-ajal'
-    publish_date: '2020-09-11T00:00:00.000Z'
-    remote_id: '6752'
 -
     id: 2364
     title: '"Pühanalja poole" Eika Herman ja Karl Saks, kirja pannud Kaja Kann'
@@ -2979,6 +2979,15 @@
     publish_date: '2016-05-18T00:00:00.000Z'
     remote_id: '4683'
 -
+    id: 2371
+    title: >-
+        KULTUURIBIIT | Etenduskunstnike Jette Loona Hermanise ja Johhan
+        Rosenbergi playlist 
+    source: Eesti Päevalehe KULTUURIBIIT
+    url: >-
+        https://epl.delfi.ee/artikkel/92401667/kultuuribiit-etenduskunstnike-jette-loona-hermanise-ja-johhan-rosenbergi-playlist?fbclid=IwAR28Qp3Nejo5ib8BUkRUjHw2_WOhXVRy7bzgazt7Yu-ZKiiO0atirD7Pu84
+    publish_date: '2021-01-29T10:00:00.000Z'
+-
     id: 2237
     title: >-
         "Jälle tõlkes kaduma läinud: kunstielu põnevamaks muutmise õpik ja 9300
@@ -3026,14 +3035,6 @@
     publish_date: '2018-04-09T00:00:00.000Z'
     remote_id: '5323'
 -
-    id: 2269
-    title: “Vaba tahte kohavalik” Marie Pullerits
-    slug: vaba-tahte-kohavalik-marie-pullerits-2269
-    source: Sirp
-    url: 'https://sirp.ee/s1-artiklid/teater/vaba-tahte-kohavalik/'
-    publish_date: '2020-09-11T00:00:00.000Z'
-    remote_id: '6753'
--
     id: 2262
     title: >-
         KULTUURIBIIT | Etenduskunstnike Üüve-Lydia Toompere ja Siim Tõniste
@@ -3057,6 +3058,14 @@
         https://epl.delfi.ee/kultuur/etenduskunstnikud-uurivad-laval-uhes-publikuga-mis-ja-kes-mojutab-meie-arvamusi?id=90832469&fbclid=IwAR18wxkggSmnQ1HjAIOlreSDHJpyA5BYZID-YNhRuFajQbAjFQ1wpdYsI90
     publish_date: '2020-08-26T00:00:00.000Z'
     remote_id: '6595'
+-
+    id: 2269
+    title: “Vaba tahte kohavalik” Marie Pullerits
+    slug: vaba-tahte-kohavalik-marie-pullerits-2269
+    source: Sirp
+    url: 'https://sirp.ee/s1-artiklid/teater/vaba-tahte-kohavalik/'
+    publish_date: '2020-09-11T00:00:00.000Z'
+    remote_id: '6753'
 -
     id: 2013
     title: Henri Hütt oma soololavastusest “Rhythm is a Dancer”
@@ -3083,15 +3092,6 @@
         https://www.sirp.ee/s1-artiklid/teater/miljoni-dollari-kvarteti-haabumisgruuv/
     publish_date: '2020-09-11T00:00:00.000Z'
     remote_id: '6754'
--
-    id: 2371
-    title: >-
-        KULTUURIBIIT | Etenduskunstnike Jette Loona Hermanise ja Johhan
-        Rosenbergi playlist 
-    source: Eesti Päevalehe KULTUURIBIIT
-    url: >-
-        https://epl.delfi.ee/artikkel/92401667/kultuuribiit-etenduskunstnike-jette-loona-hermanise-ja-johhan-rosenbergi-playlist?fbclid=IwAR28Qp3Nejo5ib8BUkRUjHw2_WOhXVRy7bzgazt7Yu-ZKiiO0atirD7Pu84
-    publish_date: '2021-01-29T10:00:00.000Z'
 -
     id: 2256
     title: '"Baltoscandali 1. päev: ekraan lavaks, üksilduse vägi" Jürgen Rooste'
@@ -3221,6 +3221,15 @@
     publish_date: '2016-04-21T00:00:00.000Z'
     remote_id: '4286'
 -
+    id: 2274
+    title: “Teatud joviaalne ühisvangistuse tunne” Meelis Oidsalu
+    slug: teatud-joviaalne-hisvangistuse-tunne-meelis-oidsalu-2274
+    source: Postimees
+    url: >-
+        https://leht.postimees.ee/7064225/teatud-joviaalne-uhisvangistuse-tunne?_ga=2.63651947.558127200.1600265890-1436981919.1599689359
+    publish_date: '2020-09-17T00:00:00.000Z'
+    remote_id: '6749'
+-
     id: 2216
     title: >-
         "Algab rahvusvaheline etenduskunstide festival SAAL Biennaal"
@@ -3263,15 +3272,6 @@
     publish_date: '2019-08-28T00:00:00.000Z'
     remote_id: '6339'
 -
-    id: 2274
-    title: “Teatud joviaalne ühisvangistuse tunne” Meelis Oidsalu
-    slug: teatud-joviaalne-hisvangistuse-tunne-meelis-oidsalu-2274
-    source: Postimees
-    url: >-
-        https://leht.postimees.ee/7064225/teatud-joviaalne-uhisvangistuse-tunne?_ga=2.63651947.558127200.1600265890-1436981919.1599689359
-    publish_date: '2020-09-17T00:00:00.000Z'
-    remote_id: '6749'
--
     id: 2128
     title: '"Kaks kalambuurgi kahes vaatuses": Alvar Loog'
     slug: kaks-kalambuurgi-kahes-vaatuses-alvar-loog-2128
@@ -3305,6 +3305,15 @@
         https://kultuur.err.ee/1064199/arvustus-uleharitud-koreograafide-tupikseis
     publish_date: '2020-03-15T00:00:00.000Z'
     remote_id: '6554'
+-
+    id: 2272
+    title: 'Publikumärk - Liis Seljamaa (alates 24:20)'
+    slug: publikumrk-liis-seljamaa-alates-2420-2272
+    source: KUKU raadio
+    url: >-
+        https://router.euddn.net/media.kuku.ee/publikumark/publikumark20200912.mp3
+    publish_date: '2020-09-12T00:00:00.000Z'
+    remote_id: '6751'
 -
     id: 2248
     title: >-
@@ -3423,15 +3432,6 @@
     publish_date: '2020-01-05T00:00:00.000Z'
     remote_id: '6262'
 -
-    id: 2272
-    title: 'Publikumärk - Liis Seljamaa (alates 24:20)'
-    slug: publikumrk-liis-seljamaa-alates-2420-2272
-    source: KUKU raadio
-    url: >-
-        https://router.euddn.net/media.kuku.ee/publikumark/publikumark20200912.mp3
-    publish_date: '2020-09-12T00:00:00.000Z'
-    remote_id: '6751'
--
     id: 2275
     title: '"Ei! See ei saa olla vastus" Ott Karulin'
     slug: ei-see-ei-saa-olla-vastus-ott-karulin-2275
@@ -3448,6 +3448,18 @@
     url: 'https://www.sirp.ee/s1-artiklid/teater/sonatu-hinge-sundroom/'
     publish_date: '2020-07-20T00:00:00.000Z'
     remote_id: '6812'
+-
+    id: 2278
+    title: >-
+        “Kanuti ja Von Krahli uuslavastused” Madis Kolk, Valle-Sten Maiste,
+        Meelis Oidsalu
+    slug: >-
+        kanuti-ja-von-krahli-uuslavastused-madis-kolk-valle-sten-maiste-meelis-oidsalu-2278
+    source: Teatrivaht
+    url: >-
+        https://vikerraadio.err.ee/1140089/teatrivaht-kanuti-ja-von-krahli-uuslavastused
+    publish_date: '2020-09-27T00:00:00.000Z'
+    remote_id: '6748'
 -
     id: 2220
     title: '"Arvustus. Alissa Šnaideri kosmogooniine rännak" Karin Allik'
@@ -3578,18 +3590,6 @@
         https://epl.delfi.ee/kultuur/baltoscandal-eriparane-festival-isearalikul-ajal?id=90372755
     publish_date: '2020-07-06T00:00:00.000Z'
     remote_id: '6815'
--
-    id: 2278
-    title: >-
-        “Kanuti ja Von Krahli uuslavastused” Madis Kolk, Valle-Sten Maiste,
-        Meelis Oidsalu
-    slug: >-
-        kanuti-ja-von-krahli-uuslavastused-madis-kolk-valle-sten-maiste-meelis-oidsalu-2278
-    source: Teatrivaht
-    url: >-
-        https://vikerraadio.err.ee/1140089/teatrivaht-kanuti-ja-von-krahli-uuslavastused
-    publish_date: '2020-09-27T00:00:00.000Z'
-    remote_id: '6748'
 -
     id: 2249
     title: >-
@@ -3748,24 +3748,6 @@
     url: 'http://www.sirp.ee/s1-artiklid/teater/kaks-vaprat-humaansuse-ruutlit/'
     publish_date: '2015-12-04T00:00:00.000Z'
     remote_id: '4114'
--
-    id: 2281
-    title: “Kas te olete oma ruumi(kogemuse)ga rahul?” Keiu Virro
-    slug: kas-te-olete-oma-ruumikogemusega-rahul-keiu-virro-2281
-    source: Eesti Päevaleht
-    url: >-
-        https://epl.delfi.ee/kultuur/arvustus-kas-te-olete-oma-ruumi-kogemuse-ga-rahul?id=91349343&fbclid=IwAR3ByxsTRFmJIvRZO2T6_O5DgzLbLe_BXvBxwNBGIFrzLWG_dDGqvQJ-NMA
-    publish_date: '2020-10-15T00:00:00.000Z'
-    remote_id: '6746'
--
-    id: 2273
-    title: “Teatrimaastikul on kasvanud teadmatus ja ebavõrdsus” Heili Sibrits
-    slug: teatrimaastikul-on-kasvanud-teadmatus-ja-ebavrdsus-heili-sibrits-2273
-    source: Postimees
-    url: >-
-        https://leht.postimees.ee/7063322/teatrimaastikul-on-kasvanud-teadmatus-ja-ebavordsus
-    publish_date: '2020-09-15T00:00:00.000Z'
-    remote_id: '6750'
 -
     id: 2083
     title: 'Kiirkohting: Iggy Lond Malmborg'
@@ -3994,6 +3976,15 @@
     publish_date: '2014-12-31T00:00:00.000Z'
     remote_id: '4186'
 -
+    id: 2281
+    title: “Kas te olete oma ruumi(kogemuse)ga rahul?” Keiu Virro
+    slug: kas-te-olete-oma-ruumikogemusega-rahul-keiu-virro-2281
+    source: Eesti Päevaleht
+    url: >-
+        https://epl.delfi.ee/kultuur/arvustus-kas-te-olete-oma-ruumi-kogemuse-ga-rahul?id=91349343&fbclid=IwAR3ByxsTRFmJIvRZO2T6_O5DgzLbLe_BXvBxwNBGIFrzLWG_dDGqvQJ-NMA
+    publish_date: '2020-10-15T00:00:00.000Z'
+    remote_id: '6746'
+-
     id: 2069
     source: 'Delta, Keiu Virro'
     url: >-
@@ -4009,6 +4000,15 @@
         http://kultuur.info/blogi/blog/anneliis-lepp-hendrik-kaljujarve-tahenduskihiline-overexposure/
     publish_date: '2017-01-04T00:00:00.000Z'
     remote_id: '4576'
+-
+    id: 2273
+    title: “Teatrimaastikul on kasvanud teadmatus ja ebavõrdsus” Heili Sibrits
+    slug: teatrimaastikul-on-kasvanud-teadmatus-ja-ebavrdsus-heili-sibrits-2273
+    source: Postimees
+    url: >-
+        https://leht.postimees.ee/7063322/teatrimaastikul-on-kasvanud-teadmatus-ja-ebavordsus
+    publish_date: '2020-09-15T00:00:00.000Z'
+    remote_id: '6750'
 -
     id: 2082
     title: 'Kultuuriuudised - Kärt Kelder (alates 5:21 - 7:20)'
