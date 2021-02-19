@@ -74,6 +74,7 @@ function call_build(result, model_name) {
   if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
     const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result_id, type], (error, stdout, stderr) => {
       if (error) {
+        console.log({error, stdout, stderr})
         throw error;
       }
       console.log(stdout);

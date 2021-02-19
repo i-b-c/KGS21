@@ -160,6 +160,9 @@
     "other_works_back": {
       "collection": "performance",
       "via": "other_works"
+    },
+    "duplicate": {
+      "type": "boolean"
     }
   }
 }

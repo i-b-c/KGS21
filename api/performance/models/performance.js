@@ -23,10 +23,12 @@ const model_name = (__dirname.split('/').slice(-2)[0]);
 const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
 const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
 
-// async function find_one(data){
-//   return await strapi.query('performance').find({id: data.id})
-
-// }
+async function make_duplicate(data) {
+    delete data.slug_et
+    delete data.slug_en
+    data.duplicate = false
+    await strapi.query('performance').create( data )
+}
 
 module.exports = {
 
@@ -36,6 +38,10 @@ module.exports = {
       await strapi.query('performance').update({id : result.id }, result)
     },
     async beforeUpdate(params, data) {
+
+      if(data.duplicate) {
+        await make_duplicate(data)
+      }
 
       if (data.name_et) {
         data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
@@ -63,6 +69,7 @@ module.exports = {
         delete_model(model_id, modelDirPath)
         call_build(params, model_name)
       }
+
       if (data.other_works) {
         data.other_works_back = data.other_works
       }
@@ -86,7 +93,7 @@ module.exports = {
       }
     },
     afterUpdate(result, params, data) {
-      console.log('afterUpdate')
+      // console.log('afterUpdate')
 
       if (result.published_at) {
 

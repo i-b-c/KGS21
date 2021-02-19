@@ -24,6 +24,13 @@ const model_name = (__dirname.split('/').slice(-2)[0]);
 const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
 const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
 
+async function make_duplicate(data) {
+    delete data.slug_et
+    delete data.slug_en
+    data.duplicate = false
+    await strapi.query('event').create( data )
+}
+
 function find_one_performance(data) {
   let performanceDataPath = path.join('/srv', 'ssg', 'source', 'strapidata', 'Performance.yaml')
   let all_performances = load_yaml(performanceDataPath)
@@ -53,9 +60,13 @@ module.exports = {
       delete(result.published_at)
       await strapi.query('event').update({id : result.id }, result)
     },
-    beforeUpdate(params, data) {
+    async beforeUpdate(params, data) {
       // console.log('Event data', data.performance, 'Event params',  params)
       replace_name(data)
+
+      if(data.duplicate) {
+        await make_duplicate(data)
+      }
 
       if(data.name_et) {
         data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
@@ -64,11 +75,13 @@ module.exports = {
         data.slug_et = data.subtitle_et ? slugify(data.subtitle_et) + '-' + params.id : null
         data.slug_en = data.subtitle_en ? slugify(data.subtitle_en) + '-' + params.id : null
       }
+
       if(data.published_at === null ) {
         let model_id = params.id
         delete_model(model_id, modelDirPath)
         call_build(params, model_name)
       }
+
       if(data.search_field === null || data.search_field === ''){
         if(!data.name_et){
           data.search_field = moment(data.start_time).tz('Europe/Tallinn').format('DD.MM.YY HH.mm')

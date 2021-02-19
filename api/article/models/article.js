@@ -22,15 +22,27 @@ const model_name = (__dirname.split('/').slice(-2)[0]);
 const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
 const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
 
+async function make_duplicate(data) {
+    delete data.slug_et
+    delete data.slug_en
+    data.duplicate = false
+    await strapi.query('article').create( data )
+}
+
 module.exports = {
   lifecycles: {
     async afterCreate(result, data) {
-      console.log('Result:', result, '\nObjekt loodud, teeb kohe: ')
+      // console.log('afterCreate Result:', result, '\nObjekt loodud, käivitab kohe: ')
       delete(result.published_at)
       await strapi.query('article').update({id : result.id }, result)
     },
-    beforeUpdate(params, data) {
-      console.log('beforeUpdate', params)
+    async beforeUpdate(params, data) {
+      // console.log('beforeUpdate', data)
+      // if(data.duplicate) {
+      //   await make_duplicate(data)
+      // }
+
+      // console.log('beforeUpdate', params)
       // console.log('\nparams enne', params, '\ndata enne', data);
       if(data.title_et){
         data.slug_et = data.title_et ? slugify( data.title_et + '-' + params.id ) : null
@@ -38,12 +50,14 @@ module.exports = {
       if(data.title_en){
         data.slug_en = data.title_en ? slugify( data.title_en + '-' + params.id ) : null
       }
+      
       if(data.published_at === null ) {
         console.log('Draf olek, kustutan strapidatast ja build')
         let model_id = params.id
         delete_model(model_id, modelDirPath)
         call_build(params, model_name)
       }
+      
       if (data.audios) {
         let counter = 0
         for (let audio of data.audios) {
@@ -64,8 +78,7 @@ module.exports = {
       }
     },
     afterUpdate(result, params, data) {
-      console.log('afterUpdate', {result, params, data})
-
+      // console.log('afterUpdate', {result, params, data})
       // console.log('\nparams', params, '\ndata', data, '\nresult', result)
       if (result.published_at) {
         console.log('Muudan strapidata ja build')

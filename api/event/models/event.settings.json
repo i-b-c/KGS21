@@ -141,6 +141,9 @@
     },
     "search_field": {
       "type": "string"
+    },
+    "duplicate": {
+      "type": "boolean"
     }
   }
 }
