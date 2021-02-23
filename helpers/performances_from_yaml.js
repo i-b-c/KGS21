@@ -46,10 +46,11 @@ const LANGUAGES = ['et', 'en']
 let performance_index_template = `/_templates/performance_index_template.pug`
 
 for (const lang of LANGUAGES) {
+    const STRAPIDATA_PERFORMANCES_C = JSON.parse(JSON.stringify(STRAPIDATA_PERFORMANCES))
     const performancesYAMLPath = path.join(fetchDir, `performances.${lang}.yaml`)
     let allData = []
 
-    for (const performance of STRAPIDATA_PERFORMANCES) {
+    for (const performance of STRAPIDATA_PERFORMANCES_C) {
 
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(performance.id.toString()) ? true : false
 
@@ -63,6 +64,20 @@ for (const lang of LANGUAGES) {
             }
 
             if (createDir) {
+
+                if (performance.other_works) {
+                    performance.other_works = performance.other_works.map(p => {
+                        const otherWork = STRAPIDATA_PERFORMANCES_C.filter(a => a.id === p.id)[0]
+                        if (otherWork && otherWork[`name_${lang}`] && (otherWork[`slug_${lang}`] || otherWork.remote_id)) {
+                            return {
+                                [`name_${lang}`]: otherWork[`name_${lang}`],
+                                [`path_${lang}`]: otherWork[`slug_${lang}`] || otherWork.remote_id ? (otherWork[`slug_${lang}`] ? `performance/${otherWork[`slug_${lang}`]}` : `performance/${otherWork.remote_id}`) : null
+                            }
+                        } else {
+                            return null
+                        }
+                    }).filter(a => a !== null)
+                }
 
                 if (lang === 'et') {
                     addAliases(performance, [`et/performance/${performance.remote_id}`])

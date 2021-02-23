@@ -634,6 +634,25 @@
                 }
             }
         ],
+        "2021-4-12": [
+            {
+                "et_id": "gangstarap-1624",
+                "en_id": "gangstrap-1624",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Gangstarap",
+                    "en": "Gangstrap"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-2-4": [
             {
                 "et_id": "6945",
@@ -746,6 +765,25 @@
                 }
             }
         ],
+        "2021-2-25": [
+            {
+                "et_id": "6099",
+                "en_id": "6099",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "ENNEMINEVIK",
+                    "en": "PAST PERFECT"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
         "2021-2-26": [
             {
                 "et_id": "6865",
@@ -776,25 +814,6 @@
                 "name": {
                     "et": "Sinu nirvaanale ",
                     "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-2-25": [
-            {
-                "et_id": "6099",
-                "en_id": "6099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "ENNEMINEVIK",
-                    "en": "PAST PERFECT"
                 },
                 "time": "19:30",
                 "location": {
