@@ -87,6 +87,8 @@ block content
                                                 if event[`performance_subtitle_${self.locale}`]
                                                     span.subtitle= event[`performance_subtitle_${self.locale}`]
                                         else
+                                            if event.id === 2179
+                                                - console.log('PEKKIS')
                                             //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
                                             a(href=`/${lang_path}${event.path}`)= event[`name_${self.locale}`]
                                                 if event[`X_headline_${self.locale}`]
@@ -121,12 +123,12 @@ block content
 
                                         if event.X_ticket_info.min_price
                                             //- if event.X_ticket_info.min_price == op.get(p, 'max-price')
-                                            //-     p= event.X_ticket_info.min_price + '€'
+                                            //-     p= event.X_ticket_info.min_price
                                             //- else
-                                            //-     p= event.X_ticket_info.min_price + '/' + op.get(p, 'max-price') + '€'
+                                            //-     p= event.X_ticket_info.min_price + '/' + op.get(p, 'max-price')
 
                                         if event.X_ticket_info.onsite_price
-                                            p= self.labels.title.onsite_price + ': ' + event.X_ticket_info.onsite_price + '€'
+                                            p= self.labels.title.onsite_price + ': ' + event.X_ticket_info.onsite_price
                                 //-  && new Date(event.start_time) > new Date()
                                 if event.X_ticket_info
                                     .col-xs-6.col-md-2.col-lg-2.text-right
