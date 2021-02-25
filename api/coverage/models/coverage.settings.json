@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coverages",
+  "info": {
+    "name": "Coverage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "et",
+        "en"
+      ]
+    },
+    "source": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "publish_date": {
+      "type": "datetime"
+    },
+    "remote_id": {
+      "type": "uid"
+    },
+    "performance": {
+      "via": "coverages",
+      "model": "performance"
+    },
+    "event": {
+      "via": "coverages",
+      "model": "event"
+    }
+  }
+}
