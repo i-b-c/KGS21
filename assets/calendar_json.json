@@ -615,25 +615,6 @@
                 }
             }
         ],
-        "2021-3-15": [
-            {
-                "et_id": "kontsertsari-improtest-1604",
-                "en_id": "concert-series-improtest-1604",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kontsertsari IMPROTEST",
-                    "en": "Concert series IMPROTEST"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2021-4-12": [
             {
                 "et_id": "gangstarap-1624",
@@ -645,6 +626,44 @@
                 "name": {
                     "et": "Gangstarap",
                     "en": "Gangstrap"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-3-6": [
+            {
+                "et_id": "scrapyard-20-1625",
+                "en_id": "scrapyard-20-1625",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Scrapyard 2.0",
+                    "en": "Scrapyard 2.0"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-3-15": [
+            {
+                "et_id": "kontsertsari-improtest-1604",
+                "en_id": "concert-series-improtest-1604",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kontsertsari IMPROTEST",
+                    "en": "Concert series IMPROTEST"
                 },
                 "time": "19:30",
                 "location": {
@@ -860,17 +879,17 @@
                 }
             }
         ],
-        "2021-3-24": [
+        "2021-3-16": [
             {
-                "et_id": "6538",
-                "en_id": "6538",
+                "et_id": "6187",
+                "en_id": "6187",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
+                    "et": "Evolutsiooni revolutsioon",
+                    "en": "The revolution on evolution"
                 },
                 "time": "19:30",
                 "location": {
@@ -934,17 +953,17 @@
                 }
             }
         ],
-        "2021-3-16": [
+        "2021-3-24": [
             {
-                "et_id": "6187",
-                "en_id": "6187",
+                "et_id": "6538",
+                "en_id": "6538",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
                 },
                 "time": "19:30",
                 "location": {
@@ -1029,25 +1048,6 @@
                 }
             }
         ],
-        "2021-3-17": [
-            {
-                "et_id": "6187",
-                "en_id": "6187",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2021-2-6": [
             {
                 "et_id": "5735",
@@ -1114,6 +1114,25 @@
                 "name": {
                     "et": "Peks mõisatallis / Tallinnas",
                     "en": "Beating at the stables of the manor / in Tallinn"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-3-17": [
+            {
+                "et_id": "6187",
+                "en_id": "6187",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Evolutsiooni revolutsioon",
+                    "en": "The revolution on evolution"
                 },
                 "time": "19:30",
                 "location": {
