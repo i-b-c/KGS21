@@ -1,9 +1,10 @@
 #!/bin/bash
-TIMESTAMP=`date +%Y-%m-%d_%H-%M-%S`
+FULL_TIMESTAMP=$1
+TIMESTAMP=${FULL_TIMESTAMP%.*}
 BACKUP_DIR="/srv/www-bak/"
 PREV_BACKUP_DIR="$BACKUP_DIR""$(cd /srv/www-bak && ls -1t | grep "^b.*[0-9]$" | head -1)/"
-NEW_BACKUP_DIR=""$BACKUP_DIR"backup_""$TIMESTAMP/"
-START_DIR="$BACKUP_DIR"temp/
+NEW_BACKUP_DIR=""$BACKUP_DIR"backup_""$TIMESTAMP"/
+START_DIR=/srv/www-bak/temp_"$FULL_TIMESTAMP"/
 NEW_FILES_COPIED=0
 HARDLINKS_COPIED=0
 CHANGED_FILES_COPIED=0
@@ -12,8 +13,6 @@ echo Create_bak.sh:
 echo Comparing last live site to previous backup: "$PREV_BACKUP_DIR"
 exec &> "$BACKUP_DIR"backup_"$TIMESTAMP".log
 mkdir "$NEW_BACKUP_DIR"
-
-
 
 cd "$START_DIR"
 
@@ -37,7 +36,6 @@ loop_dir()
             if [ "${stringtoarray[-1]}" != "*" ] 
             then
                 fileAtNewBackup=${fileAtOrigin/"$START_DIR"/"$NEW_BACKUP_DIR"}
-                # echo "- File: $fileAtOrigin"
                 fileAtLastBackup=${fileAtOrigin/"$START_DIR"/"$PREV_BACKUP_DIR"}
                 originhash=$(sha256sum "$fileAtOrigin" | cut -d " " -f 1 )
 
@@ -74,7 +72,7 @@ loop_dir "$CURRENT_DIR"
 
 echo 
 echo 
-echo backup "$TIMESTAMP" finished `date +%Y-%m-%d_%H-%M-%S`:
+echo backup "$FULL_TIMESTAMP" finished `date +%Y-%m-%d_%H-%M-%S.%3N`:
 echo "$NEW_FILES_COPIED" - new files copied
 echo "$CHANGED_FILES_COPIED" - changed files copied
 echo "$HARDLINKS_COPIED" - existing hardlinks copied
@@ -82,6 +80,6 @@ echo
 echo $(find $START_DIR -type f | wc -l) - total files in $START_DIR
 echo $(($HARDLINKS_COPIED+$CHANGED_FILES_COPIED+$NEW_FILES_COPIED)) - total backup entries created
 
-rm -r "$BACKUP_DIR"/temp
+rm -r "$START_DIR"
 
 exit
