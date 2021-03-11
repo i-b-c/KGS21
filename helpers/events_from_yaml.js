@@ -256,7 +256,7 @@ function coveragesByDate(coverages) {
     sorted_coverages = coverages.sort((a, b) => new Date(a.publish_date)-new Date(b.publish_date))
     coverages_array = {}
     coverge_dates = sorted_coverages.map(d => {
-        if (d.publish_date) {
+        if (d.publish_date && typeof d.publish_date === 'string') {
             coverages_array[d.publish_date] = sorted_coverages.filter(c =>  c.publish_date && d.publish_date && d.publish_date.substr(0,10) === c.publish_date.substr(0,10))
         }
     })
