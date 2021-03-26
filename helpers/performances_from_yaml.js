@@ -97,6 +97,8 @@ for (const lang of LANGUAGES) {
 
                 if (performance.events){
 
+                    performance.events = performance.events.map(p => STRAPIDATA_EVENTS.filter(e => e.id === p.id)[0])
+
                     let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
                     performance.minToMaxEvents = minToMaxSortedEvents.map(e => {
                         if (e.location) {
