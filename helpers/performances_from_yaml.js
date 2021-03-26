@@ -34,10 +34,10 @@ const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerforma
 })
 
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
-const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.events.map(ev => ev.id.toString()).includes(process.argv[4])))[0] || []).id
+const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.events.map(ev => ev.id.toString()).includes(process.argv[4])))[0] || []).id.toString()
 const target = process.argv[3] && process.argv[3] === 'e' && process.argv[4] ? (eventPerformanceId ? eventPerformanceId : null) : process.argv[3]
 
-fetchSpecific = targeted ? [target] : []
+const fetchSpecific = targeted ? [target] : []
 
 const allPathAliases = []
 
@@ -64,7 +64,6 @@ for (const lang of LANGUAGES) {
             }
 
             if (createDir) {
-
                 if (performance.other_works) {
                     performance.other_works = performance.other_works.map(p => {
                         const otherWork = STRAPIDATA_PERFORMANCES_C.filter(a => a.id === p.id)[0]
@@ -102,7 +101,6 @@ for (const lang of LANGUAGES) {
                         if (e.location) {
                             e.location = e.location[`name_${lang}`] ? e.location[`name_${lang}`] : null
                         }
-                        console.log(e)
                         return e
                     })
                     let eventsCopy = JSON.parse(JSON.stringify(performance.events))
