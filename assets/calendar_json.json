@@ -1,280 +1,7 @@
 {
-    "minDate": "2020-12-1",
-    "maxDate": "2021-4-15",
+    "minDate": "2021-1-1",
+    "maxDate": "2021-4-24",
     "events": {
-        "2020-12-13": [
-            {
-                "et_id": "6865",
-                "en_id": "6865",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-2": [
-            {
-                "et_id": "6858",
-                "en_id": "6858",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "6858",
-                "en_id": "6858",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-11": [
-            {
-                "et_id": "6821",
-                "en_id": "6821",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Puuris või pilves - kas teater saab olla võrgus?",
-                    "en": "Puuris või pilves - kas teater saab olla võrgus?"
-                },
-                "time": "16:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "6865",
-                "en_id": "6865",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-18": [
-            {
-                "et_id": "6180",
-                "en_id": "6180",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-10": [
-            {
-                "et_id": "6871",
-                "en_id": "6871",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "6865",
-                "en_id": "6865",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-3": [
-            {
-                "et_id": "6858",
-                "en_id": "6858",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "6858",
-                "en_id": "6858",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "!!JÄÄB ÄRA!! Uncanny Valley (Õõvaorg)",
-                    "en": "!!JÄÄB ÄRA!! Uncanny Valley"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-19": [
-            {
-                "et_id": "6180",
-                "en_id": "6180",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-17": [
-            {
-                "et_id": "6180",
-                "en_id": "6180",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-16": [
-            {
-                "et_id": "6180",
-                "en_id": "6180",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LÄVI",
-                    "en": "LÄVI"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "6871",
-                "en_id": "6871",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "6871",
-                "en_id": "6871",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2021-1-20": [
             {
                 "et_id": "6538",
@@ -313,179 +40,10 @@
                 }
             }
         ],
-        "2020-12-12": [
-            {
-                "et_id": "6871",
-                "en_id": "6871",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "6871",
-                "en_id": "6871",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Cathexis",
-                    "en": "Cathexis"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2020-12-7": [
-            {
-                "et_id": "6865",
-                "en_id": "6865",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-29": [
-            {
-                "et_id": "6538",
-                "en_id": "6538",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-15": [
-            {
-                "et_id": "6091",
-                "en_id": "6091",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "sest meid on õpetatud madusid kartma",
-                    "en": "sest meid on õpetatud madusid kartma"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2020-12-14": [
-            {
-                "et_id": "6091",
-                "en_id": "6091",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "sest meid on õpetatud madusid kartma",
-                    "en": "sest meid on õpetatud madusid kartma"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2020-12-30": [
-            {
-                "et_id": "6538",
-                "en_id": "6538",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-9": [
-            {
-                "et_id": "5099",
-                "en_id": "5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-8": [
-            {
-                "et_id": "5099",
-                "en_id": "5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2021-1-26": [
             {
-                "et_id": "6865",
-                "en_id": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -503,8 +61,8 @@
         ],
         "2021-1-25": [
             {
-                "et_id": "6865",
-                "en_id": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -512,44 +70,6 @@
                 "name": {
                     "et": "Sinu nirvaanale ",
                     "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-20": [
-            {
-                "et_id": "6865",
-                "en_id": "6865",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-4": [
-            {
-                "et_id": "6894",
-                "en_id": "6894",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kontsertsari IMPROTEST: SEEMNED / Improtest 15 Collective",
-                    "en": "Concert series IMPROTEST: SEEDS  / Improtest 15 Collective"
                 },
                 "time": "19:30",
                 "location": {
@@ -579,8 +99,8 @@
         ],
         "2021-1-28": [
             {
-                "et_id": "6865",
-                "en_id": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -598,8 +118,8 @@
         ],
         "2021-1-29": [
             {
-                "et_id": "6865",
-                "en_id": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -691,8 +211,8 @@
                 }
             },
             {
-                "et_id": "6924",
-                "en_id": "6924",
+                "et_id": "eden-detail-1598",
+                "en_id": "eden-detail-1598",
                 "tag": [
                     "event"
                 ],
@@ -710,8 +230,27 @@
         ],
         "2021-2-27": [
             {
-                "et_id": "6865",
-                "en_id": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sinu nirvaanale ",
+                    "en": "For your nirvana"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-2-14": [
+            {
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -729,8 +268,8 @@
         ],
         "2021-2-23": [
             {
-                "et_id": "6099",
-                "en_id": "6099",
+                "et_id": "enneminevik-96",
+                "en_id": "past-perfect-96",
                 "tag": [
                     "event"
                 ],
@@ -746,17 +285,17 @@
                 }
             }
         ],
-        "2021-2-14": [
+        "2021-2-25": [
             {
-                "et_id": "6865",
-                "en_id": "6865",
+                "et_id": "enneminevik-96",
+                "en_id": "past-perfect-96",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
+                    "et": "ENNEMINEVIK",
+                    "en": "PAST PERFECT"
                 },
                 "time": "19:30",
                 "location": {
@@ -784,29 +323,10 @@
                 }
             }
         ],
-        "2021-2-25": [
-            {
-                "et_id": "6099",
-                "en_id": "6099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "ENNEMINEVIK",
-                    "en": "PAST PERFECT"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2021-2-26": [
             {
-                "et_id": "6865",
-                "en_id": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -824,8 +344,8 @@
         ],
         "2021-2-13": [
             {
-                "et_id": "6865",
-                "en_id": "6865",
+                "et_id": "sinu-nirvaanale-129",
+                "en_id": "for-your-nirvana-129",
                 "tag": [
                     "event"
                 ],
@@ -841,10 +361,103 @@
                 }
             }
         ],
+        "2021-4-4": [
+            {
+                "et_id": "kas-sa-etendad-iseennast-1627",
+                "en_id": "are-you-performing-yourself-1627",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas sa etendad iseennast?",
+                    "en": "Are You Performing Yourself?"
+                },
+                "time": "12:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "iv-pev-1631",
+                "en_id": "day-iv-1631",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kõheda vastasmõju festival 2021",
+                    "en": "Festival Of Spooky Action At A Distance 2021"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-4-19": [
+            {
+                "et_id": "kontsertsari-improtest-1604",
+                "en_id": "concert-series-improtest-1604",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kontsertsari IMPROTEST",
+                    "en": "Concert series IMPROTEST"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-4-21": [
+            {
+                "et_id": "6538",
+                "en_id": "6538",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-4-23": [
+            {
+                "et_id": "6538",
+                "en_id": "6538",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-3-12": [
             {
-                "et_id": "6375",
-                "en_id": "6375",
+                "et_id": "planet-alexithymia-261",
+                "en_id": "planet-alexithymia-261",
                 "tag": [
                     "event"
                 ],
@@ -857,6 +470,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-4-24": [
+            {
+                "et_id": "6538",
+                "en_id": "6538",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1010,6 +642,25 @@
                 }
             }
         ],
+        "2021-4-2": [
+            {
+                "et_id": "ii-pev-1629",
+                "en_id": "day-ii-1629",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kõheda vastasmõju festival 2021",
+                    "en": "Festival Of Spooky Action At A Distance 2021"
+                },
+                "time": "20:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-4-14": [
             {
                 "et_id": "5099",
@@ -1026,6 +677,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-4-1": [
+            {
+                "et_id": "i-pev-1628",
+                "en_id": "day-i-1628",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kõheda vastasmõju festival 2021",
+                    "en": "Festival Of Spooky Action At A Distance 2021"
+                },
+                "time": "15:40",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1067,8 +737,8 @@
                 }
             },
             {
-                "et_id": "6924",
-                "en_id": "6924",
+                "et_id": "eden-detail-1598",
+                "en_id": "eden-detail-1598",
                 "tag": [
                     "event"
                 ],
@@ -1100,6 +770,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-4-3": [
+            {
+                "et_id": "iii-pev-1630",
+                "en_id": "day-iii-1630",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kõheda vastasmõju festival 2021",
+                    "en": "Festival Of Spooky Action At A Distance 2021"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1162,8 +851,8 @@
         ],
         "2021-3-11": [
             {
-                "et_id": "6375",
-                "en_id": "6375",
+                "et_id": "planet-alexithymia-261",
+                "en_id": "planet-alexithymia-261",
                 "tag": [
                     "event"
                 ],
@@ -1176,6 +865,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2021-3-27": [
+            {
+                "et_id": "mkslakunst-1636",
+                "en_id": "mkslaart-1636",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Māksla/Kunst",
+                    "en": "Māksla/Art"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1219,8 +927,8 @@
         ],
         "2021-2-7": [
             {
-                "et_id": "6924",
-                "en_id": "6924",
+                "et_id": "eden-detail-1598",
+                "en_id": "eden-detail-1598",
                 "tag": [
                     "event"
                 ],
@@ -1238,8 +946,8 @@
         ],
         "2021-2-1": [
             {
-                "et_id": "6924",
-                "en_id": "6924",
+                "et_id": "eden-detail-1598",
+                "en_id": "eden-detail-1598",
                 "tag": [
                     "event"
                 ],
@@ -1257,8 +965,8 @@
         ],
         "2021-2-3": [
             {
-                "et_id": "6924",
-                "en_id": "6924",
+                "et_id": "eden-detail-1598",
+                "en_id": "eden-detail-1598",
                 "tag": [
                     "event"
                 ],
@@ -1266,25 +974,6 @@
                 "name": {
                     "et": "Eden Detail",
                     "en": "Eden Detail"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2020-12-28": [
-            {
-                "et_id": "6538",
-                "en_id": "6538",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
                 },
                 "time": "19:30",
                 "location": {

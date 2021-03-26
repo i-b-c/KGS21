@@ -97,13 +97,12 @@ for (const lang of LANGUAGES) {
 
                 if (performance.events){
 
-                    performance.events = performance.events.map(p => STRAPIDATA_EVENTS.filter(e => e.id === p.id)[0])
-
                     let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
                     performance.minToMaxEvents = minToMaxSortedEvents.map(e => {
                         if (e.location) {
                             e.location = e.location[`name_${lang}`] ? e.location[`name_${lang}`] : null
                         }
+                        console.log(e)
                         return e
                     })
                     let eventsCopy = JSON.parse(JSON.stringify(performance.events))

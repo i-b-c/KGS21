@@ -1,6 +1,6 @@
 -
     id: 1
-    name: 'about-article läheb SAAL lehele, council ja corona INFO lehele '
+    name: 'about-article läheb SAAL lehele, council ja corona INFO lehele'
     bg_color: 1a1919
     about_article:
         id: 1

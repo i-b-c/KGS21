@@ -335,6 +335,17 @@
         http://kultuur.err.ee/v/teater/479ba8e8-f7b1-42c9-878b-583a6d9a7ca5/arvustus-elavhobedase-jurgeni-fenomen
     remote_id: '4498'
 -
+    id: 2378
+    title: >-
+        "Kanuti SAAL alustab aastat uuslavastusega, mis vaatab uue pilguga otsa
+        eestlastikkusele"
+    slug: >-
+        kanuti-saal-alustab-aastat-uuslavastusega-mis-vaatab-uue-pilguga-otsa-eestlastikkusele-2378
+    source: Postimees
+    url: >-
+        https://kultuur.postimees.ee/7168742/kanuti-saal-alustab-aastat-uuslavastusega-mis-vaatab-uue-pilguga-otsa-eestlastikkusele
+    publish_date: '2021-01-31T10:00:00.000Z'
+-
     id: 2019
     title: Malmborgs unaesthetic state
     source: Nytid
@@ -472,14 +483,16 @@
     publish_date: '2015-05-04T00:00:00.000Z'
     remote_id: '4190'
 -
-    id: 2232
-    title: '"Lavastus „Enneminevik” kõnetab iga vaatajat isiklikult" Iiris Viirpalu'
-    slug: lavastus-enneminevik-knetab-iga-vaatajat-isiklikult-iiris-viirpalu-2232
+    id: 2377
+    title: >-
+        "KULTUURIBIIT | Etenduskunstnike Jette Loona Hermanise ja Johhan
+        Rosenbergi playlist" 
+    slug: >-
+        kultuuribiit-etenduskunstnike-jette-loona-hermanise-ja-johhan-rosenbergi-playlist-2377
     source: Eesti Päevaleht
     url: >-
-        https://epl.delfi.ee/kultuur/lavastus-enneminevik-konetab-iga-vaatajat-isiklikult?id=87813733
-    publish_date: '2019-10-23T00:00:00.000Z'
-    remote_id: '6300'
+        https://epl.delfi.ee/artikkel/92401667/kultuuribiit-etenduskunstnike-jette-loona-hermanise-ja-johhan-rosenbergi-playlist
+    publish_date: '2021-01-29T10:00:00.000Z'
 -
     id: 2060
     title: '"On ainult võimalus mäletada või unustada" Kaja Kann'
@@ -598,6 +611,17 @@
         http://kultuur.postimees.ee/3904075/on-ainult-voimalus-maeletada-voi-unustada
     publish_date: '2016-11-09T00:00:00.000Z'
     remote_id: '4518'
+-
+    id: 2379
+    title: >-
+        "Kanuti Gildi SAALi uus lavastus annab vanadele detailidele uued
+        tähendused"
+    slug: >-
+        kanuti-gildi-saali-uus-lavastus-annab-vanadele-detailidele-uued-thendused-2379
+    source: ERR Aktuaalne Kaamere
+    url: >-
+        https://kultuur.err.ee/1608091936/kanuti-gildi-saali-uus-lavastus-annab-vanadele-detailidele-uued-tahendused
+    publish_date: '2021-01-29T10:00:00.000Z'
 -
     id: 2042
     title: Riina Maidre vajas Nero Urket
@@ -847,6 +871,15 @@
     publish_date: '2016-05-18T00:00:00.000Z'
     remote_id: '4684'
 -
+    id: 2232
+    title: '"Lavastus „Enneminevik” kõnetab iga vaatajat isiklikult" Iiris Viirpalu'
+    slug: lavastus-enneminevik-knetab-iga-vaatajat-isiklikult-iiris-viirpalu-2232
+    source: Eesti Päevaleht
+    url: >-
+        https://epl.delfi.ee/kultuur/lavastus-enneminevik-konetab-iga-vaatajat-isiklikult?id=87813733
+    publish_date: '2019-10-23T00:00:00.000Z'
+    remote_id: '6300'
+-
     id: 2080
     title: >-
         "Etenduskunstnik: loomingu tsenseerimine avab tee ohtlikku kohta" Keiu
@@ -1040,6 +1073,17 @@
         http://epl.delfi.ee/news/kultuur/etenduskunstnik-loomingu-tsenseerimine-avab-tee-ohtlikku-kohta?id=77632518
     publish_date: '2017-03-23T00:00:00.000Z'
     remote_id: '4670'
+-
+    id: 2380
+    title: >-
+        "Linda kohtub Liputajaga. Noorte etenduskunstnike „Eden Detail” viib
+        inimese pahemale poolele" Peeter Kormašov
+    slug: >-
+        linda-kohtub-liputajaga-noorte-etenduskunstnike-eden-detail-viib-inimese-pahemale-poolele-peeter-kormaov-2380
+    source: Eesti Päevaleht
+    url: >-
+        https://epl.delfi.ee/artikkel/92425759/linda-kohtub-liputajaga-noorte-etenduskunstnike-eden-detail-viib-inimese-pahemale-poolele
+    publish_date: '2021-02-01T10:00:00.000Z'
 -
     id: 2130
     title: >-
@@ -1267,6 +1311,13 @@
     publish_date: '2017-09-22T00:00:00.000Z'
     remote_id: '5112'
 -
+    id: 2381
+    title: '"Publikumärk" '
+    slug: publikumrk-2381
+    source: KUKU Raadio
+    url: 'https://podcast.kuku.postimees.ee/podcast/publikumark-2021-02-06/'
+    publish_date: '2021-02-06T10:00:00.000Z'
+-
     id: 2122
     title: '"Protsessid ja seisundid" Iiris Viirpalu'
     slug: protsessid-ja-seisundid-iiris-viirpalu-2122
@@ -1310,23 +1361,6 @@
         https://epl.delfi.ee/kultuur/kultuuribiit-etenduskunstnike-netti-nuganeni-ja-laura-van-bergemi-playlist?id=89126839
     publish_date: '2020-03-06T00:00:00.000Z'
     remote_id: '6556'
--
-    id: 2235
-    title: '"Kangro koreografeeritud sõnateater" Kaja Kann'
-    slug: kangro-koreografeeritud-snateater-kaja-kann-2235
-    source: Sirp
-    url: 'https://sirp.ee/s1-artiklid/teater/kangro-koreografeeritud-sonateater/'
-    publish_date: '2019-11-01T00:00:00.000Z'
-    remote_id: '6295'
--
-    id: 2243
-    title: '"Kvantiteet annab kvaliteedile maksahaagi" Tambet Kaugema'
-    slug: kvantiteet-annab-kvaliteedile-maksahaagi-tambet-kaugema-2243
-    source: Sirp
-    url: >-
-        https://sirp.ee/s1-artiklid/teater/kvantiteet-annab-kvaliteedile-maksahaagi/
-    publish_date: '2019-12-20T00:00:00.000Z'
-    remote_id: '6296'
 -
     id: 2203
     title: >-
@@ -1440,6 +1474,23 @@
     publish_date: '2018-03-09T00:00:00.000Z'
     remote_id: '5470'
 -
+    id: 2235
+    title: '"Kangro koreografeeritud sõnateater" Kaja Kann'
+    slug: kangro-koreografeeritud-snateater-kaja-kann-2235
+    source: Sirp
+    url: 'https://sirp.ee/s1-artiklid/teater/kangro-koreografeeritud-sonateater/'
+    publish_date: '2019-11-01T00:00:00.000Z'
+    remote_id: '6295'
+-
+    id: 2243
+    title: '"Kvantiteet annab kvaliteedile maksahaagi" Tambet Kaugema'
+    slug: kvantiteet-annab-kvaliteedile-maksahaagi-tambet-kaugema-2243
+    source: Sirp
+    url: >-
+        https://sirp.ee/s1-artiklid/teater/kvantiteet-annab-kvaliteedile-maksahaagi/
+    publish_date: '2019-12-20T00:00:00.000Z'
+    remote_id: '6296'
+-
     id: 2067
     source: 'Rait Rosin, Gert Zavatski, Reede hommik - Raadio 2'
     url: 'http://r2.err.ee/l/jarelkuulamine_uus#1'
@@ -1461,6 +1512,17 @@
     url: 'http://www.scenekunst.no/sak/var-fantastiske-virkelighet/'
     publish_date: '2018-03-21T00:00:00.000Z'
     remote_id: '5343'
+-
+    id: 2382
+    title: >-
+        "Põrgupõhja uus keerdkäkk. Intervjuu Jette Loona Hermanise ja Johhan
+        Rosenbergiga" Aleksander Tsapov
+    slug: >-
+        prguphja-uus-keerdkkk-intervjuu-jette-loona-hermanise-ja-johhan-rosenbergiga-aleksander-tsapov-2382
+    source: Müürileht
+    url: >-
+        https://www.muurileht.ee/porgupohja-uus-keerdkakk-intervjuu-jette-loona-hermanise-ja-johhan-rosenbergiga/
+    publish_date: '2021-02-11T10:00:00.000Z'
 -
     id: 2075
     title: >-
@@ -2372,6 +2434,17 @@
     publish_date: '2020-10-01T00:00:00.000Z'
     remote_id: '6747'
 -
+    id: 2383
+    title: >-
+        "SUUR ÜLEVAADE ⟩ Made in Estonia Maraton turgutab talvest väsinud keha"
+        Kärt Kelder
+    slug: >-
+        suur-levaade-made-in-estonia-maraton-turgutab-talvest-vsinud-keha-krt-kelder-2383
+    source: Postimees
+    url: >-
+        https://leht.postimees.ee/7207698/made-in-estonia-maraton-turgutab-talvest-vasinud-keha?_ga=2.137541555.2013507757.1616586266-563400263.1581586138
+    publish_date: '2021-03-23T10:00:00.000Z'
+-
     id: 2041
     title: Esietendub Riina Maidre ja Nero Urke lavastus "Skaala surm"
     slug: esietendub-riina-maidre-ja-nero-urke-lavastus-skaala-surm-2041
@@ -2599,8 +2672,10 @@
 -
     id: 2370
     title: '"Kui nirvaana puhkeb õiest õide" Kärt Kelder'
+    slug: kui-nirvaana-puhkeb-iest-ide-krt-kelder-2370
     source: Sirp
     url: 'https://www.sirp.ee/s1-artiklid/teater/kui-nirvaana-puhkeb-oiest-oide/'
+    publish_date: '2020-12-18T10:00:00.000Z'
 -
     id: 2238
     title: '"Refleksjon og repetisjon" Amund Grimstad'
@@ -3461,6 +3536,14 @@
     publish_date: '2020-09-27T00:00:00.000Z'
     remote_id: '6748'
 -
+    id: 2372
+    title: '"Eheduse võit tardumuse üle" Peeter Kormašov'
+    slug: eheduse-vit-tardumuse-le-peeter-kormaov-2372
+    source: Eesti Päevaleht
+    url: >-
+        https://epl.delfi.ee/artikkel/92502951/arvustus-eheduse-voit-tardumuse-ule
+    publish_date: '2021-02-10T10:00:00.000Z'
+-
     id: 2220
     title: '"Arvustus. Alissa Šnaideri kosmogooniine rännak" Karin Allik'
     slug: arvustus-alissa-naideri-kosmogooniine-rnnak-karin-allik-2220
@@ -3658,6 +3741,14 @@
     publish_date: '2017-01-03T00:00:00.000Z'
     remote_id: '4974'
 -
+    id: 2373
+    title: '"Karolin Poska: Tantsimine on minu tõeline vaimutoit!" '
+    slug: karolin-poska-tantsimine-on-minu-teline-vaimutoit-2373
+    source: Eesti Ekspress
+    url: >-
+        https://ekspress.delfi.ee/artikkel/92610187/karolin-poska-tantsimine-on-minu-toeline-vaimutoit
+    publish_date: '2021-02-23T10:00:00.000Z'
+-
     id: 2170
     title: 'Draama 2018 | Mart Kangro: meie lavastus üritab kujutlusvõimet käivitada'
     slug: draama-2018-mart-kangro-meie-lavastus-ritab-kujutlusvimet-kivitada-2170
@@ -3741,6 +3832,13 @@
     publish_date: '2017-10-25T00:00:00.000Z'
     remote_id: '5138'
 -
+    id: 2374
+    title: '"KULTUURIBIIT | Koreograafist etenduskunstniku Karolin Poska playlist"'
+    slug: kultuuribiit-koreograafist-etenduskunstniku-karolin-poska-playlist-2374
+    source: Eesti Päevaleht
+    url: >-
+        https://epl.delfi.ee/artikkel/92005509/kultuuribiit-koreograafist-etenduskunstniku-karolin-poska-playlist
+-
     id: 2033
     title: Kaks vaprat humaansuse rüütlit
     slug: kaks-vaprat-humaansuse-rtlit-2033
@@ -3748,6 +3846,18 @@
     url: 'http://www.sirp.ee/s1-artiklid/teater/kaks-vaprat-humaansuse-ruutlit/'
     publish_date: '2015-12-04T00:00:00.000Z'
     remote_id: '4114'
+-
+    id: 2230
+    title: >-
+        "Mart Kangro uuslavastus püüab lülituda digitaalselt analoogsele" Merit
+        Maarits
+    slug: >-
+        mart-kangro-uuslavastus-pab-llituda-digitaalselt-analoogsele-merit-maarits-2230
+    source: 'ERR, kultuur'
+    url: >-
+        https://kultuur.err.ee/991912/mart-kangro-uuslavastus-puuab-lulituda-digitaalselt-analoogsele
+    publish_date: '2019-10-14T00:00:00.000Z'
+    remote_id: '6299'
 -
     id: 2083
     title: 'Kiirkohting: Iggy Lond Malmborg'
@@ -3782,27 +3892,6 @@
         https://ekspress.delfi.ee/areen/lahisuhtevagivald-ja-kunstnikuvastutus?id=88388927&fbclid=IwAR2aMJ3_JrVrgqSwuYCisv3uzHc7lJAXAFS_E6f2S_rvzkYf4UIQXAKQsOs
     publish_date: '2019-12-18T00:00:00.000Z'
     remote_id: '6241'
--
-    id: 2230
-    title: >-
-        "Mart Kangro uuslavastus püüab lülituda digitaalselt analoogsele" Merit
-        Maarits
-    slug: >-
-        mart-kangro-uuslavastus-pab-llituda-digitaalselt-analoogsele-merit-maarits-2230
-    source: 'ERR, kultuur'
-    url: >-
-        https://kultuur.err.ee/991912/mart-kangro-uuslavastus-puuab-lulituda-digitaalselt-analoogsele
-    publish_date: '2019-10-14T00:00:00.000Z'
-    remote_id: '6299'
--
-    id: 2231
-    title: '"Postdramaatiline stress ja «teatri» traditsioon" Madis Kolk'
-    slug: postdramaatiline-stress-ja-teatri-traditsioon-madis-kolk-2231
-    source: 'Postimees, kultuur'
-    url: >-
-        https://kultuur.postimees.ee/6806936/postdramaatiline-stress-ja-teatri-traditsioon?_ga=2.226009114.160525315.1579267772-1326275842.1579267770
-    publish_date: '2019-10-21T00:00:00.000Z'
-    remote_id: '6297'
 -
     id: 2207
     title: Igiliikuri vabalangemise võimalikkusest
@@ -4010,6 +4099,22 @@
     publish_date: '2020-09-15T00:00:00.000Z'
     remote_id: '6750'
 -
+    id: 2231
+    title: '"Postdramaatiline stress ja «teatri» traditsioon" Madis Kolk'
+    slug: postdramaatiline-stress-ja-teatri-traditsioon-madis-kolk-2231
+    source: 'Postimees, kultuur'
+    url: >-
+        https://kultuur.postimees.ee/6806936/postdramaatiline-stress-ja-teatri-traditsioon?_ga=2.226009114.160525315.1579267772-1326275842.1579267770
+    publish_date: '2019-10-21T00:00:00.000Z'
+    remote_id: '6297'
+-
+    id: 2375
+    title: '"Tänapäeval elamise taustaks" Heneliis Notton'
+    slug: tnapeval-elamise-taustaks-heneliis-notton-2375
+    source: MAGASIN
+    url: 'https://saal.ee/magazine/6919/'
+    publish_date: '2020-12-16T10:00:00.000Z'
+-
     id: 2082
     title: 'Kultuuriuudised - Kärt Kelder (alates 5:21 - 7:20)'
     slug: kultuuriuudised-krt-kelder-alates-521-720-2082
@@ -4055,3 +4160,10 @@
     url: 'http://sirp.ee/s1-artiklid/teater/helvellyni-nagemine-vaimusilmas/'
     publish_date: '2017-04-28T00:00:00.000Z'
     remote_id: '4965'
+-
+    id: 2376
+    title: '"Must reede" Lilli-Krõõt Repanu'
+    slug: must-reede-lilli-krt-repanu-2376
+    source: MAGASIN
+    url: 'https://saal.ee/magazine/6920/'
+    publish_date: '2020-12-16T10:00:00.000Z'
