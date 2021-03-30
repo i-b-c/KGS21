@@ -17,7 +17,7 @@ block content
                     .carousel-inner(role='listbox')
                         - var featureActive = 0
                         each performance in featured
-                            - var carousel_url = performance[`name_${self.locale}`].includes('Baltoscandal') ? 'https://baltoscandal.ee' : (`/${lang_path}${performance.path}`)
+                            - var carousel_url = `/${lang_path}${performance.path}`
 
                             .item(class=(featureActive++ === 0 ? 'active' : ''))
                                 a(href=carousel_url)
