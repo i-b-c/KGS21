@@ -34,8 +34,8 @@ const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerforma
 })
 
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
-const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.events.map(ev => ev.id.toString()).includes(process.argv[4])))[0] || []).id.toString()
-const target = process.argv[3] && process.argv[3] === 'e' && process.argv[4] ? (eventPerformanceId ? eventPerformanceId : null) : process.argv[3]
+const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.events.map(ev => ev.id.toString()).includes(process.argv[4])))[0] || []).id
+const target = process.argv[3] && process.argv[3] === 'e' && process.argv[4] ? (eventPerformanceId ? eventPerformanceId.toString() : null) : process.argv[3]
 
 const fetchSpecific = targeted ? [target] : []
 
