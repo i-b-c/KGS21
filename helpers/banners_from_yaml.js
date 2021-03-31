@@ -19,5 +19,5 @@ const bannersYAML = yaml.safeDump(allData, { 'indent': '4' })
 fs.writeFileSync(bannersYAMLPath, bannersYAML, 'utf8')
 
 if (targeted) {
-    addConfigPathAliases(['contact/'])
+    addConfigPathAliases(['about/'])
 }
