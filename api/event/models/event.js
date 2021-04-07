@@ -52,9 +52,12 @@ module.exports = {
     async afterCreate(result, data) {
       delete(result.published_at)
       result.performance = result.performance.id
+      console.log('Creating new Event ', result.id);
       await strapi.query('event').update({id : result.id }, result)
     },
     async beforeUpdate(params, data) {
+      console.log('Updating Event ', data.id);
+
       // console.log('Event data', data.performance, 'Event params',  params)
       if(data.performance){
         await replace_name(data)
