@@ -31,35 +31,19 @@ async function make_duplicate(data) {
     await strapi.query('event').create( data )
 }
 
-// function find_one_performance(data) {
-//   let performanceDataPath = path.join('/srv', 'ssg', 'source', 'strapidata', 'Performance.yaml')
-//   let all_performances = load_yaml(performanceDataPath)
-//   for (let performance of all_performances){
-//     if (performance.id === data.performance){
-//       return performance
-//     }
-//   }
-// }
-
 async function replace_name(data){
-  console.log('siin')
   let obj = null
   let out_performance = await strapi.query('performance').find({ id: data.performance})
 
   if (data.performance && !(data.name_et && data.name_en)){ 
     obj = out_performance
   }
-    console.log('siin3', obj)
 
-  if (obj && obj.name_et && data.performance && !data.name_et){
-    console.log(obj)
-    console.log(obj.name_et)
-    console.log(data.performanc)
-    console.log(data.name_et)
-    data.name_et = obj.name_et 
+  if (obj && obj[0].name_et && data.performance && !(data.name_et)){
+    data.name_et = obj[0].name_et 
   }
-  if (obj && obj.name_en && data.performance && !data.name_en){
-    data.name_en = obj.name_en
+  if (obj && obj[0].name_en && data.performance && !data.name_en){
+    data.name_en = obj[0].name_en
   }
 }
 
@@ -67,6 +51,7 @@ module.exports = {
   lifecycles: {
     async afterCreate(result, data) {
       delete(result.published_at)
+      result.performance = result.performance.id
       console.log('Creating new Event ', result.id);
       await strapi.query('event').update({id : result.id }, result)
     },
@@ -76,7 +61,6 @@ module.exports = {
       // console.log('Event data', data.performance, 'Event params',  params)
       if(data.performance){
         await replace_name(data)
-        console.log('siin2')
       }
       
       if(data.duplicate) {
@@ -85,13 +69,13 @@ module.exports = {
 
       if(data.name_et) {
         data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
-      } else {
+      } else if (data.subtitle_et) {
         data.slug_et = data.subtitle_et ? slugify(data.subtitle_et) + '-' + params.id : null
       }
 
       if(data.name_en) {
         data.slug_en = data.name_en ? slugify(data.name_en) + '-' + params.id : null
-      } else {
+      } else if (data.subtitle_en) {
         data.slug_en = data.subtitle_en ? slugify(data.subtitle_en) + '-' + params.id : null
       }
 
