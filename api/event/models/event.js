@@ -71,7 +71,7 @@ module.exports = {
       await strapi.query('event').update({id : result.id }, result)
     },
     async beforeUpdate(params, data) {
-      console.log('Updating Event ', data.id);
+      console.log('Updating Event ')
 
       // console.log('Event data', data.performance, 'Event params',  params)
       if(data.performance){
@@ -135,7 +135,7 @@ module.exports = {
 
       if (result.published_at) {
         modify_strapi_data_yaml(result, modelDirPath)
-        // call_build(result, model_name)
+        call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)
       }
     },
