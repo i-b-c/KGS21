@@ -145,14 +145,6 @@ Artist: &Artist
     performances:
         - (backreference)
 
-Department: &Department
-    _path: /departments
-    name_et: (text)
-    name_en: (text)
-    slug: (UID, name_et)
-    person:
-        - *Person
-
 #Banner
 BannerType: &BannerType
     _path: /banner-types
