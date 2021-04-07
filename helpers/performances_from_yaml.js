@@ -8,7 +8,7 @@ const replaceImgPaths = require('./replace_img_paths.js')
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
 // const fetchSpecific = ['6865', '6858', '6538', '5429', '5810', '6821', '3842', '6913']
 
-const rootDir =  path.join(__dirname, '..')
+const rootDir = path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const performancesDir = path.join(fetchDir, 'performances')
@@ -24,7 +24,7 @@ const STRAPIDATA_CATEGORIES = yaml.safeLoad(fs.readFileSync(strapiDataCategories
 const STRAPIDATA_COVERAGES = yaml.safeLoad(fs.readFileSync(strapiDataCoveragesPath, 'utf8'))
 const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerformancesPath, 'utf8')).map(p => {
     if (p.events) {
-        p.events = p.events.map( pe => {
+        p.events = p.events.map(pe => {
             return STRAPIDATA_EVENTS.filter(e => e.id === pe.id)[0]
         }).filter(u => u)
     }
@@ -38,6 +38,18 @@ const eventPerformanceId = (STRAPIDATA_PERFORMANCES.filter(e => e.events && (e.e
 const target = process.argv[3] && process.argv[3] === 'e' && process.argv[4] ? (eventPerformanceId ? eventPerformanceId.toString() : null) : process.argv[3]
 
 const fetchSpecific = targeted ? [target] : []
+
+console.log(
+    'EventperformanceID ', eventPerformanceId,
+    'TARGETED ', targeted,
+    'Arv3 ', process.argv[3],
+    'Argv4 ', process.argv[4],
+    'argv4 type ', typeof process.argv[4],
+    'SPECIFIC: ', fetchSpecific,
+    'ID ', eventPerformanceId,
+    'TYPE ', typeof eventPerformanceId
+    )
+
 
 const allPathAliases = []
 
@@ -91,10 +103,10 @@ for (const lang of LANGUAGES) {
                     }
                 }
 
-                if (performance[`description_${lang}`]) { performance[`description_${lang}`] = replaceImgPaths(performance[`description_${lang}`])}
-                if (performance[`technical_info_${lang}`]) { performance[`technical_info_${lang}`] = replaceImgPaths(performance[`technical_info_${lang}`])}
+                if (performance[`description_${lang}`]) { performance[`description_${lang}`] = replaceImgPaths(performance[`description_${lang}`]) }
+                if (performance[`technical_info_${lang}`]) { performance[`technical_info_${lang}`] = replaceImgPaths(performance[`technical_info_${lang}`]) }
 
-                if (performance.events){
+                if (performance.events) {
 
                     let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
                     performance.minToMaxEvents = minToMaxSortedEvents.map(e => {
@@ -111,12 +123,12 @@ for (const lang of LANGUAGES) {
                 }
 
                 if (performance.coverages) {
-                    performance.coverages = performance.coverages.sort((a, b) => new Date(b.publish_date)-new Date(a.publish_date))
+                    performance.coverages = performance.coverages.sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date))
                 }
 
-                performance.data = { categories: `/_fetchdir/categories.${lang}.yaml`}
+                performance.data = { categories: `/_fetchdir/categories.${lang}.yaml` }
 
-                const performanceYAML = yaml.safeDump(performance, {'noRefs': true, 'indent': '4' });
+                const performanceYAML = yaml.safeDump(performance, { 'noRefs': true, 'indent': '4' });
                 const performanceDir = path.join(performancesDir, performance.id.toString())
                 const performanceYAMLPath = path.join(performanceDir, `data.${lang}.yaml`)
 
@@ -138,13 +150,13 @@ for (const lang of LANGUAGES) {
     }
 
     console.log(`${allData.length} performances from YAML (${lang}) ready for building`);
-    const performancesYAML = yaml.safeDump(allData, {'noRefs': true, 'indent': '4' });
+    const performancesYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(performancesYAMLPath, performancesYAML, 'utf8');
 }
 
 function addAliases(oneEventData, pathAliases) {
     // oneEventData.aliases = pathAliases
-    pathAliases.map(a => allPathAliases.push({from: a, to: oneEventData.path}))
+    pathAliases.map(a => allPathAliases.push({ from: a, to: oneEventData.path }))
 }
 
 pathAliasesFunc(fetchDir, allPathAliases, 'performances')

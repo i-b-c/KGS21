@@ -16,22 +16,6 @@
     banner_type: {}
     remote_id: '3065'
 -
-    id: 7
-    name: Tallinn
-    url: 'http://www.tallinn.ee'
-    order: '2'
-    banner_type:
-        id: 19
-    remote_id: '3978'
-    image:
-        id: 1478
-        name: tallinn.png
-        width: 131
-        height: 50
-        hash: tallinn_6de6e3b512
-        ext: .png
-        url: /uploads/tallinn_6de6e3b512.png
--
     id: 8
     name: Kultuuriministeerium
     url: 'http://www.kul.ee/et'
@@ -84,3 +68,20 @@
     name: Baltoscandal
     url: 'http://www.baltoscandal.ee/'
     remote_id: '615'
+-
+    id: 7
+    name: Tallinn
+    url: 'http://www.tallinn.ee'
+    order: '7'
+    banner_type:
+        id: 19
+    remote_id: '3978'
+    image:
+        id: 8872
+        name: Tallinna-Kultuuri-ja-Spordiamet-logo-sinineRGB.png_50pxl.png
+        width: 171
+        height: 50
+        hash: Tallinna_Kultuuri_ja_Spordiamet_logo_sinine_RGB_png_50pxl_e2e7598fa5
+        ext: .png
+        url: >-
+            /uploads/Tallinna_Kultuuri_ja_Spordiamet_logo_sinine_RGB_png_50pxl_e2e7598fa5.png

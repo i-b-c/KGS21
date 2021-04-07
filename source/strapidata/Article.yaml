@@ -1750,6 +1750,46 @@
         -
             id: 296
 -
+    id: 651
+    title_et: 'RESKRIPTI REEDE: KUNSTNIKUVESTLUS PIMEDUSES'
+    title_en: >-
+        RESKRIPTI REEDE: KUNSTNIKUVESTLUS PIMEDUSES (CURRENTLY ONLY AVAILABLE IN
+        ESTONIAN)
+    slug_et: reskripti-reede-kunstnikuvestlus-pimeduses-651
+    slug_en: >-
+        reskripti-reede-kunstnikuvestlus-pimeduses-currently-only-available-in-estonian-651
+    publish_date: '2021-03-26T10:00:00.000Z'
+    hide_gallery: true
+    photo_article: true
+    content_et: >-
+        ![07_RESKRIPT_Kunstnikuvestlus_pimeduses.png](https://a.saal.ee/uploads/07_RESKRIPT_Kunstnikuvestlus_pimeduses_9112b9ab6a.png)
+    content_en: >-
+        NB! CURRENTLY ONLY AVAILABLE IN ESTONIAN!
+
+
+        ![07_RESKRIPT_Kunstnikuvestlus_pimeduses.png](https://a.saal.ee/uploads/07_RESKRIPT_Kunstnikuvestlus_pimeduses_9112b9ab6a.png)
+    article_media:
+        -
+            id: 697
+            hero_image:
+                id: 8719
+                name: RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_1400x700.jpg
+                width: 1400
+                height: 700
+                hash: RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_aeac2af757_1400x700
+                ext: .jpg
+                url: >-
+                    /uploads/RESKRIPTI_REEDE_Aksel_Haagensen_orignaal_aeac2af757_1400x700.jpg
+            gallery_image_medium:
+                id: 8715
+                name: RESKRIPTI_REEDE_Aksel_Haagensen_1400x700_350x350.jpg
+                width: 350
+                height: 350
+                hash: RESKRIPTI_REEDE_Aksel_Haagensen_1400x700_679078b16e_350x350
+                ext: .jpg
+                url: >-
+                    /uploads/RESKRIPTI_REEDE_Aksel_Haagensen_1400x700_679078b16e_350x350.jpg
+-
     id: 140
     title_et: Kolm küsimust Urmas Lüüsile
     title_en: Kolm küsimust Urmas Lüüsile (CURRENTLY AVAILABLE ONLY IN ESTONIAN!)
