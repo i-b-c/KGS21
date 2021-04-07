@@ -23,11 +23,20 @@ const STRAPIDATA_EVENTS = yaml.safeLoad(fs.readFileSync(strapiDataEventsPath, 'u
 const STRAPIDATA_CATEGORIES = yaml.safeLoad(fs.readFileSync(strapiDataCategoriesPath, 'utf8'))
 const STRAPIDATA_COVERAGES = yaml.safeLoad(fs.readFileSync(strapiDataCoveragesPath, 'utf8'))
 const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerformancesPath, 'utf8')).map(p => {
-    if (p.events) {
-        p.events = p.events.map(pe => {
-            return STRAPIDATA_EVENTS.filter(e => e.id === pe.id)[0]
-        }).filter(u => u)
-    }
+
+    p.events = STRAPIDATA_EVENTS.filter(e => {
+        if (e.performance) {
+            return e.performance.id === p.id
+        } else {
+            return false
+        }
+    })
+
+    // if (p.events) {
+    //     p.events = p.events.map(pe => {
+    //         return STRAPIDATA_EVENTS.filter(e => e.id === pe.id)[0]
+    //     }).filter(u => u)
+    // }
     p.categories = p.categories ? p.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]) : null
     p.coverages = p.coverages ? p.coverages.map(c => STRAPIDATA_COVERAGES.filter(f => f.id === c.id)[0]) : null
     return p
@@ -110,9 +119,7 @@ for (const lang of LANGUAGES) {
 
                     let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
                     performance.minToMaxEvents = minToMaxSortedEvents.map(e => {
-                        if (e.location) {
-                            e.location = e.location[`name_${lang}`] ? e.location[`name_${lang}`] : null
-                        }
+                        e.location = e[`X_location_${lang}`] ? e[`X_location_${lang}`] : null
                         return e
                     })
                     let eventsCopy = JSON.parse(JSON.stringify(performance.events))

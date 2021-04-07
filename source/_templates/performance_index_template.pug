@@ -95,8 +95,8 @@ block content
                                 .col-sm-8.col-md-8.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
-                                    if event.location || event[`X_location_${self.locale}`]
-                                        p= event.location || event[`X_location_${self.locale}`]
+                                    if event.location || event.X_location
+                                        p= event.location || event.X_location
                                     span(style='float:right;')
                                         if event.X_ticket_info
                                             if event.canceled === 'true'
@@ -128,8 +128,8 @@ block content
                                 .col-sm-6.col-md-7.col-lg-8
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
-                                    if event.location || event[`X_location_${self.locale}`]
-                                        p= event.location || event[`X_location_${self.locale}`]
+                                    if event.location || event.X_location
+                                        p= event.location || event.X_location
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
 
