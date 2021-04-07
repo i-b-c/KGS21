@@ -45,14 +45,20 @@ module.exports = {
 
       if (data.name_et) {
         data.slug_et = data.name_et ? slugify(data.name_et) + '-' + params.id : null
-        data.slug_en = data.name_en ? slugify(data.name_en) + '-' + params.id : null
       } else if (data.subtitle_et) {
         data.slug_et = data.subtitle_et ? slugify(data.subtitle_et) + '-' + params.id : null
-        data.slug_en = data.subtitle_en ? slugify(data.subtitle_en) + '-' + params.id : null
-      } else {
+      } else if (data.X_headline_et){
         data.slug_et = data.X_headline_et ? slugify(data.X_headline_et) + '-' + params.id : null
+      }
+
+      if (data.name_en) {
+        data.slug_en = data.name_en ? slugify(data.name_en) + '-' + params.id : null
+      } else if (data.subtitle_en) {
+        data.slug_en = data.subtitle_en ? slugify(data.subtitle_en) + '-' + params.id : null
+      } else if (data.X_headline_en){
         data.slug_en = data.X_headline_en ? slugify(data.X_headline_en) + '-' + params.id : null
       }
+      
       if (data.search_field === null || data.search_field === '') {
         if(!data.X_artist) {
           data.search_field = data.name_et
