@@ -139,7 +139,7 @@ for (const lang of LANGUAGES) {
                 const performanceDir = path.join(performancesDir, performance.id.toString())
                 const performanceYAMLPath = path.join(performanceDir, `data.${lang}.yaml`)
 
-                console.log('TARGETED: ', targeted, performance.id);
+                if (targeted) { console.log('TARGETED: ', performance.id); }
 
                 fs.mkdirSync(performanceDir, { recursive: true });
                 fs.writeFileSync(performanceYAMLPath, performanceYAML, 'utf8');
