@@ -50,13 +50,13 @@ const fetchSpecific = targeted ? [target] : []
 
 console.log(
     'EventperformanceID ', eventPerformanceId,
-    'TARGETED ', targeted,
-    'Arv3 ', process.argv[3],
-    'Argv4 ', process.argv[4],
-    'argv4 type ', typeof process.argv[4],
-    'SPECIFIC: ', fetchSpecific,
-    'ID ', eventPerformanceId,
-    'TYPE ', typeof eventPerformanceId
+    '; TARGETED ', targeted,
+    '; Arv3 ', process.argv[3],
+    '; Argv4 ', process.argv[4],
+    '; argv4 type ', typeof process.argv[4],
+    '; SPECIFIC: ', fetchSpecific,
+    '; ID ', eventPerformanceId,
+    '; TYPE ', typeof eventPerformanceId
     )
 
 
@@ -138,6 +138,8 @@ for (const lang of LANGUAGES) {
                 const performanceYAML = yaml.safeDump(performance, { 'noRefs': true, 'indent': '4' });
                 const performanceDir = path.join(performancesDir, performance.id.toString())
                 const performanceYAMLPath = path.join(performanceDir, `data.${lang}.yaml`)
+
+                console.log('TARGETED: ', targeted, performance.id);
 
                 fs.mkdirSync(performanceDir, { recursive: true });
                 fs.writeFileSync(performanceYAMLPath, performanceYAML, 'utf8');
