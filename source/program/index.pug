@@ -89,19 +89,6 @@ block content
                                         else
                                             //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
                                             a(href=`/${lang_path}${event.path}`)= event[`name_${self.locale}`]
-                                                if event[`X_headline_${self.locale}`]
-                                                    span.subtitle= event[`X_headline_${self.locale}`]
-
-                                                if event.X_artist
-                                                    span.artist= event.X_artist
-
-                                                if event.X_producer
-                                                    span.producer= event.X_producer
-
-                                                if event.X_town
-                                                    span.town= event.X_town
-
-                                                span.name= event[`name_${self.locale}`]
 
                                                 if event[`subtitle_${self.locale}`]
                                                     span.subtitle= event[`subtitle_${self.locale}`]
