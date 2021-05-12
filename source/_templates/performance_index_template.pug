@@ -96,7 +96,9 @@ block content
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
                                     if event.location || event.X_location
-                                        p= event.location || event.X_location
+                                        - var location = event.location || event.X_location
+                                        p
+                                            +format(location)
                                     span(style='float:right;')
                                         if event.X_ticket_info
                                             if event.canceled === 'true'
