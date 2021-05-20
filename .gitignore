@@ -28,8 +28,8 @@ build/*
 .vscode/settings.json
 
 # dynamic data
-source/_fetchdir/*
-source/strapidata/*
+ssg/source/_fetchdir
+ssg/source/strapidata
 
 # data transfer..
 data-transfer/
@@ -116,7 +116,7 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-public/uploads/*
+strapi/strapi-development/public/uploads/*
 !public/uploads/.gitkeep
 
 ############################
@@ -148,7 +148,14 @@ exports
 *.config
 build
 .strapi-updater.json
-config/*
+strapi/strapi-development/config/*
 !config/functions
 
 jwt.js
+
+strapi/*
+!strapi/strapi-development
+old_ssg
+
+www-bak
+www

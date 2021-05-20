@@ -1,18 +1,179 @@
 {
-    "minDate": "2021-2-1",
-    "maxDate": "2021-6-8",
+    "minDate": "2021-3-1",
+    "maxDate": "2021-9-25",
     "events": {
-        "2021-2-28": [
+        "2021-5-5": [
             {
-                "et_id": "vana-aasta-uue-muusika-kontsert-veebruaris-1613",
-                "en_id": "ensemble-u-new-years-new-music-concert-in-february-1613",
+                "et_id": "enneminevik-96",
+                "en_id": "past-perfect-96",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "ENNEMINEVIK",
+                    "en": "PAST PERFECT"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Vana-aasta uue muusika kontsert veebruaris",
-                    "en": "Ensemble U: New Years new music concert in February"
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-7": [
+            {
+                "et_id": "enneminevik-96",
+                "en_id": "past-perfect-96",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "ENNEMINEVIK",
+                    "en": "PAST PERFECT"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "13:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-6": [
+            {
+                "et_id": "enneminevik-96",
+                "en_id": "past-perfect-96",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "ENNEMINEVIK",
+                    "en": "PAST PERFECT"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "10:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-21": [
+            {
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-9-22": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
                 },
                 "time": "19:30",
                 "location": {
@@ -32,6 +193,44 @@
                 "name": {
                     "et": "Gangstarap",
                     "en": "Gangstrap"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-9-24": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-9-25": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
                 },
                 "time": "19:30",
                 "location": {
@@ -78,172 +277,132 @@
                 }
             }
         ],
-        "2021-2-4": [
+        "2021-5-15": [
             {
-                "et_id": "6945",
-                "en_id": "6945",
+                "et_id": "tafukt-1643",
+                "en_id": "tafukt-1643",
                 "tag": [
-                    "event"
+                    "tour"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Residentuuri showing ",
-                    "en": "Residency showing"
+                    "et": "Tafukt",
+                    "en": "Tafukt"
                 },
-                "time": "15:00",
+                "time": "20:30",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-16": [
+            {
+                "et_id": "tafukt-1643",
+                "en_id": "tafukt-1643",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tafukt",
+                    "en": "Tafukt"
+                },
+                "time": "20:30",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             },
             {
-                "et_id": "eden-detail-1598",
-                "en_id": "eden-detail-1598",
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Eden Detail",
-                    "en": "Eden Detail"
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
                 },
-                "time": "19:30",
+                "time": "16:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2021-2-27": [
+        "2021-5-17": [
             {
-                "et_id": "sinu-nirvaanale-129",
-                "en_id": "for-your-nirvana-129",
+                "et_id": "tafukt-1643",
+                "en_id": "tafukt-1643",
                 "tag": [
-                    "event"
+                    "tour"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
+                    "et": "Tafukt",
+                    "en": "Tafukt"
                 },
-                "time": "19:30",
+                "time": "20:30",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2021-2-14": [
+        "2021-6-5": [
             {
-                "et_id": "sinu-nirvaanale-129",
-                "en_id": "for-your-nirvana-129",
+                "et_id": "sireenid-1644",
+                "en_id": "sirens-1644",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
+                    "et": "Sireenid",
+                    "en": "Sirens"
                 },
                 "time": "19:30",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
-            }
-        ],
-        "2021-2-23": [
+            },
             {
-                "et_id": "enneminevik-96",
-                "en_id": "past-perfect-96",
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "ENNEMINEVIK",
-                    "en": "PAST PERFECT"
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
                 },
-                "time": "19:30",
+                "time": "18:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2021-2-25": [
+        "2021-5-24": [
             {
-                "et_id": "enneminevik-96",
-                "en_id": "past-perfect-96",
+                "et_id": "i-am-frankenstein-1639",
+                "en_id": "i-am-frankenstein-1639",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "ENNEMINEVIK",
-                    "en": "PAST PERFECT"
+                    "et": "I am Frankenstein",
+                    "en": "I am Frankenstein"
                 },
-                "time": "19:30",
+                "time": "19:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-2-2": [
-            {
-                "et_id": "6907",
-                "en_id": "6907",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Püha Vaimu SAALi residentuuri showing",
-                    "en": "Recidency showing of Püha Vaimu SAAL "
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2021-2-26": [
-            {
-                "et_id": "sinu-nirvaanale-129",
-                "en_id": "for-your-nirvana-129",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-2-13": [
-            {
-                "et_id": "sinu-nirvaanale-129",
-                "en_id": "for-your-nirvana-129",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinu nirvaanale ",
-                    "en": "For your nirvana"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -304,8 +463,8 @@
         ],
         "2021-4-21": [
             {
-                "et_id": "6538",
-                "en_id": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -323,8 +482,27 @@
         ],
         "2021-4-23": [
             {
-                "et_id": "6538",
-                "en_id": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-4-24": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -359,10 +537,10 @@
                 }
             }
         ],
-        "2021-4-24": [
+        "2021-3-24": [
             {
-                "et_id": "6538",
-                "en_id": "6538",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -370,25 +548,6 @@
                 "name": {
                     "et": "Kas te olete oma kohaga rahul ",
                     "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2021-2-9": [
-            {
-                "et_id": "5099",
-                "en_id": "5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
                 },
                 "time": "19:30",
                 "location": {
@@ -398,99 +557,6 @@
             }
         ],
         "2021-3-16": [
-            {
-                "et_id": "6187",
-                "en_id": "6187",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-2-5": [
-            {
-                "et_id": "6945",
-                "en_id": "6945",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Residentuuri showing ",
-                    "en": "Residency showing"
-                },
-                "time": "15:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "6913",
-                "en_id": "6913",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "YourSpace – 24 tundi kestev voogedastusena üle kantav interaktiivne kunstisündmus",
-                    "en": "YourSpace - a 24hr, interactive, live-streamed digital art event."
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2021-2-8": [
-            {
-                "et_id": "6956",
-                "en_id": "6956",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kontsertsari IMPROTEST ",
-                    "en": "Concert series IMPROTEST"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-3-24": [
-            {
-                "et_id": "6538",
-                "en_id": "6538",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-2-11": [
             {
                 "et_id": "6187",
                 "en_id": "6187",
@@ -547,25 +613,6 @@
                 }
             }
         ],
-        "2021-4-1": [
-            {
-                "et_id": "i-pev-1628",
-                "en_id": "day-i-1628",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kõheda vastasmõju festival 2021",
-                    "en": "Festival Of Spooky Action At A Distance 2021"
-                },
-                "time": "15:40",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2021-4-14": [
             {
                 "et_id": "5099",
@@ -585,10 +632,29 @@
                 }
             }
         ],
-        "2021-3-23": [
+        "2021-4-1": [
             {
-                "et_id": "6538",
-                "en_id": "6538",
+                "et_id": "i-pev-1628",
+                "en_id": "day-i-1628",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kõheda vastasmõju festival 2021",
+                    "en": "Festival Of Spooky Action At A Distance 2021"
+                },
+                "time": "15:40",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-3-25": [
+            {
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
@@ -604,53 +670,17 @@
                 }
             }
         ],
-        "2021-2-6": [
+        "2021-3-23": [
             {
-                "et_id": "5735",
-                "en_id": "5735",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "feelings",
-                    "en": "feelings"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "eden-detail-1598",
-                "en_id": "eden-detail-1598",
+                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Eden Detail",
-                    "en": "Eden Detail"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-2-12": [
-            {
-                "et_id": "6187",
-                "en_id": "6187",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
+                    "et": "Kas te olete oma kohaga rahul ",
+                    "en": "Kas te olete oma kohaga rahul"
                 },
                 "time": "19:30",
                 "location": {
@@ -678,25 +708,6 @@
                 }
             }
         ],
-        "2021-2-10": [
-            {
-                "et_id": "5099",
-                "en_id": "5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
         "2021-3-17": [
             {
                 "et_id": "6187",
@@ -708,25 +719,6 @@
                 "name": {
                     "et": "Evolutsiooni revolutsioon",
                     "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-3-25": [
-            {
-                "et_id": "6538",
-                "en_id": "6538",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
                 },
                 "time": "19:30",
                 "location": {
@@ -773,25 +765,6 @@
                 }
             }
         ],
-        "2021-6-5": [
-            {
-                "et_id": "mletan-ei-mleta-1637",
-                "en_id": "remember-dont-remember-1637",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Mäletan / Ei mäleta",
-                    "en": "\"Remember / Don't Remember\""
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2021-6-6": [
             {
                 "et_id": "mletan-ei-mleta-1637",
@@ -830,6 +803,82 @@
                 }
             }
         ],
+        "2021-6-9": [
+            {
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-10": [
+            {
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-12": [
+            {
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-18": [
+            {
+                "et_id": "peatunud-1638",
+                "en_id": "suspended-1638",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Peatunud",
+                    "en": "Suspended"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-3-20": [
             {
                 "et_id": "made-in-estonia-maraton-elektron-1612",
@@ -849,60 +898,320 @@
                 }
             }
         ],
-        "2021-2-1": [
+        "2021-5-27": [
             {
-                "et_id": "eden-detail-1598",
-                "en_id": "eden-detail-1598",
+                "et_id": "gangstarap-1624",
+                "en_id": "gangstrap-1624",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Eden Detail",
-                    "en": "Eden Detail"
+                    "et": "Gangstarap",
+                    "en": "Gangstrap"
                 },
                 "time": "19:30",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2021-2-7": [
+        "2021-5-29": [
             {
-                "et_id": "eden-detail-1598",
-                "en_id": "eden-detail-1598",
+                "et_id": "gangstarap-1624",
+                "en_id": "gangstrap-1624",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Eden Detail",
-                    "en": "Eden Detail"
+                    "et": "Gangstarap",
+                    "en": "Gangstrap"
                 },
                 "time": "19:30",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2021-2-3": [
+        "2021-6-13": [
             {
-                "et_id": "eden-detail-1598",
-                "en_id": "eden-detail-1598",
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Eden Detail",
-                    "en": "Eden Detail"
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
                 },
-                "time": "19:30",
+                "time": "18:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-19": [
+            {
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-20": [
+            {
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-22": [
+            {
+                "et_id": "i-am-frankenstein-1639",
+                "en_id": "i-am-frankenstein-1639",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "I am Frankenstein",
+                    "en": "I am Frankenstein"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-30": [
+            {
+                "et_id": "dis-em-body-ed-1640",
+                "en_id": "dis-em-body-ed-1640",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Dis em body ed",
+                    "en": "Dis em body ed"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-4": [
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "13:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-17": [
+            {
+                "et_id": "mesilase-asi-1641",
+                "en_id": "bee-matter-1641",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mesilase asi",
+                    "en": "Bee Matter"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-8": [
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-11": [
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "14:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-12": [
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "14:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-13": [
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "12:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-5-14": [
+            {
+                "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
+                "en_id": "a-rescripted-visit-to-ekkms-collections-1642",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Reskriptitud EKKMi kogude külastus",
+                    "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "10:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ]
