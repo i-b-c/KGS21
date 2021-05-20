@@ -1,0 +1,102 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+    .container-fluid
+        .row
+            section.event-banner.carousel.slide(id='front-carousel' data-ride='carousel')
+                .carousel-inner(role="listbox")
+
+                    //- Only one displayed as per requested
+                    if self.hero_image
+                        - hero_image = `${m_api}${self.hero_image}`
+                    else
+                        - hero_image = '/assets/images/placeholder.jpg'
+
+                    .item(class='active')
+                        figure(id = `slide-1`, style=`background-image: url('${hero_image}');`)
+                        header.col-md-8
+                            p
+                                +dateFull(self.publish_date)
+                            h1.artist= self[`title_${self.locale}`]
+                                if self[`subtitle_${self.locale}`]
+                                    - var subTitle = self[`subtitle_${self.locale}`]
+                                    span= ` / ${subTitle}`
+                            if self.authors_cs
+                                p.subtitle= self.authors_cs
+
+                //- Gradient Map for hero_image
+                script.
+                    var slide1 = document.getElementById('slide-1');
+                    GradientMaps.applyGradientMap(slide1, '#000000, #FFC600');
+
+        .row.front-page-margin
+            .col-md-12
+                .row
+                    //- SOUND
+                    if self.audios
+                        .video-sound
+                            //- h2= t('title.sound')
+                            each audio in self.audios
+                                div!= audio
+                    div(class='article main-text h3 col-sm-12 col-md-8 col-lg-8 photo-article-' + self.photo_article)
+                        | !{self.md(self[`content_${self.locale}`])}
+
+
+                        //- GALLERY
+                        if self.article_media && !self.hide_gallery
+                            .gallery
+
+                                - var galleryImages = self.article_media.filter(a => a.gallery_image_medium && a.hero_image)
+
+                                //- If is single image
+                                if galleryImages.length === 1
+                                    .row
+                                        .col-xs-12
+                                            img(src=`${m_api}${galleryImages[0].hero_image.url}`, class='img-responsive')
+
+                                //- If more than one, make gallery
+                                if galleryImages.length > 1
+                                    h2= self.labels.title.gallery
+                                    .row
+                                        each galPhoto in galleryImages
+                                            .single-image.col-xs-6.col-sm-3.col-md-4
+                                                a.fancybox(rel="gallery" href=`${m_api}${galPhoto.hero_image.url}`)
+                                                    img.img-responsive(src=`${m_api}${galPhoto.gallery_image_medium.url}`)
+
+
+                        //- VIDEO
+                        if self.videos
+                            .video-sound
+                                h2= self.labels.title.video
+                                each video in self.videos
+                                    div!= video.content
+
+                        .comments
+                            .fb-comments(data-href='', data-width="100%", data-numposts="10")
+
+                            script.
+                                document.getElementsByClassName('fb-comments')[0].setAttribute('data-href', window.location.href)
+
+                    - var postCount = 0
+                    .col-sm-12.col-md-4.col-lg-4
+                        if self.related && self.related.length
+                            h2= self.labels.title.related_articles
+                            each relArticle in self.related
+                                if postCount++ < 15
+                                    //- a(href=`/${lang_path}${relArticle.path}`)
+                                    a(href=`/${relArticle.path}`)
+                                        p
+                                            +dateFull(self.publish_date)
+                                        h3
+                                            span.artist= relArticle[`title_${self.locale}`]
+
+                                            if relArticle[`subtitle_${self.locale}`]
+                                                span.artist= `/ ${relArticle[`subtitle_${self.locale}`]}`
+                                        if relArticle.authors_cs
+                                            span.author= relArticle.authors_cs
+                                    hr
+
+                            .row
+                                .col-xs-12.col-md-12
+                                    a.load-more.btn.btn-primary(href=`/${lang_path}magazine/`)= self.labels.button.view_all

@@ -1,0 +1,29 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+    .container-fluid
+        .row.page-margin
+            section.col-md-12
+                .programme.row
+                    .col-xs-12.col-md-12
+                        h2= self.labels.nav.magazine
+                    .grid-row
+                        if self.data.articles
+                            each article in self.data.articles
+                                //- a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href= `/${lang_path}${article.path}`)
+                                a.col-xs-12.col-sm-4.col-md-3.col-lg-3.co-production(href= `/${lang_path}${article.path}`)
+                                    if article.article_media && article.article_media.filter(e => e.gallery_image_medium).length
+                                        img.img-responsive(src=`${m_api}${article.article_media.filter(e => e.gallery_image_medium)[0].gallery_image_medium.url}`)
+                                    else
+                                        img.img-responsive(src=`/assets/images/placeholder.jpg`)
+
+                                    p
+                                        +dateFull(article.publish_date)
+                                    p
+                                        span.artist= article[`title_${self.locale}`]
+
+                                        if article[`subtitle_${self.locale}`]
+                                            span.artist= ` / ${article[`subtitle_${self.locale}`]}`
+                                    span.author= article.authors_cs
+

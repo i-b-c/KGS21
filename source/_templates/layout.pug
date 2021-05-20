@@ -1,0 +1,35 @@
+doctype html
+html
+
+    block vars
+
+    head
+        include /_templates/head.pug
+
+    body
+        #fb-root
+
+        script.
+            (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/et_EE/sdk.js#xfbml=1&version=v2.5&appId=1664471603808404";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+        if (self.path && self.path.includes('/festival/'))
+            include nav_festival
+        else
+            include nav_saal
+
+        block content
+
+        include footer
+
+
+
+if (self.path == '/festival')
+    include style_saal
+else
+    include style_saal

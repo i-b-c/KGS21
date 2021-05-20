@@ -1,0 +1,4 @@
+aliases:
+    - '/et/co_productions'
+data:
+    co_productions: '/_fetchdir/performances.et.yaml'

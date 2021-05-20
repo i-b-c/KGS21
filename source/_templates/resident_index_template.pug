@@ -1,0 +1,71 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+
+    .container-fluid
+
+        .row
+            .event-banner.carousel.slide(id='front-carousel' data-ride='carousel')
+                .carousel-inner(role='listbox')
+                    if self.image_hero
+                        figure(id=`slide-${self.id}` style=`background-image: url('${m_api}${self.image_hero}');`)
+                    else
+                        figure(id=`slide-${self.id}` style='background-image:url("/assets/images/placeholder.jpg");')
+                    header.col-md-8
+                        p
+                            +dateFromTo(self.start_time, self.end_time)
+
+                        h1
+                            if self[`subtitle_${self.locale}`]
+                                span.name= self[`subtitle_${self.locale}`]
+
+                            if self.resident
+                                span.artist= self.resident
+
+                            if self[`name_${self.locale}`]
+                                span.name= self[`name_${self.locale}`]
+
+                    - var activeCategories = []
+                    if self.categories
+                        - activeCategories = self.categories.filter( e => e.featured_on_front_page).map( e => e.id )
+                    if self.data.categories
+                        ul.event-categories
+                            each category in self.data.categories
+                                if category.featured_on_front_page
+                                    li.text-uppercase.h3( class =( activeCategories.includes(category.id)? "" : "unactive" ) )
+                                        span
+                                            a(href="")= category[`name_${self.locale}`]
+
+                    script.
+                        var slide#{self.id} = document.getElementById('slide-#{self.id}');
+                        var gradientMap = '#000000, #FFC600';
+
+                        GradientMaps.applyGradientMap(slide#{self.id}, gradientMap);
+
+        .row.front-page-margin
+            article.main-text.col-md-12.col-lg-12.h3
+                +markdown(self[`description_${self.locale}`])
+
+        .row.front-page-margin
+            .col-md-6
+
+                if self.videos
+                    .gallery
+                        h2= self.labels.title.video
+                            each video in self.videos
+                                div!= video.content
+                if self.audios
+                    .gallery
+                        h2= self.labels.title.audio
+                            each audio in self.audios
+                                div!= audio.content
+
+                if self.event_media
+                    .gallery
+                        h2= self.labels.title.gallery
+                        .row
+                            each image in self.event_media.filter(i => i.gallery_image_large || i.gallery_image_medium)
+                                .single-image.col-xs-6.col-sm-3.col-md-4
+                                    a.fancybox(rel='gallery', href= image.gallery_image_large ? `${m_api}${image.gallery_image_large.url}` : (image.gallery_image_medium ? `${m_api}${image.gallery_image_medium.url}` : '/images/placeholder.jpg') )
+                                        img(src= image.gallery_image_medium ? `${m_api}${image.gallery_image_medium.url}` : '/images/placeholder.jpg', class='img-responsive')

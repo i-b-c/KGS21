@@ -1,0 +1,130 @@
+extends /_templates/layout.pug
+
+block content
+    //- siin sees on kõik mida kuvatakse sisseloginud kasutajale
+    .container-fluid.content
+        #logged-in-box
+            a.btn.btn-primary.text-uppercase#log_out(onClick = "LogOut()")= self.labels.login.log_out
+
+            h2= self.labels.login.favorites
+            p#no-favo= self.labels.login.no_favorites
+            p#my-favorites
+            #locale.hidden= self.locale
+
+            -//selle template-i alusel kuvatakse lemmikuid
+            #template.hidden
+                #one-favo
+                    .col-xs-6.col-md-6.col-lg-8
+                        h3
+                            a
+                                span.name="nimi"
+                                span.artist="artist"
+                    .col-xs-4.col-md-4.col-lg-2
+                        a.btn.btn-primary.text-uppercase#remove-favo= self.labels.login.remove
+                    hr.col-xs-8.col-md-8.col-lg-8
+            .programme.row#my-favorites
+
+            h2= self.labels.login.userprofile_title
+            table
+                tr
+                    td.login_label(for='email')= self.labels.login.email+":"
+                    td.value-view#email(name='email')
+                tr
+                    td.login_label(for='firstName')= self.labels.login.first_name+":"
+                    td.value-view#firstName(name='firstName')
+                tr
+                    td.login_label(for='lastName')= self.labels.login.family_name+":"
+                    td.value-view#lastName(name='lastName')
+                tr
+                    td.login_label(for='phoneNr')= self.labels.login.phone+":"
+                    td.value-view#phoneNr(name='phoneNr')
+                tr
+                    td.login_label(for='providers')= self.labels.login.providers_list+":"
+                    td.value-view#providers(name='providers')
+
+            a.btn.btn-primary.text-uppercase#edit(href="/profile")= self.labels.login.change_profile
+
+        //- siin sees on kõik mida kuvatakse  kui kasutaja pole sisse loginud
+        #not-logged-in-box
+            #login-grid
+                #provider-login
+                    h2= self.labels.login.sign_in_title
+                    a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('google')") google
+                    a.btn.btn-primary.text-uppercase(onClick = "loginWithProvider('facebook')") facebook
+
+            #error-box
+                p#userExists= self.labels.login.err_email_used
+                p#invalidPsw= self.labels.login.err_psw_email_not_correct
+                p#invalidEmail email puudu või valesti sisestatud
+                p#loginError= self.labels.login.err_login_problem
+
+    style.
+        #my-favorites div div{
+            padding-left: 0;
+        }
+        #logged-in-box td{
+            padding: 1rem 0 1rem 0;
+        }
+        #logged-in-box .login_label{
+            padding-right: 1.5rem;
+            font-weight: bold;
+        }
+        #logged-in-box table{
+            margin: 2rem 0 2rem 0;
+        }
+
+        .hidden{
+            display: none;
+        }
+        .visible{
+            display: block;
+        }
+        .invalid {
+            background-color: #ffc600;
+            display: block;
+            color: black;
+            }
+        .valid {
+            display: none;
+            }
+        #log_out{
+            margin: 0 0 2rem 0;
+        }
+        .value-view{
+            padding: 0 0 0 20px;
+        }
+        #login-grid{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+                grid-template-rows: auto;
+                justify-content: center;
+                justify-items: center;
+                align-items: start;
+                align-content: start;
+        }
+        #provider-login,
+        #register{
+                display: grid;
+                grid-template-rows: auto;
+                grid-gap: 1rem;
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
+        }
+        #logged-in-box,
+        #not-logged-in-box{
+            padding: 10rem 0 10rem 10rem;
+        }
+        #logged-in-box,
+        #loginError,
+        #userExists,
+        #invalidPsw,
+        #userExistsProviders,
+        #resetLinkSent,
+        #invalidEmail
+            {
+            display: none;
+        }
+        a{
+            cursor: pointer;
+        }

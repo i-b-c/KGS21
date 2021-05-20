@@ -1,0 +1,3 @@
+data:
+    categories: '/_fetchdir/categories.en.yaml'
+    events: '/_fetchdir/events.en.yaml'

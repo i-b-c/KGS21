@@ -1,0 +1,404 @@
+# StrapiMedia
+Large: &Large
+    # ext: (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+Medium : &Medium
+    # ext: (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+Small: &Small
+    # ext: (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+Thumbnail: &Thumbnail
+    # ext:  (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+StrapiMedia: &StrapiMedia
+    id: (number)
+    name: (text)
+    alternativeText: (text)
+    caption: (text)
+    width: (Number)
+    height: (Number)
+    formats:
+        large: *Large #(Component)
+        medium: *Medium #(Component)
+        small: *Small #(Component)
+        thumbnail: *Thumbnail #(Component)
+    hash: (text)
+    ext: (text)
+    # mime: (text)
+    # size: (Number)
+    url: (text)
+    previewUrl: (text)
+    # provider: (text)
+    # provider_metadata: (text)
+
+X_pictures: &X_pictures
+    photoGallery: (text)
+    photo: (text)
+    photoOriginal: (text)
+    photoMedium: (text)
+    photoBig: (text)
+
+MediaContent: &MediaContent
+    content: (text)
+
+# Location
+Country: &Country
+    _path: /countries
+    slug: (UID; name_et)
+    name_et: (text)
+    name_en: (text)
+
+Town: &Town
+    _path: /towns
+    slug: (UID, name_et)
+    name_et: (text)
+    name_en: (text)
+
+Organisation: &Organisation
+    _path: /organisations
+    slug: (UID, name_et)
+    name_et: (text)
+    name_en: (text)
+    description_et: (text)
+    description_en: (text)
+    # logo: *StrapiMedia
+    url: (text) #saad entu evendi alt location url
+    address: (text)
+
+Hall: &Hall
+    _path: /halls
+    slug: (UID, name_et)
+    name_et: (text)
+    name_en: (text)
+    number_of_seats: (number)
+    description_et: (text)
+    description_en: (text)
+    floorplan: *StrapiMedia
+
+Location: &Location
+    _path: /locations
+    name_et: (text)
+    name_en: (text)
+    slug_et: (UID, name)
+    slug_en: (UID, name)
+    remote_id: (UID)
+    hall: *Hall
+    town: *Town
+    country: *Country
+    theater: *Organisation
+    # description_et: (text)
+    # description_en: (text)
+    # floorplan: *StrapiMedia
+
+#Person
+Person: &Person
+    _path: /people
+    first_name: (text)
+    last_name: (text)
+    # first-name_last_name: (text, v6iks ise tekkida)
+    picture: *StrapiMedia
+    email: (text)
+    phone_number: (text)
+    occupation: (text)
+    order: (number)
+    remote_id: (UID)
+    # date_of_birth:
+    # biography:
+
+Artist: &Artist
+    person: *Person
+    artist_name: (text)
+    # portfolio: (text)
+    performances:
+        - (backreference)
+
+#Banner
+BannerType: &BannerType
+    _path: /banner-types
+    name: (UID, enter)
+    slug: (UID, name)
+    width: (number)
+    height: (number)
+    remote_id: (UID)
+
+Banner: &Banner
+    _path: /banners
+    name: (text)
+    slug: (UID, name)
+    image: *StrapiMedia # image
+    url: (text)
+    order: (number)
+    banner_type: *BannerType
+    remote_id: (UID)
+    start: (datetime)
+    end: (datetime)
+
+Category: &Category # category loeng, tants, teater, prformance, video, n4itus
+    _path: /categories
+    slug: (UID, name_et)
+    name_et: (text)
+    name_en: (text)
+    featured_on_front_page: (boolean)
+    remote_id: (UID)
+
+#Coverage
+Coverage: &Coverage
+    _path: /coverages
+    remote_id: (UID)
+    title: (text)
+    slug: (UID, title)
+    language: (enumeration)
+    # performance: *Performance # kehepidine seos, meie kysime teisest otsast
+    # event: *Event # kehepidine seos, meie kysime teisest otsast
+    source: (text)
+    url: (text)
+    media:
+        - *StrapiMedia
+    content: (text rich)
+    publish_date: (datetime)
+
+#Performance
+
+PerformanceMedia: &PerformanceMedia
+    original_image: *StrapiMedia
+    hero_image: *StrapiMedia
+    gallery_image_large: *StrapiMedia
+    gallery_image_medium: *StrapiMedia
+
+Performance: &Performance # performance #lavastus
+    _path: /performances
+    name_et: (text)
+    name_en: (text)
+    slug_et: (UID, name_et)
+    slug_en: (UID, name_en)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    categories:
+        - *Category
+    coproduction: (boolean)
+    coproduction_importance: (number)
+    front_page_promotion: (boolean)
+    purchase_description_et: (text)
+    purchase_description_en: (text)
+    description_et: (text rich)
+    description_en: (text rich)
+    technical_info_et: (text rich)
+    technical_info_en: (text rich)
+    performance_media:
+        - *PerformanceMedia
+    logos:
+        - *StrapiMedia
+    raiders: # fail
+        - *StrapiMedia
+    videos:
+        - *MediaContent
+    audios:
+        - *MediaContent
+    X_headline_et: (text)
+    X_headline_en: (text)
+    X_artist: (text rich)
+    X_producer: (text rich)
+    X_town_et: (text)
+    X_town_en: (text)
+    artists:
+        - *Artist # (backreference)
+    # producers:
+    #     - *Person # kas alati asutus
+    events:
+        - (backreference) #*Event
+    remote_id: (UID)
+    X_pictures: *X_pictures
+    X_premiere_time: (datetime)
+    coverages:
+        - *Coverage
+    duration: (number)
+    other_works:
+        - (backreference) #*Performance
+    other_works_back:
+        - (backreference) #*Performance
+
+#Event
+TicketInfo: &TicketInfo
+    # _path: /ticket-infos
+    name: (text)
+    slug: (UID, name)
+    price: (number)
+    discount: (decimal) #kui allahindlust pole siis 0, sisesta %
+    onsite_price: (number)
+    free_admission: (boolean)
+    PL_event_id: (number)
+    ticketing_url_et: (text)
+    ticketing_url_en: (text)
+
+EventMedia: &EventMedia
+    original_image: *StrapiMedia
+    hero_image: *StrapiMedia
+    gallery_image_large: *StrapiMedia
+    gallery_image_medium: *StrapiMedia
+
+Event: &Event # etendus
+    _path: /events
+    type: (Enumeration) # programm, residentuur, festival, tuur, projekt
+    categories:
+        - *Category
+    name_et: (text)
+    name_en: (text)
+    slug_et: (UID, name_et)
+    slug_en: (UID, name_en)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    resident: (text) # tegemist residentuuriga
+    performance: *Performance # (backreference)
+    hide_from_page: (boolean)
+    canceled: (boolean)
+    conversation: (boolean) # peaks olema suurem ? inimene ka kohe kaasa kogu infoga? mida siin m6eldud, vestlus enne etendust?
+    ticket_info: *TicketInfo
+    X_ticket_info:
+        pl_link_et: (text)
+        pl_link_en: (text)
+        ticket_api: (text)
+        min_price: (decimal)
+        max_price: (decimal)
+        sales_status: (text)
+        pl_id: (text)
+        price: (text)
+        onsite_price: (text)
+    start_time: (datetime)
+    end_time: (datetime)
+    duration: (datetime)
+    description_et: (text rich)
+    description_en: (text rich)
+    technical_info_et: (text rich)
+    technical_info_en: (text rich)
+    online: (text)
+    videos:
+        - *MediaContent
+    audios:
+        - *MediaContent
+    order: (number)
+    location: *Location
+    permitted_capacity: (number)
+    X_location_et: (text)
+    X_location_en: (text)
+    event_media:
+        - *EventMedia
+    remote_id: (UID)
+    parent_event: (object) #relation to event
+    child_events:
+        - (id) # repeatable relation to event
+    coverages:
+        - *Coverage
+    premiere: (boolean)
+
+#News and Article
+Newscast: &Newscast
+    _path: /newscasts
+    title_et: (text)
+    title_en: (text)
+    slug_et: (UID, title_et)
+    slug_en: (UID, title_en)
+    publish_time: (datetime)
+    content_et: (text rich)
+    content_en: (text rich)
+    media:
+        - *StrapiMedia # mis tyypi?
+    related_media: (text)
+    # authors:
+    #     - *Person
+    remote_id: (text)
+
+ArticleMedia: &ArticleMedia
+    hero_image: *StrapiMedia
+    gallery_image_medium: *StrapiMedia
+
+Article: &Article #Echo
+    _path: /articles
+    title_et: (text)
+    title_en: (text)
+    slug_et: (UID, title_et)
+    slug_en: (UID, title_en)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    publish_date: (datetime)
+    front_page_promotion: (boolean)
+    categories:
+        - *Category #seotud postitused
+    authors:
+        - *Person
+    article_media:
+        - *ArticleMedia
+    hide_gallery: (boolean)
+    photo_article: (boolean)
+    audios:
+        - *MediaContent
+    videos:
+        - *MediaContent
+    content_et: (text rich)
+    content_en: (text rich)
+    remote_id: (UID)
+    X_pictures: *X_pictures
+
+Label: &Label
+    name: (text)
+    value_et: (text)
+    value_en: (text)
+
+LabelGroup:
+    _path: /label-groups
+    name: (text)
+    label: #(Component (repeatable))
+        - *Label
+
+SimpleArticle: &SimpleArticle
+    _path: /simple-articles
+    name_et: (text)
+    name_en: (text)
+    subtitle_et: (text)
+    subtitle_en: (text)
+    content_et: (text rich)
+    content_en: (text rich)
+    images:
+        - *StrapiMedia
+
+#SingleType
+Configuration: &Configuration
+    _path: /configuration
+    name: (text)
+    about_article: *SimpleArticle
+    corona_article: *SimpleArticle
+    council_article: *SimpleArticle
+    fg_color: (text)
+    bg_color: (text)

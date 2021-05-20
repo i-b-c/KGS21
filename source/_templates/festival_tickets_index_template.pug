@@ -1,0 +1,18 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+    .container-fluid
+        .row
+            .event-banner.carousel.slide(id='front-carousel')
+                .carousel-inner(role='listbox')
+                    if self.image_hero
+                        figure(style=`background-image: url('${m_api}${self.image_hero}');`)
+                    else
+                        figure(style=`background-image: url('/assets/images/placeholder.jpg');`)
+
+        .row.page-margin
+            section.col-md-12
+            h2= self[`name_${self.locale}`]
+            p
+                +markdown(self[`technical_info_${self.locale}`])
