@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { dateFormats, dateToUtcTime } from 'strapi-helper-plugin';
 import { get } from 'lodash';
+import { Text, Flex } from '@buffetjs/core';
 
 import { formatBytes } from '../../utils';
 
-import Flex from '../Flex';
-import Text from '../Text';
 import FileDetailsBoxWrapper from './FileDetailsBoxWrapper';
 
 const FileDetailsBox = ({ file }) => {
