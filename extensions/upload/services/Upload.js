@@ -128,14 +128,11 @@ module.exports = {
   async upload({ data, files }, { user } = {}) {
     const { fileInfo, ...metas } = data;
 
-
     const fileArray = Array.isArray(files) ? files : [files];
     const fileInfoArray = Array.isArray(fileInfo) ? fileInfo : [fileInfo];
 
     // console.log("FILES DO UPLOAD SEES : ", fileArray)
     // console.log("FILEINFO DO UPLOAD SEES : ", fileInfoArray)
-
-
     const doUpload = async (file, fileInfo) => {
       const fileData = await this.enhanceFile(file, fileInfo, metas);
       // console.log("fileinfo: ", fileInfo)
@@ -148,9 +145,7 @@ module.exports = {
     );
   },
 
-
   async uploadFileAndPersist(fileData, { user } = {}) {
-
     let AllFormats=[]
     const config = strapi.plugins.upload.config;
 
@@ -196,10 +191,6 @@ module.exports = {
     });
     return this.add(fileData, { user });
   },
-
-
-
-
 
   async updateFileInfo(id, { name, alternativeText, caption }, { user } = {}) {
     const dbFile = await this.fetch({ id });

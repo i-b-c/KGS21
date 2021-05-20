@@ -9,13 +9,15 @@ var HTMLparser = require('node-html-parser')
  */
 
 const path = require('path');
+let helper_path = path.join(__dirname, '..', '..', '..', '/helpers/strapi_lifecycle_helpers')
+
 const { 
   slugify, 
   load_yaml, 
   modify_strapi_data_yaml, 
   delete_model, 
   call_build 
-} = require('/srv/strapi/strapi-development/helpers/strapi_lifecycle_helpers.js')
+} = require(helper_path)
 
 
 const model_name = (__dirname.split('/').slice(-2)[0]);

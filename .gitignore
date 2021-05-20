@@ -114,3 +114,5 @@ build
 .strapi-updater.json
 config/*
 !config/functions
+
+jwt.js
