@@ -99,8 +99,6 @@ const generateALL = async file => {
   return null;
 };
 
-
-
 const optimize = async buffer => {
   const {
     sizeOptimization = false,
@@ -124,7 +122,6 @@ const optimize = async buffer => {
     }))
     .catch(() => ({ buffer }));
 };
-
 
 // const generateBreakpoint = async (key, { file, breakpoint }) => {
 //   const newBuff = await resizeTo(file.buffer, {
