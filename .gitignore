@@ -115,4 +115,4 @@ build
 config/*
 !config/functions
 
-strapi/strapi-development/jwt.js
+jwt.js
