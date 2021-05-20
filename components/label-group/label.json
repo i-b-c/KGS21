@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_label_group_labels",
+  "info": {
+    "name": "label",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "value_et": {
+      "type": "string"
+    },
+    "value_en": {
+      "type": "string"
+    }
+  }
+}

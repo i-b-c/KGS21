@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "towns",
+  "info": {
+    "name": "town"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_et": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name_et"
+    }
+  }
+}

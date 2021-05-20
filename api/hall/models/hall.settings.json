@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "halls",
+  "info": {
+    "name": "Hall"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_et": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name_et"
+    },
+    "number_of_seats": {
+      "type": "integer"
+    },
+    "description_et": {
+      "type": "richtext"
+    },
+    "description_en": {
+      "type": "richtext"
+    },
+    "floorplan": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

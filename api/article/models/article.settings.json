@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "Article",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_et": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "slug_et": {
+      "type": "uid",
+      "targetField": "title_et"
+    },
+    "slug_en": {
+      "type": "uid",
+      "targetField": "title_en"
+    },
+    "subtitle_et": {
+      "type": "string"
+    },
+    "subtitle_en": {
+      "type": "string"
+    },
+    "publish_date": {
+      "type": "datetime"
+    },
+    "front_page_promotion": {
+      "type": "boolean"
+    },
+    "authors": {
+      "collection": "person"
+    },
+    "hide_gallery": {
+      "type": "boolean"
+    },
+    "photo_article": {
+      "type": "boolean"
+    },
+    "content_et": {
+      "type": "richtext"
+    },
+    "content_en": {
+      "type": "richtext"
+    },
+    "remote_id": {
+      "type": "uid"
+    },
+    "X_pictures": {
+      "type": "component",
+      "repeatable": false,
+      "component": "x-pictures.x-pictures"
+    },
+    "article_media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.article-media"
+    },
+    "categories": {
+      "collection": "category"
+    },
+    "X_location_et": {
+      "type": "string"
+    },
+    "X_location_en": {
+      "type": "string"
+    },
+    "audios": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
+    },
+    "videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
+    },
+    "meedia_arenduses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.new-media"
+    }
+  }
+}

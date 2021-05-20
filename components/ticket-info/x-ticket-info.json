@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_ticket_info_x_ticket_infos",
+  "info": {
+    "name": "x_ticket_info",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pl_link_et": {
+      "type": "string"
+    },
+    "pl_link_en": {
+      "type": "string"
+    },
+    "ticket_api": {
+      "type": "string"
+    },
+    "min_price": {
+      "type": "decimal"
+    },
+    "sales_status": {
+      "type": "string"
+    },
+    "pl_id": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "onsite_price": {
+      "type": "string"
+    },
+    "max_price": {
+      "type": "decimal"
+    }
+  }
+}

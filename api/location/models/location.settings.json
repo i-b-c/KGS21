@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "name": "Location",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug_et": {
+      "type": "uid",
+      "targetField": "name_et"
+    },
+    "name_et": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "remote_id": {
+      "type": "uid"
+    },
+    "slug_en": {
+      "type": "uid",
+      "targetField": "name_en"
+    },
+    "description_et": {
+      "type": "richtext"
+    },
+    "description_en": {
+      "type": "richtext"
+    },
+    "hall": {
+      "model": "hall"
+    },
+    "town": {
+      "model": "town"
+    },
+    "country": {
+      "model": "country"
+    },
+    "theater": {
+      "model": "organisation"
+    }
+  }
+}

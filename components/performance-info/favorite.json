@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_performance_info_favorites",
+  "info": {
+    "name": "Favorite",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "performance_id": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/banner-types",
+      "handler": "banner-type.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/banner-types/count",
+      "handler": "banner-type.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/banner-types/:id",
+      "handler": "banner-type.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/banner-types",
+      "handler": "banner-type.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/banner-types/:id",
+      "handler": "banner-type.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/banner-types/:id",
+      "handler": "banner-type.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "configurations",
+  "info": {
+    "name": "Configuration",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "fg_color": {
+      "type": "string"
+    },
+    "bg_color": {
+      "type": "string"
+    },
+    "about_article": {
+      "model": "simple-article"
+    },
+    "corona_article": {
+      "model": "simple-article"
+    },
+    "council_article": {
+      "model": "simple-article"
+    }
+  }
+}
