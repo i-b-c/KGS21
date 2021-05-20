@@ -140,11 +140,6 @@
     "X_premiere_time": {
       "type": "text"
     },
-    "users": {
-      "plugin": "users-permissions",
-      "collection": "user",
-      "via": "myPerformances"
-    },
     "search_field": {
       "type": "string",
       "private": true

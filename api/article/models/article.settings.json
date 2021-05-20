@@ -84,11 +84,6 @@
       "repeatable": true,
       "component": "media.media-content"
     },
-    "users": {
-      "plugin": "users-permissions",
-      "collection": "user",
-      "via": "myArticles"
-    },
     "meedia_arenduses": {
       "type": "component",
       "repeatable": true,
