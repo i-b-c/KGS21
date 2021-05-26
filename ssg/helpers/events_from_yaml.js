@@ -283,7 +283,7 @@ if (targeted) {
         if (eventType) {
             if (eventType.type === 'festival') {
                 isFestival = true
-                return `_fetchdir/festival/${a}`
+                return `_fetchdir/festivals/${a}`
             } else if (eventType.type === 'residency') {
                 isResidency = true
                 return `_fetchdir/residencies/${a}`
