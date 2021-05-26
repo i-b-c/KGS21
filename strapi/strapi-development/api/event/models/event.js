@@ -13,12 +13,12 @@ const moment = require('moment-timezone')
 const path = require('path');
 let helper_path = path.join(__dirname, '..', '..', '..', '/helpers/strapi_lifecycle_helpers')
 
-const { 
-  slugify, 
-  load_yaml, 
-  modify_strapi_data_yaml, 
-  delete_model, 
-  call_build 
+const {
+  slugify,
+  load_yaml,
+  modify_strapi_data_yaml,
+  delete_model,
+  call_build
 } = require(helper_path)
 
 
@@ -37,12 +37,12 @@ async function replace_name(data){
   let obj = null
   let out_performance = await strapi.query('performance').find({ id: data.performance})
 
-  if (data.performance && !(data.name_et && data.name_en)){ 
+  if (data.performance && !(data.name_et && data.name_en)){
     obj = out_performance
   }
 
   if (obj && obj[0].name_et && data.performance && !(data.name_et)){
-    data.name_et = obj[0].name_et 
+    data.name_et = obj[0].name_et
   }
   if (obj && obj[0].name_en && data.performance && !data.name_en){
     data.name_en = obj[0].name_en
@@ -53,7 +53,7 @@ module.exports = {
   lifecycles: {
     async afterCreate(result, data) {
       delete(result.published_at)
-      result.performance = result.performance.id
+      result.performance = result?.performance.id || null
       console.log('Creating new Event ', result.id);
       await strapi.query('event').update({id : result.id }, result)
     },
@@ -64,7 +64,7 @@ module.exports = {
       if(data.performance){
         await replace_name(data)
       }
-      
+
       if(data.duplicate) {
         await make_duplicate(data)
       }
