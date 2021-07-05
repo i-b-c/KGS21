@@ -28,9 +28,12 @@ module.exports = {
       await strapi.query('person').update({id : result.id }, result)
     },
     beforeUpdate(params, data) {
+      console.log('Beforeupdate');
+
       data.full_name = data.first_name.trim() + ' ' + data.last_name.trim()
       data.first_name = data.first_name.trim()
       data.last_name = data.last_name.trim()
+
       if(data.published_at === null ) {
         let model_id = params.id
         delete_model(model_id, modelDirPath)
@@ -38,11 +41,12 @@ module.exports = {
       }
     },
     afterUpdate(result, params, data) {
+      console.log('Afterupdate');
+
       if (result.published_at) {
         modify_strapi_data_yaml(result, modelDirPath)
         call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)
-        console.log('Updating person:', result);
       }
     },
     afterDelete(result, params){
