@@ -8,13 +8,13 @@
 
  const path = require('path');
  let helper_path = path.join(__dirname, '..', '..', '..', '/helpers/strapi_lifecycle_helpers')
- 
- const { 
-   slugify, 
-   load_yaml, 
-   modify_strapi_data_yaml, 
-   delete_model, 
-   call_build 
+
+ const {
+   slugify,
+   load_yaml,
+   modify_strapi_data_yaml,
+   delete_model,
+   call_build
  } = require(helper_path)
 
 const model_name = (__dirname.split('/').slice(-2)[0]);
@@ -42,7 +42,7 @@ module.exports = {
         modify_strapi_data_yaml(result, modelDirPath)
         call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)
-
+        console.log('Updating person:', result);
       }
     },
     afterDelete(result, params){
