@@ -42,7 +42,7 @@ function modify_strapi_data_yaml(result, modelDirPath) {
     model_yaml.push(result)
   }
 
-  fs.writeFileSync(modelDirPath, yaml.stringify(model_yaml.filter( e => e !== null), { indent: 4 }), 'utf8') 
+  fs.writeFileSync(modelDirPath, yaml.stringify(model_yaml.filter( e => e !== null), { indent: 4 }), 'utf8')
 }
 
 function delete_model(deleted_id, modelDirPath) {
@@ -70,7 +70,7 @@ function call_build(result, model_name) {
   if(result.type){
     type = result.type
   }
-
+  console.log('Call build using file ', `/srv/ssg/build_${model_name}.sh`);
   if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
     const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result_id, type], (error, stdout, stderr) => {
       if (error) {
