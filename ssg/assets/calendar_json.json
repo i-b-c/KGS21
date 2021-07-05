@@ -1,6 +1,6 @@
 {
-    "minDate": "2021-3-1",
-    "maxDate": "2021-9-25",
+    "minDate": "2021-5-1",
+    "maxDate": "2021-10-29",
     "events": {
         "2021-5-5": [
             {
@@ -47,6 +47,80 @@
                 "name": {
                     "et": "Reskriptitud EKKMi kogude külastus",
                     "en": "A rescripted visit to EKKM's collections"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-7-1": [
+            {
+                "et_id": "6532",
+                "en_id": "6532",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "supersocial",
+                    "en": "supersocial"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-7-2": [
+            {
+                "et_id": "6532",
+                "en_id": "6532",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "supersocial",
+                    "en": "supersocial"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-7-4": [
+            {
+                "et_id": "6532",
+                "en_id": "6532",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "supersocial",
+                    "en": "supersocial"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "6532",
+                "en_id": "6532",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "supersocial",
+                    "en": "supersocial"
                 },
                 "time": "17:00",
                 "location": {
@@ -144,6 +218,131 @@
                 }
             }
         ],
+        "2021-6-5": [
+            {
+                "et_id": "see-on-seal-aga-vaata-mind-siin-1645",
+                "en_id": "its-there-but-look-at-me-here-1645",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "See on seal, aga vaata mind siin",
+                    "en": "It's there, but look at me here"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "sireenid-1644",
+                "en_id": "sirens-1644",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sireenid",
+                    "en": "Sirens"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-6": [
+            {
+                "et_id": "olmeoopus-neljale-kehale-1647",
+                "en_id": "olmeoopus-neljale-kehale-1647",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Olmeoopus neljale kehale",
+                    "en": "Olmeoopus neljale kehale"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "tde-ja-igus-1646",
+                "en_id": "tde-ja-igus-1646",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tõde ja õigus",
+                    "en": "Tõde ja õigus"
+                },
+                "time": "19:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-16": [
+            {
+                "et_id": "mesilase-asi-1641",
+                "en_id": "bee-matter-1641",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mesilase asi",
+                    "en": "Bee Matter"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-6-21": [
             {
                 "et_id": "mletan-ei-mleta-1637",
@@ -166,14 +365,14 @@
         "2021-9-22": [
             {
                 "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "it-stays-as-it-is-244",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
                     "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
+                    "en": "It Stays As It Is"
                 },
                 "time": "19:30",
                 "location": {
@@ -182,19 +381,19 @@
                 }
             }
         ],
-        "2021-4-12": [
+        "2021-6-14": [
             {
-                "et_id": "gangstarap-1624",
-                "en_id": "gangstrap-1624",
+                "et_id": "mesilase-asi-1641",
+                "en_id": "bee-matter-1641",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Gangstarap",
-                    "en": "Gangstrap"
+                    "et": "Mesilase asi",
+                    "en": "Bee Matter"
                 },
-                "time": "19:30",
+                "time": "18:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -204,16 +403,35 @@
         "2021-9-24": [
             {
                 "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "it-stays-as-it-is-244",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
                     "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
+                    "en": "It Stays As It Is"
                 },
                 "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-6-15": [
+            {
+                "et_id": "mesilase-asi-1641",
+                "en_id": "bee-matter-1641",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mesilase asi",
+                    "en": "Bee Matter"
+                },
+                "time": "17:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -223,14 +441,14 @@
         "2021-9-25": [
             {
                 "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "en_id": "it-stays-as-it-is-244",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
                     "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
+                    "en": "It Stays As It Is"
                 },
                 "time": "19:30",
                 "location": {
@@ -239,38 +457,36 @@
                 }
             }
         ],
-        "2021-3-6": [
+        "2021-6-13": [
             {
-                "et_id": "scrapyard-20-1625",
-                "en_id": "scrapyard-20-1625",
+                "et_id": "mesilase-asi-1641",
+                "en_id": "bee-matter-1641",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Scrapyard 2.0",
-                    "en": "Scrapyard 2.0"
+                    "et": "Mesilase asi",
+                    "en": "Bee Matter"
                 },
-                "time": "19:30",
+                "time": "18:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
-            }
-        ],
-        "2021-3-15": [
+            },
             {
-                "et_id": "kontsertsari-improtest-1604",
-                "en_id": "concert-series-improtest-1604",
+                "et_id": "mletan-ei-mleta-1637",
+                "en_id": "remember-dont-remember-1637",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kontsertsari IMPROTEST",
-                    "en": "Concert series IMPROTEST"
+                    "et": "Mäletan / Ei mäleta",
+                    "en": "\"Remember / Don't Remember\""
                 },
-                "time": "19:30",
+                "time": "18:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -290,6 +506,44 @@
                     "en": "Tafukt"
                 },
                 "time": "20:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-10-29": [
+            {
+                "et_id": "gangstarap-1624",
+                "en_id": "gangstrap-1624",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Gangstarap",
+                    "en": "Gangstrap"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-10-27": [
+            {
+                "et_id": "gangstarap-1624",
+                "en_id": "gangstrap-1624",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Gangstarap",
+                    "en": "Gangstrap"
+                },
+                "time": "19:30",
                 "location": {
                     "et": "",
                     "en": ""
@@ -351,36 +605,19 @@
                 }
             }
         ],
-        "2021-6-5": [
+        "2021-5-29": [
             {
-                "et_id": "sireenid-1644",
-                "en_id": "sirens-1644",
+                "et_id": "gangstarap-1624",
+                "en_id": "gangstrap-1624",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Sireenid",
-                    "en": "Sirens"
+                    "et": "Gangstarap",
+                    "en": "Gangstrap"
                 },
                 "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "mletan-ei-mleta-1637",
-                "en_id": "remember-dont-remember-1637",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Mäletan / Ei mäleta",
-                    "en": "\"Remember / Don't Remember\""
-                },
-                "time": "18:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -406,52 +643,35 @@
                 }
             }
         ],
-        "2021-4-4": [
+        "2021-9-28": [
             {
-                "et_id": "kas-sa-etendad-iseennast-1627",
-                "en_id": "are-you-performing-yourself-1627",
+                "et_id": "fish-out-of-water-1648",
+                "en_id": "fish-out-of-water-1648",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas sa etendad iseennast?",
-                    "en": "Are You Performing Yourself?"
+                    "et": "Fish out of water",
+                    "en": "Fish out of water"
                 },
-                "time": "12:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "iv-pev-1631",
-                "en_id": "day-iv-1631",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kõheda vastasmõju festival 2021",
-                    "en": "Festival Of Spooky Action At A Distance 2021"
-                },
-                "time": "15:00",
+                "time": "19:30",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             }
         ],
-        "2021-4-19": [
+        "2021-6-18": [
             {
-                "et_id": "kontsertsari-improtest-1604",
-                "en_id": "concert-series-improtest-1604",
+                "et_id": "kontsertsari-improtest-eesti-elektroonilise-muusika-seltsi-ansambel-1649",
+                "en_id": "concert-series-improtest-1649",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kontsertsari IMPROTEST",
+                    "et": "Kontsertsari IMPROTEST: Eesti Elektroonilise Muusika Seltsi Ansambel",
                     "en": "Concert series IMPROTEST"
                 },
                 "time": "19:30",
@@ -461,323 +681,53 @@
                 }
             }
         ],
-        "2021-4-21": [
+        "2021-8-19": [
             {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
+                "et_id": "life-as-we-know-it-1650",
+                "en_id": "life-as-we-know-it-1650",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2021-4-23": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2021-4-24": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2021-3-12": [
-            {
-                "et_id": "planet-alexithymia-261",
-                "en_id": "planet-alexithymia-261",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Planet Alexithymia",
-                    "en": "Planet Alexithymia"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-3-24": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-3-16": [
-            {
-                "et_id": "6187",
-                "en_id": "6187",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-4-2": [
-            {
-                "et_id": "ii-pev-1629",
-                "en_id": "day-ii-1629",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kõheda vastasmõju festival 2021",
-                    "en": "Festival Of Spooky Action At A Distance 2021"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2021-4-15": [
-            {
-                "et_id": "5099",
-                "en_id": "5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-4-14": [
-            {
-                "et_id": "5099",
-                "en_id": "5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-4-1": [
-            {
-                "et_id": "i-pev-1628",
-                "en_id": "day-i-1628",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kõheda vastasmõju festival 2021",
-                    "en": "Festival Of Spooky Action At A Distance 2021"
-                },
-                "time": "15:40",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2021-3-25": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-3-23": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "Kas te olete oma kohaga rahul"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-4-3": [
-            {
-                "et_id": "iii-pev-1630",
-                "en_id": "day-iii-1630",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kõheda vastasmõju festival 2021",
-                    "en": "Festival Of Spooky Action At A Distance 2021"
+                    "et": "Life as we know it",
+                    "en": "Life as we know it"
                 },
                 "time": "20:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
-            }
-        ],
-        "2021-3-17": [
+            },
             {
-                "et_id": "6187",
-                "en_id": "6187",
+                "et_id": "rile-reading-salon-1667",
+                "en_id": "rile-reading-salon-1667",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Evolutsiooni revolutsioon",
-                    "en": "The revolution on evolution"
+                    "et": "RILE* reading salon",
+                    "en": "RILE* reading salon"
                 },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-3-11": [
-            {
-                "et_id": "planet-alexithymia-261",
-                "en_id": "planet-alexithymia-261",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Planet Alexithymia",
-                    "en": "Planet Alexithymia"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2021-3-27": [
-            {
-                "et_id": "mkslakunst-1636",
-                "en_id": "mkslaart-1636",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Māksla/Kunst",
-                    "en": "Māksla/Art"
-                },
-                "time": "19:00",
+                "time": "15:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
-            }
-        ],
-        "2021-6-6": [
+            },
             {
-                "et_id": "mletan-ei-mleta-1637",
-                "en_id": "remember-dont-remember-1637",
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Mäletan / Ei mäleta",
-                    "en": "\"Remember / Don't Remember\""
+                    "et": "Artist walk",
+                    "en": "Artist walk"
                 },
-                "time": "18:00",
+                "time": "00:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -879,25 +829,6 @@
                 }
             }
         ],
-        "2021-3-20": [
-            {
-                "et_id": "made-in-estonia-maraton-elektron-1612",
-                "en_id": "made-in-estonia-maraton-elektron-1612",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Made in Estonia Maraton @ e‾lektron",
-                    "en": "Made in Estonia Maraton @ e‾lektron"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2021-5-27": [
             {
                 "et_id": "gangstarap-1624",
@@ -917,7 +848,7 @@
                 }
             }
         ],
-        "2021-5-29": [
+        "2021-10-26": [
             {
                 "et_id": "gangstarap-1624",
                 "en_id": "gangstrap-1624",
@@ -936,19 +867,87 @@
                 }
             }
         ],
-        "2021-6-13": [
+        "2021-8-21": [
             {
-                "et_id": "mletan-ei-mleta-1637",
-                "en_id": "remember-dont-remember-1637",
+                "et_id": "race-lifelong-1654",
+                "en_id": "race-lifelong-1654",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Mäletan / Ei mäleta",
-                    "en": "\"Remember / Don't Remember\""
+                    "et": "RACE. lifelong",
+                    "en": "RACE. lifelong"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "poems-and-other-emergencies-1655",
+                "en_id": "poems-and-other-emergencies-1655",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Poems and Other Emergencies",
+                    "en": "Poems and Other Emergencies"
+                },
+                "time": "20:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "molar-1666",
+                "en_id": "molar-1666",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "MOLAR",
+                    "en": "MOLAR"
                 },
                 "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "rile-reading-salon-1667",
+                "en_id": "rile-reading-salon-1667",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "RILE* reading salon",
+                    "en": "RILE* reading salon"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Artist walk",
+                    "en": "Artist walk"
+                },
+                "time": "00:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -974,6 +973,59 @@
                 }
             }
         ],
+        "2021-8-12": [
+            {
+                "et_id": "mixed-feelings-1656",
+                "en_id": "mixed-feelings-1656",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "mixed feelings",
+                    "en": "mixed feelings"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "eden-detail-1665",
+                "en_id": "eden-detail-1665",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Eden Detail",
+                    "en": "Eden Detail"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Artist walk",
+                    "en": "Artist walk"
+                },
+                "time": "00:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-6-20": [
             {
                 "et_id": "mletan-ei-mleta-1637",
@@ -993,6 +1045,76 @@
                 }
             }
         ],
+        "2021-8-13": [
+            {
+                "et_id": "mixed-feelings-1656",
+                "en_id": "mixed-feelings-1656",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "mixed feelings",
+                    "en": "mixed feelings"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "lignes-de-conduite-1658",
+                "en_id": "lignes-de-conduite-1658",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Lignes de conduite",
+                    "en": "Lignes de conduite"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "eden-detail-1665",
+                "en_id": "eden-detail-1665",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Eden Detail",
+                    "en": "Eden Detail"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Artist walk",
+                    "en": "Artist walk"
+                },
+                "time": "00:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-5-22": [
             {
                 "et_id": "i-am-frankenstein-1639",
@@ -1005,7 +1127,60 @@
                     "et": "I am Frankenstein",
                     "en": "I am Frankenstein"
                 },
-                "time": "21:00",
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-8-14": [
+            {
+                "et_id": "lignes-de-conduite-1658",
+                "en_id": "lignes-de-conduite-1658",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Lignes de conduite",
+                    "en": "Lignes de conduite"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "eden-detail-1665",
+                "en_id": "eden-detail-1665",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Eden Detail",
+                    "en": "Eden Detail"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Artist walk",
+                    "en": "Artist walk"
+                },
+                "time": "00:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -1067,6 +1242,76 @@
                 }
             }
         ],
+        "2021-8-20": [
+            {
+                "et_id": "molar-1666",
+                "en_id": "molar-1666",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "MOLAR",
+                    "en": "MOLAR"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "rile-reading-salon-1667",
+                "en_id": "rile-reading-salon-1667",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "RILE* reading salon",
+                    "en": "RILE* reading salon"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Artist walk",
+                    "en": "Artist walk"
+                },
+                "time": "00:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "life-as-we-know-it-1650",
+                "en_id": "life-as-we-know-it-1650",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Life as we know it",
+                    "en": "Life as we know it"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-6-17": [
             {
                 "et_id": "mesilase-asi-1641",
@@ -1086,6 +1331,180 @@
                 }
             }
         ],
+        "2021-8-27": [
+            {
+                "et_id": "to-speak-light-pours-out-1668",
+                "en_id": "to-speak-light-pours-out-1668",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "To Speak Light Pours Out",
+                    "en": "To Speak Light Pours Out"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "physical-evidence-museum-1669",
+                "en_id": "physical-evidence-museum-1669",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Physical Evidence Museum",
+                    "en": "Physical Evidence Museum"
+                },
+                "time": "16:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "sinu-nirvaanale-1671",
+                "en_id": "for-your-nirvana-1671",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sinu Nirvaanale",
+                    "en": "For Your nirvana"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Artist walk",
+                    "en": "Artist walk"
+                },
+                "time": "00:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "happiness-1670",
+                "en_id": "happiness-1670",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "HAPPINESS",
+                    "en": "HAPPINESS"
+                },
+                "time": "12:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-8-28": [
+            {
+                "et_id": "to-speak-light-pours-out-1668",
+                "en_id": "to-speak-light-pours-out-1668",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "To Speak Light Pours Out",
+                    "en": "To Speak Light Pours Out"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "happiness-1670",
+                "en_id": "happiness-1670",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "HAPPINESS",
+                    "en": "HAPPINESS"
+                },
+                "time": "12:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "physical-evidence-museum-1669",
+                "en_id": "physical-evidence-museum-1669",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Physical Evidence Museum",
+                    "en": "Physical Evidence Museum"
+                },
+                "time": "12:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "sinu-nirvaanale-1671",
+                "en_id": "for-your-nirvana-1671",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sinu Nirvaanale",
+                    "en": "For Your nirvana"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Artist walk",
+                    "en": "Artist walk"
+                },
+                "time": "00:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2021-5-8": [
             {
                 "et_id": "reskriptitud-ekkmi-kogude-klastus-1642",
@@ -1099,6 +1518,116 @@
                     "en": "A rescripted visit to EKKM's collections"
                 },
                 "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-8-23": [
+            {
+                "et_id": "physical-evidence-museum-1669",
+                "en_id": "physical-evidence-museum-1669",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Physical Evidence Museum",
+                    "en": "Physical Evidence Museum"
+                },
+                "time": "16:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-8-24": [
+            {
+                "et_id": "physical-evidence-museum-1669",
+                "en_id": "physical-evidence-museum-1669",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Physical Evidence Museum",
+                    "en": "Physical Evidence Museum"
+                },
+                "time": "16:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-8-25": [
+            {
+                "et_id": "physical-evidence-museum-1669",
+                "en_id": "physical-evidence-museum-1669",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Physical Evidence Museum",
+                    "en": "Physical Evidence Museum"
+                },
+                "time": "16:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-8-26": [
+            {
+                "et_id": "physical-evidence-museum-1669",
+                "en_id": "physical-evidence-museum-1669",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Physical Evidence Museum",
+                    "en": "Physical Evidence Museum"
+                },
+                "time": "16:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "sinu-nirvaanale-1671",
+                "en_id": "for-your-nirvana-1671",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sinu Nirvaanale",
+                    "en": "For Your nirvana"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "artist-walk-1672",
+                "en_id": "artist-walk-1672",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Artist walk",
+                    "en": "Artist walk"
+                },
+                "time": "00:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -1209,6 +1738,25 @@
                     "en": "A rescripted visit to EKKM's collections"
                 },
                 "time": "10:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2021-8-29": [
+            {
+                "et_id": "happiness-1670",
+                "en_id": "happiness-1670",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "HAPPINESS",
+                    "en": "HAPPINESS"
+                },
+                "time": "12:00",
                 "location": {
                     "et": "",
                     "en": ""
