@@ -30,6 +30,7 @@ build/*
 # dynamic data
 ssg/source/_fetchdir
 ssg/source/strapidata
+ssg/assets/calendar_json.json
 
 # data transfer..
 data-transfer/
