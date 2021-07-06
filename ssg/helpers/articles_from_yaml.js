@@ -154,6 +154,7 @@ function addAliases(oneEventData, pathAliases) {
 pathAliasesFunc(fetchDir, allPathAliases, 'articles')
 
 if (targeted) {
+    console.log(`Targeting article _fetchdir/articles/${a}`);
     const allTargets = fetchSpecific.map(a => `_fetchdir/articles/${a}`)
     allTargets.push(`magazine/`)
     addConfigPathAliases(allTargets)
