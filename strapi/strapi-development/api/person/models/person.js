@@ -29,9 +29,9 @@ module.exports = {
     },
     beforeUpdate(params, data) {
       console.log('Person data:', data, params);
-      data.full_name = data.first_name.trim() + ' ' + data.last_name.trim()
-      data.first_name = data.first_name.trim()
-      data.last_name = data.last_name.trim()
+      if (data.full_name) { data.full_name = data.first_name.trim() + ' ' + data.last_name.trim() }
+      if (data.first_name) { data.first_name = data.first_name.trim() }
+      if (data.last_name) { data.last_name = data.last_name.trim() }
 
       if(data.published_at === null ) {
         let model_id = params.id
