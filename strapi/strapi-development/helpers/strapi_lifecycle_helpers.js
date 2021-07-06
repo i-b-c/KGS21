@@ -72,6 +72,7 @@ function call_build(result, model_name) {
   }
 
   if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
+    console.log(`Executing /srv/ssg/build_${model_name}.sh ${result_id} ${type}`);
     const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result_id, type], (error, stdout, stderr) => {
       if (error) {
         console.log({error, stdout, stderr})
@@ -80,6 +81,8 @@ function call_build(result, model_name) {
       console.log(stdout);
     })
   } else {
+    console.log(`Executing /srv/ssg/build.sh ${result_id}`);
+
     const child = execFile('bash', [`/srv/ssg/build.sh`, result_id], (error, stdout, stderr) => {
       if (error) {
         throw error;
