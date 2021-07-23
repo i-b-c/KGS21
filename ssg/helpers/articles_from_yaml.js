@@ -8,9 +8,6 @@ const replaceImgPaths = require('./replace_img_paths.js')
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
 const target = [process.argv[3]]
 
-console.log(targeted, target);
-console.log(process.argv);
-
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
@@ -93,8 +90,6 @@ for (const lang of LANGUAGES) {
     fs.writeFileSync(articlesYAMLPath, articlesYAML, 'utf8');
 }
 
-console.log('DEBUG 1');
-
 function processArticles(STRAPIDATA_ARTICLES) {
     STRAPIDATA_ARTICLES.sort((a, b) => {
         return new Date(b.publish_date) - new Date(a.publish_date)
@@ -151,18 +146,12 @@ function processArticles(STRAPIDATA_ARTICLES) {
     return STRAPIDATA_ARTICLES
 }
 
-console.log('DEBUG 2');
-
 function addAliases(oneEventData, pathAliases) {
     // oneEventData.aliases = pathAliases
     pathAliases.map(a => allPathAliases.push({from: a, to: oneEventData.path}))
 }
 
-console.log('DEBUG 3');
-
 pathAliasesFunc(fetchDir, allPathAliases, 'articles')
-
-console.log('DEBUG 4', targeted);
 
 if (targeted) {
     console.log('DEBUG 5');
