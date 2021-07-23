@@ -162,9 +162,11 @@ console.log('DEBUG 3');
 
 pathAliasesFunc(fetchDir, allPathAliases, 'articles')
 
-console.log('DEBUG 4');
+console.log('DEBUG 4', targeted);
 
 if (targeted) {
+    console.log('DEBUG 5');
+
     console.log(`Targeting article _fetchdir/articles/${a}`);
     const allTargets = fetchSpecific.map(a => `_fetchdir/articles/${a}`)
     allTargets.push(`magazine/`)
