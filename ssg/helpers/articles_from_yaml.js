@@ -8,6 +8,9 @@ const replaceImgPaths = require('./replace_img_paths.js')
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
 const target = [process.argv[3]]
 
+console.log(targeted, target);
+console.log(process.argv);
+
 const rootDir =  path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
