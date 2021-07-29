@@ -116,8 +116,8 @@ block content
 
                                                 span.name= event[`performance_name_${self.locale}`]
 
-                                                if event[`performance_subtitle_${self.locale}`]
-                                                    span.subtitle= event[`performance_subtitle_${self.locale}`]
+                                                if event[`performance_subtitle_${self.locale}`] || event[`subtitle_${self.locale}`]
+                                                    span.subtitle= event[`performance_subtitle_${self.locale}`] || event[`subtitle_${self.locale}`]
                                         else
                                             //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
                                             a(href=`/${lang_path}${event.path}`)= event[`name_${self.locale}`]
@@ -227,8 +227,8 @@ block content
 
                                                 span.name= event[`performance_name_${self.locale}`]
 
-                                                if event[`performance_subtitle_${self.locale}`]
-                                                    span.subtitle= event[`performance_subtitle_${self.locale}`]
+                                                if event[`performance_subtitle_${self.locale}`] || event[`subtitle_${self.locale}`]
+                                                    span.subtitle= event[`performance_subtitle_${self.locale}`] || event[`subtitle_${self.locale}`]
                                         else
                                             //- a(href='/' + lang + '/event/' + op.get(p,'id'))= op.get(p, lang + '-name')
                                             a(href=`/${lang_path}${event.path}`)= event[`name_${self.locale}`]
