@@ -168,7 +168,7 @@ block content
                                                 else if event.X_ticket_info.sales_status === "online"
                                                     a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                             else
-                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
+                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
@@ -283,7 +283,7 @@ block content
                                                     else if event.X_ticket_info.sales_status === "online"
                                                         a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                                 else
-                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
+                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
