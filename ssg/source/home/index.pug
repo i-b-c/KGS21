@@ -60,7 +60,8 @@ block content
 
                     each performance in featured
                         script.
-                            var gradientMap = `#${bgcolor}, #${fgcolor}`;
+                            console.log ()
+                            var gradientMap = `${bgcolor}, ${fgcolor}`;
                             var slide#{performance.id} = document.getElementById('slide-#{performance.id}');
                             GradientMaps.applyGradientMap(slide#{performance.id}, gradientMap);
 
