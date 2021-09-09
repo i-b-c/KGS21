@@ -39,7 +39,7 @@ block content
 
                                 script.
                                     var slide#{self.id} = document.getElementById('slide-#{self.id}');
-                                    var gradientMap = '#000000, #FFC600';
+                                    var gradientMap = `#{bgcolor}, #{fgcolor}`;
                                     GradientMaps.applyGradientMap(slide#{self.id}, gradientMap);
         .row.front-page-margin
             aside.col-md-12.col-lg-3
