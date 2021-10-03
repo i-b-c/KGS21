@@ -26,8 +26,16 @@ block content
                             .col-12
                                 +dateAndWeekday(key)
                                 each coverage in coverageDate
-                                    h4= coverage.title
-                                    if coverage.content
-                                        div
-                                            +markdown(coverage.content)
-                                    hr
+                                    if coverage.url
+                                        a(href=coverage.url)
+                                            h4= coverage.title
+                                            if coverage.content
+                                                div
+                                                    +markdown(coverage.content)
+                                            hr
+                                    else
+                                        h4= coverage.title
+                                        if coverage.content
+                                            div
+                                                +markdown(coverage.content)
+                                        hr
