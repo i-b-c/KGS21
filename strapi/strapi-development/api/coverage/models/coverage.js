@@ -9,13 +9,13 @@
 
  const path = require('path');
  let helper_path = path.join(__dirname, '..', '..', '..', '/helpers/strapi_lifecycle_helpers')
- 
- const { 
-   slugify, 
-   load_yaml, 
-   modify_strapi_data_yaml, 
-   delete_model, 
-   call_build 
+
+ const {
+   slugify,
+   load_yaml,
+   modify_strapi_data_yaml,
+   delete_model,
+   call_build
  } = require(helper_path)
 
 
@@ -38,13 +38,13 @@ module.exports = {
       if(data.published_at === null ) {
         let model_id = params.id
         delete_model(model_id, modelDirPath)
-        call_build(params, model_name)
-      }      
+        // call_build(params, model_name)
+      }
     },
     afterUpdate(result, params, data) {
       if (result.published_at) {
         modify_strapi_data_yaml(result, modelDirPath)
-        call_build(result, model_name)
+        // call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)
 
       }
@@ -53,7 +53,7 @@ module.exports = {
       // console.log('\nR', result, '\nparams', params)
       let model_id = result.id
       delete_model(model_id, modelDirPath)
-      call_build(result, model_name)
+    //   call_build(result, model_name)
     }
   }
 };
