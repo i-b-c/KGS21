@@ -53,7 +53,6 @@ const allPathAliases = []
 // const targetEventChildEvents = targetedEvent.child_events ? targetedEvent.child_events.map(c => c.id) : []
 // console.log(targetEventChildEvents);
 // targetEventChildEvents.map(a => fetchSpecific.push(a))
-console.log('LOG 1');
 for (const lang of LANGUAGES) {
 
     const categoriesYAMLPath = path.join(fetchDir, `categories.${lang}.yaml`)
@@ -64,12 +63,10 @@ for (const lang of LANGUAGES) {
 
 
     for (oneEvent of STRAPIDATA_EVENTS) {
-        if(oneEvent === 'festival') { console.log('Festivaaaaaaal', oneEvent.id); }
         // let performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
         let performance = oneEvent.performance || []
 
         let combined_coverages = null
-        loggg('aaa')
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.id.toString()) ? true : false
 
         if (oneEvent.coverages) {
@@ -130,7 +127,6 @@ for (const lang of LANGUAGES) {
 
         if (oneEventData.type === 'residency') { createResidency(oneEventData, lang, createDir) }
     }
-    console.log('3333333');
     try {
 
         let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
@@ -156,7 +152,6 @@ function createResidency(oneEventData, lang, createDir) {
 }
 
 function createFestival(oneEventData, lang, createDir) {
-    console.log('Festival', oneEventData.id);
     let festivalHomePath = oneEventData[`slug_${lang}`] || oneEventData.remote_id ? (oneEventData[`slug_${lang}`] ? `festival/${oneEventData[`slug_${lang}`]}/` : `festival/${oneEventData.remote_id}/`) : null
     // FESTIVAL PROGRAM/LANDING PAGE
     oneEventData.path = `${festivalHomePath}program`
@@ -267,7 +262,6 @@ function coveragesByDate(coverages) {
     })
     return coverages_array || null
 }
-console.log('LOG 4');
 
 function addAliases(oneEventData, pathAliases) {
     // oneEventData.aliases = pathAliases
@@ -275,8 +269,6 @@ function addAliases(oneEventData, pathAliases) {
 }
 
 pathAliasesFunc(fetchDir, allPathAliases, 'events')
-
-console.log('LOG 5');
 
 if (targeted) {
     let isFestival = false
@@ -287,7 +279,6 @@ if (targeted) {
     const allTargets = fetchSpecific.map(a => {
 
         const eventType = STRAPIDATA_EVENTS.filter(e => e.id.toString() === a)[0]
-        console.log('EVENTTYPE', eventType);
         if (eventType) {
             if (eventType.type === 'festival') {
                 isFestival = true
