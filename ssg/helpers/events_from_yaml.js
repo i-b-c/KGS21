@@ -121,6 +121,13 @@ for (const lang of LANGUAGES) {
             oneEventData.child_events = oneEvent.child_events ? festival_child_events(oneEvent.child_events, lang) : null
             oneEventData.coverages = oneEvent.coverages || null
             oneEventData.coverage_dates = oneEvent.coverages ? coveragesByDate(combined_coverages) : null
+            if (oneEvent.child_events) {
+                oneEvent.child_events.map(a => {
+                    if (!a) {
+                        console.log(oneEvent.id);
+                    }
+                })
+            }
         }
 
         if (oneEventData.type === 'festival') { createFestival(oneEventData, lang, createDir) }
@@ -211,36 +218,36 @@ function createFestival(oneEventData, lang, createDir) {
 
 function festival_child_events(child_events_data, lang) {
     return child_events_data.map(ch => {
-        if (ch) {
-            let strapidata_child_event = STRAPIDATA_EVENTS.filter(e => ch && e.id === ch.id)[0]
-            let child_event = strapidata_child_event || []
-            let event_performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
 
-            return {
-                id: child_event.id,
-                performance_path: event_performance[`slug_${lang}`] || event_performance.remote_id ? (event_performance[`slug_${lang}`] ? `performance/${event_performance[`slug_${lang}`]}` : `performance/${event_performance.remote_id}`) : null,
-                start_time: child_event.start_time || null,
-                premiere: child_event.premiere || null,
-                [`performance_name_${lang}`]: event_performance[`name_${lang}`] || null,
-                [`performance_slug_${lang}`]: event_performance[`slug_${lang}`] || null,
-                [`performance_X_headline_${lang}`]: event_performance[`X_headline_${lang}`] || null,
-                [`performance_subtitle_${lang}`]: event_performance[`subtitle_${lang}`] || null,
-                performance_X_artist: event_performance.X_artist || null,
-                performance_X_producer: event_performance.X_producer || null,
-                [`performance_X_town_${lang}`]: event_performance[`X_town_${lang}`] || null,
-                location: child_event.location ? child_event.location[`name_${lang}`] : null,
-                X_location: child_event[`X_location_${lang}`] || null,
-                conversation: child_event.conversation || null,
-                remote_id: child_event.remote_id || null,
-                X_ticket_info: child_event.X_ticket_info || null,
-                canceled: child_event.canceled || false,
-                [`name_${lang}`]: child_event[`name_${lang}`] || null,
-                [`subtitle_${lang}`]: child_event[`subtitle_${lang}`] || null,
-                [`X_headline_${lang}`]: child_event[`X_headline_${lang}`] || null,
-                X_artist: child_event.X_artist || null,
-            }
+        let strapidata_child_event = STRAPIDATA_EVENTS.filter(e => ch && e.id === ch.id)[0]
+        let child_event = strapidata_child_event || []
+        let event_performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
+
+        return {
+            id: child_event.id,
+            performance_path: event_performance[`slug_${lang}`] || event_performance.remote_id ? (event_performance[`slug_${lang}`] ? `performance/${event_performance[`slug_${lang}`]}` : `performance/${event_performance.remote_id}`) : null,
+            start_time: child_event.start_time || null,
+            premiere: child_event.premiere || null,
+            [`performance_name_${lang}`]: event_performance[`name_${lang}`] || null,
+            [`performance_slug_${lang}`]: event_performance[`slug_${lang}`] || null,
+            [`performance_X_headline_${lang}`]: event_performance[`X_headline_${lang}`] || null,
+            [`performance_subtitle_${lang}`]: event_performance[`subtitle_${lang}`] || null,
+            performance_X_artist: event_performance.X_artist || null,
+            performance_X_producer: event_performance.X_producer || null,
+            [`performance_X_town_${lang}`]: event_performance[`X_town_${lang}`] || null,
+            location: child_event.location ? child_event.location[`name_${lang}`] : null,
+            X_location: child_event[`X_location_${lang}`] || null,
+            conversation: child_event.conversation || null,
+            remote_id: child_event.remote_id || null,
+            X_ticket_info: child_event.X_ticket_info || null,
+            canceled: child_event.canceled || false,
+            [`name_${lang}`]: child_event[`name_${lang}`] || null,
+            [`subtitle_${lang}`]: child_event[`subtitle_${lang}`] || null,
+            [`X_headline_${lang}`]: child_event[`X_headline_${lang}`] || null,
+            X_artist: child_event.X_artist || null,
         }
-    }).filter(exists => exists).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
+
+    }).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
 
 
 }
