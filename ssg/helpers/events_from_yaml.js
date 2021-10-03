@@ -64,7 +64,7 @@ for (const lang of LANGUAGES) {
 
 
     for (oneEvent of STRAPIDATA_EVENTS) {
-
+        if(oneEvent === 'festival') { console.log('Festivaaaaaaal', oneEvent.id); }
         // let performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
         let performance = oneEvent.performance || []
 
