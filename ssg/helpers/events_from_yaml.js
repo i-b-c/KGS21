@@ -156,7 +156,7 @@ function createResidency(oneEventData, lang, createDir) {
 }
 
 function createFestival(oneEventData, lang, createDir) {
-
+    console.log('Festival', oneEventData.id);
     let festivalHomePath = oneEventData[`slug_${lang}`] || oneEventData.remote_id ? (oneEventData[`slug_${lang}`] ? `festival/${oneEventData[`slug_${lang}`]}/` : `festival/${oneEventData.remote_id}/`) : null
     // FESTIVAL PROGRAM/LANDING PAGE
     oneEventData.path = `${festivalHomePath}program`
