@@ -275,11 +275,11 @@ if (targeted) {
     let isResidency = false
     let isTour = false
     let isProject = false
-
+    console.log('IS TARGETED');
     const allTargets = fetchSpecific.map(a => {
 
         const eventType = STRAPIDATA_EVENTS.filter(e => e.id.toString() === a)[0]
-
+        console.log('EVENTTYPE', eventType);
         if (eventType) {
             if (eventType.type === 'festival') {
                 isFestival = true
