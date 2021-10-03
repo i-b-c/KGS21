@@ -8,7 +8,7 @@ const replaceImgPaths = require('./replace_img_paths.js')
 // REMOTE ID'S TO BUILD, LEAVE EMPTY FOR ALL OR COMMENT BELOW LINE OUT
 // const fetchSpecific = ['6762', '5663', '6909', '6724', '6762', '5937']
 
-const rootDir =  path.join(__dirname, '..')
+const rootDir = path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const LANGUAGES = ['et', 'en']
@@ -63,7 +63,7 @@ for (const lang of LANGUAGES) {
     let allData = []
 
 
-    for(oneEvent of STRAPIDATA_EVENTS) {
+    for (oneEvent of STRAPIDATA_EVENTS) {
 
         // let performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(oneEvent.id))[0] || []
         let performance = oneEvent.performance || []
@@ -131,11 +131,17 @@ for (const lang of LANGUAGES) {
         if (oneEventData.type === 'residency') { createResidency(oneEventData, lang, createDir) }
     }
     console.log('3333333');
-    let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(a.start_time)-new Date(b.start_time))
-    console.log(`${allDataSortedFiltered.length} events (incl. festivals, residencies, tours) from YAML (${lang})`);
-    const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
-    const eventsYAML = yaml.safeDump(allDataSortedFiltered, {'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(eventsYAMLPath, eventsYAML, 'utf8');
+    try {
+
+        let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
+        console.log(`${allDataSortedFiltered.length} events (incl. festivals, residencies, tours) from YAML (${lang})`);
+        const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
+        const eventsYAML = yaml.safeDump(allDataSortedFiltered, { 'noRefs': true, 'indent': '4' });
+        fs.writeFileSync(eventsYAMLPath, eventsYAML, 'utf8');
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 
 function createResidency(oneEventData, lang, createDir) {
@@ -252,11 +258,11 @@ function createDirAndFiles(oneEventData, lang, dirPath, addPath, indexTemplateTy
 }
 
 function coveragesByDate(coverages) {
-    sorted_coverages = coverages.sort((a, b) => new Date(a.publish_date)-new Date(b.publish_date))
+    sorted_coverages = coverages.sort((a, b) => new Date(a.publish_date) - new Date(b.publish_date))
     coverages_array = {}
     coverge_dates = sorted_coverages.map(d => {
         if (d.publish_date && typeof d.publish_date === 'string') {
-            coverages_array[d.publish_date] = sorted_coverages.filter(c =>  c.publish_date && d.publish_date && d.publish_date.substr(0,10) === c.publish_date.substr(0,10))
+            coverages_array[d.publish_date] = sorted_coverages.filter(c => c.publish_date && d.publish_date && d.publish_date.substr(0, 10) === c.publish_date.substr(0, 10))
         }
     })
     return coverages_array || null
@@ -265,7 +271,7 @@ console.log('LOG 4');
 
 function addAliases(oneEventData, pathAliases) {
     // oneEventData.aliases = pathAliases
-    pathAliases.map(a => allPathAliases.push({from: a, to: oneEventData.path}))
+    pathAliases.map(a => allPathAliases.push({ from: a, to: oneEventData.path }))
 }
 
 pathAliasesFunc(fetchDir, allPathAliases, 'events')
