@@ -125,26 +125,17 @@ for (const lang of LANGUAGES) {
             oneEventData.coverages = oneEvent.coverages || null
             oneEventData.coverage_dates = oneEvent.coverages ? coveragesByDate(combined_coverages) : null
         }
-        console.log('LOG 2');
 
         if (oneEventData.type === 'festival') { createFestival(oneEventData, lang, createDir) }
-        console.log('LOG 2.2');
 
         if (oneEventData.type === 'residency') { createResidency(oneEventData, lang, createDir) }
-        console.log('LOG 2.3');
-
-
     }
-    console.log('LOG 2.4');
-
+    console.log('3333333');
     let allDataSortedFiltered = allData.filter(p => p.start_time).sort((a, b) => new Date(a.start_time)-new Date(b.start_time))
     console.log(`${allDataSortedFiltered.length} events (incl. festivals, residencies, tours) from YAML (${lang})`);
     const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
     const eventsYAML = yaml.safeDump(allDataSortedFiltered, {'noRefs': true, 'indent': '4' });
     fs.writeFileSync(eventsYAMLPath, eventsYAML, 'utf8');
-    console.log('LOG 2.5');
-
-
 }
 
 function createResidency(oneEventData, lang, createDir) {
@@ -216,7 +207,6 @@ function createFestival(oneEventData, lang, createDir) {
     }
 
 }
-console.log('LOG 3');
 
 function festival_child_events(child_events_data, lang) {
     return child_events_data.map(ch => {
