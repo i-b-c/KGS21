@@ -120,6 +120,9 @@ module.exports = {
     afterUpdate(result, params, data) {
 
       if (result.published_at) {
+        if (result.child_events) {
+            result.child_events = result.child_events.filter(a => a) || null
+        }
         modify_strapi_data_yaml(result, modelDirPath)
         call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)
