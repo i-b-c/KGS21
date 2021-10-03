@@ -27,7 +27,7 @@ block content
                                 +dateAndWeekday(key)
                                 each coverage in coverageDate
                                     if coverage.url
-                                        a(href=coverage.url)
+                                        a(href=coverage.url target='_blank')
                                             h4= coverage.title
                                             if coverage.content
                                                 div
