@@ -53,7 +53,7 @@ const allPathAliases = []
 // const targetEventChildEvents = targetedEvent.child_events ? targetedEvent.child_events.map(c => c.id) : []
 // console.log(targetEventChildEvents);
 // targetEventChildEvents.map(a => fetchSpecific.push(a))
-
+console.log('LOG 1');
 for (const lang of LANGUAGES) {
 
     const categoriesYAMLPath = path.join(fetchDir, `categories.${lang}.yaml`)
@@ -137,6 +137,8 @@ for (const lang of LANGUAGES) {
     const eventsYAMLPath = path.join(sourceDir, '_fetchdir', `events.${lang}.yaml`)
     const eventsYAML = yaml.safeDump(allDataSortedFiltered, {'noRefs': true, 'indent': '4' });
     fs.writeFileSync(eventsYAMLPath, eventsYAML, 'utf8');
+console.log('LOG 2');
+
 }
 
 function createResidency(oneEventData, lang, createDir) {
@@ -208,6 +210,7 @@ function createFestival(oneEventData, lang, createDir) {
     }
 
 }
+console.log('LOG 3');
 
 function festival_child_events(child_events_data, lang) {
     return child_events_data.map(ch => {
@@ -262,6 +265,7 @@ function coveragesByDate(coverages) {
     })
     return coverages_array || null
 }
+console.log('LOG 4');
 
 function addAliases(oneEventData, pathAliases) {
     // oneEventData.aliases = pathAliases
@@ -270,7 +274,7 @@ function addAliases(oneEventData, pathAliases) {
 
 pathAliasesFunc(fetchDir, allPathAliases, 'events')
 
-console.log('BEFORETARGETEDCHECK');
+console.log('LOG 5');
 
 if (targeted) {
     let isFestival = false
