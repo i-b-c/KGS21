@@ -240,7 +240,7 @@ function festival_child_events(child_events_data, lang) {
                 X_artist: child_event.X_artist || null,
             }
         }
-    }).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
+    }).filter(exists => exists).sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
 
 
 }
