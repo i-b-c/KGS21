@@ -43,6 +43,7 @@ const STRAPIDATA_EVENTS = STRAPIDATA_EVENTS_YAML.filter(e => !e.hide_from_page).
 })
 
 const targeted = process.argv[2] === '-t' && process.argv[3] ? true : false
+console.log('TARGETEDSTATUS', targeted);
 const performanceEventsIds = (STRAPIDATA_EVENTS.filter(e => e.performance && e.performance.id === process.argv[4]) || []).map(e => e.id)
 const target = process.argv[3] && process.argv[3] === 'p' && process.argv[4] ? (performanceEventsIds ? performanceEventsIds : []) : [process.argv[3]]
 
