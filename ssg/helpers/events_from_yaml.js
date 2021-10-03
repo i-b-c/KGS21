@@ -211,7 +211,9 @@ function createFestival(oneEventData, lang, createDir) {
 
 function festival_child_events(child_events_data, lang) {
     return child_events_data.map(ch => {
-        let child_event = STRAPIDATA_EVENTS.filter(e => ch && e.id === ch.id)[0] || []
+        let strapidata_child_event = STRAPIDATA_EVENTS.filter(e => ch && e.id === ch.id)[0]
+        console.log(strapidata_child_event);
+        let child_event = strapidata_child_event || []
         let event_performance = STRAPIDATA_PERFORMANCES.filter(p => p.events && p.events.map(e => e.id).includes(child_event.id))[0] || []
 
         return {
