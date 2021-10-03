@@ -121,7 +121,10 @@ module.exports = {
 
       if (result.published_at) {
         if (result.child_events) {
+            console.log('result.child_events',result.child_events);
             result.child_events = result.child_events.filter(a => !a?.id) || null
+            console.log('result.child_events after',result.child_events);
+
         }
         modify_strapi_data_yaml(result, modelDirPath)
         call_build(result, model_name)
