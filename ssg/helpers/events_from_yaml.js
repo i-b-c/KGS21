@@ -69,7 +69,7 @@ for (const lang of LANGUAGES) {
         let performance = oneEvent.performance || []
 
         let combined_coverages = null
-
+        loggg('aaa')
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.id.toString()) ? true : false
 
         if (oneEvent.coverages) {
