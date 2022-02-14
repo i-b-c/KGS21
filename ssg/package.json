@@ -32,7 +32,7 @@
     "entu-ssg": "^5.0.6",
     "entulib": "^2.0.6",
     "express": "^4.17.1",
-    "follow-redirects": "^1.14.1",
+    "follow-redirects": "^1.14.8",
     "form-data": "^3.0.1",
     "js-yaml": "^3.14.1",
     "moment": "^2.29.1",
