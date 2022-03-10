@@ -27,9 +27,15 @@ block content
             article.col-md-12.council
                 .row
                     article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                        h2= self.data.configurations.council_article[`name_${self.locale}`]
+                        h2#council= self.data.configurations.council_article[`name_${self.locale}`]
                         p
                             +markdown(self.data.configurations.council_article[`content_${self.locale}`])
+            article.col-md-12.book
+                .row
+                    article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
+                        h2#book= self.data.configurations.book_article[`name_${self.locale}`]
+                        +markdown(self.data.configurations.book_article[`content_${self.locale}`])
+
             article.col-md-12.covid
                 .row
                     article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location

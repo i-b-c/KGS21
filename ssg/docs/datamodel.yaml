@@ -400,5 +400,6 @@ Configuration: &Configuration
     about_article: *SimpleArticle
     corona_article: *SimpleArticle
     council_article: *SimpleArticle
+    book_article: *SimpleArticle
     fg_color: (text)
     bg_color: (text)
