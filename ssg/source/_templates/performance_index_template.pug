@@ -98,7 +98,12 @@ block content
                                     if event.location || event.X_location
                                         - var location = event.location || event.X_location
                                         p
-                                            +format(location)
+                                            if event.X_location_link || event.location_link
+                                                - var locationLink = event.X_location_link || event.location_link
+                                                a(href= locationLink target='_blank')
+                                                    +format(location)
+                                            else
+                                                +format(location)
                                     span(style='float:right;')
                                         if event.X_ticket_info
                                             if event.canceled === 'true'
@@ -131,7 +136,18 @@ block content
                                     if self[`name_${self.locale}`]
                                         p= self[`name_${self.locale}`]
                                     if event.location || event.X_location
-                                        p= event.location || event.X_location
+                                        if event.location
+                                            if event.location_link
+                                                p
+                                                    a(href=event.location_link target='_blank')= event.location
+                                            else
+                                                p= event.location
+                                        else if event.X_location
+                                            if event.X_location_link
+                                                p
+                                                    a(href=event.X_location_link target='_blank')= event.X_location
+                                            else
+                                                p= event.X_location
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
 
@@ -181,11 +197,11 @@ block content
                                     if press.media && press.media.length
                                         a(target='_blank' href=`${m_api}${press.media[0].url}`)
                                             if press.media[0].formats
-                                                img(src=`${m_api}${press.media[0].formats.small.url}`, width='50', style='float:left; margin-right:1em')
+                                                img(src=`${m_api}${press.media[0].formats.small.url}`, width='50' style='float:left; margin-right:1em')
                                                 if press.title
                                                     p= press.title
                                             else
-                                                img(src=`${m_api}${press.media[0].url}`, width='50', style='float:left; margin-right:1em')
+                                                img(src=`${m_api}${press.media[0].url}`, width='50' style='float:left; margin-right:1em')
                                                 if press.title
                                                     p= press.title
                                         if press.source

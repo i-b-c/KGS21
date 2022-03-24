@@ -120,6 +120,7 @@ for (const lang of LANGUAGES) {
                     let minToMaxSortedEvents = performance.events.sort((a, b) => new Date(a.start_time) - new Date(b.start_time))
                     performance.minToMaxEvents = minToMaxSortedEvents.map(e => {
                         e.location = e[`X_location_${lang}`] ? e[`X_location_${lang}`] : null
+                        e.location_link = e[`X_location_link_${lang}`] ? e[`X_location_link_${lang}`] : null
                         return e
                     })
                     let eventsCopy = JSON.parse(JSON.stringify(performance.events))
