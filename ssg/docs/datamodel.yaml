@@ -313,6 +313,8 @@ Event: &Event # etendus
     permitted_capacity: (number)
     X_location_et: (text)
     X_location_en: (text)
+    X_location_link_et: (text)
+    X_location_link_en: (text)
     event_media:
         - *EventMedia
     remote_id: (UID)
