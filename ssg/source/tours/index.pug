@@ -101,8 +101,14 @@ block content
                                                     span.subtitle= event[`subtitle_${self.locale}`]
 
                                 .col-xs-6.col-md-2.col-lg-2
-                                    if event.location && event.location || event.X_location
-                                        p.location= event.location || event.X_location
+                                    if event.location || event.X_location
+                                        - var location = event.location || event.X_location
+                                        if event.X_location_link || event.location_link
+                                            - var locationLink = event.X_location_link || event.location_link
+                                            a(href= locationLink target='_blank')
+                                                p.location= location
+                                        else
+                                            p.location= location
 
                                     //- if op.get(p, ['saal-location', lang + '-name'])
                                     //-     p.location= op.get(p, ['saal-location', lang + '-name'])
