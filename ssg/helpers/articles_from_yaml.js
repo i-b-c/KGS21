@@ -59,14 +59,15 @@ for (const lang of LANGUAGES) {
                 })
             }
 
+            if (article.authors && article.authors.length) {
+                article.authors_cs = article.authors
+                    .map(a => `${a.first_name}${a.last_name ? ` ${a.last_name}` : ''}`)
+                    .join(', ')
+            }
+
             if (article[`content_${lang}`]) { article[`content_${lang}`] = replaceImgPaths(article[`content_${lang}`])}
 
             if (createDir) {
-                if (article.authors && article.authors.length) {
-                    article.authors_cs = article.authors
-                        .map(a => `${a.first_name}${a.last_name ? ` ${a.last_name}` : ''}`)
-                        .join(', ')
-                }
 
                 const articleYAML = yaml.safeDump(article, { 'noRefs': true, 'indent': '4' });
                 const articleDir = path.join(articlesDir, article.id.toString())
