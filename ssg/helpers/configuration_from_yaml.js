@@ -11,7 +11,7 @@ const strapiDataConfigurationsPath = path.join(strapiDataDirPath, 'Configuration
 const STRAPIDATA_SIMPLE_ARTICLES = yaml.safeLoad(fs.readFileSync(strapiDataSimpleArticlesPath, 'utf8'))
 const STRAPIDATA_CONFIGURATIONS = yaml.safeLoad(fs.readFileSync(strapiDataConfigurationsPath, 'utf8')).map(e => {
     e.about_article = e.about_article ? STRAPIDATA_SIMPLE_ARTICLES.filter(a => a.id === e.about_article.id)[0] : null
-    e.corona_article = e.corona_article ? STRAPIDATA_SIMPLE_ARTICLES.filter(a => a.id === e.corona_article.id)[0] : null
+    // e.corona_article = e.corona_article ? STRAPIDATA_SIMPLE_ARTICLES.filter(a => a.id === e.corona_article.id)[0] : null
     e.council_article = e.council_article ? STRAPIDATA_SIMPLE_ARTICLES.filter(a => a.id === e.council_article.id)[0] : null
     e.book_article = e.book_article ? STRAPIDATA_SIMPLE_ARTICLES.filter(a => a.id === e.book_article.id)[0] : null
     return e
