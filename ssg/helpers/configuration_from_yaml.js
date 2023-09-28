@@ -25,7 +25,7 @@ for (const lang of LANGUAGES) {
     console.log(`Configurations from YAML (${lang})`)
 
     if(allData.about_article[`content_${lang}`]) { allData.about_article[`content_${lang}`] = replaceImgPaths(allData.about_article[`content_${lang}`]) }
-    if(allData.corona_article[`content_${lang}`]) { allData.corona_article[`content_${lang}`] = replaceImgPaths(allData.corona_article[`content_${lang}`]) }
+    // if(allData.corona_article[`content_${lang}`]) { allData.corona_article[`content_${lang}`] = replaceImgPaths(allData.corona_article[`content_${lang}`]) }
     if(allData.council_article[`content_${lang}`]) { allData.council_article[`content_${lang}`] = replaceImgPaths(allData.council_article[`content_${lang}`]) }
     if(allData.book_article[`content_${lang}`]) { allData.book_article[`content_${lang}`] = replaceImgPaths(allData.book_article[`content_${lang}`]) }
 
