@@ -28,6 +28,9 @@
     },
     "council_article": {
       "model": "simple-article"
+    },
+    "book_article": {
+      "model": "simple-article"
     }
   }
 }
