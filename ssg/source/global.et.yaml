@@ -94,39 +94,23 @@ labels:
         tallinn_estonia: 'Tallinn, Eesti'
     nup:
         get_newspaper_2016_1: Loe NUP lehte!
-    title:
-        archive: Arhiiv
-        audio: Audio
-        basement: Kelder
-        calendar: Kalender
-        contact: Kontakt
-        event: SAALis
-        floorplans: Saaliplaanid
-        free: Tasuta!
-        gallery: Galerii
-        kanut_co_productions: kaasproduktsioonid
-        kanut_residency: Kanuti Gildi SAALi residendid
-        news: Uudised
-        no_echo: Artikleid pole
-        no_events: Sündmusi ei toimu
-        no-residencies: Residente ei ole
-        no_tours: Tuuril ei ole hetkel ühtki lavastust
-        onsite_price: Kohapealt
-        past: Olnud
-        press: Pressikajastus
-        pyhavaimu_residency: Pühavaimu SAALi residendid
-        related: Teised tööd
-        related_articles: Seotud postitused
-        residency: Residentuur
-        saal: saal
-        sound: Heli
-        sponsors: Toetajad ja võrgustikud
-        studio: Stuudio
-        tour: Tuuril
-        upcoming: Tulekul
-        video: Video
-        festivals: festivalid
-        newscast_archive: Uudiste arhiiv
+    nav:
+        about: Meist
+        about_festival: Festivalist
+        contact: Info
+        coproductions: Kaasproduktsioonid
+        festivals: Festivalid
+        magazine: Magasin
+        media: Meedia
+        press: Press
+        program: Programm
+        projects: Projektid
+        residency: Residentuurid
+        schedule: Kava
+        sponsors: Toetajad
+        tickets: Piletid
+        tours: Tuurid
+        user_menu: Mina
         about_us: meist
     login:
         log_out: logi välja
@@ -175,23 +159,39 @@ labels:
         to_save_favo: lemmikute salvestamiseks
         save_as_favo: oma lemmikuks
         rm_from_favo: oma lemmikute hulgast
-    nav:
-        about: Meist
-        about_festival: Festivalist
-        contact: Info
-        coproductions: Kaasproduktsioonid
-        festivals: Festivalid
-        magazine: Magasin
-        media: Meedia
-        press: Press
-        program: Programm
-        projects: Projektid
-        residency: Residentuurid
-        schedule: Kava
-        sponsors: Toetajad
-        tickets: Piletid
-        tours: Tuurid
-        user_menu: Mina
+    title:
+        archive: Arhiiv
+        audio: Audio
+        basement: Kelder
+        calendar: Kalender
+        contact: Kontakt
+        event: SAALis
+        floorplans: Saaliplaanid
+        free: Tasuta!
+        gallery: Galerii
+        kanut_co_productions: kaasproduktsioonid
+        kanut_residency: Kanuti Gildi SAALi residendid
+        no_echo: Artikleid pole
+        no_events: Sündmusi ei toimu
+        no-residencies: Residente ei ole
+        no_tours: Tuuril ei ole hetkel ühtki lavastust
+        onsite_price: Kohapealt
+        past: Olnud
+        press: Pressikajastus
+        pyhavaimu_residency: Pühavaimu SAALi residendid
+        related: Teised tööd
+        related_articles: Seotud postitused
+        residency: Residentuur
+        saal: saal
+        sound: Heli
+        sponsors: Toetajad ja võrgustikud
+        studio: Stuudio
+        tour: Tuuril
+        upcoming: Tulekul
+        video: Video
+        festivals: festivalid
+        newscast_archive: Uudiste arhiiv
+        news: uudised
     ticket:
         buy_ticket: Osta pilet
         buy_t_canceled: Jääb ära!
@@ -202,8 +202,6 @@ labels:
         buy_t_price_on_spot: Hind kohapeal
         buy_t_regular_presale: Buy ticket
         buy_t_online: Online
-    footer:
-        tallinn_estonia: Tallinn, Eesti
 site_colors:
     bg_color: '#1a1919'
     fg_color: '#99CCCC'
