@@ -12,7 +12,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
             ul.nav.navbar-nav.main-nav
                 li(class= self.path === `/${lang_path}about` ? 'active' : undefined )
-                    a(href=`/${lang_path}about`)= self.labels.title.saal
+                    a(href=`/${lang_path}about`)= self.labels.title.news
                 li(class= self.path === `/${lang_path}program` ? 'active' : undefined )
                     a(href=`/${lang_path}program`)= self.labels.nav.schedule
                 li(class= self.path === `/${lang_path}co_productions` ? 'active' : undefined )
@@ -28,7 +28,7 @@ nav.navbar.navbar-default.navbar-fixed-top
                 li(class= self.path === `/${lang_path}festivals` ? 'active' : undefined )
                     a(href=`/${lang_path}festivals`)= self.labels.nav.festivals
                 li(class= self.path === `/${lang_path}contact` ? 'active' : undefined )
-                    a(href=`/${lang_path}contact`)= self.labels.nav.contact
+                    a(href=`/${lang_path}contact`)= self.labels.nav.about_us
 
             ul.nav.navbar-nav.navbar-right.social
                 //- each locale in self.locales

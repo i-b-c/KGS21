@@ -3,3 +3,5 @@ aliases:
 data:
     persons: '/_fetchdir/persons.yaml'
     configurations: '/_fetchdir/configuration.et.yaml'
+    locations: '/_fetchdir/locations.et.yaml'
+    banners: '/_fetchdir/banners.yaml'

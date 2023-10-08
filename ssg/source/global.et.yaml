@@ -90,8 +90,44 @@ labels:
         covid_info: Koroona meelespea
         year: Aasta
         book_info: Kanuti Gildi SAALi 20 juubeliraamat
+    footer:
+        tallinn_estonia: 'Tallinn, Eesti'
     nup:
         get_newspaper_2016_1: Loe NUP lehte!
+    title:
+        archive: Arhiiv
+        audio: Audio
+        basement: Kelder
+        calendar: Kalender
+        contact: Kontakt
+        event: SAALis
+        floorplans: Saaliplaanid
+        free: Tasuta!
+        gallery: Galerii
+        kanut_co_productions: kaasproduktsioonid
+        kanut_residency: Kanuti Gildi SAALi residendid
+        news: Uudised
+        no_echo: Artikleid pole
+        no_events: Sündmusi ei toimu
+        no-residencies: Residente ei ole
+        no_tours: Tuuril ei ole hetkel ühtki lavastust
+        onsite_price: Kohapealt
+        past: Olnud
+        press: Pressikajastus
+        pyhavaimu_residency: Pühavaimu SAALi residendid
+        related: Teised tööd
+        related_articles: Seotud postitused
+        residency: Residentuur
+        saal: saal
+        sound: Heli
+        sponsors: Toetajad ja võrgustikud
+        studio: Stuudio
+        tour: Tuuril
+        upcoming: Tulekul
+        video: Video
+        festivals: festivalid
+        newscast_archive: Uudiste arhiiv
+        about_us: meist
     login:
         log_out: logi välja
         get_me: päri mind
@@ -156,39 +192,6 @@ labels:
         tickets: Piletid
         tours: Tuurid
         user_menu: Mina
-    title:
-        archive: Arhiiv
-        audio: Audio
-        basement: Kelder
-        calendar: Kalender
-        contact: Kontakt
-        event: SAALis
-        floorplans: Saaliplaanid
-        free: Tasuta!
-        gallery: Galerii
-        kanut_co_productions: kaasproduktsioonid
-        kanut_residency: Kanuti Gildi SAALi residendid
-        news: Uudised
-        no_echo: Artikleid pole
-        no_events: Sündmusi ei toimu
-        no-residencies: Residente ei ole
-        no_tours: Tuuril ei ole hetkel ühtki lavastust
-        onsite_price: Kohapealt
-        past: Olnud
-        press: Pressikajastus
-        pyhavaimu_residency: Pühavaimu SAALi residendid
-        related: Teised tööd
-        related_articles: Seotud postitused
-        residency: Residentuur
-        saal: Saal
-        sound: Heli
-        sponsors: Toetajad ja võrgustikud
-        studio: Stuudio
-        tour: Tuuril
-        upcoming: Tulekul
-        video: Video
-        festivals: festivalid
-        newscast_archive: Uudiste arhiiv
     ticket:
         buy_ticket: Osta pilet
         buy_t_canceled: Jääb ära!

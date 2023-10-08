@@ -88,8 +88,44 @@ labels:
         covid_info: Covid info
         year: Year
         book_info: Kanuti Gildi SAALi 20 juubeliraamat
+    footer:
+        tallinn_estonia: 'Tallinn, Estonia'
     nup:
         get_newspaper_2016_1: Get NUP NEWS!
+    title:
+        archive: Archive
+        audio: Heli
+        basement: Basement
+        calendar: Calendar
+        contact: Contact
+        event: at SAAL
+        floorplans: Floorplans
+        free: Free of charge!
+        gallery: Gallery
+        kanut_co_productions: co-productions
+        kanut_residency: Residents of Kanuti Gildi SAAL
+        news: News
+        no_echo: No Posts
+        no_events: No events
+        no-residencies: No Residencies
+        no_tours: No tours
+        onsite_price: At the door
+        past: Past
+        press: Press
+        pyhavaimu_residency: Residents of Pühavaimu SAAL
+        related: Other works
+        related_articles: Related posts
+        residency: Residency
+        saal: saal
+        sound: Sound
+        sponsors: Supporters and networks
+        studio: Studio
+        tour: On tour
+        upcoming: Upcoming
+        video: Video
+        festivals: festivals
+        newscast_archive: News archive
+        about_us: about us
     login:
         log_out: sign out
         get_me: get me
@@ -154,39 +190,6 @@ labels:
         tickets: Tickets
         tours: On Tour
         user_menu: Me
-    title:
-        archive: Archive
-        audio: Heli
-        basement: Basement
-        calendar: Calendar
-        contact: Contact
-        event: at SAAL
-        floorplans: Floorplans
-        free: Free of charge!
-        gallery: Gallery
-        kanut_co_productions: co-productions
-        kanut_residency: Residents of Kanuti Gildi SAAL
-        news: News
-        no_echo: No Posts
-        no_events: No events
-        no-residencies: No Residencies
-        no_tours: No tours
-        onsite_price: At the door
-        past: Past
-        press: Press
-        pyhavaimu_residency: Residents of Pühavaimu SAAL
-        related: Other works
-        related_articles: Related posts
-        residency: Residency
-        saal: Saal
-        sound: Sound
-        sponsors: Supporters and networks
-        studio: Studio
-        tour: On tour
-        upcoming: Upcoming
-        video: Video
-        festivals: festivals
-        newscast_archive: News archive
     ticket:
         buy_ticket: Buy ticket
         buy_t_canceled: Canceled!

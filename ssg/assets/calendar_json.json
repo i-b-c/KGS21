@@ -1,26 +1,7 @@
 {
-    "minDate": "2023-7-1",
-    "maxDate": "2023-11-17",
+    "minDate": "2023-8-1",
+    "maxDate": "2023-11-25",
     "events": {
-        "2023-7-7": [
-            {
-                "et_id": "guiding-light-v-1768",
-                "en_id": "guiding-light-v-1768",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "GUIDING LIGHT V",
-                    "en": "GUIDING LIGHT V"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2023-8-28": [
             {
                 "et_id": "creature-1826",
@@ -731,6 +712,23 @@
                     "et": "",
                     "en": ""
                 }
+            },
+            {
+                "et_id": "orchidelirium-expanded-20-1792",
+                "en_id": "orchidelirium-expanded-20-1792",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Orchidelirium Expanded 2.0",
+                    "en": "Orchidelirium Expanded 2.0"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
             }
         ],
         "2023-9-4": [
@@ -951,6 +949,23 @@
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
+            },
+            {
+                "et_id": "traps-1731",
+                "en_id": "traps-1731",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "traps",
+                    "en": "traps"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
             }
         ],
         "2023-10-3": [
@@ -969,6 +984,25 @@
                 "location": {
                     "et": "Püha Vaimu SAAL",
                     "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2023-10-15": [
+            {
+                "et_id": "traps-1731",
+                "en_id": "traps-1731",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "traps",
+                    "en": "traps"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -991,6 +1025,25 @@
                 }
             }
         ],
+        "2023-9-14": [
+            {
+                "et_id": "lucky-charm-1776",
+                "en_id": "lucky-charm-1776",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Lucky Charm",
+                    "en": "Lucky Charm"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2023-11-10": [
             {
                 "et_id": "cowbody-1750",
@@ -1005,22 +1058,58 @@
                 },
                 "time": "19:00",
                 "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "youre-not-alone-1840",
+                "en_id": "youre-not-alone-1840",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "You´re Not Alone",
+                    "en": "You´re Not Alone"
+                },
+                "time": "19:30",
+                "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
-        "2023-9-14": [
+        "2023-10-18": [
             {
-                "et_id": "lucky-charm-1776",
-                "en_id": "lucky-charm-1776",
+                "et_id": "mt-peva-rel-1735",
+                "en_id": "the-myth-last-day-1735",
                 "tag": [
                     "tour"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Lucky Charm",
-                    "en": "Lucky Charm"
+                    "et": "Müüt: päeva äärel",
+                    "en": "The Myth: last day"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2023-10-17": [
+            {
+                "et_id": "mt-peva-rel-1735",
+                "en_id": "the-myth-last-day-1735",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Müüt: päeva äärel",
+                    "en": "The Myth: last day"
                 },
                 "time": "20:00",
                 "location": {
@@ -1045,6 +1134,42 @@
                 "location": {
                     "et": "",
                     "en": ""
+                }
+            },
+            {
+                "et_id": "youre-not-alone-1840",
+                "en_id": "youre-not-alone-1840",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "You´re Not Alone",
+                    "en": "You´re Not Alone"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2023-11-4": [
+            {
+                "et_id": "other-mother-1842",
+                "en_id": "other-mother-1842",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Other Mother",
+                    "en": "Other Mother"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -1086,6 +1211,25 @@
                 }
             }
         ],
+        "2023-10-19": [
+            {
+                "et_id": "sfriline-htu-vol-4-1843",
+                "en_id": "sfriline-htu-vol-4-1843",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sfääriline õhtu vol. 4",
+                    "en": "Sfääriline õhtu vol. 4"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
         "2023-10-11": [
             {
                 "et_id": "5099",
@@ -1124,25 +1268,6 @@
                 }
             }
         ],
-        "2023-11-6": [
-            {
-                "et_id": "kutse-vaibale-1835",
-                "en_id": "invitation-to-the-carpet-1835",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "KUTSE VAIBALE",
-                    "en": "INVITATION TO THE CARPET"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2023-10-26": [
             {
                 "et_id": "pva-lpuks-kiigu-1838",
@@ -1159,6 +1284,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2023-11-6": [
+            {
+                "et_id": "kutse-vaibale-1835",
+                "en_id": "invitation-to-the-carpet-1835",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "KUTSE VAIBALE",
+                    "en": "INVITATION TO THE CARPET"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1270,6 +1414,44 @@
                     "en": "Lucky Charm"
                 },
                 "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2023-11-3": [
+            {
+                "et_id": "orchidelirium-expanded-20-1792",
+                "en_id": "orchidelirium-expanded-20-1792",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Orchidelirium Expanded 2.0",
+                    "en": "Orchidelirium Expanded 2.0"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2023-11-25": [
+            {
+                "et_id": "saal3-vol-1-1841",
+                "en_id": "saal3-vol-1-1841",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "SAAL3 vol 1",
+                    "en": "SAAL3 vol 1"
+                },
+                "time": "18:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
