@@ -22,7 +22,7 @@ const LANGUAGES = ['et', 'en']
 for (const lang of LANGUAGES) {
     const configurationYAMLPath = path.join(fetchDir, `configuration.${lang}.yaml`)
     let allData = STRAPIDATA_CONFIGURATIONS
-    console.log(`Configurations from YAML (${lang})`, allData)
+    console.log(`Configurations from YAML (${lang})`)
 
     if(allData.about_article[`content_${lang}`]) { allData.about_article[`content_${lang}`] = replaceImgPaths(allData.about_article[`content_${lang}`]) }
     // if(allData.corona_article[`content_${lang}`]) { allData.corona_article[`content_${lang}`] = replaceImgPaths(allData.corona_article[`content_${lang}`]) }
