@@ -196,6 +196,8 @@ labels:
         buy_t_price_on_spot: At the door
         buy_t_regular_presale: Osta pilet
         buy_t_online: Online
+    footer:
+        tallinn_estonia: Tallinn, Estonia
 site_colors:
     bg_color: '#1a1919'
     fg_color: '#FFC600'
