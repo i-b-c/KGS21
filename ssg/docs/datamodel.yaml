@@ -1,44 +1,40 @@
 # StrapiMedia
-Large: &Large
-    # ext: (text)
-    url:  (text)
+Large: &Large # ext: (text)
+    url: (text)
     # hash:  (text)
     # mime:  (text)
-    name:  (text)
-    path:  (text)
+    name: (text)
+    path: (text)
     # size:  (number)
     # width:  (number)
     # heigth:  (number)
 
-Medium : &Medium
-    # ext: (text)
-    url:  (text)
+Medium: &Medium # ext: (text)
+    url: (text)
     # hash:  (text)
     # mime:  (text)
-    name:  (text)
-    path:  (text)
+    name: (text)
+    path: (text)
     # size:  (number)
     # width:  (number)
     # heigth:  (number)
 
-Small: &Small
-    # ext: (text)
-    url:  (text)
+Small: &Small # ext: (text)
+    url: (text)
     # hash:  (text)
     # mime:  (text)
-    name:  (text)
-    path:  (text)
+    name: (text)
+    path: (text)
     # size:  (number)
     # width:  (number)
     # heigth:  (number)
 
-Thumbnail: &Thumbnail
-    # ext:  (text)
-    url:  (text)
+Thumbnail: &Thumbnail # ext:  (text)
+    url: (text)
     # hash:  (text)
     # mime:  (text)
-    name:  (text)
-    path:  (text)
+    name: (text)
+    path: (text)
     # size:  (number)
     # width:  (number)
     # heigth:  (number)
@@ -137,6 +133,13 @@ Person: &Person
     remote_id: (UID)
     # date_of_birth:
     # biography:
+
+Occupation: &Occupation
+    _path: /occupations
+    name_et: (text)
+    name_en: (text)
+    people:
+        - *Person
 
 Artist: &Artist
     person: *Person
@@ -251,8 +254,7 @@ Performance: &Performance # performance #lavastus
         - (backreference) #*Performance
 
 #Event
-TicketInfo: &TicketInfo
-    # _path: /ticket-infos
+TicketInfo: &TicketInfo # _path: /ticket-infos
     name: (text)
     slug: (UID, name)
     price: (number)
