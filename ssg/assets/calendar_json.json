@@ -369,25 +369,6 @@
                 }
             }
         ],
-        "2023-9-5": [
-            {
-                "et_id": "scream-box-1794",
-                "en_id": "scream-box-1794",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SCREAM BOX",
-                    "en": "SCREAM BOX"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2023-8-21": [
             {
                 "et_id": "doom-1824",
@@ -435,6 +416,25 @@
                     "en": "SAAL Biennaal: fiber program"
                 },
                 "time": "12:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2023-9-5": [
+            {
+                "et_id": "scream-box-1794",
+                "en_id": "scream-box-1794",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "SCREAM BOX",
+                    "en": "SCREAM BOX"
+                },
+                "time": "20:00",
                 "location": {
                     "et": "",
                     "en": ""

@@ -1,7 +1,8 @@
 aliases:
     - '/et/contact'
 data:
-    persons: '/_fetchdir/persons.yaml'
+    persons: '/strapidata/Person.yaml'
     configurations: '/_fetchdir/configuration.et.yaml'
     locations: '/_fetchdir/locations.et.yaml'
     banners: '/_fetchdir/banners.yaml'
+    occupations: '/strapidata/Occupation.yaml'
