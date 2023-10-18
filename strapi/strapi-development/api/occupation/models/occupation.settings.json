@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "occupations",
+  "info": {
+    "name": "Occupation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_et": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "people": {
+      "via": "occupations",
+      "collection": "person"
+    },
+    "order": {
+      "type": "integer",
+      "unique": true
+    }
+  }
+}
