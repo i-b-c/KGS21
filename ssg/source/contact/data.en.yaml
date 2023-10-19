@@ -1,5 +1,5 @@
 data:
-    persons: '/_fetchdir/persons.yaml'
+    persons: '/strapidata/Person.yaml'
     configurations: '/_fetchdir/configuration.en.yaml'
     locations: '/_fetchdir/locations.en.yaml'
     banners: '/_fetchdir/banners.yaml'
