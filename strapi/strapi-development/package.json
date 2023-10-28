@@ -15,7 +15,7 @@
     "knex": "0.21.18",
     "node-html-parser": "^2.1.0",
     "pg": "latest",
-    "strapi": "3.6.2",
+    "strapi": "3.6.10",
     "strapi-admin": "3.6.2",
     "strapi-connector-bookshelf": "3.6.2",
     "strapi-plugin-content-manager": "3.6.2",
