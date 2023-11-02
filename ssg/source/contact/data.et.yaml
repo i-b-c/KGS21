@@ -6,3 +6,4 @@ data:
     locations: '/_fetchdir/locations.et.yaml'
     banners: '/_fetchdir/banners.yaml'
     occupations: '/strapidata/Occupation.yaml'
+    configuration: '/strapidata/Configuration.yaml'

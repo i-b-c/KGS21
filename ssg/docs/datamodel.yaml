@@ -408,3 +408,5 @@ Configuration: &Configuration
     book_article: *SimpleArticle
     fg_color: (text)
     bg_color: (text)
+    AboutUsGallery:
+        - *StrapiMedia

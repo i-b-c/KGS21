@@ -4,3 +4,4 @@ data:
     locations: '/_fetchdir/locations.en.yaml'
     banners: '/_fetchdir/banners.yaml'
     occupations: '/strapidata/Occupation.yaml'
+    configuration: '/strapidata/Configuration.yaml'
