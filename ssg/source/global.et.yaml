@@ -192,6 +192,11 @@ labels:
         festivals: festivalid
         newscast_archive: Uudiste arhiiv
         news: uudised
+        team: tiim
+        creative_advisory_council: loomenõukogu
+        location: asukoht
+        anniversary_book: 20. juubeliraamat
+        undefined: null
     ticket:
         buy_ticket: Osta pilet
         buy_t_canceled: Jääb ära!

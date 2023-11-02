@@ -190,6 +190,11 @@ labels:
         festivals: festivals
         newscast_archive: News archive
         news: news
+        team: team
+        creative_advisory_council: creative advisory council
+        location: location
+        anniversary_book: 20th anniversary book
+        undefined: null
     ticket:
         buy_ticket: Buy ticket
         buy_t_canceled: Canceled!

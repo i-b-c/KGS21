@@ -1,427 +1,7 @@
 {
-    "minDate": "2023-8-1",
-    "maxDate": "2023-11-25",
+    "minDate": "2023-9-1",
+    "maxDate": "2024-2-10",
     "events": {
-        "2023-8-28": [
-            {
-                "et_id": "creature-1826",
-                "en_id": "creature-1826",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "CREATURE",
-                    "en": "CREATURE"
-                },
-                "time": "19:20",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "creature-1826",
-                "en_id": "creature-1826",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "CREATURE",
-                    "en": "CREATURE"
-                },
-                "time": "19:40",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "creature-1826",
-                "en_id": "creature-1826",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "CREATURE",
-                    "en": "CREATURE"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "creature-1826",
-                "en_id": "creature-1826",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "CREATURE",
-                    "en": "CREATURE"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
-                },
-                "time": "21:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-8-29": [
-            {
-                "et_id": "creature-1826",
-                "en_id": "creature-1826",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "CREATURE",
-                    "en": "CREATURE"
-                },
-                "time": "21:20",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "creature-1826",
-                "en_id": "creature-1826",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "CREATURE",
-                    "en": "CREATURE"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "creature-1826",
-                "en_id": "creature-1826",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "CREATURE",
-                    "en": "CREATURE"
-                },
-                "time": "21:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "tund-1829",
-                "en_id": "lesson-1829",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tund",
-                    "en": "Lesson"
-                },
-                "time": "18:45",
-                "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
-                }
-            },
-            {
-                "et_id": "creature-1826",
-                "en_id": "creature-1826",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "CREATURE",
-                    "en": "CREATURE"
-                },
-                "time": "21:40",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-8-30": [
-            {
-                "et_id": "seek-bromance-1821",
-                "en_id": "seek-bromance-1821",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Seek Bromance",
-                    "en": "Seek Bromance"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "inimeses-hoitud-1823",
-                "en_id": "held-in-human-1823",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": " Inimeses hoitud",
-                    "en": "Held in Human"
-                },
-                "time": "16:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-8-24": [
-            {
-                "et_id": "orchidelirium-expanded-20-1792",
-                "en_id": "orchidelirium-expanded-20-1792",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Orchidelirium Expanded 2.0",
-                    "en": "Orchidelirium Expanded 2.0"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            },
-            {
-                "et_id": "inimeses-hoitud-1823",
-                "en_id": "held-in-human-1823",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": " Inimeses hoitud",
-                    "en": "Held in Human"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "hine-ekspertiis-kohalik-fiktsioon-ttuba-1833",
-                "en_id": "shared-expertise-local-fiction-workshop-1833",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "\"Ühine ekspertiis, kohalik fiktsioon\" töötuba",
-                    "en": "\"Shared expertise, local fiction\" workshop"
-                },
-                "time": "11:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-8-25": [
-            {
-                "et_id": "orchidelirium-expanded-20-1792",
-                "en_id": "orchidelirium-expanded-20-1792",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Orchidelirium Expanded 2.0",
-                    "en": "Orchidelirium Expanded 2.0"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            },
-            {
-                "et_id": "inimeses-hoitud-1823",
-                "en_id": "held-in-human-1823",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": " Inimeses hoitud",
-                    "en": "Held in Human"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "guide-to-surviving-masculinist-territory-1825",
-                "en_id": "guide-to-surviving-masculinist-territory-1825",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Guide to surviving Masculinist Territory",
-                    "en": "Guide to surviving Masculinist Territory"
-                },
-                "time": "21:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "hine-ekspertiis-kohalik-fiktsioon-ttuba-1833",
-                "en_id": "shared-expertise-local-fiction-workshop-1833",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "\"Ühine ekspertiis, kohalik fiktsioon\" töötuba",
-                    "en": "\"Shared expertise, local fiction\" workshop"
-                },
-                "time": "11:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "guide-to-surviving-masculinist-territory-1825",
-                "en_id": "guide-to-surviving-masculinist-territory-1825",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Guide to surviving Masculinist Territory",
-                    "en": "Guide to surviving Masculinist Territory"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-8-21": [
-            {
-                "et_id": "doom-1824",
-                "en_id": "doom-1824",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "DOOM",
-                    "en": "DOOM"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "inimeses-hoitud-1823",
-                "en_id": "held-in-human-1823",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": " Inimeses hoitud",
-                    "en": "Held in Human"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "saal-biennaal-kiudprogramm-1822",
-                "en_id": "saal-biennaal-fiber-program-1822",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SAAL Biennaal: kiudprogramm",
-                    "en": "SAAL Biennaal: fiber program"
-                },
-                "time": "12:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2023-9-5": [
             {
                 "et_id": "scream-box-1794",
@@ -438,42 +18,6 @@
                 "location": {
                     "et": "",
                     "en": ""
-                }
-            }
-        ],
-        "2023-8-22": [
-            {
-                "et_id": "doom-1824",
-                "en_id": "doom-1824",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "DOOM",
-                    "en": "DOOM"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "rm-nha-1828",
-                "en_id": "stalker-dance-1828",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Rõõm Näha",
-                    "en": "Stalker Dance "
-                },
-                "time": "16:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -549,76 +93,6 @@
                 }
             }
         ],
-        "2023-8-23": [
-            {
-                "et_id": "guide-to-surviving-masculinist-territory-1825",
-                "en_id": "guide-to-surviving-masculinist-territory-1825",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Guide to surviving Masculinist Territory",
-                    "en": "Guide to surviving Masculinist Territory"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "guide-to-surviving-masculinist-territory-1825",
-                "en_id": "guide-to-surviving-masculinist-territory-1825",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Guide to surviving Masculinist Territory",
-                    "en": "Guide to surviving Masculinist Territory"
-                },
-                "time": "21:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "rm-nha-1828",
-                "en_id": "stalker-dance-1828",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Rõõm Näha",
-                    "en": "Stalker Dance "
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "diy-doom-it-yourself-ttuba-1831",
-                "en_id": "diy-doom-it-yourself-workshop-1831",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "\"DIY - DOOM IT YOURSELF\" töötuba",
-                    "en": "\"DIY - DOOM IT YOURSELF\" workshop"
-                },
-                "time": "13:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2023-9-8": [
             {
                 "et_id": "mt-peva-rel-1735",
@@ -632,44 +106,6 @@
                     "en": "The Myth: last day"
                 },
                 "time": "17:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-8-9": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "it-stays-as-it-is-244",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "It Stays As It Is"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-8-10": [
-            {
-                "et_id": "kas-te-olete-oma-kohaga-rahul-244",
-                "en_id": "it-stays-as-it-is-244",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kas te olete oma kohaga rahul ",
-                    "en": "It Stays As It Is"
-                },
-                "time": "16:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -747,112 +183,6 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-8-26": [
-            {
-                "et_id": "the-death-at-the-club-1827",
-                "en_id": "the-death-at-the-club-1827",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "The Death at The Club",
-                    "en": "The Death at The Club"
-                },
-                "time": "23:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "guide-to-surviving-masculinist-territory-1825",
-                "en_id": "guide-to-surviving-masculinist-territory-1825",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Guide to surviving Masculinist Territory",
-                    "en": "Guide to surviving Masculinist Territory"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "solos-and-duets-1806",
-                "en_id": "solos-and-duets-1806",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Solos and Duets",
-                    "en": "Solos and Duets"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-8-31": [
-            {
-                "et_id": "saal-biennaal-lpupidu-1834",
-                "en_id": "saal-biennaal-final-party-1834",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SAAL Biennaal lõpupidu",
-                    "en": "SAAL Biennaal final party"
-                },
-                "time": "21:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "smpoosion-kollektiivne-kureerimine-1830",
-                "en_id": "symposium-collective-curating-1830",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sümpoosion: kollektiivne kureerimine",
-                    "en": "Symposium: collective curating"
-                },
-                "time": "11:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "ss-1805",
-                "en_id": "ss-1805",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Ôss",
-                    "en": "Ôss"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
                 }
             }
         ],
@@ -1099,25 +429,6 @@
                 }
             }
         ],
-        "2023-10-17": [
-            {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2023-11-11": [
             {
                 "et_id": "cowbody-1750",
@@ -1151,6 +462,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2023-10-17": [
+            {
+                "et_id": "mt-peva-rel-1735",
+                "en_id": "the-myth-last-day-1735",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Müüt: päeva äärel",
+                    "en": "The Myth: last day"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1249,6 +579,44 @@
                 }
             }
         ],
+        "2023-10-20": [
+            {
+                "et_id": "luulekogu-ainult-et-esitlus-1844",
+                "en_id": "launch-of-a-collection-of-poems-titled-ainult-et-1844",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Luulekogu \"ainult et\" esitlus",
+                    "en": "Launch of a collection of poems titled \"ainult et\""
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2023-12-28": [
+            {
+                "et_id": "mure-staatuse-prast-1845",
+                "en_id": "mure-staatuse-prast-1845",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mure staatuse pärast",
+                    "en": "Mure staatuse pärast"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2023-10-25": [
             {
                 "et_id": "pva-lpuks-kiigu-1838",
@@ -1265,6 +633,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2023-12-16": [
+            {
+                "et_id": "mure-staatuse-prast-1845",
+                "en_id": "mure-staatuse-prast-1845",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mure staatuse pärast",
+                    "en": "Mure staatuse pärast"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1287,6 +674,25 @@
                 }
             }
         ],
+        "2023-12-17": [
+            {
+                "et_id": "mure-staatuse-prast-1845",
+                "en_id": "mure-staatuse-prast-1845",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mure staatuse pärast",
+                    "en": "Mure staatuse pärast"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2023-11-6": [
             {
                 "et_id": "kutse-vaibale-1835",
@@ -1298,6 +704,25 @@
                 "name": {
                     "et": "KUTSE VAIBALE",
                     "en": "INVITATION TO THE CARPET"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2023-12-29": [
+            {
+                "et_id": "mure-staatuse-prast-1845",
+                "en_id": "mure-staatuse-prast-1845",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mure staatuse pärast",
+                    "en": "Mure staatuse pärast"
                 },
                 "time": "19:30",
                 "location": {
@@ -1382,6 +807,25 @@
                 }
             }
         ],
+        "2023-12-30": [
+            {
+                "et_id": "mure-staatuse-prast-1845",
+                "en_id": "mure-staatuse-prast-1845",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mure staatuse pärast",
+                    "en": "Mure staatuse pärast"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2023-11-17": [
             {
                 "et_id": "kutse-vaibale-1835",
@@ -1401,6 +845,63 @@
                 }
             }
         ],
+        "2023-11-1": [
+            {
+                "et_id": "eden-detail-1598",
+                "en_id": "eden-detail-1598",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Eden Detail",
+                    "en": "Eden Detail"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-2-8": [
+            {
+                "et_id": "kultuur-1832",
+                "en_id": "kultuur-1832",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kultuur",
+                    "en": "Kultuur"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-2-10": [
+            {
+                "et_id": "kultuur-1832",
+                "en_id": "kultuur-1832",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kultuur",
+                    "en": "Kultuur"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
         "2023-10-6": [
             {
                 "et_id": "lucky-charm-1776",
@@ -1414,6 +915,44 @@
                     "en": "Lucky Charm"
                 },
                 "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-2-9": [
+            {
+                "et_id": "kultuur-1832",
+                "en_id": "kultuur-1832",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kultuur",
+                    "en": "Kultuur"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2023-11-23": [
+            {
+                "et_id": "paul-kuimeti-kunstnikuraamatu-crystal-grid-esitlus-ja-vestlus-1846",
+                "en_id": "paul-kuimet-book-launch-and-discussion-1846",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Paul Kuimeti kunstnikuraamatu “Crystal Grid” esitlus ja vestlus",
+                    "en": "Paul Kuimet book launch and discussion"
+                },
+                "time": "18:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"

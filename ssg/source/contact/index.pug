@@ -3,73 +3,19 @@ include /_templates/mixins.pug
 
 block content
     .container-fluid
-        .row.page-margin
-            article.col-md-12.address
-                .row.team.grid-row
-                    if self.data.occupations
-                        each occupation in self.data.occupations
-                            .col-xs-12.col-sm-3.col-md-3.col-lg-3.member
-                                h2= occupation['name_'+self.locale]
-                                each person in occupation.people 
-                                    each person2 in self.data.persons
-                                        if person2.id == person.id 
-                                            p= person2.first_name + ' ' + person2.last_name
-                                <br>
-            section.col-xs-12.col-sm-12.col-md-12.col-lg-12
-                h2= self.labels.title.contact
-            article.col-md-6.address
-                .row
-                    article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                        p Pikk 20, 10133
-                        p Tallinn, Estonia
-                        p tel: +372 64 64 704
-                        p
-                            a(href="mailto:saal@saal.ee") saal@saal.ee
-                .row.team.grid-row
-                    if self.data.persons
-                        each person in self.data.persons
-                            //- Midagi valesti
-                            if person.is_contact
-                                .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                                    h2= `${person.first_name}${person.last_name ? ` ${person.last_name}` : ''}`
-                                    p= person.occupation
-                                    a(href=`mailto:${person.email}`)= person.email
-                                    p= person.phone_number
-            section.col-md-6
-                iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.6715343970304!2d24.745978300000008!3d59.43855259999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692936235ed6985%3A0x86e790e483c15838!2sKanuti+Gildi+Saal!5e0!3m2!1sen!2see!4v1442397004784" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen="")
-            article.col-md-12.council
-                .row
-                    article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                        h2#council= self.data.configurations.council_article[`name_${self.locale}`]
-                        p
-                            +markdown(self.data.configurations.council_article[`content_${self.locale}`])
-            article.col-md-12.book
-                .row
-                    article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                        h2#book= self.data.configurations.book_article[`name_${self.locale}`]
-                        +markdown(self.data.configurations.book_article[`content_${self.locale}`])
-
-            article.col-md-12.covid
-                .row
-                    article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                        h2#covid= self.data.configurations.corona_article[`name_${self.locale}`]
-                        +markdown(self.data.configurations.corona_article[`content_${self.locale}`])
-            section.col-md-6
+        .page-margin
+            .col-xs-12.col-sm-12.col-md-6.col-lg-6
+                section
                 h2= self.labels.title.saal
                 #about-carousel.carousel.slide(data-ride="carousel")
                     .carousel-inner(role="listbox")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-210")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-211")
-                        img.img-responsive.item.active(src="https://saal.entu.ee/api2/file-212")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-213")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-214")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-215")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-3513")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-3514")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-3515")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-3516")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-3517")
-                        img.img-responsive.item(src="https://saal.entu.ee/api2/file-3518")
+                        - var isFirst = true
+                        each image in self.data.configuration[0].AboutUsGallery
+                            if isFirst
+                                img.img-responsive.item.active(src="https://saal.ee"+image.url)
+                            else 
+                                img.img-responsive.item(src="https://saal.ee"+image.url)
+                            - isFirst = false
                     a.left.carousel-control(href="#about-carousel" role="button" data-slide="prev")
                         span.icon-prev.arrow-left(aria-hidden="true")
                     a.right.carousel-control(href="#about-carousel" role="button" data-slide="next")
@@ -79,33 +25,103 @@ block content
                     h3#kanuti-gildi-saali-20-juubelihooaeg= self.data.configurations.about_article[`name_${self.locale}`]
                     p
                         +markdown(self.data.configurations.about_article[`content_${self.locale}`])
+            .col-xs-12.col-sm-12.col-md-6.col-lg-6
+                .collapsible-element 
+                    input(type="checkbox" id="team-collapsible" class="team-collapsible-input")
+                    label(for="team-collapsible")= self.labels.title.team
+                    .collapsible-content
+                        article.address
+                            .row.team.grid-row
+                                if self.data.occupations
+                                    each occupation in self.data.occupations
+                                        .col-xs-6.col-sm-6.col-md-6.col-lg-6.member
+                                            h2= occupation['name_'+self.locale]
+                                            each person in occupation.people 
+                                                each person2 in self.data.persons
+                                                    if person2.id == person.id 
+                                                        p= person2.first_name + ' ' + person2.last_name
+                                            <br>
+                .collapsible-element 
+                    input(type="checkbox" id="contact-collapsible" class="contact-collapsible-input")
+                    label(for="contact-collapsible")= self.labels.title.contact
+                    .collapsible-content
+                        article.address
+                            .row
+                                article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
+                                    p Pikk 20, 10133
+                                    p Tallinn, Estonia
+                                    p tel: +372 64 64 704
+                                    p
+                                        a(href="mailto:saal@saal.ee") saal@saal.ee
+                            .row.team.grid-row
+                                if self.data.persons
+                                    each person in self.data.persons
+                                        //- Midagi valesti
+                                        if person.is_contact
+                                            .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
+                                                h2= `${person.first_name}${person.last_name ? ` ${person.last_name}` : ''}`
+                                                p= person.occupation
+                                                a(href=`mailto:${person.email}`)= person.email
+                                                p= person.phone_number
+                .collapsible-element 
+                    input(type="checkbox" id="advisory-council-collapsible" class="advisory-council-collapsible-input")
+                    label(for="advisory-council-collapsible")= self.labels.title.creative_advisory_council
+                    .collapsible-content
+                        article.council
+                            .row
+                                article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
+                                    h2#council= self.data.configurations.council_article[`name_${self.locale}`]
+                                    p
+                                        +markdown(self.data.configurations.council_article[`content_${self.locale}`])
+                .collapsible-element 
+                    input(type="checkbox" id="floorplans-collapsible" class="floorplans-collapsible-input")
+                    label(for="floorplans-collapsible")= self.labels.title.floorplans
+                    .collapsible-content
+                        if self.data.locations.length
+                            each location in self.data.locations
+                                if location.hall.floorplan
+                                    ul.list-unstyled.h3
+                                        li
+                                            a(href=`https://a.saal.ee${location.hall.floorplan.url}` target="_blank")
+                                                u= location[`name_${self.locale}`]
+                                            span= ' ' + location.hall[`description_${self.locale}`]
+                                        //-     a(href="https://saal.entu.ee/api2/file-265" target="_blank")
+                                        //-         u Püha Vaimu SAAL
+                                        //-     span  | 6x10x3,5m - 30-50 kohta
+                                        //- li
+                                        //-     a(href="https://saal.entu.ee/api2/file-182" target="_blank")
+                                        //-         u Keldrisaal
+                                        //-     span  | 8x6x3,5m - 30 kohta
+                .collapsible-element 
+                    input(type="checkbox" id="location-collapsible" class="location-collapsible-input")
+                    label(for="location-collapsible")= self.labels.title.location
+                    .collapsible-content
+                        section
+                            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.6715343970304!2d24.745978300000008!3d59.43855259999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692936235ed6985%3A0x86e790e483c15838!2sKanuti+Gildi+Saal!5e0!3m2!1sen!2see!4v1442397004784" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen="")
+                .collapsible-element
+                    input(type="checkbox" id="book-collapsible" class="book-collapsible-input")
+                    label(for="book-collapsible")= self.labels.title.anniversary_book
+                    .collapsible-content
+                        article.book
+                            .row
+                                article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
+                                    //- h2#book= self.data.configurations.book_article[`name_${self.locale}`]
+                                    +markdown(self.data.configurations.book_article[`content_${self.locale}`])
+                .collapsible-element 
+                    input(type="checkbox" id="archive-collapsible" class="archive-collapsible-input")
+                    label(for="archive-collapsible")= self.labels.title.archive
+                    .collapsible-content
+                        ul.list-unstyled.h3
+                            li
+                                a(href="http://2016.saal.ee/events/2016/01/" target="_blank") www.saal.ee 2008–2015
+                            li
+                                a(href="http://2016.saal.ee/archive/et/programm2/arhiiv.html" target="_blank") www.saal.ee 2004–2008
 
-
-
-                .floorplans
-                    h2= self.labels.title.floorplans
-                    if self.data.locations.length
-                        each location in self.data.locations
-                            if location.hall.floorplan
-                                ul.list-unstyled.h3
-                                    li
-                                        a(href=`https://a.saal.ee${location.hall.floorplan.url}` target="_blank")
-                                            u= location[`name_${self.locale}`]
-                                        span= ' ' + location.hall[`description_${self.locale}`]
-                                    //-     a(href="https://saal.entu.ee/api2/file-265" target="_blank")
-                                    //-         u Püha Vaimu SAAL
-                                    //-     span  | 6x10x3,5m - 30-50 kohta
-                                    //- li
-                                    //-     a(href="https://saal.entu.ee/api2/file-182" target="_blank")
-                                    //-         u Keldrisaal
-                                    //-     span  | 8x6x3,5m - 30 kohta
-                .old-www
-                    h2= self.labels.title.archive
-                    ul.list-unstyled.h3
-                        li
-                            a(href="http://2016.saal.ee/events/2016/01/" target="_blank") www.saal.ee 2008–2015
-                        li
-                            a(href="http://2016.saal.ee/archive/et/programm2/arhiiv.html" target="_blank") www.saal.ee 2004–2008
+            article.col-md-12.covid
+                .row
+                    article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
+                        h2#covid= self.data.configurations.corona_article[`name_${self.locale}`]
+                        +markdown(self.data.configurations.corona_article[`content_${self.locale}`])
 
     .row.page-margin
         .supporter.col-md-12
