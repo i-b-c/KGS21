@@ -27,8 +27,7 @@ block content
                         +markdown(self.data.configurations.about_article[`content_${self.locale}`])
             .col-xs-12.col-sm-12.col-md-6.col-lg-6
                 .collapsible-element 
-                    input(type="checkbox" id="team-collapsible" class="team-collapsible-input")
-                    label(for="team-collapsible")= self.labels.title.team
+                    .collapsible-label= self.labels.title.team
                     .collapsible-content
                         article.address
                             .row.team.grid-row
@@ -41,9 +40,9 @@ block content
                                                     if person2.id == person.id 
                                                         p= person2.first_name + ' ' + person2.last_name
                                             <br>
+                    <hr>
                 .collapsible-element 
-                    input(type="checkbox" id="contact-collapsible" class="contact-collapsible-input")
-                    label(for="contact-collapsible")= self.labels.title.contact
+                    .collapsible-label= self.labels.title.contact
                     .collapsible-content
                         article.address
                             .row
@@ -63,19 +62,18 @@ block content
                                                 p= person.occupation
                                                 a(href=`mailto:${person.email}`)= person.email
                                                 p= person.phone_number
+                    <hr>
                 .collapsible-element 
-                    input(type="checkbox" id="advisory-council-collapsible" class="advisory-council-collapsible-input")
-                    label(for="advisory-council-collapsible")= self.labels.title.creative_advisory_council
+                    .collapsible-label= self.labels.title.creative_advisory_council
                     .collapsible-content
                         article.council
                             .row
                                 article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                                    h2#council= self.data.configurations.council_article[`name_${self.locale}`]
                                     p
                                         +markdown(self.data.configurations.council_article[`content_${self.locale}`])
+                    <hr>
                 .collapsible-element 
-                    input(type="checkbox" id="floorplans-collapsible" class="floorplans-collapsible-input")
-                    label(for="floorplans-collapsible")= self.labels.title.floorplans
+                    .collapsible-label= self.labels.title.floorplans
                     .collapsible-content
                         if self.data.locations.length
                             each location in self.data.locations
@@ -92,30 +90,31 @@ block content
                                         //-     a(href="https://saal.entu.ee/api2/file-182" target="_blank")
                                         //-         u Keldrisaal
                                         //-     span  | 8x6x3,5m - 30 kohta
+                    <hr>
                 .collapsible-element 
-                    input(type="checkbox" id="location-collapsible" class="location-collapsible-input")
-                    label(for="location-collapsible")= self.labels.title.location
+                    .collapsible-label= self.labels.title.location
                     .collapsible-content
                         section
                             iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.6715343970304!2d24.745978300000008!3d59.43855259999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692936235ed6985%3A0x86e790e483c15838!2sKanuti+Gildi+Saal!5e0!3m2!1sen!2see!4v1442397004784" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen="")
+                    <hr>
                 .collapsible-element
-                    input(type="checkbox" id="book-collapsible" class="book-collapsible-input")
-                    label(for="book-collapsible")= self.labels.title.anniversary_book
+                    .collapsible-label= self.labels.title.anniversary_book
                     .collapsible-content
                         article.book
                             .row
                                 article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
                                     //- h2#book= self.data.configurations.book_article[`name_${self.locale}`]
                                     +markdown(self.data.configurations.book_article[`content_${self.locale}`])
+                    <hr>
                 .collapsible-element 
-                    input(type="checkbox" id="archive-collapsible" class="archive-collapsible-input")
-                    label(for="archive-collapsible")= self.labels.title.archive
+                    .collapsible-label= self.labels.title.archive
                     .collapsible-content
                         ul.list-unstyled.h3
                             li
                                 a(href="http://2016.saal.ee/events/2016/01/" target="_blank") www.saal.ee 2008–2015
                             li
                                 a(href="http://2016.saal.ee/archive/et/programm2/arhiiv.html" target="_blank") www.saal.ee 2004–2008
+                    <hr>
 
             article.col-md-12.covid
                 .row
