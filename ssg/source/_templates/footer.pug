@@ -6,19 +6,19 @@
             p= self.labels.footer.tallinn_estonia
             p MTÜ Teine Tants
         .col-xs-12.col-md-4.text-center
-            .col-xs-12.col-sm-12.col-md-4.col-lg-12(id='newsletter-sign-up')
+            #newsletter-sign-up.col-xs-12.col-sm-12.col-md-4.col-lg-12
                 p= self.labels.newsletter.signup
-            .col-xs-12.col-sm-12.col-md-4.col-lg-12(id='mailchimp-sign-up')
-                form.validate(action=self.labels.newsletter.action method='post' id='mc-embedded-subscribe-form' name='mc-embedded-subscribe-form' class='validate' target='_blank' novalidate)
+            #mailchimp-sign-up.col-xs-12.col-sm-12.col-md-4.col-lg-12
+                form#mc-embedded-subscribe-form.validate.validate(action=self.labels.newsletter.mailchimp_action method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="")
                     .mc-field-group
-                        input.required.email(type='text' value='' name='EMAIL' placeholder=self.labels.newsletter.placeholder id='mce-EMAIL')
-                    .clear(id='mce-responses')
-                        .response(id='mce-error-response' style='display:none')
-                        .response(id='mce-success-response' style='display:none')
-                    div(style='position: absolute; left: -5000px;')
-                        input(type='text' name=self.labels.newsletter.inputName tabindex='-1' value='')
+                        input#mce-EMAIL.required.email(type="text" value="" name="EMAIL" placeholder=self.labels.newsletter.placeholder)
+                    #mce-responses.clear
+                        #mce-error-response.response(style="display:none")
+                        #mce-success-response.response(style="display:none")
+                    div(style="position: absolute; left: -5000px;")
+                        input(type="text" name=self.labels.newsletter.inputName tabindex="-1" value="")
                     .clear
-                        input.button(type='submit' value='OK!' name='subscribe' id='mc-embedded-subscribe')
+                        input#mc-embedded-subscribe.button(type="submit" value="OK!" name="subscribe")
         .col-xs-12.col-md-4.social.text-right
             ul
                 li
