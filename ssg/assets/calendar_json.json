@@ -1,718 +1,241 @@
 {
-    "minDate": "2023-9-1",
-    "maxDate": "2024-2-10",
+    "minDate": "2024-3-1",
+    "maxDate": "2024-6-9",
     "events": {
-        "2023-9-5": [
-            {
-                "et_id": "scream-box-1794",
-                "en_id": "scream-box-1794",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SCREAM BOX",
-                    "en": "SCREAM BOX"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-9-6": [
-            {
-                "et_id": "scream-box-1794",
-                "en_id": "scream-box-1794",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SCREAM BOX",
-                    "en": "SCREAM BOX"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "divide-et-impera-1733",
-                "en_id": "divide-et-impera-1733",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Divide et Impera*",
-                    "en": "Divide et Impera* "
-                },
-                "time": "17:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-9-7": [
-            {
-                "et_id": "divide-et-impera-1733",
-                "en_id": "divide-et-impera-1733",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Divide et Impera*",
-                    "en": "Divide et Impera* "
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
-                },
-                "time": "12:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-9-8": [
-            {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
-                },
-                "time": "17:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-10-31": [
+        "2024-5-25": [
             {
                 "et_id": "kultuur-1832",
                 "en_id": "kultuur-1832",
                 "tag": [
-                    "tour"
+                    "event"
                 ],
                 "controller": "performance",
                 "name": {
                     "et": "Kultuur",
                     "en": "Kultuur"
                 },
-                "time": "18:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-11-2": [
-            {
-                "et_id": "kultuur-1832",
-                "en_id": "kultuur-1832",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kultuur",
-                    "en": "Kultuur"
-                },
-                "time": "20:30",
+                "time": "18:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             },
             {
-                "et_id": "orchidelirium-expanded-20-1792",
-                "en_id": "orchidelirium-expanded-20-1792",
+                "et_id": "a-mouthful-of-tongues-1906",
+                "en_id": "a-mouthful-of-tongues-1906",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Orchidelirium Expanded 2.0",
-                    "en": "Orchidelirium Expanded 2.0"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2023-9-4": [
-            {
-                "et_id": "cowbody-1750",
-                "en_id": "cowbody-1750",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "COWBODY",
-                    "en": "COWBODY"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-9-29": [
-            {
-                "et_id": "kutse-vaibale-1835",
-                "en_id": "invitation-to-the-carpet-1835",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "KUTSE VAIBALE",
-                    "en": "INVITATION TO THE CARPET"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-9-30": [
-            {
-                "et_id": "kutse-vaibale-1835",
-                "en_id": "invitation-to-the-carpet-1835",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "KUTSE VAIBALE",
-                    "en": "INVITATION TO THE CARPET"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-10-7": [
-            {
-                "et_id": "lucky-charm-1776",
-                "en_id": "lucky-charm-1776",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Lucky Charm",
-                    "en": "Lucky Charm"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-10-13": [
-            {
-                "et_id": "scream-box-1794",
-                "en_id": "scream-box-1794",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SCREAM BOX",
-                    "en": "SCREAM BOX"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-10-14": [
-            {
-                "et_id": "scream-box-1794",
-                "en_id": "scream-box-1794",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SCREAM BOX",
-                    "en": "SCREAM BOX"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "traps-1731",
-                "en_id": "traps-1731",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "traps",
-                    "en": "traps"
+                    "et": "A Mouthful of Tongues",
+                    "en": "A Mouthful of Tongues"
                 },
                 "time": "21:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
-            }
-        ],
-        "2023-10-3": [
+            },
             {
-                "et_id": "pha-vaimu-saali-residentuuri-showing-1839",
-                "en_id": "residency-showing-of-pha-vaimu-saal-1839",
+                "et_id": "hiselt-ksinda-kirjutamise-ttuba-1908",
+                "en_id": "alone-together-writing-workshop-1908",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Püha Vaimu SAALi residentuuri showing",
-                    "en": "Residency showing of Püha Vaimu SAAL"
+                    "et": "Ühiselt üksinda - kirjutamise töötuba",
+                    "en": "Alone Together - writing workshop"
                 },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2023-10-15": [
-            {
-                "et_id": "traps-1731",
-                "en_id": "traps-1731",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "traps",
-                    "en": "traps"
-                },
-                "time": "21:00",
+                "time": "13:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             }
         ],
-        "2023-11-9": [
+        "2024-6-8": [
             {
-                "et_id": "cowbody-1750",
-                "en_id": "cowbody-1750",
+                "et_id": "quote-on-quote-ehk-rgime-sellest-1916",
+                "en_id": "quote-on-quote-ie-lets-talk-about-it-1916",
                 "tag": [
-                    "tour"
+                    "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "COWBODY",
-                    "en": "COWBODY"
+                    "et": "Quote on quote ehk räägime sellest",
+                    "en": "Quote on quote i.e. let's talk about it"
                 },
                 "time": "19:00",
                 "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-9-14": [
-            {
-                "et_id": "lucky-charm-1776",
-                "en_id": "lucky-charm-1776",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Lucky Charm",
-                    "en": "Lucky Charm"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-11-10": [
-            {
-                "et_id": "cowbody-1750",
-                "en_id": "cowbody-1750",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "COWBODY",
-                    "en": "COWBODY"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             },
             {
-                "et_id": "youre-not-alone-1840",
-                "en_id": "youre-not-alone-1840",
+                "et_id": "flagellant-1915",
+                "en_id": "flagellant-1915",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "You´re Not Alone",
-                    "en": "You´re Not Alone"
+                    "et": "Flagellant",
+                    "en": "Flagellant"
                 },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-10-18": [
-            {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
-                },
-                "time": "20:00",
+                "time": "18:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             }
         ],
-        "2023-11-11": [
+        "2024-4-18": [
             {
-                "et_id": "cowbody-1750",
-                "en_id": "cowbody-1750",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "COWBODY",
-                    "en": "COWBODY"
-                },
-                "time": "16:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "youre-not-alone-1840",
-                "en_id": "youre-not-alone-1840",
+                "et_id": "glen-webinar-communicating-the-arts-1910",
+                "en_id": "glen-webinar-communicating-the-arts-1910",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "You´re Not Alone",
-                    "en": "You´re Not Alone"
+                    "et": "GLEN webinar: Communicating the arts",
+                    "en": "GLEN webinar: Communicating the arts"
                 },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-10-17": [
-            {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
-                },
-                "time": "20:00",
+                "time": "13:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             }
         ],
-        "2023-11-4": [
+        "2024-5-24": [
             {
-                "et_id": "other-mother-1842",
-                "en_id": "other-mother-1842",
+                "et_id": "vestlusring-kuidas-viib-kvr-kunsti-edasi-1917",
+                "en_id": "vestlusring-kuidas-viib-kvr-kunsti-edasi-1917",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Other Mother",
-                    "en": "Other Mother"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-9-27": [
-            {
-                "et_id": "koodeks-1836",
-                "en_id": "koodeks-1836",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Koodeks",
-                    "en": "Koodeks"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-10-10": [
-            {
-                "et_id": "5099",
-                "en_id": "5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-10-19": [
-            {
-                "et_id": "sfriline-htu-vol-4-1843",
-                "en_id": "sfriline-htu-vol-4-1843",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sfääriline õhtu vol. 4",
-                    "en": "Sfääriline õhtu vol. 4"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-10-11": [
-            {
-                "et_id": "5099",
-                "en_id": "5099",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis / Tallinnas",
-                    "en": "Beating at the stables of the manor / in Tallinn"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-10-20": [
-            {
-                "et_id": "luulekogu-ainult-et-esitlus-1844",
-                "en_id": "launch-of-a-collection-of-poems-titled-ainult-et-1844",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Luulekogu \"ainult et\" esitlus",
-                    "en": "Launch of a collection of poems titled \"ainult et\""
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-12-28": [
-            {
-                "et_id": "mure-staatuse-prast-1845",
-                "en_id": "mure-staatuse-prast-1845",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Mure staatuse pärast",
-                    "en": "Mure staatuse pärast"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-10-25": [
-            {
-                "et_id": "pva-lpuks-kiigu-1838",
-                "en_id": "pva-lpuks-kiigu-1838",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Päva lõpuks, kiigu",
-                    "en": "Päva lõpuks, kiigu"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-12-16": [
-            {
-                "et_id": "mure-staatuse-prast-1845",
-                "en_id": "mure-staatuse-prast-1845",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Mure staatuse pärast",
-                    "en": "Mure staatuse pärast"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-10-26": [
-            {
-                "et_id": "pva-lpuks-kiigu-1838",
-                "en_id": "pva-lpuks-kiigu-1838",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Päva lõpuks, kiigu",
-                    "en": "Päva lõpuks, kiigu"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-12-17": [
-            {
-                "et_id": "mure-staatuse-prast-1845",
-                "en_id": "mure-staatuse-prast-1845",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Mure staatuse pärast",
-                    "en": "Mure staatuse pärast"
+                    "et": "Vestlusring: Kuidas viib kväär kunsti edasi?",
+                    "en": "Vestlusring: Kuidas viib kväär kunsti edasi?"
                 },
                 "time": "17:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
-            }
-        ],
-        "2023-11-6": [
+            },
             {
-                "et_id": "kutse-vaibale-1835",
-                "en_id": "invitation-to-the-carpet-1835",
+                "et_id": "kultuur-1832",
+                "en_id": "kultuur-1832",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "KUTSE VAIBALE",
-                    "en": "INVITATION TO THE CARPET"
+                    "et": "Kultuur",
+                    "en": "Kultuur"
                 },
-                "time": "19:30",
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "mina-tema-1909",
+                "en_id": "me-her-1909",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mina / Tema",
+                    "en": "Me / Her"
+                },
+                "time": "19:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             }
         ],
-        "2023-12-29": [
+        "2024-5-22": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "mure-staatuse-prast-1845",
+                "en_id": "mure-staatuse-prast-1845",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mure staatuse pärast",
+                    "en": "Mure staatuse pärast"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-5-21": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "batty-bwoy-1907",
+                "en_id": "batty-bwoy-1907",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Batty Bwoy",
+                    "en": "Batty Bwoy"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-3-13": [
             {
                 "et_id": "mure-staatuse-prast-1845",
                 "en_id": "mure-staatuse-prast-1845",
@@ -726,88 +249,12 @@
                 },
                 "time": "19:30",
                 "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-10-27": [
-            {
-                "et_id": "pva-lpuks-kiigu-1838",
-                "en_id": "pva-lpuks-kiigu-1838",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Päva lõpuks, kiigu",
-                    "en": "Päva lõpuks, kiigu"
-                },
-                "time": "19:30",
-                "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
-        "2023-11-16": [
-            {
-                "et_id": "kutse-vaibale-1835",
-                "en_id": "invitation-to-the-carpet-1835",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "KUTSE VAIBALE",
-                    "en": "INVITATION TO THE CARPET"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-10-28": [
-            {
-                "et_id": "pva-lpuks-kiigu-1838",
-                "en_id": "pva-lpuks-kiigu-1838",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Päva lõpuks, kiigu",
-                    "en": "Päva lõpuks, kiigu"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-11-7": [
-            {
-                "et_id": "kutse-vaibale-1835",
-                "en_id": "invitation-to-the-carpet-1835",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "KUTSE VAIBALE",
-                    "en": "INVITATION TO THE CARPET"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-12-30": [
+        "2024-3-14": [
             {
                 "et_id": "mure-staatuse-prast-1845",
                 "en_id": "mure-staatuse-prast-1845",
@@ -821,41 +268,388 @@
                 },
                 "time": "19:30",
                 "location": {
-                    "et": "",
-                    "en": ""
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
-            }
-        ],
-        "2023-11-17": [
+            },
             {
-                "et_id": "kutse-vaibale-1835",
-                "en_id": "invitation-to-the-carpet-1835",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "KUTSE VAIBALE",
-                    "en": "INVITATION TO THE CARPET"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2023-11-1": [
-            {
-                "et_id": "eden-detail-1598",
-                "en_id": "eden-detail-1598",
+                "et_id": "fun-fact-1847",
+                "en_id": "fun-fact-1847",
                 "tag": [
                     "tour"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Eden Detail",
-                    "en": "Eden Detail"
+                    "et": "Fun Fact",
+                    "en": "Fun Fact"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-3-16": [
+            {
+                "et_id": "mure-staatuse-prast-1845",
+                "en_id": "mure-staatuse-prast-1845",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mure staatuse pärast",
+                    "en": "Mure staatuse pärast"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "kultuur-1832",
+                "en_id": "kultuur-1832",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kultuur",
+                    "en": "Kultuur"
+                },
+                "time": "16:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-5-8": [
+            {
+                "et_id": "anna-mulle-end-1862",
+                "en_id": "at-your-service-1862",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Anna mulle end",
+                    "en": "At Your Service"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            }
+        ],
+        "2024-4-29": [
+            {
+                "et_id": "traditsiooniline-tantsupeva-hommikusk-1911",
+                "en_id": "traditsiooniline-tantsupeva-hommikusk-1911",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Traditsiooniline tantsupäeva hommikusöök",
+                    "en": "Traditsiooniline tantsupäeva hommikusöök"
+                },
+                "time": "10:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-3-9": [
+            {
+                "et_id": "guiding-light-v-1768",
+                "en_id": "guiding-light-v-1768",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "GUIDING LIGHT V",
+                    "en": "GUIDING LIGHT V"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "made-in-estonia-maraton-2024-1857",
+                "en_id": "made-in-estonia-marathon-2024-1857",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Made in Estonia Maraton 2024",
+                    "en": "Made in Estonia Marathon 2024"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-7": [
+            {
+                "et_id": "glen-webinar-collective-curation-1912",
+                "en_id": "glen-webinar-collective-curation-1912",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "GLEN webinar: Collective Curation",
+                    "en": "GLEN webinar: Collective Curation"
+                },
+                "time": "13:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "anna-mulle-end-1862",
+                "en_id": "at-your-service-1862",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Anna mulle end",
+                    "en": "At Your Service"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            }
+        ],
+        "2024-5-23": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "a-mouthful-of-tongues-1906",
+                "en_id": "a-mouthful-of-tongues-1906",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "A Mouthful of Tongues",
+                    "en": "A Mouthful of Tongues"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-5-30": [
+            {
+                "et_id": "sisenemine-sisenemisse-104",
+                "en_id": "enter-the-enter-104",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sisenemine sisenemisse",
+                    "en": "Enter the enter"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "kuulumise-vahel-1863",
+                "en_id": "inbetween-belonging-1863",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kuulumise vahel",
+                    "en": "Inbetween Belonging"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-6-9": [
+            {
+                "et_id": "bakhandid-1913",
+                "en_id": "the-bacchae-1913",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Bakhandid",
+                    "en": "The Bacchae"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-6-7": [
+            {
+                "et_id": "mduv-mateeria-1914",
+                "en_id": "transient-matter-1914",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "mööduv mateeria",
+                    "en": "transient matter"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2024-3-15": [
+            {
+                "et_id": "fun-fact-1847",
+                "en_id": "fun-fact-1847",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Fun Fact",
+                    "en": "Fun Fact"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "kultuur-1832",
+                "en_id": "kultuur-1832",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kultuur",
+                    "en": "Kultuur"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-4-19": [
+            {
+                "et_id": "unending-love-or-love-dies-on-repeat-like-its-endless-1858",
+                "en_id": "unending-love-or-love-dies-on-repeat-like-its-endless-1858",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Unending love, or love dies, on repeat like it’s endless",
+                    "en": "Unending love, or love dies, on repeat like it’s endless"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-4-20": [
+            {
+                "et_id": "unending-love-or-love-dies-on-repeat-like-its-endless-1858",
+                "en_id": "unending-love-or-love-dies-on-repeat-like-its-endless-1858",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Unending love, or love dies, on repeat like it’s endless",
+                    "en": "Unending love, or love dies, on repeat like it’s endless"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-3-1": [
+            {
+                "et_id": "the-well-1704",
+                "en_id": "the-well-1704",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "The Well",
+                    "en": "The Well"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-6-4": [
+            {
+                "et_id": "tangent-1856",
+                "en_id": "tangent-1856",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tangent",
+                    "en": "Tangent"
                 },
                 "time": "19:00",
                 "location": {
@@ -864,112 +658,298 @@
                 }
             }
         ],
-        "2024-2-8": [
+        "2024-6-5": [
             {
-                "et_id": "kultuur-1832",
-                "en_id": "kultuur-1832",
+                "et_id": "tangent-1856",
+                "en_id": "tangent-1856",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Kultuur",
-                    "en": "Kultuur"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-2-10": [
-            {
-                "et_id": "kultuur-1832",
-                "en_id": "kultuur-1832",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kultuur",
-                    "en": "Kultuur"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2023-10-6": [
-            {
-                "et_id": "lucky-charm-1776",
-                "en_id": "lucky-charm-1776",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Lucky Charm",
-                    "en": "Lucky Charm"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-2-9": [
-            {
-                "et_id": "kultuur-1832",
-                "en_id": "kultuur-1832",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Kultuur",
-                    "en": "Kultuur"
+                    "et": "Tangent",
+                    "en": "Tangent"
                 },
                 "time": "19:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2023-11-23": [
+        "2024-3-30": [
             {
-                "et_id": "paul-kuimeti-kunstnikuraamatu-crystal-grid-esitlus-ja-vestlus-1846",
-                "en_id": "paul-kuimet-book-launch-and-discussion-1846",
+                "et_id": "saal3-vol-2-1859",
+                "en_id": "saal3-vol-2-1859",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Paul Kuimeti kunstnikuraamatu “Crystal Grid” esitlus ja vestlus",
-                    "en": "Paul Kuimet book launch and discussion"
+                    "et": "SAAL3 vol 2",
+                    "en": "SAAL3 vol 2"
                 },
                 "time": "18:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
-            }
-        ],
-        "2023-11-3": [
+            },
             {
-                "et_id": "orchidelirium-expanded-20-1792",
-                "en_id": "orchidelirium-expanded-20-1792",
+                "et_id": "residentuuri-showing-1904",
+                "en_id": "recidency-showing-1904",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Orchidelirium Expanded 2.0",
-                    "en": "Orchidelirium Expanded 2.0"
+                    "et": "Residentuuri showing",
+                    "en": "Recidency showing"
+                },
+                "time": "16:00",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            }
+        ],
+        "2024-4-1": [
+            {
+                "et_id": "peks-misatallis-439",
+                "en_id": "beating-at-the-stables-of-the-manor-439",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Peks mõisatallis ",
+                    "en": "Beating at the stables of the manor"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-4-2": [
+            {
+                "et_id": "peks-misatallis-439",
+                "en_id": "beating-at-the-stables-of-the-manor-439",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Peks mõisatallis ",
+                    "en": "Beating at the stables of the manor"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-4-9": [
+            {
+                "et_id": "surm-1855",
+                "en_id": "death-1855",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "SURM",
+                    "en": "DEATH"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-4-10": [
+            {
+                "et_id": "surm-1855",
+                "en_id": "death-1855",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "SURM",
+                    "en": "DEATH"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "shiro-takatani-looduse-ja-tehnoloogia-vahel-1905",
+                "en_id": "shiro-takatani-between-nature-and-technology-1905",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Shiro Takatani. Looduse ja tehnoloogia vahel",
+                    "en": "Shiro Takatani. Between Nature and Technology "
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2024-4-25": [
+            {
+                "et_id": "pva-lpuks-kiigu-1838",
+                "en_id": "pva-lpuks-kiigu-1838",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Päva lõpuks, kiigu",
+                    "en": "Päva lõpuks, kiigu"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-4-26": [
+            {
+                "et_id": "pva-lpuks-kiigu-1838",
+                "en_id": "pva-lpuks-kiigu-1838",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Päva lõpuks, kiigu",
+                    "en": "Päva lõpuks, kiigu"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-4-27": [
+            {
+                "et_id": "pva-lpuks-kiigu-1838",
+                "en_id": "pva-lpuks-kiigu-1838",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Päva lõpuks, kiigu",
+                    "en": "Päva lõpuks, kiigu"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-16": [
+            {
+                "et_id": "pva-lpuks-kiigu-1838",
+                "en_id": "pva-lpuks-kiigu-1838",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Päva lõpuks, kiigu",
+                    "en": "Päva lõpuks, kiigu"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-17": [
+            {
+                "et_id": "pva-lpuks-kiigu-1838",
+                "en_id": "pva-lpuks-kiigu-1838",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Päva lõpuks, kiigu",
+                    "en": "Päva lõpuks, kiigu"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-18": [
+            {
+                "et_id": "pva-lpuks-kiigu-1838",
+                "en_id": "pva-lpuks-kiigu-1838",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Päva lõpuks, kiigu",
+                    "en": "Päva lõpuks, kiigu"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-19": [
+            {
+                "et_id": "pva-lpuks-kiigu-1838",
+                "en_id": "pva-lpuks-kiigu-1838",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Päva lõpuks, kiigu",
+                    "en": "Päva lõpuks, kiigu"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-4-5": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
                 },
                 "time": "19:30",
                 "location": {
@@ -978,19 +958,486 @@
                 }
             }
         ],
-        "2023-11-25": [
+        "2024-4-6": [
             {
-                "et_id": "saal3-vol-1-1841",
-                "en_id": "saal3-vol-1-1841",
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "SAAL3 vol 1",
-                    "en": "SAAL3 vol 1"
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2024-4-11": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2024-4-12": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2024-4-13": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2024-4-15": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2024-4-16": [
+            {
+                "et_id": "tdi-ie-65-snnipev-1860",
+                "en_id": "aunt-ies-65th-birthday-1860",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tädi Õie 65. sünnipäev",
+                    "en": "Aunt Õie´s 65th birthday"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2024-3-4": [
+            {
+                "et_id": "parasiit-protsessis-1861",
+                "en_id": "parasiit-protsessis-1861",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "PARASIIT protsessis ",
+                    "en": "PARASIIT protsessis "
                 },
                 "time": "18:00",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2024-5-2": [
+            {
+                "et_id": "anna-mulle-end-1862",
+                "en_id": "at-your-service-1862",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Anna mulle end",
+                    "en": "At Your Service"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            }
+        ],
+        "2024-5-3": [
+            {
+                "et_id": "anna-mulle-end-1862",
+                "en_id": "at-your-service-1862",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Anna mulle end",
+                    "en": "At Your Service"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            }
+        ],
+        "2024-5-4": [
+            {
+                "et_id": "anna-mulle-end-1862",
+                "en_id": "at-your-service-1862",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Anna mulle end",
+                    "en": "At Your Service"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            }
+        ],
+        "2024-5-6": [
+            {
+                "et_id": "anna-mulle-end-1862",
+                "en_id": "at-your-service-1862",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Anna mulle end",
+                    "en": "At Your Service"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            }
+        ],
+        "2024-5-28": [
+            {
+                "et_id": "kuulumise-vahel-1863",
+                "en_id": "inbetween-belonging-1863",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kuulumise vahel",
+                    "en": "Inbetween Belonging"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-31": [
+            {
+                "et_id": "kuulumise-vahel-1863",
+                "en_id": "inbetween-belonging-1863",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kuulumise vahel",
+                    "en": "Inbetween Belonging"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-6-1": [
+            {
+                "et_id": "kuulumise-vahel-1863",
+                "en_id": "inbetween-belonging-1863",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kuulumise vahel",
+                    "en": "Inbetween Belonging"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-3-23": [
+            {
+                "et_id": "tsirkus-tsirkus-tsirkus-1870",
+                "en_id": "tsirkus-tsirkus-tsirkus-1870",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "“Tsirkus. Tsirkus? Tsirkus!”",
+                    "en": "“Tsirkus. Tsirkus? Tsirkus!”"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "erisuste-erinevused-1869",
+                "en_id": "erisuste-erinevused-1869",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Erisuste Erinevused",
+                    "en": "Erisuste Erinevused"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-10": [
+            {
+                "et_id": "women-who-rage-1903",
+                "en_id": "women-who-rage-1903",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Women Who Rage",
+                    "en": "Women Who Rage"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-11": [
+            {
+                "et_id": "women-who-rage-1903",
+                "en_id": "women-who-rage-1903",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Women Who Rage",
+                    "en": "Women Who Rage"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-3-20": [
+            {
+                "et_id": "kustpoolt-puhub-tuul-1865",
+                "en_id": "kustpoolt-puhub-tuul-1865",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kustpoolt puhub tuul",
+                    "en": "Kustpoolt puhub tuul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "erisuste-erinevused-1866",
+                "en_id": "erisuste-erinevused-1866",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Erisuste Erinevused",
+                    "en": "Erisuste Erinevused"
+                },
+                "time": "18:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-13": [
+            {
+                "et_id": "women-who-rage-1903",
+                "en_id": "women-who-rage-1903",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Women Who Rage",
+                    "en": "Women Who Rage"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-3-21": [
+            {
+                "et_id": "kustpoolt-puhub-tuul-1865",
+                "en_id": "kustpoolt-puhub-tuul-1865",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kustpoolt puhub tuul",
+                    "en": "Kustpoolt puhub tuul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "erisuste-erinevused-1867",
+                "en_id": "erisuste-erinevused-1867",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Erisuste Erinevused",
+                    "en": "Erisuste Erinevused"
+                },
+                "time": "11:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-5-14": [
+            {
+                "et_id": "women-who-rage-1903",
+                "en_id": "women-who-rage-1903",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Women Who Rage",
+                    "en": "Women Who Rage"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-3-22": [
+            {
+                "et_id": "kustpoolt-puhub-tuul-1865",
+                "en_id": "kustpoolt-puhub-tuul-1865",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kustpoolt puhub tuul",
+                    "en": "Kustpoolt puhub tuul"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "erisuste-erinevused-1868",
+                "en_id": "erisuste-erinevused-1868",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Erisuste Erinevused",
+                    "en": "Erisuste Erinevused"
+                },
+                "time": "11:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
