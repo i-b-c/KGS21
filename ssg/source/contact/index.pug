@@ -38,7 +38,7 @@ block content
                                             each person in occupation.people 
                                                 each person2 in self.data.persons
                                                     if person2.id == person.id 
-                                                        p= person2.first_name + ' ' + person2.last_name
+                                                        p= person2.first_name + ' ' + person2.last_name + (person2[`extra_text_after_name_${self.locale}`] ? ' ' + person2[`extra_text_after_name_${self.locale}`] : '')
                                             <br>
                     <hr>
                 .collapsible-element 
@@ -58,7 +58,7 @@ block content
                                         //- Midagi valesti
                                         if person.is_contact
                                             .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
-                                                h2= `${person.first_name}${person.last_name ? ` ${person.last_name}` : ''}`
+                                                h2= person.first_name + ' ' + person.last_name + (person[`extra_text_after_name_${self.locale}`] ? ' ' + person[`extra_text_after_name_${self.locale}`] : '')
                                                 p= person.occupation
                                                 a(href=`mailto:${person.email}`)= person.email
                                                 p= person.phone_number

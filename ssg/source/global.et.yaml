@@ -208,5 +208,5 @@ labels:
         buy_t_regular_presale: Buy ticket
         buy_t_online: Online
 site_colors:
-    bg_color: '#1a1919'
-    fg_color: '#99CCCC'
+    bg_color: '#440099'
+    fg_color: '#FFB3FF '

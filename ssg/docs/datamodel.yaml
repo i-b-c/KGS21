@@ -132,6 +132,8 @@ Person: &Person
     order: (number)
     remote_id: (UID)
     is_contact: (boolean)
+    extra_text_after_name_et: (text)
+    extra_text_after_name_en: (text)
     # date_of_birth:
     # biography:
 

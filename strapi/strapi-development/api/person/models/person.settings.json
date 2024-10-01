@@ -54,6 +54,12 @@
     },
     "is_contact": {
       "type": "boolean"
+    },
+    "extra_text_after_name_et": {
+      "type": "text"
+    },
+    "extra_text_after_name_en": {
+      "type": "text"
     }
   }
 }
