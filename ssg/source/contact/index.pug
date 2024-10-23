@@ -64,13 +64,12 @@ block content
                                                 p= person.phone_number
                     <hr>
                 .collapsible-element 
-                    .collapsible-label= self.labels.title.creative_advisory_council
+                    .collapsible-label= self.labels.title.accessibility
                     .collapsible-content
                         article.council
                             .row
                                 article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                                    p
-                                        +markdown(self.data.configurations.council_article[`content_${self.locale}`])
+                                    p= self.accessibility_article
                     <hr>
                 .collapsible-element 
                     .collapsible-label= self.labels.title.floorplans
