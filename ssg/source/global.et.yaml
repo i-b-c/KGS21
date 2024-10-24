@@ -193,10 +193,10 @@ labels:
         newscast_archive: Uudiste arhiiv
         news: uudised
         team: tiim
-        accessibility: ligipääsetavus
         location: asukoht
         anniversary_book: 20. juubeliraamat
         undefined: null
+        accessibility: ligipääsetavus
     ticket:
         buy_ticket: Osta pilet
         buy_t_canceled: Jääb ära!

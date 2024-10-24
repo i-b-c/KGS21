@@ -191,10 +191,10 @@ labels:
         newscast_archive: News archive
         news: news
         team: team
-        accessibility: accessibility
         location: location
         anniversary_book: 20th anniversary book
         undefined: null
+        accessibility: acessibility
     ticket:
         buy_ticket: Buy ticket
         buy_t_canceled: Canceled!

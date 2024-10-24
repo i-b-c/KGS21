@@ -21,8 +21,8 @@ block content
                     a.right.carousel-control(href="#about-carousel" role="button" data-slide="next")
                         span.icon-next.arrow-right(aria-hidden="true")
                 article.main-text.h3
-                    p
-                    h3#kanuti-gildi-saali-20-juubelihooaeg= self.data.configurations.about_article[`name_${self.locale}`]
+                    p asdf
+                        h3#kanuti-gildi-saali-20-juubelihooaeg= self.data.configurations.about_article[`name_${self.locale}`]
                     p
                         +markdown(self.data.configurations.about_article[`content_${self.locale}`])
             .col-xs-12.col-sm-12.col-md-6.col-lg-6
@@ -69,7 +69,9 @@ block content
                         article.council
                             .row
                                 article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                                    p= self.accessibility_article
+                                    each article in self.data.simple_articles
+                                        if article.name_en === 'ACCESSIBILITY'
+                                            +markdown(article[`content_${self.locale}`])
                     <hr>
                 .collapsible-element 
                     .collapsible-label= self.labels.title.floorplans
@@ -102,7 +104,6 @@ block content
                         article.book
                             .row
                                 article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
-                                    //- h2#book= self.data.configurations.book_article[`name_${self.locale}`]
                                     +markdown(self.data.configurations.book_article[`content_${self.locale}`])
                     <hr>
                 .collapsible-element 
