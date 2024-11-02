@@ -974,25 +974,6 @@
                 }
             }
         ],
-        "2024-9-1": [
-            {
-                "et_id": "sinikalilla-1928",
-                "en_id": "bruised-lilac-1928",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sinikalilla",
-                    "en": "Bruised Lilac"
-                },
-                "time": "13:00",
-                "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
-                }
-            }
-        ],
         "2025-2-18": [
             {
                 "et_id": "pantheon-1942",
