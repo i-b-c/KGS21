@@ -1,5 +1,7 @@
 #! /bin/bash
 
+echo "Deploying site"
+
 SECONDS=0
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 TIMESTAMP=`date +%Y-%m-%d_%H-%M-%S.%3N`

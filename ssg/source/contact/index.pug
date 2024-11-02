@@ -78,7 +78,7 @@ block content
                     .collapsible-content
                         if self.data.locations.length
                             each location in self.data.locations
-                                if location.hall.floorplan
+                                //- if location.hall.floorplan
                                     ul.list-unstyled.h3
                                         li
                                             a(href=`https://a.saal.ee${location.hall.floorplan.url}` target="_blank")

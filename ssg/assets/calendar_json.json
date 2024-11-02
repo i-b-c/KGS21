@@ -1,6 +1,6 @@
 {
-    "minDate": "2024-8-1",
-    "maxDate": "2024-12-29",
+    "minDate": "2024-9-1",
+    "maxDate": "2025-2-22",
     "events": {
         "2024-11-20": [
             {
@@ -448,43 +448,22 @@
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
-            }
-        ],
-        "2024-8-9": [
+            },
             {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
+                "et_id": "lepinguruum-kontor-1943",
+                "en_id": "contract-room-night-office-1943",
                 "tag": [
-                    "tour"
+                    "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
+                    "et": "LEPINGURUUM: ÖÖKONTOR",
+                    "en": "CONTRACT ROOM: NIGHT OFFICE"
                 },
-                "time": "19:00",
+                "time": "23:59",
                 "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-8-11": [
-            {
-                "et_id": "mt-peva-rel-1735",
-                "en_id": "the-myth-last-day-1735",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Müüt: päeva äärel",
-                    "en": "The Myth: last day"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
                 }
             }
         ],
@@ -862,42 +841,6 @@
                 }
             }
         ],
-        "2024-8-29": [
-            {
-                "et_id": "fun-fact-1847",
-                "en_id": "fun-fact-1847",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Fun Fact",
-                    "en": "Fun Fact"
-                },
-                "time": "21:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "fun-fact-1847",
-                "en_id": "fun-fact-1847",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Fun Fact",
-                    "en": "Fun Fact"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2024-10-31": [
             {
                 "et_id": "poisu-sa-paned-oma-maasturi-plema-1941",
@@ -936,22 +879,98 @@
                 }
             }
         ],
-        "2024-8-17": [
+        "2025-1-27": [
             {
-                "et_id": "renessanss-1926",
-                "en_id": "renaissance-1926",
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Renessanss",
-                    "en": "Renaissance"
+                    "et": "Pantheon",
+                    "en": "Pantheon"
                 },
-                "time": "17:00",
+                "time": "19:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-1-28": [
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-1-30": [
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-1-31": [
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-2-1": [
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
                 }
             }
         ],
@@ -974,41 +993,79 @@
                 }
             }
         ],
-        "2024-8-22": [
+        "2025-2-18": [
             {
-                "et_id": "sinikalilla-1928",
-                "en_id": "bruised-lilac-1928",
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Sinikalilla",
-                    "en": "Bruised Lilac"
+                    "et": "Pantheon",
+                    "en": "Pantheon"
                 },
-                "time": "13:00",
+                "time": "19:00",
                 "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
                 }
             }
         ],
-        "2024-8-21": [
+        "2025-2-19": [
             {
-                "et_id": "sinikalilla-1928",
-                "en_id": "bruised-lilac-1928",
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Sinikalilla",
-                    "en": "Bruised Lilac"
+                    "et": "Pantheon",
+                    "en": "Pantheon"
                 },
-                "time": "18:00",
+                "time": "19:00",
                 "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-2-20": [
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-2-22": [
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
                 }
             }
         ],
@@ -1031,6 +1088,25 @@
                 }
             }
         ],
+        "2024-11-11": [
+            {
+                "et_id": "lepinguruum-1944",
+                "en_id": "contract-room-1944",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "LEPINGURUUM",
+                    "en": "CONTRACT ROOM"
+                },
+                "time": "11:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2024-10-21": [
             {
                 "et_id": "hing-kurgus-1927",
@@ -1047,6 +1123,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2024-11-23": [
+            {
+                "et_id": "lepinguruum-intensiiv-1945",
+                "en_id": "contract-room-intensive-1945",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "LEPINGURUUM: INTENSIIV",
+                    "en": "CONTRACT ROOM: INTENSIVE"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
                 }
             }
         ],
@@ -1070,6 +1165,23 @@
             }
         ],
         "2024-11-29": [
+            {
+                "et_id": "lepinguruum-showing-1946",
+                "en_id": "contract-room-showing-1946",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "LEPINGURUUM: SHOWING",
+                    "en": "CONTRACT ROOM: SHOWING"
+                },
+                "time": "12:00",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            },
             {
                 "et_id": "tdi-ie-65-snnipev-1860",
                 "en_id": "aunt-ies-65th-birthday-1860",
