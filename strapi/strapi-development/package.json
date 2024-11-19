@@ -12,7 +12,7 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "js-yaml": "^4.1.0",
-    "knex": "0.21.18",
+    "knex": "2.4.0",
     "node-html-parser": "^2.1.0",
     "pg": "latest",
     "strapi": "3.6.2",
