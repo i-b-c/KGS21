@@ -1,278 +1,215 @@
 {
-    "minDate": "2024-9-1",
-    "maxDate": "2025-2-22",
+    "minDate": "2025-2-1",
+    "maxDate": "2026-5-30",
     "events": {
-        "2024-11-20": [
+        "2025-5-16": [
             {
-                "et_id": "abrakadabra-1934",
-                "en_id": "abrakadabra-1934",
+                "et_id": "mberllitav-kunstilised-kogukonnad-1963",
+                "en_id": "switching-over-artistic-communities-1963",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Abrakadabra",
-                    "en": "Abrakadabra"
+                    "et": "ÜMBERLÜLITAV: kunstilised kogukonnad",
+                    "en": "SWITCHING OVER: artistic communities"
                 },
-                "time": "19:30",
+                "time": "16:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
-            }
-        ],
-        "2024-11-22": [
+            },
             {
-                "et_id": "abrakadabra-1934",
-                "en_id": "abrakadabra-1934",
+                "et_id": "roti-rumba-1924",
+                "en_id": "rats-rumba-1924",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Abrakadabra",
-                    "en": "Abrakadabra"
+                    "et": "Roti rumba",
+                    "en": "Rat´s Rumba"
                 },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-12-28": [
-            {
-                "et_id": "stitajad-1923",
-                "en_id": "firestarters-1923",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SÜTITAJAD",
-                    "en": "FIRESTARTERS"
-                },
-                "time": "19:30",
+                "time": "19:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             }
         ],
-        "2024-12-29": [
+        "2025-5-15": [
             {
-                "et_id": "stitajad-1923",
-                "en_id": "firestarters-1923",
+                "et_id": "saal3-vol-3-1964",
+                "en_id": "saal3-vol-3-1964",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "SÜTITAJAD",
-                    "en": "FIRESTARTERS"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-11-16": [
-            {
-                "et_id": "scream-box-1794",
-                "en_id": "scream-box-1794",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SCREAM BOX",
-                    "en": "SCREAM BOX"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-11-15": [
-            {
-                "et_id": "scream-box-1794",
-                "en_id": "scream-box-1794",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SCREAM BOX",
-                    "en": "SCREAM BOX"
+                    "et": "SAAL3 vol. 3",
+                    "en": "SAAL3 vol. 3"
                 },
                 "time": "21:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
-            }
-        ],
-        "2024-10-17": [
-            {
-                "et_id": "sfriline-htu-avanemine-1935",
-                "en_id": "le-heli-2024-1935",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Sfääriline õhtu: Avanemine",
-                    "en": "Üle Heli 2024"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
             },
             {
-                "et_id": "imaginaarsete-kohtade-heliatlas-1938",
-                "en_id": "imaginaarsete-kohtade-heliatlas-1938",
+                "et_id": "roti-rumba-1924",
+                "en_id": "rats-rumba-1924",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Imaginaarsete kohtade heliatlas",
-                    "en": "Imaginaarsete kohtade heliatlas"
+                    "et": "Roti rumba",
+                    "en": "Rat´s Rumba"
                 },
                 "time": "18:00",
                 "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
-                }
-            }
-        ],
-        "2024-10-19": [
-            {
-                "et_id": "illusoorne-vi-ilmne-i-osa-1936",
-                "en_id": null,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Illusoorne või ilmne I osa",
+                    "et": "",
                     "en": ""
+                }
+            }
+        ],
+        "2025-5-10": [
+            {
+                "et_id": "eelllitus-kirjandus-x-etenduskunstid-1965",
+                "en_id": "pre-switch-literature-x-performing-arts-1965",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "EELLÜLITUS: kirjandus x etenduskunstid",
+                    "en": "PRE-SWITCH: literature x performing arts"
                 },
-                "time": "19:00",
+                "time": "14:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             },
             {
-                "et_id": "imaginaarsete-kohtade-heliatlas-1938",
-                "en_id": "imaginaarsete-kohtade-heliatlas-1938",
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Imaginaarsete kohtade heliatlas",
-                    "en": "Imaginaarsete kohtade heliatlas"
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
                 },
-                "time": "14:00",
+                "time": "16:45",
                 "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
+                    "et": "",
+                    "en": ""
                 }
             },
             {
-                "et_id": "imaginaarsete-kohtade-heliatlas-1938",
-                "en_id": "imaginaarsete-kohtade-heliatlas-1938",
+                "et_id": "valgustatud-1961",
+                "en_id": "allege-1961",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Imaginaarsete kohtade heliatlas",
-                    "en": "Imaginaarsete kohtade heliatlas"
+                    "et": "Valgustatud",
+                    "en": "Allege"
                 },
-                "time": "14:00",
+                "time": "18:00",
                 "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
-        "2024-10-30": [
+        "2025-4-25": [
             {
-                "et_id": "suminad-1937",
-                "en_id": "suminad-1937",
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Suminad",
-                    "en": "Suminad"
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
+                },
+                "time": "18:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "news-from-beyond-1953",
+                "en_id": "news-from-beyond-1953",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "News from Beyond",
+                    "en": "News from Beyond"
                 },
                 "time": "19:00",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2024-10-18": [
+        "2025-4-26": [
             {
-                "et_id": "imaginaarsete-kohtade-heliatlas-1938",
-                "en_id": "imaginaarsete-kohtade-heliatlas-1938",
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Imaginaarsete kohtade heliatlas",
-                    "en": "Imaginaarsete kohtade heliatlas"
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
                 },
-                "time": "14:00",
+                "time": "16:45",
                 "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2024-12-18": [
+        "2025-5-8": [
             {
-                "et_id": "abrakadabra-1934",
-                "en_id": "abrakadabra-1934",
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Abrakadabra",
-                    "en": "Abrakadabra"
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
                 },
-                "time": "19:30",
+                "time": "18:45",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
-            }
-        ],
-        "2024-12-19": [
+            },
             {
-                "et_id": "abrakadabra-1934",
-                "en_id": "abrakadabra-1934",
+                "et_id": "surm-1855",
+                "en_id": "death-1855",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Abrakadabra",
-                    "en": "Abrakadabra"
+                    "et": "SURM",
+                    "en": "DEATH"
                 },
                 "time": "19:30",
                 "location": {
@@ -281,45 +218,26 @@
                 }
             }
         ],
-        "2024-12-20": [
+        "2025-5-9": [
             {
-                "et_id": "abrakadabra-1934",
-                "en_id": "abrakadabra-1934",
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Abrakadabra",
-                    "en": "Abrakadabra"
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
                 },
-                "time": "19:30",
+                "time": "18:45",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2024-11-21": [
-            {
-                "et_id": "abrakadabra-1934",
-                "en_id": "abrakadabra-1934",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Abrakadabra",
-                    "en": "Abrakadabra"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-12-4": [
+        "2025-3-12": [
             {
                 "et_id": "peks-misatallis-439",
                 "en_id": "beating-at-the-stables-of-the-manor-439",
@@ -338,7 +256,7 @@
                 }
             }
         ],
-        "2024-12-5": [
+        "2025-3-13": [
             {
                 "et_id": "peks-misatallis-439",
                 "en_id": "beating-at-the-stables-of-the-manor-439",
@@ -355,9 +273,544 @@
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
+            },
+            {
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
+                },
+                "time": "18:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
             }
         ],
-        "2024-12-2": [
+        "2025-3-8": [
+            {
+                "et_id": "made-in-estonia-maraton-2025-1952",
+                "en_id": "made-in-estonia-marathon-2025-1952",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Made in Estonia Maraton 2025",
+                    "en": "Made in Estonia Marathon 2025"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-2-5": [
+            {
+                "et_id": "news-from-beyond-1953",
+                "en_id": "news-from-beyond-1953",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "News from Beyond",
+                    "en": "News from Beyond"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-2-6": [
+            {
+                "et_id": "news-from-beyond-1953",
+                "en_id": "news-from-beyond-1953",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "News from Beyond",
+                    "en": "News from Beyond"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-2-7": [
+            {
+                "et_id": "news-from-beyond-1953",
+                "en_id": "news-from-beyond-1953",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "News from Beyond",
+                    "en": "News from Beyond"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-2-8": [
+            {
+                "et_id": "news-from-beyond-1953",
+                "en_id": "news-from-beyond-1953",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "News from Beyond",
+                    "en": "News from Beyond"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-3-26": [
+            {
+                "et_id": "untermarionette-1954",
+                "en_id": "untermarionette-1954",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Untermarionette",
+                    "en": "Untermarionette"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2025-3-28": [
+            {
+                "et_id": "untermarionette-1954",
+                "en_id": "untermarionette-1954",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Untermarionette",
+                    "en": "Untermarionette"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2025-3-15": [
+            {
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
+                },
+                "time": "16:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-3-14": [
+            {
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
+                },
+                "time": "18:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-3-21": [
+            {
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
+                },
+                "time": "18:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "walking-home-solo-2002-1958",
+                "en_id": "walking-home-solo-2002-1958",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Walking Home Solo (2002)",
+                    "en": "Walking Home Solo (2002)"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2025-3-22": [
+            {
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
+                },
+                "time": "16:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-4-11": [
+            {
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
+                },
+                "time": "18:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "mina-tema-1909",
+                "en_id": "me-her-1909",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mina / Tema",
+                    "en": "Me / Her"
+                },
+                "time": "17:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "millest-on-tehtud-vikesed-tdrukud-1957",
+                "en_id": "what-are-little-girls-made-of-1957",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Millest on tehtud väikesed tüdrukud",
+                    "en": "What Are Little Girls Made Of"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-4-12": [
+            {
+                "et_id": "pimekohting-1955",
+                "en_id": "blind-date-1955",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "PIMEKOHTING",
+                    "en": "BLIND DATE"
+                },
+                "time": "16:45",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "mina-tema-1909",
+                "en_id": "me-her-1909",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Mina / Tema",
+                    "en": "Me / Her"
+                },
+                "time": "18:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "millest-on-tehtud-vikesed-tdrukud-1957",
+                "en_id": "what-are-little-girls-made-of-1957",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Millest on tehtud väikesed tüdrukud",
+                    "en": "What Are Little Girls Made Of"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-2-13": [
+            {
+                "et_id": "residentuuri-showing-1956",
+                "en_id": "residency-showing-1956",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Residentuuri showing",
+                    "en": "Residency showing"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            }
+        ],
+        "2025-4-10": [
+            {
+                "et_id": "cowbody-1750",
+                "en_id": "cowbody-1750",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "COWBODY",
+                    "en": "COWBODY"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-4-16": [
+            {
+                "et_id": "millest-on-tehtud-vikesed-tdrukud-1957",
+                "en_id": "what-are-little-girls-made-of-1957",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Millest on tehtud väikesed tüdrukud",
+                    "en": "What Are Little Girls Made Of"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-4-17": [
+            {
+                "et_id": "millest-on-tehtud-vikesed-tdrukud-1957",
+                "en_id": "what-are-little-girls-made-of-1957",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Millest on tehtud väikesed tüdrukud",
+                    "en": "What Are Little Girls Made Of"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-4-19": [
+            {
+                "et_id": "millest-on-tehtud-vikesed-tdrukud-1957",
+                "en_id": "what-are-little-girls-made-of-1957",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Millest on tehtud väikesed tüdrukud",
+                    "en": "What Are Little Girls Made Of"
+                },
+                "time": "17:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-4-30": [
+            {
+                "et_id": "hymn-1959",
+                "en_id": "hymn-1959",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "HYMN ",
+                    "en": "HYMN"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-5-1": [
+            {
+                "et_id": "hymn-1959",
+                "en_id": "hymn-1959",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "HYMN ",
+                    "en": "HYMN"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-5-2": [
+            {
+                "et_id": "hymn-1959",
+                "en_id": "hymn-1959",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "HYMN ",
+                    "en": "HYMN"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-4-21": [
             {
                 "et_id": "hing-kurgus-1927",
                 "en_id": "hing-kurgus-1927",
@@ -373,585 +826,6 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-12-3": [
-            {
-                "et_id": "hing-kurgus-1927",
-                "en_id": "hing-kurgus-1927",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Hing Kurgus",
-                    "en": "Hing Kurgus"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-11-9": [
-            {
-                "et_id": "keskealine-tantsuajalugu-1939",
-                "en_id": "keskealine-tantsuajalugu-1939",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Keskealine tantsuajalugu",
-                    "en": "Keskealine tantsuajalugu"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-11-8": [
-            {
-                "et_id": "keskealine-tantsuajalugu-1939",
-                "en_id": "keskealine-tantsuajalugu-1939",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Keskealine tantsuajalugu",
-                    "en": "Keskealine tantsuajalugu"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "phineb-testisndinud-lool-1940",
-                "en_id": "phineb-testisndinud-lool-1940",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "PÕHINEB TÕESTISÜNDINUD LOOL",
-                    "en": "PÕHINEB TÕESTISÜNDINUD LOOL"
-                },
-                "time": "20:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            },
-            {
-                "et_id": "lepinguruum-kontor-1943",
-                "en_id": "contract-room-night-office-1943",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LEPINGURUUM: ÖÖKONTOR",
-                    "en": "CONTRACT ROOM: NIGHT OFFICE"
-                },
-                "time": "23:59",
-                "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
-                }
-            }
-        ],
-        "2024-10-8": [
-            {
-                "et_id": "stitajad-1923",
-                "en_id": "firestarters-1923",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SÜTITAJAD",
-                    "en": "FIRESTARTERS"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-10-10": [
-            {
-                "et_id": "stitajad-1923",
-                "en_id": "firestarters-1923",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SÜTITAJAD",
-                    "en": "FIRESTARTERS"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-10-11": [
-            {
-                "et_id": "stitajad-1923",
-                "en_id": "firestarters-1923",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SÜTITAJAD",
-                    "en": "FIRESTARTERS"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-10-14": [
-            {
-                "et_id": "stitajad-1923",
-                "en_id": "firestarters-1923",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SÜTITAJAD",
-                    "en": "FIRESTARTERS"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-10-15": [
-            {
-                "et_id": "stitajad-1923",
-                "en_id": "firestarters-1923",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SÜTITAJAD",
-                    "en": "FIRESTARTERS"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-9-9": [
-            {
-                "et_id": "fun-fact-1847",
-                "en_id": "fun-fact-1847",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Fun Fact",
-                    "en": "Fun Fact"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-9-10": [
-            {
-                "et_id": "fun-fact-1847",
-                "en_id": "fun-fact-1847",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Fun Fact",
-                    "en": "Fun Fact"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-9-19": [
-            {
-                "et_id": "roti-rumba-1924",
-                "en_id": "rats-rumba-1924",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Roti rumba",
-                    "en": "Rat´s Rumba"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-9-21": [
-            {
-                "et_id": "roti-rumba-1924",
-                "en_id": "rats-rumba-1924",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Roti rumba",
-                    "en": "Rat´s Rumba"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-9-23": [
-            {
-                "et_id": "roti-rumba-1924",
-                "en_id": "rats-rumba-1924",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Roti rumba",
-                    "en": "Rat´s Rumba"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-9-24": [
-            {
-                "et_id": "roti-rumba-1924",
-                "en_id": "rats-rumba-1924",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Roti rumba",
-                    "en": "Rat´s Rumba"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-9-26": [
-            {
-                "et_id": "roti-rumba-1924",
-                "en_id": "rats-rumba-1924",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Roti rumba",
-                    "en": "Rat´s Rumba"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-9-27": [
-            {
-                "et_id": "roti-rumba-1924",
-                "en_id": "rats-rumba-1924",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Roti rumba",
-                    "en": "Rat´s Rumba"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-9-30": [
-            {
-                "et_id": "roti-rumba-1924",
-                "en_id": "rats-rumba-1924",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Roti rumba",
-                    "en": "Rat´s Rumba"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-9-5": [
-            {
-                "et_id": "fun-fact-1847",
-                "en_id": "fun-fact-1847",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Fun Fact",
-                    "en": "Fun Fact"
-                },
-                "time": "22:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
-                },
-                "time": "20:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-9-6": [
-            {
-                "et_id": "fun-fact-1847",
-                "en_id": "fun-fact-1847",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Fun Fact",
-                    "en": "Fun Fact"
-                },
-                "time": "21:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "fun-fact-1847",
-                "en_id": "fun-fact-1847",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Fun Fact",
-                    "en": "Fun Fact"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-9-4": [
-            {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
-                },
-                "time": "15:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-10-31": [
-            {
-                "et_id": "poisu-sa-paned-oma-maasturi-plema-1941",
-                "en_id": "boy-youre-gonna-burn-down-your-suv-1941",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Poisu, sa paned oma maasturi põlema.",
-                    "en": "Boy, you´re gonna burn down your SUV. "
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-9-2": [
-            {
-                "et_id": "saal3-extra-1925",
-                "en_id": "saal3-extra-1925",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SAAL3 Extra",
-                    "en": "SAAL3 Extra"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2025-1-27": [
-            {
-                "et_id": "pantheon-1942",
-                "en_id": "pantheon-1942",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Pantheon",
-                    "en": "Pantheon"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Von Krahli teater",
-                    "en": "Von Krahli teater"
-                }
-            }
-        ],
-        "2025-1-28": [
-            {
-                "et_id": "pantheon-1942",
-                "en_id": "pantheon-1942",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Pantheon",
-                    "en": "Pantheon"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Von Krahli teater",
-                    "en": "Von Krahli teater"
-                }
-            }
-        ],
-        "2025-1-30": [
-            {
-                "et_id": "pantheon-1942",
-                "en_id": "pantheon-1942",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Pantheon",
-                    "en": "Pantheon"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Von Krahli teater",
-                    "en": "Von Krahli teater"
-                }
-            }
-        ],
-        "2025-1-31": [
-            {
-                "et_id": "pantheon-1942",
-                "en_id": "pantheon-1942",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Pantheon",
-                    "en": "Pantheon"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Von Krahli teater",
-                    "en": "Von Krahli teater"
                 }
             }
         ],
@@ -974,6 +848,25 @@
                 }
             }
         ],
+        "2025-4-22": [
+            {
+                "et_id": "hing-kurgus-1927",
+                "en_id": "hing-kurgus-1927",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Hing Kurgus",
+                    "en": "Hing Kurgus"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
         "2025-2-18": [
             {
                 "et_id": "pantheon-1942",
@@ -990,6 +883,42 @@
                 "location": {
                     "et": "Von Krahli teater",
                     "en": "Von Krahli teater"
+                }
+            },
+            {
+                "et_id": "schema-1950",
+                "en_id": "schema-1950",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Schema",
+                    "en": "Schema"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-5-7": [
+            {
+                "et_id": "surm-1855",
+                "en_id": "death-1855",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "SURM",
+                    "en": "DEATH"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -1031,7 +960,248 @@
                 }
             }
         ],
+        "2025-5-29": [
+            {
+                "et_id": "mt-peva-rel-1735",
+                "en_id": "the-myth-last-day-1735",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Müüt: päeva äärel",
+                    "en": "The Myth: last day"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
         "2025-2-22": [
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            },
+            {
+                "et_id": "surm-1855",
+                "en_id": "death-1855",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "SURM",
+                    "en": "DEATH"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2026-5-30": [
+            {
+                "et_id": "mt-peva-rel-1735",
+                "en_id": "the-myth-last-day-1735",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Müüt: päeva äärel",
+                    "en": "The Myth: last day"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-4-24": [
+            {
+                "et_id": "news-from-beyond-1953",
+                "en_id": "news-from-beyond-1953",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "News from Beyond",
+                    "en": "News from Beyond"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-4-27": [
+            {
+                "et_id": "anna-mulle-end-1862",
+                "en_id": "at-your-service-1862",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Anna mulle end",
+                    "en": "At Your Service"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            },
+            {
+                "et_id": "anna-mulle-end-1862",
+                "en_id": "at-your-service-1862",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Anna mulle end",
+                    "en": "At Your Service"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            }
+        ],
+        "2025-5-11": [
+            {
+                "et_id": "valgustatud-1961",
+                "en_id": "allege-1961",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Valgustatud",
+                    "en": "Allege"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-4-14": [
+            {
+                "et_id": "millest-on-tehtud-vikesed-tdrukud-1957",
+                "en_id": "what-are-little-girls-made-of-1957",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Millest on tehtud väikesed tüdrukud",
+                    "en": "What Are Little Girls Made Of"
+                },
+                "time": "19:30",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-5-14": [
+            {
+                "et_id": "millest-on-tehtud-vikesed-tdrukud-1957",
+                "en_id": "what-are-little-girls-made-of-1957",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Millest on tehtud väikesed tüdrukud",
+                    "en": "What Are Little Girls Made Of"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-5-17": [
+            {
+                "et_id": "stitajad-1923",
+                "en_id": "firestarters-1923",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "SÜTITAJAD",
+                    "en": "FIRESTARTERS"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "hate-me-tender-1962",
+                "en_id": "hate-me-tender-1962",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "HATE ME TENDER",
+                    "en": "HATE ME TENDER"
+                },
+                "time": "21:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-5-18": [
+            {
+                "et_id": "stitajad-1923",
+                "en_id": "firestarters-1923",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "SÜTITAJAD",
+                    "en": "FIRESTARTERS"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-4-9": [
             {
                 "et_id": "pantheon-1942",
                 "en_id": "pantheon-1942",
@@ -1050,17 +1220,36 @@
                 }
             }
         ],
-        "2024-9-14": [
+        "2025-4-13": [
             {
-                "et_id": "scrapyard-40-1929",
-                "en_id": "scrapyard-1929",
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Scrapyard 4.0",
-                    "en": "Scrapyard"
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-2-14": [
+            {
+                "et_id": "schema-1950",
+                "en_id": "schema-1950",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Schema",
+                    "en": "Schema"
                 },
                 "time": "19:30",
                 "location": {
@@ -1069,36 +1258,36 @@
                 }
             }
         ],
-        "2024-11-11": [
+        "2025-2-17": [
             {
-                "et_id": "lepinguruum-1944",
-                "en_id": "contract-room-1944",
+                "et_id": "schema-1950",
+                "en_id": "schema-1950",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "LEPINGURUUM",
-                    "en": "CONTRACT ROOM"
+                    "et": "Schema",
+                    "en": "Schema"
                 },
-                "time": "11:00",
+                "time": "19:30",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             }
         ],
-        "2024-10-21": [
+        "2025-2-12": [
             {
-                "et_id": "hing-kurgus-1927",
-                "en_id": "hing-kurgus-1927",
+                "et_id": "schema-1950",
+                "en_id": "schema-1950",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Hing Kurgus",
-                    "en": "Hing Kurgus"
+                    "et": "Schema",
+                    "en": "Schema"
                 },
                 "time": "19:30",
                 "location": {
@@ -1107,338 +1296,38 @@
                 }
             }
         ],
-        "2024-11-23": [
+        "2025-2-15": [
             {
-                "et_id": "lepinguruum-intensiiv-1945",
-                "en_id": "contract-room-intensive-1945",
+                "et_id": "schema-1950",
+                "en_id": "schema-1950",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "LEPINGURUUM: INTENSIIV",
-                    "en": "CONTRACT ROOM: INTENSIVE"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
-                }
-            }
-        ],
-        "2024-10-22": [
-            {
-                "et_id": "hing-kurgus-1927",
-                "en_id": "hing-kurgus-1927",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Hing Kurgus",
-                    "en": "Hing Kurgus"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-11-29": [
-            {
-                "et_id": "lepinguruum-showing-1946",
-                "en_id": "contract-room-showing-1946",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "LEPINGURUUM: SHOWING",
-                    "en": "CONTRACT ROOM: SHOWING"
-                },
-                "time": "12:00",
-                "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
-                }
-            },
-            {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-11-30": [
-            {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
+                    "et": "Schema",
+                    "en": "Schema"
                 },
                 "time": "17:00",
                 "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2024-12-1": [
+        "2025-2-23": [
             {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
+                "et_id": "surm-1855",
+                "en_id": "death-1855",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
+                    "et": "SURM",
+                    "en": "DEATH"
                 },
                 "time": "17:00",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-12-7": [
-            {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-12-6": [
-            {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-12-8": [
-            {
-                "et_id": "tdi-ie-65-snnipev-1860",
-                "en_id": "aunt-ies-65th-birthday-1860",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Tädi Õie 65. sünnipäev",
-                    "en": "Aunt Õie´s 65th birthday"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2024-10-25": [
-            {
-                "et_id": "the-dan-daw-show-1930",
-                "en_id": "the-dan-daw-show-1930",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "The Dan Daw Show",
-                    "en": "The Dan Daw Show"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-10-26": [
-            {
-                "et_id": "the-dan-daw-show-1930",
-                "en_id": "the-dan-daw-show-1930",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "The Dan Daw Show",
-                    "en": "The Dan Daw Show"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-9-15": [
-            {
-                "et_id": "roti-rumba-showing-1931",
-                "en_id": null,
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Roti Rumba showing",
-                    "en": ""
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            },
-            {
-                "et_id": "ekskursioon-kanuti-gildi-saalis-1932",
-                "en_id": "ekskursioon-kanuti-gildi-saalis-1932",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Ekskursioon Kanuti Gildi SAALis",
-                    "en": "Ekskursioon Kanuti Gildi SAALis"
-                },
-                "time": "15:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-9-28": [
-            {
-                "et_id": "rawness-in-us-1933",
-                "en_id": "rawness-in-us-1933",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "RAWNESS IN US",
-                    "en": "RAWNESS IN US"
-                },
-                "time": "11:00",
-                "location": {
-                    "et": "Keldrisaal",
-                    "en": "Keldrisaal"
-                }
-            }
-        ],
-        "2024-10-1": [
-            {
-                "et_id": "cowbody-1750",
-                "en_id": "cowbody-1750",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "COWBODY",
-                    "en": "COWBODY"
-                },
-                "time": "18:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2024-11-12": [
-            {
-                "et_id": "peks-misatallis-439",
-                "en_id": "beating-at-the-stables-of-the-manor-439",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis ",
-                    "en": "Beating at the stables of the manor"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-11-13": [
-            {
-                "et_id": "peks-misatallis-439",
-                "en_id": "beating-at-the-stables-of-the-manor-439",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis ",
-                    "en": "Beating at the stables of the manor"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2024-11-14": [
-            {
-                "et_id": "peks-misatallis-439",
-                "en_id": "beating-at-the-stables-of-the-manor-439",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis ",
-                    "en": "Beating at the stables of the manor"
-                },
-                "time": "13:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
