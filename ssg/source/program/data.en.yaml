@@ -2,3 +2,4 @@ data:
     categories: '/_fetchdir/categories.en.yaml'
     events: '/_fetchdir/events.en.yaml'
 conversation_label: 'with conversation'
+guest_performance_label: 'guest performance'

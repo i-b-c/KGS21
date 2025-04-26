@@ -88,6 +88,7 @@ for (const lang of LANGUAGES) {
             performance_X_producer: performance.X_producer || null,
             [`performance_X_town_${lang}`]: performance[`X_town_${lang}`] || null,
             peformance_categories: performance.categories ? performance.categories.map(c => c.id).filter(c => categories.includes(c)) : null,
+            performance_is_guest_performance: performance.guest_performance || null,
             remote_id: oneEvent.remote_id || null,
             slug_et: oneEvent.slug_et || null,
             slug_en: oneEvent.slug_en || null,

@@ -43,6 +43,9 @@ block content
                     //- each performance in
                     //- - console.log(events.map(a => a.start_time))
 
+                    //- //- Array of guest performances
+                    //- - var guestPerformances = self.data.performances.filter(p => p.guest_performance)
+
                     if events && events.length
                         each event in events
                             - var eventDate = new Date(event.start_time)
@@ -62,6 +65,11 @@ block content
                                     //- conversation (true/false)
                                     if event.conversation
                                         p.today= self.conversation_label
+
+                                    //- guest performance (true/false)
+                                    
+                                    if event.performance_is_guest_performance
+                                        p.today= self.guest_performance_label
 
                                     //- Premiere
                                     if event.premiere
