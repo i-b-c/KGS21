@@ -3,3 +3,4 @@ data:
     events: '/_fetchdir/events.en.yaml'
 conversation_label: 'with conversation'
 guest_performance_label: 'guest performance'
+register_label: 'Register'
