@@ -38,7 +38,7 @@ block content
                     //- - nextThreeDays.setDate(nextThreeDays.getDate() + 3)
                     //- - console.log(currentDate, ' - ', pastTwoDays, ' - ', nextThreeDays)
 
-                    - var events = self.data.events.filter(e => e.type && e.type === 'program')
+                    - var events = self.data.events.filter(e => e.type && (e.type === 'program' || e.type === 'tour'))
                     //- .filter(e => new Date(e.start_time) > pastTwoDays)
                     //- each performance in
                     //- - console.log(events.map(a => a.start_time))
@@ -61,7 +61,7 @@ block content
 
                                     //- conversation (true/false)
                                     if event.conversation
-                                        p= self.conversation_label
+                                        p.today= self.conversation_label
 
                                     //- Premiere
                                     if event.premiere
