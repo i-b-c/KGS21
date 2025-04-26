@@ -59,6 +59,10 @@ block content
                                     if event.canceled
                                         p.today= self.labels.button.canceled
 
+                                    //- conversation (true/false)
+                                    if event.conversation
+                                        p= self.conversation_label
+
                                     //- Premiere
                                     if event.premiere
                                         p.today= self.labels.button.premiere

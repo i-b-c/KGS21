@@ -3,3 +3,4 @@ aliases:
 data:
     categories: '/_fetchdir/categories.et.yaml'
     events: '/_fetchdir/events.et.yaml'
+conversation_label: 'vestlusega'
