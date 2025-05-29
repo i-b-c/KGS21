@@ -66,6 +66,10 @@ block content
                                     if event.conversation
                                         p.today= self.conversation_label
 
+                                    //- on tour (true/false)
+                                    if event.type == 'tour'
+                                        p.today= self.labels.button.on_tour
+
                                     //- guest performance (true/false)
                                     
                                     if event.performance_is_guest_performance
