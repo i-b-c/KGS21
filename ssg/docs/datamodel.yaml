@@ -214,6 +214,7 @@ Performance: &Performance # performance #lavastus
     subtitle_en: (text)
     categories:
         - *Category
+    guest_performance: (boolean)
     coproduction: (boolean)
     coproduction_importance: (number)
     front_page_promotion: (boolean)

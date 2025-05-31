@@ -38,10 +38,13 @@ block content
                     //- - nextThreeDays.setDate(nextThreeDays.getDate() + 3)
                     //- - console.log(currentDate, ' - ', pastTwoDays, ' - ', nextThreeDays)
 
-                    - var events = self.data.events.filter(e => e.type && e.type === 'program')
+                    - var events = self.data.events.filter(e => e.type && (e.type === 'program' || e.type === 'tour'))
                     //- .filter(e => new Date(e.start_time) > pastTwoDays)
                     //- each performance in
                     //- - console.log(events.map(a => a.start_time))
+
+                    //- //- Array of guest performances
+                    //- - var guestPerformances = self.data.performances.filter(p => p.guest_performance)
 
                     if events && events.length
                         each event in events
@@ -58,6 +61,19 @@ block content
                                             +hoursMinutes(event.start_time)
                                     if event.canceled
                                         p.today= self.labels.button.canceled
+
+                                    //- conversation (true/false)
+                                    if event.conversation
+                                        p.today= self.conversation_label
+
+                                    //- on tour (true/false)
+                                    if event.type == 'tour'
+                                        p.today= self.labels.button.on_tour
+
+                                    //- guest performance (true/false)
+                                    
+                                    if event.performance_is_guest_performance
+                                        p.today= self.guest_performance_label
 
                                     //- Premiere
                                     if event.premiere
@@ -121,8 +137,13 @@ block content
                                             a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
                                         else
                                             if  event.X_ticket_info.sales_status
-                                                if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
+                                                if event.X_ticket_info.sales_status === 'sold_out'
                                                     a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
+                                                else if event.X_ticket_info.sales_status === "free_admission"
+                                                    if event.X_ticket_info[`pl_link_${self.locale}`]
+                                                        a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.register_label
+                                                    else
+                                                        a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                                 else if event.X_ticket_info.sales_status === "online"
                                                     a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
                                             else

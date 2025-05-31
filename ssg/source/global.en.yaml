@@ -194,7 +194,7 @@ labels:
         location: location
         anniversary_book: 20th anniversary book
         undefined: null
-        accessibility: acessibility
+        accessibility: accessibility
     ticket:
         buy_ticket: Buy ticket
         buy_t_canceled: Canceled!
