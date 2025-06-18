@@ -106,16 +106,7 @@ block content
                                                 +format(location)
                                     span(style='float:right;')
                                         if event.X_ticket_info
-                                            if event.canceled === 'true'
-                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
-                                            else
-                                                if  event.X_ticket_info.sales_status
-                                                    if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
-                                                        a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
-                                                    else if event.X_ticket_info.sales_status === "online"
-                                                        a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
-                                                else
-                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
+                                            +ticketButton(event, self, lang_path)
 
                                 .col-sm-12.col-md-12.col-lg-12
                                     hr
@@ -227,6 +218,15 @@ block content
                 .supporter
                     if self.logos
                         each logo in self.logos
+                            li.col-sm-12.col-md-12.col-lg-12
+                                img(src=`${m_api}${logo.url}`, class='img-responsive')
+    style.
+        .hidden{
+            display: none;
+        }
+        .visible{
+            display: block;
+        }
                             li.col-sm-12.col-md-12.col-lg-12
                                 img(src=`${m_api}${logo.url}`, class='img-responsive')
     style.

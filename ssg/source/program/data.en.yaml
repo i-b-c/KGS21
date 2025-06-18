@@ -3,4 +3,3 @@ data:
     events: '/_fetchdir/events.en.yaml'
 conversation_label: 'Artist talk'
 guest_performance_label: 'guest performance'
-register_label: 'Register'

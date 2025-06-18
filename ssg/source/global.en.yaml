@@ -199,6 +199,7 @@ labels:
         buy_ticket: Buy ticket
         buy_t_canceled: Canceled!
         buy_t_free_admission: Free Admission
+        buy_t_register: Register
         buy_t_future_sale: future sale
         buy_t_presale_at_boxoffices: From box office
         buy_t_sold_out: Sold out

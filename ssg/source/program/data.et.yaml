@@ -5,4 +5,3 @@ data:
     events: '/_fetchdir/events.et.yaml'
 conversation_label: 'Vestlus'
 guest_performance_label: 'külalisetendus'
-register_label: 'Registreeru'

@@ -160,17 +160,7 @@ block content
 
                                 if event.X_ticket_info
                                     .col-xs-6.col-md-2.col-lg-2.text-right
-                                        if event.canceled === 'true'
-                                            a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
-                                        else
-                                            if  event.X_ticket_info.sales_status
-                                                if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
-                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
-                                                else if event.X_ticket_info.sales_status === "online"
-                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
-                                            else
-                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
-
+                                        +ticketButton(event, self, lang_path)
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr
 
@@ -275,16 +265,7 @@ block content
                                 if event.X_ticket_info
                                     if event.X_ticket_info
                                         .col-xs-6.col-md-2.col-lg-2.text-right
-                                            if event.canceled === 'true'
-                                                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= 'canceled'
-                                            else
-                                                if  event.X_ticket_info.sales_status
-                                                    if event.X_ticket_info.sales_status === 'sold_out' || event.X_ticket_info.sales_status === "free_admission"
-                                                        a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
-                                                    else if event.X_ticket_info.sales_status === "online"
-                                                        a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`]
-                                                else
-                                                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket
+                                            +ticketButton(event, self, lang_path)
 
                                 .col-xs-12.col-md-12.col-lg-12
                                     hr

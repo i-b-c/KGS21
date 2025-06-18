@@ -215,3 +215,22 @@ mixin dateAndWeekday(dateStringUTC)
             eDisplayMoment1.innerHTML = `${date_EET} ${day_EET}`;
 
         })();
+
+mixin ticketButton(event, self, lang_path)
+    if event && event.X_ticket_info
+        if event.canceled === 'true'
+            a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time class="disabled" style='display: none;')= self.labels.ticket.buy_t_canceled || 'canceled'
+        else if event.X_ticket_info.sales_status
+            if event.X_ticket_info.sales_status === 'sold_out'
+                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || 'Sold out'
+            else if event.X_ticket_info.sales_status === "free_admission"
+                if event.X_ticket_info[`pl_link_${self.locale}`]
+                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket.buy_t_register || 'Register'
+                else
+                    a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time style='display: none;' class="free disabled" href='' target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || 'Free admission'
+            else if event.X_ticket_info.sales_status === "online"
+                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time event-sales-status=event.X_ticket_info.sales_status style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || 'Buy ticket'
+            else
+                a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket[`buy_t_${event.X_ticket_info.sales_status}`] || self.labels.ticket.buy_ticket || 'Buy ticket'
+        else
+            a.btn.btn-primary(type-name="ticket-button" event-start=event.start_time event-end=event.end_time style='display: none;' class="" href=event.X_ticket_info[`pl_link_${self.locale}`] target='_blank')= self.labels.ticket.buy_ticket || 'Buy ticket'
