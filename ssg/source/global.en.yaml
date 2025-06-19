@@ -194,7 +194,7 @@ labels:
         location: location
         anniversary_book: 20th anniversary book
         undefined: null
-        accessibility: accessibility
+        accessibility: acessibility
     ticket:
         buy_ticket: Buy ticket
         buy_t_canceled: Canceled!
@@ -205,6 +205,8 @@ labels:
         buy_t_price_on_spot: At the door
         buy_t_regular_presale: Osta pilet
         buy_t_online: Online
+        buy_t_register: Register
+        undefined: null
 site_colors:
     bg_color: '#440099'
     fg_color: '#FFB3FF '

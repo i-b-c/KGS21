@@ -207,6 +207,8 @@ labels:
         buy_t_price_on_spot: Hind kohapeal
         buy_t_regular_presale: Buy ticket
         buy_t_online: Online
+        buy_t_register: Registreeru
+        undefined: null
 site_colors:
     bg_color: '#440099'
     fg_color: '#FFB3FF '

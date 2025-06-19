@@ -19,9 +19,6 @@
     "min_price": {
       "type": "decimal"
     },
-    "sales_status": {
-      "type": "string"
-    },
     "pl_id": {
       "type": "string"
     },
@@ -33,6 +30,14 @@
     },
     "max_price": {
       "type": "decimal"
+    },
+    "sales_status": {
+      "type": "enumeration",
+      "enum": [
+        "free_admission",
+        "sold_out",
+        "online"
+      ]
     }
   }
 }

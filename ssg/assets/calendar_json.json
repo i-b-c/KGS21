@@ -1,6 +1,6 @@
 {
-    "minDate": "2025-2-1",
-    "maxDate": "2025-6-8",
+    "minDate": "2025-4-1",
+    "maxDate": "2025-9-1",
     "events": {
         "2025-5-16": [
             {
@@ -467,7 +467,7 @@
                     "et": "The last Rite of Spring",
                     "en": "The last Rite of Spring"
                 },
-                "time": "19:30",
+                "time": "19:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
@@ -476,15 +476,15 @@
         ],
         "2025-6-6": [
             {
-                "et_id": "motiivid-1972",
-                "en_id": "scenes-and-sceneries-1972",
+                "et_id": "scenes-sceneries-motiivid-1972",
+                "en_id": "scenes-sceneries-motiivid-1972",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "MOTIIVID",
-                    "en": "scenes and sceneries"
+                    "et": "scenes & sceneries MOTIIVID",
+                    "en": "scenes & sceneries MOTIIVID"
                 },
                 "time": "19:00",
                 "location": {
@@ -503,7 +503,7 @@
                     "et": "TSANGAAN.",
                     "en": "TSANGAAN."
                 },
-                "time": "18:00",
+                "time": "18:15",
                 "location": {
                     "et": "Püha Vaimu SAAL",
                     "en": "Püha Vaimu SAAL"
@@ -560,10 +560,10 @@
                     "et": "interpreet",
                     "en": "the interpreter"
                 },
-                "time": "17:00",
+                "time": "18:15",
                 "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
                 }
             },
             {
@@ -577,288 +577,495 @@
                     "et": "Ilma luuta, ilma lihata? ",
                     "en": "No bone, no flesh?"
                 },
-                "time": "18:00",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2025-3-12": [
-            {
-                "et_id": "peks-misatallis-439",
-                "en_id": "beating-at-the-stables-of-the-manor-439",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Peks mõisatallis ",
-                    "en": "Beating at the stables of the manor"
-                },
-                "time": "19:30",
+                "time": "19:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
-        "2025-3-13": [
+        "2025-8-22": [
             {
-                "et_id": "peks-misatallis-439",
-                "en_id": "beating-at-the-stables-of-the-manor-439",
+                "et_id": "silenzio-1979",
+                "en_id": "silenzio-1979",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Peks mõisatallis ",
-                    "en": "Beating at the stables of the manor"
+                    "et": "Silenzio!",
+                    "en": "Silenzio!"
                 },
-                "time": "19:30",
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "slamming-1986",
+                "en_id": "slamming-1986",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Slamming",
+                    "en": "Slamming"
+                },
+                "time": "21:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
                 }
             },
             {
-                "et_id": "pimekohting-1955",
-                "en_id": "blind-date-1955",
+                "et_id": "ttuba-the-erotic-clown-1991",
+                "en_id": "workshop-the-erotic-clown-1991",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "PIMEKOHTING",
-                    "en": "BLIND DATE"
+                    "et": "Töötuba: The Erotic Clown",
+                    "en": "Workshop: The Erotic Clown"
                 },
-                "time": "18:45",
+                "time": "15:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             }
         ],
-        "2025-3-8": [
+        "2025-8-28": [
             {
-                "et_id": "made-in-estonia-maraton-2025-1952",
-                "en_id": "made-in-estonia-marathon-2025-1952",
+                "et_id": "teenage-songbook-of-love-and-sex-1980",
+                "en_id": "teenage-songbook-of-love-and-sex-1980",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Made in Estonia Maraton 2025",
-                    "en": "Made in Estonia Marathon 2025"
+                    "et": "Teenage Songbook of Love and Sex",
+                    "en": "Teenage Songbook of Love and Sex"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "tell-daddy-1985",
+                "en_id": "tell-daddy-1985",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tell Daddy",
+                    "en": "Tell Daddy"
+                },
+                "time": "16:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "vestlus-teenage-songbook-of-love-and-sex-tegijatega-1988",
+                "en_id": "artist-talk-with-the-makers-of-teenage-songbook-of-love-and-sex-1988",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Vestlus „Teenage Songbook of Love and Sex\" tegijatega ",
+                    "en": "Artist talk with the makers of Teenage Songbook of Love and Sex"
+                },
+                "time": "16:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "vestlus-isiklikud-suhted-ja-erialased-valikud-ekkm-1994",
+                "en_id": "discussion-personal-relationships-and-professional-choices-ekkm-1994",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Vestlus: isiklikud suhted ja erialased valikud / EKKM",
+                    "en": "Discussion: personal relationships and professional choices / EKKM"
+                },
+                "time": "14:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "ttuba-tools-for-compersion-and-collegial-love-ekkm-1995",
+                "en_id": "workshop-tools-for-compersion-and-collegial-love-ekkm-1995",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Töötuba: tools for compersion and collegial love / EKKM",
+                    "en": "Workshop: Tools for compersion and collegial love / EKKM"
+                },
+                "time": "11:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "5-gestuuri-elektronart-1996",
+                "en_id": "5-gestures-towards-elektronart-1996",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "5 GESTUURI / elektron.art",
+                    "en": "5 GESTURES TOWARDS… / elektron.art"
+                },
+                "time": "20:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "logi-saun-1997",
+                "en_id": "logi-sauna-1997",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Logi saun",
+                    "en": "Logi Sauna"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-8-27": [
+            {
+                "et_id": "teenage-songbook-of-love-and-sex-1980",
+                "en_id": "teenage-songbook-of-love-and-sex-1980",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Teenage Songbook of Love and Sex",
+                    "en": "Teenage Songbook of Love and Sex"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "undersang-1983",
+                "en_id": "undersang-1983",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Undersang",
+                    "en": "Undersang"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "tell-daddy-1985",
+                "en_id": "tell-daddy-1985",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tell Daddy",
+                    "en": "Tell Daddy"
+                },
+                "time": "14:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "dreams-and-nightmares-story-sharing-workshop-1990",
+                "en_id": "dreams-and-nightmares-story-sharing-workshop-1990",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Dreams and Nightmares. Story-sharing workshop",
+                    "en": "Dreams and Nightmares. Story-sharing workshop"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "Püha Vaimu SAAL",
+                    "en": "Püha Vaimu SAAL"
+                }
+            },
+            {
+                "et_id": "smpoosion-piiride-narratiivid-1998",
+                "en_id": "symposium-narratives-of-borders-and-boundaries-1998",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Sümpoosion: piiride narratiivid",
+                    "en": "Symposium: Narratives of Borders and Boundaries"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-8-29": [
+            {
+                "et_id": "ash-horizon-riding-a-house-2001",
+                "en_id": "ash-horizon-riding-a-house-2001",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Ash, horizon, riding a house",
+                    "en": "Ash, horizon, riding a house"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "all-together-1978",
+                "en_id": "all-together-1978",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "All Together",
+                    "en": "All Together"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "ttuba-how-about-dreaming-a-loving-relationship-between-artists-and-institutions-1989",
+                "en_id": "workshop-how-about-dreaming-a-loving-relationship-between-artists-and-institutions-1989",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Töötuba: How about dreaming a loving relationship between artists and institutions?",
+                    "en": "Workshop: How about dreaming a loving relationship between artists and institutions?"
+                },
+                "time": "13:00",
+                "location": {
+                    "et": "Keldrisaal",
+                    "en": "Keldrisaal"
+                }
+            },
+            {
+                "et_id": "logi-saun-1997",
+                "en_id": "logi-sauna-1997",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Logi saun",
+                    "en": "Logi Sauna"
+                },
+                "time": "15:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "tell-daddy-1985",
+                "en_id": "tell-daddy-1985",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Tell Daddy",
+                    "en": "Tell Daddy"
+                },
+                "time": "16:30",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-8-30": [
+            {
+                "et_id": "all-together-1978",
+                "en_id": "all-together-1978",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "All Together",
+                    "en": "All Together"
                 },
                 "time": "17:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
-            }
-        ],
-        "2025-2-5": [
+            },
             {
-                "et_id": "news-from-beyond-1953",
-                "en_id": "news-from-beyond-1953",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "News from Beyond",
-                    "en": "News from Beyond"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2025-2-6": [
-            {
-                "et_id": "news-from-beyond-1953",
-                "en_id": "news-from-beyond-1953",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "News from Beyond",
-                    "en": "News from Beyond"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2025-2-7": [
-            {
-                "et_id": "news-from-beyond-1953",
-                "en_id": "news-from-beyond-1953",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "News from Beyond",
-                    "en": "News from Beyond"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2025-2-8": [
-            {
-                "et_id": "news-from-beyond-1953",
-                "en_id": "news-from-beyond-1953",
-                "tag": [
-                    "tour"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "News from Beyond",
-                    "en": "News from Beyond"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2025-3-26": [
-            {
-                "et_id": "untermarionette-1954",
-                "en_id": "untermarionette-1954",
+                "et_id": "ash-horizon-riding-a-house-2001",
+                "en_id": "ash-horizon-riding-a-house-2001",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Untermarionette",
-                    "en": "Untermarionette"
+                    "et": "Ash, horizon, riding a house",
+                    "en": "Ash, horizon, riding a house"
                 },
-                "time": "19:30",
+                "time": "21:00",
                 "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
-            }
-        ],
-        "2025-3-28": [
+            },
             {
-                "et_id": "untermarionette-1954",
-                "en_id": "untermarionette-1954",
+                "et_id": "tell-daddy-1985",
+                "en_id": "tell-daddy-1985",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Untermarionette",
-                    "en": "Untermarionette"
+                    "et": "Tell Daddy",
+                    "en": "Tell Daddy"
                 },
-                "time": "19:30",
-                "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
-                }
-            }
-        ],
-        "2025-3-15": [
-            {
-                "et_id": "pimekohting-1955",
-                "en_id": "blind-date-1955",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "PIMEKOHTING",
-                    "en": "BLIND DATE"
-                },
-                "time": "16:45",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2025-3-14": [
-            {
-                "et_id": "pimekohting-1955",
-                "en_id": "blind-date-1955",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "PIMEKOHTING",
-                    "en": "BLIND DATE"
-                },
-                "time": "18:45",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2025-3-21": [
-            {
-                "et_id": "pimekohting-1955",
-                "en_id": "blind-date-1955",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "PIMEKOHTING",
-                    "en": "BLIND DATE"
-                },
-                "time": "18:45",
+                "time": "14:00",
                 "location": {
                     "et": "",
                     "en": ""
                 }
             },
             {
-                "et_id": "walking-home-solo-2002-1958",
-                "en_id": "walking-home-solo-2002-1958",
+                "et_id": "logi-saun-1997",
+                "en_id": "logi-sauna-1997",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Walking Home Solo (2002)",
-                    "en": "Walking Home Solo (2002)"
+                    "et": "Logi saun",
+                    "en": "Logi Sauna"
                 },
-                "time": "19:30",
+                "time": "13:00",
                 "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
-        "2025-3-22": [
+        "2025-8-23": [
             {
-                "et_id": "pimekohting-1955",
-                "en_id": "blind-date-1955",
+                "et_id": "silenzio-1979",
+                "en_id": "silenzio-1979",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "PIMEKOHTING",
-                    "en": "BLIND DATE"
+                    "et": "Silenzio!",
+                    "en": "Silenzio!"
                 },
-                "time": "16:45",
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "asphodel-medows-1984",
+                "en_id": "asphodel-medows-1984",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Asphodel Medows",
+                    "en": "Asphodel Medows"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "kontsert-1999",
+                "en_id": "concert-1999",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Kontsert",
+                    "en": "Concert"
+                },
+                "time": "22:00",
                 "location": {
                     "et": "",
                     "en": ""
@@ -935,22 +1142,22 @@
                 }
             }
         ],
-        "2025-2-13": [
+        "2025-5-22": [
             {
-                "et_id": "residentuuri-showing-1956",
-                "en_id": "residency-showing-1956",
+                "et_id": "scrapyard-remix-1981",
+                "en_id": "scrapyard-remix-1981",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Residentuuri showing",
-                    "en": "Residency showing"
+                    "et": "Scrapyard remix",
+                    "en": "Scrapyard remix"
                 },
                 "time": "19:30",
                 "location": {
-                    "et": "Püha Vaimu SAAL",
-                    "en": "Püha Vaimu SAAL"
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -972,6 +1179,44 @@
                     "en": ""
                 }
             },
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "19:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-9-1": [
+            {
+                "et_id": "pantheon-1942",
+                "en_id": "pantheon-1942",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Pantheon",
+                    "en": "Pantheon"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "Von Krahli teater",
+                    "en": "Von Krahli teater"
+                }
+            }
+        ],
+        "2025-8-31": [
             {
                 "et_id": "pantheon-1942",
                 "en_id": "pantheon-1942",
@@ -1025,6 +1270,25 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-6-13": [
+            {
+                "et_id": "ash-horizon-riding-a-house-1966",
+                "en_id": "ash-horizon-riding-a-house-1966",
+                "tag": [
+                    "tour"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Ash, horizon, riding a house",
+                    "en": "Ash, horizon, riding a house"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "",
+                    "en": ""
                 }
             }
         ],
@@ -1104,42 +1368,6 @@
                 }
             }
         ],
-        "2025-2-18": [
-            {
-                "et_id": "pantheon-1942",
-                "en_id": "pantheon-1942",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Pantheon",
-                    "en": "Pantheon"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Von Krahli teater",
-                    "en": "Von Krahli teater"
-                }
-            },
-            {
-                "et_id": "schema-1950",
-                "en_id": "schema-1950",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Schema",
-                    "en": "Schema"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
         "2025-4-22": [
             {
                 "et_id": "hing-kurgus-1927",
@@ -1156,25 +1384,6 @@
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2025-2-19": [
-            {
-                "et_id": "pantheon-1942",
-                "en_id": "pantheon-1942",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Pantheon",
-                    "en": "Pantheon"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Von Krahli teater",
-                    "en": "Von Krahli teater"
                 }
             }
         ],
@@ -1197,25 +1406,6 @@
                 }
             }
         ],
-        "2025-2-20": [
-            {
-                "et_id": "pantheon-1942",
-                "en_id": "pantheon-1942",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Pantheon",
-                    "en": "Pantheon"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Von Krahli teater",
-                    "en": "Von Krahli teater"
-                }
-            }
-        ],
         "2025-5-29": [
             {
                 "et_id": "mt-peva-rel-1735",
@@ -1232,42 +1422,6 @@
                 "location": {
                     "et": "",
                     "en": ""
-                }
-            }
-        ],
-        "2025-2-22": [
-            {
-                "et_id": "pantheon-1942",
-                "en_id": "pantheon-1942",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Pantheon",
-                    "en": "Pantheon"
-                },
-                "time": "19:00",
-                "location": {
-                    "et": "Von Krahli teater",
-                    "en": "Von Krahli teater"
-                }
-            },
-            {
-                "et_id": "surm-1855",
-                "en_id": "death-1855",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SURM",
-                    "en": "DEATH"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -1306,6 +1460,131 @@
                 "location": {
                     "et": "",
                     "en": ""
+                }
+            }
+        ],
+        "2025-8-25": [
+            {
+                "et_id": "icognitive-maps-chapter-1-1982",
+                "en_id": "icognitive-maps-chapter-1-1982",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "I…Cognitive maps – Chapter 1",
+                    "en": "I…Cognitive maps – Chapter 1"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "news-from-beyond-1953",
+                "en_id": "news-from-beyond-1953",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "News from Beyond",
+                    "en": "News from Beyond"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
+        "2025-8-24": [
+            {
+                "et_id": "icognitive-maps-chapter-1-1982",
+                "en_id": "icognitive-maps-chapter-1-1982",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "I…Cognitive maps – Chapter 1",
+                    "en": "I…Cognitive maps – Chapter 1"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "asphodel-medows-1984",
+                "en_id": "asphodel-medows-1984",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Asphodel Medows",
+                    "en": "Asphodel Medows"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "asphodel-medows-1984",
+                "en_id": "asphodel-medows-1984",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Asphodel Medows",
+                    "en": "Asphodel Medows"
+                },
+                "time": "14:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            }
+        ],
+        "2025-8-26": [
+            {
+                "et_id": "undersang-1983",
+                "en_id": "undersang-1983",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Undersang",
+                    "en": "Undersang"
+                },
+                "time": "18:00",
+                "location": {
+                    "et": "",
+                    "en": ""
+                }
+            },
+            {
+                "et_id": "news-from-beyond-1953",
+                "en_id": "news-from-beyond-1953",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "News from Beyond",
+                    "en": "News from Beyond"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
                 }
             }
         ],
@@ -1402,6 +1681,42 @@
                 }
             }
         ],
+        "2025-8-21": [
+            {
+                "et_id": "slamming-1986",
+                "en_id": "slamming-1986",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "Slamming",
+                    "en": "Slamming"
+                },
+                "time": "21:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            },
+            {
+                "et_id": "the-erotic-clown-1987",
+                "en_id": "the-erotic-clown-1987",
+                "tag": [
+                    "event"
+                ],
+                "controller": "performance",
+                "name": {
+                    "et": "The Erotic Clown",
+                    "en": "The Erotic Clown"
+                },
+                "time": "20:00",
+                "location": {
+                    "et": "Kanuti Gildi SAAL",
+                    "en": "Kanuti Gildi SAAL"
+                }
+            }
+        ],
         "2025-5-17": [
             {
                 "et_id": "stitajad-1923",
@@ -1428,8 +1743,8 @@
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "HATE ME TENDER",
-                    "en": "HATE ME TENDER"
+                    "et": "HATE ME, TENDER",
+                    "en": "HATE ME, TENDER"
                 },
                 "time": "21:30",
                 "location": {
@@ -1495,95 +1810,19 @@
                 }
             }
         ],
-        "2025-2-14": [
+        "2025-6-19": [
             {
-                "et_id": "schema-1950",
-                "en_id": "schema-1950",
+                "et_id": "residentuuride-showingud-2000",
+                "en_id": "residency-showings-2000",
                 "tag": [
                     "event"
                 ],
                 "controller": "performance",
                 "name": {
-                    "et": "Schema",
-                    "en": "Schema"
+                    "et": "Residentuuride showingud",
+                    "en": "Residency showings"
                 },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2025-2-17": [
-            {
-                "et_id": "schema-1950",
-                "en_id": "schema-1950",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Schema",
-                    "en": "Schema"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2025-2-12": [
-            {
-                "et_id": "schema-1950",
-                "en_id": "schema-1950",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Schema",
-                    "en": "Schema"
-                },
-                "time": "19:30",
-                "location": {
-                    "et": "Kanuti Gildi SAAL",
-                    "en": "Kanuti Gildi SAAL"
-                }
-            }
-        ],
-        "2025-2-15": [
-            {
-                "et_id": "schema-1950",
-                "en_id": "schema-1950",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "Schema",
-                    "en": "Schema"
-                },
-                "time": "17:00",
-                "location": {
-                    "et": "",
-                    "en": ""
-                }
-            }
-        ],
-        "2025-2-23": [
-            {
-                "et_id": "surm-1855",
-                "en_id": "death-1855",
-                "tag": [
-                    "event"
-                ],
-                "controller": "performance",
-                "name": {
-                    "et": "SURM",
-                    "en": "DEATH"
-                },
-                "time": "17:00",
+                "time": "18:00",
                 "location": {
                     "et": "Kanuti Gildi SAAL",
                     "en": "Kanuti Gildi SAAL"

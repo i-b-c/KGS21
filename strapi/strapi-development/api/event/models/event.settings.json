@@ -1,155 +1,163 @@
 {
-    "kind": "collectionType",
-    "collectionName": "events",
-    "info": {
-        "name": "event",
-        "description": ""
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_et": {
+      "type": "string"
     },
-    "options": {
-        "increments": true,
-        "timestamps": true,
-        "draftAndPublish": true
+    "slug_et": {
+      "type": "uid"
     },
-    "attributes": {
-        "name_et": {
-            "type": "string"
-        },
-        "slug_et": {
-            "type": "uid"
-        },
-        "name_en": {
-            "type": "string"
-        },
-        "slug_en": {
-            "type": "uid",
-            "targetField": "name_en"
-        },
-        "type": {
-            "type": "enumeration",
-            "enum": [
-                "program",
-                "residency",
-                "festival",
-                "tour",
-                "project"
-            ]
-        },
-        "hide_from_page": {
-            "type": "boolean"
-        },
-        "canceled": {
-            "type": "boolean"
-        },
-        "conversation": {
-            "type": "boolean"
-        },
-        "ticket_info": {
-            "model": "ticket-info"
-        },
-        "start_time": {
-            "type": "datetime"
-        },
-        "end_time": {
-            "type": "datetime"
-        },
-        "duration": {
-            "type": "integer"
-        },
-        "subtitle_et": {
-            "type": "string"
-        },
-        "subtitle_en": {
-            "type": "string"
-        },
-        "description_et": {
-            "type": "richtext"
-        },
-        "description_en": {
-            "type": "richtext"
-        },
-        "technical_info_et": {
-            "type": "richtext"
-        },
-        "technical_info_en": {
-            "type": "richtext"
-        },
-        "order": {
-            "type": "integer"
-        },
-        "online": {
-            "type": "string"
-        },
-        "remote_id": {
-            "type": "uid"
-        },
-        "resident": {
-            "type": "string"
-        },
-        "X_ticket_info": {
-            "type": "component",
-            "repeatable": false,
-            "component": "ticket-info.x-ticket-info"
-        },
-        "performance": {
-            "via": "events",
-            "model": "performance"
-        },
-        "parent_event": {
-            "model": "event",
-            "via": "child_events"
-        },
-        "child_events": {
-            "collection": "event",
-            "via": "parent_event"
-        },
-        "location": {
-            "model": "location"
-        },
-        "event_media": {
-            "type": "component",
-            "repeatable": true,
-            "component": "media.event-media"
-        },
-        "X_location_et": {
-            "type": "text"
-        },
-        "X_location_en": {
-            "type": "text"
-        },
-        "X_location_link_et": {
-            "type": "text"
-        },
-        "X_location_link_en": {
-            "type": "text"
-        },
-        "videos": {
-            "type": "component",
-            "repeatable": true,
-            "component": "media.media-content"
-        },
-        "audios": {
-            "type": "component",
-            "repeatable": true,
-            "component": "media.media-content"
-        },
-        "categories": {
-            "collection": "category"
-        },
-        "coverages": {
-            "collection": "coverage",
-            "via": "event"
-        },
-        "permitted_capacity": {
-            "type": "decimal"
-        },
-        "premiere": {
-            "type": "boolean"
-        },
-        "search_field": {
-            "type": "string"
-        },
-        "duplicate": {
-            "type": "boolean"
-        }
+    "name_en": {
+      "type": "string"
+    },
+    "slug_en": {
+      "type": "uid",
+      "targetField": "name_en"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "program",
+        "residency",
+        "festival",
+        "tour",
+        "project"
+      ]
+    },
+    "hide_from_page": {
+      "type": "boolean"
+    },
+    "canceled": {
+      "type": "boolean"
+    },
+    "conversation": {
+      "type": "boolean"
+    },
+    "ticket_info": {
+      "model": "ticket-info"
+    },
+    "start_time": {
+      "type": "datetime"
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "subtitle_et": {
+      "type": "string"
+    },
+    "subtitle_en": {
+      "type": "string"
+    },
+    "description_et": {
+      "type": "richtext"
+    },
+    "description_en": {
+      "type": "richtext"
+    },
+    "technical_info_et": {
+      "type": "richtext"
+    },
+    "technical_info_en": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "online": {
+      "type": "string"
+    },
+    "remote_id": {
+      "type": "uid"
+    },
+    "resident": {
+      "type": "string"
+    },
+    "X_ticket_info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ticket-info.x-ticket-info"
+    },
+    "performance": {
+      "via": "events",
+      "model": "performance"
+    },
+    "parent_event": {
+      "model": "event",
+      "via": "child_events"
+    },
+    "child_events": {
+      "collection": "event",
+      "via": "parent_event"
+    },
+    "location": {
+      "model": "location"
+    },
+    "event_media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.event-media"
+    },
+    "X_location_et": {
+      "type": "text"
+    },
+    "X_location_en": {
+      "type": "text"
+    },
+    "X_location_link_et": {
+      "type": "text"
+    },
+    "X_location_link_en": {
+      "type": "text"
+    },
+    "videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
+    },
+    "audios": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media-content"
+    },
+    "categories": {
+      "collection": "category"
+    },
+    "coverages": {
+      "collection": "coverage",
+      "via": "event"
+    },
+    "permitted_capacity": {
+      "type": "decimal"
+    },
+    "premiere": {
+      "type": "boolean"
+    },
+    "search_field": {
+      "type": "string"
+    },
+    "duplicate": {
+      "type": "boolean"
+    },
+    "Test_value": {
+      "type": "enumeration",
+      "enum": [
+        "free_admission",
+        "sold_out",
+        "online"
+      ]
     }
+  }
 }
