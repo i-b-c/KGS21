@@ -38,7 +38,7 @@ block content
                     //- - nextThreeDays.setDate(nextThreeDays.getDate() + 3)
                     //- - console.log(currentDate, ' - ', pastTwoDays, ' - ', nextThreeDays)
 
-                    - var events = self.data.events.filter(e => e.type && (e.type === 'program' || e.type === 'tour'))
+                    - var events = self.data.events.filter(e => e.type && (e.type === 'program' || e.type === 'tour' || e.type === 'guest' || e.type === 'saal_presents'))
                     //- .filter(e => new Date(e.start_time) > pastTwoDays)
                     //- each performance in
                     //- - console.log(events.map(a => a.start_time))
@@ -70,8 +70,15 @@ block content
                                     if event.type == 'tour'
                                         p.today= self.labels.button.on_tour
 
+                                    //- guest (true/false)
+                                    if event.type == 'guest'
+                                        p.today= self.labels.button.guest
+
+                                    //- saal presents (true/false)
+                                    if event.type == 'saal_presents'
+                                        p.today= self.labels.button.saal_presents
+
                                     //- guest performance (true/false)
-                                    
                                     if event.performance_is_guest_performance
                                         p.today= self.guest_performance_label
 
