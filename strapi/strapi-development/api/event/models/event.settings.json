@@ -31,7 +31,9 @@
         "residency",
         "festival",
         "tour",
-        "project"
+        "project",
+        "guest",
+        "saal_presents"
       ]
     },
     "hide_from_page": {

@@ -71,23 +71,6 @@ labels:
         results_0: No matching results
         results_1: Found one
         results: Results
-    button:
-        NUP: NU Performance Festival 2018
-        NUPprint: NU Performance Newspaper
-        artist_talk: Artist talk
-        canceled: Canceled!
-        category: Category
-        load_more: Load more
-        on_tour: On Tour
-        premiere: Premiere!
-        saalbiennaal: SAAL Biennaal 2017
-        search: Search
-        today: Today!
-        view_all: View all
-        volunteer: Become a volunteer!
-        covid_info: Covid info
-        year: Year
-        book_info: Kanuti Gildi SAALi 20 juubeliraamat
     footer:
         tallinn_estonia: 'Tallinn, Estonia'
     nup:
@@ -207,6 +190,25 @@ labels:
         buy_t_online: Online
         buy_t_register: Register
         undefined: null
+    button:
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance Newspaper
+        artist_talk: Artist talk
+        canceled: Canceled!
+        category: Category
+        load_more: Load more
+        on_tour: On Tour
+        premiere: Premiere!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Search
+        today: Today!
+        view_all: View all
+        volunteer: Become a volunteer!
+        covid_info: Covid info
+        year: Year
+        book_info: Kanuti Gildi SAALi 20 juubeliraamat
+        guest: Guest
+        saal_presents: Saal Presents
 site_colors:
-    bg_color: '#440099'
-    fg_color: '#FFB3FF '
+    bg_color: '#004D9D'
+    fg_color: '#ED6B5C'

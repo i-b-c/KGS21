@@ -73,23 +73,6 @@ labels:
         results_0: Ei leidnud
         results_1: Üks oli
         results: Leidsin
-    button:
-        NUP: NU Performance Festival 2018
-        NUPprint: NU Performance ajaleht
-        artist_talk: Vestlus
-        canceled: Jääb ära!
-        category: Kategooria
-        load_more: Lae veel
-        on_tour: Tuuril
-        premiere: Esietendus!
-        saalbiennaal: SAAL Biennaal 2017
-        search: Otsi
-        today: Täna!
-        view_all: Vaata kõiki
-        volunteer: Tule vabatahtlikuks!
-        covid_info: Koroona meelespea
-        year: Aasta
-        book_info: Kanuti Gildi SAALi 20 juubeliraamat
     footer:
         tallinn_estonia: 'Tallinn, Eesti'
     nup:
@@ -209,6 +192,25 @@ labels:
         buy_t_online: Online
         buy_t_register: Registreeru
         undefined: null
+    button:
+        NUP: NU Performance Festival 2018
+        NUPprint: NU Performance ajaleht
+        artist_talk: Vestlus
+        canceled: Jääb ära!
+        category: Kategooria
+        load_more: Lae veel
+        on_tour: Tuuril
+        premiere: Esietendus!
+        saalbiennaal: SAAL Biennaal 2017
+        search: Otsi
+        today: Täna!
+        view_all: Vaata kõiki
+        volunteer: Tule vabatahtlikuks!
+        covid_info: Koroona meelespea
+        year: Aasta
+        book_info: Kanuti Gildi SAALi 20 juubeliraamat
+        guest: Külaline
+        saal_presents: Saal Esitleb
 site_colors:
-    bg_color: '#440099'
-    fg_color: '#FFB3FF '
+    bg_color: '#004D9D'
+    fg_color: '#ED6B5C'
