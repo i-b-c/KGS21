@@ -6,7 +6,7 @@ const moment = require('moment-timezone')
 const rootDir = path.join(__dirname, '..')
 const sourceDir = path.join(rootDir, 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
-const typesToInclude = ['program', 'tour', 'festival']
+const typesToInclude = ['program', 'tour', 'festival', 'guest', 'saal_presents']
 
 const assetsDir = path.join(rootDir, 'assets')
 const calendarJsonPath = path.join(assetsDir, 'calendar_json.json')
