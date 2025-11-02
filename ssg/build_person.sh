@@ -1,4 +1,5 @@
 SECONDS=0
+set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd $DIR
 echo $PWD
@@ -25,4 +26,3 @@ seconds=$((duration%60))
 printf "\n\nBUILD FINISHED IN $minutes m $seconds s.\n\n"
 
 bash ./deploy.sh
-
