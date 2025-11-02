@@ -10,6 +10,7 @@ block content
                 #about-carousel.carousel.slide(data-ride="carousel")
                     .carousel-inner(role="listbox")
                         - var isFirst = true
+                        - if (!self.data.configuration || !self.data.configuration[0] || !self.data.configuration[0].AboutUsGallery) { console.error('[CONTACT PAGE ERROR] self.data.configuration[0].AboutUsGallery is undefined'); }
                         each image in self.data.configuration[0].AboutUsGallery
                             if isFirst
                                 img.img-responsive.item.active(src="https://saal.ee"+image.url)
@@ -22,6 +23,7 @@ block content
                         span.icon-next.arrow-right(aria-hidden="true")
                 article.main-text.h3
                     p
+                        - if (!self.data.configurations || !self.data.configurations.about_article) { console.error('[CONTACT PAGE ERROR] self.data.configurations.about_article is undefined'); }
                         h3#kanuti-gildi-saali-20-juubelihooaeg= self.data.configurations.about_article[`name_${self.locale}`]
                     p
                         +markdown(self.data.configurations.about_article[`content_${self.locale}`])
@@ -31,11 +33,13 @@ block content
                     .collapsible-content
                         article.address
                             .row.team.grid-row
+                                - if (!self.data.occupations) { console.error('[CONTACT PAGE ERROR] self.data.occupations is undefined'); }
+                                - if (!self.data.persons) { console.error('[CONTACT PAGE ERROR] self.data.persons is undefined (team section)'); }
                                 if self.data.occupations
                                     each occupation in self.data.occupations
                                         .col-xs-6.col-sm-6.col-md-6.col-lg-6.member
                                             h2= occupation['name_'+self.locale]
-                                            each person in occupation.people 
+                                            each person in occupation.people
                                                 each person2 in self.data.persons
                                                     if person2.id == person.id 
                                                         p= person2.first_name + ' ' + person2.last_name + (person2[`extra_text_after_name_${self.locale}`] ? ' ' + person2[`extra_text_after_name_${self.locale}`] : '')
@@ -53,6 +57,7 @@ block content
                                     p
                                         a(href="mailto:saal@saal.ee") saal@saal.ee
                             .row.team.grid-row
+                                - if (!self.data.persons) { console.error('[CONTACT PAGE ERROR] self.data.persons is undefined (contact section)'); }
                                 if self.data.persons
                                     each person in self.data.persons
                                         //- Midagi valesti
@@ -69,6 +74,7 @@ block content
                         article.council
                             .row
                                 article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
+                                    - if (!self.data.simple_articles) { console.error('[CONTACT PAGE ERROR] self.data.simple_articles is undefined'); }
                                     each article in self.data.simple_articles
                                         if article.name_en === 'ACCESSIBILITY'
                                             +markdown(article[`content_${self.locale}`])
@@ -76,6 +82,7 @@ block content
                 .collapsible-element 
                     .collapsible-label= self.labels.title.floorplans
                     .collapsible-content
+                        - if (!self.data.locations) { console.error('[CONTACT PAGE ERROR] self.data.locations is undefined'); }
                         if self.data.locations.length
                             each location in self.data.locations
                                 if location.hall && location.hall.floorplan
@@ -104,6 +111,7 @@ block content
                         article.book
                             .row
                                 article.col-xs-12.col-sm-12.col-md-12.col-lg-12.location
+                                    - if (!self.data.configurations || !self.data.configurations.book_article) { console.error('[CONTACT PAGE ERROR] self.data.configurations.book_article is undefined'); }
                                     +markdown(self.data.configurations.book_article[`content_${self.locale}`])
                     <hr>
                 .collapsible-element 
@@ -126,6 +134,7 @@ block content
         .supporter.col-md-12
             h2= self.labels.title.sponsors
             ul.list-inline
+                - if (!self.data.banners) { console.error('[CONTACT PAGE ERROR] self.data.banners is undefined'); }
                 each banner in self.data.banners.filter(b => b.banner_type && b.banner_type.id === 19)
                     if banner.image
                         li
