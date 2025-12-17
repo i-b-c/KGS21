@@ -73,7 +73,7 @@ block content
                     .col-xs-12.col-md-12.col-lg-12
                         h2= self.labels.nav.schedule
 
-                    - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type === "program")
+                    - var events = self.data.events.filter(e => new Date(e.start_time) > pastTwoDays && e.type && (e.type === 'program' || e.type === 'tour' || e.type === 'guest' || e.type === 'saal_presents'))
                     //- each performance in
                     //- - console.log(events.map(a => a.start_time))
 
