@@ -14,7 +14,7 @@ node ./helpers/reset_config_path_aliases.js
 
 [ -d "source/_fetchdir" ] && rm -rf source/_fetchdir/*
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
-[ -d "build" ] && rm -r build/*
+[ -d "build" ] && rm -rf build/*
 [ ! -d "build" ] && mkdir -p build
 [ ! -d "build/assets" ] && mkdir -p build/assets
 
