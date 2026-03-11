@@ -41,11 +41,9 @@ block content
                                             h2= occupation['name_'+self.locale]
                                             each person in occupation.people
                                                 each person2 in self.data.persons
-                                                    if person2.id == person.id 
+                                                    if person2.id == person.id
                                                         p= person2.first_name + ' ' + person2.last_name + (person2[`extra_text_after_name_${self.locale}`] ? ' ' + person2[`extra_text_after_name_${self.locale}`] : '')
-                                            <br>
-                    <hr>
-                .collapsible-element 
+                .collapsible-element
                     .collapsible-label= self.labels.title.contact
                     .collapsible-content
                         article.address
@@ -63,12 +61,15 @@ block content
                                         //- Midagi valesti
                                         if person.is_contact
                                             .col-xs-12.col-sm-4.col-md-4.col-lg-4.member
+                                                if person.picture
+                                                    img.team-member-photo(src=m_api + person.picture.url alt=person.first_name + ' ' + person.last_name)
+                                                else
+                                                    .team-member-photo-placeholder
                                                 h2= person.first_name + ' ' + person.last_name + (person[`extra_text_after_name_${self.locale}`] ? ' ' + person[`extra_text_after_name_${self.locale}`] : '')
                                                 p= person.occupation
                                                 a(href=`mailto:${person.email}`)= person.email
                                                 p= person.phone_number
-                    <hr>
-                .collapsible-element 
+                .collapsible-element
                     .collapsible-label= self.labels.title.accessibility
                     .collapsible-content
                         article.council
@@ -78,8 +79,7 @@ block content
                                     each article in self.data.simple_articles
                                         if article.name_en === 'ACCESSIBILITY'
                                             +markdown(article[`content_${self.locale}`])
-                    <hr>
-                .collapsible-element 
+                .collapsible-element
                     .collapsible-label= self.labels.title.floorplans
                     .collapsible-content
                         - if (!self.data.locations) { console.error('[CONTACT PAGE ERROR] self.data.locations is undefined'); }
@@ -98,14 +98,12 @@ block content
                                         //-     a(href="https://saal.entu.ee/api2/file-182" target="_blank")
                                         //-         u Keldrisaal
                                         //-     span  | 8x6x3,5m - 30 kohta
-                    <hr>
-                .collapsible-element 
+                .collapsible-element
                     .collapsible-label= self.labels.title.location
                     .collapsible-content
                         section
                             iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.6715343970304!2d24.745978300000008!3d59.43855259999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692936235ed6985%3A0x86e790e483c15838!2sKanuti+Gildi+Saal!5e0!3m2!1sen!2see!4v1442397004784" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen="")
-                    <hr>
-                .collapsible-element 
+                .collapsible-element
                     .collapsible-label= self.labels.title.archive
                     .collapsible-content
                         ul.list-unstyled.h3
@@ -113,7 +111,6 @@ block content
                                 a(href="http://2016.saal.ee/events/2016/01/" target="_blank") www.saal.ee 2008–2015
                             li
                                 a(href="http://2016.saal.ee/archive/et/programm2/arhiiv.html" target="_blank") www.saal.ee 2004–2008
-                    <hr>
 
             //- article.col-md-12.covid
             //-     .row

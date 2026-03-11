@@ -1,53 +1,57 @@
-.collapsible-element {
-    margin-bottom: 1.5em
-    position: relative
-}
+.collapsible-element
+    margin-bottom 2px
 
-.collapsible-label {
-    font-family: flyerblack,sans-serif
-    text-transform: uppercase;
-    background: rgb(220, 220, 220)
-    font-size: 1.65em;
-    font-weight: 600;
-    line-height: 1.1;
-    position: relative
-    cursor: pointer
-    padding: 0.5em
-}
+.collapsible-label
+    font-family flyerblack, sans-serif
+    text-transform uppercase
+    font-size 1.65em
+    font-weight 600
+    line-height 1.1
+    cursor pointer
+    padding 0.6em 2.5em 0.6em 0.8em
+    position relative
+    transition background-color 0.3s ease, color 0.3s ease
+    user-select none
 
-.collapsible-label::before {
-    content: '+'
-    position: absolute
-    right: 0.5em
-    top: 50%    
-    transform: translateY(-50%);
-}
+.collapsible-label::after
+    content ''
+    position absolute
+    right 0.8em
+    top 50%
+    width 0.45em
+    height 0.45em
+    border-right 2.5px solid currentColor
+    border-bottom 2.5px solid currentColor
+    transform translateY(-65%) rotate(45deg)
+    transition transform 0.3s ease
 
-.collapsible-element.active .collapsible-label::before {
-    content: '-'    
-}
+.collapsible-element.active .collapsible-label::after
+    transform translateY(-35%) rotate(-135deg)
 
-.collapsible-element hr {
-    margin: 0
-}
+.collapsible-content
+    max-height 0
+    overflow hidden
+    transition max-height 0.4s ease
+    padding 0 1.5em
 
-.collapsible-content {
-    background: rgb(239, 239, 239)
-    position: relative
-    height: 0
-    overflow: hidden
-    // transition: 0.5s
-    padding: 0 1.5em 0 1.5em
-}
+.collapsible-content > *:first-child
+    padding-top 0.1em
 
-.collapsible-content > *:first-child {
-    padding-top: 0.8em
-}
+.collapsible-content > *:last-child
+    padding-bottom 1em
 
-.collapsible-content > *:last-child {
-    padding-bottom: 1em
-}
+.address .location
+    margin-bottom 3em
 
-.collapsible-element.active .collapsible-content {
-    height: 100%
-}
+.team-member-photo,
+.team-member-photo-placeholder
+    width 100%
+    aspect-ratio 3 / 4
+    border-radius 6px
+    margin-bottom 0.8em
+
+.team-member-photo
+    object-fit cover
+
+.team-member-photo-placeholder
+    background rgba(0, 0, 0, 0.06)
