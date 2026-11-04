@@ -60,6 +60,11 @@
     },
     "extra_text_after_name_en": {
       "type": "text"
+    },
+    "occupation_periods": {
+      "type": "component",
+      "repeatable": true,
+      "component": "people.occupation-period"
     }
   }
 }

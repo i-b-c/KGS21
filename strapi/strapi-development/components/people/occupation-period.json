@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_people_occupation_periods",
+  "info": {
+    "name": "occupation_period",
+    "icon": "calendar-alt",
+    "description": "A person's time in an occupation. Years are optional."
+  },
+  "options": {},
+  "attributes": {
+    "occupation": {
+      "model": "occupation"
+    },
+    "start_year": {
+      "type": "integer"
+    },
+    "end_year": {
+      "type": "integer"
+    }
+  }
+}
