@@ -47,11 +47,6 @@
     "full_name": {
       "type": "string"
     },
-    "occupations": {
-      "via": "people",
-      "collection": "occupation",
-      "dominant": true
-    },
     "is_contact": {
       "type": "boolean"
     },
