@@ -120,6 +120,12 @@ Location: &Location
     # floorplan: *StrapiMedia
 
 #Person
+OccupationPeriod: &OccupationPeriod
+    occupation:
+        id: (number) # Occupation
+    start_year: (number)
+    end_year: (number)
+
 Person: &Person
     _path: /people
     first_name: (text)
@@ -134,6 +140,8 @@ Person: &Person
     is_contact: (boolean)
     extra_text_after_name_et: (text)
     extra_text_after_name_en: (text)
+    occupation_periods:
+        - *OccupationPeriod
     # date_of_birth:
     # biography:
 
@@ -141,8 +149,6 @@ Occupation: &Occupation
     _path: /occupations
     name_et: (text)
     name_en: (text)
-    people:
-        - *Person
 
 Artist: &Artist
     person: *Person

@@ -5,6 +5,6 @@ data:
     configurations: '/_fetchdir/configuration.et.yaml'
     locations: '/_fetchdir/locations.et.yaml'
     banners: '/_fetchdir/banners.yaml'
-    occupations: '/strapidata/Occupation.yaml'
+    team: '/_fetchdir/team.yaml'
     configuration: '/strapidata/Configuration.yaml'
     simple_articles: '/strapidata/SimpleArticle.yaml'

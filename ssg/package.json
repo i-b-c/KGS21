@@ -26,7 +26,8 @@
   "main": "node node_modules/entu-ssg/src/src/index.js",
   "scripts": {
     "build": "bash ./build.sh",
-    "serve": "node node_modules/entu-ssg/src/serve.js ./config.yaml"
+    "serve": "node node_modules/entu-ssg/src/serve.js ./config.yaml",
+    "test": "node --test 'helpers/*.test.js'"
   },
   "dependencies": {
     "entu-ssg": "^5.0.6",

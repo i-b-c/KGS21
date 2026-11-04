@@ -35,6 +35,9 @@ node ./helpers/performances_from_yaml.js
 echo '==== build ==== contact_persons_from_yaml'
 node ./helpers/contact_persons_from_yaml.js
 
+echo '==== build ==== team_from_yaml'
+node ./helpers/team_from_yaml.js
+
 echo '==== build ==== categories_from_yaml'
 node ./helpers/categories_from_yaml.js
 

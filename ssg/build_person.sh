@@ -14,6 +14,9 @@ node ./helpers/reset_config_path_aliases.js
 echo '==== build ==== contact_persons_from_yaml'
 node ./helpers/contact_persons_from_yaml.js -t
 
+echo '==== build ==== team_from_yaml'
+node ./helpers/team_from_yaml.js
+
 echo '==== build ==== ENTU SSG'
 node ./node_modules/entu-ssg/src/build.js ./config.yaml full
 

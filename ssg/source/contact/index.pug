@@ -33,16 +33,16 @@ block content
                     .collapsible-content
                         article.address
                             .row.team.grid-row
-                                - if (!self.data.occupations) { console.error('[CONTACT PAGE ERROR] self.data.occupations is undefined'); }
-                                - if (!self.data.persons) { console.error('[CONTACT PAGE ERROR] self.data.persons is undefined (team section)'); }
-                                if self.data.occupations
-                                    each occupation in self.data.occupations
+                                - if (!self.data.team) { console.error('[CONTACT PAGE ERROR] self.data.team is undefined'); }
+                                if self.data.team
+                                    each occupation in self.data.team
                                         .col-xs-6.col-sm-6.col-md-6.col-lg-6.member
                                             h2= occupation['name_'+self.locale]
                                             each person in occupation.people
-                                                each person2 in self.data.persons
-                                                    if person2.id == person.id
-                                                        p= person2.first_name + ' ' + person2.last_name + (person2[`extra_text_after_name_${self.locale}`] ? ' ' + person2[`extra_text_after_name_${self.locale}`] : '')
+                                                p
+                                                    = person.first_name + ' ' + person.last_name + (person[`extra_text_after_name_${self.locale}`] ? ' ' + person[`extra_text_after_name_${self.locale}`] : '')
+                                                    if person.years
+                                                        span.team-member-years= ' ' + person.years
                 .collapsible-element
                     .collapsible-label= self.labels.title.contact
                     .collapsible-content

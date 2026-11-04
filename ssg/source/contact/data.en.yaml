@@ -3,6 +3,6 @@ data:
     configurations: '/_fetchdir/configuration.en.yaml'
     locations: '/_fetchdir/locations.en.yaml'
     banners: '/_fetchdir/banners.yaml'
-    occupations: '/strapidata/Occupation.yaml'
+    team: '/_fetchdir/team.yaml'
     configuration: '/strapidata/Configuration.yaml'
     simple_articles: '/strapidata/SimpleArticle.yaml'
