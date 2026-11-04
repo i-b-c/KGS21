@@ -41,8 +41,8 @@ block content
                                             each person in occupation.people
                                                 p
                                                     = person.first_name + ' ' + person.last_name + (person[`extra_text_after_name_${self.locale}`] ? ' ' + person[`extra_text_after_name_${self.locale}`] : '')
-                                                    if person.years
-                                                        span.team-member-years= ' ' + person.years
+                                                    if person[`years_${self.locale}`]
+                                                        span.team-member-years= ' ' + person[`years_${self.locale}`]
                 .collapsible-element
                     .collapsible-label= self.labels.title.contact
                     .collapsible-content
