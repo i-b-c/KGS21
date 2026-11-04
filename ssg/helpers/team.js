@@ -1,11 +1,12 @@
 // @ts-check
 
 /**
- * Shapes below mirror Strapi data after a_fetch.js cleanup, which drops empty values,
- * so optional fields are absent rather than null.
+ * Shapes below mirror Person.yaml in strapidata, which has two writers: a_fetch.js cleanup
+ * (drops empty values, so fields are absent) and the Strapi afterUpdate hook (writes raw
+ * records, so empty fields are null). Both are valid inputs.
  *
  * @typedef {{ id: number }} Ref
- * @typedef {{ occupation?: Ref, start_year?: number, end_year?: number }} OccupationPeriod
+ * @typedef {{ occupation?: Ref | null, start_year?: number | null, end_year?: number | null }} OccupationPeriod
  * @typedef {{
  *   id: number,
  *   first_name: string,
@@ -30,11 +31,11 @@
  * @returns {string}
  */
 function formatPeriod({ start_year, end_year }) {
-    if (start_year !== undefined && start_year === end_year) {
-        return String(start_year)
-    }
-    if (start_year === undefined && end_year === undefined) {
+    if (start_year == null && end_year == null) {
         return ''
+    }
+    if (start_year === end_year) {
+        return String(start_year)
     }
     return `${start_year ?? ''}–${end_year ?? ''}`
 }

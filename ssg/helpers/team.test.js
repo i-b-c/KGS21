@@ -22,6 +22,18 @@ test('formatPeriod: no years gives empty string', () => {
     assert.equal(formatPeriod({}), '')
 })
 
+// Strapi lifecycle hooks write raw records into strapidata, where empty years are null.
+test('formatPeriod: null years are treated as absent', () => {
+    assert.equal(formatPeriod({ start_year: null, end_year: null }), '')
+    assert.equal(formatPeriod({ start_year: 2019, end_year: null }), '2019–')
+    assert.equal(formatPeriod({ start_year: null, end_year: 2025 }), '–2025')
+})
+
+test('buildTeam: raw lifecycle shape with null occupation is ignored', () => {
+    const persons = [{ id: 10, first_name: 'A', last_name: 'B', occupation_periods: [{ occupation: null, start_year: null, end_year: null }] }]
+    assert.deepEqual(buildTeam(occupations, persons).map(o => o.people), [[], []])
+})
+
 const occupations = [
     { id: 1, name_et: 'Kuraator', name_en: 'Curator' },
     { id: 2, name_et: 'Juht', name_en: 'Director' },
