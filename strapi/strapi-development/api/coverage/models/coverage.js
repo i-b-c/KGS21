@@ -12,16 +12,17 @@
 
  const {
    slugify,
-   load_yaml,
-   modify_strapi_data_yaml,
-   delete_model,
    call_build
  } = require(helper_path)
 
 
-const model_name = (__dirname.split('/').slice(-2)[0]);
-const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
-const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
+// A coverage has no page of its own: it is shown on its performance's and event's pages,
+// so those are what need rebuilding. (Moving a coverage to another performance leaves the
+// old page stale until the nightly full build.)
+function build_pages_showing(coverage) {
+  if (coverage.performance) { call_build(coverage.performance, 'performance') }
+  if (coverage.event) { call_build(coverage.event, 'event') }
+}
 
 
 module.exports = {
@@ -35,25 +36,14 @@ module.exports = {
       if(data.title){
         data.slug = data.title ? slugify( data.title)+ '-' + params.id : null
       }
-      if(data.published_at === null ) {
-        let model_id = params.id
-        delete_model(model_id, modelDirPath)
-        // call_build(params, model_name)
-      }
     },
     afterUpdate(result, params, data) {
-      if (result.published_at) {
-        modify_strapi_data_yaml(result, modelDirPath)
-        // call_build(result, model_name)
-        // console.log('\nparams', params, '\ndata', data, '\nresult', result)
-
+      if (result.published_at || data.published_at === null) {
+        build_pages_showing(result)
       }
     },
     afterDelete(result, params){
-      // console.log('\nR', result, '\nparams', params)
-      let model_id = result.id
-      delete_model(model_id, modelDirPath)
-    //   call_build(result, model_name)
+      build_pages_showing(result)
     }
   }
 };

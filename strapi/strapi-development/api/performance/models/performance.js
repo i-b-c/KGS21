@@ -15,15 +15,10 @@ var HTMLparser = require('node-html-parser')
  
  const { 
    slugify, 
-   load_yaml, 
-   modify_strapi_data_yaml, 
-   delete_model, 
    call_build 
  } = require(helper_path)
 
 const model_name = (__dirname.split('/').slice(-2)[0]);
-const name_upperC = model_name.charAt(0).toUpperCase() + model_name.slice(1);
-const modelDirPath = path.join('/srv', 'ssg', 'source', 'strapidata', `${name_upperC}.yaml`)
 
 async function make_duplicate(data) {
     delete data.slug_et
@@ -72,11 +67,6 @@ module.exports = {
           data.search_field = data.X_artist + ' ' + data.name_et
         }
       }
-      if (data.published_at === null) {
-        let model_id = params.id
-        delete_model(model_id, modelDirPath)
-        call_build(params, model_name)
-      }
 
       if (data.other_works) {
         data.other_works_back = data.other_works
@@ -103,17 +93,14 @@ module.exports = {
     afterUpdate(result, params, data) {
       // console.log('afterUpdate')
 
-      if (result.published_at) {
+      if (result.published_at || data.published_at === null) {
 
-        modify_strapi_data_yaml(result, modelDirPath)
         call_build(result, model_name)
         // console.log('\nparams', params, '\ndata', data, '\nresult', result)
       }
     },
     afterDelete(result, params) {
       // console.log('\nR', result, '\nparams', params)
-      let model_id = result.id
-      delete_model(model_id, modelDirPath)
       call_build(result, model_name)
     }
   }

@@ -11,9 +11,6 @@
  
  const { 
    slugify, 
-   load_yaml, 
-   modify_strapi_data_yaml, 
-   delete_model, 
    call_build 
  } = require(helper_path)
 
@@ -31,20 +28,14 @@ module.exports = {
       if(data.name){
         data.slug = data.name ? slugify(params.id + '-' + data.name) : null
       }
-      if(data.published_at === null ) {
-        let model_id = params.id
-        delete_model(model_id, modelDirPath)
-        call_build(params, model_name)
-      }
     },
     afterUpdate(result, params, data) {
-      if (result.published_at) {
+      if (result.published_at || data.published_at === null) {
         call_build(result, model_name)
 
       }
     },
     afterDelete(result, params){
-      let model_id = result.id
       call_build(result, model_name)
     }
   }
