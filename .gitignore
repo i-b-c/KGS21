@@ -160,3 +160,6 @@ old_ssg
 
 www-bak
 www
+
+# site build queue (ssg/helpers/build_queue.js)
+ssg/build_queue
