@@ -43,8 +43,9 @@ async function strapiQuery(options, dataObject = false) {
                 //     let resolved = await strapiQuery(options, dataObject)
                 //     resolve(resolved)
                 } else {
+                    // Never resolve with empty data: a build would deploy the site without it.
                     console.log('\nStatus', response.statusCode, options, JSON.stringify((dataObject) || ''))
-                    resolve([])
+                    reject(new Error(`Strapi ${options.method} ${options.path} responded ${response.statusCode}`))
                 }
             })
             response.on('error', function (thisError) {
@@ -65,7 +66,7 @@ async function strapiQuery(options, dataObject = false) {
                 resolve(resolved)
             } else {
                 console.log('\nE:2', thisError)
-                reject
+                reject(thisError)
             }
         })
         if (dataObject) {

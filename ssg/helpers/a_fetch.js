@@ -292,4 +292,9 @@ const foo = async () => {
 
 }
 
-foo()
+// Exit non-zero on any fetch error: Node 14 only warns on an unhandled rejection and exits 0,
+// which would let a build continue with stale or missing data.
+foo().catch(error => {
+    console.error('\nFetch from Strapi failed:', error)
+    process.exit(1)
+})
