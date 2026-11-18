@@ -1,0 +1,11 @@
+# Crontab for the strapi user on the server. Install with: crontab /srv/ssg/crontab.strapi
+# (this replaces the user's crontab; it had no other entries when installed).
+SHELL=/bin/bash
+
+# Pick up retries that came due and items left by a build that died (crash, reboot).
+*/2 * * * * /usr/local/bin/node /srv/ssg/helpers/build_queue.js kick >> /srv/ssg/logs/build.log 2>&1
+@reboot /usr/local/bin/node /srv/ssg/helpers/build_queue.js kick >> /srv/ssg/logs/build.log 2>&1
+
+# Nightly full build: whatever a targeted build could not see (e.g. a coverage moved to
+# another performance) is on the site by morning.
+30 4 * * * /usr/local/bin/node /srv/ssg/helpers/build_queue.js full >> /srv/ssg/logs/build.log 2>&1
