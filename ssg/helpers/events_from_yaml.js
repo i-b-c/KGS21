@@ -70,7 +70,8 @@ for (const lang of LANGUAGES) {
         let createDir = typeof fetchSpecific === 'undefined' || !fetchSpecific.length || fetchSpecific.includes(oneEvent.id.toString()) ? true : false
 
         if (oneEvent.coverages) {
-            performance.coverages = performance.coverages ? performance.coverages.map(c => STRAPIDATA_COVERAGES.filter(sc => sc.id === c.id)[0]) : []
+            // Links to unpublished or deleted coverages resolve to undefined; drop them.
+            performance.coverages = performance.coverages ? performance.coverages.map(c => STRAPIDATA_COVERAGES.filter(sc => sc.id === c.id)[0]).filter(c => c !== undefined) : []
             combined_coverages = oneEvent.coverages.concat(performance.coverages)
         } else if (performance.coverages) {
             combined_coverages = performance.coverages

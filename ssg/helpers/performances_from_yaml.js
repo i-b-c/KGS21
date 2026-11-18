@@ -37,8 +37,9 @@ const STRAPIDATA_PERFORMANCES = yaml.safeLoad(fs.readFileSync(strapiDataPerforma
     //         return STRAPIDATA_EVENTS.filter(e => e.id === pe.id)[0]
     //     }).filter(u => u)
     // }
-    p.categories = p.categories ? p.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]) : null
-    p.coverages = p.coverages ? p.coverages.map(c => STRAPIDATA_COVERAGES.filter(f => f.id === c.id)[0]) : null
+    // Links to unpublished or deleted entries resolve to undefined; drop them.
+    p.categories = p.categories ? p.categories.map(c => STRAPIDATA_CATEGORIES.filter(f => f.id === c.id)[0]).filter(c => c !== undefined) : null
+    p.coverages = p.coverages ? p.coverages.map(c => STRAPIDATA_COVERAGES.filter(f => f.id === c.id)[0]).filter(c => c !== undefined) : null
     return p
 })
 
