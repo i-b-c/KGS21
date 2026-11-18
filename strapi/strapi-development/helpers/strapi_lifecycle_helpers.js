@@ -71,25 +71,22 @@ function call_build(result, model_name) {
     type = result.type
   }
 
-  if (fs.existsSync(`/srv/ssg/build_${model_name}.sh`)) {
-    console.log(`Executing /srv/ssg/build_${model_name}.sh ${result_id} ${type}`);
-    const child = execFile('bash', [`/srv/ssg/build_${model_name}.sh`, result_id, type], (error, stdout, stderr) => {
-      if (error) {
-        console.log({error, stdout, stderr})
-        throw error;
-      }
-      console.log(stdout);
-    })
-  } else {
-    console.log(`Executing /srv/ssg/build.sh ${result_id}`);
+  const model_script = `/srv/ssg/build_${model_name}.sh`
+  const args = fs.existsSync(model_script)
+    ? [model_script, result_id, type]
+    : ['/srv/ssg/build.sh', result_id]
 
-    const child = execFile('bash', [`/srv/ssg/build.sh`, result_id], (error, stdout, stderr) => {
-      if (error) {
-        throw error;
-      }
-      console.log(stdout);
-    })
-  }
+  console.log(`Executing ${args.join(' ')}`);
+  // Builds run detached from the request and queue on a lock inside the build scripts.
+  // A failed build must not throw here: this callback runs outside any request, so a
+  // throw is uncaught and kills Strapi (and every queued build with it).
+  execFile('bash', args, { maxBuffer: 64 * 1024 * 1024 }, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Build failed: ${args.join(' ')}`, { error, stdout, stderr })
+      return
+    }
+    console.log(stdout);
+  })
 }
 
 exports.slugify = slugify
